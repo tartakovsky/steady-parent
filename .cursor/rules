@@ -1,0 +1,78 @@
+# TypeScript Strict Mode Rules
+
+This project uses the strictest possible TypeScript and ESLint configuration. Follow these rules strictly.
+
+## CRITICAL: Verification After Changes
+
+After making ANY code changes (creating, editing, or deleting TypeScript files), you MUST:
+
+1. **Run type checking**: `npm run typecheck` (or `npx tsc --noEmit`)
+2. **Run linting**: `npm run lint` (or `npx eslint .`)
+3. **Or run both**: `npm run check`
+
+The IDE's `read_lints` tool may NOT show all errors. Always verify with terminal commands.
+
+## Strict TypeScript Rules
+
+This project has these strict settings enabled. Follow them:
+
+### No `any` Types
+- NEVER use `any` type explicitly
+- NEVER use type assertions to `any` (e.g., `as any`)
+- Use `unknown` instead of `any` when the type is truly unknown
+- Use proper generic types or union types instead of `any`
+
+### Environment Variables
+- Access via bracket notation: `process.env['VAR_NAME']` NOT `process.env.VAR_NAME`
+- Always check for undefined: `const val = process.env['VAR']; if (!val) throw new Error('...');`
+
+### Array/Object Index Access
+- Index access returns `T | undefined` due to `noUncheckedIndexedAccess`
+- Always check for undefined before using: `const item = arr[0]; if (item) { ... }`
+
+### Function Return Types
+- All exported functions MUST have explicit return types
+- Use `void` for functions that don't return anything
+- Example: `export function getName(): string { ... }`
+
+### Strict Boolean Expressions
+- Cannot use strings/numbers in boolean contexts
+- Bad: `if (str) { ... }` or `if (count) { ... }`
+- Good: `if (str !== '') { ... }` or `if (count > 0) { ... }`
+- For null/undefined checks: `if (value !== null && value !== undefined) { ... }`
+
+### Type Imports
+- Use `import type` for type-only imports
+- Example: `import type { MyType } from './types';`
+- Use `export type` for type-only exports
+
+### Promise Handling
+- Never leave promises floating (unhandled)
+- Always `await` or `.then()/.catch()` promises
+- Functions that return promises should be marked `async`
+
+## Quick Reference Commands
+
+```bash
+# Check everything
+npm run check
+
+# Type checking only
+npm run typecheck
+
+# Linting only  
+npm run lint
+
+# Auto-fix lint issues
+npm run lint:fix
+```
+
+## When You See Errors
+
+If `npm run check` shows errors:
+1. Fix ALL TypeScript errors first (these are blocking)
+2. Fix ESLint errors (also blocking)
+3. Address warnings if relevant to your changes
+
+Do NOT ignore errors. Do NOT use `// @ts-ignore` or `// eslint-disable` without explicit user approval.
+

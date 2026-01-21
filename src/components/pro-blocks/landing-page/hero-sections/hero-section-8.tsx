@@ -1,0 +1,115 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
+
+export function HeroSection8() {
+  return (
+    <section
+      className="bg-background section-padding-y"
+      aria-labelledby="hero-heading"
+    >
+      <div className="container-padding-x relative z-10 mx-auto flex max-w-7xl flex-col items-center gap-12 lg:flex-row lg:gap-16">
+        <div className="mx-auto flex max-w-2xl flex-1 flex-col items-center gap-6 text-center lg:gap-8">
+          <div className="section-title-gap-xl flex flex-col items-center text-center">
+            <Tagline variant="link">
+              <span className="size-1.5 rounded-full bg-green-500" />
+              <span className="hidden lg:inline">What's new · </span>
+              <span className="lg:text-muted-foreground">
+                Just shipped v2.0
+              </span>
+              <ArrowUpRight />
+            </Tagline>
+            <h1 id="hero-heading" className="heading-xl">
+              Solve your customer's main problem
+            </h1>
+            <p className="text-muted-foreground text-base lg:text-lg">
+              Follow with one or two sentences that expand on your value
+              proposition and focus on key benefits.
+            </p>
+          </div>
+          <Button
+            className="md:flex-1"
+            aria-label="Get started with our service"
+          >
+            Get started
+            <ArrowRight />
+          </Button>
+          <div className="flex flex-col gap-2 text-center">
+            <div className="flex items-center justify-center gap-3">
+              <div
+                className="flex space-x-[-1rem]"
+                aria-label="User testimonials"
+              >
+                <Avatar className="border-background h-10 w-10 border-2">
+                  <AvatarImage
+                    src="https://github.com/shadcn.png"
+                    alt="User testimonial"
+                  />
+                  <AvatarFallback>UN</AvatarFallback>
+                </Avatar>
+                <Avatar className="border-background h-10 w-10 border-2">
+                  <AvatarImage
+                    src="https://github.com/shadcn.png"
+                    alt="User testimonial"
+                  />
+                  <AvatarFallback>UN</AvatarFallback>
+                </Avatar>
+                <Avatar className="border-background h-10 w-10 border-2">
+                  <AvatarImage
+                    src="https://github.com/shadcn.png"
+                    alt="User testimonial"
+                  />
+                  <AvatarFallback>UN</AvatarFallback>
+                </Avatar>
+                <Avatar className="border-background h-10 w-10 border-2">
+                  <AvatarImage
+                    src="https://github.com/shadcn.png"
+                    alt="User testimonial"
+                  />
+                  <AvatarFallback>UN</AvatarFallback>
+                </Avatar>
+              </div>
+              <svg
+                width="109"
+                height="20"
+                viewBox="0 0 109 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="5 star rating"
+                role="img"
+                className="text-primary"
+              >
+                <path
+                  d="M10.2503 1.66797L12.8253 6.88463L18.5837 7.7263L14.417 11.7846L15.4003 17.518L10.2503 14.8096L5.10033 17.518L6.08366 11.7846L1.91699 7.7263L7.67533 6.88463L10.2503 1.66797Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M32.2503 1.66797L34.8253 6.88463L40.5837 7.7263L36.417 11.7846L37.4003 17.518L32.2503 14.8096L27.1003 17.518L28.0837 11.7846L23.917 7.7263L29.6753 6.88463L32.2503 1.66797Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M54.2503 1.66797L56.8253 6.88463L62.5837 7.7263L58.417 11.7846L59.4003 17.518L54.2503 14.8096L49.1003 17.518L50.0837 11.7846L45.917 7.7263L51.6753 6.88463L54.2503 1.66797Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M76.2503 1.66797L78.8253 6.88463L84.5837 7.7263L80.417 11.7846L81.4003 17.518L76.2503 14.8096L71.1003 17.518L72.0837 11.7846L67.917 7.7263L73.6753 6.88463L76.2503 1.66797Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M98.2503 1.66797L100.825 6.88463L106.584 7.7263L102.417 11.7846L103.4 17.518L98.2503 14.8096L93.1003 17.518L94.0837 11.7846L89.917 7.7263L95.6753 6.88463L98.2503 1.66797Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <div className="text-muted-foreground text-sm md:text-base">
+              Loved by 3200+ developers
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
