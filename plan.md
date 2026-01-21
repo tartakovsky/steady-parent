@@ -34,6 +34,20 @@ todos:
 
 ## Proposed page sequence (blocks)
 
+## Concrete block mapping (initial pick)
+
+- Navbar: `src/components/pro-blocks/landing-page/lp-navbars/lp-navbar-6.tsx` (will simplify menu items and CTA to waitlist)
+- Hero: `src/components/pro-blocks/landing-page/hero-sections/hero-section-12.tsx` (will replace tagline and remove any price)
+- Recognition + Permission: `src/components/pro-blocks/landing-page/rich-text-sections/rich-text-section-1.tsx` (image + narrative)
+- Possibility: `src/components/pro-blocks/landing-page/comparison-sections/comparison-section-3.tsx` (before vs after style)
+- Promise and mechanism: `src/components/pro-blocks/landing-page/feature-sections/feature-section-10.tsx` (bullet features)
+- Product reveal: `src/components/pro-blocks/landing-page/pricing-sections/pricing-section-3.tsx` (will adapt to single cohort offer and show price first time)
+- What’s inside: `src/components/pro-blocks/landing-page/gallery-sections/gallery-section-6.tsx` (screenshots plus module list nearby)
+- Help evaluate: `src/components/pro-blocks/landing-page/faq-sections/faq-section-1.tsx`
+- Risk reversal: `src/components/pro-blocks/landing-page/stats-sections/stats-section-6.tsx` (3 card grid)
+- Lead magnet: `src/components/pro-blocks/landing-page/cta-sections/cta-section-4.tsx` (input + CTA)
+- Footer: `src/components/pro-blocks/landing-page/footers/footer-7.tsx`
+
 ### 1) Top navbar
 
 - **What should be there**: logo, 3 to 5 anchor links, primary button "Join the waitlist".
