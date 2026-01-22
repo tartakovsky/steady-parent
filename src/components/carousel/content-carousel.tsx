@@ -21,6 +21,7 @@ export interface ContentCarouselProps<TItem extends ContentCarouselItem> {
   className?: string;
   contentClassName?: string;
   itemClassName?: string;
+  spaceBetween?: number;
 }
 
 export function ContentCarousel<TItem extends ContentCarouselItem>({
@@ -29,6 +30,7 @@ export function ContentCarousel<TItem extends ContentCarouselItem>({
   className,
   contentClassName,
   itemClassName,
+  spaceBetween,
 }: ContentCarouselProps<TItem>): React.JSX.Element {
   const prevRef = React.useRef<HTMLButtonElement | null>(null);
   const nextRef = React.useRef<HTMLButtonElement | null>(null);
@@ -55,13 +57,13 @@ export function ContentCarousel<TItem extends ContentCarouselItem>({
 
   return (
     <div
-      className={cn("relative", className)}
+      className={cn("relative w-full", className)}
       style={{ overscrollBehaviorX: "contain" }}
     >
       <Swiper
         modules={[Navigation, Mousewheel, Keyboard]}
         slidesPerView={"auto"}
-        spaceBetween={16}
+        spaceBetween={spaceBetween ?? 16}
         speed={260}
         centeredSlides={false}
         threshold={0}
@@ -105,12 +107,12 @@ export function ContentCarousel<TItem extends ContentCarouselItem>({
             if (!swiper.isBeginning) swiper.slidePrev();
           }
         }}
-        className={cn("overflow-hidden", contentClassName)}
+        className={cn("w-full overflow-hidden", contentClassName)}
       >
         {items.map((item) => (
           <SwiperSlide
             key={item.id}
-            className={cn("!w-auto", itemClassName)}
+            className={cn(itemClassName ?? "w-auto")}
           >
             {renderCard(item)}
           </SwiperSlide>

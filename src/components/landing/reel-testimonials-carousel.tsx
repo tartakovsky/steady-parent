@@ -3,7 +3,7 @@
 import type React from "react";
 
 import { useMemo, useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { ContentCarousel } from "@/components/carousel/content-carousel";
 import { MediaDialog, type MediaDialogMedia } from "@/components/carousel/media-dialog";
 import type { TestimonialItem } from "@/content/landing/content";
@@ -36,36 +36,22 @@ function ReelTestimonialCard({
   const isVideo = media.kind === "video";
   const isImage = media.kind === "image";
 
-  const aspectClass = (() => {
-    if (media.kind === "video") {
-      if (media.aspectRatio === "9:16") return "aspect-[9/16]";
-      if (media.aspectRatio === "4:3") return "aspect-[4/3]";
-      return "aspect-video";
-    }
-    if (media.kind === "image") {
-      if (media.aspectRatio === "3:4") return "aspect-[3/4]";
-      if (media.aspectRatio === "4:3") return "aspect-[4/3]";
-      if (media.aspectRatio === "16:9") return "aspect-video";
-      return "aspect-square";
-    }
-    return "aspect-video";
-  })();
-
   return (
     <button
       type="button"
       onClick={onOpen}
-      className="h-full w-full text-left"
+      className="block h-full w-full text-left"
       aria-label={`Open testimonial from ${item.personName}`}
     >
-      <Card className="h-full overflow-hidden">
-        <div className={`bg-muted relative w-full ${aspectClass} max-h-[320px]`}>
+      {/* Card fills the slide; slide width is set via itemClassName on the carousel */}
+      <Card className="relative aspect-[9/16] h-full w-full overflow-hidden">
+        <div className="bg-muted absolute inset-0">
           {isVideo ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={media.posterSrc ?? "/placeholder.svg"}
               alt=""
-              className="h-full w-full object-cover"
+              className="block h-full w-full object-cover"
             />
           ) : null}
           {isImage ? (
@@ -73,19 +59,21 @@ function ReelTestimonialCard({
             <img
               src={media.src}
               alt={media.alt}
-              className="h-full w-full object-cover"
+              className="block h-full w-full object-cover"
             />
           ) : null}
-          {!isVideo && !isImage ? null : null}
         </div>
-        <CardContent className="p-4">
-          <div className="text-sm font-semibold">{item.personName}</div>
-          {item.quote !== undefined && item.quote !== "" ? (
-            <div className="text-muted-foreground mt-2 line-clamp-2 text-sm leading-6">
-              {item.quote}
-            </div>
-          ) : null}
-        </CardContent>
+
+        <div className="absolute inset-x-0 bottom-0">
+          <div className="from-background/80 via-background/40 to-background/0 bg-gradient-to-t px-4 pb-4 pt-10">
+            <div className="text-sm font-semibold leading-5">{item.personName}</div>
+            {item.quote !== undefined && item.quote !== "" ? (
+              <div className="text-muted-foreground mt-1 line-clamp-2 text-xs leading-5">
+                {item.quote}
+              </div>
+            ) : null}
+          </div>
+        </div>
       </Card>
     </button>
   );
@@ -99,11 +87,12 @@ export function ReelTestimonialsCarousel({
   const active = useMemo(() => items.find((x) => x.id === openId) ?? null, [items, openId]);
 
   return (
-    <section aria-label="Testimonials" className="py-12">
+    <section aria-label="Testimonials" className="py-8 sm:py-10">
       <div className="mx-auto max-w-6xl px-4">
         <ContentCarousel
           items={items}
-          itemClassName="basis-[58%] sm:basis-1/4 lg:basis-1/5"
+          itemClassName="!w-[min(44vw,168px)] sm:!w-[180px] lg:!w-[300px] xl:!w-[340px]"
+          spaceBetween={16}
           renderCard={(item) => {
             return (
               <ReelTestimonialCard

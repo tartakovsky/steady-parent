@@ -145,6 +145,18 @@ export const landingContent = {
         posterSrc: "/landing/testimonials/video-1-poster.jpg",
       },
     },
+    {
+      id: "testimonial-2",
+      personName: "Parent of a 6 year old",
+      quote:
+        "The biggest change was how fast we could recover. Less chaos, fewer power struggles, and a calmer bedtime.",
+      media: {
+        kind: "video",
+        src: "/landing/testimonials/video-2.mp4",
+        aspectRatio: "9:16",
+        posterSrc: "/landing/testimonials/video-2-poster.jpg",
+      },
+    },
   ] satisfies TestimonialItem[],
   faq: [
     {
