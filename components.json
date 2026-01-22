@@ -18,12 +18,5 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
-  "registries": {
-    "@shadcndesign": {
-      "url": "https://www.shadcndesign.com/api/registry/{name}",
-      "headers": {
-        "X-License-Key": "${SHADCNDESIGN_LICENSE_KEY}"
-      }
-    }
-  }
+  "registries": {}
 }

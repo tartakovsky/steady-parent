@@ -71,15 +71,11 @@ export function ContentCarousel<TItem extends ContentCarouselItem>({
         longSwipesMs={0}
         longSwipesRatio={0.02}
         shortSwipes={true}
-        // Do not allow "pulling" past edges; this helps avoid Chrome back/forward gestures.
         resistance={false}
         resistanceRatio={0}
-        // Prevent edge swipe from triggering browser navigation.
         edgeSwipeDetection={"prevent"}
         edgeSwipeThreshold={24}
-        // Tight, frame-based snap behavior:
         freeMode={false}
-        // Prevent trackpad wheel from scrolling the page and avoid weird inertia:
         mousewheel={{
           forceToAxis: true,
           releaseOnEdges: false,
@@ -92,13 +88,8 @@ export function ContentCarousel<TItem extends ContentCarouselItem>({
           swiperRef.current = swiper;
         }}
         onTouchEnd={(swiper) => {
-          // Force "any drag commits to next/prev slide" behavior.
-          // Swiper's default thresholds can still snap back on small mouse drags.
           const diff = swiper.touches.diff;
           if (diff === 0) return;
-
-          // Use raw touch diff to decide direction (avoids odd typing/lint issues with swipeDirection).
-          // diff > 0 => user dragged towards the right (go to previous), diff < 0 => next.
           if (diff < 0) {
             if (!swiper.isEnd) swiper.slideNext();
             return;
@@ -142,4 +133,3 @@ export function ContentCarousel<TItem extends ContentCarouselItem>({
     </div>
   );
 }
-

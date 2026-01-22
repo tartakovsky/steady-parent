@@ -19,6 +19,7 @@
 
 .cursor/
 
+tilda_landing/
 
 # debug
 npm-debug.log*

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type, @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/consistent-type-definitions, @typescript-eslint/no-unnecessary-condition, @typescript-eslint/strict-boolean-expressions */
 "use client"
 
 import * as React from "react"
