@@ -6,6 +6,8 @@ import { RecognitionSection } from "@/components/landing/recognition-section";
 import { PossibilitySection } from "@/components/landing/possibility-section";
 import { PromiseSection } from "@/components/landing/promise-section";
 import { ProductReveal } from "@/components/landing/product-reveal";
+import { AuthorityCarousel } from "@/components/landing/authority-carousel";
+import { TestimonialsCarousel } from "@/components/landing/testimonials-carousel";
 import { TrustBadges } from "@/components/landing/trust-badges";
 import { FaqSection } from "@/components/landing/faq-section";
 import { LeadMagnet } from "@/components/landing/lead-magnet";
@@ -20,6 +22,8 @@ export default function HomePage(): React.JSX.Element {
       <PossibilitySection />
       <PromiseSection />
       <ProductReveal />
+      <AuthorityCarousel />
+      <TestimonialsCarousel />
       <TrustBadges />
       <FaqSection />
       <LeadMagnet />

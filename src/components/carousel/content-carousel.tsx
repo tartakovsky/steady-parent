@@ -3,12 +3,8 @@
 import * as React from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Keyboard, Mousewheel, Navigation } from "swiper/modules";
+import { Keyboard, Mousewheel } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
-
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import type { Swiper as SwiperType } from "swiper";
 
 export interface ContentCarouselItem {
@@ -32,36 +28,12 @@ export function ContentCarousel<TItem extends ContentCarouselItem>({
   itemClassName,
   spaceBetween,
 }: ContentCarouselProps<TItem>): React.JSX.Element {
-  const prevRef = React.useRef<HTMLButtonElement | null>(null);
-  const nextRef = React.useRef<HTMLButtonElement | null>(null);
   const swiperRef = React.useRef<SwiperType | null>(null);
-  const [navReady, setNavReady] = React.useState(false);
-
-  React.useEffect(() => {
-    setNavReady(true);
-  }, []);
-
-  React.useEffect(() => {
-    const swiper = swiperRef.current;
-    if (swiper === null) return;
-    if (prevRef.current === null || nextRef.current === null) return;
-
-    swiper.params.navigation = {
-      ...(typeof swiper.params.navigation === "object" ? swiper.params.navigation : {}),
-      prevEl: prevRef.current,
-      nextEl: nextRef.current,
-    };
-    swiper.navigation.init();
-    swiper.navigation.update();
-  }, [navReady]);
 
   return (
-    <div
-      className={cn("relative w-full", className)}
-      style={{ overscrollBehaviorX: "contain" }}
-    >
+    <div className={className}>
       <Swiper
-        modules={[Navigation, Mousewheel, Keyboard]}
+        modules={[Mousewheel, Keyboard]}
         slidesPerView={"auto"}
         spaceBetween={spaceBetween ?? 16}
         speed={260}
@@ -83,7 +55,6 @@ export function ContentCarousel<TItem extends ContentCarouselItem>({
           thresholdDelta: 6,
         }}
         keyboard={{ enabled: true }}
-        navigation={false}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
@@ -98,38 +69,14 @@ export function ContentCarousel<TItem extends ContentCarouselItem>({
             if (!swiper.isBeginning) swiper.slidePrev();
           }
         }}
-        className={cn("w-full overflow-hidden", contentClassName)}
+        className={contentClassName}
       >
         {items.map((item) => (
-          <SwiperSlide
-            key={item.id}
-            className={cn(itemClassName ?? "w-auto")}
-          >
+          <SwiperSlide key={item.id} className={itemClassName}>
             {renderCard(item)}
           </SwiperSlide>
         ))}
       </Swiper>
-
-      <Button
-        ref={prevRef}
-        variant="outline"
-        size="icon"
-        className="absolute left-2 top-1/2 z-10 size-8 -translate-y-1/2 rounded-full"
-        aria-label="Previous"
-        type="button"
-      >
-        ‹
-      </Button>
-      <Button
-        ref={nextRef}
-        variant="outline"
-        size="icon"
-        className="absolute right-2 top-1/2 z-10 size-8 -translate-y-1/2 rounded-full"
-        aria-label="Next"
-        type="button"
-      >
-        ›
-      </Button>
     </div>
   );
 }
