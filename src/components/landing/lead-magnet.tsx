@@ -4,6 +4,27 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
 
+interface LeadMagnetContent {
+  /** Eyebrow text, max 5 words. */
+  eyebrow: string;
+  /** Section title, max 10 words. */
+  title: string;
+  /** Supporting body copy. */
+  body: string;
+  /** Input placeholder text. */
+  inputPlaceholder: string;
+  /** Button label, max 4 words. */
+  buttonLabel: string;
+}
+
+const leadMagnetContent: LeadMagnetContent = {
+  eyebrow: "Free resource",
+  title: "Get the free cheat sheet",
+  body: "Enter your email and get instant access to our exclusive guide.",
+  inputPlaceholder: "Enter your email",
+  buttonLabel: "Get access",
+};
+
 export function LeadMagnet() {
   return (
     <section
@@ -13,12 +34,12 @@ export function LeadMagnet() {
       <div className="mx-auto max-w-xl px-6">
         <div className="flex flex-col items-center gap-8">
           <div className="section-title-gap-lg mx-auto flex max-w-xl flex-col items-center text-center">
-            <Tagline>Free resource</Tagline>
+            <Tagline>{leadMagnetContent.eyebrow}</Tagline>
             <h2 id="lead-magnet-heading" className="heading-lg">
-              Get the free cheat sheet
+              {leadMagnetContent.title}
             </h2>
             <p className="text-muted-foreground text-lg/8 text-pretty">
-              Enter your email and get instant access to our exclusive guide.
+              {leadMagnetContent.body}
             </p>
           </div>
 
@@ -29,7 +50,7 @@ export function LeadMagnet() {
           >
             <Input
               id="lead-email"
-              placeholder="Enter your email"
+              placeholder={leadMagnetContent.inputPlaceholder}
               type="email"
               required
               aria-required="true"
@@ -37,7 +58,7 @@ export function LeadMagnet() {
               className="flex-1"
             />
             <Button type="submit">
-              Get access
+              {leadMagnetContent.buttonLabel}
             </Button>
           </form>
         </div>

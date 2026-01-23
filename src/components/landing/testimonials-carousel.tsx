@@ -13,51 +13,73 @@ type TestimonialMedia =
   | { kind: "image"; src: string; alt: string };
 
 interface TestimonialItem {
+  /** Unique identifier for carousel items. */
   id: string;
-  name: string;
-  role: string;
-  quote: string;
+  /** Card title, max 8 words. */
+  title: string;
+  /** Card subtitle, max 8 words. */
+  subtitle: string;
+  /** Body copy. */
+  body: string;
+  /** Media payload (image or video). */
   media: TestimonialMedia;
 }
 
-const testimonials: readonly TestimonialItem[] = [
-  {
-    id: "reel-1",
-    name: "Arielle M.",
-    role: "Parent of a 6-year-old",
-    quote:
-      "The strategies finally clicked. Our mornings are calmer and our evenings feel connected again.",
-    media: {
-      kind: "video",
-      src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-      poster: "https://ui.shadcn.com/placeholder.svg",
+interface TestimonialsContent {
+  /** Eyebrow text, max 5 words. */
+  eyebrow: string;
+  /** Section title, max 10 words. */
+  title: string;
+  /** Supporting body copy. */
+  body: string;
+  /** Testimonial cards. */
+  cards: readonly TestimonialItem[];
+}
+
+const testimonialsContent: TestimonialsContent = {
+  eyebrow: "Testimonials",
+  title: "Real stories from parents and educators",
+  body:
+    "Swipe through reels and snapshots from people applying the frameworks in everyday moments.",
+  cards: [
+    {
+      id: "reel-1",
+      title: "Arielle M.",
+      subtitle: "Parent of a 6-year-old",
+      body:
+        "The strategies finally clicked. Our mornings are calmer and our evenings feel connected again.",
+      media: {
+        kind: "video",
+        src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+        poster: "https://ui.shadcn.com/placeholder.svg",
+      },
     },
-  },
-  {
-    id: "reel-2",
-    name: "Marcus T.",
-    role: "Elementary educator",
-    quote:
-      "I can see the difference when kids regulate first. The tools are practical and quick to apply.",
-    media: {
-      kind: "video",
-      src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-      poster: "https://ui.shadcn.com/placeholder.svg",
+    {
+      id: "reel-2",
+      title: "Marcus T.",
+      subtitle: "Elementary educator",
+      body:
+        "I can see the difference when kids regulate first. The tools are practical and quick to apply.",
+      media: {
+        kind: "video",
+        src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+        poster: "https://ui.shadcn.com/placeholder.svg",
+      },
     },
-  },
-  {
-    id: "image-1",
-    name: "Sofia R.",
-    role: "Caregiver",
-    quote:
-      "I used to feel stuck in the moment. Now I have a simple sequence I can trust.",
-    media: {
-      kind: "image",
-      src: "https://ui.shadcn.com/placeholder.svg",
-      alt: "Testimonial snapshot",
+    {
+      id: "image-1",
+      title: "Sofia R.",
+      subtitle: "Caregiver",
+      body:
+        "I used to feel stuck in the moment. Now I have a simple sequence I can trust.",
+      media: {
+        kind: "image",
+        src: "https://ui.shadcn.com/placeholder.svg",
+        alt: "Testimonial snapshot",
+      },
     },
-  },
-] as const;
+  ],
+};
 
 function TestimonialVideo({
   src,
@@ -113,18 +135,17 @@ export function TestimonialsCarousel(): React.JSX.Element {
     <section className="bg-background section-padding-y">
       <div className="container-padding-x mx-auto flex max-w-7xl flex-col gap-10">
         <div className="flex flex-col gap-4">
-          <Tagline>Testimonials</Tagline>
+          <Tagline>{testimonialsContent.eyebrow}</Tagline>
           <h2 className="heading-lg text-foreground">
-            Real stories from parents and educators
+            {testimonialsContent.title}
           </h2>
           <p className="text-muted-foreground text-lg/8 text-pretty">
-            Swipe through reels and snapshots from people applying the
-            frameworks in everyday moments.
+            {testimonialsContent.body}
           </p>
         </div>
 
         <ContentCarousel
-          items={testimonials}
+          items={testimonialsContent.cards}
           className="w-full"
           contentClassName="w-full overflow-visible"
           itemClassName="flex-shrink-0 !w-[72vw] sm:!w-[52vw] md:!w-[36vw] lg:!w-[28vw]"
@@ -151,14 +172,14 @@ export function TestimonialsCarousel(): React.JSX.Element {
               </div>
               <div className="flex flex-col gap-2">
                 <p className="text-sm leading-6 text-muted-foreground">
-                  {item.quote}
+                  {item.body}
                 </p>
                 <div>
                   <p className="text-sm font-semibold text-foreground">
-                    {item.name}
+                    {item.title}
                   </p>
                   <p className="text-xs font-medium text-muted-foreground">
-                    {item.role}
+                    {item.subtitle}
                   </p>
                 </div>
               </div>

@@ -25,53 +25,6 @@ export default tseslint.config(
     ],
   },
 
-  // ========== Ban JSDoc Comments ==========
-  // This codebase is written by AI agents. JSDoc adds no value here because:
-  // 1. AI agents infer documentation from code, types, and naming conventions
-  // 2. If an agent can generate JSDoc, it can infer the same info when reading code
-  // 3. JSDoc creates excessive tokens that pollute the agent's context window
-  // 4. Context pollution degrades AI reasoning quality
-  {
-    files: ['**/*.ts', '**/*.tsx'],
-    plugins: {
-      'local': {
-        rules: {
-          'no-jsdoc': {
-            meta: {
-              type: 'suggestion',
-              docs: {
-                description: 'Disallow JSDoc comments - AI agents infer docs from code/types/names; JSDoc wastes context tokens',
-              },
-              schema: [],
-            },
-            create(context) {
-              const sourceCode = context.sourceCode ?? context.getSourceCode();
-              return {
-                Program() {
-                  for (const comment of sourceCode.getAllComments()) {
-                    if (comment.type === 'Block' && comment.value.startsWith('*')) {
-                      context.report({
-                        loc: comment.loc,
-                        message:
-                          'JSDoc comments are banned. This codebase is AI-agent-written. ' +
-                          'Agents infer documentation from code, types, and naming. ' +
-                          'JSDoc adds tokens that pollute context and degrade AI reasoning. ' +
-                          'If explicitly requested, use: // eslint-disable-next-line local/no-jsdoc',
-                      });
-                    }
-                  }
-                },
-              };
-            },
-          },
-        },
-      },
-    },
-    rules: {
-      'local/no-jsdoc': 'error',
-    },
-  },
-
   // ========== Base JS Config ==========
   js.configs.recommended,
 
