@@ -8,78 +8,11 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ContentCarousel } from "@/components/carousel/content-carousel";
 import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
 
-type TestimonialMedia =
-  | { kind: "video"; src: string; poster: string }
-  | { kind: "image"; src: string; alt: string };
+import type { TestimonialsContent } from "@/content/landing/types";
 
-interface TestimonialItem {
-  /** Unique identifier for carousel items. */
-  id: string;
-  /** Card title, max 8 words. */
-  title: string;
-  /** Card subtitle, max 8 words. */
-  subtitle: string;
-  /** Body copy. */
-  body: string;
-  /** Media payload (image or video). */
-  media: TestimonialMedia;
+interface TestimonialsCarouselProps {
+  content: TestimonialsContent;
 }
-
-interface TestimonialsContent {
-  /** Eyebrow text, max 5 words. */
-  eyebrow: string;
-  /** Section title, max 10 words. */
-  title: string;
-  /** Supporting body copy. */
-  body: string;
-  /** Testimonial cards. */
-  cards: readonly TestimonialItem[];
-}
-
-const testimonialsContent: TestimonialsContent = {
-  eyebrow: "Testimonials",
-  title: "Real stories from parents and educators",
-  body:
-    "Swipe through reels and snapshots from people applying the frameworks in everyday moments.",
-  cards: [
-    {
-      id: "reel-1",
-      title: "Arielle M.",
-      subtitle: "Parent of a 6-year-old",
-      body:
-        "The strategies finally clicked. Our mornings are calmer and our evenings feel connected again.",
-      media: {
-        kind: "video",
-        src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-        poster: "https://ui.shadcn.com/placeholder.svg",
-      },
-    },
-    {
-      id: "reel-2",
-      title: "Marcus T.",
-      subtitle: "Elementary educator",
-      body:
-        "I can see the difference when kids regulate first. The tools are practical and quick to apply.",
-      media: {
-        kind: "video",
-        src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-        poster: "https://ui.shadcn.com/placeholder.svg",
-      },
-    },
-    {
-      id: "image-1",
-      title: "Sofia R.",
-      subtitle: "Caregiver",
-      body:
-        "I used to feel stuck in the moment. Now I have a simple sequence I can trust.",
-      media: {
-        kind: "image",
-        src: "https://ui.shadcn.com/placeholder.svg",
-        alt: "Testimonial snapshot",
-      },
-    },
-  ],
-};
 
 function TestimonialVideo({
   src,
@@ -130,22 +63,24 @@ function TestimonialVideo({
   );
 }
 
-export function TestimonialsCarousel(): React.JSX.Element {
+export function TestimonialsCarousel({
+  content,
+}: TestimonialsCarouselProps): React.JSX.Element {
   return (
     <section className="bg-background section-padding-y">
       <div className="container-padding-x mx-auto flex max-w-7xl flex-col gap-10">
         <div className="flex flex-col gap-4">
-          <Tagline>{testimonialsContent.eyebrow}</Tagline>
+          <Tagline>{content.eyebrow}</Tagline>
           <h2 className="heading-lg text-foreground">
-            {testimonialsContent.title}
+            {content.title}
           </h2>
           <p className="text-muted-foreground text-lg/8 text-pretty">
-            {testimonialsContent.body}
+            {content.body}
           </p>
         </div>
 
         <ContentCarousel
-          items={testimonialsContent.cards}
+          items={content.cards}
           className="w-full"
           contentClassName="w-full overflow-visible"
           itemClassName="flex-shrink-0 !w-[72vw] sm:!w-[52vw] md:!w-[36vw] lg:!w-[28vw]"

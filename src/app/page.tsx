@@ -12,21 +12,25 @@ import { TrustBadges } from "@/components/landing/trust-badges";
 import { FaqSection } from "@/components/landing/faq-section";
 import { LeadMagnet } from "@/components/landing/lead-magnet";
 import { Footer1 } from "@/components/pro-blocks/landing-page/footers/footer-1";
+import { landingContent } from "@/content/landing/content";
+import type { LandingContent } from "@/content/landing/content";
 
 export default function HomePage(): React.JSX.Element {
+  const content: LandingContent = landingContent;
+
   return (
     <main className="min-h-dvh">
       <Navbar />
-      <HeroSection />
-      <RecognitionSection />
-      <PossibilitySection />
-      <PromiseSection />
-      <ProductReveal />
-      <AuthorityCarousel />
-      <TestimonialsCarousel />
-      <TrustBadges />
-      <FaqSection />
-      <LeadMagnet />
+      <HeroSection content={content.hero} />
+      <RecognitionSection content={content.recognition} />
+      <PossibilitySection content={content.possibility} />
+      <PromiseSection content={content.promise} />
+      <ProductReveal content={content.product} />
+      <AuthorityCarousel content={content.authority} />
+      <TestimonialsCarousel content={content.testimonials} />
+      <TrustBadges content={content.trustBadges} />
+      <FaqSection content={content.faq} />
+      <LeadMagnet content={content.leadMagnet} />
       <Footer1 />
     </main>
   );

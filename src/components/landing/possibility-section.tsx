@@ -1,27 +1,24 @@
 "use client";
 
-import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
+import type React from "react";
 
-interface PossibilityContent {
-  /** Eyebrow text, max 5 words. */
-  eyebrow: string;
-  /** Section title, max 10 words. */
-  title: string;
+import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
+import type { PossibilityContent } from "@/content/landing/types";
+
+interface PossibilitySectionProps {
+  content: PossibilityContent;
 }
 
-const possibilityContent: PossibilityContent = {
-  eyebrow: "What if...",
-  title: "A powerful statement about the transformed future",
-};
-
-export function PossibilitySection() {
+export function PossibilitySection({
+  content,
+}: PossibilitySectionProps): React.JSX.Element {
   return (
     <section className="bg-background section-padding-y">
       <div className="container-padding-x mx-auto max-w-7xl">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center gap-4">
-          <Tagline>{possibilityContent.eyebrow}</Tagline>
+          <Tagline>{content.eyebrow}</Tagline>
           <h2 className="heading-xl text-foreground">
-            {possibilityContent.title}
+            {content.title}
           </h2>
         </div>
       </div>

@@ -1,48 +1,17 @@
-"use client";
+import type React from "react";
 
-import { Shield, Zap, RotateCcw } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import type { TrustBadgesContent } from "@/content/landing/types";
 
-interface TrustBadgeItem {
-  /** Icon component. */
-  icon: LucideIcon;
-  /** Item title, max 6 words. */
-  title: string;
-  /** Supporting body copy. */
-  body: string;
+interface TrustBadgesProps {
+  content: TrustBadgesContent;
 }
 
-interface TrustBadgesContent {
-  /** List of trust items. */
-  items: readonly TrustBadgeItem[];
-}
-
-const trustBadgesContent: TrustBadgesContent = {
-  items: [
-    {
-      icon: RotateCcw,
-      title: "30-Day Money Back",
-      body: "Not satisfied? Get a full refund within 30 days, no questions asked.",
-    },
-    {
-      icon: Zap,
-      title: "Instant Access",
-      body: "Start learning immediately after purchase with instant digital delivery.",
-    },
-    {
-      icon: Shield,
-      title: "Secure Payment",
-      body: "Your payment is protected with industry-standard encryption.",
-    },
-  ],
-};
-
-export function TrustBadges() {
+export function TrustBadges({ content }: TrustBadgesProps): React.JSX.Element {
   return (
     <section className="bg-background section-padding-y">
       <div className="container-padding-x mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6">
-          {trustBadgesContent.items.map((badge, index) => (
+          {content.items.map((badge, index) => (
             <div
               key={index}
               className="flex flex-col items-center gap-4 text-center"
