@@ -1,5 +1,3 @@
-I’m in Ask mode, so I can’t edit files, but I can draft the course structure and copy direction. Here’s a tight 10‑lesson structure built from your viral topics and the promise themes you listed. Each lesson includes a clear outcome you can later map into “What You Get.”
-
 ## 10‑Lesson Course Structure (7 min audio each)
 1) **Why Gentle Parenting Fails in Real Life**  
    Outcome: Understand why “calm scripts” break under stress and what to do instead.  
@@ -58,3 +56,40 @@ Example:
 ---
 
 If you want, I can now draft the block‑by‑block copy (Hero, Recognition, Possibility, Promise, Product, Authority, Testimonials, FAQ, Lead Magnet, Footer) aligned to this structure.
+
+
+---
+Next iteration, better aligned with what I want
+
+1. Why Gentle Parenting Fails in Real Life
+2. Regulate, Relate, Reason adjusted for real life
+3. Boundaries That Actually Work (Not Doormat, Not Tyrant)
+    1. Why boundaries are good for them and what to do about it
+4. Why They Don’t Listen (And How to Fix It)
+5. How to deal with Backtalk, Lying, and Pushback
+6. Discipline and respect
+7. How to teach them consequences
+    1. How to (not) teach children about consequences
+    2. How (not) to correct a child
+8. Building their self-worth without spoiling them or over-inflating their ego
+    1. Don't say "good job”
+9. How to deal with their big emotions
+    1. How to calm them down
+    2. Why toddlers get mad
+10. What to do when you mess up
+    1. Real reasons why you yell at your kid
+    2. Why do you break down
+    3. What to do about it (and no, it's not just trying harder)
+11. How to keep their trust and love as they grow up
+    1. why they pull away
+    2. What to do if you want them to share more with you
+12. How to raise self-sufficient, resilient, independent thinkers 
+    1. How to not raise people pleasers and doormats
+    2. How to make them think for themselves / have their own opinion / not depend on external validation when they grow up
+    3. How to build grit and mental fortitude
+
+Physical stuff that helps psychology, not only emotional. Each part has mental and physical exercises that help
+
+Each section discusses:
+
+- Typical gentle parenting recommendation, what works in it and what doesn’t. Psychological and physical tools to improve it. 1 optional small psychological and 1 physical excercises you can do in a minute or two that will help you put the lesson into practice

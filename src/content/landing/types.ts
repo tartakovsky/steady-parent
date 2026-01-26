@@ -70,6 +70,35 @@ export interface PromiseContent {
   imageAlt: string;
 }
 
+export interface CurriculumLessonItem {
+  /** Lesson title, max 10 words. */
+  title: string;
+  /** Lesson description. Keep to 1-2 short sentences. */
+  body: string;
+}
+
+export interface CurriculumContent {
+  /** Eyebrow text, max 5 words. */
+  eyebrow: string;
+  /** Section title, max 10 words. */
+  title: string;
+  /** Supporting body copy. */
+  body: string;
+  /** Exactly ten lessons. */
+  lessons: [
+    CurriculumLessonItem,
+    CurriculumLessonItem,
+    CurriculumLessonItem,
+    CurriculumLessonItem,
+    CurriculumLessonItem,
+    CurriculumLessonItem,
+    CurriculumLessonItem,
+    CurriculumLessonItem,
+    CurriculumLessonItem,
+    CurriculumLessonItem,
+  ];
+}
+
 export interface ProductAccordionItem {
   /** Accordion title, max 6 words. */
   title: string;

@@ -9,6 +9,7 @@ import type {
   RecognitionContent,
   PossibilityContent,
   PromiseContent,
+  CurriculumContent,
   ProductContent,
   AuthorityContent,
   TestimonialsContent,
@@ -22,6 +23,7 @@ export interface LandingContent {
   recognition: RecognitionContent;
   possibility: PossibilityContent;
   promise: PromiseContent;
+  curriculum: CurriculumContent;
   product: ProductContent;
   authority: AuthorityContent;
   testimonials: TestimonialsContent;
@@ -84,6 +86,64 @@ export const landingContent: LandingContent = {
     ],
     imageUrl: "https://ui.shadcn.com/placeholder.svg",
     imageAlt: "Course lessons on a phone and laptop",
+  },
+  curriculum: {
+    eyebrow: "Curriculum",
+    title: "Ten lessons you can use today",
+    body:
+      "Each lesson is about 7 minutes of audio plus the written version. Start anywhere, then use the sequence in real moments.",
+    lessons: [
+      {
+        title: "Why gentle parenting fails in real life",
+        body:
+          "Teaches: What gentle parenting gets right, what it gets wrong, and why “just stay calm” is useless advice when your kid is escalating and you’re at your limit. Outcome: You get a reality-based framework that reduces blowups and power struggles without guilt, bribery, or fear.",
+      },
+      {
+        title: "Real reasons you yell (and what to do about it, not “try harder”)",
+        body:
+          "Teaches: The real triggers behind yelling (overload, threat response, resentment, no support, sleep, sensory stress). How to identify your personal “snap point” and build a preloaded script + action that prevents the blowup before it starts. Outcome: Fewer blowups, shorter fights, and a home where you don’t have to be calm all day to be a good parent.",
+      },
+      {
+        title: "How to deal with their big emotions (without letting them run the house)",
+        body:
+          "Teaches: The line between support and surrender, what to do when they’re dysregulated, and what not to do that accidentally rewards escalation. Outcome: Meltdowns shrink over time because your kid feels understood and learns the boundary still stands.",
+      },
+      {
+        title: "Regulate, relate, reason (adjusted for real life)",
+        body:
+          "Teaches: How to use regulation and connection without turning it into a drawn-out therapy session or a reward for bad behavior. Outcome: You stay in charge while staying calm enough to actually be effective.",
+      },
+      {
+        title: "Boundaries that actually work (not doormat, not tyrant)",
+        body:
+          "Teaches: The “missing piece” that makes boundaries stick, what you control, what they control, and how to follow through without escalating. Outcome: You stop caving or overcorrecting, and your home feels more predictable and respectful.",
+      },
+      {
+        title: "Why they don’t listen (and how to fix it)",
+        body:
+          "Teaches: The real reasons “they ignore me” happens (attention, overload, autonomy, incentives, inconsistency) and how to remove the blockers to follow-through. Outcome: You repeat yourself less and they comply faster, with less friction and fewer battles.",
+      },
+      {
+        title: "How to deal with backtalk, lying, and pushback",
+        body:
+          "Teaches: What backtalk, lying, and pushback are actually trying to accomplish for a kid, and how to respond in a way that shuts down the behavior without humiliating them. Outcome: Less disrespect, fewer arguments, and a kid who trusts you enough to tell the truth.",
+      },
+      {
+        title: "How to teach consequences (without punishment)",
+        body:
+          "Teaches: How to stop inventing consequences and start using real-life cause and effect, so discipline isn’t “I’m taking something away,” it’s “this is what happens when.” Outcome: They learn responsibility without resentment, and you stop playing consequence police.",
+      },
+      {
+        title: "Build their self-worth without spoiling them",
+        body:
+          "Teaches: What “healthy self-worth” actually looks like in behavior, and how to talk to kids so they develop grit instead of entitlement. Outcome: A kid who tries, learns, and recovers. More resilience, less people-pleasing, less giving up.",
+      },
+      {
+        title: "Keep their trust and love as they grow up (so they don’t pull away)",
+        body:
+          "Teaches: What makes kids emotionally detach, fear, resentment, distrust, and being tired of you, and what to change so you stop causing that damage. Outcome: Your kid keeps coming back to you and keeps talking to you as they grow. They keep wanting you in their life.",
+      },
+    ],
   },
   product: {
     title: "Text plus audio course on Skool",
