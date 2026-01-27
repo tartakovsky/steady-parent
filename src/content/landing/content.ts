@@ -38,24 +38,25 @@ export const landingContent: LandingContent = {
       label: "Cohort 3",
       detail: "Applications open",
     },
-    title: "Calm big emotions without losing yourself",
+    eyebrow: "If ‘stay calm’ worked, you’d be calm.",
+    title: "The Steady Parent Method",
     body:
-      "Learn a simple, science backed system for steady boundaries and a calmer home. Ten short lessons with audio you can use on the go.",
+      "A system for parenting without losing it. Get:",
     bullets: [
-      "10 lessons with audio",
-      "Skool community access",
-      "Tools for real moments",
+      "Fewer blowups",
+      "Firm boundaries",
+      "A kid who still wants you",
     ],
     primaryCta: {
-      label: "Join waitlist",
+      label: "Apply to join Cohort 3",
       href: "#waitlist",
     },
     secondaryCta: {
       label: "Get free guide",
       href: "#free-guide",
     },
-    imageUrl: "https://ui.shadcn.com/placeholder.svg",
-    imageAlt: "Parent and child practicing calm routines",
+    imageUrl: "/landing/hero/hero.png",
+    imageAlt: "",
   },
   recognition: {
     eyebrow: "Sound familiar?",

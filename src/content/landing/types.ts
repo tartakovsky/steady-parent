@@ -17,6 +17,8 @@ export interface HeroCta {
 export interface HeroContent {
   /** Main eyebrow badge content. */
   badge: HeroBadgeContent;
+  /** Eyebrow text, max 10 words. */
+  eyebrow: string;
   /** Hero headline, max 10 words. */
   title: string;
   /** Supporting body copy. */

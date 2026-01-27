@@ -29,6 +29,24 @@ function splitCurriculumBody(body: string): { content: string; outcome: string }
   return { content: contentText, outcome: outcomeText };
 }
 
+function capitalizeFirstLetter(value: string): string {
+  if (value.length === 0) return value;
+  const first = value[0];
+  if (first === undefined) return value;
+  return first.toUpperCase() + value.slice(1);
+}
+
+function splitLessonTitle(title: string): { title: string; subtitle: string } {
+  const regex = /^(.*?)\s*\(([^)]+)\)\s*$/;
+  const match = regex.exec(title);
+  if (!match) return { title, subtitle: "" };
+
+  return {
+    title: match[1]?.trim() ?? title,
+    subtitle: capitalizeFirstLetter(match[2]?.trim() ?? ""),
+  };
+}
+
 export function CourseCurriculumSection({
   content,
 }: CourseCurriculumSectionProps): React.JSX.Element {
@@ -62,7 +80,28 @@ export function CourseCurriculumSection({
                   value={`lesson-${index + 1}`}
                 >
                   <AccordionTrigger className="text-left">
-                    {index + 1}. {lesson.title}
+                    <div className="flex items-start gap-3">
+                      <span className="text-muted-foreground w-6 shrink-0 text-right tabular-nums">
+                        {index + 1}.
+                      </span>
+                      <span className="flex flex-col">
+                        {(() => {
+                          const { title, subtitle } = splitLessonTitle(lesson.title);
+                          return (
+                            <>
+                              <span className="text-foreground font-medium">
+                                {title}
+                              </span>
+                              {subtitle !== "" ? (
+                                <span className="text-muted-foreground text-sm font-normal">
+                                  {subtitle}
+                                </span>
+                              ) : null}
+                            </>
+                          );
+                        })()}
+                      </span>
+                    </div>
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
                     {(() => {

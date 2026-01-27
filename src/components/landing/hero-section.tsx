@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Check, ArrowUpRight } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
+import { FieldDescription } from "@/components/ui/field";
 import type { HeroContent } from "@/content/landing/types";
 
 interface HeroSectionProps {
@@ -24,14 +25,7 @@ export function HeroSection({ content }: HeroSectionProps): React.JSX.Element {
       <div className="container-padding-x mx-auto flex max-w-7xl flex-col items-center gap-12 lg:flex-row lg:gap-16">
         <div className="flex flex-1 flex-col gap-6 lg:gap-8">
           <div className="section-title-gap-xl flex flex-col">
-            <Tagline variant="link">
-              <span className="size-1.5 rounded-full bg-green-500" />
-              <span className="hidden lg:inline">{content.badge.label} · </span>
-              <span className="lg:text-muted-foreground">
-                {content.badge.detail}
-              </span>
-              <ArrowUpRight />
-            </Tagline>
+            <Tagline>{content.eyebrow}</Tagline>
             <h1 id="hero-heading" className="heading-xl">
               {content.title}
             </h1>
@@ -51,17 +45,13 @@ export function HeroSection({ content }: HeroSectionProps): React.JSX.Element {
               </div>
             ) : null}
           </div>
-          <div className="flex gap-2">
+          <div className="flex w-fit flex-col items-start gap-1.5">
             <Button asChild>
-              <Link href={content.primaryCta.href}>
-                {content.primaryCta.label}
-              </Link>
+              <Link href={content.primaryCta.href}>{content.primaryCta.label}</Link>
             </Button>
-            <Button variant="secondary" asChild>
-              <Link href={content.secondaryCta.href}>
-                {content.secondaryCta.label}
-              </Link>
-            </Button>
+            <FieldDescription className="w-full text-center text-xs leading-tight">
+              Starts March 1st
+            </FieldDescription>
           </div>
         </div>
         {content.imageUrl ? (
