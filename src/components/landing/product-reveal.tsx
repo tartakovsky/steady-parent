@@ -27,7 +27,7 @@ export function ProductReveal({
       <div className="container-padding-x mx-auto max-w-7xl">
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-16">
           {/* Mobile title (above gallery) */}
-          <h2 className="heading-lg w-full text-center text-foreground lg:hidden">
+          <h2 className="heading-lg w-full text-foreground lg:hidden">
             <span className="highlight-primary-skew">{content.title}</span>
           </h2>
 

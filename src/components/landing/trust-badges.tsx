@@ -14,7 +14,7 @@ export function TrustBadges({ content }: TrustBadgesProps): React.JSX.Element {
           {content.items.map((badge, index) => (
             <div
               key={index}
-              className="flex flex-col items-center gap-4 text-center"
+              className="flex flex-col items-start gap-4 text-left"
             >
               <div className="bg-muted flex size-14 items-center justify-center rounded-xl">
                 <badge.icon className="text-primary size-7" />

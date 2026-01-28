@@ -15,7 +15,7 @@ export function PossibilitySection({
   return (
     <section className="bg-primary section-padding-y">
       <div className="container-padding-x mx-auto max-w-7xl">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
+        <div className="mx-auto flex max-w-3xl flex-col gap-4">
           <Tagline className="text-foreground/70">
             {content.eyebrow}
           </Tagline>

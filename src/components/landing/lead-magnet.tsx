@@ -18,8 +18,8 @@ export function LeadMagnet({ content }: LeadMagnetProps): React.JSX.Element {
       aria-labelledby="lead-magnet-heading"
     >
       <div className="mx-auto max-w-xl px-6">
-        <div className="flex flex-col items-center gap-8">
-          <div className="section-title-gap-lg mx-auto flex max-w-xl flex-col items-center text-center">
+        <div className="flex flex-col gap-8">
+          <div className="section-title-gap-lg flex max-w-xl flex-col">
             <Tagline className="text-foreground/70">
               {content.eyebrow}
             </Tagline>

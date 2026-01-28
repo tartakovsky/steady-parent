@@ -55,9 +55,9 @@ export function CourseCurriculumSection({
       className="bg-background section-padding-y"
       aria-labelledby="curriculum-heading"
     >
-      <div className="container-padding-x mx-auto max-w-7xl">
-        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
-          <div className="section-title-gap-lg flex flex-1 flex-col">
+      <div className="container-padding-x mx-auto max-w-3xl">
+        <div className="flex flex-col gap-10">
+          <div className="section-title-gap-lg flex flex-col">
             <Tagline>{content.eyebrow}</Tagline>
             <h2 id="curriculum-heading" className="heading-lg text-foreground">
               {content.title}
@@ -67,7 +67,7 @@ export function CourseCurriculumSection({
             </p>
           </div>
 
-          <div className="flex flex-1 flex-col gap-8">
+          <div className="flex flex-col gap-8">
             <Accordion
               type="single"
               collapsible

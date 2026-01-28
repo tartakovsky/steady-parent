@@ -16,7 +16,7 @@ export function Footer(): React.JSX.Element {
       role="contentinfo"
       aria-label="Site footer"
     >
-      <div className="container-padding-x mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
+      <div className="container-padding-x mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 text-left sm:flex-row">
         <p className="text-white/70">
           <span>Copyright © {new Date().getFullYear()}</span>{" "}
           <Link href="/" className="text-white/80 hover:text-white">
