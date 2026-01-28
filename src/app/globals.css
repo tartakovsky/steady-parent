@@ -154,4 +154,17 @@
   .section-title-gap-lg {
     @apply gap-3 md:gap-4;
   }
+
+  .highlight-primary-skew {
+    @apply relative inline-block px-2 py-1;
+    z-index: 0;
+  }
+
+  .highlight-primary-skew::before {
+    content: "";
+    @apply absolute inset-0 bg-primary;
+    z-index: -1;
+    transform: skewX(-16deg);
+    border-radius: 0.15em;
+  }
 }
