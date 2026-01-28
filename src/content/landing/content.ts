@@ -8,6 +8,7 @@ import type {
   HeroContent,
   RecognitionContent,
   PossibilityContent,
+  SolutionContent,
   PromiseContent,
   CurriculumContent,
   ProductContent,
@@ -22,6 +23,7 @@ export interface LandingContent {
   hero: HeroContent;
   recognition: RecognitionContent;
   possibility: PossibilityContent;
+  solution: SolutionContent;
   promise: PromiseContent;
   curriculum: CurriculumContent;
   product: ProductContent;
@@ -74,6 +76,12 @@ export const landingContent: LandingContent = {
   possibility: {
     eyebrow: "What if",
     title: "Your child calms faster and you stay steady",
+  },
+  solution: {
+    eyebrow: "The method",
+    title: "A simple system you can run under stress",
+    body:
+      "You do not need more willpower. You need a repeatable sequence for the moment, the boundary, and the repair. The Steady Parent Method gives you scripts and steps you can use when everyone is escalated.",
   },
   promise: {
     eyebrow: "What you get",

@@ -57,6 +57,15 @@ export interface PossibilityContent {
   title: string;
 }
 
+export interface SolutionContent {
+  /** Eyebrow text, max 5 words. */
+  eyebrow: string;
+  /** Section title, max 10 words. */
+  title: string;
+  /** Supporting body copy. */
+  body: string;
+}
+
 export interface PromiseContent {
   /** Eyebrow text, max 5 words. */
   eyebrow: string;

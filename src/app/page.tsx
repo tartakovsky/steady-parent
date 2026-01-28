@@ -4,6 +4,7 @@ import { Navbar } from "@/components/landing/navbar";
 import { HeroSection } from "@/components/landing/hero-section";
 import { RecognitionSection } from "@/components/landing/recognition-section";
 import { PossibilitySection } from "@/components/landing/possibility-section";
+import { SolutionSection } from "@/components/landing/solution-section";
 import { CourseCurriculumSection } from "@/components/landing/course-curriculum-section";
 import { ProductReveal } from "@/components/landing/product-reveal";
 import { AuthorityCarousel } from "@/components/landing/authority-carousel";
@@ -24,10 +25,11 @@ export default function HomePage(): React.JSX.Element {
       <HeroSection content={content.hero} />
       <RecognitionSection content={content.recognition} />
       <PossibilitySection content={content.possibility} />
-      <CourseCurriculumSection content={content.curriculum} />
-      <ProductReveal content={content.product} />
+      <SolutionSection content={content.solution} />
       <AuthorityCarousel content={content.authority} />
       <TestimonialsCarousel content={content.testimonials} />
+      <ProductReveal content={content.product} />
+      <CourseCurriculumSection content={content.curriculum} />
       <TrustBadges content={content.trustBadges} />
       <FaqSection content={content.faq} />
       <LeadMagnet content={content.leadMagnet} />
