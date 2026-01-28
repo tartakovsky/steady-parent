@@ -255,7 +255,7 @@ export const landingContent: LandingContent = {
     eyebrow: "Testimonials",
     title: "What parents are saying",
     body:
-      "Swipe through reels and snapshots from people applying the frameworks in everyday moments.",
+      "Swipe through reels and comments from parents using the Steady Parent method in everyday moments.",
     cards: [
       {
         id: "reel-1",

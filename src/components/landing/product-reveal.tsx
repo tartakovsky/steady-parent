@@ -25,7 +25,12 @@ export function ProductReveal({
   return (
     <section className="bg-background pt-8 pb-16">
       <div className="container-padding-x mx-auto max-w-7xl">
-        <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
+        <div className="flex flex-col gap-8 lg:flex-row lg:gap-16">
+          {/* Mobile title (above gallery) */}
+          <h2 className="heading-lg text-foreground lg:hidden">
+            {content.title}
+          </h2>
+
           <ProductImageCarousel1
             images={content.imageUrls}
             productName={content.title}
@@ -35,7 +40,8 @@ export function ProductReveal({
           <div className="flex flex-1 flex-col gap-6 lg:max-w-lg">
             <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-5">
-                <h2 className="text-foreground heading-md">
+                {/* Desktop title (in right column) */}
+                <h2 className="heading-lg text-foreground hidden lg:block">
                   {content.title}
                 </h2>
                 <p className="text-muted-foreground text-base">
