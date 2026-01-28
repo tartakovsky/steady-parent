@@ -7,7 +7,6 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
 import { FieldDescription } from "@/components/ui/field";
 import type { HeroContent } from "@/content/landing/types";
@@ -15,6 +14,9 @@ import type { HeroContent } from "@/content/landing/types";
 interface HeroSectionProps {
   content: HeroContent;
 }
+
+const HERO_IMAGE_WIDTH = 1382;
+const HERO_IMAGE_HEIGHT = 720;
 
 export function HeroSection({ content }: HeroSectionProps): React.JSX.Element {
   return (
@@ -54,17 +56,17 @@ export function HeroSection({ content }: HeroSectionProps): React.JSX.Element {
             </FieldDescription>
           </div>
         </div>
-        {content.imageUrl ? (
+        {typeof content.imageUrl === "string" && content.imageUrl.length > 0 ? (
           <div className="w-full flex-1">
-            <AspectRatio ratio={1 / 1}>
-              <Image
-                src={content.imageUrl}
-                alt={content.imageAlt}
-                fill
-                priority
-                className="h-full w-full rounded-xl object-cover"
-              />
-            </AspectRatio>
+            <Image
+              src={content.imageUrl}
+              alt={content.imageAlt}
+              width={HERO_IMAGE_WIDTH}
+              height={HERO_IMAGE_HEIGHT}
+              priority
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="h-auto w-full rounded-xl object-contain"
+            />
           </div>
         ) : null}
       </div>

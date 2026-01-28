@@ -3,7 +3,6 @@
 import type React from "react";
 
 import { Check } from "lucide-react";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from "next/image";
 import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
 import type { PromiseContent } from "@/content/landing/types";
@@ -11,6 +10,9 @@ import type { PromiseContent } from "@/content/landing/types";
 interface PromiseSectionProps {
   content: PromiseContent;
 }
+
+const SECTION_IMAGE_WIDTH = 1200;
+const SECTION_IMAGE_HEIGHT = 900;
 
 export function PromiseSection({
   content,
@@ -42,16 +44,16 @@ export function PromiseSection({
           </div>
         </div>
 
-        {content.imageUrl ? (
+        {typeof content.imageUrl === "string" && content.imageUrl.length > 0 ? (
           <div className="w-full flex-1">
-            <AspectRatio ratio={1 / 1}>
-              <Image
-                src={content.imageUrl}
-                alt={content.imageAlt}
-                fill
-                className="rounded-xl object-cover"
-              />
-            </AspectRatio>
+            <Image
+              src={content.imageUrl}
+              alt={content.imageAlt}
+              width={SECTION_IMAGE_WIDTH}
+              height={SECTION_IMAGE_HEIGHT}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="h-auto w-full rounded-xl object-contain"
+            />
           </div>
         ) : null}
       </div>
