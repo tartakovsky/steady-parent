@@ -11,7 +11,7 @@ import { TestimonialsCarousel } from "@/components/landing/testimonials-carousel
 import { TrustBadges } from "@/components/landing/trust-badges";
 import { FaqSection } from "@/components/landing/faq-section";
 import { LeadMagnet } from "@/components/landing/lead-magnet";
-import { Footer1 } from "@/components/pro-blocks/landing-page/footers/footer-1";
+import { Footer } from "@/components/landing/footer";
 import { landingContent } from "@/content/landing/content";
 import type { LandingContent } from "@/content/landing/content";
 
@@ -31,7 +31,7 @@ export default function HomePage(): React.JSX.Element {
       <TrustBadges content={content.trustBadges} />
       <FaqSection content={content.faq} />
       <LeadMagnet content={content.leadMagnet} />
-      <Footer1 />
+      <Footer />
     </main>
   );
 }
