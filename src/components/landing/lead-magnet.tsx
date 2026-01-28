@@ -14,24 +14,31 @@ interface LeadMagnetProps {
 export function LeadMagnet({ content }: LeadMagnetProps): React.JSX.Element {
   return (
     <section
-      className="bg-background section-padding-y"
+      className="bg-primary section-padding-y"
       aria-labelledby="lead-magnet-heading"
     >
       <div className="mx-auto max-w-xl px-6">
         <div className="flex flex-col items-center gap-8">
           <div className="section-title-gap-lg mx-auto flex max-w-xl flex-col items-center text-center">
-            <Tagline>{content.eyebrow}</Tagline>
-            <h2 id="lead-magnet-heading" className="heading-lg">
+            <Tagline variant="white" className="text-primary-foreground/80">
+              {content.eyebrow}
+            </Tagline>
+            <h2
+              id="lead-magnet-heading"
+              className="heading-lg text-primary-foreground"
+            >
               {content.title}
             </h2>
-            <p className="text-muted-foreground text-lg/8 text-pretty">
+            <p className="text-primary-foreground/80 text-lg/8 text-pretty">
               {content.body}
             </p>
           </div>
 
           <form
             className="flex w-full max-w-md flex-col gap-3 sm:flex-row"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
             aria-label="Lead magnet signup form"
           >
             <Input
@@ -43,7 +50,7 @@ export function LeadMagnet({ content }: LeadMagnetProps): React.JSX.Element {
               aria-label="Email address"
               className="flex-1"
             />
-            <Button type="submit">
+            <Button type="submit" variant="outline">
               {content.buttonLabel}
             </Button>
           </form>
