@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { Check, ArrowUpRight } from "lucide-react";
+import { Check } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
 import { FieldDescription } from "@/components/ui/field";

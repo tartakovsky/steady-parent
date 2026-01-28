@@ -11,7 +11,7 @@ const taglineVariants = cva(
         default: "bg-background border shadow-xs px-2.5 rounded-md h-7",
         secondary:
           "bg-secondary text-secondary-foreground px-2.5 rounded-md h-7",
-        ghost: "bg-transparent text-muted-foreground capitalize",
+        ghost: "bg-transparent text-muted-foreground normal-case",
         white: "text-white",
         link: "bg-card border rounded-full px-3 py-0 h-7 gap-1.5 hover:bg-accent transition-colors [&_svg]:size-4 shadow-xs cursor-pointer",
       },

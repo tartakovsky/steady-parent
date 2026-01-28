@@ -147,14 +147,14 @@ export const landingContent: LandingContent = {
     ],
   },
   product: {
-    title: "Text plus audio course on Skool",
+    title: "The Steady Parent Course",
     body:
-      "Ten lessons with 11labs narration, community access forever, and live cohort support.",
+      "10 illustrated lessons with narrated audio, plus live cohort support and lifetime community access.",
     priceCurrent: "$99",
     priceOriginal: "$120",
     discountPercent: "-18%",
     buyCta: {
-      label: "Join cohort",
+      label: "Reserve your seat",
       href: "#waitlist",
     },
     imageUrls: [
@@ -169,25 +169,25 @@ export const landingContent: LandingContent = {
       {
         title: "What is inside",
         body:
-          "Ten lessons, each paired with a 7 minute audio narration and practical scripts you can use right away.",
+          "10 illustrated lessons with audio walkthroughs, plus short scripts and 1-minute mental and body practices you can use immediately.",
       },
       {
         title: "Who it is for",
         body:
-          "Parents and caregivers who want calm boundaries, fewer blow ups, and kids who listen without fear.",
+          "Parents and caregivers of kids 3-9 who want calm, firm boundaries without yelling or caving.",
       },
       {
         title: "Cohort timeline",
         body:
-          "Cohort 3 starts March 1. Join the waitlist to get access and reminders.",
+          "Cohort 3 runs Mar 1 to Apr 1. Suggested weekly schedule, do lessons anytime. Get onboarding email and prep checklist right after joining.",
       },
     ],
   },
   authority: {
-    eyebrow: "Authority",
-    title: "Evidence-backed voices guiding the approach",
+    eyebrow: "Evidence-based",
+    title: "Grounded in child development research",
     body:
-      "Learn from the researchers and clinicians whose work shapes how we build emotional regulation in children.",
+      "We studied leading researchers and clinicians, adjusted for realities of life, and turned their insights into a short, actionable system",
     cards: [
       {
         id: "bruce-d-perry",
@@ -253,7 +253,7 @@ export const landingContent: LandingContent = {
   },
   testimonials: {
     eyebrow: "Testimonials",
-    title: "Real stories from parents and educators",
+    title: "What parents are saying",
     body:
       "Swipe through reels and snapshots from people applying the frameworks in everyday moments.",
     cards: [
@@ -299,8 +299,8 @@ export const landingContent: LandingContent = {
     items: [
       {
         icon: RotateCcw,
-        title: "30-Day Money Back",
-        body: "Try it for 30 days. Full refund if it is not right.",
+        title: "Refund until March 7",
+        body: "Full refund until March 7 (a week after the cohort starts). Credit toward the next cohort after. Use the refund form to submit refund requests.",
       },
       {
         icon: Zap,
@@ -310,7 +310,7 @@ export const landingContent: LandingContent = {
       {
         icon: Shield,
         title: "Secure Checkout",
-        body: "Encrypted payments with trusted checkout providers.",
+        body: "Powered by Lemon Squeezy (Stripe). HTTPS encrypted. We never see your card details",
       },
     ],
   },
@@ -351,6 +351,11 @@ export const landingContent: LandingContent = {
             answer: "Yes, community access is included forever.",
           },
           {
+            question: "What is the refund policy?",
+            answer:
+              "Full refund until March 7 (a week after the cohort starts). Credit towards the next cohort after. Use the refund form to submit refund requests.",
+          },
+          {
             question: "Can I join at the member price?",
             answer: "Paid community members get the $69 price automatically.",
           },
@@ -359,10 +364,10 @@ export const landingContent: LandingContent = {
     ],
   },
   leadMagnet: {
-    eyebrow: "Free guide",
-    title: "Get the tantrum reset plan",
-    body: "A short checklist for calm, firm responses in the moment.",
+    eyebrow: "Not ready for a course yet?",
+    title: "Get the Tantrum Reset cheat sheet",
+    body: "A 60-second reset you can use mid-tantrum. What to say, what to do, and what to avoid.",
     inputPlaceholder: "Email address",
-    buttonLabel: "Send guide",
+    buttonLabel: "Send me the sheet",
   },
 };

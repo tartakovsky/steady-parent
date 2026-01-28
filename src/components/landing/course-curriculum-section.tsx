@@ -72,7 +72,6 @@ export function CourseCurriculumSection({
               type="single"
               collapsible
               aria-label="Course lessons"
-              defaultValue="lesson-1"
             >
               {content.lessons.map((lesson, index) => (
                 <AccordionItem
