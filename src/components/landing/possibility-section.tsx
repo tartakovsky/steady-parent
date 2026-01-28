@@ -13,11 +13,13 @@ export function PossibilitySection({
   content,
 }: PossibilitySectionProps): React.JSX.Element {
   return (
-    <section className="bg-background section-padding-y">
+    <section className="bg-primary section-padding-y">
       <div className="container-padding-x mx-auto max-w-7xl">
-        <div className="mx-auto flex max-w-3xl flex-col items-center text-center gap-4">
-          <Tagline>{content.eyebrow}</Tagline>
-          <h2 className="heading-xl text-foreground">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
+          <Tagline variant="white" className="text-primary-foreground/80">
+            {content.eyebrow}
+          </Tagline>
+          <h2 className="heading-xl text-primary-foreground">
             {content.title}
           </h2>
         </div>
