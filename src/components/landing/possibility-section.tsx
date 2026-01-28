@@ -16,10 +16,10 @@ export function PossibilitySection({
     <section className="bg-primary section-padding-y">
       <div className="container-padding-x mx-auto max-w-7xl">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
-          <Tagline variant="white" className="text-primary-foreground/80">
+          <Tagline className="text-foreground/70">
             {content.eyebrow}
           </Tagline>
-          <h2 className="heading-xl text-primary-foreground">
+          <h2 className="heading-xl text-foreground">
             {content.title}
           </h2>
         </div>
