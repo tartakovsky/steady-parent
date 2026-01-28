@@ -7,6 +7,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
 
@@ -51,7 +53,7 @@ export default function ProductImageCarousel1({
 
   return (
     <div className={cn("flex flex-col gap-3", className)}>
-      <Carousel setApi={setMainApi} className="w-full">
+      <Carousel setApi={setMainApi} className="group w-full">
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index}>
@@ -67,6 +69,14 @@ export default function ProductImageCarousel1({
             </CarouselItem>
           ))}
         </CarouselContent>
+        <CarouselPrevious
+          className="bg-background/70 opacity-0 shadow-sm backdrop-blur transition group-hover:opacity-100 focus-visible:opacity-100"
+          aria-label="Previous image"
+        />
+        <CarouselNext
+          className="bg-background/70 opacity-0 shadow-sm backdrop-blur transition group-hover:opacity-100 focus-visible:opacity-100"
+          aria-label="Next image"
+        />
       </Carousel>
 
       <Carousel

@@ -31,6 +31,7 @@ export function AuthorityCarousel({
           contentClassName="w-full overflow-visible"
           itemClassName="flex-shrink-0 !w-[80vw] sm:!w-[60vw] md:!w-[40vw] lg:!w-[33vw]"
           spaceBetween={16}
+          showArrows
           renderCard={(item) => (
             <div className="flex h-full flex-col gap-5 rounded-xl border bg-card p-6 text-card-foreground">
               <div className="flex items-center gap-4">

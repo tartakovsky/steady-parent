@@ -83,6 +83,7 @@ export function TestimonialsCarousel({
           contentClassName="w-full overflow-visible"
           itemClassName="flex-shrink-0 !w-[72vw] sm:!w-[52vw] md:!w-[36vw] lg:!w-[28vw]"
           spaceBetween={16}
+          showArrows
           renderCard={(item) => (
             <div className="flex h-full flex-col gap-4 rounded-xl border bg-card p-4 text-card-foreground">
               <div className="relative overflow-hidden rounded-lg border">
