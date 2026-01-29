@@ -48,9 +48,9 @@ export function LeadMagnet({ content }: LeadMagnetProps): React.JSX.Element {
               required
               aria-required="true"
               aria-label="Email address"
-              className="flex-1"
+              className="h-14 flex-1 text-lg"
             />
-            <Button type="submit" variant="outline">
+            <Button type="submit" variant="outline" size="lg" className="h-14 px-10 text-lg">
               {content.buttonLabel}
             </Button>
           </form>

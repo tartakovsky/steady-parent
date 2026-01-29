@@ -19,7 +19,7 @@ export function PossibilitySection({
           <Tagline className="text-foreground/70">
             {content.eyebrow}
           </Tagline>
-          <h2 className="heading-xl text-foreground">
+          <h2 className="heading-lg text-foreground">
             {content.title}
           </h2>
         </div>
