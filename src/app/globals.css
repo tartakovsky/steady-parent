@@ -121,7 +121,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-lg;
   }
 }
 
@@ -136,15 +136,15 @@
   }
 
   .heading-xl {
-    @apply text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl;
+    @apply text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl;
   }
 
   .heading-lg {
-    @apply text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl;
+    @apply text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl;
   }
 
   .heading-md {
-    @apply text-xl font-bold tracking-tight sm:text-2xl md:text-3xl;
+    @apply text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl;
   }
 
   .section-title-gap-xl {
