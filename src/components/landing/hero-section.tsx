@@ -47,11 +47,11 @@ export function HeroSection({ content }: HeroSectionProps): React.JSX.Element {
               </div>
             ) : null}
           </div>
-          <div className="flex w-fit flex-col items-start gap-1.5">
-            <Button asChild>
+          <div className="flex w-full flex-col items-center gap-2 lg:w-fit lg:flex-row lg:items-center lg:gap-4">
+            <Button asChild size="lg" className="h-14 px-10 text-lg">
               <Link href={content.primaryCta.href}>{content.primaryCta.label}</Link>
             </Button>
-            <FieldDescription className="w-full text-center text-xs leading-tight">
+            <FieldDescription className="text-center text-sm leading-tight">
               Starts March 1st
             </FieldDescription>
           </div>
