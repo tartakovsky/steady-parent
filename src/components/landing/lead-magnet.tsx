@@ -17,9 +17,9 @@ export function LeadMagnet({ content }: LeadMagnetProps): React.JSX.Element {
       className="bg-primary section-padding-y"
       aria-labelledby="lead-magnet-heading"
     >
-      <div className="mx-auto max-w-xl px-6">
+      <div className="container-padding-x mx-auto max-w-4xl">
         <div className="flex flex-col gap-8">
-          <div className="section-title-gap-lg flex max-w-xl flex-col">
+          <div className="section-title-gap-lg flex flex-col">
             <Tagline className="text-foreground/70">
               {content.eyebrow}
             </Tagline>
@@ -35,7 +35,7 @@ export function LeadMagnet({ content }: LeadMagnetProps): React.JSX.Element {
           </div>
 
           <form
-            className="flex w-full max-w-md flex-col gap-3 sm:flex-row"
+            className="flex w-full flex-col gap-3 sm:flex-row"
             onSubmit={(e) => {
               e.preventDefault();
             }}

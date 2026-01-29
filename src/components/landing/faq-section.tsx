@@ -21,7 +21,7 @@ export function FaqSection({ content }: FaqSectionProps): React.JSX.Element {
       className="bg-background section-padding-y"
       aria-labelledby="faq-heading"
     >
-      <div className="container-padding-x mx-auto max-w-3xl">
+      <div className="container-padding-x mx-auto max-w-4xl">
         <div className="flex flex-col gap-10">
           <div className="section-title-gap-lg flex flex-col">
             <Tagline>{content.eyebrow}</Tagline>
