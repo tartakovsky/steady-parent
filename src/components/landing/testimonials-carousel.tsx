@@ -34,16 +34,16 @@ function TestimonialVideo({
         preload="metadata"
         poster={poster}
         src={src}
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
-        onEnded={() => setIsPlaying(false)}
+        onPlay={() => { setIsPlaying(true); }}
+        onPause={() => { setIsPlaying(false); }}
+        onEnded={() => { setIsPlaying(false); }}
       />
       {!isPlaying ? (
         <button
           type="button"
           className="absolute inset-0 flex items-center justify-center"
           onClick={() => {
-            videoRef.current?.play();
+            void videoRef.current?.play();
           }}
           aria-label="Play video"
         >

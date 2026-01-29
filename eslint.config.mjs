@@ -17,9 +17,12 @@ export default tseslint.config(
       'drizzle/**',
       'tests/**/*.js', // Ignore plain JS test files
       'src/components/pro-blocks/**',
+      'src/components/ui/**',
+      'next-env.d.ts',
       // Config files that aren't in tsconfig.json
       'eslint.config.mjs',
       'next.config.js',
+      'next.config.mjs',
       'postcss.config.mjs',
       'vitest.config.ts',
     ],

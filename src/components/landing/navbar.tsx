@@ -1,10 +1,13 @@
 "use client";
 
+import type React from "react";
+import { useState } from "react";
+
+import Link from "next/link";
+
 import { Logo } from "@/components/pro-blocks/e-commerce/examples/shared/logo";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
-import Link from "next/link";
 
 const MENU_ITEMS = [
   { label: "Products", href: "#" },
@@ -18,22 +21,26 @@ interface NavMenuItemsProps {
   className?: string;
 }
 
-const NavMenuItems = ({ className }: NavMenuItemsProps) => (
-  <div className={`flex flex-col gap-1 md:flex-row ${className ?? ""}`}>
-    {MENU_ITEMS.map(({ label, href }) => (
-      <Link key={label} href={href}>
-        <Button variant="ghost" className="w-full md:w-auto">
-          {label}
-        </Button>
-      </Link>
-    ))}
-  </div>
-);
+function NavMenuItems({ className }: NavMenuItemsProps): React.JSX.Element {
+  return (
+    <div className={`flex flex-col gap-1 md:flex-row ${className ?? ""}`}>
+      {MENU_ITEMS.map(({ label, href }) => (
+        <Link key={label} href={href}>
+          <Button variant="ghost" className="w-full md:w-auto">
+            {label}
+          </Button>
+        </Link>
+      ))}
+    </div>
+  );
+}
 
-export function Navbar() {
+export function Navbar(): React.JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+  const toggleMenu = (): void => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
   return (
     <nav className="bg-background sticky top-0 isolate z-50 py-3.5 md:py-4">

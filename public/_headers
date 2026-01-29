@@ -1,0 +1,17 @@
+# Cache static assets aggressively
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache images
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML pages - short cache with revalidation
+/*.html
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
