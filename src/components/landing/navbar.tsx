@@ -9,13 +9,7 @@ import { Logo } from "@/components/pro-blocks/e-commerce/examples/shared/logo";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
-const MENU_ITEMS = [
-  { label: "Products", href: "#" },
-  { label: "Use cases", href: "#" },
-  { label: "Docs", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "FAQ", href: "#" },
-] as const;
+const MENU_ITEMS = [{ label: "Blog", href: "/blog" }] as const;
 
 interface NavMenuItemsProps {
   className?: string;
@@ -62,8 +56,8 @@ export function Navbar(): React.JSX.Element {
         {/* Desktop Navigation */}
         <div className="hidden w-full flex-row justify-end gap-5 md:flex">
           <NavMenuItems />
-          <Link href="#">
-            <Button>Get started</Button>
+          <Link href="#course">
+            <Button>Join Course</Button>
           </Link>
         </div>
 
@@ -71,8 +65,8 @@ export function Navbar(): React.JSX.Element {
         {isMenuOpen && (
           <div className="flex w-full flex-col justify-end gap-5 pb-2.5 md:hidden">
             <NavMenuItems />
-            <Link href="#">
-              <Button className="w-full">Get started</Button>
+            <Link href="#course">
+              <Button className="w-full">Join Course</Button>
             </Link>
           </div>
         )}

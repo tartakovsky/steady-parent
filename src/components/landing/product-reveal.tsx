@@ -23,7 +23,10 @@ export function ProductReveal({
   content,
 }: ProductRevealProps): React.JSX.Element {
   return (
-    <section className="bg-background pt-8 pb-16">
+    <section
+      id="course"
+      className="bg-background scroll-mt-28 pt-8 pb-16 md:scroll-mt-32"
+    >
       <div className="container-padding-x mx-auto max-w-7xl">
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-16">
           {/* Mobile title (above gallery) */}
