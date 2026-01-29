@@ -132,7 +132,7 @@
   }
 
   .container-padding-x {
-    @apply px-4 sm:px-6 lg:px-8;
+    @apply px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40;
   }
 
   .heading-xl {
@@ -156,7 +156,7 @@
   }
 
   .highlight-primary-skew {
-    @apply relative inline-block px-2 py-1;
+    @apply relative inline-block px-8 py-1;
     z-index: 0;
   }
 

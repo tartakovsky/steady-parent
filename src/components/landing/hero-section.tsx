@@ -25,7 +25,7 @@ export function HeroSection({ content }: HeroSectionProps): React.JSX.Element {
       aria-labelledby="hero-heading"
     >
       <div className="container-padding-x mx-auto flex max-w-7xl flex-col items-center gap-12 lg:flex-row lg:gap-16">
-        <div className="flex flex-1 flex-col gap-6 lg:gap-8">
+        <div className="flex w-full max-w-2xl flex-1 flex-col gap-6 lg:max-w-none lg:gap-8">
           <div className="section-title-gap-xl flex flex-col">
             <Tagline>{content.eyebrow}</Tagline>
             <h1 id="hero-heading" className="heading-xl">
@@ -57,7 +57,7 @@ export function HeroSection({ content }: HeroSectionProps): React.JSX.Element {
           </div>
         </div>
         {typeof content.imageUrl === "string" && content.imageUrl.length > 0 ? (
-          <div className="w-full flex-1">
+          <div className="w-full max-w-2xl flex-1 lg:max-w-none">
             <Image
               src={content.imageUrl}
               alt={content.imageAlt}

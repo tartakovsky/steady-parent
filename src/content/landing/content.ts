@@ -97,7 +97,7 @@ export const landingContent: LandingContent = {
     imageAlt: "Course lessons on a phone and laptop",
   },
   curriculum: {
-    eyebrow: "Curriculum",
+    eyebrow: "What's inside",
     title: "Ten lessons you can use today",
     body:
       "Each lesson is about 7 minutes of audio plus the written version. Start anywhere, then use the sequence in real moments.",
@@ -192,7 +192,7 @@ export const landingContent: LandingContent = {
     ],
   },
   authority: {
-    eyebrow: "Evidence-based",
+    eyebrow: "It's evidence-based",
     title: "Grounded in child development research",
     body:
       "We studied leading researchers and clinicians, adjusted for realities of life, and turned their insights into a short, actionable system",
