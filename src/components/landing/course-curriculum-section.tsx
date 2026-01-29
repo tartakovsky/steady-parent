@@ -109,7 +109,7 @@ export function CourseCurriculumSection({
                       );
 
                       return (
-                        <div className="flex flex-col gap-3">
+                        <div className="ml-9 flex flex-col gap-3">
                           <p>
                             <span className="text-foreground font-semibold">
                               Content:
