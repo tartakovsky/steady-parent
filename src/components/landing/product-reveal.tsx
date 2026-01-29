@@ -65,7 +65,7 @@ export function ProductReveal({
                 </Badge>
               </div>
 
-              <Button className="w-full" size="lg" asChild>
+              <Button className="h-14 w-full text-lg" size="lg" asChild>
                 <Link href={content.buyCta.href}>{content.buyCta.label}</Link>
               </Button>
             </div>
