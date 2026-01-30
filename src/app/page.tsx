@@ -27,12 +27,12 @@ export default function HomePage(): React.JSX.Element {
       <RecognitionSection content={content.recognition} />
       <PossibilitySection content={content.possibility} />
       <SolutionSection content={content.solution} />
-      <AuthorityCarousel content={content.authority} />
       <MarqueeTestimonials
         title={content.marqueeTestimonials.title}
         row1={content.marqueeTestimonials.row1}
         row2={content.marqueeTestimonials.row2}
       />
+      <AuthorityCarousel content={content.authority} />
       <TestimonialsCarousel content={content.testimonials} />
       <ProductReveal content={content.product} />
       <CourseCurriculumSection content={content.curriculum} />

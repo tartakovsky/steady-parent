@@ -40,24 +40,20 @@ export function MarqueeTestimonials({
   row2,
 }: MarqueeTestimonialsProps): React.JSX.Element {
   return (
-    <section className="bg-background section-padding-y" aria-label={title}>
+    <section className="bg-background py-8 md:py-10" aria-label={title}>
       <div className="container-padding-x mx-auto max-w-7xl">
-        <div className="flex flex-col gap-8">
-          <h2 className="heading-lg text-foreground">{title}</h2>
+        <div className="flex flex-col gap-4 overflow-hidden">
+          <AutoMarquee direction="left" speed={32} gapClassName="gap-6 pr-6">
+            {row1.map((item) => (
+              <FeedbackCard key={`${item.name}-${item.text}`} item={item} />
+            ))}
+          </AutoMarquee>
 
-          <div className="flex flex-col gap-6 overflow-hidden">
-            <AutoMarquee direction="left" speed={32} gapClassName="gap-6 pr-6">
-              {row1.map((item) => (
-                <FeedbackCard key={`${item.name}-${item.text}`} item={item} />
-              ))}
-            </AutoMarquee>
-
-            <AutoMarquee direction="right" speed={32} gapClassName="gap-6 pr-6">
-              {row2.map((item) => (
-                <FeedbackCard key={`${item.name}-${item.text}`} item={item} />
-              ))}
-            </AutoMarquee>
-          </div>
+          <AutoMarquee direction="right" speed={32} gapClassName="gap-6 pr-6">
+            {row2.map((item) => (
+              <FeedbackCard key={`${item.name}-${item.text}`} item={item} />
+            ))}
+          </AutoMarquee>
         </div>
       </div>
     </section>
