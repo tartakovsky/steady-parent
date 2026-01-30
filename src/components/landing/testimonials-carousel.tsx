@@ -87,15 +87,17 @@ export function TestimonialsCarousel({
 
   return (
     <section className="bg-background section-padding-y">
-      <div className="container-padding-x mx-auto flex max-w-7xl flex-col gap-10">
-        <div className="mx-auto flex w-full max-w-3xl flex-col gap-4">
+      <div className="container-padding-x mx-auto max-w-4xl">
+        <div className="flex flex-col gap-4">
           <Tagline>{content.eyebrow}</Tagline>
           <h2 className="heading-lg text-foreground">{content.title}</h2>
           <p className="text-muted-foreground text-lg/8 text-pretty">
             {content.body}
           </p>
         </div>
+      </div>
 
+      <div className="container-padding-x mx-auto mt-10 max-w-7xl">
         <ContentCarousel
           items={content.cards}
           className="w-full"

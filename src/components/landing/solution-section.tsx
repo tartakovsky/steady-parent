@@ -14,8 +14,8 @@ export function SolutionSection({
 }: SolutionSectionProps): React.JSX.Element {
   return (
     <section className="bg-background section-padding-y">
-      <div className="container-padding-x mx-auto max-w-7xl">
-        <div className="mx-auto flex max-w-3xl flex-col gap-4">
+      <div className="container-padding-x mx-auto max-w-4xl">
+        <div className="flex flex-col gap-4">
           <Tagline>{content.eyebrow}</Tagline>
           <h2 className="heading-lg text-foreground">{content.title}</h2>
           <p className="text-muted-foreground text-lg/8 text-pretty">

@@ -281,10 +281,22 @@ export const landingContent: LandingContent = {
         stars: 5,
       },
       {
+        name: "Jake",
+        eyebrow: "Dad",
+        text: "My parents yelled, and I turned out to be fine. Don't spoil them.",
+        stars: 2,
+      },
+      {
         name: "Tanya",
         eyebrow: "Kindergarten teacher",
         text: "Works when you handle 20 kids.",
         stars: 5,
+      },
+      {
+        name: "Lisa",
+        eyebrow: "Mom of a 13-year-old",
+        text: "Great approach but my kid's a teen now. Wish I found it earlier.",
+        stars: 4,
       },
       {
         name: "Laura",
@@ -302,7 +314,7 @@ export const landingContent: LandingContent = {
         name: "Raj",
         eyebrow: "Father of a 4-year-old son",
         text: "Science, but adapted to life.",
-        stars: 5,
+        stars: 4.5,
       },
       {
         name: "Sarah",
@@ -337,6 +349,12 @@ export const landingContent: LandingContent = {
         stars: 5,
       },
       {
+        name: "Tom",
+        eyebrow: "Dad of an 18-month-old",
+        text: "Solid stuff. Mine's too young for most of it yet.",
+        stars: 4,
+      },
+      {
         name: "DeShawn",
         eyebrow: "After-school program coordinator",
         text: "Use it daily. Kids actually respond.",
@@ -353,6 +371,12 @@ export const landingContent: LandingContent = {
         eyebrow: "Pediatric occupational therapist",
         text: "Aligns with what I tell parents.",
         stars: 5,
+      },
+      {
+        name: "Amber",
+        eyebrow: "Homeschool mom",
+        text: "Solid content. Wish it was on Skool though. (It is now!)",
+        stars: 4.5,
       },
     ],
   },

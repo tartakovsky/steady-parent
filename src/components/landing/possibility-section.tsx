@@ -14,8 +14,8 @@ export function PossibilitySection({
 }: PossibilitySectionProps): React.JSX.Element {
   return (
     <section className="bg-primary section-padding-y">
-      <div className="container-padding-x mx-auto max-w-7xl">
-        <div className="mx-auto flex max-w-3xl flex-col gap-4">
+      <div className="container-padding-x mx-auto max-w-4xl">
+        <div className="flex flex-col gap-4">
           <Tagline className="text-foreground/70">
             {content.eyebrow}
           </Tagline>

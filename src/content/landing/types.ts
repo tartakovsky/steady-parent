@@ -205,8 +205,18 @@ export interface MarqueeTestimonialItem {
   eyebrow: string;
   /** Quote text. */
   text: string;
-  /** Star count (1-5). */
-  stars: 1 | 2 | 3 | 4 | 5;
+  /** Star rating (0.5–5.0 in 0.5 steps). */
+  stars:
+    | 0.5
+    | 1
+    | 1.5
+    | 2
+    | 2.5
+    | 3
+    | 3.5
+    | 4
+    | 4.5
+    | 5;
 }
 
 export interface MarqueeTestimonialsContent {
