@@ -14,6 +14,7 @@ import type {
   ProductContent,
   AuthorityContent,
   TestimonialsContent,
+  MarqueeTestimonialsContent,
   TrustBadgesContent,
   FaqContent,
   LeadMagnetContent,
@@ -38,6 +39,7 @@ export interface LandingContent {
   curriculum: CurriculumContent;
   product: ProductContent;
   authority: AuthorityContent;
+  marqueeTestimonials: MarqueeTestimonialsContent;
   testimonials: TestimonialsContent;
   trustBadges: TrustBadgesContent;
   faq: FaqContent;
@@ -266,6 +268,73 @@ export const landingContent: LandingContent = {
         imageUrl:
           "/landing/authority/tild6430-3366-4265-b531-356564313762__john_bowlby_md.png",
         imageAlt: "John Bowlby",
+      },
+    ],
+  },
+  marqueeTestimonials: {
+    title: "Parents say",
+    row1: [
+      {
+        name: "Jen M.",
+        eyebrow: "Mom of 2",
+        text: "The BEST non-judgey advice.",
+        stars: 5,
+      },
+      {
+        name: "Shameera",
+        eyebrow: "Caregiver",
+        text: "Great course. Totally foolproof.",
+        stars: 5,
+      },
+      {
+        name: "Victoria G.",
+        eyebrow: "Parent",
+        text: "Worked like a charm.",
+        stars: 5,
+      },
+      {
+        name: "Chelsea J.",
+        eyebrow: "Mom of 1",
+        text: "Positive impact in my home within days.",
+        stars: 5,
+      },
+      {
+        name: "Bridget W.",
+        eyebrow: "Parent",
+        text: "So simple and effective.",
+        stars: 5,
+      },
+    ],
+    row2: [
+      {
+        name: "Danielle C.",
+        eyebrow: "Parent",
+        text: "Prepared me so well for real life.",
+        stars: 5,
+      },
+      {
+        name: "Arielle M.",
+        eyebrow: "Parent of a 6-year-old",
+        text: "Less yelling. More connection.",
+        stars: 5,
+      },
+      {
+        name: "Marcus T.",
+        eyebrow: "Elementary educator",
+        text: "I finally know what to do next.",
+        stars: 5,
+      },
+      {
+        name: "Sofia R.",
+        eyebrow: "Caregiver",
+        text: "A simple sequence I can trust.",
+        stars: 5,
+      },
+      {
+        name: "Kara L.",
+        eyebrow: "Mom of 3",
+        text: "Boundaries finally stick.",
+        stars: 5,
       },
     ],
   },

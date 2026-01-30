@@ -9,6 +9,7 @@ import { CourseCurriculumSection } from "@/components/landing/course-curriculum-
 import { ProductReveal } from "@/components/landing/product-reveal";
 import { AuthorityCarousel } from "@/components/landing/authority-carousel";
 import { TestimonialsCarousel } from "@/components/landing/testimonials-carousel";
+import { MarqueeTestimonials } from "@/components/landing/marquee-testimonials";
 import { TrustBadges } from "@/components/landing/trust-badges";
 import { FaqSection } from "@/components/landing/faq-section";
 import { LeadMagnet } from "@/components/landing/lead-magnet";
@@ -27,6 +28,11 @@ export default function HomePage(): React.JSX.Element {
       <PossibilitySection content={content.possibility} />
       <SolutionSection content={content.solution} />
       <AuthorityCarousel content={content.authority} />
+      <MarqueeTestimonials
+        title={content.marqueeTestimonials.title}
+        row1={content.marqueeTestimonials.row1}
+        row2={content.marqueeTestimonials.row2}
+      />
       <TestimonialsCarousel content={content.testimonials} />
       <ProductReveal content={content.product} />
       <CourseCurriculumSection content={content.curriculum} />

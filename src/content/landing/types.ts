@@ -197,6 +197,26 @@ export interface TestimonialsContent {
   cards: readonly TestimonialItem[];
 }
 
+export interface MarqueeTestimonialItem {
+  /** Person name. */
+  name: string;
+  /** Small eyebrow text (e.g. "Parent of 2"). */
+  eyebrow: string;
+  /** Quote text. */
+  text: string;
+  /** Star count (1-5). */
+  stars: 1 | 2 | 3 | 4 | 5;
+}
+
+export interface MarqueeTestimonialsContent {
+  /** Section title. */
+  title: string;
+  /** First row items (scrolls left). */
+  row1: readonly MarqueeTestimonialItem[];
+  /** Second row items (scrolls right). */
+  row2: readonly MarqueeTestimonialItem[];
+}
+
 export interface TrustBadgeItem {
   /** Icon component. */
   icon: LucideIcon;

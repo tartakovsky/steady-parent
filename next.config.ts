@@ -26,4 +26,8 @@ const withMDX = createMDX({
 
 export default withMDX(nextConfig);
 
-void initOpenNextCloudflareForDev();
+// OpenNext's dev shim is only needed when running via Wrangler/OpenNext.
+// Running it during plain `next dev` can break Next's asset pipeline (CSS/JS 404s).
+if (process.env["OPENNEXT_DEV"] === "1") {
+  void initOpenNextCloudflareForDev();
+}
