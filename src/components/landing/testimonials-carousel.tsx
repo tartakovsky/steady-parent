@@ -17,9 +17,11 @@ interface TestimonialsCarouselProps {
 function TestimonialVideo({
   src,
   poster,
+  onRequestExclusivePlay,
 }: {
   src: string;
   poster: string;
+  onRequestExclusivePlay: (current: HTMLVideoElement | null) => void;
 }): React.JSX.Element {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const videoRef = React.useRef<HTMLVideoElement | null>(null);
@@ -35,7 +37,10 @@ function TestimonialVideo({
         loop
         poster={poster}
         src={src}
-        onPlay={() => { setIsPlaying(true); }}
+        onPlay={() => {
+          onRequestExclusivePlay(videoRef.current);
+          setIsPlaying(true);
+        }}
         onPause={() => { setIsPlaying(false); }}
         onEnded={() => { setIsPlaying(false); }}
       />
@@ -44,6 +49,7 @@ function TestimonialVideo({
           type="button"
           className="absolute inset-0 flex items-center justify-center"
           onClick={() => {
+            onRequestExclusivePlay(videoRef.current);
             void videoRef.current?.play();
           }}
           aria-label="Play video"
@@ -67,6 +73,18 @@ function TestimonialVideo({
 export function TestimonialsCarousel({
   content,
 }: TestimonialsCarouselProps): React.JSX.Element {
+  function requestExclusivePlay(current: HTMLVideoElement | null): void {
+    if (!current) return;
+
+    // Pause any other videos on the page so only one plays at a time.
+    // This covers other carousel cards and any future video elements.
+    for (const el of Array.from(document.querySelectorAll("video"))) {
+      if (el !== current) {
+        el.pause();
+      }
+    }
+  }
+
   return (
     <section className="bg-background section-padding-y">
       <div className="container-padding-x mx-auto flex max-w-7xl flex-col gap-10">
@@ -93,6 +111,7 @@ export function TestimonialsCarousel({
                     <TestimonialVideo
                       src={item.media.src}
                       poster={item.media.poster}
+                      onRequestExclusivePlay={requestExclusivePlay}
                     />
                   ) : (
                     <Image

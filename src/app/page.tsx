@@ -1,5 +1,6 @@
 import type React from "react";
 
+import { Banner1 } from "@/components/pro-blocks/landing-page/banners/banner-1";
 import { Navbar } from "@/components/landing/navbar";
 import { HeroSection } from "@/components/landing/hero-section";
 import { RecognitionSection } from "@/components/landing/recognition-section";
@@ -22,6 +23,11 @@ export default function HomePage(): React.JSX.Element {
 
   return (
     <main className="min-h-dvh">
+      <Banner1
+        href="#course"
+        labelBold="Cohort 3"
+        label="Starts March 1 · Join now"
+      />
       <Navbar />
       <HeroSection content={content.hero} />
       <RecognitionSection content={content.recognition} />
