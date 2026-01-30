@@ -1,5 +1,4 @@
 Keisha, Mom of three under 10 "It's about me too, not just kids."
-Mei-Lin, Single mom of a 6-year-old "The body exercises calm me down."
 Tanya, Kindergarten teacher "Works when you handle  20 kids"
 Laura, Nanny for two families "Explains the why, not just how."
 Jason, Divorced dad, shared custody "Short enough for my schedule."
