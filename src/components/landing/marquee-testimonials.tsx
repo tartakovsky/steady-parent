@@ -16,13 +16,11 @@ function FeedbackCard({ item }: { item: MarqueeTestimonialItem }): React.JSX.Ele
 
   return (
     <div className="bg-card text-card-foreground w-[22rem] max-w-[80vw] rounded-[2rem] border px-7 py-6">
-      <div className="flex flex-col gap-0.5">
-        <div className="text-foreground text-sm font-semibold leading-none">
-          {item.name}
-        </div>
-        <div className="text-muted-foreground text-xs font-medium leading-none">
-          {item.eyebrow}
-        </div>
+      <div className="text-foreground text-sm font-semibold leading-none">
+        <span>{item.name}</span>
+        <span className="text-muted-foreground font-medium">
+          {`, ${item.eyebrow}`}
+        </span>
       </div>
       <p className="text-foreground mt-4 text-xl font-semibold leading-snug">
         “{item.text}”
