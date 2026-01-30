@@ -345,39 +345,38 @@ export const landingContent: LandingContent = {
       "Swipe through reels and comments from parents using the Steady Parent method in everyday moments.",
     cards: [
       {
-        id: "reel-1",
-        title: "Arielle M.",
-        subtitle: "Parent of a 6-year-old",
+        id: "steady-parent-feedback-1",
+        title: "Arielle",
+        subtitle: "Parent",
         body:
           "The strategies finally clicked. Our mornings are calmer and our evenings feel connected again.",
         media: {
           kind: "video",
-          src: r2Url("videos/reel-1.mp4"),
-          poster: "https://ui.shadcn.com/placeholder.svg",
+          src: r2Url("steady_parent_feedback_1.mp4"),
+          poster: r2Url("steady_parent_feedback_1_cover.jpeg"),
         },
       },
       {
-        id: "reel-2",
-        title: "Marcus T.",
+        id: "steady-parent-feedback-2",
+        title: "Marcus",
         subtitle: "Elementary educator",
         body:
           "I can see the difference when kids regulate first. The tools are practical and quick to apply.",
         media: {
           kind: "video",
-          src: r2Url("videos/reel-2.mp4"),
-          poster: "https://ui.shadcn.com/placeholder.svg",
+          src: r2Url("steady_parent_feedback_2.mp4"),
+          poster: r2Url("steady_parent_feedback_2_cover.jpeg"),
         },
       },
       {
-        id: "image-1",
-        title: "Sofia R.",
+        id: "steady-parent-feedback-3",
+        title: "Parent",
         subtitle: "Caregiver",
-        body:
-          "I used to feel stuck in the moment. Now I have a simple sequence I can trust.",
+        body: "A short reset that actually works in the moment.",
         media: {
-          kind: "image",
-          src: "https://ui.shadcn.com/placeholder.svg",
-          alt: "Testimonial snapshot",
+          kind: "video",
+          src: r2Url("steady_parent_feedback_3.mp4"),
+          poster: r2Url("steady_parent_feedback_3_cover.jpeg"),
         },
       },
     ],

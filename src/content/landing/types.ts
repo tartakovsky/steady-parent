@@ -170,6 +170,7 @@ export interface AuthorityContent {
 }
 
 export type TestimonialMedia =
+  // `poster` is the preview image shown before playback starts.
   | { kind: "video"; src: string; poster: string }
   | { kind: "image"; src: string; alt: string };
 

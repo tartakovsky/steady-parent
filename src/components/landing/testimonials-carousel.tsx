@@ -32,6 +32,7 @@ function TestimonialVideo({
         controls
         playsInline
         preload="metadata"
+        loop
         poster={poster}
         src={src}
         onPlay={() => { setIsPlaying(true); }}
