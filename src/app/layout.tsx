@@ -3,10 +3,21 @@ import type { ReactNode } from "react";
 
 import "./globals.css";
 
-export default function RootLayout({ children }: { children: ReactNode }): React.JSX.Element {
+import { Navbar } from "@/components/landing/navbar";
+import { Footer } from "@/components/landing/footer";
+
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}): React.JSX.Element {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="min-h-dvh bg-background">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

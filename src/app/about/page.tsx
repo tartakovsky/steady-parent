@@ -1,7 +1,5 @@
 import type React from "react";
 
-import { Navbar } from "@/components/landing/navbar";
-import { Footer } from "@/components/landing/footer";
 import { aboutContent } from "@/content/pages/about/content";
 
 export default async function AboutPage(): Promise<React.JSX.Element> {
@@ -9,8 +7,7 @@ export default async function AboutPage(): Promise<React.JSX.Element> {
   const About = mod.default;
 
   return (
-    <main className="min-h-dvh bg-background">
-      <Navbar />
+    <main>
       <div className="section-padding-y">
         <div className="container-padding-x mx-auto max-w-7xl">
           <article className="mx-auto flex max-w-2xl flex-col gap-8">
@@ -27,7 +24,6 @@ export default async function AboutPage(): Promise<React.JSX.Element> {
           </article>
         </div>
       </div>
-      <Footer />
     </main>
   );
 }

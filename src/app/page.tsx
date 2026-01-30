@@ -1,7 +1,6 @@
 import type React from "react";
 
 import { Banner1 } from "@/components/pro-blocks/landing-page/banners/banner-1";
-import { Navbar } from "@/components/landing/navbar";
 import { HeroSection } from "@/components/landing/hero-section";
 import { RecognitionSection } from "@/components/landing/recognition-section";
 import { PossibilitySection } from "@/components/landing/possibility-section";
@@ -14,7 +13,6 @@ import { MarqueeTestimonials } from "@/components/landing/marquee-testimonials";
 import { TrustBadges } from "@/components/landing/trust-badges";
 import { FaqSection } from "@/components/landing/faq-section";
 import { LeadMagnet } from "@/components/landing/lead-magnet";
-import { Footer } from "@/components/landing/footer";
 import { landingContent } from "@/content/landing/content";
 import type { LandingContent } from "@/content/landing/content";
 
@@ -22,13 +20,12 @@ export default function HomePage(): React.JSX.Element {
   const content: LandingContent = landingContent;
 
   return (
-    <main className="min-h-dvh">
+    <main>
       <Banner1
         href="#course"
         labelBold="Cohort 3"
         label="Starts March 1 · Join now"
       />
-      <Navbar />
       <HeroSection content={content.hero} />
       <RecognitionSection content={content.recognition} />
       <PossibilitySection content={content.possibility} />
@@ -45,7 +42,6 @@ export default function HomePage(): React.JSX.Element {
       <TrustBadges content={content.trustBadges} />
       <FaqSection content={content.faq} />
       <LeadMagnet content={content.leadMagnet} />
-      <Footer />
     </main>
   );
 }

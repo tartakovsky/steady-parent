@@ -1,27 +1,29 @@
 "use client";
 
 import type React from "react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { Logo } from "@/components/pro-blocks/e-commerce/examples/shared/logo";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
-const MENU_ITEMS = [
-  { label: "About us", href: "/about" },
-  { label: "Blog", href: "/blog" },
-] as const;
+interface MenuItem {
+  label: string;
+  href: string;
+}
 
 interface NavMenuItemsProps {
+  items: readonly MenuItem[];
   className?: string;
 }
 
-function NavMenuItems({ className }: NavMenuItemsProps): React.JSX.Element {
+function NavMenuItems({ items, className }: NavMenuItemsProps): React.JSX.Element {
   return (
     <div className={`flex flex-col gap-1 md:flex-row ${className ?? ""}`}>
-      {MENU_ITEMS.map(({ label, href }) => (
+      {items.map(({ label, href }) => (
         <Link key={label} href={href}>
           <Button variant="ghost" className="w-full md:w-auto">
             {label}
@@ -33,11 +35,30 @@ function NavMenuItems({ className }: NavMenuItemsProps): React.JSX.Element {
 }
 
 export function Navbar(): React.JSX.Element {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = (): void => {
     setIsMenuOpen((prev) => !prev);
   };
+
+  const menuItems: readonly MenuItem[] = useMemo(() => {
+    const isHome = pathname === "/";
+    const isAbout = pathname === "/about";
+    const isBlog = pathname === "/blog" || pathname.startsWith("/blog/");
+
+    if (isHome) return [{ label: "About us", href: "/about" }, { label: "Blog", href: "/blog" }];
+    if (isAbout) return [{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }];
+    if (isBlog) return [{ label: "Home", href: "/" }, { label: "About us", href: "/about" }];
+
+    return [
+      { label: "Home", href: "/" },
+      { label: "About us", href: "/about" },
+      { label: "Blog", href: "/blog" },
+    ];
+  }, [pathname]);
+
+  const courseHref: string = pathname === "/" ? "#course" : "/#course";
 
   return (
     <nav className="bg-background sticky top-0 isolate z-50 py-3.5 md:py-4">
@@ -58,8 +79,8 @@ export function Navbar(): React.JSX.Element {
 
         {/* Desktop Navigation */}
         <div className="hidden w-full flex-row justify-end gap-5 md:flex">
-          <NavMenuItems />
-          <Link href="#course">
+          <NavMenuItems items={menuItems} />
+          <Link href={courseHref}>
             <Button>Join Course</Button>
           </Link>
         </div>
@@ -67,8 +88,8 @@ export function Navbar(): React.JSX.Element {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="flex w-full flex-col justify-end gap-5 pb-2.5 md:hidden">
-            <NavMenuItems />
-            <Link href="#course">
+            <NavMenuItems items={menuItems} />
+            <Link href={courseHref}>
               <Button className="w-full">Join Course</Button>
             </Link>
           </div>
