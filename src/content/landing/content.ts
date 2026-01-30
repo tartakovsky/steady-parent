@@ -19,6 +19,16 @@ import type {
   LeadMagnetContent,
 } from "@/content/landing/types";
 
+const R2_PUBLIC_BASE_URL: string | undefined =
+  process.env["NEXT_PUBLIC_R2_PUBLIC_BASE_URL"];
+
+function r2Url(path: string): string {
+  if (typeof R2_PUBLIC_BASE_URL === "string" && R2_PUBLIC_BASE_URL.length > 0) {
+    return `${R2_PUBLIC_BASE_URL.replace(/\/+$/, "")}/${path.replace(/^\/+/, "")}`;
+  }
+  return path;
+}
+
 export interface LandingContent {
   hero: HeroContent;
   recognition: RecognitionContent;
@@ -273,7 +283,7 @@ export const landingContent: LandingContent = {
           "The strategies finally clicked. Our mornings are calmer and our evenings feel connected again.",
         media: {
           kind: "video",
-          src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+          src: r2Url("videos/reel-1.mp4"),
           poster: "https://ui.shadcn.com/placeholder.svg",
         },
       },
@@ -285,7 +295,7 @@ export const landingContent: LandingContent = {
           "I can see the difference when kids regulate first. The tools are practical and quick to apply.",
         media: {
           kind: "video",
-          src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+          src: r2Url("videos/reel-2.mp4"),
           poster: "https://ui.shadcn.com/placeholder.svg",
         },
       },
