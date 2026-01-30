@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 import createMDX from "@next/mdx";
 import remarkGfm from "remark-gfm";
+import { remarkAlert } from "remark-github-blockquote-alert";
+import remarkBreaks from "remark-breaks";
 
 const nextConfig: NextConfig = {
   // Allow MD/MDX to be imported and used as routes/components.
@@ -19,7 +21,10 @@ const nextConfig: NextConfig = {
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [remarkGfm],
+    // `remarkAlert` adds GitHub-style callouts: > [!NOTE], > [!TIP], etc.
+    // `remarkBreaks` makes soft line breaks render as <br />, matching GitHub's behavior
+    // in several contexts and enabling multiline blockquotes without trailing spaces.
+    remarkPlugins: [remarkGfm, remarkAlert, remarkBreaks],
     rehypePlugins: [],
   },
 });

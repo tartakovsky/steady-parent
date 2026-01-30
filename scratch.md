@@ -1,13 +1,14 @@
-https://www.tiktok.com/@dr_annlouise_lockhart
-https://www.tiktok.com/@mindandchild
-https://www.tiktok.com/@the.truth.doctor
-https://www.tiktok.com/@preschooltherapy
-https://www.tiktok.com/@theholisticpsychologist
-https://www.tiktok.com/@drchelsey_parenting
-https://www.tiktok.com/@lackofimpulsecontrol
-https://www.tiktok.com/@drjulie
-https://www.tiktok.com/@ot.lorena
-https://www.tiktok.com/@walkers.therapy
-https://www.tiktok.com/@modern.parenting
-https://www.tiktok.com/@drdeborahparenting
-https://www.tiktok.com/@drbeckyatgoodinside
+Keisha, Mom of three under 10 "It's about me too, not just kids."
+Mei-Lin, Single mom of a 6-year-old "The body exercises calm me down."
+Tanya, Kindergarten teacher "Works when you handle  20 kids"
+Laura, Nanny for two families "Explains the why, not just how."
+Jason, Divorced dad, shared custody "Short enough for my schedule."
+Raj, Father of a 4-year-old son "Science, but adapted to life."
+Sarah, Mom of a 5-year-old "Finally I get why I snap."
+Mei-Lin, Single mom of a 6-year-old "The body exercises calm me down."
+Michelle, Stepmom to a 7-year-old "Helped me stop taking it personal."
+Stephanie, Grandma raising grandson "Wish I had this 30 years ago."
+Nicole, Foster mom "Trauma-aware without being complicated."
+DeShawn, After-school program coordinator "Use it daily. Kids actually respond."
+Elena, Daycare provider "Practical for when you're outnumbered."
+Beth, Pediatric occupational therapist "Aligns with what I tell parents."

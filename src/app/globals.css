@@ -167,4 +167,34 @@
     transform: skewX(-16deg);
     border-radius: 0.15em;
   }
+
+  /* GitHub-style Markdown alerts (via remark-github-blockquote-alert) */
+  .markdown-alert {
+    @apply my-6 rounded-xl border border-border bg-muted/40 px-5 py-4;
+  }
+
+  /* remark-github-blockquote-alert emits the label as the first <p> inside */
+  .markdown-alert > p:first-child {
+    display: none;
+  }
+
+  .markdown-alert-note {
+    @apply border-blue-200/70 bg-blue-50/50;
+  }
+
+  .markdown-alert-tip {
+    @apply border-emerald-200/70 bg-emerald-50/50;
+  }
+
+  .markdown-alert-important {
+    @apply border-violet-200/70 bg-violet-50/50;
+  }
+
+  .markdown-alert-warning {
+    @apply border-amber-200/80 bg-amber-50/60;
+  }
+
+  .markdown-alert-caution {
+    @apply border-red-200/80 bg-red-50/60;
+  }
 }

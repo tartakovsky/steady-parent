@@ -16,6 +16,20 @@ const components: MDXComponents = {
   h2: ({ children }) => <h2 className="heading-lg mt-10">{children}</h2>,
   h3: ({ children }) => <h3 className="heading-md mt-8">{children}</h3>,
   p: ({ children }) => <p className="text-muted-foreground text-lg/8">{children}</p>,
+  blockquote: ({ children }) => (
+    <blockquote className="border-l-4 border-border pl-5 italic text-foreground/90">
+      <div className="text-lg/8 [&_p]:text-foreground/90">{children}</div>
+    </blockquote>
+  ),
+  img: ({ src, alt }) => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={typeof src === "string" ? src : undefined}
+      alt={typeof alt === "string" ? alt : ""}
+      className="my-6 w-full rounded-xl border border-border object-cover"
+      loading="lazy"
+    />
+  ),
   ul: ({ children }) => (
     <ul className="text-muted-foreground list-disc pl-6 text-lg/8">{children}</ul>
   ),

@@ -9,7 +9,10 @@ import { Logo } from "@/components/pro-blocks/e-commerce/examples/shared/logo";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
-const MENU_ITEMS = [{ label: "Blog", href: "/blog" }] as const;
+const MENU_ITEMS = [
+  { label: "About us", href: "/about" },
+  { label: "Blog", href: "/blog" },
+] as const;
 
 interface NavMenuItemsProps {
   className?: string;
