@@ -426,6 +426,30 @@ export const landingContent: LandingContent = {
           poster: r2Url("steady_parent_feedback_3_cover.jpeg"),
         },
       },
+      {
+        id: "sdp-brittany-feedback-blurred",
+        variant: "mediaOnly",
+        title: "Brittany",
+        subtitle: "Feedback screenshot",
+        body: "Feedback screenshot from Brittany.",
+        media: {
+          kind: "image",
+          src: r2Url("sdp_brittany_feedback_blurred.png"),
+          alt: "Blurred feedback screenshot from Brittany",
+        },
+      },
+      {
+        id: "sdp-megan-feedback-blurred",
+        variant: "mediaOnly",
+        title: "Megan",
+        subtitle: "Feedback screenshot",
+        body: "Feedback screenshot from Megan.",
+        media: {
+          kind: "image",
+          src: r2Url("sdp_megan_feedback_blurred.png"),
+          alt: "Blurred feedback screenshot from Megan",
+        },
+      },
     ],
   },
   trustBadges: {

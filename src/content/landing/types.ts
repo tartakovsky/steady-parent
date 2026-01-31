@@ -177,6 +177,12 @@ export type TestimonialMedia =
 export interface TestimonialItem {
   /** Unique identifier for carousel items. */
   id: string;
+  /**
+   * Rendering variant for the testimonials carousel.
+   * - default: media + text
+   * - mediaOnly: media fills the entire card (no text)
+   */
+  variant?: "default" | "mediaOnly";
   /** Card title, max 8 words. */
   title: string;
   /** Card subtitle, max 8 words. */

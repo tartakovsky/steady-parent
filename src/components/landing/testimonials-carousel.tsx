@@ -105,9 +105,20 @@ export function TestimonialsCarousel({
           itemClassName="flex-shrink-0 !w-[72vw] sm:!w-[52vw] md:!w-[36vw] lg:!w-[28vw]"
           spaceBetween={16}
           showArrows
-          renderCard={(item) => (
-            <div className="flex h-full flex-col gap-4 rounded-xl border bg-card p-4 text-card-foreground">
-              <div className="relative overflow-hidden rounded-lg border">
+          renderCard={(item) => {
+            const isMediaOnly = item.variant === "mediaOnly";
+
+            const media =
+              isMediaOnly && item.media.kind === "image" ? (
+                <Image
+                  src={item.media.src}
+                  alt={item.media.alt}
+                  width={984}
+                  height={1680}
+                  className="block h-auto w-full"
+                  sizes="(min-width: 1024px) 28vw, (min-width: 768px) 36vw, (min-width: 640px) 52vw, 72vw"
+                />
+              ) : (
                 <AspectRatio ratio={9 / 16}>
                   {item.media.kind === "video" ? (
                     <TestimonialVideo
@@ -125,22 +136,31 @@ export function TestimonialsCarousel({
                     />
                   )}
                 </AspectRatio>
-              </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-sm leading-6 text-muted-foreground">
-                  {item.body}
-                </p>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">
-                    {item.title}
-                  </p>
-                  <p className="text-xs font-medium text-muted-foreground">
-                    {item.subtitle}
-                  </p>
+              );
+
+            return (
+              <div className="flex h-full flex-col gap-4 rounded-xl border bg-card p-4 text-card-foreground">
+                <div className="relative overflow-hidden rounded-lg border">
+                  {media}
                 </div>
+                {!isMediaOnly ? (
+                  <div className="flex flex-col gap-2">
+                    <p className="text-sm leading-6 text-muted-foreground">
+                      {item.body}
+                    </p>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">
+                        {item.title}
+                      </p>
+                      <p className="text-xs font-medium text-muted-foreground">
+                        {item.subtitle}
+                      </p>
+                    </div>
+                  </div>
+                ) : null}
               </div>
-            </div>
-          )}
+            );
+          }}
         />
       </div>
     </section>
