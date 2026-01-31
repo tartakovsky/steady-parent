@@ -283,7 +283,7 @@ export const landingContent: LandingContent = {
       {
         name: "Jake",
         eyebrow: "Dad",
-        text: "My parents yelled, and I turned out to be fine. Don't spoil them.",
+        text: "My parents yelled, and I turned out fine. Don't spoil them.",
         stars: 2,
       },
       {
@@ -305,16 +305,22 @@ export const landingContent: LandingContent = {
         stars: 5,
       },
       {
+        name: "Raj",
+        eyebrow: "Father of a 4-year-old son",
+        text: "Science, but adapted to life.",
+        stars: 4.5,
+      },
+      {
         name: "Jason",
         eyebrow: "Divorced dad, shared custody",
         text: "Short enough for my schedule.",
         stars: 5,
       },
       {
-        name: "Raj",
-        eyebrow: "Father of a 4-year-old son",
-        text: "Science, but adapted to life.",
-        stars: 4.5,
+        name: "Mary",
+        eyebrow: "Mom of two boys",
+        text: "Kids need discipline, not feelings talks. Soft generation.",
+        stars: 1,
       },
       {
         name: "Sarah",
@@ -337,10 +343,22 @@ export const landingContent: LandingContent = {
         stars: 5,
       },
       {
+        name: "Tom",
+        eyebrow: "Dad of an 18-month-old",
+        text: "Solid stuff. Mine's too young for most of it yet.",
+        stars: 4,
+      },
+      {
         name: "Stephanie",
         eyebrow: "Grandma raising grandson",
         text: "Wish I had this 30 years ago.",
         stars: 5,
+      },
+      {
+        name: "Amber",
+        eyebrow: "Homeschool mom",
+        text: "Solid content. Wish it was on Skool though. (It is now!)",
+        stars: 4.5,
       },
       {
         name: "Nicole",
@@ -349,16 +367,10 @@ export const landingContent: LandingContent = {
         stars: 5,
       },
       {
-        name: "Tom",
-        eyebrow: "Dad of an 18-month-old",
-        text: "Solid stuff. Mine's too young for most of it yet.",
-        stars: 4,
-      },
-      {
-        name: "DeShawn",
-        eyebrow: "After-school program coordinator",
-        text: "Use it daily. Kids actually respond.",
-        stars: 5,
+        name: "Steve",
+        eyebrow: "Dad of a 6-year-old",
+        text: "My kid needs to know who's boss. Not this.",
+        stars: 1,
       },
       {
         name: "Elena",
@@ -371,12 +383,6 @@ export const landingContent: LandingContent = {
         eyebrow: "Pediatric occupational therapist",
         text: "Aligns with what I tell parents.",
         stars: 5,
-      },
-      {
-        name: "Amber",
-        eyebrow: "Homeschool mom",
-        text: "Solid content. Wish it was on Skool though. (It is now!)",
-        stars: 4.5,
       },
     ],
   },

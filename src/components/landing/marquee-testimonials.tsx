@@ -91,13 +91,13 @@ export function MarqueeTestimonials({
     <section className="bg-background py-8 md:py-10" aria-label={title}>
       <div className="container-padding-x mx-auto max-w-7xl">
         <div className="flex flex-col gap-4 overflow-hidden">
-          <AutoMarquee direction="left" speed={32} gapClassName="gap-6 pr-6">
+          <AutoMarquee direction="left" speed={38} gapClassName="gap-6 pr-6">
             {row1.map((item) => (
               <FeedbackCard key={`${item.name}-${item.text}`} item={item} />
             ))}
           </AutoMarquee>
 
-          <AutoMarquee direction="right" speed={32} gapClassName="gap-6 pr-6">
+          <AutoMarquee direction="right" speed={38} gapClassName="gap-6 pr-6">
             {row2.map((item) => (
               <FeedbackCard key={`${item.name}-${item.text}`} item={item} />
             ))}
