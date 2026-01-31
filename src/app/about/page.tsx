@@ -8,7 +8,7 @@ export default async function AboutPage(): Promise<React.JSX.Element> {
 
   return (
     <main>
-      <div className="section-padding-y">
+      <div className="pt-8 pb-12 sm:pt-10 sm:pb-14 md:pt-12 md:pb-16 lg:pt-14 lg:pb-20">
         <div className="container-padding-x mx-auto max-w-4xl">
           <article className="flex flex-col gap-6">
             <About />
