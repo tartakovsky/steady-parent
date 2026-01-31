@@ -9,18 +9,9 @@ export default async function AboutPage(): Promise<React.JSX.Element> {
   return (
     <main>
       <div className="section-padding-y">
-        <div className="container-padding-x mx-auto max-w-7xl">
-          <article className="mx-auto flex max-w-2xl flex-col gap-8">
-            <header className="flex flex-col gap-3">
-              <h1 className="heading-lg text-foreground">{aboutContent.meta.title}</h1>
-              <p className="text-muted-foreground text-lg/8 text-pretty">
-                {aboutContent.meta.description}
-              </p>
-            </header>
-
-            <div className="flex flex-col gap-6">
-              <About />
-            </div>
+        <div className="container-padding-x mx-auto max-w-4xl">
+          <article className="flex flex-col gap-6">
+            <About />
           </article>
         </div>
       </div>

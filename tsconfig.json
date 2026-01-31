@@ -33,7 +33,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     // ========== JSX/React ==========
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     // ========== Build ==========
     "incremental": true,
     "plugins": [

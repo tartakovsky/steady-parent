@@ -1,4 +1,3 @@
-import type React from "react";
 import type { MDXComponents } from "mdx/types";
 
 const components: MDXComponents = {
