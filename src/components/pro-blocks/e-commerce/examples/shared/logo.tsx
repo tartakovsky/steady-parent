@@ -2,7 +2,7 @@ export function Logo({
   className,
 }: {
   className?: string;
-}): JSX.Element {
+}) {
   return (
     <svg
       width="28"
