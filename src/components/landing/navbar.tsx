@@ -1,10 +1,10 @@
 "use client";
 
 import type React from "react";
-import { useCallback, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 import { Logo } from "@/components/pro-blocks/e-commerce/examples/shared/logo";
 import { Button } from "@/components/ui/button";
@@ -36,28 +36,13 @@ function NavMenuItems({ items, className }: NavMenuItemsProps): React.JSX.Elemen
 
 export function Navbar(): React.JSX.Element {
   const pathname = usePathname();
-  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = (): void => {
     setIsMenuOpen((prev) => !prev);
   };
 
-  const scrollToCourse = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>): void => {
-      e.preventDefault();
-      if (pathname === "/") {
-        const element = document.getElementById("course");
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      } else {
-        router.push("/#course");
-      }
-      setIsMenuOpen(false);
-    },
-    [pathname, router]
-  );
+  const courseHref = pathname === "/" ? "#course" : "/#course";
 
   const menuItems: readonly MenuItem[] = useMemo(() => {
     const isHome = pathname === "/";
@@ -95,15 +80,29 @@ export function Navbar(): React.JSX.Element {
         {/* Desktop Navigation */}
         <div className="hidden w-full flex-row justify-end gap-5 md:flex">
           <NavMenuItems items={menuItems} />
-          <Button onClick={scrollToCourse}>Join Course</Button>
+          <Button asChild>
+            {pathname === "/" ? (
+              <a href="#course">Join Course</a>
+            ) : (
+              <Link href="/#course">Join Course</Link>
+            )}
+          </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="flex w-full flex-col justify-end gap-5 pb-2.5 md:hidden">
             <NavMenuItems items={menuItems} />
-            <Button className="w-full" onClick={scrollToCourse}>
-              Join Course
+            <Button asChild className="w-full">
+              {pathname === "/" ? (
+                <a href="#course" onClick={() => setIsMenuOpen(false)}>
+                  Join Course
+                </a>
+              ) : (
+                <Link href="/#course" onClick={() => setIsMenuOpen(false)}>
+                  Join Course
+                </Link>
+              )}
             </Button>
           </div>
         )}

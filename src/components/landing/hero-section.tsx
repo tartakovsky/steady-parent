@@ -1,7 +1,6 @@
 "use client";
 
 import type React from "react";
-import { useCallback } from "react";
 
 import Image from "next/image";
 
@@ -19,18 +18,6 @@ const HERO_IMAGE_WIDTH = 1382;
 const HERO_IMAGE_HEIGHT = 720;
 
 export function HeroSection({ content }: HeroSectionProps): React.JSX.Element {
-  const scrollToSection = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>): void => {
-      e.preventDefault();
-      const targetId = content.primaryCta.href.replace("#", "");
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    },
-    [content.primaryCta.href]
-  );
-
   return (
     <section
       className="bg-background section-padding-y"
@@ -60,8 +47,8 @@ export function HeroSection({ content }: HeroSectionProps): React.JSX.Element {
             ) : null}
           </div>
           <div className="flex w-full flex-col items-center gap-2 lg:w-fit lg:flex-row lg:items-center lg:gap-4">
-            <Button size="lg" className="h-14 px-10 text-lg" onClick={scrollToSection}>
-              {content.primaryCta.label}
+            <Button asChild size="lg" className="h-14 px-10 text-lg">
+              <a href={content.primaryCta.href}>{content.primaryCta.label}</a>
             </Button>
             <FieldDescription className="text-center text-sm leading-tight">
               Starts March 1st

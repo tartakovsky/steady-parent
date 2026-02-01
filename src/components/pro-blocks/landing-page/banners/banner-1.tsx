@@ -20,20 +20,6 @@ export function Banner1({
 }: Banner1Props): React.JSX.Element {
   const [isVisible, setIsVisible] = React.useState(true);
 
-  const handleClick = React.useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>): void => {
-      if (href.startsWith("#")) {
-        e.preventDefault();
-        const targetId = href.replace("#", "");
-        const element = document.getElementById(targetId);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    },
-    [href]
-  );
-
   if (!isVisible) return <></>;
 
   return (
@@ -44,7 +30,6 @@ export function Banner1({
     >
       <a
         href={href}
-        onClick={handleClick}
         className="flex w-full cursor-pointer items-start justify-start gap-2 md:items-center md:justify-center"
         aria-label={label}
       >
