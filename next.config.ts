@@ -1,6 +1,5 @@
 import type { NextConfig } from "next";
 
-import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 import createMDX from "@next/mdx";
 import remarkGfm from "remark-gfm";
 import { remarkAlert } from "remark-github-blockquote-alert";
@@ -10,10 +9,13 @@ const nextConfig: NextConfig = {
   // Allow MD/MDX to be imported and used as routes/components.
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 
-  // Recommended for OpenNext on Cloudflare unless you configure the image binding.
+  // Keep images unoptimized for simpler deployment
   images: {
     unoptimized: true,
   },
+
+  // Required for standalone output on Railway
+  output: "standalone",
 
   // Silence "workspace root" warnings when multiple lockfiles exist elsewhere.
   outputFileTracingRoot: __dirname,
@@ -30,9 +32,3 @@ const withMDX = createMDX({
 });
 
 export default withMDX(nextConfig);
-
-// OpenNext's dev shim is only needed when running via Wrangler/OpenNext.
-// Running it during plain `next dev` can break Next's asset pipeline (CSS/JS 404s).
-if (process.env["OPENNEXT_DEV"] === "1") {
-  void initOpenNextCloudflareForDev();
-}
