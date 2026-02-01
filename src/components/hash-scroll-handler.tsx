@@ -2,17 +2,17 @@
 
 import { useEffect } from "react";
 
-const NAVBAR_HEIGHT = 90;
-
 export function HashScrollHandler(): null {
   useEffect(() => {
     const scrollToHash = (): void => {
       const hash = window.location.hash;
       if (hash) {
         const element = document.querySelector(hash);
-        if (element) {
+        if (element instanceof HTMLElement) {
+          // Use the element's computed scroll-margin-top to match CSS
+          const scrollMargin = parseFloat(getComputedStyle(element).scrollMarginTop) || 0;
           const elementTop = element.getBoundingClientRect().top + window.scrollY;
-          const scrollTarget = elementTop - NAVBAR_HEIGHT;
+          const scrollTarget = elementTop - scrollMargin;
           window.scrollTo({ top: scrollTarget, behavior: "smooth" });
         }
       }
@@ -29,19 +29,16 @@ export function HashScrollHandler(): null {
       });
 
       Promise.all(imagePromises).then(() => {
-        // Additional delay after images load to ensure layout is stable
         setTimeout(scrollToHash, 50);
       });
     };
 
-    // Wait for document to be fully loaded, then wait for images
     if (document.readyState === "complete") {
       waitForImagesAndScroll();
     } else {
       window.addEventListener("load", waitForImagesAndScroll);
     }
 
-    // Also listen for hash changes (for same-page navigation)
     window.addEventListener("hashchange", scrollToHash);
 
     return () => {
