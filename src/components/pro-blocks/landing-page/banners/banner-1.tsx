@@ -4,7 +4,6 @@ import * as React from "react";
 
 import { X, ChevronsRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 interface Banner1Props {
   href: string;
@@ -21,6 +20,20 @@ export function Banner1({
 }: Banner1Props): React.JSX.Element {
   const [isVisible, setIsVisible] = React.useState(true);
 
+  const handleClick = React.useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>): void => {
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        const targetId = href.replace("#", "");
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    },
+    [href]
+  );
+
   if (!isVisible) return <></>;
 
   return (
@@ -29,8 +42,9 @@ export function Banner1({
       aria-label="Promotion announcement"
       className="relative flex items-center bg-neutral-950 py-3 pr-8 pl-6"
     >
-      <Link
+      <a
         href={href}
+        onClick={handleClick}
         className="flex w-full cursor-pointer items-start justify-start gap-2 md:items-center md:justify-center"
         aria-label={label}
       >
@@ -38,7 +52,7 @@ export function Banner1({
           <span className="font-semibold">{labelBold}</span> · {label}
         </p>
         <ChevronsRight className="hidden h-4 w-4 text-white md:block" />
-      </Link>
+      </a>
 
       {dismissible ? (
         <Button
