@@ -3,11 +3,13 @@ import type { MDXComponents } from "mdx/types";
 import { CourseCTA } from "@/components/blog/course-cta";
 import { CommunityCTA } from "@/components/blog/community-cta";
 import { FreebieCTA } from "@/components/blog/freebie-cta";
+import { Callout } from "@/components/blog/callout";
 
 const components: MDXComponents = {
   CourseCTA,
   CommunityCTA,
   FreebieCTA,
+  Callout,
   a: ({ href, children }) => (
     <a
       href={typeof href === "string" ? href : undefined}
