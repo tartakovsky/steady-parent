@@ -450,6 +450,30 @@ export const landingContent: LandingContent = {
           alt: "Blurred feedback screenshot from Megan",
         },
       },
+      {
+        id: "sdp-jennifer-feedback-blurred",
+        variant: "mediaOnly",
+        title: "Jennifer",
+        subtitle: "Feedback screenshot",
+        body: "Feedback screenshot from Jennifer.",
+        media: {
+          kind: "image",
+          src: r2Url("sdp_jennifer_feedback_blurred.png"),
+          alt: "Blurred feedback screenshot from Jennifer",
+        },
+      },
+      {
+        id: "sdp-rachel-feedback-blurred",
+        variant: "mediaOnly",
+        title: "Rachel",
+        subtitle: "Feedback screenshot",
+        body: "Feedback screenshot from Rachel.",
+        media: {
+          kind: "image",
+          src: r2Url("sdp_rachel_feedback_blurred.png"),
+          alt: "Blurred feedback screenshot from Rachel",
+        },
+      },
     ],
   },
   trustBadges: {
