@@ -81,11 +81,7 @@ export function Navbar(): React.JSX.Element {
         <div className="hidden w-full flex-row justify-end gap-5 md:flex">
           <NavMenuItems items={menuItems} />
           <Button asChild>
-            {pathname === "/" ? (
-              <a href="#course">Join Course</a>
-            ) : (
-              <Link href="/#course">Join Course</Link>
-            )}
+            <a href="/#course">Join Course</a>
           </Button>
         </div>
 
@@ -94,15 +90,9 @@ export function Navbar(): React.JSX.Element {
           <div className="flex w-full flex-col justify-end gap-5 pb-2.5 md:hidden">
             <NavMenuItems items={menuItems} />
             <Button asChild className="w-full">
-              {pathname === "/" ? (
-                <a href="#course" onClick={() => setIsMenuOpen(false)}>
-                  Join Course
-                </a>
-              ) : (
-                <Link href="/#course" onClick={() => setIsMenuOpen(false)}>
-                  Join Course
-                </Link>
-              )}
+              <a href="/#course" onClick={() => setIsMenuOpen(false)}>
+                Join Course
+              </a>
             </Button>
           </div>
         )}

@@ -5,7 +5,6 @@ import "./globals.css";
 
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
-import { HashScrollHandler } from "@/components/hash-scroll-handler";
 
 export default function RootLayout({
   children,
@@ -15,7 +14,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-dvh bg-background">
-        <HashScrollHandler />
         <Navbar />
         {children}
         <Footer />
