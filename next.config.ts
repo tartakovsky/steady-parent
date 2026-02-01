@@ -19,6 +19,11 @@ const nextConfig: NextConfig = {
 
   // Silence "workspace root" warnings when multiple lockfiles exist elsewhere.
   outputFileTracingRoot: __dirname,
+
+  // Disable automatic scroll restoration
+  experimental: {
+    scrollRestoration: true,
+  },
 };
 
 const withMDX = createMDX({
