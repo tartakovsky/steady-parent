@@ -25,7 +25,7 @@ export function ProductReveal({
   return (
     <section
       id="course"
-      className="bg-background scroll-mt-28 pt-8 pb-16 md:scroll-mt-32"
+      className="bg-background scroll-mt-16 pt-8 pb-16"
     >
       <div className="container-padding-x mx-auto max-w-7xl">
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-16">
