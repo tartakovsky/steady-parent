@@ -63,7 +63,7 @@ export const landingContent: LandingContent = {
     ],
     primaryCta: {
       label: "Apply to join Cohort 3",
-      href: "#waitlist",
+      href: "#course",
     },
     secondaryCta: {
       label: "Get free guide",
