@@ -42,8 +42,6 @@ export function Navbar(): React.JSX.Element {
     setIsMenuOpen((prev) => !prev);
   };
 
-  const courseHref = pathname === "/" ? "#course" : "/#course";
-
   const menuItems: readonly MenuItem[] = useMemo(() => {
     const isHome = pathname === "/";
     const isAbout = pathname === "/about";
