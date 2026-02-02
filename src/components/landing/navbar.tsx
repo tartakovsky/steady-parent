@@ -62,9 +62,9 @@ export function Navbar(): React.JSX.Element {
     <nav className="bg-background sticky top-0 isolate z-50 py-3.5 md:py-4">
       <div className="relative mx-auto flex max-w-7xl flex-col justify-between gap-4 px-6 md:flex-row md:items-center md:gap-6">
         <div className="flex items-center justify-between">
-          <Link href="/" aria-label="Go to homepage">
+          <a href="/" aria-label="Go to homepage">
             <Logo className="size-7" />
-          </Link>
+          </a>
           <Button
             variant="ghost"
             className="flex size-9 items-center justify-center md:hidden"
