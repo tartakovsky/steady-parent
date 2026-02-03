@@ -1,14 +1,13 @@
 "use client";
 
 import type React from "react";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
 
 interface MenuItem {
   label: string;
@@ -18,6 +17,7 @@ interface MenuItem {
 interface NavMenuItemsProps {
   items: readonly MenuItem[];
   className?: string;
+  onItemClick?: () => void;
 }
 
 const R2_PUBLIC_BASE_URL: string | undefined =
@@ -32,12 +32,20 @@ function r2Url(path: string): string {
 
 const NAV_LOGO_SRC = r2Url("sdp_logo_transparent.png");
 
-function NavMenuItems({ items, className }: NavMenuItemsProps): React.JSX.Element {
+function NavMenuItems({
+  items,
+  className,
+  onItemClick,
+}: NavMenuItemsProps): React.JSX.Element {
   return (
-    <div className={`flex flex-col gap-1 md:flex-row ${className ?? ""}`}>
+    <div className={`flex flex-row items-center gap-1 ${className ?? ""}`}>
       {items.map(({ label, href }) => (
         <Link key={label} href={href}>
-          <Button variant="ghost" className="w-full md:w-auto">
+          <Button
+            variant="ghost"
+            className="h-9 px-3 text-sm md:h-10 md:px-4 md:text-base"
+            onClick={onItemClick}
+          >
             {label}
           </Button>
         </Link>
@@ -48,11 +56,6 @@ function NavMenuItems({ items, className }: NavMenuItemsProps): React.JSX.Elemen
 
 export function Navbar(): React.JSX.Element {
   const pathname = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = (): void => {
-    setIsMenuOpen((prev) => !prev);
-  };
 
   const menuItems: readonly MenuItem[] = useMemo(() => {
     const isHome = pathname === "/";
@@ -72,8 +75,8 @@ export function Navbar(): React.JSX.Element {
 
   return (
     <nav className="bg-background sticky top-0 isolate z-50 h-16 md:h-18">
-      <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-between gap-4 px-6 md:flex-row md:items-center md:gap-6">
-        <div className="flex items-center justify-between">
+      <div className="relative mx-auto flex h-full max-w-7xl items-center justify-between gap-3 px-6">
+        <div className="flex items-center">
           <a href="/" aria-label="Go to homepage">
             <Image
               src={NAV_LOGO_SRC}
@@ -84,35 +87,14 @@ export function Navbar(): React.JSX.Element {
               priority
             />
           </a>
-          <Button
-            variant="ghost"
-            className="flex size-9 items-center justify-center md:hidden"
-            onClick={toggleMenu}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMenuOpen ? <X /> : <Menu />}
-          </Button>
         </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden w-full flex-row justify-end gap-5 md:flex">
+        <div className="flex items-center justify-end gap-2">
           <NavMenuItems items={menuItems} />
-          <Button asChild>
+          <Button asChild className="h-9 px-4 text-sm md:h-10 md:px-5 md:text-base">
             <a href="/#course">Join Course</a>
           </Button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="flex w-full flex-col justify-end gap-5 pb-2.5 md:hidden">
-            <NavMenuItems items={menuItems} />
-            <Button asChild className="w-full">
-              <a href="/#course" onClick={() => setIsMenuOpen(false)}>
-                Join Course
-              </a>
-            </Button>
-          </div>
-        )}
       </div>
     </nav>
   );

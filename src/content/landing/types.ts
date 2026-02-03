@@ -64,6 +64,10 @@ export interface SolutionContent {
   title: string;
   /** Supporting body copy. */
   body: string;
+  /** Optional image URL. */
+  imageUrl?: string;
+  /** Image alt text. */
+  imageAlt: string;
 }
 
 export interface CommunityContent {
@@ -177,6 +181,32 @@ export interface AuthorityCard {
   imageUrl: string;
   /** Avatar alt text. */
   imageAlt: string;
+}
+
+export interface AboutImageItem {
+  /** Unique identifier for carousel items. */
+  id: string;
+  /** Image URL. */
+  imageUrl: string;
+  /** Image alt text. */
+  imageAlt: string;
+}
+
+export interface AboutCarouselContent {
+  /** Eyebrow text, max 5 words. */
+  eyebrow: string;
+  /** Section title, max 10 words. */
+  title: string;
+  /** Supporting body copy. */
+  body: string;
+  /** Supporting paragraph copy. */
+  paragraphs: readonly string[];
+  /** Highlighted quote text. */
+  quote: string;
+  /** CTA button label + destination. */
+  cta: HeroCta;
+  /** About image carousel items. */
+  images: readonly AboutImageItem[];
 }
 
 export interface AuthorityContent {

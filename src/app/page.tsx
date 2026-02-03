@@ -5,6 +5,7 @@ import { HeroSection } from "@/components/landing/hero-section";
 import { RecognitionSection } from "@/components/landing/recognition-section";
 import { PossibilitySection } from "@/components/landing/possibility-section";
 import { SolutionSection } from "@/components/landing/solution-section";
+import { AboutCarouselSection } from "@/components/landing/about-carousel-section";
 import { CommunitySection } from "@/components/landing/community-section";
 import { CourseCurriculumSection } from "@/components/landing/course-curriculum-section";
 import { ProductReveal } from "@/components/landing/product-reveal";
@@ -31,6 +32,7 @@ export default function HomePage(): React.JSX.Element {
       <RecognitionSection content={content.recognition} />
       <PossibilitySection content={content.possibility} />
       <SolutionSection content={content.solution} />
+      <AboutCarouselSection content={content.aboutCarousel} />
       <CommunitySection content={content.community} />
       <MarqueeTestimonials
         title={content.marqueeTestimonials.title}

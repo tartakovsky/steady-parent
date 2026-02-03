@@ -9,6 +9,7 @@ import type {
   CurriculumContent,
   ProductContent,
   AuthorityContent,
+  AboutCarouselContent,
   TestimonialsContent,
   MarqueeTestimonialsContent,
   TrustBadgesContent,
@@ -36,6 +37,7 @@ export interface LandingContent {
   curriculum: CurriculumContent;
   product: ProductContent;
   authority: AuthorityContent;
+  aboutCarousel: AboutCarouselContent;
   marqueeTestimonials: MarqueeTestimonialsContent;
   testimonials: TestimonialsContent;
   trustBadges: TrustBadgesContent;
@@ -66,18 +68,18 @@ export const landingContent: LandingContent = {
       label: "Get free guide",
       href: "#free-guide",
     },
-    imageUrl: "/landing/hero/hero.png",
+    imageUrl: r2Url("sdp_hero_image_tr.png"),
     imageAlt: "",
   },
   recognition: {
-    eyebrow: "Sound familiar?",
+    eyebrow: "Sounds familiar?",
     title: "You know what to do... until your nervous system is done",
     body:
       "You've read the advice. You've saved the reels. You've tried the scripts. And then it's 5:40 PM. Everyone's hungry. They're melting down. \n\nYou ask nicely. They ignore you. You repeat yourself. Nothing. Your tone sharpens. Now everyone's escalated. You yell… and the guilt hits immediately.\n\nYou're not broken. You're trying to use \"calm-parent tools\" while in stress mode.",
     bullets: [
         
     ],
-    imageUrl: "https://ui.shadcn.com/placeholder.svg",
+    imageUrl: r2Url("sdp_sounds_familiar_transparent_image.png"),
     imageAlt: "Parent reflecting after a tough moment",
   },
   possibility: {
@@ -85,10 +87,55 @@ export const landingContent: LandingContent = {
     title: "Your child calms faster and you stay steady",
   },
   solution: {
-    eyebrow: "The method",
+    eyebrow: "The Steady Parent method",
     title: "A simple system you can run under stress",
     body:
       "You do not need more willpower. You need a repeatable sequence for the moment, the boundary, and the repair. The Steady Parent Method gives you scripts and steps you can use when everyone is escalated.",
+    imageUrl: r2Url("sdp_rope_image.png"),
+    imageAlt: "Rope illustration",
+  },
+  aboutCarousel: {
+    eyebrow: "Who we are",
+    title: "We didn't build this to become \"parenting experts.\"",
+    body: "We built it because we needed it.",
+    paragraphs: [
+      "We're Eugene and Anna — tech people in Lisbon who love systems, and parents who are trying to avoid doing to our children same things that messed us up.",
+      "So far, we helped raise Eugene's younger sisters (now 19 and 20), and we're raising our daughter, Alexandra, who is six.",
+      "Between us, we spent a couple of decades digging into adult and child psychology. Therapy, research, and a lot of uncomfortable self-work showed us patterns we wanted to break.",
+    ],
+    quote:
+      "We built the community because this kind of change doesn't happen in isolation. It happens with repetition, support, and a place to bring the hard moments without shame.",
+    cta: {
+      label: "Join the March Start",
+      href: "#course",
+    },
+    images: [
+      {
+        id: "about-home",
+        imageUrl:
+          "https://pub-d3fadb2d999a48daa35d8631993c8d45.r2.dev/at_amu_besh_home.jpg",
+        imageAlt: "Anna, Eugene and Alexandra at home",
+      },
+      {
+        id: "about-lisbon",
+        imageUrl:
+          "https://pub-d3fadb2d999a48daa35d8631993c8d45.r2.dev/et_amu_besh_sisters.jpg",
+        imageAlt: "Anna, Eugene, Alexandra, Sofia and Diana in Lisbon",
+      },
+      {
+        id: "about-budapest",
+        imageUrl:
+          "https://pub-d3fadb2d999a48daa35d8631993c8d45.r2.dev/et_amu_besh_budapest.jpg",
+        imageAlt: "Anna, Eugene and Alexandra during winter in Budapest",
+      },
+      {
+        id: "about-capoeira",
+        imageUrl:
+          "https://pub-d3fadb2d999a48daa35d8631993c8d45.r2.dev/et_amu_besh_capoeira.jpg",
+        imageAlt:
+          "Anna, Eugene and Alexandra on Alexandra's Capoeira belt ceremony",
+      },
+    ],
   },
   community: {
     eyebrow: "It's all about community",
@@ -509,7 +556,7 @@ export const landingContent: LandingContent = {
       {
         icon: r2Url("icon-community.png"),
         title: "Instant access to community",
-        body: "Get access today to the private community\nand our supplementary material today.",
+        body: "Get access to the private community\nand our supplementary material today.",
       },
       {
         icon: r2Url("icon-secure-payment.png"),
