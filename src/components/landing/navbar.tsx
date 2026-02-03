@@ -3,10 +3,10 @@
 import type React from "react";
 import { useMemo, useState } from "react";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { Logo } from "@/components/pro-blocks/e-commerce/examples/shared/logo";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -19,6 +19,18 @@ interface NavMenuItemsProps {
   items: readonly MenuItem[];
   className?: string;
 }
+
+const R2_PUBLIC_BASE_URL: string | undefined =
+  process.env["NEXT_PUBLIC_R2_PUBLIC_BASE_URL"];
+
+function r2Url(path: string): string {
+  if (typeof R2_PUBLIC_BASE_URL === "string" && R2_PUBLIC_BASE_URL.length > 0) {
+    return `${R2_PUBLIC_BASE_URL.replace(/\/+$/, "")}/${path.replace(/^\/+/, "")}`;
+  }
+  return path;
+}
+
+const NAV_LOGO_SRC = r2Url("sdp_logo_transparent.png");
 
 function NavMenuItems({ items, className }: NavMenuItemsProps): React.JSX.Element {
   return (
@@ -59,11 +71,18 @@ export function Navbar(): React.JSX.Element {
   }, [pathname]);
 
   return (
-    <nav className="bg-background sticky top-0 isolate z-50 py-3.5 md:py-4">
-      <div className="relative mx-auto flex max-w-7xl flex-col justify-between gap-4 px-6 md:flex-row md:items-center md:gap-6">
+    <nav className="bg-background sticky top-0 isolate z-50 h-16 md:h-18">
+      <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-between gap-4 px-6 md:flex-row md:items-center md:gap-6">
         <div className="flex items-center justify-between">
           <a href="/" aria-label="Go to homepage">
-            <Logo className="size-7" />
+            <Image
+              src={NAV_LOGO_SRC}
+              alt="Steady Parent logo"
+              width={64}
+              height={64}
+              className="h-14 w-auto object-contain md:h-16"
+              priority
+            />
           </a>
           <Button
             variant="ghost"

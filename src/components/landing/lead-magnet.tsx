@@ -29,7 +29,7 @@ export function LeadMagnet({ content }: LeadMagnetProps): React.JSX.Element {
             >
               {content.title}
             </h2>
-            <p className="text-foreground/70 text-lg/8 text-pretty">
+            <p className="text-foreground/70 text-lg/8 text-pretty whitespace-pre-line">
               {content.body}
             </p>
           </div>

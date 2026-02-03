@@ -28,7 +28,7 @@ export function FaqSection({ content }: FaqSectionProps): React.JSX.Element {
             <h2 id="faq-heading" className="heading-lg text-foreground">
               {content.title}
             </h2>
-            <p className="text-muted-foreground text-lg/8 text-pretty">
+            <p className="text-muted-foreground text-lg/8 text-pretty whitespace-pre-line">
               {content.body}
             </p>
           </div>
@@ -50,7 +50,9 @@ export function FaqSection({ content }: FaqSectionProps): React.JSX.Element {
                       <AccordionTrigger className="text-left">
                         {item.question}
                       </AccordionTrigger>
-                      <AccordionContent>{item.answer}</AccordionContent>
+                      <AccordionContent className="whitespace-pre-line">
+                        {item.answer}
+                      </AccordionContent>
                     </AccordionItem>
                   ))}
                 </Accordion>

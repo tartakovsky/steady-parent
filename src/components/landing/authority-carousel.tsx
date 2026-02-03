@@ -20,7 +20,7 @@ export function AuthorityCarousel({
         <div className="flex flex-col gap-4">
           <Tagline>{content.eyebrow}</Tagline>
           <h2 className="heading-lg text-foreground">{content.title}</h2>
-          <p className="text-muted-foreground text-lg/8 text-pretty">
+          <p className="text-muted-foreground text-lg/8 text-pretty whitespace-pre-line">
             {content.body}
           </p>
         </div>
@@ -55,13 +55,20 @@ export function AuthorityCarousel({
                   </p>
                 </div>
               </div>
-              <p className="text-sm leading-6 text-muted-foreground">
+              <p className="text-sm leading-6 text-muted-foreground whitespace-pre-line">
                 {item.body}
               </p>
             </div>
           )}
         />
       </div>
+      {content.footer.length > 0 ? (
+        <div className="container-padding-x mx-auto mt-6 max-w-4xl">
+          <p className="text-muted-foreground text-sm italic">
+            {content.footer}
+          </p>
+        </div>
+      ) : null}
     </section>
   );
 }

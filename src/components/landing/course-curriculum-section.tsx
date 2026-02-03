@@ -62,15 +62,15 @@ export function CourseCurriculumSection({
             <h2 id="curriculum-heading" className="heading-lg text-foreground">
               {content.title}
             </h2>
-            <p className="text-muted-foreground text-lg/8 text-pretty">
+            <p className="text-muted-foreground text-lg/8 text-pretty whitespace-pre-line">
               {content.body}
             </p>
           </div>
 
           <div className="flex flex-col gap-8">
             <Accordion
-              type="single"
-              collapsible
+              type="multiple"
+              value={content.lessons.map((_, index) => `lesson-${index + 1}`)}
               aria-label="Course lessons"
             >
               {content.lessons.map((lesson, index) => (
@@ -78,7 +78,10 @@ export function CourseCurriculumSection({
                   key={`${lesson.title}-${index}`}
                   value={`lesson-${index + 1}`}
                 >
-                  <AccordionTrigger className="text-left">
+                  <AccordionTrigger
+                    disabled
+                    className="text-left cursor-default hover:no-underline [&>svg]:hidden"
+                  >
                     <div className="flex items-start gap-3">
                       <span className="text-muted-foreground w-6 shrink-0 text-right tabular-nums">
                         {index + 1}.
@@ -110,13 +113,13 @@ export function CourseCurriculumSection({
 
                       return (
                         <div className="ml-9 flex flex-col gap-3">
-                          <p>
+                          <p className="whitespace-pre-line">
                             <span className="text-foreground font-semibold">
                               Content:
                             </span>{" "}
                             {contentText}
                           </p>
-                          <p>
+                          <p className="whitespace-pre-line">
                             <span className="text-foreground font-semibold">
                               Outcome:
                             </span>{" "}

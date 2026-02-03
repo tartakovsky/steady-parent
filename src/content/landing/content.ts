@@ -1,14 +1,10 @@
-import {
-  Shield,
-  Zap,
-  RotateCcw,
-} from "lucide-react";
 
 import type {
   HeroContent,
   RecognitionContent,
   PossibilityContent,
   SolutionContent,
+  CommunityContent,
   PromiseContent,
   CurriculumContent,
   ProductContent,
@@ -35,6 +31,7 @@ export interface LandingContent {
   recognition: RecognitionContent;
   possibility: PossibilityContent;
   solution: SolutionContent;
+  community: CommunityContent;
   promise: PromiseContent;
   curriculum: CurriculumContent;
   product: ProductContent;
@@ -55,7 +52,7 @@ export const landingContent: LandingContent = {
     eyebrow: "If ‘stay calm’ worked, you’d be calm.",
     title: "The Steady Parent Method",
     body:
-      "A system for parenting without losing it. Get:",
+      "A system for parenting without losing it. For parents of 3–9 year-olds who tried \"gentle parenting\" and still ended up yelling. \n\nJoin the course and get access to our private community of like-minded, highly engaged parents. We're also there for you personally, striving to answer all of your comments, each day, every day. \n\n[Join the course to get:]",
     bullets: [
       "Fewer blowups",
       "Firm boundaries",
@@ -74,13 +71,11 @@ export const landingContent: LandingContent = {
   },
   recognition: {
     eyebrow: "Sound familiar?",
-    title: "You know what to do, then it falls apart",
+    title: "You know what to do... until your nervous system is done",
     body:
-      "You try to stay calm, then the yelling starts and the guilt hits. You are not broken. You just need a system that works under stress.",
+      "You've read the advice. You've saved the reels. You've tried the scripts. And then it's 5:40 PM. Everyone's hungry. They're melting down. \n\nYou ask nicely. They ignore you. You repeat yourself. Nothing. Your tone sharpens. Now everyone's escalated. You yell… and the guilt hits immediately.\n\nYou're not broken. You're trying to use \"calm-parent tools\" while in stress mode.",
     bullets: [
-      "Yelling when you are tired",
-      "Kids ignore requests",
-      "Boundaries do not stick",
+        
     ],
     imageUrl: "https://ui.shadcn.com/placeholder.svg",
     imageAlt: "Parent reflecting after a tough moment",
@@ -94,6 +89,32 @@ export const landingContent: LandingContent = {
     title: "A simple system you can run under stress",
     body:
       "You do not need more willpower. You need a repeatable sequence for the moment, the boundary, and the repair. The Steady Parent Method gives you scripts and steps you can use when everyone is escalated.",
+  },
+  community: {
+    eyebrow: "It's all about community",
+    title: "You don't need more parenting info. You need backup.",
+    body:
+      "Most parents aren't failing because they don't know what to do. They're failing because they're trying to do it alone, mid-meltdown, with nobody to reality-check them.\n\nThis is why the community exists.\n\nThis isn't school. No grades. No pressure. No \"keep up or fall behind.\" Just a private place to get help, reset your nervous system, and try again. Without shame.",
+    leftListTitle: "What you'll use it for",
+    leftListItems: [
+      "What do I do when they refuse bedtime and keep leaving the room?",
+      "What do I say when they hit me and laugh?",
+      "How do I set limits without turning it into a 30-minute lecture?",
+      "How do I repair after I yelled?",
+    ],
+    rightListTitle: "What it gives you",
+    rightListItems: [
+      "Real-life troubleshooting (apply the sequence to your exact moment)",
+      "Shame relief (you stop thinking you're the only one)",
+      "Follow-through (momentum without relying on motivation)",
+      "Faster repair (you recover sooner, and cleaner)",
+    ],
+    footer:
+      "Hosted inside Skool (private, searchable, organized by real situations). Lifetime access.",
+    cta: {
+      label: "Join the March Start",
+      href: "#course",
+    },
   },
   promise: {
     eyebrow: "What you get",
@@ -205,9 +226,9 @@ export const landingContent: LandingContent = {
   },
   authority: {
     eyebrow: "It's evidence-based",
-    title: "Grounded in child development research",
+    title: "Grounded in research. Adapted for real life.",
     body:
-      "We studied leading researchers and clinicians, adjusted for realities of life, and turned their insights into a short, actionable system",
+      "We studied leading researchers and clinicians, adjusted for realities of life, and turned their insights into a short, actionable system you can use daily.",
     cards: [
       {
         id: "bruce-d-perry",
@@ -270,6 +291,8 @@ export const landingContent: LandingContent = {
         imageAlt: "John Bowlby",
       },
     ],
+    footer:
+      "Disclaimer: These researchers developed the science underlying our methods. We are not affiliated with or endorsed by them.",
   },
   marqueeTestimonials: {
     title: "Parents say",
@@ -388,7 +411,7 @@ export const landingContent: LandingContent = {
   },
   testimonials: {
     eyebrow: "Testimonials",
-    title: "What parents are saying",
+    title: "What parents say after they try it",
     body:
       "Swipe through reels and comments from parents using the Steady Parent method in everyday moments.",
     cards: [
@@ -479,19 +502,19 @@ export const landingContent: LandingContent = {
   trustBadges: {
     items: [
       {
-        icon: RotateCcw,
-        title: "Refund until March 7",
-        body: "Full refund until March 7 (a week after the cohort starts). Credit toward the next cohort after. Use the refund form to submit refund requests.",
+        icon: r2Url("icon-moneyback.png"),
+        title: "Full refund",
+        body: "If you didn't like it – you don't pay. \nFull refund any time before the course ends. \nUse the refund form to submit refund requests.",
       },
       {
-        icon: Zap,
-        title: "Instant Access",
-        body: "Start learning right away with immediate digital access.",
+        icon: r2Url("icon-community.png"),
+        title: "Instant access to community",
+        body: "Get access today to the private community\nand our supplementary material today.",
       },
       {
-        icon: Shield,
+        icon: r2Url("icon-secure-payment.png"),
         title: "Secure Checkout",
-        body: "Powered by Lemon Squeezy (Stripe). HTTPS encrypted. We never see your card details",
+        body: "Processed by Lemon Squeezy (powered by Stripe). \nHTTPS encrypted. \nWe never see your card details",
       },
     ],
   },
@@ -534,7 +557,7 @@ export const landingContent: LandingContent = {
           {
             question: "What is the refund policy?",
             answer:
-              "Full refund until March 7 (a week after the cohort starts). Credit towards the next cohort after. Use the refund form to submit refund requests.",
+              "If you didn't like it – you don't pay. Full refund at any time before the course ends.",
           },
           {
             question: "Can I join at the member price?",

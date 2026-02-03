@@ -18,7 +18,7 @@ export function SolutionSection({
         <div className="flex flex-col gap-4">
           <Tagline>{content.eyebrow}</Tagline>
           <h2 className="heading-lg text-foreground">{content.title}</h2>
-          <p className="text-muted-foreground text-lg/8 text-pretty">
+          <p className="text-muted-foreground text-lg/8 text-pretty whitespace-pre-line">
             {content.body}
           </p>
         </div>

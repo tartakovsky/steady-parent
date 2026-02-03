@@ -66,6 +66,27 @@ export interface SolutionContent {
   body: string;
 }
 
+export interface CommunityContent {
+  /** Eyebrow text, max 5 words. */
+  eyebrow: string;
+  /** Section title, max 10 words. */
+  title: string;
+  /** Supporting body copy. */
+  body: string;
+  /** Left list title. */
+  leftListTitle: string;
+  /** Left list items. */
+  leftListItems: readonly string[];
+  /** Right list title. */
+  rightListTitle: string;
+  /** Right list items. */
+  rightListItems: readonly string[];
+  /** Footer supporting text. */
+  footer: string;
+  /** CTA button label + destination. */
+  cta: HeroCta;
+}
+
 export interface PromiseContent {
   /** Eyebrow text, max 5 words. */
   eyebrow: string;
@@ -167,6 +188,8 @@ export interface AuthorityContent {
   body: string;
   /** List of authority cards. */
   cards: readonly AuthorityCard[];
+  /** Footer disclaimer text. */
+  footer: string;
 }
 
 export type TestimonialMedia =
@@ -235,8 +258,8 @@ export interface MarqueeTestimonialsContent {
 }
 
 export interface TrustBadgeItem {
-  /** Icon component. */
-  icon: LucideIcon;
+  /** Icon component or URL. */
+  icon: LucideIcon | string;
   /** Item title, max 6 words. */
   title: string;
   /** Supporting body copy. */

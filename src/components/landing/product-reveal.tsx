@@ -7,12 +7,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ProductImageCarousel1 from "@/components/pro-blocks/e-commerce/product-image-carousel-1";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import type { ProductContent } from "@/content/landing/types";
 
 interface ProductRevealProps {
@@ -47,9 +41,21 @@ export function ProductReveal({
                 <h2 className="heading-lg text-foreground hidden lg:block">
                   <span className="highlight-primary-skew">{content.title}</span>
                 </h2>
-                <p className="text-muted-foreground text-base">
+                <p className="text-muted-foreground text-base whitespace-pre-line">
                   {content.body}
                 </p>
+                <div className="flex flex-col gap-4">
+                  {content.accordions.map((item) => (
+                    <div key={item.title} className="flex flex-col gap-1">
+                      <h3 className="text-foreground text-sm font-semibold">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm whitespace-pre-line">
+                        {item.body}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -73,21 +79,6 @@ export function ProductReveal({
               </Button>
             </div>
 
-            <Accordion type="single" collapsible defaultValue="details">
-              {content.accordions.map((item, index) => (
-                <AccordionItem
-                  key={item.title}
-                  value={`section-${index + 1}`}
-                >
-                  <AccordionTrigger>{item.title}</AccordionTrigger>
-                  <AccordionContent>
-                    <p className="text-muted-foreground text-sm">
-                      {item.body}
-                    </p>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
           </div>
         </div>
       </div>
