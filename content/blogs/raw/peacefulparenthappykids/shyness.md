@@ -1,0 +1,59 @@
+# 15 Tips to Help Children Manage Social Anxiety
+
+Source: https://www.peacefulparenthappykids.com/read/shyness
+
+---
+
+7 min
+read •
+[How To Raise a Socially Intelligent Child](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770127) [Anxiety](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770134)
+> _“Probably the worst thing to do is to say, 'Don’t be shy. Don’t be quiet.' This is not about trying to change the child’s temperament. It’s about respecting and honoring temperament and variation, and helping children navigate the world with their own instruments." - Dr. K.R. Merikangas_
+* * *
+Parents often ask me how to help children who are "shy." But what does "shy" even mean? 
+Some children who are considered "shy" are highly sensitive, meaning very aware of and strongly affected by their environment. Others are introverted, meaning that they need time away from other people to renew their energy. Some children are so absorbed in their own projects and ideas that they're simply less interested in social interaction. Some feel more anxious when their "attachment people" aren't there as backup. 
+And the rest of us who think we're "shy" usually mean that we feel awkward or anxious in social situations. A large 
+So let's say, for the purposes of this article, that you're reading this because you want to support your child to become more comfortable in social situations. Hopefully, you appreciate your unique child, who probably notices social nuances that other children miss. But it's natural to worry if your child seems to feel anxious with other people. We all want our children to make friends easily, to feel comfortable asking questions at school, to speak up for themselves. 
+The good news is that most kids can learn to manage social anxiety so they can connect happily with others, enter new groups, and speak up for themselves. Some just need a little extra support. 
+###  1. Nurture your child by noticing her needs and responding to them. 
+Highly sensitive baby chimps given to extremely nurturing mothers became leaders in their group, while their equally sensitive siblings raised by less responsive chimp mothers seemed anxious and fearful throughout life. Responsive mothering helps sensitive little ones learn to calm themselves and manage their reactions. That allows their heightened sensitivity to become an asset, because it makes them more aware of the needs of their peers and better at negotiating group situations. 
+###  2. Empathize with your child’s worries and avoid shaming him. 
+Acknowledging what your child feels, without negative judgment, helps him to feel good about himself. Giving him the impression that there is something wrong with him will just make him feel worse about himself, and therefore more insecure. Empathizing with your child will also help him develop empathy, which will enhance his social skills and help him connect with others. 
+###  3. Teach your child strategies to settle their nervous system. 
+When humans feel like a situation is "too much" to handle, the nervous system automatically shifts into fight or flight. If that doesn't solve the problem, it shifts into "dorsal vagal" which looks like zoning out, going quiet, or disengaging. These are completely normal responses and all kids feel them sometimes. 
+What kids need from us is support to notice when they move into these nervous system states, and to soothe themselves so they feel safe again. Brainstorm with your child about what helps them feel safer in social situations. Is it finding a person they feel close to in that situation? Giving themselves a hug? Thinking of someone or something they love? 
+###  4. Teach your child to trust their inner compass -- and that discomfort is okay. 
+Most of us think that when we're uncomfortable, we should run in the other direction. But discomfort is part of most new situations, and that means it is part of how we grow. Teach your child that it is okay to feel uncomfortable. When she feels uncomfortable, her job is to notice that, and soothe herself so that she can think clearly. 
+Then, evaluate the situation. Is there actual danger? In that case, seek trustworthy help. 
+But danger is rare. Most of the time, discomfort signals a new situation. In that case, maybe there is something new to learn, or someone she will enjoy meeting. Then, her job is to reassure herself, keep paying attention to the situation, and support herself to take small steps toward engaging with the newness. Over time, positive experiences will build trust, and she may come to enjoy and value that process of discovery. 
+###  5. Model confident behavior with other people. Kids learn from watching us. 
+That means being friendly to strangers, offering help to others, and modeling a relaxed attitude about social interactions of all kinds. 
+###  6. Teach your child basic social skills to respond to both adults and children. 
+Kids often need to be taught to make eye contact, shake hands, smile, and respond to polite chit-chat appropriately. Make games out of social skills and practice at home. Just grab two teddy bears and have them act out scenarios in a funny way to get your child laughing, which defuses the child's anxiety. During your show, ask your child frequently _"What should he say? What should she do?"_
+###  7. Help your child learn how to make friends. 
+Role play with your child how to notice and respond when another child initiates, how to join a game at the playground, how to introduce themselves to another child at a party, and how to initiate a playdate. For instance, kids who are successful in joining groups of kids usually observe first, and find a way to fit into the group, rather than just barging in. It can really help to read books about social skills with your child and then role play. Several good books are listed at the end of this article, for children of different ages. 
+###  8. Coach your child to express her needs and stand up for herself in social situations. 
+All children need the confidence that they can handle what comes up when parents aren't around. For instance, every child needs to know how to respond to affronts with phrases like _"It's my turn now.... I was still using that..... I don't like it when you say that.... I am not going to play with you if you say hurtful things to me."_ This is especially important when peers tease or bully. 
+How do you coach your child? Roleplaying is essential in learning skills. Play is very helpful in managing anxiety. Reading books helps teach kids that they aren't alone or powerless. Asking _"What would you do?"_ is invaluable in helping kids think through possible responses and outcomes. 
+Several books for kids on how to stand up for themselves and handle bullying are listed at the end of this article. You may also want to read the article [12 Ways to Empower Your Child Against Bullying](https://www.peacefulparenthappykids.com/read/12-ways-to-empower-your-child-against-bullying-including-cyberbullying) on this website, which has more specific suggestions and book recommendations. 
+###  9. Don’t label your child as shy. 
+Instead, acknowledge his worries and point out that he can overcome his fears. For instance, 
+> _“Sometimes it takes you awhile to warm up in a new situation. Remember Lorenzo’s birthday party, how you held my hand all through the games? But by the end, you were having lots of fun with the other kids.”_
+###  10. Teach your child effective strategies for dealing with feelings of social awkwardness. 
+One very helpful approach to social anxiety is to accept it as a part of normal life that affects most people. Then, reassure yourself that you’re okay, and focus on others rather than yourself. For instance, reassure your child that most people feel socially awkward at least sometimes. Then remind your child that she doesn’t have to be interesting, just interested, and teach her to ask other kids questions and listen to their answers. Brainstorm with her how she might handle a situation that makes her nervous: 
+> _“If you feel nervous at the party today, what could you do to make yourself more comfortable? Could you hang out with one of the kids you know from school? Could you offer to help serve the refreshments? What could you say to reassure yourself? What do you think you might talk with the other kids about?”_
+Once she knows she can handle whatever comes up, she'll feel more ready to tackle a new experience. 
+###  11. Help your child develop social confidence by providing small daily opportunities to interact with others. 
+Socially anxious children need downtime, of course, especially if they're introverts. But they also need plenty of opportunities to practice their social skills. Remember that empathizing doesn’t mean being over-protective. If your child is worried, remind him that he can do hard things. Talk every night at dinner about one hard thing each person in the family did that day. Applaud every little step your child takes on his own. 
+###  12. Don't push your child to perform. 
+Some children like telling jokes or showing off their new abilities for Grandma, but many kids hate it. Enjoy your unique child without making him feel like he's only valued if he performs. If you have the video rolling on your phone and your child asks you to stop, stop. She's allowed to enjoy life without feeling the pressure to perform. 
+###  13. Remember that one good friend is worth many acquaintances. 
+Some parents worry if their child isn't the life of the party. But what's important is that your child feel connected, like she has someone she can talk to, or someone he wants to play with at recess. It's not necessary to have a lot of friends, just a few good ones. 
+###  14. Don’t create social anxiety by teaching young children to be afraid of strangers. 
+Instead, teach your child that he or she should always be with you, or with a teacher or trusted babysitter. If her special adult is with her, your child doesn’t need to be afraid of strangers. Once she’s old enough to begin walking home from school by herself, you can begin discussing how to keep herself safe. 
+###  15. If your child seems generally fearful, consider that she's got some tears and fears inside that need to be expressed. 
+When kids experience something scary and don't feel safe at that moment, the fears get repressed. You can think of this as stuffing them in an emotional backpack, to be processed later. The problem is that humans don't willingly subject themselves to scary feelings. So often those tears and fears stay locked up inside. But since the body knows those emotions need to be felt to go away, the feelings are always trying to bubble up to get healed. 
+Children who are trying to keep internalized fear at bay often become generally fearful and even rigid. If this describes your child, give her daily opportunities to giggle by playing games that dance just on the edge of fear -- bucking bronco rides, for instance. That takes the edge off anxiety. And when she feels safe enough to let those fears surface in tears, welcome her meltdown. On the other side of it, you'll have a less fearful, more flexible child. 
+###  Additional Resources: 
+Don't miss our parenting Toolkit **[Helping Your Child with Anxiety](https://www.peacefulparenthappykids.com/product/helping-your-child-with-anxiety), **which guides you through the steps to teach your child (and yourself!) how to manage anxiety.**  
+**
+**Please note:** Below are Amazon links with photos of the books. If you are not seeing them on your page, it may be that your browser is not picking them up. Please try a different browser. Enjoy!

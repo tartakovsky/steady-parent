@@ -1,0 +1,23 @@
+{
+  "strategy": "segment-pages",
+  "description": "Content targeted to specific age groups and developmental stages (infants, toddlers, preschoolers). Includes age-specific behavioral guides and developmental milestones. Captures searches like \"2 year old behavior\" and \"18 month old discipline\".",
+  "urls": [
+    "https://www.janetlansbury.com/2010/09/does-my-two-year-old-need-preschool/",
+    "https://www.janetlansbury.com/2021/10/my-child-is-so-mean-to-me/",
+    "https://www.janetlansbury.com/2018/01/age-4-seems-like-another-planet/",
+    "https://www.janetlansbury.com/2010/11/screaming-baby-isnt-bored-encouraging-independent-play-and-self-soothing/",
+    "https://www.janetlansbury.com/2019/01/already-exhausted-by-a-15-month-olds-behavior/",
+    "https://www.janetlansbury.com/2012/05/common-toddler-discipline-mistakes/",
+    "https://www.janetlansbury.com/2010/08/independent-infant-play-make-it-happen/",
+    "https://www.janetlansbury.com/2018/12/the-best-way-to-deal-with-intense-tantrums/",
+    "https://www.janetlansbury.com/2017/02/handling-my-toddlers-first-tantrum/",
+    "https://www.janetlansbury.com/2014/10/how-to-talk-to-your-newborn/",
+    "https://www.janetlansbury.com/2017/03/peeing-on-the-floor-is-an-attention-getter/",
+    "https://www.janetlansbury.com/2020/10/meltdowns-at-bedtime-or-anytime/",
+    "https://www.janetlansbury.com/2022/01/potty-learning-how-and-why-to-let-children-lead-the-way/",
+    "https://www.janetlansbury.com/2014/08/3-reasons-kids-dont-need-toilet-training-and-what-to-do-instead/",
+    "https://www.janetlansbury.com/2022/12/best-ways-to-encourage-independent-play/",
+    "https://www.janetlansbury.com/2023/01/is-parenting-too-hard-you-may-be-doing-too-much/",
+    "https://www.janetlansbury.com/2024/04/dr-gabor-mate-on-why-parents-matter-more-than-ever/"
+  ]
+}

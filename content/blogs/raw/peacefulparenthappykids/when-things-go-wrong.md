@@ -1,0 +1,43 @@
+# How to Provide Reassurance and Stability When Things Go Wrong
+
+Source: https://www.peacefulparenthappykids.com/read/when-things-go-wrong
+
+---
+
+5 min
+read •
+[Family Life](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770123)
+As parents, there will be times when events beyond our control bring stress, anxiety, anger, or crushing disappointment. Whether it's election results, personal challenges, school shooting, or large-scale events like wars, we often find ourselves struggling during these moments.   
+* * *
+But if we can't manage our own overwhelm, we can't be present for our children, to offer them the reassurance they need. And we miss out on the opportunity to model self-nurture and resilience.
+As Susan McWilliams Barndt said, _"Part of being a human being is learning to face disappointment, to accept loss, and then to get up in the morning and keep trying for the world you want to live in.”_
+### 1. Manage Your Own Emotions
+The first step to supporting your child is managing your own big feelings. Whatever you're feeling is "normal" and okay -- and it's still your job to handle it, not your child's. Kids take their emotional cues from us, so if we react strongly, they get the message that something dangerous is happening, and they feel less safe. It's essential to nurture our own well-being, so that we can avoid stressing our child. Here are some tips for calming yourself and nurturing your emotional health:
+  * **Take a break from media overload**. Constant updates and commentary can amplify anxiety. Turn off the news and limit your exposure to social media during stressful times. Checking in periodically is enough; a steady stream of alarming headlines shouldn’t set the tone in your home.
+  * **Breathe and ground yourself.** When you notice that you're feeling upset, pause and take a few deep breaths to signal to your nervous system that there's no emergency. Grounding exercises, like focusing on your senses (What can you see, hear, touch, smell, or taste?), can bring you back to the present moment and help you regain calm. 
+  * **Give and receive big hugs.** When you're reeling from a big shock, your nervous system is dysregulated. One of the most effective ways to settle yourself is to receive physical reassurance.
+  * **Connect with your people.** There's nothing better for our mental health than love. Talking with a friend, partner, or supportive community can help you process your emotions and feel less alone. Even a brief chat can remind you that you have support and that you’re not carrying the weight alone.
+  * **Practice self-compassion.** It’s okay to feel upset or anxious. Acknowledge your emotions with kindness, as you would with a friend: “This is tough, and I’m doing my best.” Self-compassion can help you move through difficult feelings more gently.
+  * **Remember that where you put your attention, what you focus on, grows.** As much as you can, keep your focus on the goodness in the world, despite this hard moment. There is always so much to be grateful for, even in the hardest times. When you notice your mind dwelling on negativity, fear and "If only," shift into gratitude.
+### 2. Reassure Your Child
+Once you’ve calmed yourself, you’re in a better place to reassure your child. Children need to know that their world is safe and that the adults around them have got this; that it is not the child's job to worry about this crisis. Here’s how you can provide that reassurance.
+  * **Start with open-ended questions.** Begin by asking your child what they’ve heard about the event or what they’re feeling. “Have you heard anything about what’s going on?” or “How are you feeling about everything?” This gives them a chance to express their thoughts and worries.Your child might well have drawn upsetting conclusions from things they’ve heard, and you won’t know what those are until you listen. 
+  * **Listen and reflect.** Listen carefully without interrupting. Reflecting what you hear is about paraphrasing their thoughts and feelings to show that you understand. This helps your child feel heard, and gives them an opportunity to clarify if you’ve misunderstood anything.
+  * **Correct misinformation.** Kids often draw conclusions from things they hear, which may not always be accurate. Gently correct any misinformation. If they’ve heard exaggerated or alarming statements, help them understand what’s actually true. Avoid conjectures about the future. You don’t have to have all the answers. Your job is to listen, be present, and reassure your child. When your child asks you something and you don't know the answer, it is fine to say that you don't know. Invite them to look it up with you. As you do so, model how to fact check and evaluate sources. (This article from 
+  * **Reassure them about their safety.** Even if you’re worried, your priority is to assure your child that you will keep them safe. This is true for kids of all ages, even into the teen years. So even more than giving your child information, you want to listen to their worries, acknowledge them, and reassure your child that whatever happens, you will keep them safe and your family will find a way through whatever happens. Regardless of what’s happening, your child needs to know that it’s not their job to worry. Remind them, “My job is to take care of you and make sure you’re safe. I’m here for you, no matter what.”
+### 3. Model Resilience and Values
+In times of uncertainty, children learn resilience by watching how we respond to challenges. Use these moments to model how to handle difficult emotions and maintain a sense of agency.
+  * **Acknowledge your emotions calmly.** It’s okay to share that you’re feeling disappointed or worried, but do so in a way that shows you can manage those emotions. “I’m feeling very sad about what happened, but I know we’ll find ways to be okay. I'm going to start by being very kind to myself today.”
+  * **Focus on what you can control**. Share how you’re focusing on things you can control, whether that’s spending quality time together, helping others, or making positive choices at home. This helps your child see that even in uncertain times, they have some agency.
+  * **Use the opportunity to share your values,** and how you want to express them in response to the current moment. Do something positive to make the world a better place, and share that with your child. Recommit yourself to what you value, even if you need to take a break to regroup and nurture yourself.
+### 4. Provide Safety and Stability
+The more turbulent and unpredictable the world feels, the more important it is to cultivate stability and safety within your home. This supports your child's nervous system to relax, so it can focus on the child's age-appropriate tasks of growth and development.
+  * **Keep routines consistent.** Stability often comes from the predictability of daily life. Keep to your usual routines as much as possible to reinforce a sense of normalcy.
+  * **Err in favor of more emotional generosity** with your kids, even while you maintain your usual boundaries and limits. When kids feel less safe, they will always act out. Sure, they "know better." But they need to "feel better," too, to be their best selves.
+  * **Prioritize connection through simple activities** —playing a game, reading together, or just sitting and talking. These moments reinforce that your family is safe and supportive.
+Above all, remind your child that no matter what happens in the world around you, your love and commitment to them remain constant. This reassurance helps children feel secure, confident, and resilient, even when facing uncertainty.
+So, take a deep breath, listen to your child, and reassure them that you’ve got this. That’s a powerful way to model resilience and stability, no matter the challenge.
+**_  
+_**
+_"Know that most things are beyond your control. Try to accept this fact, and uncertainty, and not always knowing. In your mind, there is always the peaceful stability of awareness itself. To paraphrase Pema Chodron, you are the sky and everything else is just the weather. And even deeper is a fundamental stillness in your ground of being. Slow down, be gentle with yourself, and you can find this quiet between and beneath all the busy thoughts and feelings and desires. This innate peacefulness, infused with love, is our true home, a reliable refuge and source of strength under all conditions, including a sometimes unreliable and scary world. Your own practice and efforts will help many others besides yourself. Rippling out into the world, touching many lives, known and unknown, seen and unseen." - Dr. Rick Hanson_
+_****_

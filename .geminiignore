@@ -1,0 +1,9 @@
+.git
+.next
+.open-next
+.wrangler
+node_modules
+.cursor
+.DS_Store
+dist
+build

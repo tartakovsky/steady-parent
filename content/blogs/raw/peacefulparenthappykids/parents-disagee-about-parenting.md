@@ -1,0 +1,23 @@
+# Parents disagree about parenting
+
+Source: https://www.peacefulparenthappykids.com/read/parents-disagee-about-parenting
+
+---
+
+3 min
+read •
+Question
+My wife and I seem to have a power struggle when it comes to the kids. Because I work FT and she is a stay at home mom, mostly she provides the direction to the kids. Occasionally she will "overrule" me when the kids make a request that I either grant or deny. She will do this on the spot by saying something like: _"No, it is o.k. if you do that."_ etc. It is usually regarding a relatively trivial issue so I have not made a big deal about it or even discussed it with her. I think it sends mixed signals to the kids. I am not an authoritarian by any means but would like to be on the same page. Do you have any suggestions?
+Answer
+I want to start by saying that parenting is a partnership, and partnerships are hard. We aren't taught how to be good partners. And when moms stay home with the kids, it's not unusual for dads to feel left out.
+One thing you should know is that parents definitely don't have to always agree about parenting decisions. A completely united front is not only impossible, it's unnecessary. Kids learn pretty fast that mom is more lenient some things -- maybe she buys them more things, for instance -- but dad is more lenient about other things, maybe bedtime. There is nothing wrong with that. 
+The problem is when kids feel they can go behind one parent's back to get their way. The pattern you're describing does send mixed signals to the kids, as you're guessing. More important, it probably makes you feel disrespected. It may also give the kids the message that your wife disrespects you and that the kids can go to her to have your decisions revised.
+It concerns me that you haven't discussed this with your wife, but took the time to ask me your question, which indicates that this does bother you. Clearly we want to increase your comfort level in discussing difficult issues with your wife.
+I would start by telling your wife you have something important to discuss with her in private. After the kids go to bed, pour a glass of wine and sit on the couch together. (Or have coffee on Sunday morning while the kids watch cartoons. Just find some time when you can talk in peace.) 
+Tell your wife that you love her and you think she's a great mom. Tell her that you aren't an authoritarian by any means but you notice that sometimes when your instinct is to say no, she says yes. Tell her that you don't mind that she makes the decision, but that two things bother you. 
+First, you would like to understand better why she's making these decisions so you two can be on the same page as parents. 
+Second, you feel a little embarrassed and hurt when she overrules you in front of the kids. You wonder if maybe they won't take you seriously as an authority figure and will disrespect you because they see this happening. 
+Explain to your wife that you want very much to be involved in your kids' lives in an intimate way, and that even though you aren't a stay at home dad, you hope she will value your partnership in parenting. 
+Then close your mouth and let your wife talk. She may well say some hurtful things. Many wives feel their husbands are oblivious and clueless when it comes to the kids. Even if it is not objectively true, many wives feel they understand their kids much better than their husbands and should be the ones to make the decisions about the kids. Try not to take anything she's says that's hurtful personally. Acknowledge her feelings. They are only her feelings and opinions, and they are legitimate as feelings and opinions even if you disagree with them. 
+Then, ask your wife what the two of you can do on the spot when one of you disagrees with a parenting decision that the other is making. Maybe when you make a decision she disagrees with, she can tell you that she needs a hug, in private. After the two of you discuss the issue, she can return to whatever she was doing before, while you tell the kids that you've thought more about the issue and you've made a more thoughtful decision.
+I suspect that this discussion will strengthen your relationship with your wife, as well as your parenting partnership. If you want more ideas on how to make a difficult discussion go well, you might want to read the article called "[Having the Tough Conversations" in the Communication ](https://www.peacefulparenthappykids.com/parenting-tools/communication/conversations-kids)section of this website.

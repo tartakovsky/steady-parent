@@ -1,0 +1,36 @@
+# Overwhelmed? How to Get a Grip.
+
+Source: https://www.peacefulparenthappykids.com/read/how-to-calm-corona-pandemic-lockdown
+
+---
+
+5 min
+read •
+[Peaceful Parenting](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770130) [Anxiety](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770134)
+> _"Dr. Laura.... I’m just so overwhelmed now that school has started and I need to keep everyone on a schedule. I'm exhausted, I get angry easily, and I just don't feel motivated. I'm able to get my kids to do their assigned homework every day, but only with threats and bribes. And things fall apart quickly. They whine and fight. I scream and shout. They cry. I feel terrible. They spend the rest of the evening in front of a screen. I try to get something constructive done for my job (I work remotely) but I end up stress-eating. I know I should be meditating and exercising and that would help me be more calm with my kids, but I can't seem to get it together! Am I just lazy? How can I make the anger go away?"-- Megan_
+* * *
+If Megan's story has a familiar ring to it, you're not alone. Every single one of us has insights and information that would change our lives -- if only we could use them during those tough moments. 
+And why can't we? When we don't feel motivated, it's not that we're lazy, or somehow lacking. Sometimes, we are just exhausted and need a break and to nurture ourselves. Sometimes -- a clue is that we get angry easily --we're running smack into negative emotions, and most of us don't have reliable strategies to manage them. 
+In fact, every one of us will at some point get a crash course in what we think of as "negative" emotions: Anger. Fear. Grief. Powerlessness. 
+Those emotions make us uncomfortable, so we try to fend them off. But that just increases our feeling of stress and overwhelm. Once you're feeling an emotion, the only way out is through. 
+  * You can't make Anger go away. But anger is a defense against more vulnerable emotions, like fear and grief and powerlessness. Once you accept and honor those feelings, the anger fades away.
+  * You can't make Grief go away. You can only allow it to wash over you, letting you know how big a loss you've suffered. As you allow yourself to weather grief, the storm passes -- and life is forever changed, but still worth living.
+  * You can't make Powerlessness go away. But this lesson in vulnerability is one we all need to learn. Each one of us is empowered by understanding the difference between the things we can change and the things we can't. (Clue: You can always control yourself.)
+  * You can't make Fear go away. What you can do is develop a constructive relationship with fear, so you're informed by it, but you're still in charge. Fear is the worry that you won't be able to handle something. But in fact, you _will_ be able to handle it. Even if, heaven forbid, something you fear happens, you _will_ somehow handle it. Worrying in advance just saps your strength. Thank fear for trying to take care of you, and tell it that you've got things handled.
+What does all this have to do with yelling at your kids and stress-eating? Everything. If we don't acknowledge all these big emotions that are keeping us company, they make us anxious, and we end up fending them off with defenses that don't work so well, like lashing out or stress-eating. Our stress and overwhelm just increase. 
+Of course, when we're less patient with our children, they act out more. Which increases our stress levels. And is the opposite of what we want to do, because we all know intuitively that our most important job, besides keeping our family safe and healthy, is helping our children **_feel_** safe. We know that we create the mood in our homes, and that yelling doesn't help anyone. 
+Learning to manage uncomfortable emotions is the work of a lifetime. But it will definitely help you feel less overwhelmed and stressed, so this is support that will really help. And there's no time like the present. After all, you have a ready-made curriculum every day! 
+Why not get started giving yourself support right now, emotionally and physically? Here's your plan. 
+###  1. Take care of you, so you have more internal resources. 
+Give yourself as much support as possible. Set your device to check in with yourself every hour. How are you doing? What do you need? Give it to yourself, or make an appointment to do that as soon as you can. Notice your internal chatter and keep it positive and supportive. Be your own nurturing parent! 
+###  2. Every morning when you wake up, set your intention.
+Remind yourself that you can handle whatever happens. Your job is to keep yourself centered so you can help your children feel safe. Choose one thing to do each morning that will help you stay centered, like a short guided meditation or a family dance party. 
+###  3. When you feel an uncomfortable emotion, 
+Remind yourself that you're safe. You can handle this. Then, let yourself feel whatever that emotion is, all while holding yourself with love and compassion. Notice how that emotion feels in your body. Breathe into it. Resist the urge to run away, eat, or call someone. Just breathe, surround yourself with love and accept the sensations of that feeling in your body. Notice how the sensation changes. Notice how the feeling builds and then passes away. Congratulations! You just changed your brain wiring! Every time you work through a feeling like this, you're emptying your emotional backpack, so you won't get triggered so easily and you're more resilient. 
+###  4. Go to sleep as early as possible so you wake up rested. 
+Every night before you go to sleep, give yourself a big hug of appreciation. Find three things you're proud of and celebrate them. Then find one thing that you want to do differently tomorrow. Imagine in detail how you will do that one thing, and -- this is important -- be sure to imagine what the positive benefit will be. Write your one commitment down so you'll see it when you wake up. 
+###  5. Every day, find a way to give yourself support and encouragement. 
+Change is hard. We all struggle sometimes; we all backslide. We all need to give ourselves support to stay on track, to feel motivated, to keep working on making things better. 
+The people who take my [Peaceful Parent, Happy Kids Online Course](https://www.peacefulparenthappykids.com/peaceful-parenting-course) report that just being able to listen to my encouraging words when they feel overwhelmed makes a huge difference in their moods and motivation. Having a supportive, encouraging community like the one in the Course, to go to when you need ideas or reassurance, is also transformative. 
+So ask yourself, what would support and encourage you on a daily basis? Find a way to give that to yourself! 
+Is there more? Sure, if you're ready for the advanced course! But if you're feeling overwhelmed, start slow and give yourself support. One step at a time. If you follow these five steps for a week, you'll notice that you're significantly happier and calmer. You'll feel more confident as a parent. And your children will feel safer, and act more cooperative. In fact, you'll find that you've shifted your entire family into a whole new landscape.

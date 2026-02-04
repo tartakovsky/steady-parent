@@ -1,0 +1,17 @@
+{
+  "strategy": "vertical-landing",
+  "description": "Dedicated pages for specific parenting challenges and conditions including ADHD, anxiety, and emotional regulation. These vertical landing pages target specialized parenting keywords for different child conditions.",
+  "urls": [
+    "https://www.goodinside.com/adhd/",
+    "https://www.goodinside.com/frustration-tolerance/",
+    "https://www.goodinside.com/blog/emotional-regulation-in-children/",
+    "https://www.goodinside.com/access-anxiousgenerationguide-lp/"
+  ],
+  "example_keywords": [
+    "building tolerance",
+    "emotion regulation in childhood",
+    "the anxious generation jonathan haidt pdf",
+    "how to build frustration tolerance",
+    "inside adhd"
+  ]
+}

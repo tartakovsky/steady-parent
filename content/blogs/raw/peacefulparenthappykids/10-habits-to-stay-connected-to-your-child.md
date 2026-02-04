@@ -1,0 +1,44 @@
+# Ten Habits to Strengthen Your Relationship with Your Child
+
+Source: https://www.peacefulparenthappykids.com/read/10-habits-to-stay-connected-to-your-child
+
+---
+
+5 min
+read •
+[Connection](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770122) [Peaceful Parenting](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770130) [Routines](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=958073)
+> _"I can't believe how things with my daughter have turned around, since I started focusing on connection." - Zoe_
+* * *
+We all crave those close moments with our children that make our hearts melt. Connection is as essential to us parents as it is to our children, because that's what makes parenting worth all the sacrifices. 
+That connection is also the only reason children willingly follow our rules. Kids who feel strongly connected to their parents WANT to cooperate, if they can. They'll still act like kids, which means their emotions will sometimes overwhelm their still-growing prefrontal cortex. But when they trust us to understand, to be on their side, they're motivated to follow our lead when they can. 
+Researchers remind us that we need five positive interactions to every negative interaction to keep any relationship healthy. And since we spend so much time guiding -- aka correcting, reminding, scolding, criticizing, nagging, and yelling -- it's important to make sure that we spend five times as much time in positive connection. 
+But we're only human. There are days when all we can do is meet our children's most basic needs. Some days it's nothing short of heroic simply to feed them, bathe them, keep an encouraging tone, and get them to sleep at a reasonable hour -- so we can do it all over again tomorrow! 
+So given that parenting is the toughest job on earth -- and we often do it in our spare time, after being separated all day -- the only way to keep a strong bond with our children is to build in daily habits of connection. Here are 10 habits that don't add time to your day, but do add connection. Simple, but incredibly powerful, these habits heal the disconnections of daily life. You'll find that using them daily changes everything. 
+###  1. Aim for 12 hugs (or physical connections) every day. 
+As family therapist Virginia Satir famously said, _"We need 4 hugs a day for survival. We need 8 hugs a day for maintenance. We need 12 hugs a day for growth."_
+Snuggle your child first thing in the morning for a few minutes, and last thing at night. Hug when you say goodbye, when you're re-united, and often in between. Tousle hair, pat backs, rub shoulders. Make eye contact and smile, which is a different kind of touch. If your tween or teen rebuffs your advances when she first walks in the door, realize that with older kids you have to ease into the connection. Get her settled with a cool drink, and chat as you give a foot rub. (Seem like going above and beyond? It's a foolproof way to hear what happened in her life today. You'll find yourself glad, many times, if you prioritize that.) 
+###  2. Play. 
+Laughter and rough-housing keep you connected with your child by stimulating endorphins and oxytocin in both of you. Making laughter a daily habit also gives your child a chance to laugh out the anxieties and upsets that otherwise make him feel disconnected -- and more likely to act out. And play helps kids want to cooperate. Which is likely to work better? 
+> _"Come eat your breakfast right now!_ " 
+> or 
+> _"Little Gorilla, it's time for breakfast -- Look, you have bugs and bananas on your oatmeal!"_
+###  3. Turn off technology when you interact with your child. 
+Really. Your child will remember for the rest of her life that she was important enough to her parents that they turned off their phone to listen to her. Even turning off music in the car can be a powerful invitation to connect, because the lack of eye contact in a car takes the pressure off, so kids (and adults) are more likely to open up and share. 
+###  4. Connect before transitions. 
+Kids have a hard time transitioning from one thing to another. They need us to "co-regulate" them through those moments when they really don't want to give up what they're doing to move onto something _we_ want them to do. If you look him in the eye, use his name, connect with him, and then get him giggling, you'll give him a bridge to manage himself through a tough transition. 
+###  5. Make time for one on one time. 
+Do whatever you need to do to schedule 15 minutes with each child, separately, every day. Alternate doing what your child wants and doing what you want during that time. On her days, just pour your love into her while you follow her lead. On your days resist the urge to structure the time with activities. Instead, try any physical activity or game that gets your child laughing. ([For game ideas, click here.](https://www.peacefulparenthappykids.com/read/play-child-emotional-intelligence)) 
+###  6. Welcome emotion. 
+Sure, it's inconvenient that kids have such big emotions. But your child needs to express those emotions to you, or they'll drive his behavior. Besides, this is an opportunity to help your child heal those upsets, which will bring you closer. So summon up all your compassion, don't let your child's anger trigger you, and welcome the tears and fears that always hide behind the anger. Remember that you're the one your child trusts enough to cry with, and breathe your way through it. Just acknowledge all those feelings and offer understanding of the pain. That creates safety, so he can move through those emotions and back into connection, Afterwards, he'll feel more relaxed, cooperative, and closer to you. Yes, most kids start by being angry, so you have to stay calm and patient in the face of their anger if you want the more vulnerable feelings to surface. This can be really, really hard. Regulating our own emotions in the face of our child's anger is one of the hardest parts of parenting. But that doesn't mean we're excused from giving it our best shot. 
+###  7. Listen, and Empathize. 
+Connection starts with listening. Bite your tongue if you need to, except to say 
+> _"Wow!.... I see.... Really?... That sounds so hard! ... Tell me more..."_
+The habit of seeing things from your child's perspective will ensure that you treat them with respect and look for win/win solutions. It will help you see the reasons for behavior that would otherwise drive you crazy. And it will help you regulate your own emotions so when your buttons get pushed and you find yourself in "fight or flight," your child doesn't look so much like the enemy. 
+###  8. Slow down and savor the moment. 
+Instead of rushing your child through the schedule so you can spend a few minutes with them before bed, use every interaction all day long as an opportunity to connect. Slow down and share the moment with your child: let him smell the strawberries before you put them in the smoothie. When you're helping him wash his hands, put yours in the running water with his, and share the rush of the water. Smell his hair. Listen to his laughter. Look him in the eyes and meet him heart to open heart, sharing that big love. Connect in the magnificence of the present moment. Which is really the only way we _can_ connect. (For most parents, this is also the secret to being able to tolerate playing that same game yet again.) 
+###  9. Bedtime snuggle and chat. 
+Set your child's bedtime a wee bit earlier with the assumption that you'll spend some time visiting and snuggling in the dark. Those companionable, safe moments of connection invite whatever your child is currently grappling with to the surface, whether it's something that happened at school, the way you snapped at her this morning, or her worries about tomorrow's field trip. Do you have to resolve her problem right then? No. Just listen. Acknowledge feelings. Reassure your child that you hear her concern, and that together you'll solve it, tomorrow. The next day, be sure to follow up. You'll be amazed how your relationship with your child deepens. And don't give this habit up as your child gets older. Late at night is often the only time teens will open up. 
+###  10. Show up. 
+Most of us go through life half-present. But your child has only about 900 weeks of childhood with you before they leave your home. They'll be gone before you know it. 
+Try this as a practice: When you're interacting with your child, show up 100%. Just be right here, right now, and let everything else go. You won't be able to pull this off all the time. But if you make it a habit several times a day, you'll find yourself shifting into presence more and more often. 
+And you'll find a lot more of those moments that make your heart melt.

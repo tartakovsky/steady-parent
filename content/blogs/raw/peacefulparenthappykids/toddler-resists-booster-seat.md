@@ -1,0 +1,41 @@
+# Toddler resists booster seat
+
+Source: https://www.peacefulparenthappykids.com/read/toddler-resists-booster-seat
+
+---
+
+6 min
+read •
+Question
+Dr. Laura,  
+I am having a difficult time with my two year old son and mealtime. More specifically getting him into his booster to eat. Once he decides to climb into his chair he eats great, tries new foods and is pleasant. But, the struggle begins once mealtime is mentioned. He usually will ask to eat somewhere else in the house (outside, the couch, etc.) My husband and I are consistent with eating all meals at the table and prefer to keep it this way. 
+We have tried ignoring these tantrums, we've tried distracting our son but it seems to be getting worse rather than better. 
+Everything I read talks about power struggles and food choices. That truly is not our problem, it's more about our seating arrangements. We moved our son to a booster somewhat early because he was throwing tantrums about the high chair. It just seems to be a big power struggle that I don't want to engage in but I am confused how to end it. I would appreciate your thoughts or suggestions.  
+Thank you, Maura
+Answer
+Dear Maura,
+I agree with you that it seems clear that your son is not fighting with you about food, since he tries new foods, eats, and is pleasant. The problem is getting him into his booster. And since you also had problems with the high chair, going back to a high chair would not be an improvement. Some ideas:
+1. Most toddlers are busy and self-directed. Even when they're hungry, it can be hard to interrupt them to get them to come to the table. ALL toddlers need advance notice of transitions, including meals. It will probably be very helpful to give your son several advance warnings about dinner. (_"Ok, you can play with your trains for awhile, but just so you know, we'll be eating dinner in half an hour.") ("Dinner's almost ready, we'll be eating in fifteen minutes."_) etc.
+2. Sometimes, even with warnings, kids have a hard time stopping what they are doing to come to the table. Then it becomes a power struggle to get them into their seats.
+To defuse any power struggle, look for any part of the issue on which you are willing to give your son a choice. For instance, I assume you are not flexible about the time of the meal, since you want your son to eat with you and your husband. And you say you do not want to consider letting him have meals outside, or on the couch, as he requests. You want him at the table. What does that leave that you can let him have a choice about?   
+_  
+"I'm setting the table. Which placemat do you want, the ___ or the ___?"_
+_"Do you want to sit on the left side of the table so you can see out the window, or on the right side so you can see the picture on the wall? The left? Ok, do you want to help me move your seat or do you want to push it into the place where you want to sit?"_
+_"Dinner is almost ready. Do you want to eat now or in five minutes?"_ (I assume you and your husband can be flexible about five minutes.) _"Ok, in five minutes, but will you come to the table with no fuss in five minutes?"_
+_"Ok, it's been five minutes and it's the time you wanted to have dinner. Do you want to park your train engine in the shed, or on the track, while you eat?"_
+_"Do you want to climb into your chair yourself, or do you want help?"_ It is always a bad idea to lift a child into a booster seat. That makes them feel pushed around. If you can offer him a kitchen step stool to climb up, you may find it solves the entire problem.  
+"Tonight for dinner we are having pasta. Do you want yours with red sauce or with parmesan cheese? Ok, cheese. Do you want to put yours on yourself? Ok, great. As soon as you climb into your seat you can put the cheese on."_ Ask this kind of question BEFORE he climbs up. That way you interest him in the food at the same time that you help him feel in control. It might remove all his resistance, because you make him want to get up more than he wants to continue what he is doing.  
+"Do you want to tell Daddy all about what happened today on the playground, or do you want me to tell him? Ok, great, as soon as you get in your chair you can tell Daddy the whole story."_
+3. Make sure that his booster seat is totally secure. It is possible that he felt claustrophobic in the high chair and that the booster seat is frightening or uncomfortable. Often, kids hate the strap on the booster seat and do better if they aren't strapped in.
+4. Give him an independent reason to come to the table. For instance, let him make his own placemat. In fact, let him make three, and make a big deal every night about letting him choose his own placemat. I guarantee you that he will then want to climb up and use it. (To make a placemat, just let him glue family photos, pictures from magazines or online, autumn leaves, or numbers and alphabet letters -- and of course his name! -- onto a piece of construction paper and then have it laminated, or apply contact paper.)
+Or, earlier in the day, let him make a small centerpiece of leaves, or even of blocks or train engines. You won't be able to keep him out of his chair. 
+5. Make it fun.   
+For instance, play "_Surprise Me_." Ask your son if he can climb into his own chair, and when he says Yes, express your disbelief. He will hurry to show you.
+Or race with him. _"I bet you and I can get into our seats before daddy can get to the table. Want to race?"_
+Or, has your son ever been on an airplane? You could start by playing the flight attendant, saying, _"Flight 1234 will begin boarding in 5 minutes. Please proceed to the gate.“ “All ticketed passengers should now board and take their seats.”_ Then come around acting like the flight attendant while you serve food.
+6. Be flexible about some meals. Maybe he can have lunches or breakfasts in another place, like outside, if the weather is warm. I agree that couches make bad eating places, but a small table in a playroom can feel much more comfortable to a small child than a booster seat at a large table. 
+I want to add that when my son was little, he was very active and hated the high chair. He never sat in it for more then five or ten minutes at a time. (My daughter, who was second, would sit in the high chair happily for an hour.) So we ditched the high chair early for my son, but he hated the booster seat also. He didn't ever want to sit down and eat. So I insisted that he eat dinners with us, but when he ate an independent meal, like lunch or a snack, he could choose anyplace in the kitchen to eat. He usually ate next to the kitchen table (I put the food on the wooden chair seat.) I know that sounds crazy, but I only cared that he ate healthfully, and it completely dissolved any struggle. The floor didn't get any dirtier than if he had been sitting in a chair. My point is that your son is more likely to accept your dinner requirement without protest if you show some flexibility at other meals.
+7. Final idea: Talk to your son. Sometime when you're happily snuggling, say _"I love eating dinner with you and Daddy. But I notice that sometimes you don't want to get into your seat. Why don't you want to get into it?"_ He may not know, and he may not be able to express it, but you might be surprised, when he says something like _"I hate my seat."_
+In any case, listen to his answer, repeat it back to make sure you have it right, and then say _"What could we do so you would like to get in your seat for dinner?"_ If he doesn't have any ideas, you could offer: _"What if you climbed into your chair yourself?" "What if you wore your superman cape to the table?" "What if you brought your special stuffed animal to sit next to you?"_ etc. If your son offers unacceptable ideas like _"I could sit on the table,"_ dodge being the heavy by explaining the rules, as if you don't make them but just follow them: _"The rule is that dinners are always at the table, people always sit on chairs around the table"_ etc. Who knows? It might be the first of many great problem-solving discussions you could have together. 
+Please let me know if these ideas help. Many blessings to you and your son.  
+Dr. Laura

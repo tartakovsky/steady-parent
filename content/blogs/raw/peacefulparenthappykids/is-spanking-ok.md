@@ -1,0 +1,47 @@
+# Is Spanking OK?
+
+Source: https://www.peacefulparenthappykids.com/read/is-spanking-ok
+
+---
+
+6 min
+read •
+Question
+I have a two year old and a six year old. I recently received an email that is circulating regarding spanking. It plainly states that NOT spanking is harmful for children and that Dr. Spock (who advocated against spanking) had a son who committed suicide. I realize this incident does not represent cause and effect, but I am compelled by the email's reference to biblical teachings. In fact, it cites the absence of spanking as cause for children growing into adults who disrespect the environment, their peers and advisors and their church. 
+I have spanked my six year old, after plainly stating both the rules and that he would be spanked because he must follow the rules. (Yes, there are plenty of rules that he has input on, but some rules are mommy- and daddy-only rules). Disrespect and/or disregard of these rules will result in our re-statement of the rule followed by spanking. 
+Lastly, my two brothers and I were spanked as children but in a very different sort of way than employed by my husband and I today. As children, we were spanked by dad for talking to each other when we were supposed to be going to sleep and for other slight offenses which now seem quite arbitrary. We also remember the "threat" of being told that we would be put over his knee if we disobeyed or quibbled among ourselves. (Dad spanked us for "not listening" and for not cooperating with adult instruction.) Looking back, these spankings did NOT swiftly result in cessation of "problem" behavior. 
+Using our technique -- my husband and I both see that our son is correcting his behavior from conversation followed by an immediate spanking. This is then followed by our son's best apology for undesirable behavior.
+Do you see any harm in our approach? We do not spank for slight offenses but for the mommy- and daddy- rules that must be made.
+Thank you. (p.s. we do NOT spank our two year-old, as we agree that he cannot relate behavior to corrective spanking.)-- Jamie
+Answer
+Jamie-  
+First, I thank you for asking. I hear how much you want to do right by your kids. I also hear that you are not spanking your child because you are angry and out of control, but because you want him to grow up into a good person. Your understanding that your two year old would be harmed by spanking is laudable. Finally, I hear that you question the way your parents spanked you as a child.
+My blunt answer is that when you spank your child, you take the risk of damaging his psyche and your relationship with him. The research on this is very clear, regardless of some email circulating on the internet. It is well established that other methods of discipline are more effective, and that spanking is associated with more bad behavior (subsequent to the spanking) than not spanking.
+Do you really think it is necessary to treat someone disrespectfully -- hitting them -- to teach them to treat you respectfully? 
+Do you think your technique will still work when he's fourteen and bigger than you are, or will you need to escalate at that point?
+Teaching kids discipline includes teaching them to control their angry impulses. Spanking sabotages that by modeling violence. 
+You asked if I see any harm in your approach. I do. Here are some articles that explain the research on spanking and why I find it compelling, as well as alternatives that are more effective in raising great kids:
+[Should I Spank My Child?](https://www.peacefulparenthappykids.com/parenting-tools/positive-discipline/should-I-spank-my-child)  
+[Why Positive Discipline?](https://www.peacefulparenthappykids.com/parenting-tools/positive-discipline/positive-discipline)
+Most parents are frustrated about discipline. If they can't hit or threaten, they have to elicit cooperation some other way. All methods of force rely on the threat of violence (what do you do if your kid won't accept the timeout?). So parents feel their tools have been taken away and they don't know how to manage and control their kids. Naturally, many parents resent this and would rather spank.   
+The problem is that spanking works via fear and pain, and it has a cost -- it teaches the child that hitting is ok in certain circumstances, that people who love you will cause you pain, and that your parents can't always be counted on to understand and help you. Spanking, and even swatting, just leaves kids with a residue of guilt and pain and fear, on top of whatever emotions were causing them to act inappropriately, so we abandon our child to sort out all these complicated emotions -- and to feel like a bad person. We know that kids who feel bad are more likely to "act bad." Whatever emotion was causing them to act inappropriately will be repressed, to pop out later, as for instance when Mom leaves the room and the toddler hits the baby. We all know that a person who gets kicked looks for someone smaller to kick.   
+Teaching kids emotional intelligence by empathizing with their feelings but limiting their actions gives kids tools they can use to better manage their emotions, which leads to better behavior. Empathic parenting helps kids to learn to manage whatever troubling emotion was causing them to act inappropriately, as for instance when the toddler learns that his anger at the baby is understandable, but he can voice that feeling to mom rather than hitting the baby. we know that kids who feel good about themselves are more likely to "act good."
+Kids definitely need limits, but spanking just makes it harder for them to behave. I know it is easier to raise kids as we were raised than to become more loving and compassionate ourselves. But isn't that the work we are here to do? 
+I cannot believe that Jesus would have spanked a child.
+Dr. Laura
+PS. The email you cite is misinformed in more ways than one. Dr. Benjamin Spock's son did not commit suicide. Dr. Spock had two children: Michael and John, and both of them are still alive. One of the grandchildren, who was not raised by Dr. Spock, had schizophrenia and did commit suicide. 
+Btw, my own kids, who have never been spanked, or even punished, are delightful, respectful, and responsible teenagers. They would do anything to please their dad and me. It may not be cause and effect, but I shudder to think how much less like this they would have turned out if I had abused their trust by spanking them.
+Dear Dr. Laura,
+Here's the New Living Translation of Proverbs 13:24:
+"If you refuse to discipline your children, it proves you don't love them; if you love your children, you will be prompt to discipline them."
+The word "rod" perhaps could have been interpreted to imply physical striking - it looks to me as if this is another of those many cases where the Hebrew word had different meanings and perhaps not even a good translation and we simply *do not know* which was the correct one- but child psychology was a good 4500 years away and striking was the state of the art for discipline by that society. To them, striking probably was discipline. To us, we know better. These are people who still stoned adulterous women in public and the punishment for breaking the sabbath was death, IIRC. Humans evolve and society evolves and the way Jews understood their scripture (and then Christians) has evolved also. I believe this is how it is intended to be.
+I don't think anyone would argue against the notion that properly administered *discipline* is mandatory to raising a happy, well adjusted person, and that parents who won't discipline their children are not doing them or society any favors and they are not doing it out of love but rather from not caring enough to go to the effort. Much easier to ignore the little monster tearing up the store than to chase him down, physically pick him up and explain to him the rules and then remove him from the situation if he won't behave...each and every time...even though you still have shopping and errands to do...parents who just sit there blabbing away to friends while their kids run a muck strike us as lazy and unconcerned and oblivious to what is obvious to the rest of us,that their kid is a disagreeable, undisciplined little terror...and there are all kinds of ways to address that situation without ever hitting the kid.
+I don't take the bible literally, I believe something can contain truth without being literal, so I have no problem at all in seeing this proverb's intention and message as being one of discipline. There's a lot of underlying truth we agree with, even though it was manifested in ways back then that we have evolved waaaaaay past, thankfully. ~ or I should say, SOME of us have evolved way past. Then there are the nut jobs. Le sigh.  
+SnapDragonfly
+~ 
+Dear Jamie and SnapDragonfly,  
+Since we're talking about the bible, I want to mention a wonderful website for Christian parents. Arms of Love Family Fellowship, at:
+http://aolff.com/
+There's also a terrific discussion board for moms on another site, Gentle Christian Mothers:
+http://www.gentlechristianmothers.com/aboutgcm/
+BTW,I was on the Morning Show with Mike & Juliet recently(nationwide) to speak about [whether to spank or not.](https://www.peacefulparenthappykids.com/video1) Check it out.

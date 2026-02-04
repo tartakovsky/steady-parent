@@ -1,0 +1,15 @@
+# Say hello to the
+
+Source: https://biglittlefeelings.com/blogs/blf/mama-gift-guide
+
+---
+
+2023 *Ultimate* Big Little Feelings Gift Guide For Mama 
+**These are our absolute favorite gifts for new moms, moms-to-be, teachers, stepmoms, aunts, grandmothers, caregivers—and every other mama figure under the sun.**
+We see you. We appreciate you.  
+You’re doing an *INCREDIBLE* job—and you deserve allllllll the good stuff and more. 
+Whether you’re on the hunt for the perfect gift for the mamas on your list OR shopping for yourself (which we *100%* support), we’ve curated our list of giftable goodies. Take a peek… 
+ [](https://materialkitchen.com/products/the-reboard?epik=dj0yJnU9TC1SX1k5MVhZZTVXUVRublVRYVAzdXkxeHA3S3dRdWgmcD0wJm49cVBYMUFWRk0zTTJGVF80VG90ZjZ0dyZ0PUFBQUFBR1UzN25z) [](https://www.hillhousehome.com/collections/robes/products/the-womens-hotel-robe-pastel-trellis?epik=dj0yJnU9SnRQYUZtenlPMEdLR1NuWnQ1NXZXWDV4VFNmekliWkMmcD0wJm49bURQUDlEeHlHRDFfUEFaZDVRNUVpdyZ0PUFBQUFBR1UzOFNz) [](https://www.graza.co/products/sizzle-drizzle-combo-pack) [](https://ardorbin.com/products/citrus-gale-fruit-scented-wood-wick-coconut-wax-soy-candle) [](https://www.emijay.com/products/big-effing-claw-clip-in-pink-sugar) [](https://bit.ly/3QXnPJp) [](https://a.co/d/4hOu54A) [](https://www.maisonmiru.com/products/wish-and-hope-opal-nap-earrings?epik=dj0yJnU9WU9ZSGU1ekFIdnBsd2plNE95Sy0wQXN2clNmc19WbF8mcD0wJm49MERrVlZVVEUwbXVqUjVnaDFsV3ZNQSZ0PUFBQUFBR1U0QTZ3&utm_source=pinterest&utm_medium=social) [](https://www.amazon.com/Ember-Temperature-Control-1-5-hr-Battery/dp/B07NQRM6ML?th=1) [](https://ceremonia.com/products/hair-mask) [](https://www.hannaandersson.com/pajamas-adult-long-johns/81120-729.html?dwvar_81120-729_color=729&cgid=) [](https://a.co/d/6kBWNB4) [](https://a.co/d/7eBAltJ) [](https://www.artifactuprising.com/photo-calendars/brass-easel-desk-calendar?epik=dj0yJnU9eU4wUmFEdFhJTy1aQmFlZXE1RHJzejRXc2dOaXB5WnQmcD0wJm49eTU1WV9aT3psQldRU29NREM3blc1QSZ0PUFBQUFBR1UzOEhN) [](https://estellecoloredglass.com/products/estelle-colored-sunday-low-balls-set-of-6-mixed-set) [](https://itsbodily.com/products/care-for-pregnancy-3rd-trimester-labor?epik=dj0yJnU9aERyLVRTM0VhWUZxQTI5UnpKNGtsQ1Bha0lkVkxFb0cmcD0wJm49LXdSXzFzTGQ5ZmJYZHlSTmlYWkxaZyZ0PUFBQUFBR1UzOU1Z) [](https://oliveandjune.com/pages/press-on-system-choose) [](https://caraa.co/products/sling-small-vanilla) [](https://bychari.com/products/spaced-mom-necklace) [](https://www.sephora.com/product/the-lip-butter-balm-set-P507215?country_switch=us&lang=en&skuId=2715043&om_mmc=ppc-GG_17791296883___2715043__9027729_c&country_switch=us&lang=en&gclid=CjwKCAjw4P6oBhBsEiwAKYVkq435Z3HO2NK5Vc9BvNYpff1a8C-ECWm-Sgdg_ipsCDSngCO5XbuV7RoCZjUQAvD_BwE&gclsrc=aw.ds&epik=dj0yJnU9ekoyTF9nLS0zWmhTS09mVVg5Y0tRQVhER1ZvTHk2S1omcD0wJm49aEl0X3BIWm5EMTlKSkUyYzh0VVZudyZ0PUFBQUFBR1U0QWdF)
+*Some of the links in this post are affiliate links, which means that Big Little Feelings might receive a small commission when you purchase these items, at no additional cost to you. 
+@biglittlefeelings
+Join over 3 million parents and caregivers on Instagram!!!

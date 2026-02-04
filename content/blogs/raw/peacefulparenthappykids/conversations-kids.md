@@ -1,0 +1,59 @@
+# How to Turn Tough Conversations Into Learning Opportunities
+
+Source: https://www.peacefulparenthappykids.com/read/conversations-kids
+
+---
+
+4 min
+read •
+[Early Teen](https://www.peacefulparenthappykids.com/search-results?page=1&age\[\]=770118)[Preschoolers](https://www.peacefulparenthappykids.com/search-results?page=1&age\[\]=770115)[School Age](https://www.peacefulparenthappykids.com/search-results?page=1&age\[\]=770116)[Teenagers](https://www.peacefulparenthappykids.com/search-results?page=1&age\[\]=770119)[Tweens](https://www.peacefulparenthappykids.com/search-results?page=1&age\[\]=770117) [Communication](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770121)
+Almost from the time our kids can talk, there are conflicts we need to work through with them: 
+* * *
+  * An impending move ("I'm not going!")   
+  * Your six year old lying.
+  * Your nine year old failing math.  
+  * Your twelve year old using profanity on Instagram.  
+  * Your fifteen year old getting drunk with his friends.  
+Starting out on the offensive will only slam shut the doors of communication. If you can control your emotions and keep the conversation safe, your child may be able to stop being defensive and start sharing. That’s when break-throughs happen. The child actually sees the error of her ways and becomes motivated to repair things. (Unlike when we jump to blame and punishment, and the child assumes you never understand or care.) 
+Here's how to master the art of the tough conversation.
+### 1. Don't take it personally. 
+  * Your four year old screams _"I hate you, Daddy!"_   
+  * Your ten year old huffs _"Mom, you never understand!"_   
+  * Your teenager slams the door to her bedroom.   
+What's the most important thing to remember? DON'T TAKE IT PERSONALLY! 
+This isn't really about you. It's about them: their tangled up feelings, their difficulty controlling themselves, their immature ability to understand and express their emotions. When your child yells "You NEVER understand!" try to hear that as information about her -- at this moment she feels like she's never understood -- rather than about you.
+Taking it personally wounds you, which means you do what we all do when we’re hurt: either close off, or lash out, or both. Which just makes the situation less safe and escalates the drama. Your goal is the opposite: Safety and Calm. That's where connection and learning can happen.
+### 2. Manage your own feelings and behavior.
+The only one you can control in this situation is yourself. That means you:
+  * Take a deep breath. 
+  * Let the hurt go. Remind yourself that your child does in fact love you but can't get in touch with it at the moment.
+  * Let the fear go. Remind yourself that while this feels like an emergency, it isn't. It's a learning opportunity for your child. (And for you!) 
+  * Try hard to remember what it feels like to be a kid who is upset and over-reacting. 
+  * Notice if your “story” is making you upset (_“But she lied to me!”_) and if necessary expand the story to change your emotional response: ( _“My child was so afraid of my reaction that she lied to me. I guess I need to look at how I respond when she tells me something I don't want to hear.”_)
+  * Consciously lower and slow your voice before you speak. Your goal is to calm the storm, not inflame it.
+### 3. Always start the conversation by acknowledging your child’s perspective.
+That takes them off the defensive so they can hear you. Let them take off from your comments to correct and elaborate. Before you state your own views, reflect what they've said back to them, so they know you understand their point of view.
+### 4. Extend respect. 
+Remember that more than one perspective can be true at once. Assume your child has a reason for her views or behavior. It may not be what you would consider a good reason, but she has a reason. If you want to understand her, you’ll need to extend her the basic respect of trying to see things from her point of view. Say whatever you need to say and then close your mouth and listen.
+### 5. Reconnect with your love and empathy for your child.
+You can still set limits, but do it from as calm a place as you can muster. Your child will be deeply grateful, even if he can't acknowledge it at the moment. I'm not suggesting that you let your child treat you disrespectfully. I'm suggesting that you recognize any disrespect as an expression of hurt, fear or frustration. Listen to the message underneath the rudeness. Wait until you can act out of love, rather than anger, before you set limits. 
+### 6. Keep the conversation safe for everyone.
+People can’t hear when they’re upset. If they don’t feel safe, they generally withdraw or attack. If you notice your child getting angry, scared or hurt, back up and reconnect. Remind him– and yourself – how much you love him, and that you’re committed to finding a solution that works for everyone.
+### 7. Try hard to avoid making your child defensive.
+  * Use “I” statements to describe your feelings (_“It scares me when you’re late and don’t call”_ instead of _"You're so irresponsible not to call!"_) 
+  * Describe the situation. (_“This report card is much worse than your previous report cards”_ instead of _"This is a terrible report card!"_) 
+  * Give information. (_“Our neighbor Mrs. Brown says that you were smoking in the back yard”_ instead of _"Are you smoking?")_
+### 8. Ask questions instead of lecturing, which is the best way to keep your child receptive. 
+Here are two of the most valuable questions you can ask to help your child develop good judgment and make better choices in the future: 
+  * _"Was there some part of you that knew this was a bad idea?"_   
+  * _"Why didn't you listen to that part of you?"_   
+### 9. Summon your sense of humor. 
+A light touch almost magically diffuses tension.
+### 10. Remember that expressing anger just makes you more angry
+...because it reinforces your position that you’re right and the other person is wrong. Instead, notice your anger and use it as a signal of what needs to change, and take constructive action. For instance, rather than throwing a tantrum because the kids aren’t helping around the house, use your anger as a motivator to implement a new system of chores – one they help design -- that will help prevent the situation in the future.
+### 11. Wait until there's been a reconnection before you ask your child to come up with a repair plan.
+For instance, if your child has ruptured the trust between you, he has some repair work to do. But he won't be be motivated to do that until he sees the cost of his actions. First connect. Then brainstorm repair with him.
+### 12. Hold the intention that working through a conflict in a way that meets everyone's needs can actually bring you closer to your child.
+This doesn't happen if we enter the conversation intent on winning. But if we approach a difficult discussion with clarity about our true purpose -- nurturing this developing human -- we create an opening for something new to happen. If we're open to really hearing our child's side of things, and to meeting our child with love even while we're clear about the behavior we need to see, new possibilities for connection will appear. 
+That may seem impossible when everyone is upset. But intimacy deepens or is eroded by every interaction we have. Every problem is a chance to shift onto a positive track and deepen your connection to your child. 
+> Imagine your child, many years from now, being asked by his own child what he remembers about you. Have the conversation you want him to remember.

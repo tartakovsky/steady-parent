@@ -1,0 +1,25 @@
+# Navigate Your Teen’s Emerging Independence
+
+Source: https://www.peacefulparenthappykids.com/read/independence-teens
+
+---
+
+3 min
+read •
+[Early Teen](https://www.peacefulparenthappykids.com/search-results?page=1&age\[\]=770118)
+> _"Our teen wants to spend all her time with her friends. What happened to our family?"_
+* * *
+It's appropriate for teens to want to spend more time with their peers than their parents as they get older. Our job is raising our children to become independent people, and that means they need to increasingly test their wings in the wider world, without us there. Luckily, if we've accepted our child's dependency needs AND affirmed her development into her own separate person, she'll stay fiercely connected to her family, even as her focus shifts to peers, high school and the passions that make her soul sing. 
+It’s critical, during the teen years, for parents to remain their children’s emotional and moral compass. Kids will begin to experiment with intimate relationships outside the family, but to do that successfully, they need to be able to rely on those intimate relationships at home remaining solid. 
+> So it's important for parents to realize that while the teen years mean that parents have to invest extra energy to stay connected, it's crucial to put in that effort. And while it's normal for a 17 year old to focus mostly outside the family, a 13 year old who focuses mostly outwards may well be looking for something he wasn’t getting at home. 
+We need to invite our children to rely on us emotionally until they’re emotionally ready to depend on themselves. Too often, in our culture, we let teenagers transfer their dependency outside the family, with disastrous results. Teens often give up a great deal of themselves in pursuit of the closeness they crave, only to crash against the hard reality that other teens aren’t developmentally able to function as a substitute family.
+It is NOT a sign of healthy emotional development for a teen to push parents away, or for parents to let him. That’s a sign of a damaged relationship. Attempting to parent when your relationship with your child is damaged is like pushing a boulder uphill. It’s never too late in your relationship with your child to do repair work, to move closer. But it’s a whole lot harder to build the strong connection you want if the foundation isn’t there.
+### 1. Fight to stay connected.
+Keep your focus on connection. Find ways to be with your teen daily, and longer times on weekends. Listen more than you talk. Be sure to check in every single day. A few minutes of conversation while you're cleaning up after dinner or right before bedtime can keep you tuned in and establish open communication. Even teens who seem to have forgotten who their parents are the other 23 hours a day often respond well to a goodnight hug and check-in chat once they're lounging in bed. In addition to these short daily check-ins, establish a regular weekly routine for doing something special with your teen, even if it's just going out for ice cream or a walk together.
+### 2. Support your teen to develop good judgment. 
+Without understanding your teen's inner life, it's hard to understand his choices. I'm not saying that even with more connection you'll like his choices, or that you'd make the same ones. That's one of the benefits of being an adult -- hopefully you have better judgment than your teen! His frontal cortex is still developing into his twenties, so he's still building his impulse control and the ability to foresee the consequences of his actions. Good judgment, after all, develops from experience combined with reflection. Life will provide your teen with experience. Your job is to make sure he has the opportunity to reflect on his experience. But you can't do that by rubbing his nose in his bad decisions. You have to ask good questions and let him come to his own conclusions.   
+### 3. Be willing to change.
+Don’t invite rebellion by refusing to acknowledge that your son or daughter is growing up and needs more freedom. But don’t be afraid to ask where your kids are going, who they’ll be with and what they’ll be doing. Get to know your kids’ friends and their parents so you’re familiar with their activities. For more on what is appropriate parenting during the teen years: [Game Plan for Peaceful Parenting Your Early Teen](https://www.peacefulparenthappykids.com/read/early-teens)
+### 4. Seek first to understand.
+As Stephen Covey says, _"Seek first to understand."_ Over time, your connection with your teen will deepen, even while she's spending lots of time with her friends and activities. 
+In fact, don't be surprised if she plops down on your bed some night just when you're about to turn out the light to sleep, and wants to talk about what's going on in her life. I know, you need your sleep -- but what a vote of confidence from a teen! Every teen needs at least one relationship like that as she journeys toward independence.

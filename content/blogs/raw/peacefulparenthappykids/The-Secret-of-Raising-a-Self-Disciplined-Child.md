@@ -1,0 +1,29 @@
+# The Secret of Raising a Self-Disciplined Child
+
+Source: https://www.peacefulparenthappykids.com/read/The-Secret-of-Raising-a-Self-Disciplined-Child
+
+---
+
+4 min
+read •
+[Discipline That Works](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770124) [Peaceful Parenting](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770130)
+_"Together with intelligence, self-control turns out to be the best predictor of a successful and satisfying life." - Steven Pinker_   
+_"You frequently mention "setting limits" and I am wondering if you can elaborate. I feel like I am not good at setting limits and my children probably feel like I am unpredictable with what I allow and what sets me off." -- Aurora_
+* * *
+What does Aurora's question about setting limits have to do with cognitive scientist Steven Pinker's opinion on self-control? Our children learn self-control from the limits we set. But -- and this is critical -- _only_ if we set those limits with empathy.   
+Here's how it works.
+We can define self control, or "self-discipline" as controlling our impulses so that we're able to meet our own larger goals. Specifically, when we exercise self-discipline, we're usually giving up something we want, in pursuit of something we want more. 
+So every time your child chooses to shift gears from what she WANTS to do, to follow YOUR lead, she's practicing regulating her impulses. She's building self-discipline muscle. Or, actually, neural pathways. But like muscle, these neural pathways get stronger with use, so you can think of it as building a stronger brain that's capable of harder work.
+So yes, that's why kids need limits. Permissive parenting doesn't help kids develop self-discipline because it doesn't ask them to exercise self control in pursuit of their larger goals.   
+There is a catch, though. The limits have to be empathic, so the child chooses to follow them. Punitive limits --including "consequences" -- don't help kids learn to self-regulate, because the discipline comes from outside. The child isn't _choosing_ to rein in his own impulse. So even if he does what you want, he's not actually practicing **_self_** discipline and building that mental muscle. 
+What do I mean? Think about your son practicing his jump shot over and over. He may want to sit down and rest, but there's something he wants more --a basket! Being motivated toward a goal is a great way for kids to develop self-discipline. 
+But kids also learn self discipline from the daily limits you set, as long as you set them with empathy. Why is empathy essential to this process? Because your child is less likely to struggle against the limit. She may not like your limit, but she feels your understanding and compassion. She knows you're on her side. So she chooses to stop fighting for what she wants, so she can have something she wants more -- to stay lovingly connected to you, even to be "like" you. She _chooses_ to regulate her own impulses. She accepts your limit, and even internalizes it -- makes it her own.
+That's how your child internalizes your rules and values. It begins with the connection -- he WANTS to please you, as long as he doesn't have to give up his own integrity to do it. Over time, he begins to think of himself as the kind of person who brushes his teeth, does his homework, tells the truth, and lends a helping hand. The kind of person who can apply himself with discipline to achieve his goals. A self-disciplined person!
+Since your empathic connection with your child is the reason he eventually accepts and internalizes your limits, it's critical to stay connected while you set limits. That's hard for most parents, since we usually think that we have to set limits sternly. But you can be firm about your limit at the same time that you extend understanding and empathy.
+What does an empathic limit look like? Empathy is "feeling" the other person's point of view. Setting limits is informing your child of a rule or expectation. Here's how you combine them: 
+  * _"You love running, don't you?! Running is great! You can run all you want in the grass. Streets are not for running; streets are for cars. When we cross the street, you may hold my hand or I can carry you. You can run by yourself again on the other side of the street."_
+  * _"I see how mad you are at your brother. It's okay to be mad, I understand. AND people are never for hitting. Come, let's tell your brother how mad you are. I'll help you."_   
+  * _"Wow, Sara put up those photos from Saturday? That's so exciting. I know you can't wait to see them. And the rule in our house is still that homework comes first. You can go online once your homework is finished. I know, it's hard to wait! But it's always good to have something to look forward to, once you finish your homework. That's a good self-management trick."_   
+If a limit is worth setting, it's worth being consistent about. There may be times when a new limit is necessary:  _"I have a headache and I can't handle noise right now"_ but in general your child shouldn't be surprised by what you allow. Every household has different priorities; mine are Safety & Health, Respectful Relationships, and Values. Neatness and noise, not so much. Of course, your own limits will be based on what's important to you.
+Why should you have to prioritize and give up some of what you expect? Because your child is a human, and a developing one at that. She can't possibly be perfect, any more than you can. And your relationship with her needs to be more about connection and discovery than about limits and frustration. Saying No too often undermines your relationship and makes her feel like you don't understand.   
+And that empathic connection is, after all, the foundation of your child's self-discipline!

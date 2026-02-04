@@ -1,0 +1,25 @@
+# The Truth About Consequences
+
+Source: https://www.peacefulparenthappykids.com/read/Consequences
+
+---
+
+3 min
+read •
+[Discipline That Works](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770124)
+My Aha! Parenting moment last week came when my husband called me three times to email him something at work. He often works on a computer at home and then emails himself documents so he can access them from the computer at his job. A couple of times a year, he’ll forget to send himself something important, so he’ll call me and ask me to email it to him. Luckily, I have a home office, so it’s easy for me to go to his computer and email it. 
+* * *
+Last week, this happened not just once, but on three different days. My husband was very apologetic about interrupting my work. He was grateful I was able to help him out. But I found myself wondering if maybe he would have done a better job remembering to take care of this task himself I wasn’t so available to help him. After all, the advice parenting experts always give parents is not to “rescue” kids if they forget their homework or their lunch, so they’ll “learn a lesson.” 
+Smiling, I fantasized a scenario in which I would tell my husband that I loved him very much but couldn’t email him the document, because that would just encourage him to continue this irresponsible behavior. He might THINK I would be helping him if I emailed his important document to him, but it was really for his own good that I wasn’t going to send it. I knew it wouldn’t be easy right now that he didn’t have the presentation he needed for his meeting, that he had worked so hard on, but I was sure he would learn an important lesson from this experience. I knew that someday he would thank me for helping him learn this valuable lesson. 
+I considered what my husband’s response might be. Disbelief, of course, and then begging. Then anger. And when I continued to hold to my position, he might even conclude that I don’t really love him. After all, if I really loved him, wouldn’t I do everything in my power to help him when he asked me for help? 
+I had to laugh at this scenario. Of course I would never do this to my husband. And for exactly the same reasons, I would never do this to my child. I’ve had the opportunity, although never three times in one week. But probably twice in my son’s high school career, he called and asked me to email homework to him so he could access it at school. And probably once a year while my daughter was in middle school, I walked the five blocks to her school to drop off something she’d forgotten at home. If I’d said No to them, they might indeed have learned the lesson not to forget their work. But I’m afraid they would also have learned another, unintended, lesson, about being unsupported in the world, and not being lovable enough, important enough, to their mother that she would do them a small favor they desperately needed. Would that have been worth the cost? 
+I asked my 14yr old daughter what she thought of the standard parenting advice not to rescue kids in these situations. _“Is the favor easy for the parent to do?”_ She asked. _“Obviously, you wouldn’t leave your job to go home and get something the kid forgot. But you mean the experts say you shouldn’t walk in the other room and email the kid his homework, or walk five blocks to the school?”_
+_“That’s right,”_ I told her. _“They say that trains kids to let you wait on them hand and foot, and not to be responsible.”_
+_“Anyone who says that is an idiot,”_ she answered. Then she continued:
+> _“Teenagers need to know they can count on their parents. Parents who follow that advice will raise teenagers who won’t come to them when they’re in trouble. Besides, asking for help is a life skill everyone needs.”_
+So why IS this the standard parenting advice? We think we’re teaching kids to be more responsible. Instead we’re teaching them that they can’t count on their parents. 
+And it isn’t just the forgetting things issue. Most parents punish their kids with “consequences” so they learn lessons, unwittingly teaching them the wrong things. 
+So, have I taught my kids to be irresponsible by rescuing them occasionally? I don’t think so. They’re both straight A students. They do their homework the minute they get home. They seem to forget things less often than I do. 
+Now maybe you’re wondering what would have happened if my kids forgot something three times in one week. And then three times the next week. Wouldn’t I refuse to rescue them THEN? Wouldn’t I make sure they suffered the consequences, to learn a lesson? 
+Actually, no. I would work with them to help them develop a habit to help them remember. Like always printing out homework the night before, packing the backpack, and leaving it by the door. Putting a sticky note on the backpack if something needed to be added, like lunch from the fridge. And never going to sleep until they emailed whatever they’d been working on. 
+Which is exactly the habit I’ll be working on with my husband this evening!

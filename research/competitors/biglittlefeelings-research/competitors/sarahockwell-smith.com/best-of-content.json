@@ -1,0 +1,10 @@
+{
+  "strategy": "best-of-content",
+  "description": "List-style and 'top reasons' articles providing comprehensive overviews of parenting strategies. Targets listicle searches like 'ten reasons to not sleep train' and 'ten things every parent should know about tweens'.",
+  "urls": [
+    "https://sarahockwell-smith.com/2015/05/14/ten-reasons-to-not-sleep-train-your-baby/",
+    "https://sarahockwell-smith.com/2021/01/25/ten-things-every-parent-should-know-about-raising-tweens/",
+    "https://sarahockwell-smith.com/2021/02/24/this-is-the-hardest-age-to-raise-a-child/",
+    "https://sarahockwell-smith.com/2021/03/02/13-signs-your-child-is-rapidly-becoming-a-teenager/"
+  ]
+}

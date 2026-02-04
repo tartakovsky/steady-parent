@@ -1,0 +1,51 @@
+# 12 Tips To Raise a Persistent Child
+
+Source: https://www.peacefulparenthappykids.com/read/persistence
+
+---
+
+7 min
+read •
+[How To Raise a Child of Character](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770126) [How to Raise an Emotionally Intelligent Child](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770128)
+> _"Character consists of what you do on the third and fourth tries."_   
+>  --James A. Michener 
+* * *
+If you read about Nobel Prize winners, they all have different stories. But they share one thing: the people who know them always describe how that person never gave up. A two year scientific experiment can fizzle, and that scientist will be back in the lab the next morning, figuring out what they can learn from whatever went wrong.
+I'm willing to bet that many geniuses have gone to their graves unaccomplished because of their inability to persist in the face of adversity. All of us have days when things look bleak, when it’s hard to find the energy to persevere. But persevering may determine our chances of success more than any other single characteristic.
+Some parents wish their child was less persistent, especially during the toddler years. But persistence is a wonderful trait in a human being. It's essential to accomplishing what you want to in life.
+So if you're lucky enough to have a persistent child, I'm hoping this article will help you re-frame that sometimes challenging characteristic into a strength. And if your child isn't naturally persistent, I'm hoping this article will support you with effective ways to encourage your child in going after what he wants.
+Most psychologists -- and virtually all parents -- agree with temperament expert Stella Chess that perseverance is an inherited trait. But there is also evidence that children can be raised to be more persistent. Experience is a wonderful teacher. Kids who persist successfully tend to keep persevering.
+What can parents do?
+### 1. Reward persistence. 
+Recognize and point it out when your child works at something, regardless of the result. Cheer when they don't give up, even when what they won't give up is their argument with you. That doesn't mean you give in to the argument. It means you applaud their persistence and find a win/win solution that works for both of you. For instance, if your child wants to do something NOW, maybe he'll settle for doing it another time, if you make a firm date, put it on the calendar, and fantasize with him about how terrific it will be.
+### 2. Aim your child at a door, not a wall. 
+If you have the kind of child who never gives up, she may routinely beat her head against the wall (or make you want to beat yours.) To avoid that, teach her to look for the openings. For instance, teach and model that if she finds solutions that work for both people, she's more likely to get what she wants. Instead of seeing other people as obstacles to what he wants ("That other kid always gets the lead in the school play"), empower him to see that he is always in charge of himself and can keep working until he reaches his goal ("You have a role too....If you play that role as well as you can, you'll get a bigger role in the next play.")
+### 3. Expect your persistent child to resist you at times.
+If your child has the courage of his convictions, then he wants what he wants and he isn't necessarily open to alternatives. That's okay. As he gets older, he'll gain flexibility. Just expect more tantrums than usual during the toddler years.
+### 4. Find win/win solutions.
+Your persistent child is on a mission. If you want her to work with you on your agenda, it will help enormously if she feels you're willing to work with her on her agenda, too. Controlling parenting, research shows, always creates rebellion. But with persistent kids, it's especially important to teach your child how to identify each person's key need and find a solution that both of you can live with. If you weren't taught how to do this as a child, it's a lot of work--but a valuable life skill for both of you.
+### 5. Help with transitions.
+Kids who are persistent usually have a harder time with transitions than other kids. So come up with a plan to support your child and make both of your lives easier. Minimize the number of transitions in her day. Build them into routines so she comes to expect them. Connect with her before you ask her to make a transition. Help her take something with her from one situation to the next (so if she's playing with her animals, maybe one joins her as you head to the grocery store.) Always give warnings and prepare her emotionally.
+### 6. Let him grieve.
+Persistent kids have big feelings. They will pass sooner if you acknowledge, with empathy, what he wants and why he wants it, and at the same time set firm limits. The firmness of your limit removes any possibility that hounding you will get him what he wants, so that he has no choice but to feel his disappointment. That means he may erupt with grief, but that's a good thing; if you can stay understanding, he'll show you his disappointment and learn the resilience to survive disappointments in the future. _"You really wish you could have that....It looks like so much fun to play with.... You're so disappointed I'm saying No... And the answer is still definitely No. I'm sorry we can't buy it today, but that's for a special occasion, like your birthday.__"_
+Be aware that even with your understanding he might still have a meltdown and he might even continue his meltdown all the way home. People may stare. That's okay. He'll learn that he doesn't always get what he wants, but he gets something better--a parent who understands. Eventually, your kid will be the one who achieves big dreams against all odds, because only persistent people can do that.
+### 7. Practice stopping. 
+Kids who are persistent often can't stop themselves when they really want something. They need our help to let something go. Younger kids will often need to cry before their good mood is restored. Give them practice "stopping" by playing games like "Mother May I?" and "Simon Says" and be sure you're doing 
+Agree on what she will try to do to calm herself when she hears the special code word, and how you can help her. For instance, maybe she just needs to retire to her favorite Cozy Corner and read her favorite book or listen to an audio book, to shift gears. Then (after warning her), practice. 
+### 8. Practice makes perfect. 
+Many kids worry that they aren't good enough, which makes them give up easily. Help your child understand that no one becomes accomplished overnight. All experts have worked for years to accomplish excellence in their field. Encourage effort and practice, more than accomplishment. Here's a brush up on 
+### 9. Offer emotional support. 
+If your child wants to quit three weeks into the dance class, listen to why. Maybe it just isn't what she thought it would be and she'd rather do soccer than ballet. That's fine; part of finding our passions is to experiment. But if she wants to quit everything she starts, then something is getting in her way, and that something is almost certainly fear. She needs your help to work through her fear, or it will begin to pervade other areas of her life, and you'll find her shrinking back from trying new things in general.
+So help her work through those fears by playing with her about them, for instance, by playing dance class at home. Let her be the teacher while you're the bumbling student, and let her giggle at what a terrible student you are. Seeing someone who just can't do anything right will help her feel better about her own lack of perfection. 
+If playing isn't enough and she needs to do some crying, that's okay too. Tell her that she needs to finish the six weeks of the class, and you're sorry it's so hard. If you've done enough playing, her feelings will be close enough to the surface that she'll probably cry. That's good -- exactly why you set the limit that she needs to stay in the class. A good cry may be all she needs to walk into the next class feeling more courageous, and come out feeling even better. 
+What if she cries about it a few times and still doesn't want to go back? Then maybe there's more going on than you realize. Is the teacher somehow scaring her? Is there something happening that's upsetting? But most of the time, once kids laugh and cry about it, they go happily -- and often, once they're past this hurdle, they end up loving it and wanting to do more. But even if she doesn't, she'll have learned something positive about her own inner resources.
+### 10. Model perseverance. 
+Show your child how a person can set out to master something and move through setbacks to do so. Talk about your feelings as you do it. _"I tried it this way. That didn't work. Now I am going to try it that way. I don't give up easily."_
+### 11. Stay connected.
+If you have a persistent child, it's a matter of integrity to her not to quit. So if there is something she needs to give up on (whether it's your toddler going after that breakable across the room, your preschooler running away from you in the parking lot, or your elementary schooler shouting out answers in class) give her something she wants even more to go after instead. Usually, what kids want most is that warm, rewarding relationship with mom and dad, as long as you work to re-connect, especially when you've felt worn down and angry.
+### 12. Teach your child to take a break.
+As Albert Schweitzer said, _"A man can do only what a man can do. But if he does that each day he can sleep at night and do it again the next day."_
+Teach your child to monitor his mood and take a break when he needs to. _"We're both getting frustrated, so let's take a break. We'll tackle this again tomorrow."_ It’s good for him to learn to stop take a break before he gets too frustrated and gives up. With persistence, sooner or later, he’ll make a break-through.
+> _"Success seems to be largely a matter of hanging on after others have let go."_   
+>  --William Feather 
+### Want more? See: [Parenting Your Strong-Willed Child](https://www.peacefulparenthappykids.com/parenting-tools/positive-discipline/Parenting-Strong-Willed-Child)

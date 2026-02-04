@@ -1,0 +1,28 @@
+{
+  "strategy": "case-studies",
+  "description": "Podcast episodes featuring interviews with expert guests and real parenting stories. Episodes showcase Dr. Becky interviewing celebrities, authors, and experts to share parenting insights and experiences.",
+  "urls": [
+    "https://www.goodinside.com/podcast/8903/mom-where-is-my-water-bottle-and-other-executive-functioning-mysteries/",
+    "https://www.goodinside.com/podcast/3080/raising-anti-racist-anti-bias-kids-with-britt-hawthorne/",
+    "https://www.goodinside.com/podcast/7065/the-anxious-generation-with-jonathan-haidt/",
+    "https://www.goodinside.com/podcast/12964/men-beyond-utility-with-dr-john-delony/",
+    "https://www.goodinside.com/podcast/11949/fck-around-and-find-out-parenting/",
+    "https://www.goodinside.com/podcast/2339/a-parents-1-job/",
+    "https://www.goodinside.com/podcast/5408/atomic-parenting-habits/",
+    "https://www.goodinside.com/podcast/13670/the-new-puberty-with-dr-sheryl-ziegler/",
+    "https://www.goodinside.com/podcast/13763/how-we-grow-up-inside-the-adolescent-brain-with-matt-richtel/",
+    "https://www.goodinside.com/podcast/2841/theotbutterfly-on-parenting-neurodivergent-kids/",
+    "https://www.goodinside.com/podcast/2360/what-to-do-when-your-kid-is-bullied/",
+    "https://www.goodinside.com/podcast/4277/how-to-keep-house-while-drowning/",
+    "https://www.goodinside.com/podcast/4055/emily-oster-on-the-real-data-parents-need/",
+    "https://www.goodinside.com/podcast/4386/essential-labor-mothering-as-social-change/",
+    "https://www.goodinside.com/podcast/14845/lets-talk-bullying-with-dr-sheryl-ziegler/"
+  ],
+  "example_keywords": [
+    "the anxious generation podcast",
+    "jonathan haidt podcast",
+    "dr sheryl ziegler",
+    "podcast on bullying",
+    "parent job"
+  ]
+}

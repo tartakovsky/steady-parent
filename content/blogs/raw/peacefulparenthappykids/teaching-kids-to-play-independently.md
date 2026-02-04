@@ -1,0 +1,75 @@
+# Supporting Your Child To Play Independently
+
+Source: https://www.peacefulparenthappykids.com/read/teaching-kids-to-play-independently
+
+---
+
+9 min
+read •
+[Family Life](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770123)
+> _Dr. Laura....I have free play time on our schedule every morning, just like you recommend. But when I tell my kids to go play, they beg for screens, they whine that they don't know what to do, they don't have any good toys, they need me to play with them. This is the only chance I have to get any work done, and I need that time. Why can't they play by themselves?!"_
+* * *
+Why indeed? Consider these scenarios. 
+  * The baby mouths her rattle happily. Dad coos at her, takes the rattle and shakes it loudly so she can see how it works.
+  * The two year old has a new classic toy: spools and a cord to string them on. He piles them into a column, then tries to drop the cord down through the holes. _"Like this,"_ says Mom, deftly threading the spools onto the cord.
+  * The three year old turns the handle on the jack in the box so that it pops up. _"Good job!"_ says Dad.
+  * The four year old is painting, swirling all the colors together. _"When you mix them all, everything turns brown and all the pretty colors go away,"_ says Mom.
+  * The five year old is constructing a marble run. _"Why don't you make it higher at the start, so it goes for longer?"_ asks Dad.
+Every one of these parents is trying their best. And every one of them is unwittingly hijacking their child’s project, and preventing their child from enjoying the intrinsic rewards of self-directed play. 
+As parents, we love to teach our children. But any educator can tell you that humans learn best when they discover for themselves. And since children learn through play, interrupting our child's play to teach or evaluate them ("Good job!") not only reduces their curiosity and excitement about learning, it lessens the joy that the child experiences from independent play. 
+That's because we're teaching our children a lesson that we never intended: We're the experts on play, just as on everything else. **_We_** have the good ideas. To play the "right" way, they need **_us_** to play with them. We, the adults, are in charge of play. (Ridiculous, right?) 
+So from their earliest experiences, children learn that they need our help to play. 
+We compound this problem by over-scheduling our children, so they're always en route from one activity to another, which doesn't leave much time for independent play. Then, when our children do have a few minutes without anything to occupy them, we respond to pleas of boredom by entertaining our kids with screens, which keeps them from developing their "play muscles." 
+No wonder our children expect us to entertain them and play with them! 
+So if you've found yourself wishing that your child would play by him or herself more often, and for longer periods of time, you don't need to feel guilty about that. Sure, it would be good for you, so you can get something done without having to put your child in front of a screen. But independent play is also important for your child's development, as long as they're still getting plenty of connection time with you. 
+Research shows that children who regularly lose themselves in play develop qualities that will help them master whatever they pursue for the rest of their lives, including increased capacities to problem-solve, persevere, focus, manage frustration, and use their imaginations to create. Play is how children learn, explore, and process big emotions. 
+Play is how children learn about their environment and experience who they are in various situations, which means that play is how children discover who they are, and develop their capabilities. So play is children's work, how they "become" themselves. And simply from the perspective of enjoying life with children, play is what keeps children happy and absorbed, so they aren't whining or fighting. 
+So how can you support your child to enjoy playing independently? 
+###  1. Respect Your Child's Play. 
+Research shows that children play more deeply when they have longer periods of time in which to immerse themselves without interruption. 
+What's deep play? Think of it as the experience you have when you lose yourself in creativity or work -- you're in "the zone," fully engaged, exploring, discovering, applying yourself fully, creating. The inner monologue is suspended -- that's the "losing yourself" part -- and you're fully present and alive. That's play, and it revitalizes and refreshes the brain and our very sense of self. 
+Children can play with others, or by themselves. They can pretend, build, explore, try out how things feel in their hands, move their bodies, watch others playing, even watch the dust motes in a shaft of light. 
+That's the kid's job. Our job is to respect our child's play as their "job," something of value, so that we support their play, just like we would support our partner's work. 
+###  2. Create an inviting place and time in the schedule. 
+Children do best with a schedule, which helps them know what to expect and lessens anxiety. It they know that every day after breakfast (for instance), they'll have a chance to play, they'll look forward to that time and get into play more quickly. 
+A safe place for play gives your child the experience of autonomy, so they don't need the constant, distracting hovering of an adult. Set up clear places for kids to do messy play like art versus a construction zone for building things and a cozy quiet corner to read or dream. Use washable art supplies, make sure kids know to keep messes on a tray or cookie sheet, and expect some mess. 
+###  3. Fill your child's cup first. 
+If your child resists independent play, make sure they're routinely getting enough of your attention to feel "full," and that they've had a chance to work through any upsets or anxiety they feel so they can more easily settle into play.   
+  * Every day, include 20 minutes of [Special Time](https://www.peacefulparenthappykids.com/read/How-To-Special-Time) in the schedule, where you actively play with each child individually -- and enjoy it! During this individual time, follow your child's lead and minimize your contributions, as described in this article on [Special Time](https://www.peacefulparenthappykids.com/read/How-To-Special-Time). But that doesn't mean you disengage. In fact, pay attention as completely as you can. This is not easy, but your child senses your full presence and is free to engage fully and "show you" their inner world. If you do need to engage, comment affirmatively on what your child is doing:_"You're working hard to make that tower high!"_ or _"The black engine is crashing into the red engine. Wow!"_ Your child's takeaway is that indeed they DO know how to play, and that their play is of value. Research studies have linked this kind of Special Time to children's increased ability to play independently.
+  * Use roughhousing to give your child a good session of laughter a couple of times a day, which lessens anxiety and strengthens connection.
+  * Connect with your child emotionally and physically throughout your day, by being empathic and responsive when they need you.
+  * While you're moving your child through the schedule (dressing, brushing teeth, changing diapers, having meals), try to be fully present and warmly engaged with your child, so that they experience you as emotionally responsive.
+A lot of work? Yes. But when your child starts playing independently for an hour at a time, you'll see how worth it these short sessions of full attention are. And there's an added benefit, too. Your child will feel more connected to you, which means they will cooperate more -- and you'll spend a lot less time on discipline! 
+###  4. Get your child started on something. 
+Some children will get right into play. Others will need your help to get started. And it won't help to tell them "Go play!" which just makes them feel like you don't want to be with them. Those children need a transition. 
+Set aside ten minutes to admire your child as you watch them play. Say _"Soon we will have free play time, while you play whatever you want and I do a little work. But before we do that, let's take ten minutes so I can watch you play. I LOVE to watch you play."_
+Then, turn off your phone. Set a timer. Sit and admire your child while he or she plays. Comment judiciously so your child knows you are really paying attention: _"You're adding a bridge to your train track.... That engine is going so fast!"_ Empathize with your child's excitement and interest, but keep your comments minimal. Your admiration is filling your child's cup and validating your child's play as something your child knows how to do that is of value. Just pour your full warm, loving attention into your child 
+What if your child can't get started on something? Ask your child how to use a toy or to show you how they do something. The key is to follow your child's lead. They're the expert. Resist the urge to evaluate, judge, make suggestions, or tell your child what to do or how to do it. This is your child's project and they're in charge of it. If your child gives you a role to play, ask for direction: _"Do you want this train to go fast or slow?"_
+###  5. Extract yourself but stay available. 
+Then, gradually extract yourself. Tell your child you're going to check on something in the kitchen, and you'll be right back. 
+Do come back, hover and attend for a few minutes, then busy yourself with something nearby. Not a screen, because then your child senses that you aren't really available if they need you. But cooking, cleaning, washing dishes, folding laundry. Doing paperwork. Cleaning out a messy drawer. Anything that you can focus on that is not your child, but that you can look up from right away if your child calls for you. 
+Do expect your child to seek your approval or attention or help as they get started with their play. They are just making sure that if they need you, you will still be there for them. So when they initiate an interaction, respond immediately with your warm smile. Say "I see!" or something else that acknowledges without evaluating. But don't go over to interfere, unless your child seems really stuck. Instead, describe: "It looks like you're trying to figure out how to/ whether to.......That's a tough decision. I can't wait to see what you decide." Once your child is lost in play, he won't need you there, so you can go do the work you really need to get to. 
+###  6. Encourage deep play. 
+When we interrupt play, the child has to start over, so it keeps the child from playing deeply. So try not to interrupt a playing child and protect your child's playtime as much as possible, including from yourself. Treat play as important work that you try not to interrupt, and make that attitude clear to everyone in your family. For instance, if your older child is building something and needs to concentrate, try to keep your younger child otherwise occupied. Simple classical music can facilitate concentration and lift moods, but keep TV and radio voices off. (Listening to NPR while you cook? Great! Wear headphones. Young children shouldn't listen to the news anyway.) If your child is happily playing, let the schedule go for now. 
+###  7. Declutter and Rotate Toys. 
+When your child's space is too full of toys, they get overwhelmed, and they stop seeing the toys as opportunities. Humans, especially small humans, are primed to notice novelty. So regularly clear out some of the toys that your child hasn't been playing with. Put them in the attic or the back of your closet, and leave them for a few weeks. When you bring them out, a few at a time, your child will greet them with renewed interest. 
+###  8. Choose Toys that Facilitate Deep Play. 
+To facilitate play, keep screens to a minimum. Studies show that kids who watch TV are more prone to adopt "scripts" of what they've seen; kids who don't get much screen time engage in more flexible, creative play. 
+Even structured toys predispose children to use them as prescribed, which limits creativity, so offer toys that can be used creatively in many ways. The classics are still the best: Blocks, paints, clay, puppets, dolls, stuffed animals, vehicles. 
+###  9. Strew. 
+Every day, pick a few toys, books or projects and "strew" or scatter or place them around your child's play area. No child wants to be told what to do, but they will experience these "found" objects as an invitation to explore and play. Children love to discover something new that they can engage with on their own terms. For instance:   
+  * Add some dried beans to a baking pan with a small dump truck and shovel.
+  * Put some old magazines, a safe scissors, glue and paper on a cookie sheet.
+  * Leave a box of colorful scarves in the middle of the floor, maybe with two of them knotted together.
+  * Prop up a book your child likes, with a stuffed animal ready to read it.
+  * Combine cookie cutters with clay (in an airtight container) on a cookie sheet.
+  * Group paper towel tubes, tape, and marbles in a box.
+  * Gather a few art supplies (pipe cleaners, goggle eyes, corks, glue) on a cookie sheet, ready to be assembled.
+  * Set up a tea party with stuffed animals.
+Notice that for your child to even notice your invitation, the play space needs to be orderly (see #7 above.) 
+What if your child ignores your strewn invitation and instead digs into something else? Great! Something else was already captivating their interest! 
+What if they ignore your strewing invitation and whine for you to play with them? See #1 and #4 above. You'll probably find that after you spend some connection time, your child is ready to explore the opportunities you've presented. 
+###  10. Keep screens strictly confined to certain limited times on the schedule. 
+If your child knows that you'll hand them a screen if they whine enough, that's what they'll do. But using screens to combat boredom, or to ease discomfort, or to distract from big feelings, all sabotage your child's emotional development and executive function. If you want your child to learn to play independently, they will have to overcome some discomfort and get used to doing something they are not used to doing. That's okay; that's how we learn. "Rescuing" them from boredom isn't a rescue at all. That would be like rescuing them from learning to read. 
+###  11. Be patient. 
+If your child has been playing independently since babyhood, you didn't need this post. If your child hasn't had much opportunity to play independently, this will be a gradual transition. So if your child is begging you to play, go ahead. Enjoy her. Then, try all of the tips above, and keep delighting in your child's emerging play mastery. Over time, you'll notice that your child no longer needs you to play deeply, because she's becoming her own play muse. Don't you wish we all could have learned that in childhood?

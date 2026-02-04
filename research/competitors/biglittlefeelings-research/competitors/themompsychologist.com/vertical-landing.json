@@ -1,0 +1,18 @@
+{
+  "strategy": "vertical-landing",
+  "description": "Vertical-specific pages targeting parents in educational settings (preschool, daycare, kindergarten, classroom environments). Content addresses school transitions, teacher collaboration, and institutional discipline approaches.",
+  "urls": [
+    "https://themompsychologist.com/blog/bad-behaviour-in-schools/",
+    "https://themompsychologist.com/blog/ask-teacher/",
+    "https://themompsychologist.com/blog/daycare-preparation/",
+    "https://themompsychologist.com/blog/prepare-daycare/",
+    "https://themompsychologist.com/blog/preparing-daycare/"
+  ],
+  "example_keywords": [
+    "ask teacher",
+    "bad behaviour in schools",
+    "daycare preparation",
+    "prepare for daycare",
+    "preparing for daycare"
+  ]
+}

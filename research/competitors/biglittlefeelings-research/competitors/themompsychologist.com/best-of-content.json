@@ -1,0 +1,24 @@
+{
+  "strategy": "best-of-content",
+  "description": "Best-of and listicle-style content around parenting topics, including truth questions, responses to difficult questions like Santa, and curated lists of strategies. Uses discovery and comparison language to capture browsing intent.",
+  "urls": [
+    "https://themompsychologist.com/blog/best-truth-questions/",
+    "https://themompsychologist.com/blog/stop-the-whining/",
+    "https://themompsychologist.com/blog/stop-whining/",
+    "https://themompsychologist.com/blog/stop-yelling/",
+    "https://themompsychologist.com/blog/stop-yelling-at-me/",
+    "https://themompsychologist.com/blog/stop-whining-meaning/",
+    "https://themompsychologist.com/blog/stop-your-whining/",
+    "https://themompsychologist.com/blog/best-way-to-get-rid-of-pacifier/",
+    "https://themompsychologist.com/blog/best-response-to-is-santa-real/",
+    "https://themompsychologist.com/blog/stop-being-whiny/",
+    "https://themompsychologist.com/blog/stop-screaming-at-me/"
+  ],
+  "example_keywords": [
+    "best response to is santa real",
+    "best truth questions",
+    "best way to get rid of pacifier",
+    "stop being whiny",
+    "stop screaming at me"
+  ]
+}

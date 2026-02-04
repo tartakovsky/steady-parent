@@ -1,0 +1,32 @@
+# 14 month old panics at bedtime after 1 week separation
+
+Source: https://www.peacefulparenthappykids.com/read/14-month-old-panics-at-bedtime-after-1-week-separation
+
+---
+
+4 min
+read •
+Question
+Hi Dr. Laura,
+Jalen is now almost 14 months. He hasn't always been the best sleeper, but around 8-9 months we finally got him into a consistent routine that helped him a ton and he started taking much better naps and sleeping through the night (STTN) occasionally!
+My husband and I went on a trip a few weeks ago. We were gone for 7 nights. We left Jalen with my parents who he sees many times a week and is very comfortable with. His sleep before then was great, no problems putting him down, and he would STTN at least 4 nights a week, with his other nights only including short wake ups for a little comfort.
+Since we have been back, about 2 weeks now, I have seen some changes. My husband and I both feel we were probably gone too long, and that may be contributing to his sleep problems now. He still goes down great for naps (still taking 2 a day), no crying, and still takes pretty good naps. Its the bedtimes that we have been having problems with.
+We have maintained the same bedtime routine that he's always had, milk, brush teeth, read a few books quietly, rock him and sing a song or two and then into bed. Where previously he would have rolled over and fallen right to sleep, now he clings to us and acts almost terrified to be put to bed. He cries pretty hard. So I will go in and try to comfort him, and its the same thing over and over, up to 2 hours some nights.
+I am pretty sure he is sleepy when we put him down. He shows all his sleepy signs including rubbing his eyes, getting his lovie and bink and coming to me to cuddle. That is when I start his routine. He used to go to bed around 7 - 7:30 but lately its been 8:30 or 9 pm. I feel like that's way too late, especially when he wakes up from his second nap at around 3pm. When I go back in to comfort him, he will calm down, get heavy eyes, and seem like he is falling asleep...except he never does, because he's not used to falling asleep on me!
+I just don't know what to do. I'm really upset that he gets so upset at bedtime, when it has always been a soothing mellow time for him and us. I'm not sure if he's still dealing with us being gone, even though it doesn't affect his naps. Or if he's just testing us. I guess its how he clings to me and starts to whimper when he can tell I'm going to put him down is the hardest. I feel like he's scared and needs comfort, but I don't really know the best way to go about it, so we can have a better bedtime for him. Thanks,   
+Ashley
+Answer
+Dear Ashley,   
+What a stressful situation for your son -- and for you! It is very upsetting to have your baby cling to you and whimper with fright, and then to cry hard for up to two hours.
+I agree with you that a seven day separation is far too long for a 13 month old, even when he's left with people he loves. That's too young to have developed object constancy, so when you disappear, he really believes you might never come back. Seven days must have seemed to him like you were gone forever, especially in those dark hours at night. He must feel he has to hold on for dear life in case you disappear again.
+I wonder how his grandparents handled his distress in your absence. If they rocked or cuddled him to sleep, he may have felt that was his lifeline, the only thing he could depend on in your absence, and having gotten used to that, he might no longer feel comfortable putting himself to sleep. On the other hand, if they left him to cry himself to sleep while he was missing you, bedtimes would have been very traumatic to him.
+Is he damaged for life? Attachment researchers would say that even one separation like this can definitely make a child more insecure and clingy for a long time. However, I believe that kids are resilient and can get through anything -- even something as terrible as the death of a parent -- if they have enough empathic comfort from adults who care.
+Bottom line, I would say that he was traumatized by being separated from you, and needs your comforting to get past this. I am sorry to say that it may take awhile to get him back into an easy bedtime routine where he falls asleep peacefully, but it can certainly be done.
+First of all, I would recommend beginning bedtime earlier. Most 14 month olds have to use a lot of cortisol and adrenaline to stay up later than 7 pm, which then makes it more difficult for them to relax and fall asleep. If you think he's overtired, I'm sure you are right.
+Second, since we know he is responding to separation trauma, I would recommend that you stay in the room while he falls asleep for now, rather than compounding the trauma by leaving him alone to cry. This will be labor intensive for you but you will end up with a child who happily falls asleep in his own bed at night.
+How do you do this? Put the side of the crib down completely so you can "snuggle" him as you sit in a chair next to the crib. Go through your regular bedtime routine, but when it comes time to put him in the crib, ask him if he wants you to stay with him, before he starts to whimper and cling. Reassure him you will sit in the chair next to him and rub his back and sing to him. You can probably forestall a panic reaction if you then sit together in the chair next to the crib, and as he begins to fall asleep, put him in the crib, but continue to stroke and soothe him, and sing to him. Stay with him until he falls asleep.
+The combination of an earlier bedtime and a less stressful bedtime will mean fewer stress hormones in his body so he can relax more easily and get a better night's sleep.
+After a week of this, he should be going easily into the crib because he no longer associates it with losing you. Gradually begin holding him a bit less securely, but still touch him and sing to him while he falls asleep. Gradually move so you are touching him less and less as he falls asleep. 
+It may seem impossible now, but if you stay calm and persistent, he will learn to fall calmly asleep just feeling your hand on his back, and then just hearing your voice singing to him. At that point, a tape of you singing to him will be sufficient for him to fall asleep. And, hopefully, his anxiety about losing you will be healed.
+Good luck!   
+Dr. Laura

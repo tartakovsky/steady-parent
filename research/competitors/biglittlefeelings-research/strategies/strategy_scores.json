@@ -1,0 +1,127 @@
+{
+  "generated_at": "2026-01-28T15:11:48.733504",
+  "total_strategies": 8,
+  "strategies": [
+    {
+      "name": "how-to-guides",
+      "total_score": 96938000.0,
+      "unique_keywords": 2287,
+      "total_urls": 455,
+      "competitors_using": 10,
+      "competitors": [
+        "genmindful.com",
+        "goodinside.com",
+        "handinhandparenting.org",
+        "janetlansbury.com",
+        "nurturedfirst.com",
+        "peacefulparenthappykids.com",
+        "positiveparentingsolutions.com",
+        "sarahockwell-smith.com",
+        "themompsychologist.com",
+        "theparentingjunkie.com"
+      ]
+    },
+    {
+      "name": "comparison-pages",
+      "total_score": 42359000.0,
+      "unique_keywords": 344,
+      "total_urls": 11,
+      "competitors_using": 5,
+      "competitors": [
+        "genmindful.com",
+        "positiveparentingsolutions.com",
+        "sarahockwell-smith.com",
+        "themompsychologist.com",
+        "theparentingjunkie.com"
+      ]
+    },
+    {
+      "name": "segment-pages",
+      "total_score": 23573000.0,
+      "unique_keywords": 677,
+      "total_urls": 113,
+      "competitors_using": 9,
+      "competitors": [
+        "genmindful.com",
+        "goodinside.com",
+        "handinhandparenting.org",
+        "janetlansbury.com",
+        "nurturedfirst.com",
+        "peacefulparenthappykids.com",
+        "positiveparentingsolutions.com",
+        "themompsychologist.com",
+        "theparentingjunkie.com"
+      ]
+    },
+    {
+      "name": "best-of-content",
+      "total_score": 9580000.0,
+      "unique_keywords": 189,
+      "total_urls": 57,
+      "competitors_using": 9,
+      "competitors": [
+        "genmindful.com",
+        "goodinside.com",
+        "janetlansbury.com",
+        "nurturedfirst.com",
+        "peacefulparenthappykids.com",
+        "positiveparentingsolutions.com",
+        "sarahockwell-smith.com",
+        "themompsychologist.com",
+        "theparentingjunkie.com"
+      ]
+    },
+    {
+      "name": "vertical-landing",
+      "total_score": 8124000.0,
+      "unique_keywords": 238,
+      "total_urls": 43,
+      "competitors_using": 8,
+      "competitors": [
+        "genmindful.com",
+        "goodinside.com",
+        "handinhandparenting.org",
+        "janetlansbury.com",
+        "positiveparentingsolutions.com",
+        "sarahockwell-smith.com",
+        "themompsychologist.com",
+        "theparentingjunkie.com"
+      ]
+    },
+    {
+      "name": "case-studies",
+      "total_score": 7922000.0,
+      "unique_keywords": 246,
+      "total_urls": 60,
+      "competitors_using": 6,
+      "competitors": [
+        "genmindful.com",
+        "goodinside.com",
+        "positiveparentingsolutions.com",
+        "sarahockwell-smith.com",
+        "themompsychologist.com",
+        "theparentingjunkie.com"
+      ]
+    },
+    {
+      "name": "integration-pages",
+      "total_score": 43000.0,
+      "unique_keywords": 4,
+      "total_urls": 4,
+      "competitors_using": 1,
+      "competitors": [
+        "sarahockwell-smith.com"
+      ]
+    },
+    {
+      "name": "platform-pages",
+      "total_score": 0.0,
+      "unique_keywords": 0,
+      "total_urls": 1,
+      "competitors_using": 1,
+      "competitors": [
+        "theparentingjunkie.com"
+      ]
+    }
+  ]
+}

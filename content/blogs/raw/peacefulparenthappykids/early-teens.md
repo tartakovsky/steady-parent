@@ -1,0 +1,34 @@
+# Game Plan for Peaceful Parenting Your Early Teen
+
+Source: https://www.peacefulparenthappykids.com/read/early-teens
+
+---
+
+4 min
+read •
+[Early Teen](https://www.peacefulparenthappykids.com/search-results?page=1&age\[\]=770118) [Peaceful Parenting](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770130) [Parental Anger](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=958898)
+So your child is becoming a teenager, and you're wondering whether you can use peaceful parenting to raise a terrific teen who's responsible, considerate, and shows good judgment, at least most of the time? Yes! In fact, this approach will help you stay more connected with your child, so parenting is easier.
+* * *
+You may not feel like you have much influence on your child these days, but teens’ behavior is highly correlated with the strength of their bonds with their parents. Good relationships between teenagers and their parents, as rated by both, are positively correlated with school success and general happiness as rated by the teen and those around her.
+By contrast, weak or conflictual parent/teen relationships are correlated with early sexual activity, experimentation with drugs and alcohol, the teen's involvement in violence (as either perpetrator or victim), and suicide.
+So the key to terrific teen years is staying positively connected with this blossoming person who sometimes seems to be becoming a stranger -- even while actively guiding. Here's your game plan, with 10 essential tips.
+### 1. Establish dependable together time.
+Be sure to check in every single day. A few minutes of conversation while you're cleaning up after dinner or right before bedtime can keep you tuned in and establish open communication. Even teens who seem to have forgotten who their parents are the other 23 hours a day often respond well to a goodnight hug and check-in chat once they're lounging in bed. In addition to these short daily check-ins, establish a regular weekly routine for doing something special with your teen, even if it's just going out for ice cream or a walk together.
+### 2. Parent actively and appropriately. 
+Don’t invite rebellion by refusing to acknowledge that your son or daughter is growing up and needs more freedom. But don’t be afraid to ask where your kids are going, who they’ll be with and what they’ll be doing. Get to know your kids’ friends and their parents so you’re familiar with their activities.
+### 3. Try to be there after school. 
+The biggest danger zone for drug use and sex isn't Saturday night; it's between 3 and 6 PM on weekdays. Arrange flex time at work if you can. If your child will be with friends, make sure there’s adult supervision, not just an older sibling.
+### 4. Make it a high priority to eat meals together
+...as often as you can. Meals are a great opportunity to talk about the days' events, to unwind, reinforce and bond. They're also your best opportunity to keep in touch with your teen's life and challenges, and to spot brewing problems. Finally, an important factor in kids' happiness and overall success is whether they feel they get time to "just hang out and talk" with parents every day. [Click here for more on Dinner](https://www.peacefulparenthappykids.com/parenting-tools/family-life/dinner-connected-family).
+### 5. Keep the lines of communication humming. 
+Click here for more on [Becoming a Brilliant Listener, Getting Your Kids to Talk with You, and Family Conversations your Teen Will Love](https://www.peacefulparenthappykids.com/parenting-tools/communication).
+### 6. Encourage good self-care
+...such as a healthy diet and the nine and half hours of sleep every teen needs. Coffee is a bad idea for early teens because it stays in the body and interferes with falling asleep. Too much screen time, especially in the hour before bedtime, reduces melatonin production and makes it harder for kids to fall asleep at night. Those studies showing that kids' bodies change so they can't fall asleep? This may be partly because their sleep cycle is geared toward staying up later and getting up later in the morning, and when school districts arrange for teens to start school later, the teens do better on both academics and mood tests. But it also seems that screen time is a contributing factor to keeping kids up later and making it harder for them to fall asleep. Lots of research (
+### 7. Keep your standards high. 
+Your teen wants to be his or her best self. Our job as parents is to support our teens in doing that. But don't expect your child to achieve goals you decide for her; she needs to begin charting her own goals now, with the support of a parent who adores her just as she is and believes that she can do anything she aims to. Support your teen's passions and explorations as she finds her unique voice. 
+### 8. Remember you're a parent, which is better than a friend.
+Kids want to be able to talk to you about anything, and they want you to understand. But they don't want you to be their friend; sometimes they'll be looking to you to set limits they can't set for themselves. Sometimes you'll need to stick by your values and say no, whether that's to an unsupervised party or a very late bedtime. Sometimes your teen will be able to use your guidance to come up with a win-win solution that answers your concerns. Want respect, consideration, authenticity? If that's what you offer your teen, that's what you'll receive in return. 
+### 9. Keep kids safe and connected to the family by keeping computers in your common space.
+It can be hard for parents to track what teens do online because they know more about the computer than we do. But research shows that he'll be less tempted to spend time doing things you'd disapprove of if the computer is in a common space, where you can walk by and glance at what he's doing. Kids live online these days, but he can still stay connected to his family if online is in the heart of your home.
+### 10. Continue family meetings. 
+Held regularly at a mutually agreed upon time, family meetings provide a forum for discussing triumphs, grievances, sibling disagreements, schedules, any topic of concern to a family member. Ground rules help. Everyone gets a chance to talk; one person talks at a time without interruption; everyone listens, and only positive, constructive feedback is allowed. To get resistant teens to join in, combine the get-together with incentives such as post-meeting pizza or ice cream, or assign them important roles such as recording secretary or rule enforcer. [Click here for more on Family Meetings](https://www.peacefulparenthappykids.com/parenting-tools/family-life/family-meetings).

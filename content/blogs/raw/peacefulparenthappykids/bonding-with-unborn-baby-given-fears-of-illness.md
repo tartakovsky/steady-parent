@@ -1,0 +1,26 @@
+# Fear of mental illness interfering with prenatal bonding
+
+Source: https://www.peacefulparenthappykids.com/read/bonding-with-unborn-baby-given-fears-of-illness
+
+---
+
+3 min
+read •
+Question
+Hello Dr. Markham,   
+I am 37 years old and 17 weeks pregnant with my first child. I have a very good relationship with my husband and we are both very excited about our baby. We've both always wanted a family.  
+Unfortunately, mental illness runs in my husband's family: his sister is bipolar, his maternal aunt and maternal grandmother suffer from schizophrenia. I'm terrified that if our baby is a girl, that we are destined to have a child with mental illness. Most problematic is that, even though I am exceedingly happy to be pregnant, I'm afraid this risk will prevent me from bonding with my baby. As she gets older, I feel like I'll always be searching for clues or telltale behavior of mental illness. Or worse, that I'll be interpreting every "bad behavior" as a sign of mental illness, when it's really just normal developmental behavior.  
+Do you have any advice? 
+Answer
+It is quite normal for a pregnant woman to worry about whether her baby will be born normal. Unlike most women, you can easily seize on something quite specific, since mental illness runs in your husband's family. It might help you to remember that 99.9% of the worries we have during pregnancy are unfounded. Obviously, I can't promise you that your child will be okay, because no one can know that. However, I can offer you some information that might reassure you. Please remember I am not a medical doctor or geneticist, so I am telling you my personal understanding of the risk involved from readily available information. A geneticist would be able to give you more precise information, and you may well want to make an appointment with one.  
+1. Your husband's genes are obviously only half of what your child will get, which means that your side of the gene pool has contributed genetics which may help to offset any predisposition from your husband's side.  
+2. While there is definitely a hereditary component to both schizophrenia and manic depression, the chances of your baby being diagnosed with either are apparently not large:  
+The chance that a grandson (your husband) of a schizophrenic will have schizophrenia is about 3% (presuming his parents do not have it.) Since your husband and his parents are not schizophrenic, the chance that your child will be diagnosed drops to approximately that of the general population (about 1%).   
+The risk of a first degree relative developing bipolar disorder is about 5-10%. That was your husband's risk since his sister was bipolar. The risk of a second degree relative (i.e., a niece or nephew) drops substantially below that. The heredity of bipolar disorder is complicated, and your child does have some risk, but it would presumably be substantially below 5%.  
+3. Although your child may have a very small genetic predisposition, many studies have found that environment plays an important role in determining whether mental illness actually develops. For instance, one identical twin can develop schizophrenia while the other doesn't, depending on the environments in which they are raised. In the same way that a tendency to heart disease may manifest for the butcher's son but not the vegetarian's, mental illness is much more likely to affect children who are traumatized in their early lives. Depression, specifically, is more likely to affect children who have suffered early losses. So even if your child's genes predispose her to bipolar disorder, she may well not manifest it given a normal low-risk childhood with adequate nurturing.  
+As a psychologist, I would like to address the issue of bonding. You can't know this yet, but when you hold your baby in your arms, I don't think any of these fears could possibly prevent your bonding with him or her. Parents have always worried about their children, but there is no bond so fiercely protective as that of a mother towards her child.   
+You wonder if you'll be worried at each stage of your child's life. I have friends with cancer and they certainly worry about their children someday getting cancer. I know a woman who lost a child; she now struggles not to be overprotective with her other children. The advice I would always give to a parent whose worries are getting in the way of her parenting is to see a counselor. Being aware of your fears and talking them through with a professional can keep you from acting on them with your child. But you may want to wait until you are actually parenting to see if this ends up being an issue for you.  
+I'm not a statistician, but your child probably has more risk of being in a car accident. Amazingly, most babies are born healthy and grow up healthy. Focus on the positive. Enjoy your husband. Take the risk and [start bonding with your baby. There's info on beginning that process on the Pregnancy & Birth section](https://www.peacefulparenthappykids.com/ages-stages/pregnancy) of this website.  
+If you find yourself anxious during your pregnancy, you may want to begin meditating. It helps you to relax, bathes the baby in positive hormones, and calms your fears. And if you keep worrying, by all means speak with a counselor.  
+I wish you and your baby every blessing,  
+Dr. Laura

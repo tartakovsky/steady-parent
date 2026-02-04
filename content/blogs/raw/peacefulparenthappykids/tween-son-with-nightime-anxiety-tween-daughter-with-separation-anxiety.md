@@ -1,0 +1,26 @@
+# Tween son with nightime anxiety, tween daughter with separation anxiety
+
+Source: https://www.peacefulparenthappykids.com/read/tween-son-with-nightime-anxiety-tween-daughter-with-separation-anxiety
+
+---
+
+4 min
+read •
+Question
+My husband and I know we are blessed. Our 10 year old twins are smart, talented, healthy, lovely people. They have many friends and get good grades in school. 
+But lately, they seem to be "regressing" around us - just as they are entering puberty. My son is anxious and fearful of being alone when it is dark and needs one of us with him while he goes to sleep. My daughter wants to spend as much time with me as possible, to the point of not wanting to leave for school or dance (which she usually loves). She gets there, but with coaxing. We have always been a close family, so I am not surprised that they are more needy as their bodies and minds are changing so fast. While I don't want to ignore a problem, I don't want them to feel like needing us means "something is wrong with them." Do you have advice on how to tell when a child needs professional help and when a child just needs time and love? --Kristin
+Answer
+Kristin,  
+You're a wise mom to realize that your ten year old's needing you doesn't mean "something is wrong with them," and you're asking a good question: "When does a child need professional help and when does he just need time and love?"
+The rule of thumb on this is that a child needs professional help when something is getting in his way so that he can't rise to meet normal developmental challenges and cope with daily life. At this point, your kids are both functioning well at school, with peers, and at home, so their recent regression would be seen as a temporary challenge that they have the inner resources and external support to handle. 
+It is not unusual for a ten year old to become anxious about impending puberty (and we have to acknowledge that ten year olds are solidly in the grip of pubertal hormones.) Girls in particular often see the burdens of being a teenage girl as scary (from menstrual periods to male attention.) Both tween boys and girls feel pressure to separate from their parents, at a time when they desperately crave parental support and guidance. Hormones can be very active at age ten, which can make it hard for kids to fall asleep at night, giving their minds too much opportunity for anxious rumination. Computer & TV screens in the hours before bedtime suppress melatonin and make it hard for kids to fall asleep. Academic pressure increases and the work gets harder. Also, the social scene changes dramatically for both boys and girls at age ten, and all the rules change, as some kids become "cool" and ditch their previous friends. So a boy who is having a hard time falling asleep and a girl who wants as much time with you as possible sound well within the range of normal.
+However, I would be remiss if I didn't raise one caveat. If you took your kids to a professional for an evaluation, he or she would want to explore whether this regression could have been caused by something specific that would benefit from professional intervention. In other words, since both your kids are regressing, did something upset them both? It could be something as minor as a very upsetting movie or stumbling on a porn website, or as major as the death of someone they know. There is even a tiny chance that something serious happened that you don't know about, like bullying or abuse. 
+In any case, it is worth a conversation with your children (separately) to point out that you've noticed a difference in their behavior. All kids get anxious sometimes, you can say, but you're just wondering whether there is something specific worrying them. Then listen, reflect, empathize, breathe, and let them tell you everything worrisome on their minds. I find that most kids open up if you initiate a talk like this at bedtime while lying in their bed with them in the dark, because they feel safer. (Of course, turn the lights off earlier than usual so they have time to wind down after discussing their worries. You might want to be armed with another topic to finish off the discussion that is a better prelude to sleep, like what they are looking forward to over the weekend.)
+Most likely, your kids haven't suffered any trauma, and this regression is temporary and normal. In that case, you might consider some simple remedies that I've seen work for other families. Melatonin, for instance, in small dosages (ask your doctor, but 1 milligram should be fine for a ten year old) relaxes kids and helps them fall asleep. (Recent research indicates that one reason kids' body clocks get thrown off at puberty is that their computer/cell/Tv use increases and suppresses normal melatonin production.)
+Another tool to assuage anxiety, and a good one to teach your kids, is EFT, or 
+And of course you are right that what your kids will always need most is your time and love.
+blessings,   
+Dr. Laura
+Thank you so much for your advice. You certainly relieved my anxiety about their anxiety! Maybe that was the biggest help. My daughter is doing significantly better and my son is getting there. If I see setbacks I will go back to your advice again. THANK YOU! --Kristin
+*******
+Don't miss the new mini-course

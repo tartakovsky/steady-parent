@@ -1,0 +1,17 @@
+{
+  "strategy": "segment-pages",
+  "description": "Content tailored to specific user segments including mothers dealing with overwhelm and rage, couples seeking communication improvement, and parents of neurodivergent children. These pages target segment-specific keywords.",
+  "urls": [
+    "https://www.goodinside.com/workshop/4247/mom-rage-how-to-stay-calm-amidst-the-chaos/",
+    "https://www.goodinside.com/workshop/1556/couples-communication/",
+    "https://www.goodinside.com/podcast/2841/theotbutterfly-on-parenting-neurodivergent-kids/",
+    "https://www.goodinside.com/blog/self-care-ideas-and-tips-for-moms/"
+  ],
+  "example_keywords": [
+    "mom rage help",
+    "the ot butterfly",
+    "ot butterfly",
+    "self care ideas for moms",
+    "self care parenting"
+  ]
+}

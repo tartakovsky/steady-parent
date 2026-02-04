@@ -1,0 +1,23 @@
+# Helping Stepdaughter with Losing Her Birth Mother
+
+Source: https://www.peacefulparenthappykids.com/read/helping-stepdaughter-with-losing-her-birth-mother
+
+---
+
+3 min
+read •
+Question
+Dr. Laura,
+My stepdaughter's mother died recently. She's in therapy and is able to talk about some feelings but is still having a lot of trouble expressing anything other than something like "happiness" at home. I'm a psychotherapist and am trying to work with her every few days, or so, on tuning in to what she's feeling inside herself. This isn't usually very fruitful. I've bought her an excellent guided journal - to help teens talk about the loss of someone very special to them. She doesn't like to do this, won't do it unless prompted, and then doesn't want to share what she's written - though we've seen it and it's always a very white washed, positive version of her mother and what happened. 
+When I simply ask how she feels, she says "sad" but is smiling or doesn't seem sad. Rarely - maybe 5 times since her moms death - she's cried, for about a minute or two. I know part of it is that she'd really been losing her mom for a long time - emotionally never had her. She lived with her though, every other week until about 1.5 yrs ago. 
+I also know that this is just how she is. She's never shown many emotions, especially painful ones. Her dad is also not good at this. Both parents have taught her to show the happy emotions and not much else. I'm trying to teach dad and get him to take the lead. Around the time of the death, he cried openly many times in front of her. That seemed to help, but now that she's died and the crisis is past, he's back to business as usual and all of my attempts to get a daily moment of remembrance have fallen by the wayside, when left up to him to initiate. She really follows his lead, not mine. 
+I'm worried that this will all build up and she'll end up a mess later on. Sometimes I start to believe what her mask looks like - she's fine. She's just taking her mother's death in stride. but that seems crazy - it was her mother! Even though she was never her primary attachment, it was still her mother. Any ideas you have about how to help her through this are much appreciated. Her therapist doesn't seem to be able to address how shut down she is emotionally.   
+Thank you!
+Answer
+What a good stepmom you are. I hear your worry, and I share your concern. Since you're a psychotherapist, you know what I will say -- Your stepdaughter is almost certainly harboring a lot of grief, both from her mother's death and from the more pervasive loss of her mother. I think your journal idea is great, and I don't think she needs to share what she's written. But I suspect that she doesn't want to go anywhere near the journal, because it brings up such deep loss. 
+I think if she had had a great relationship with her mom and then lost her, she would be able to access the grief. But this grief is much older than her mother's death, and facing the death means facing the fact that her dreams of having her mother meet her needs will never come to life. Saying goodbye to that fantasy is more than she can bear. 
+Since your daughter follows her dad's lead, can you talk with him more about this? Maybe for her he would be a bit more emotive. 
+I would not believe your stepdaughter's mask. But it is important to point out that kids grieve differently than adults. They seem to do it in "pockets" rather than pervasively, meaning they need to be in charge of when they feel the loss and have times when they can just "forget" about it. That helps them feel less out of control, and it seems essential to their ability to keep growing. So it is natural that she isn't sad most of the time. BUT it is still important that she be able to cry sometimes. 
+You might be surprised to hear me say this, but I would rent some teary movies with her. Getting her in touch with her heart is your goal, and once she does that the tears will be more likely to flow. It doesn't even matter if she understands where the tears are coming from, and you don't even have to make the connection verbally. Just sob your hearts out together over the tear-jerker movie. Share the kleenex to make it safer for her. Your tears will help her feel safer to express her own. If you do this once a month, you'll be bonding and helping her heal by releasing some of that grief. 
+And that leads me to my other big suggestion. Your stepdaughter needs a mom. True, she will never have what she needed from her birth mom. But a "corrective" experience with you could be so healing for her. If you can do the hard work of mothering a child who is not your birth child and doesn't see you as her mother, you can transform her life.   
+Dr. Laura

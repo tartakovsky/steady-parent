@@ -1,0 +1,45 @@
+# Want to Wake Up Jazzed About the Day Ahead? Commit To Radical Self-Care
+
+Source: https://www.peacefulparenthappykids.com/read/wake-up-happy-radical-self-care-parents
+
+---
+
+6 min
+read •
+[Peaceful Parenting](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770130)
+_"Want to feel as playful and vibrant as your children? Want to feel an abundance of energy? Want to experience greater clarity in all you do? Want to wake up jazzed about the day ahead? Imagine taking care of yourself in all the marvelous ways you take care of others. It makes sense that, if you shifted self-care onto the top of your priority list, you would feel more rested, more centered, more present to your loved ones, more joyful..." -- Woman's Field Guide_
+* * *
+Most of us find that when we can stay connected to our internal fountain of well-being, it overflows onto our children and we're more patient, loving, joyful parents. To love our children unconditionally, we need to keep our own pitchers full, so we can keep pouring as needed.
+Quite simply, we can only give what we have inside. And even if parenting is the most meaningful part of your life, it still requires a whole lot of giving.And yet, most of us live in constant stress, which means we're often running on empty. Many days we wake up wishing life could be different. Small wonder we lose patience with our children. And then we feel even worse.
+Sadly, remorse and and self-blame after we lose patience doesn't change anything. Actually, it makes things worse, because you can't be emotionally generous when you're feeling like a bad person. 
+What if, instead, you could find a way to stay in a positive state more often? You can. Not all the time, of course -- into every life some rain must fall. But most of us can find a way to be more positive more often. It starts with finding ways to nurture and nourish ourselves, so we can stay more centered. 
+If you're like most parents, that's not so easy. But there's a secret: Radical self-care. What do I mean by radical? I mean not just tending to yourself after everyone else's needs are met. I mean actually moving self-care high up on your priority list. I mean overwhelming yourself with love and appreciation.
+Because that's the only way you can be the happy, patient, unconditionally loving parent your child deserves. And because you deserve it!
+Wouldn't that be a radical act? Here's how.
+### 1. Nurture yourself as you would your beloved child.
+Treat yourself as you would your child -- do you need a snack or a break right now, so you don't have a meltdown? Find a way to help yourself feel better. Maybe that means finding a way for your child to occupy himself, or maybe it means giving him a snack, too.
+Do you need to go to bed when your child does tonight, so you get a really good night's sleep? Why not do that routinely while your child is still waking up at night? It won't last forever (even though it seems like it will!)
+Do you need to take Sunday off and just enjoy being alive? You can't stop being a parent, but you don't have to do laundry, you can leave the dishes in the sink, and you can have peanut butter sandwiches and carrots out of the bag for dinner. If you feel like you're playing hooky, ask yourself: Whose life is it, anyway? And at the end of it, who will have been responsible for how you felt during it?
+What if your child needs you at this moment? I'm not suggesting that you shouldn't take care of your child. I'm suggesting that there is usually a way to take care of yourself at the same time.
+Sometimes we simply can't give ourselves what we need, just as we can't always fix whatever is wrong for our child. In those cases, self-care means listening with compassion, whether to our child, or our own distress. In other words, just notice what's happening in the present moment. _"The baby is screaming...my jaw is tight...my shoulders are clenched..."_ You don't have to change anything. Just "witnessing" is a huge gift to yourself. And often it shifts your experience, because you aren't resisting. You find that you really can handle whatever is happening, and your stress diminishes.
+And, of course, make a promise to yourself for more self-care as soon as you can manage it.
+### 2. Just Delete Stress. 
+Most of us live in constant stress, which doesn't allow for self-nurturing. Rushing makes us less patient, less empathic. It sends our children the message that they aren't as important as whatever we're rushing to do. It strangles the joy out of life.
+Luckily, while stress-inviting events are inevitable, stress is not. We can begin by gradually paring our lives down to what matters most to us. This may feel like a sacrifice, but only until you realize that what you're choosing is your own well-being, and that of your child.
+The next challenge is to change our reaction to whatever stressful events still pop up. Impossible? Remember that what stresses one person may just roll off another person’s back, so the stress comes from our perception of the event, not from the event itself. When you notice a thought that's creating stress in your mind, can you reframe it? (Instead of _"This child is driving me crazy"_ how about _"This child is having a hard time....Maybe there's a way we can both get what we need here."_)
+### 3. Exercise. 
+It's magic! It increases endorphins, which make us happy, and serotonin, which calms us. Exercise actually prevents depression and reduces anxiety. No time? Who needs the gym? Put on music and dance with your kids. Get them out of the house and run around with them at the park. Take your baby with you to a "Baby & Me" yoga class. Moving your body is the fastest route to shifting your mood and enhancing your sense of well-being.
+### 4. Take responsibility for meeting your own needs and solving the problems life presents to you. 
+Do you need some appreciation? Give it to yourself! Really. Once you get in the habit of appreciating yourself, you'll be amazed how much more appreciation you feel from those around you.
+Some of us have a hard time feeling appreciation from others, and even from ourselves. In that case, daily practice with appreciation stretches our ability to receive that self love, and give it to our children. What needs do you have that weren't met when you were little? That's what you have to give to yourself now. Maybe you felt you were never quite good enough. Can you start reassuring yourself, every time you look in the mirror, that you're more than enough, and are deeply loved? Every time you feel "bad" in any way, just notice that contracted feeling, breathe into it, and love yourself through it. You'll notice that love is bigger than any bad feelings, and often melts them right away. Once we take care of that old unfinished business, it gets much easier to find ways to take care of ourselves in the present.
+And what if your problem is in the now? Fights with your partner? A job you hate? A life on constant overwhelm? Life challenges like these are tough, but when we leave them unaddressed, they demoralize us. Can you take a step, any step, toward solving that problem now? It may not solve everything overnight, but moving in the right direction will help you increase your sense of well-being and stop you from spilling tension onto your child.
+### 5. Don't postpone joy!
+We’re all guilty of taking the joy that pours into our lives for granted. We let it slip right through our fingers, in the name of efficiency and responsibility. But what if reveling in that joy is part of what allows you to love unconditionally, because it grows your heart? What if enjoying your daughter’s dancing on the sidewalk helps her start the day basking in your love? What if that pillow fight is just what you need to defuse tension and reconnect with your kid? What if those bedtime stories give your child the message that you’ll always be there for a snuggle, no matter how old he gets? What if you and your partner need those kisses to stay connected, so you’re a better parenting team? What if that bubble bath would help you be a more patient parent tomorrow? 
+What if you never know which sunset is your last?
+Don't wait. Commit to radical self-care.
+***
+Today is Step Three of **[Ten Steps to Rewire Your Brain for Unconditional Love](https://www.peacefulparenthappykids.com/read/Healing-Your-Ability-to-Love) :  _Want to wake up jazzed about the day ahead? Commit to radical self-care._**   
+The first two steps were:
+[1. Forgive yourself for not being perfect: Become a Recovering Perfectionist](https://www.peacefulparenthappykids.com/read/How-to-forgive-yourself)
+[2. Unconditional love is like a muscle. It needs a daily workout.](https://www.peacefulparenthappykids.com/read/How-to-love-Unconditionally)
+Want More? We're exploring each of the ten steps in more detail over the next few weeks. Join us for some heart stretches!

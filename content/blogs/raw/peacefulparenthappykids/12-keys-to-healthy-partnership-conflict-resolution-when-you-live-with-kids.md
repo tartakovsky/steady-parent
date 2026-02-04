@@ -1,0 +1,67 @@
+# Fighting Fair When you Live With Kids: Healthy Conflict Resolution
+
+Source: https://www.peacefulparenthappykids.com/read/12-keys-to-healthy-partnership-conflict-resolution-when-you-live-with-kids
+
+---
+
+8 min
+read •
+[Parental Conflict](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770155)
+_"Dr. Laura....In your article_ [How To Do Damage Control When You Fight In Front of Your Kids](https://www.peacefulparenthappykids.com/read/Do-You-Fight-In-Front-of-Your-Kids) _,__you warned parents against fighting in front of our kids. But as you always say, we're not perfect, we're human! What are we supposed to do when we disagree? Isn't it good for kids to see parents work out disagreements, and make up? And isn't it okay if partners don't always agree? We can still love each other." - Carmen_
+* * *
+Yes, Yes, and Yes! The nature of human relationships is that we will sometimes disagree. It's wonderful for children to see their parents model how to work out disagreements. It's important for them to know that we don't always agree, but we always love each other. Kids need to see us ask for what we need without attacking the other person. And it's critical for them to see us make up, with affection and forgiveness.
+**But that doesn't mean that it's okay to yell at each other in front of our kids.** The research shows that when parents disagree respectfully and then work things through to a solution and affectionately make up, kids learn valuable lessons about working through conflicts constructively. But [the research also shows that yelling always affects kids badly](https://www.peacefulparenthappykids.com/read/fight-with-partner-learning-modeling-for-child). _Yelling is not constructive conflict resolution. It's a tantrum._
+As the Dalai Lama said,_"Be kind whenever possible. It is always possible."_
+But of course, most of us can't stay as calm as the Dalai Lama! So how can you handle the inevitable disagreements that come up in a relationship -- when you live with kids and want to be a good role model?
+### 1. Pay attention to those moments when you or your partner start to get irritated.
+That's your cue to do exactly what you would hope your child would do if they get irritated with their sibling or friend – **Stop, Drop and Breathe**! Use your Pause button. It gives you a chance to notice that you're moving into fight, flight or freeze, and your partner is starting to look like the enemy. Remind yourself that you love your partner and you can work this out. It's not an emergency.
+### 2. If you can both keep your equilibrium to discuss the issue, go ahead.
+Your kids will benefit from watching you:
+  * Acknowledge the issue. _"Hmm... I get stressed out when we're late going someplace. I wish we could leave the house on time."_
+  * Listen to your partner's upset. Breathe. Bite your tongue. You'll get a chance to express your view. Everyone has a valid perspective and needs to feel heard.
+  * Empathize with your partner's view. _"It sounds like you think I'm the one making us late. I hear you were in the car waiting for me and the kids. That must have been frustrating for you, watching it get later and later and I didn't come."_
+  * Express your view without blaming or attacking. _"I was frustrated, too. I had to help the kids get their shoes on, then wrap the pie to take with us, plus get myself ready. I would have loved to have help getting all that ready, and I would have gotten to the car sooner."_
+  * Be sure to acknowledge your contribution to the problem. _"You're so right that I didn't start getting ready in time. The time just got away from me this afternoon. I know that didn't help matters."_
+  * Resist "piling on" like _"I do all the work around here... If you just helped once in a while, things would work better!"_ Deal only with the issue at hand at this moment.
+  * If one of you starts blaming, that's a sign that they're feeling threatened, and you need more safety. Stop and restore safety to the discussion. _"This is upsetting for both of us. But we love each other and we can work this out. Let's look for solutions; not blame."_
+  * Agree on a solution for the future. _"Let's agree that we'll always set a timer half an hour before we have to leave the house and then we'll all work together to get ready to go. If we're ready early, we can play a quick game of tag in the yard once we load the car. We can always use more family fun!"_ Be sure to write your solution down and post it, so you remember to implement it next time. Then, notice what works and doesn't work about your solution, and keep refining it.
+### 3. If the conversation starts to get heated, stop.
+Don't wait until you're fighting mad. The person who is less annoyed can just say,_"This deserves a longer/better discussion than we can have right now.... Let's talk later so we can come up with a good solution. I love you, and I know we always work things out."_ Give each other a big hug, in front of the kids.
+### 4. What if one of you has a hard time dropping the issue?
+Write it down. Really! For instance, _"Challenge to solve: Dad and Mom disagree about how much screen time is appropriate."_ Put your note in a private place you’ve agreed on, like taped up inside a cabinet door. Shake on your agreement to talk about it later and set a time to do that.
+### 5. What if you're still angry?
+Remind yourself that you want to work things out with your partner and anger doesn't help you do that. Do whatever you need to do to calm yourself and shift your mood, like breathe deeply ten times, shake out your hands, find something to be grateful for. As soon as you can, say to your partner _“I need a hug”_ and give them a big hug.
+### 6. Stop gathering resentments.
+If you keep gathering kindling, sooner or later you’ll have a firestorm. Just let it go for now. Tell yourself _“We’ve made an agreement to talk about this later. Right now, I’m looking for solutions, not blame.”_
+### 7. Melt away the anger.
+You can do this by acknowledging the anger, and then noticing the more vulnerable feelings under the anger. Are you feeling sad that you’re being taken for granted? Hurt that you’re feeling not listened to? Your partner did not cause these feelings – they’re your feelings. In fact, even if your partner said something hurtful, if you're triggered by it, then most likely you're over-reacting, because his or her comments are triggering something inside you that already hurts, which is almost certainly from your own childhood. If you didn't have this old issue, you would still want to solve the problem, but you wouldn't be all bent out of shape about it. You could address it without getting so triggered.
+Try just dropping the story line and letting yourself notice those emotions as sensations in your body. You'll see the upset start to melt away. That's the magic of human emotions -- they just need to be acknowledged. And once those more vulnerable feelings are gone, you won’t need the anger as a defense, so it will evaporate. (More on Healing Triggers: **[How To Stop Lugging Around Your Old Emotional Baggage](https://www.peacefulparenthappykids.com/read/healing-your-triggers)**)
+Will your partner’s anger melt away, too? Sometimes. But even if it doesn’t, you’ll find you can communicate about the issue so much more effectively that things will shift more quickly.
+(Warning: If you've done the work to calm down and your partner is still triggered, you will feel like you are doing all the emotional labor. You are, at this moment. If that's a pattern in your relationship, you'll want to address it. But maybe the work evens out? Like sometimes one of you is more able to stay calm, and other times it's the other one? Or he brings you coffee in bed but you're more likely to stay calmer in an argument? So get some clarity on this before you bring it up as a topic, and then, as always, express yourself with "I" statements about how you feel and what you need, rather than attacking your partner's behavior.)
+### 8. That evening after the kids are in bed, listen to each other.
+Express your upset by talking about what you feel, and what you need, without attacking your partner: “ _Keeping the house orderly always feels stressful and overwhelming to me… I would like to brainstorm about how we can make the whole thing easier… right now I feel very alone with it, like I have to be the one to make it all happen… I need your help.... I would love to feel like we are equal partners in this.”_
+### 9. Resist trying to "win."
+Remember that "expressing anger" by attacking the other person shuts down the safety, and therefore the chances of a successful resolution. Instead, notice the feelings in your body, and breathe through them, without giving in to your desire to attack. No, you're not being less "authentic." What's authentic is the tears and fears under the anger. If you can express your hurt and fear, the anger will melt away. If you really want to work things out, research shows that the best way to do that is to do a lot of listening, and to express what you need without criticizing your partner.
+### 10. The next day, be sure to share with your kids that you resolved the situation.
+_"Remember yesterday when I was upset that Mommy doesn't cook the things I love now that she's a vegetarian? We talked about it. We agreed that I will make whatever food I want two days a week, and she will make her own food if she doesn't want to eat what I'm making. When she cooks, she can make what she wants, and I will always at least try it so I can learn to like new things. Want to help me make dinner on Sunday? I'm thinking meatloaf!"_
+### 11. What if you can't agree?
+Agree to disagree. Explain that to your kids the next day. _"Remember when Dad and I disagreed about whether it's time to buy a new car? We got pretty mad, I know. But I want you to know that we're working it out. We always do, because we love each other and our relationship is more important to us than any disagreement. You know that you can be mad at someone and love them at the same time, right? We still aren't sure yet about the car. I'm worried that our car is breaking down a lot.... Dad is worried about spending money on a car right now. It's a hard decision. We're going to keep talking about it. Sometimes you have to think and talk for a long time before you can make a good decision that works for everyone."_
+### 12. Keep your relationship balance positive and show kids the good things, too.
+Every relationship needs at least five positive interactions to each negative interaction to stay healthy. Initiate positive interactions whenever you can, from kind comments to warm hugs. Be sure your children see your love for each other, played out in front of them on a daily basis. If you've been disagreeing a lot lately, or your kids have been witness to your yelling, step up the warm connection to an even better ratio. It's good for your relationship, too!
+Hard? Yes! This takes great maturity. But this is the kind of fighting that brings you closer and makes your relationship stronger. It models the conflict resolution that teaches kids essential lessons.
+And it transmits one of the essential lessons about loving other humans: That it's more important to be Love, than to be Right.
+Which is a great way to keep those Valentines Day feelings lasting throughout the year!  
+*******
+Want more on this topic? Our last two posts were:
+[Can You Make a Fight With Your Partner Into a Positive Learning Experience for Your Child?](https://www.peacefulparenthappykids.com/read/fight-with-partner-learning-modeling-for-child)
+[How To Do Damage Control When You Fight In Front of Your Kids](https://www.peacefulparenthappykids.com/read/Do-You-Fight-In-Front-of-Your-Kids)
+Want more motivation? Research shows that being responsive to your partner's feelings and building an intimate partnership, rather than just insisting that you're right, is also good for your sex life.
+"Sexual desire thrives on increasing intimacy and being responsive is one of the best ways to instill this elusive sensation over time; better than any pyrotechnic sex." - G. E. Birnbaum, H. T. Reis, M. Mizrahi, Y. Kanat-Maymon, O. Sass, C. Granovski-Milner, **Intimately Connected: The Importance of Partner Responsiveness for Experiencing Sexual Desire.** _Journal of Personality and Social Psychology_ , 2016; 
+### [Happily Ever After: Conscious Co-Parenting](https://www.peacefulparenthappykids.com/product/how-to-partner-coparenting-team)
+You can count on disagreements when you raise a child with another person! In this Self-Paced Audio Parenting Class (5 hours), you get five instantly downloadable audio modules to support you in developing a terrific parenting partnership. 
+#1 - Introduction: How to combine a rewarding romantic relationship with raising wonderful kids.  
+#2 – Handling conflict with your partner so it brings you closer.  
+#3 – Regulating your emotions to transform your relationship.  
+#4 – Staying connected with your partner when the baby is crying and the kids are screaming.  
+#5- Bonus: I've Got Your Back: How to create a terrific parenting team.
+For more info: the [**Conscious Co-Parenting MiniCourse**](https://www.peacefulparenthappykids.com/product/how-to-partner-coparenting-team).

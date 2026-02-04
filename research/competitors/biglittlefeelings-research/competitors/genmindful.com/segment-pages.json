@@ -1,0 +1,12 @@
+{
+  "strategy": "segment-pages",
+  "description": "Specialized content for specific parent and child segments including introverted parents, highly sensitive children, kids with ADHD, and non-traditional family structures. Personalizes parenting guidance for unique circumstances.",
+  "urls": [
+    "https://genmindful.com/blogs/mindful-moments/4-reasons-to-re-parent-yourself",
+    "https://genmindful.com/blogs/mindful-moments/helping-your-highly-sensitive-child-gain-confidence",
+    "https://genmindful.com/blogs/mindful-moments/parenting-as-an-introvert-is-hard-heres-one-thing-that-keeps-me-sane",
+    "https://genmindful.com/blogs/mindful-moments/portable-emotional-toolkit-for-sensitive-kids",
+    "https://genmindful.com/blogs/mindful-moments/raising-sons-with-expansive-tender-masculinity",
+    "https://genmindful.com/blogs/mindful-moments/the-balancing-act-mastering-lifes-challenges-with-adult-adhd"
+  ]
+}

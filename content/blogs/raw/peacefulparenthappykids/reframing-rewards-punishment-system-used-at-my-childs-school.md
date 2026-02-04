@@ -1,0 +1,35 @@
+# The Inner Compass: Reframing the Traffic Light Reward/Punishment Systems Used In School
+
+Source: https://www.peacefulparenthappykids.com/read/reframing-rewards-punishment-system-used-at-my-childs-school
+
+---
+
+5 min
+read •
+Question
+Dear Dr. Laura, 
+I have been trying to shift my parenting from the rewards/punishment system to a more intuitive, connected way. We are doing really well and I feel more connected to my children. 
+My issue is that my daughter goes to a school where they have the traffic light system for behaviours. She is 'well behaved' and almost always on the green light or even the gold star for exceptional behaviour. 
+At home, I no longer reward/punish but I did for so long that the words are still ingrained in her psyche. Today she asked if I could make her a traffic light system for her 'good choices'. This came about as she did her homework (without being prompted to) this morning. I tried to explain that the best 'reward' was the satisfaction of getting it done and making the choice herself.... but she still wants tangible recognition that she is making 'good choices'. 
+I explained that I wouldn't be judging her behaviour so wouldn't use the chart. However she was so insistent that she is now making the chart and I said she was welcome to use it herself. 
+I just feel disappointed that despite our shift in perspective at home, despite all the encouragement we give (without the empty 'good girl/well done' type praise), she still feels the need for some sort of judgement/tangible acknowledgement of her choices. We are a loving family and she now (for the past two years) gets a lot of validation and acceptance for who she is; not what she does. 
+I feel a bit at a loss for what to do. I want her to feel that making the right choice is reward enough. 
+Answer
+I share your concern about the traffic light system in schools. It doesn't support children to meet our expectations. Instead, this behavior-rating system assumes that children CAN do what we're asking and are simply choosing not to. We may think that we're rating behavior, but children can't really make that distinction -- they feel they are being evaluated as human beings, and that they are failing. 
+Not only that, but they are failing in front of the entire class. Everyone can look up at the blackboard and see that this child is "RED" today. Talk about public shaming! 
+All children want to feel good about themselves, to be seen as good people, to contribute in positive ways. So their motivation to behave isn't what's lacking. They need help to learn to manage themselves physically and emotionally, so they can succeed in a school environment. Unfortunately many children who can't seem to "behave" get locked into a cycle where they come to feel bad about themselves. (To see what one teacher says about the traffic light behavior approach, see 
+Luckily, your daughter does have the capacity to manage herself to succeed in school so she is not experiencing direct negative effects from the school system. And she is expressing her desire to manage herself to make healthy choices, which is a skill we all need to learn. By parenting in a more connected way that affirms her ability to make positive choices (instead of using punishment and rewards to manipulate her behavior), you're helping her develop her own inner compass. That's terrific, because she's deciding what kind of person she wants to be and is making choices to be that person. 
+Of course, she's using the traffic light idea as she thinks about these issues. That isn't ideal given that it's applied at school in a way that is less than compassionate, but it's the framework she is used to. I think you can make it a positive thing, as long as you continue to refrain from rewards and punishment yourself. Most important, emphasize that your daughter is in charge of evaluating herself, rather than handing that power to someone outside her. That's what develops the inner compass. 
+Below is an example of how you might talk with your daughter about this issue. You'll note that I use the concept of the inner compass, which is an easy segue from the traffic light, and an important concept for children to learn. 
+_**"We all have a traffic light inside us....It helps us to be the people we want to be, and to make the best choices in our lives. Some people call that the Inner Compass. You know what a compass is? Like a GPS, that tells you when you made a wrong turn. That doesn't make you a bad person, it just helps you get back on track. Right?**_
+_You know, it feels good to make choices that are green. We feel right, inside ourselves, as we see the result. Sometimes we make choices that are red, and then we have to get back on track and clean up any mess we made._
+_And we all have impulses, every day, that are**between** green and red. We all get that yellow warning light sometimes, letting us know that we are about to make a choice that will take us in a direction we don't want to go. It's important that we pay attention to that feeling._
+_So when you make the decision to get your homework out of the way early, how does that feel inside you? Like a green light? Great!! How wonderful that you have been able to develop a habit like this, and even more wonderful that you can hear that clear guidance inside you._
+_I love that you are deciding for yourself that it feels better to get your homework out of the way early._
+  * __What else makes you feel green inside, like you're headed in the direction you want to go?__
+  * __What makes you feel the yellow light, like you need to pause and pay attention, to help you make a choice that feels right inside?__
+  * __When have you felt the red light that tells you that you made a wrong turn?__
+_You know, little children need to do exactly as they're told because they don't really understand how the world works, like the fact that the stove is hot or the street is dangerous. It keeps them from getting hurt.__I know that at school, they still decide for the kids what behaviors should get a green or yellow or red light._
+_But as you get older, it's important that you learn to think for yourself; not_ _to just do what someone else tells you.__Even teachers and other adults don't always know what's right for you. And you'll notice that sometimes_ __other kids will encourage you to do things that will make that yellow light go on inside. You're the only one who knows what's right for you and you can always find that inner compass inside to find your way.__
+_Your job is to notice that feeling in your body that tells you when you're about to make a wrong turn.__You already know inside what's right, when you listen to your inner wisdom or your inner compass.__It isn't always easy to choose to do what's right, but every time you practice listening to your inner compass, you get better at finding your way._
+_I love that you are learning how to use your inner compass to make choices that are good for you, no matter what someone outside you says!"_

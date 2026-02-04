@@ -1,0 +1,26 @@
+# Why No Child Needs Punishment
+
+Source: https://www.peacefulparenthappykids.com/read/Discipline-no-more
+
+---
+
+3 min
+read •
+[Discipline That Works](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770124)
+There's a video on this website of me being interviewed on the national Morning Show with Mike and Juliet on Fox. The show was on Spanking –whether or not to spank your kids. They had invited on a woman who believed she needed to spank her kids, and a mom who had decided not to spank her children. It was an interesting show, given that the spanking mom got pretty riled up, but kept insisting that she wasn’t angry. You can watch the whole show
+* * *
+### My Aha! moment came...
+...when the host turned to the woman who didn’t spank her children and insisted _“But what DO you do, to punish your kids, if you can’t spank them? Timeouts don’t really work, do they?”_
+This lovely mom struggled to answer the question, _“Well…. I used timeouts for awhile… but then I stopped using them… I guess …I just didn’t need them…”_ She looked puzzled, as she realized that she didn’t have an answer for the host, because she didn’t actually punish her kids – because she didn’t need to! It was almost as if she was speaking a different language. The host’s assumption was, of course, that you must punish your kids.
+I recognized this mom’s confusion, because I had it myself once, when I first started answering questions from parents. They would ask me about discipline, and I didn’t have an answer, because I had never used discipline with my kids. I had guided them, of course. I had set limits (_"It's bedtime"..."In our family we don't ever call names."_) I had set high expectations (_"In our family we always do the extra credit homework."_) But I had never used discipline, in the sense of imposing something unpleasant on my child. So my Aha! parenting moment came when I first found myself, like this mom, realizing that the reason I didn’t need to discipline my kids is that I never had!! That was why they were so well-behaved!
+Are my kids perfect? No. My daughter really did want to call her brother a poopy-face when she was four. She socked a playmate when she was six. My son thought thank you notes were torture devices. He got irritable when I interrupted his legos to ask him to set the table or carry in groceries. They hate to clean up their rooms. They forget to do things sometimes, unless I remind them. They occasionally get cranky, or raise their voices. But a little reminder is all it takes for them to behave with consideration. No punishment has ever been necessary, including timeouts. 
+### The secret? 
+They’ve always been treated with consideration. No one has ever done anything unpleasant to them, even disguised as for their own good. So now, at 14 and 19, they’re considerate, affectionate, responsible and delightful. And I can't remember an age when they weren't.
+I'm obviously proud of my kids, but they aren't this way because of anything special about them. I believe the secret is that they were never punished, so they didn't misbehave. Punishment ALWAYS creates more misbehavior, because it undermines your relationship with your child and makes him feel like a bad person. If you tell him he’s a bad person by punishing him, he believes you, and then he acts more and more like a bad person. You should know, after all, you’re the parent, the arbiter or everything, the one who taught him red and blue and right and wrong.
+So to answer the TV host’s question, what DO you do instead of punish when your kids act up? Stay calm. Decode the behavior -- why is he acting this way? Meet his needs, including his need for more connection with you. You’ll be amazed at how your kid will settle down, and begin cooperating to please you. Do you set limits? Of course. But if you set them with empathy, you’ll find you need to set them less and less.
+### Some parents worry that if they don’t punish their child, he won’t learn.
+But kids don’t learn from lectures — as all parents eventually realize, to our dismay! Kids learn what they live. Punishing kids teaches them that hurting others is okay. Acting rudely toward your kids — yelling, threatening — teaches them that being inconsiderate is okay. Offering love in the face of emotional upset models meeting pain with compassion. It teaches emotional intelligence, that anger is an inevitable part of being human and can be handled responsibly. It increases their love for us and their desire to please us.
+No, you’re not teaching him that he can get away with bad behavior. You’re teaching him that he can’t always get what he wants, but he can survive that and get something even better — someone who loves him, yucky feelings and all, through thick and thin. That’s unconditional love, the foundation of our kids’ emotional health and maturity. Not to mention their good behavior.
+So why not choose the path that will support your child to be his or her best self? Move beyond any kind of punishment. Guide with love.
+### Update:
+[How Can You Learn to Behave, If You're Never Punished?](https://www.peacefulparenthappykids.com/_blog/Parenting_Blog/post/raising__great_kids_without_punishment/)

@@ -1,0 +1,46 @@
+# [Parent](https://nurturedfirst.com/ages/parent/)
+
+Source: https://nurturedfirst.com/parent/postpartum-relationship-challenges
+
+---
+
+# 5 Relationship Challenges For New Parents After Having A Baby
+Written By
+Jess VanderWier, MA, RP
+August 20, 2018
+_This article has been reviewed by Nurtured First's team of child development experts._
+## Table of Contents
+* * *
+Any new parent will tell you that as soon as they found out they were pregnant, things started to change. Between changing bodies, morning sickness, giving birth, hormones, sleep deprivation, plus caring for a helpless baby - change is inevitable! Research shows us that many if not all new parents struggle with the changes that come after having a baby! In order to help you keep your marriage strong, we wanted to openly talk about these changes, and hear what experts had to say. 
+Here are 5 common relationship struggles that new parents face, and what experts suggest you can do to help you strengthen your relationship!
+## **1. You may become bitter towards your partner**
+Every new parent will tell you that they have had moments when they have been bitter towards their partner. Someone will always be sleeping more, or have more free time, or get to spend more quality time with the baby. Often times each partner thinks that the ‘grass is greener’ for the other.
+So much of your love and energy often goes toward your little one and away from your partner — only to be replaced by negative feelings like resentment, score keeping, or frustration.
+**What The Experts Say:** It is important to remember that one of the biggest gifts you can give your child in life is the model of a healthy, communicative, and functioning relationship. Consider how to move away from bitterness and come together on your mutual goals, needs, and wants. Consider making your marriage a priority an essential part of raising your wonderful child, just like feeding, changing, and cuddling her. [Lauren Drago, LPC, LMHC](http://www.laurendrago.com)
+You started as a team of two and you'll eventually return. You may be always together, but are no longer alone. Your baby is now part of the mix. Maintaining a relationship with your partner post-baby takes a lot of time and energy, exactly what is being rationed right now. Feelings of bitterness can come up, and this is normal. In order to keep your relationship strong, connect daily. This could be some quiet time before your baby wakes in the morning or later in the evening. Even setting aside just 10 minutes to chit chat about the day can help. If your conversation doesn't include baby, you get extra points. [Barbie Atkinson, MS, LPC](https://www.catalyst-counseling.com/who/)
+Even in the best marriages, partners may struggle with feelings of bitterness. Taking time to shift your focus towards your partner can help minimize these feelings to improve your relationship, and parenting!
+## **2. You may forget to nurture your relationship**
+When you are living your life childfree, it is much easier to spend time nurturing your relationship. Life changes when a baby enters the picture. Most of your time is spent caring for and nurturing your child, and it is so easy to forget about your partner! When you are feeling sleep deprived and running on empty, some days all you can do is just try to make it through the day!
+However, it is important to remember that your partner should be a priority!
+**What The Experts Say:** It is best for your baby and best for you to make sure that you spend time working on your relationship. Ask your partner, ‘What do you need in this moment? or What can I do for you right now that will help?’ and follow through with their request. Many times it’s the simple and basic things that we need, like taking the trash out, loading the dishwasher (so very sexy!) holding each other or picking up takeout.[ Sofia Mendoza, LCSW ](http://www.sofiamendozalcsw.com)
+Remember you started as a couple and your children at one point will launch into their own lives. So nurture this relationship (even 10 minutes a day on hard days) because in the end you return to what started this and if you have been nurturing this, empty nesting is wonderful. If you haven’t, empty nest will be a time of despair. [Carine Keenan, LMFT](http://Www.carinekeenanmft.com)
+## **3. Sex may become a distant memory**
+After spending a day breastfeeding (or bottle feeding), changing dirty diapers, [dealing with a crying baby](https://nurturedfirst.com/expert-tips-for-when-you-feel-triggered-by-your-babys-crying/), not recognizing your body after giving birth, along with sleep deprivation; sex might be the last thing on your mind.
+**What The Experts Say:** “After the first child, many people feel like they’ve lost interest in sex and don’t feel like themselves anymore,” says Irwin Goldstein Ph.D. 
+Communicate your needs to each other. It is important to make sure that you are both on the same page with what your sexual needs are! If there is something you need from your partner, don’t expect them to know what you are thinking. Talk to them about how you are feeling, and allow for open conversation.  
+Although sex may no longer feel like a priority, it's still important to nurture each other physically even if it's not sex. Hugs, gentle embraces, cuddles all help to feel connected to our partners. And who knows, they might even lead to sex, or maybe even a much needed nap together."[ Sofia Mendoza, LCSW](http://www.sofiamendozalcsw.com)
+**Related Post:**[Expert Tips for When You Feel Triggered by Your Baby’s Crying](https://nurturedfirst.com/expert-tips-for-when-you-feel-triggered-by-your-babys-crying/)
+## **4. Your sense of self may change**
+After having a baby, many new parents report having a shift in the way that they view themselves. No longer do you think of yourself as what your job or education is, you view yourself as a parent. Even more, you no longer think about yourself first. Everything you do is with your baby in mind! Although these changes are normal, it can be hard to adjust to these new roles, and to figure out how these new roles impact your relationship.
+**What the Experts Say:** Your sense of self will change, you are the primary nurturers and in the beginning some of it needs to be that way because you are establishing attachment and security. But this is temporary-your child will grow and that’s a great time to invest in and continue in your journey of self. [Carine Keenan, LMFT ](http://Www.carinekeenanmft.com)
+After becoming a new parent, many parents struggle figuring out who they are outside of their role as mom and dad. It is important to dedicate time where you are alone with your partner, and that you can focus on remembering who you were before being a parent. Even if this is only an hour at night before you go to bed, it is important to remember to take time to simply be with each other.
+## **5. You may see your partner in a new way**
+There are so many changes that come in your relationship after having a baby, but the biggest change is seeing your partner now as also a parent to your child who you love. The two of you created a life together, and this is something that will inevitably change your relationship.
+**What the Experts Say:** If you and your partner are struggling with communicating through those challenges, it might be important for you to see a therapist to help you work through some difficult emotions. After having a first baby is a very delicate time for many parents, and therapy can help bring you closer together.
+Try to recognize the good things that your partner is doing, and make sure that you point it out to them! Having a new baby in the house can make things feel chaotic, and it is easy to forget to let your partner know that you appreciate the little things they are doing! If they did the dishes, cleaned a dirty diaper, let you sleep in, or even made you a coffee - make sure you let them know how much you appreciate these simple acts of kindness!
+## **Final thoughts**
+The research shows us that after having a baby many new parents struggle with their relationship. This is why we wanted to bring to light some of these changes, and give you expert opinions on how you can keep your marriage strong!
+Remember to continue checking in with your partner, and communicate your needs and feelings to them! If it ever feels like your conflicts are too much to handle on your own, reach out for help! Therapists are trained to support couples through these difficult times, and help them come out stronger than before.
+**Get simple parenting tools sent straight to your inbox.**
+Article By
+Jess is a seasoned Registered Psychotherapist with a deep commitment to enhancing emotional well-being in children and families. Holding a Master's in Counselling Psychology, Jess has extensive clinical experience in guiding parents through their children's intense emotions, sleep struggles, anxiety, and other challenges with empathy and understanding. In addition to individual sessions, she is known for her work educating parents on social media through @nurturedfirst. Outside of her professional life, Jess enjoys the peace of nature hikes and spending as much time as possible enjoying her family.

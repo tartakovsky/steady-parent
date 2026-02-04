@@ -1,0 +1,25 @@
+{
+  "project_name": "biglittlefeelings",
+  "output_dir": "/Users/alext/Projects/kb/.tmp/biglittlefeelings-research",
+  "competitors": [
+    "goodinside.com",
+    "positiveparentingsolutions.com",
+    "nurturedfirst.com",
+    "themompsychologist.com",
+    "peacefulparenthappykids.com",
+    "janetlansbury.com",
+    "handinhandparenting.org",
+    "sarahockwell-smith.com",
+    "genmindful.com",
+    "theparentingjunkie.com"
+  ],
+  "own_domain": "biglittlefeelings.com",
+  "exclude_patterns": [],
+  "keywords_per_competitor": 1000,
+  "max_position": 20,
+  "cluster_count": "auto",
+  "dataforseo_params": {
+    "language_code": "en",
+    "location_code": 2840
+  }
+}

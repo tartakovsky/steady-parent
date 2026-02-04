@@ -1,0 +1,28 @@
+# 4 Year Old Having Potty Accidents
+
+Source: https://www.peacefulparenthappykids.com/read/4-year-old-having-potty-accidents
+
+---
+
+4 min
+read •
+Question
+Help! My four year old little girl has been potty trained since the week prior to her turning three. Never an accident up until a few months ago. Now, she is wetting her pants daily. Sometimes emptying her entire bladder, sometimes, just enough to wet her underwear. I have taken her to the doctors twice when it first began and she had a mild urinary tract infection. The second time-nothing! Now it seems all behavioral. I tried time outs at first, then I tried ignoring it, now I make her wear a pull up after she has an accident for the rest of the day until she gets a bath. Nothing is working! She will sit in wet underwear ALL day without saying a word. I really don't think it's physical because she has yet to wet the bed during the night or nap time. Everyone keeps saying it's a phase but for months at a time??   
+Thanks!  
+Krietia
+Answer
+Dear Krieta,  
+What a frustrating situation for both you and your daughter. After her having mastered toileting, to have her begin having daily accidents is upsetting for you, not to mention inconvenient. It is also upsetting to her, even if she doesn't show it.  
+I'm not sure I agree with you that this is not a physical problem. Urinary tract infections in little girls are sometimes a sign of constipation. (Check the book 
+And constipation often is the cause of potty accidents, because an overfull rectum presses on the bladder. So the symptoms here are all pointing toward a physical cause: constipation. Most parents don't know their child is constipated but an xray shows that the rectum is distended. (88% of kids who are shown by xray to be constipated show no outward signs of it.) So unless your daughter's stools are soft and frequent, I would start by asking your pediatrician for an xray of the rectum.
+Now, I'm not a medical doctor, and you wrote to me for psychological advice, so let's look at things from your daughter's point of view. She got a urinary tract infection, and naturally began having accidents. She has not been able to recover from that situation and once again master her own body. That is not unusual after a toilet-training lapse caused by a medical condition, stress (like a school change), or anything else. After all, adults have spent years using the toilet. A four year old has only been dry for a year. And many, many four year olds do have accidents and phases where they go back into pullups. Even something you would not notice or would think is a small change in her life can throw a four year old off.   
+Unfortunately, in your concern about helping her learn again to stay dry, you began punishing her. There's been a lot of research on this, and punishing kids about toileting ALWAYS seems to result in more accidents. We aren't sure why, although probably this is because the child stops seeing toileting as an opportunity for mastery — which all kids want — and starts seeing it as a power struggle with the parent, where the parent is in charge of the toileting and the child is no longer responsible. The reason she sits in wet underwear is is probably that she is afraid to tell you when she's had an accident. After all, that's better than enduring punishment and shame, right?  
+So what can you do now? Love your daughter unconditionally, and remove the stress. Treat this as you would the beginning of toilet training. I would sit down with her on your lap for a nice snuggle, and then say something like _“I notice that you are having accidents a lot. I know it can be hard to notice every time you have to pee. Would you like to wear pullups for awhile, until you're ready to remember to use the potty every time? And I am going to help you stay dry, too. We are going to use the potty together every hour on the hour, no matter what. Ok?”_  
+Then, remind her to void, every hour on the hour. Do it with her. That keeps her from being the bad kid who needs reminding. Instead, it just becomes the norm in your house. Once she gets used to this and is no longer having accidents, you can go back to underwear again.   
+However, if she refuses to go back to pullups, the situation is more challenging for you. You might say something like _“I can see you really want to wear underwear. But lately I see you have a lot of accidents. Will you agree to use the bathroom with me every hour on the hour?"_  
+Then, when she has an accident — and she will, almost certainly — you need to keep your tone very light: _“I see you're wet. I know it's hard to get yourself to the toilet on time every time, but soon you will remember, just like you used to. But it's not good to stay in wet clothes, and you're in charge of your body, right? So go to your room and pick some clean underwear and pants out, ok? And drop your wet clothes in the hamper so we can wash them."_ Resist the impulse to be at all punitive.   
+Try to set up her clothes so she can access them herself and you aren't involved. That way, she isn't getting attention from you when she wets herself, and you aren't inconvenienced. Soon, she will decide that changing clothes is more trouble than using the toilet. If you can keep your tone light and approving, no matter what, you'll be amazed how quickly your daughter will be dry again.
+And I want to emphasize getting the xray of her rectum. Many kids her age who have potty accidents are constipated, and it isn't fair to them to not get help.
+Please write and let me know how it goes.  
+I wish you and your daughter every blessing.  
+Dr. Laura

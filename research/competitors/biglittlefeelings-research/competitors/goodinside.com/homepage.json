@@ -1,0 +1,195 @@
+{
+  "domain": "goodinside.com",
+  "analysis_date": "2026-01-28",
+  "positioning": {
+    "headline": "Meet Your 24/7 Parenting Coach",
+    "subheadline": "Unlock Dr. Becky's expert guidance to help you solve current challenges, and get ahead of future ones, in just 5 minutes a day.",
+    "primary_cta": "GET STARTED",
+    "cta_secondary": "14-day money-back guarantee",
+    "target_audience": "Parents of children ages 0-18, particularly those seeking structured parenting strategies and support for challenging behavioral issues",
+    "key_value_props": [
+      "Understand your child and respond effectively",
+      "Remain calm during difficult parenting moments",
+      "Gain confidence that you're on the right track",
+      "Expert guidance in just 5 minutes daily"
+    ]
+  },
+  "keyword_strategy": {
+    "primary_terms": [
+      "parenting coach",
+      "good inside",
+      "the good inside",
+      "dr becky",
+      "dr becky kennedy",
+      "becky kennedy"
+    ],
+    "behavior_focused_terms": [
+      "tantrums",
+      "terrible twos",
+      "talking back",
+      "backtalk",
+      "temper tantrum",
+      "meltdown"
+    ],
+    "solution_terms": [
+      "parenting classes",
+      "parenting support",
+      "parenting resources",
+      "online parenting classes",
+      "parenting consulting",
+      "parenting test"
+    ],
+    "feature_terms": [
+      "good inside app",
+      "goodinside podcast",
+      "good inside book",
+      "parenting coach"
+    ],
+    "expertise_terms": [
+      "psychologist parenting",
+      "parenting psychologists",
+      "clinical psychologist"
+    ]
+  },
+  "top_keywords": [
+    {
+      "keyword": "good inside",
+      "volume": 12100,
+      "position": 2,
+      "score": 1210000
+    },
+    {
+      "keyword": "the good inside",
+      "volume": 1300,
+      "position": 1,
+      "score": 130000
+    },
+    {
+      "keyword": "thegoodinside",
+      "volume": 1300,
+      "position": 2,
+      "score": 130000
+    },
+    {
+      "keyword": "parenting coach",
+      "volume": 1600,
+      "position": 16,
+      "score": 160000
+    },
+    {
+      "keyword": "inside good",
+      "volume": 1600,
+      "position": 1,
+      "score": 160000
+    },
+    {
+      "keyword": "parent counselor",
+      "volume": 2400,
+      "position": 10,
+      "score": 240000
+    },
+    {
+      "keyword": "parenting support services",
+      "volume": 210,
+      "position": 19,
+      "score": 21000
+    },
+    {
+      "keyword": "the parenting company",
+      "volume": 480,
+      "position": 20,
+      "score": 48000
+    },
+    {
+      "keyword": "good parenting",
+      "volume": 880,
+      "position": 20,
+      "score": 88000
+    },
+    {
+      "keyword": "parenting consulting",
+      "volume": 880,
+      "position": 13,
+      "score": 88000
+    }
+  ],
+  "page_structure": {
+    "hero_section": "Large headline with Dr. Becky's promise of expert guidance in 5 minutes daily, supported by prominent CTA buttons",
+    "sections": [
+      "Hero with value proposition",
+      "Media credibility logos",
+      "Dr. Becky introduction with credentials",
+      "Philosophy section (Sturdy Parenting)",
+      "Live workshop promotion (Deeply Feeling Kids)",
+      "Parent pattern quiz",
+      "App features breakdown",
+      "Comprehensive feature library",
+      "Community and events highlights"
+    ],
+    "trust_signals": [
+      "#1 New York Times Bestselling Author",
+      "Columbia PhD Clinical Psychologist",
+      "TED speaker",
+      "Featured in major publications",
+      "14-day money-back guarantee",
+      "30-day money-back guarantee",
+      "Founder positioned as mom of 3",
+      "Media logos prominently displayed"
+    ]
+  },
+  "positioning_themes": {
+    "authority": "Dr. Becky Kennedy's credentials and publications establish clinical expertise",
+    "accessibility": "Emphasizes brevity (5 minutes daily) to fit busy parent schedules",
+    "comprehensiveness": "Covers all major parenting challenges (tantrums, anxiety, backtalk, etc.)",
+    "philosophy": "Sturdy Parenting framework provides unique positioning language",
+    "risk_reduction": "Multiple money-back guarantees reduce purchase friction"
+  },
+  "keyword_alignment": {
+    "brand_terms": [
+      "good inside",
+      "the good inside",
+      "dr becky",
+      "thegoodinside"
+    ],
+    "solution_searches": [
+      "parenting coach",
+      "parenting classes",
+      "parenting support",
+      "parenting resources"
+    ],
+    "problem_searches": [
+      "tantrums",
+      "terrible twos",
+      "backtalk",
+      "anxiety in children"
+    ],
+    "comparison_terms": [
+      "parenting apps",
+      "online parenting classes",
+      "parenting consulting"
+    ]
+  },
+  "content_hierarchy": {
+    "above_fold": "Dr. Becky's credentials, 24/7 coach promise, 5-minute claim, GET STARTED CTA",
+    "mid_page": "Philosophy (Sturdy Parenting), expert interview/workshop section",
+    "below_fold": "App features, community, library, quiz section, testimonials"
+  },
+  "differentiators_on_page": [
+    "\"Sturdy parenting\" is unique terminology not mentioned in competitor analysis",
+    "Heavy emphasis on Dr. Becky as personal authority figure",
+    "Time efficiency angle: '5 minutes a day' appeals to busy parents",
+    "Resilience focus: Building resilient kids with boundary-setting",
+    "Scripts and strategies: Practical implementation angle",
+    "Parenting patterns quiz: Interactive engagement mechanism"
+  ],
+  "insights": [
+    "Homepage focuses on brand and founder authority rather than specific keywords; most high-volume keywords rank on internal pages (blog, workshops) not homepage",
+    "Strong personal branding strategy: Dr. Becky Kennedy is the primary positioning mechanism, not the product feature",
+    "Behavioral problems are anchors (tantrums, backtalk, anxiety) but homepage leads with coach positioning rather than problem-solving",
+    "Money-back guarantees are prominent trust signals addressing purchase anxiety for a parenting app",
+    "The 5-minute claim is a key differentiator for time-constrained parents; homepage emphasizes access over depth",
+    "Homepage keywords are mostly branded terms (good inside, dr becky) - long-tail behavioral keywords are captured by internal pages, suggesting intentional content distribution strategy",
+    "Sturdy parenting philosophy provides unique vocabulary that differentiates from generic parenting advice market",
+    "App features are positioned as personalized support + chatbot + reminders, keeping functionality minimal above the fold"
+  ]
+}

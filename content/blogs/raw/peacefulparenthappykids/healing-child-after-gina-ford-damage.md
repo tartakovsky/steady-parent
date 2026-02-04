@@ -1,0 +1,28 @@
+# Healing child after damage from harsh treatment and following Gina Ford
+
+Source: https://www.peacefulparenthappykids.com/read/healing-child-after-gina-ford-damage
+
+---
+
+4 min
+read •
+Question
+Hi  
+I am a mother of 3. I am so glad I came across your site and I am becoming a new loving parent and it' s beautiful! Unfortunately, for my firstborn I followed Gina Ford and my son and I were always discontented. I was so fixed on routine I would scold and be harsh with him whenever he wouldn't sleep or eat! He was barely 1yr and 4 months when I was pregnant with my daughter, when I had to start weaning him and not carrying him much. At this time, we also shifted him to his own room and became upset when he wanted to come to me at night but I couldn't let him. When my daughter was born, I was highly stressed with 2 small ones and he became the target of my frustrations. I often hit him or locked him in the bathroom, resulting in him having regular tantrums and erratic moods, which caused hubby and me lots of stress. He is now 5 and half and always wants to be first. He is selfish and hits or bites sister when she doesn't listen to him. He is lazy and doesn't like doing things for himself and finds little things to be upset about especially before school. He is very intelligent and loving and generally well behaved outside the home!  
+Now that I am adopting Aha! Parenting, he becomes angry and calls me stupid or a fat pig....whereas before he wouldn't dare say that! My hubby can't tolerate such insolence!
+Ever Grateful!
+Answer
+I am so glad that you are finding more compassionate ways to be with your son. The transition to compassionate parenting is tough. Kids do begin to express their anger at us. It's understandable that your husband is upset by your son's insolence. Your husband is right that your son needs to know that people in your family never call each other names or raise their voices at each other. Of course, this means that we as parents need to model loving compassion as we relate to our children. 
+So what can you do to stop your son's rudeness? Well, it's obvious that he needs to know such behavior isn't ok. But he certainly knows that by now. He is purposely breaking the rules to push against you, to show you how much he needs your help. So continue to be very clear that you don't speak to him that way and you don't want him to speak to you that way. But to actually stop the behavior, you'll need to give your son some help to heal the emotions that are driving it. 
+Your goal is to surface all those hurt feelings and fear that are under the anger and driving it. Your son needs to cry and wail and writhe and show you the years of fear and hurt he is holding. Until he does, he will be full of rage.   
+However, your son does not yet feel safe enough to show you those feelings. So you need to build a sense of safety for him first. To do this, begin spending Special Time with him every day. Here's a link on that:
+[What's So Special About Special Time?](https://www.peacefulparenthappykids.com/_blog/Parenting_Blog/post/What%27s_So_Special_About_Special_Time/ "What's So Special About Special Time?")
+This link also has links to other articles with lots of games to play with your child, which will increase his feelings of safety. 
+After you have begun building safety with Special Time, when your son is insolent, take a deep breath, and turn it into a game. Say, very playfully, _"Wait a minute? Are you being rude to me? Your own mama who loves you so much? We'll see about that! You can't call your mother a noxious nincompoop! You come here, you rude boy, you!"_ (I know he is calling you much worse, but you are ignoring what he said and turning it into a joke. He is only using those words to provoke you, because he so desperately needs your help.) 
+Then you chase him and grab him up and toss him around, maybe throw him over your back and carry him around if you can, or wrestle on the couch, chanting _"I'm NOT a noxious nincompoop! We'll see about that! No more rudeness!"_ He will most likely come up with more names. Ignore the ones that feel too mean, but make up more that are as silly as possible. (This may be hard on the spot, so get ready now: Dastardly DumbDumb? Jiggly Jabberwocky?) Get him giggling a lot.   
+You are showing him that his aggression is allowed and you are not taking offense. Essentially, you are transforming his rudeness into something harmless and using it as a signal that at this moment he needs to reconnect with you to melt those mean feelings around his heart. At some point in all this, either he will relax into a nice connection, in which case you go on with your day, feeling closer. OR he will get hysterical, and you will help him cry out those feelings. Summon up all your compassion and say, _"Sweetheart, I hear how angry you are at me. I'm not playing now. I won't let you speak to me that way."_  
+A version of this is described here:
+[When Your Child Is Angry But Can't Cry: Building Safety Through Play](https://www.peacefulparenthappykids.com/_blog/Parenting_Blog/post/When_Your_Child_Won%27t_Let_You_In_Building_Safety_Through_Play/ "When Your Child Is Angry But Can't Cry: Building Safety Through Play")
+So don't worry -- your son's rudeness is temporary. Your son has already begun the process of healing -- he is beginning to show you his feelings. As you rebuild your relationship with him, you will see big changes in his behavior. 
+Good luck!  
+Dr. Laura

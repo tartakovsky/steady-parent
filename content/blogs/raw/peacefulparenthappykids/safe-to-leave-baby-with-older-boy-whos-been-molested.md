@@ -1,0 +1,22 @@
+# Safe to leave baby with older boy who's been molested?
+
+Source: https://www.peacefulparenthappykids.com/read/safe-to-leave-baby-with-older-boy-whos-been-molested
+
+---
+
+3 min
+read •
+Question
+Dear Dr. Laura,
+First I need to explain that my mother in Feb of 07 took in her cousin's 3 children. Twin boys and a girl. The boys are now 7 and the girl is 4. At the time she got them they were 6 and 3. They came from a very bad situation. One of the boys had been molested by his mother's boyfriend on numerous times. The girl was also molested by the same man. The other twin was left alone. 
+When my mom first got the kids they all went through counseling. She still has them and will probably always have them. So far, the twin who was molested has only had 1 incident of acting out some of things he had done to him. Kind of anyway. I guess at some point he witnessed his mom and this man having sex together and so he took his sister and my mom found them just laying together in bed with all their clothes off. Nothing happened, I don't think he even understood what he saw. After that happened (they were already out of counseling) she took them both back into counseling because of it. Nothing has happened since then and that was in Feb. of this year I believe.
+All the kids are doing extremely well and have adjusted to their new life fantastically. They are all out of counseling as well. I have a 1 year old son and all the children just love him to death. In fact the one who was molested is the more mature of the kids (because he had to be before he came to my mom) and is the best with my son. I hope and pray that he never does anything to my son but I can't help but be concerned. I don't know what to do in this situation. If my mom needs to talk to him again and make sure that what happened to him was very inappropriate and what happened with Kylee etc. I know I will be talking to my son as he gets older about not letting people touch him in his private parts etc. but I'm just not sure what I should be looking for to see if anything has happened.
+I want to add that I love these children dearly and would do anything for them. What happened with them and what he did to his sister does not change my love for him in any way. I just want to protect my son because since this happened to him, I think he would have these tendencies to do them himself. Like I said, I don't think he has any idea of what he is doing, or that he is doing this out of pleasure, if that makes sense.
+Thank you so much.
+Answer
+Veronica,  
+I think you've answered your own question.
+Your mom's foster son was tragically victimized. He has been rescued, given love and therapy, and is doing wonderfully, thank goodness. The human spirit is remarkably resilient, particularly when nourished with love.Your mom is doing the work of the angels, and your love for these kids is also helping to heal them. This boy is likely to transform the pain he's endured and live with a deeper sensitivity to others. 
+But that will take some time. He is only seven. We know that the body stores our traumas, and until we work them through, we are compelled to act them out. We don't know how much his therapy actually worked through his trauma. We do know that after his first therapy ended, he acted out with his sister, even if his acting out was apparently relatively minor. I think we have to assume that this trauma may take some time to heal.
+Your nervousness about leaving your son alone with your mom's foster son is well warranted. Trust it. That doesn't mean you should make your son anxious about that relationship. It doesn't mean anything need be said to the foster son. It just means that in the same way that you wouldn't leave your son in the care of a three year old, or in any other situation that you knew posed risks,you should not leave your son unsupervised with this child.
+Once your little guy is older, and can talk -- maybe 8 or 9 -- it may be a different story. By then he will be able to stick up for himself, and you will have had conversations with him, and built a relationship with him, that will inoculate him against abuse. But for some years ahead,there is absolutely no reason why you would need to leave your son unsupervised with a child who may not be able to control his own challenging impulses.

@@ -1,0 +1,28 @@
+# Parents of 9 month old disagree over having second child
+
+Source: https://www.peacefulparenthappykids.com/read/parents-of-9-month-old-disagree-over-having-second-child
+
+---
+
+4 min
+read •
+Question
+Dear Dr. Laura,  
+I'm not sure this question belongs here -- but I've tried everything I can think of and am not sure where else to go...
+What (if anything) can I do to get rid of the baby fever? I've wanted a baby since as far back as I can remember. I've actually always wanted 2. But when I met my husband, he said he wanted one, maybe two - so I figured we were good... and we got married young (19 and 21) so we planned to wait till college was through etc... and so we eventually decided to agree to have our first last year. But the two years leading up to that were not so great. My husband had said that he changed his mind and wanted no children... I was devastated.... but he came around after seeing me going through doula training and reading many of my childbirth books.
+Then our beautiful daughter Rosalie was born last summer, and since she was about 2 months old - maybe 3 months, I've wanted another. He still does not want another.
+I am very sad about this because I feel like I should be a mother to one more... but I also feel like he has more say in it than I do because he's a stay-at-home dad... and has to do more of the childcare work...
+So... how do I get over it? How do I make this feeling go away so I can move on with my life? So I can not get sad when others around me get pregnant?
+I've tried talking with my husband - but he's tired of talking about it. I've tried journaling, which has helped some, tried hobbies, etc... Anything I'm missing?  
+-Thanks!  
+Jodi
+Answer
+Dear Jodi,  
+You really are in a tough position. You love babies and would like another child, but your husband, for whatever reason, doesn't want another one. Having a second child is a decision that needs to be made by both partners, and in your case, if he's the designated stay-at-home parent, his vote has even more weight.
+The short answer to your question is that if you really want a second child and never have one, the only way through that longing is to "own" the choice, and to grieve. In other words, you say to yourself "I love my husband and choose to have a wonderful life with him and our daughter. I would rather be with him than have a second child." That may well make you weep, and the grieving might take some time, but the first step is to "own" the choice so you don't feel victimized. The second step is to grieve. The third step is to see if there is some way to partially fill that longing. For instance, you might find that changing your career so you can work with babies (a radical step, I know) would assuage your longing. But the hard truth is that only grieving will ultimately bring you to peace with your decision.
+But I think it is too soon to make the choice to forgo a second child, and here's why.
+1. It's somewhat premature to start trying for a second child. Rosalie is still very little, not even a year old. Focusing on being her mom for a while longer would be good for both her and you. Research shows that spacing children closer than two years is a risk factor in the emotional development of both kids, presumably because most parents can't adequately meet the needs of two babies at the same time. I'm not saying it can't be done, just that it takes heroic measures and is hard to pull off so everyone comes out ok. In other words, in a perfect world, you wouldn't start trying to get pregnant for at least another four months. And while your husband may not be ready in four months, he might come around over the next year, as your daughter grows up a bit. In the meantime, Rosalie needs as much time and attention as she can get from her mom and dad.
+2. Even if your husband is not ready in the next year, he may well change his mind when he sees how important this is to you. He may not be ready for a few years, but spacing kids a few years apart is great. (My own kids are four years apart, which I think has a lot of advantages.) You say he changed his mind about the first child when he saw your seriousness and commitment. If you can begin to talk with him about this issue in a non-accusatory way, focusing only on your desire and asking him if there is any way he could see eventually being ready, he may begin to reconsider.
+3. I'm reminded of a father I know who wants as many children as possible. Of course, he works fulltime outside the home and his wife is a stay at home mom. She thinks one child is plenty, thank you, and she can't wait to get back to her work in a couple of years! She told him that if he would be the stay at home parent, she'd be happy to have more kids.
+The fact that you began craving another child when Rosalie was only 2 months old makes me wonder why she wasn't fulfilling your baby lust. After all, a two month old baby is as little as a baby can get without being a newborn. Newborns are magical, but they are also a lot of work and most parents don't find them as rewarding to interact with as a three month old. So if you were feeling like you craved a baby again while you had a two or three month old baby, maybe you weren't getting your fill of her. To be very direct, I wonder if maybe you needed more of her than you got, since your husband was the one staying home with her and you only saw her after work and on weekends. Maybe you and your husband need to consider renegotiating your arrangement. Being a fulltime mom might finally slake your babylust!  
+Dr. Laura

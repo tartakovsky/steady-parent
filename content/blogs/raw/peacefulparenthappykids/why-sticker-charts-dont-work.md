@@ -1,0 +1,32 @@
+# Do Sticker Charts Work for Crimes of Passion?
+
+Source: https://www.peacefulparenthappykids.com/read/why-sticker-charts-dont-work
+
+---
+
+4 min
+read •
+[Discipline That Works](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770124) [Peaceful Parenting](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770130)
+_"My almost 3 year old has been potty trained for a year. Lately, it's been fun to pee down his heating vent in his room. This morning, he really pushed me to my limit when I came out of the shower and realized he had peed on his 9 month old brother. And then when I put him in time-out in his room (instead of spanking him, which is really what I wanted to do) he peed in his heater vent again. I feel like I try to be a good parent, so I don't know what I'm doing wrong. How much more love and affection can I give him? We'll start a sticker chart today and hope that works. Because once you pee on your brother, you've gone too far, and we have to fix this now." -- Anonymous_
+* * *
+Clearly peeing on the baby is going too far! Last week we looked at _How much more love and affection can I give him?_ And then, we'll wrap up this little series with some real solutions. (Can't wait? They'll be geared toward helping this little pisser manage his emotions, so he can manage his behavior.) 
+To start, I am so impressed with this mom, who has held her natural outrage in check and is trying to go positive with a sticker chart. But I'm pretty sure the sticker chart isn't going to work. Let me explain why. 
+Research shows sticker charts make kids focus on the reward as the reason to do the behavior, instead of experiencing the intrinsic value in the activity. Once there is no reward, the activity is no longer "rewarding" to them. Some famous examples:
+**When you say "_Good sharing_ ,"** kids stop sharing unless you're looking. (Say instead _"Look how happy your friend was to use your truck_ " so they can notice that their friend's happiness leads to a good feeling in their own heart.)
+**When you pay them to eat broccoli** , they hate it forever! (Instead, keep serving it and insist that they taste one bit: _"You don't have to like it, and you don't even have to eat it. You just have to taste it."_ Eventually they'll begin to think that bite isn't so bad, and they'll start eating more.) 
+Notice that these are both things we want to motivate the child to DO. What about motivating the child NOT to do something, like peeing on his brother or down the heating vent? He has to want the sticker even more than he wants to pee on something inappropriate. This is the **#1 Secret of managing our impulses -- A competing impulse that we want even more.**
+_“I’d like to eat this entire pint of ice cream, but I also want to fit into that new dress,”_
+or, for this child, we're hoping he might think:_“I'm feeling sad and mad because Mom is in there cooing at the baby and that makes me want to pee someplace bad ... but I really want a sticker so I can get that new truck....I guess I'll overcome those mad, sad feelings and go pee in the toilet."_
+The problem is that those mad, sad feelings have to go someplace, and the sticker is not going to be enough motivation for a child who is not even three yet and doesn't have much prefrontal cortex to link his behavior now with something that might happen in the future. Even for adults, a delayed reward is usually not enough to get someone to stuff extreme feelings. Imagine the jealous farmer finding his wife in bed with the tractor salesman. The promise of a new farm implement probably wouldn't provide enough motivation to keep him from getting his shotgun. 
+And yes, peeing on your brother would also be classified as a crime of passion: _“I HATE that baby.....He'll see who's in charge here! .... but Mom would be really mad and then no sticker... but she's still in the shower; maybe I could get away with it.... I saw her cooing at the baby earlier.... Heck, who cares about the danged sticker to maybe earn a truck some day?! I'm just too mad!! Watch out, Baby!!”_
+Now we come to the**#2****Secret of managing our impulses:**   
+**Managing our behavior by using a competing impulse is only possible if the person has the self-control to manage the emotions driving the behavior.**
+So a competing impulse (fitting into that new dress) might work against our urge to eat the ice cream, if we're eating the ice cream out of habit. But if the feelings driving us to eat the ice cream are too big for us manage -- otherwise known as emotional eating -- we're going to eat the ice cream anyway, dress or no dress. Right?
+And ice cream doesn't really qualify as a crime of passion, the way peeing on the baby does. These are the same big emotions that drove Cain and Abel, remember? So if we want to help our child manage this behavior, we're going to have to help him manage the stormy, tangled-up feelings that are driving that behavior. 
+What feelings? Well, deep fear that we love the baby more, that he isn't good enough, that if we knew how much he hates the baby we would flush _him_ down the toilet. (Which is probably one reason he's peeing elsewhere.) But just giving this little guy more attention isn't likely to allay his terror. He needs something more from us. Which we'll talk about in our next post.
+Don't get me wrong. I'm glad this mom decided to go positive with her son. And I promise you, we can stop this kid from peeing on the baby. There really are solutions that work better than spankings, timeouts, and sticker charts, and we'll be exploring them over the next two posts.
+Want to read the entire series?
+  * [When You Pee On Your Brother, You've Gone Too Far](https://www.peacefulparenthappykids.com/read/when-you-pee-on-your-brother-youve-gone-too-far)
+  * [Do Sticker Charts Work for Crimes of Passion?](https://www.peacefulparenthappykids.com/read/why-sticker-charts-dont-work)
+  * [Everybody's got a hungry heart, especially when siblings are involved](https://www.peacefulparenthappykids.com/read/child-with-new-sibling).
+  * [When love and attention just aren't enough](https://www.peacefulparenthappykids.com/read/love-and-attention-are-not-enough?_gl=1*vh1e0q*_ga*NjAwNjA2MDEyLjE3MTExMzI4NjA.*_ga_LDCQ04Z31N*MTcxNDQwNTcyNi4yMi4xLjE3MTQ0MDYwODcuMC4wLjA.).

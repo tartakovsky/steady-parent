@@ -1,0 +1,102 @@
+{
+  "domain": "handinhandparenting.org",
+  "organization_type": "nonprofit",
+  "total_score": 2674000,
+  "clusters_covered": 3,
+  "positioning": {
+    "headline": "We help parents when parenting is hard",
+    "subheadline": "A nonprofit you can rely on for information, support, and community for your parenting",
+    "primary_cta": "Not captured (likely rendered via JavaScript)",
+    "target_audience": "Parents experiencing difficult parenting moments; those seeking evidence-based guidance and non-judgmental support",
+    "key_value_props": [
+      "Information - Educational resources for parents",
+      "Support - Practical and emotional assistance during challenges",
+      "Community - Peer connection and shared experiences"
+    ]
+  },
+  "keyword_strategy": {
+    "primary_terms": [
+      "hand in hand parenting",
+      "hand in hand",
+      "parenting support",
+      "hands-on parenting"
+    ],
+    "support_services_mentioned": [
+      "parenting information",
+      "parenting support",
+      "family services",
+      "in-home parenting support"
+    ],
+    "emotional_support_angle": [
+      "when parenting is hard",
+      "parenting challenges",
+      "parenting guidance"
+    ],
+    "differentiators": [
+      "nonprofit status",
+      "evidence-based",
+      "community-focused",
+      "non-judgmental"
+    ]
+  },
+  "page_structure": {
+    "sections": [
+      "Hero with mission statement",
+      "Value propositions (Information, Support, Community)",
+      "Social media presence",
+      "Nonprofit branding"
+    ],
+    "social_proof": "Active social channels (Facebook, Instagram, YouTube, LinkedIn, Pinterest, Twitter)",
+    "trust_signals": [
+      "Nonprofit registration",
+      "Professional branding (logo 225x225px)",
+      "Multiple social platforms indicating established presence"
+    ]
+  },
+  "top_keywords": [
+    {
+      "keyword": "hand in hand",
+      "search_volume": 12100,
+      "type": "brand_generic"
+    },
+    {
+      "keyword": "hand in hand parenting",
+      "search_volume": 590,
+      "type": "brand_specific"
+    },
+    {
+      "keyword": "hands on parenting",
+      "search_volume": 50,
+      "type": "descriptive"
+    },
+    {
+      "keyword": "hand in hand near me",
+      "search_volume": 90,
+      "type": "local_intent"
+    },
+    {
+      "keyword": "in home parenting support",
+      "search_volume": 30,
+      "type": "service_specific"
+    }
+  ],
+  "keyword_analysis": {
+    "strong_brand_association": "The homepage dominates the 'hand in hand' keyword space (12,100 volume), leveraging the brand name as a primary SEO asset. The term 'hands in hands' (12,100 volume) suggests name confusion or alternative phrasing the site captures.",
+    "limited_cluster_coverage": "Only 3 clusters covered on homepage - very narrow focus. Most parenting topics are likely handled by subpages and blog posts.",
+    "search_intent_gap": "Homepage captures branded terms but not broader parenting problem keywords. The site appears to funnel searchers through information architecture rather than trying to rank for general parenting advice terms on the homepage.",
+    "nonprofit_positioning": "Unlike commercial parenting platforms, this site emphasizes 'nonprofit' and 'community' over product features or unique methods. This is a trust/credibility play rather than a competitive differentiation play."
+  },
+  "insights": [
+    "Homepage is primarily a brand and trust vehicle rather than a keyword-capture page. Deep content strategy handles topical authority.",
+    "Strong reliance on brand name recognition - 'hand in hand' (24,200 combined volume) is the primary traffic driver.",
+    "Missing general parenting support keywords on homepage despite covering them extensively in subpages (tantrums, sibling rivalry, etc.).",
+    "Nonprofit status is prominent positioning - suggests targeting parents who want guidance without commercial bias.",
+    "Limited homepage copy captured - heavy JavaScript rendering may obscure actual copy from analysis.",
+    "Local intent signals ('hand in hand near me') indicate they likely offer in-person services, not just content.",
+    "The organization positions as a full-spectrum resource (info + support + community) rather than specializing in a narrow topic."
+  ],
+  "competitive_positioning_vs_biglittlefeelings": {
+    "overlap": "Both target parents in distress, offer community, emphasize evidence-based approach",
+    "differentiation": "Hand in Hand is nonprofit (trust/impartiality angle); likely has in-home services (local component). Would need deeper analysis of BLF site to determine specific competitive gaps."
+  }
+}

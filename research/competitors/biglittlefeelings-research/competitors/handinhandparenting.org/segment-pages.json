@@ -1,0 +1,13 @@
+{
+  "strategy": "segment-pages",
+  "description": "Targeted content for specific parenting segments including teenagers, fathers, grandparents, and step-parents. Hand in Hand addresses the unique challenges and needs of different parenting roles and family structures, positioning their tools and connection-based approach as applicable across diverse parenting contexts.",
+  "urls": [
+    "https://www.handinhandparenting.org/2013/08/supporting-teenagers/",
+    "https://www.handinhandparenting.org/2018/10/how-to-talk-to-teenager/",
+    "https://www.handinhandparenting.org/2013/08/fathers-are-primary-parents/",
+    "https://www.handinhandparenting.org/2014/12/step-parenting-blended-families/",
+    "https://www.handinhandparenting.org/2013/12/supportive-grandparent/",
+    "https://www.handinhandparenting.org/2022/05/special-time-large-family/",
+    "https://www.handinhandparenting.org/2021/07/parenting-tweens-and-teens-with/"
+  ]
+}

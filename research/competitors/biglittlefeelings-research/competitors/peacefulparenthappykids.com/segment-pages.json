@@ -1,0 +1,12 @@
+{
+  "strategy": "segment-pages",
+  "description": "Age-segmented landing pages and guides targeting specific child development stages and parent audiences. Creates dedicated pages for each stage (newborns, infants, toddlers, preschoolers, school-age, tweens, teens) to organize content and capture keyword traffic from parents searching for stage-specific parenting advice.",
+  "urls": [
+    "https://www.peacefulparenthappykids.com/guide/attachment-parenting",
+    "https://www.peacefulparenthappykids.com/guide/early-teen",
+    "https://www.peacefulparenthappykids.com/guide/preschoolers",
+    "https://www.peacefulparenthappykids.com/guide/school-age",
+    "https://www.peacefulparenthappykids.com/guide/tweens",
+    "https://www.peacefulparenthappykids.com/recommended/preschoolers"
+  ]
+}

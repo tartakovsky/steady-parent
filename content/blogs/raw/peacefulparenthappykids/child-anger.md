@@ -1,0 +1,56 @@
+# Teaching Emotional Intelligence When Emotions Run High
+
+Source: https://www.peacefulparenthappykids.com/read/child-anger
+
+---
+
+7 min
+read •
+[How to Raise an Emotionally Intelligent Child](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770128)
+When storm clouds brew, even the most well-intentioned parent can get triggered and escalate the upset rather than calm it. But when your child wrestles with the more "difficult" human emotions, he needs your help to learn how to manage them. This is the most important time to teach emotional intelligence -- meaning to help your child develop the abilities to soothe himself, regulate his emotions, and get along with others. Here are six ways to help your child develop a more emotionally intelligent brain, every day. 
+* * *
+### 1. Respond to the needs and feelings behind problem behavior. 
+Children WANT to have happy, warm interactions with their parents. They want to be "good" people. Misbehavior comes from overwhelming feelings or unmet needs. If you don’t address the feelings and needs, they’ll just burst out later, causing other problem behavior. Examples of responding to needs:  
+**Respond to clinginess by offering connection:**__"It’s hard to let go of me this morning. Starting school again has been fun, but you miss time with Mommy now. I will be right here to pick you up after school, and we’ll snuggle and play together and have special time, ok?"__
+**Respond to crankiness caused by lack of sleep by nurturing and teaching self-nurture:** _“You're having a hard time this morning. I think everything is a bit too much for you because we all got to bed late last night and didn't get quite enough sleep. Maybe we need to spend some cozy time this morning on the couch reading books together."_
+_**Respond to a child who regularly exhibits defiance by offering healthy sense of agency:** _"It looks like you want to do this yourself! I’m right here if you need some help.”_  
+_ _  
+_
+**Why this encourages emotional intelligence:**
+  * Children usually can't articulate their needs. But when you help them tune into their inner experience and give them language to express their needs, they get better at understanding themselves and learn how to advocate for themselves in an appropriate way.   
+### 2. Accept all emotions, even as you limit behavior.
+Of course you need to limit your child's actions. He can't run in the street, throw his dinner on the floor, hit his sister, or play on the computer all night. In every case where your child's behavior is clearly unacceptable, set a limit. (If it isn't "clear" whether the behavior is acceptable to you, just ask yourself if you're okay with being flexible, and be sure not to push yourself past your own comfort level.)
+But even while you limit behavior, your child is allowed to have, and to express, all her emotions, and that includes feelings of disappointment or anger in response to your limits. Children need to "show" us how they feel and have us "hear" them, so meltdowns are nature's release valve for children's emotions. Instead of banishing your child to her room to get herself under control (which gives her the message that she's all alone with those big, scary feelings), hold her, or stay near and connected with your soothing voice: _"You seem so mad and sad right now. I am right here, you are safe."_
+Once the storm passes, your child will be cooperative and affectionate, and feel so much more connected to you because you tethered her through her inner tornado. Ignore any rage or rudeness during a meltdown; your child is showing you the depth of her upset. AFTER the storm is the time to teach, not during. And you'll find that not much teaching is really necessary once you help your child with her feelings. That's because she already KNOWS the expected behavior, she just couldn't control those big emotions. Your soothing support is the first step of her learning that skill.
+  * When we allow ourselves to feel an emotion, it begins to dissipate. But when we try to push the emotion out of our awareness, it doesn't go away. We just lose the ability to control it. So the first step in learning to regulate emotions is to allow them, to become aware of them.
+  * When we give children the message that all emotions are okay, they befriend their emotions instead of stuffing them. That allows them to begin to self-regulate.
+  * Once kids can regulate their emotions, they can regulate their behavior.
+### 3. Regulate Your Own Emotions.
+Children won't always do what you say, but they will always, eventually, do what you do. Kids learn emotional regulation from us. When we stay calm, it teaches our child that there's no emergency, even if she feels like there is at the moment. 
+Of course, you can't stay calm when you're running on empty. That's why maintaining our own sense of well-being is one of our most important parenting responsibilities. 
+Most of us keep it together fairly well until our child gets upset. Remind yourself that you don't have to "fix" your child's upset, or stop your child's emotions. Instead, just accept what they're feeling and maintain your own equilibrium.   
+The other time many parents get angry is when we get upset at our child and start disciplining. But it’s especially important to stay calm and see your child’s perspective as you’re setting limits. There's no reason at all for blame or punishment, which shame kids and make them misbehave more. Aim for firm limits, set with empathy:
+> _"I'm sorry, Luis, I know it's hard to stop when you're having so much fun with your game. It's bedtime now, and you can play more tomorrow. Now it's time to say Goodbye, Game. Ok, I'm turning it off. I see that makes you very unhappy. You wish you could play all night, every night, don't you? I know it's hard. And I know you can handle it. Come on, let’s make sure we have time for a story. What should we read tonight?"_
+  * The child's brain is actually learning to calm and soothe itself in response to the parent role-modeling self-regulation.
+  * When we set limits with an understanding of the child's perspective, the child is less likely to resist the limits. When kids give up what they want to follow our limits, they're building the neural pathways for self-regulation.
+### 4. Remember that anger is a defense against deeper emotions, like fear, hurt or sadness.
+When your child expresses anger, he's not being rude. He's defending himself against feeling those more vulnerable emotions of hurt or fear. Acknowledge your child’s anger, but then go under it to empathize with the deeper emotions spurring the anger. Feeling those deeper emotions will make your child’s defensive anger unnecessary.   
+What about “Hate”? Don't get distracted. Your child is just throwing the nuclear option at you to show you how upset he is. Hate is not a feeling at all, but a “position,” or a stance we assume to protect ourselves. Empathize as if your child was simply expressing anger, which he is. 
+> _"You say you hate the new baby? I hear you. Sometimes you get really mad at her just for being here. And I see how mad you are at me, too, for spending time with the baby. You liked it better when it was just you and me. You feel so sad that things are different now and I am so busy with the baby. Come snuggle with me and I will hold you and you can tell me your sad and mad feelings. When you're ready I will kiss your nose and toes and we can play baby games, just you and me, like we did when you were a baby."_
+  * Since many parents had scary experiences with anger as young children, we’re often frightened of our children’s anger. Letting the child know that he isn’t a bad person for feeling rage helps him accept his anger as normal and move through it, rather than getting stuck in it.
+  * Most of us don’t understand that anger is a defense, so it scares us. Helping kids recognize what’s behind their anger gives them the tools to dissolve it so they aren't driven to lash out.
+### 5. When a desire can't be granted, acknowledge it and grant it through “wish fulfillment.”
+It’s amazing how often you can get through an impasse by giving your child his wish in his imagination. Partly this is because it shows you really do care about what your child wants, and wish you could make him happy. But there's another, fascinating, reason. Research shows that the power of the mind is so great that imagining that our wish is fulfilled actually satisfies us for the moment, meaning the part of our brain that shows satisfaction actually looks satisfied on a brain scan! Giving your child his wish in imagination releases some of the urgency behind it so that he's more open to alternatives.
+> _“You wish you could have a cookie. I bet you could gobble ten cookies right now! Wouldn’t that be so yummy?!”_
+Then find a way to meet the deeper need: _"I think you're hungry. It's almost time for dinner but you can't wait. Let's find a snack that makes your body feel better."_
+  * All of us have desires that can't be granted. Learning a repertoire of ways to manage those desires constructively, as well as of managing other needs and feelings, is an important coping tool for any child's emotional intelligence toolkit.
+### 6. Don't take it personally, and resist the urge to escalate or retaliate.
+Your child has big feelings. They aren't about you, even when he’s yelling "I hate you!" It's about your child: their tangled up feelings, their difficulty controlling themselves, their immature ability to understand and express their emotions. When your daughter says "You NEVER understand!" try to hear that as information about her -- at this moment she feels like she's never understood -- rather than about you. Model emotional self-management by simply taking a deep breath and trying to see it from her perspective. Remind yourself that it's hard to be a kid. She doesn't yet have the internal resources to manage her emotions -- but you do, right?
+  * Our job as adults is always to calm the emotional storm, rather than escalating it. How else will our child learn to do this for themselves?
+  * When you're emotionally generous to your child, you're demonstrating that she isn't perfect, but you love her anyway -- even when she's at her worst. That's the unconditional love that every child needs to thrive.
+Tough? Yes, because most of us find it challenging to manage our own feelings so that we can tolerate our children’s unruly emotions. 
+But have you noticed the silver lining? We get a chance to grow in emotional intelligence ourselves. Which makes us happier, healthier people. So if by chance you got swatted instead of understood when you were a kid, it's never too late to have a happy childhood!
+### Want More? Don't Miss:
+[5 Steps to Nurture Emotional Intelligence In Your Child](https://www.peacefulparenthappykids.com/parenting-tools/emotional-intelligence/steps-to-encourage)   
+[Helping Your Child with Anger](https://www.peacefulparenthappykids.com/parenting-tools/emotional-intelligence/angry-child)   
+[Books to Help Your Child Develop Emotional Intelligence](https://www.peacefulparenthappykids.com/parenting-tools/emotional-intelligence/books)

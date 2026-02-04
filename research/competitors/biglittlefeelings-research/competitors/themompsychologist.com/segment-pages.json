@@ -1,0 +1,25 @@
+{
+  "strategy": "segment-pages",
+  "description": "Content segmented by child age and developmental stage (infants, toddlers, preschoolers, school-age). Includes age-specific discipline strategies, developmental milestones, and appropriate behavioral expectations for different ages.",
+  "urls": [
+    "https://themompsychologist.com/blog/history-of-thanksgiving-kindergarten/",
+    "https://themompsychologist.com/blog/history-of-thanksgiving-preschoolers/",
+    "https://themompsychologist.com/blog/how-teach-kindergarten/",
+    "https://themompsychologist.com/blog/thanksgiving-preschoolers-history/",
+    "https://themompsychologist.com/blog/thanksgiving-history-preschoolers/",
+    "https://themompsychologist.com/blog/the-first-thanksgiving-preschool/",
+    "https://themompsychologist.com/blog/the-first-thanksgiving-preschoolers/",
+    "https://themompsychologist.com/blog/time-out-2-year-olds/",
+    "https://themompsychologist.com/blog/time-outs-2-year-olds/",
+    "https://themompsychologist.com/blog/timeouts-2-year-olds/",
+    "https://themompsychologist.com/blog/what-to-teach-to-kindergarten/",
+    "https://themompsychologist.com/blog/age-5/"
+  ],
+  "example_keywords": [
+    "11 month old clingy",
+    "15 month old clingy",
+    "18 month old throwing food",
+    "18 month old very clingy and cranky",
+    "18-month old very clingy and cranky"
+  ]
+}

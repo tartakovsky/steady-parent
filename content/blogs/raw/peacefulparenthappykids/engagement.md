@@ -1,0 +1,44 @@
+# Engagement: Helping Your Child Find Their Passion
+
+Source: https://www.peacefulparenthappykids.com/read/engagement
+
+---
+
+5 min
+read •
+[How to Raise an Emotionally Intelligent Child](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770128)
+Enthusiasm. Engagement. It's almost the definition of childhood. A jaded, withdrawn child is a red flag that something is very wrong. But what happens as they grow up, and modern life gets in the way? 
+* * *
+> _"If I were able to give my children any gift to sustain them in life, I believe I might give them passion for what they do. For if they can live from the heart, they will surely touch the sky."_  
+>  -Steve Goodier 
+We all recognize that feeling of full engagement that gives meaning to our lives, when we apply ourselves so completely to the task at hand that we tap into all our resources and then some we never knew we had. 
+Abraham Maslow described these as “peak moments,” sports stars call it “being in the zone," Zen masters express it as being fully present. Somehow, we bring ourselves so completely to the moment that we seem to step out of time, even out of ourselves. For all of us, it is when we are most fully alive. 
+Zen masters, of course, can experience this ecstatic state while doing the laundry or stirring the oatmeal, and such experiences, at least occasionally, are one of the many benefits of a regular meditation practice or athletic regimen. Small children actually live in this state much of the time. 
+Most humans, however, are more likely to experience peak moments while striving towards a goal. Dopamine, a highly pleasurable neurotransmitter released in the brain in response to alcohol, nicotine, marijuana, cocaine and other mood altering drugs, is naturally present in the brain when we wholeheartedly pursue a goal. 
+So we might think of the neurotransmitters that "reward" us for pursuing our goals as nature's way of insuring that we stay motivated and engaged. Study after study exploring happiness indicates that humans are happiest when they are mobilizing all their resources in a challenging but do-able activity, tracking a reward. (The happiness is greatest during the pursuit, not the achievement, of the reward.) 
+There was a time when pursuing goals meant putting food on the table, keeping the tribe safe, or excelling at intellectual, athletic or artistic pursuits. Unfortunately, the satisfaction and pleasure humans get from achieving goals in our culture has become warped by the emphasis on money and possessions. The attainment of material wealth, including higher salaries, is less satisfying the more we have. And by occupying all of our time and energy, it can devalue other pursuits and leave us with more shallow lives. 
+Unfortunately, this is true for kids as well. Studies show that affluent children are less enthusiastic, less likely to report deriving pleasure from their activities, and more likely to report being bored. They also report being under more pressure from parents to perform academically and in extracurricular activities, which can take the joy out of simply pursuing their own passions. 
+**Engagement is protective for all of us, adults and kids alike. It gives depth to our lives. And it inoculates children against some of the temptations they face.** Kids who are passionate about something -- basketball, chess, collecting comic books, playing the trumpet – tend to protect their passion. Smoking compromises the trumpet player’s wind, late nights carousing throw off the ball player’s game, and the serious student knows she wants her mind clear for tomorrow's test. 
+**Engagement also develops the executive function of the prefrontal cortex.** The pursuit of anything meaningful will inevitably present us with hurdles to overcome. When kids are passionate about something, they're motivated to develop the patience, determination, creative stamina and problem-solving ability to strive towards their goal. 
+##  So how can we help our children   
+to experience the rewards of full engagement? 
+###  1. Remember that happiness results more from the fully engaged pursuit of a meaningful goal than from its attainment. 
+As hard as it is for you, don’t be too quick to satisfy all your child's desires. She'll get much satisfaction if you help her set meaningful goals and work towards them. In our age of instant gratification, this is a lost art form. 
+###  2. Help kids find something meaningful to them to strive for. 
+Most kids today don’t have to work and save for that new bike; we buy it for them as soon as they outgrow their old one. 
+There's nothing wrong with buying him the bike for his birthday. But what other goal would matter for him? Shooting a certain number of baskets in a row? Landing a part in the school play? Reading the collected works of Shakespeare? Coaxing a smile from the dour old lady at the corner store? Organizing the other kids to ask the city council for a new soccer field? 
+###  3. Support their passions, don't try to give them yours. 
+Your fourteen year old spends every spare moment practicing with his band, when you wish he would study more? Go ahead and uphold family standards (_"Homework comes first!"_) but recognize how lucky you are that your son has found himself the passion of making music. 
+Usually kids develop passions one step at a time, when they get encouragement and support from parents about a new interest. Remember that it’s fine for you to come up with suggestions, but if you have to provide the momentum, it isn’t their passion. 
+###  4. Emphasize pursuit of what really matters. 
+In a culture that glorifies wealth and celebrity, it takes clarity and intention to pose a meaningful alternative, but we owe our children the reassurance that life is more than glittering emptiness. 
+Share your heroes and sheroes with your kids. It may not be as cool to have a picture of Martin Luther King or Ghandi on their walls as the latest pop star or athletic icon, but kids need to know they can strive to make the world a better place – and accomplish it. 
+###  5. Be aware of addictions that undermine engagement. 
+The siren call of the computer game, for instance, can easily trump the budding passion of the jazz buff. Writing a story takes more work and self-management than watching TV, as is true for all great passions. But that engagement and the sense of accomplishment that results is why we grow from pursuing our dreams. 
+###  6. Remember that grand aspirations become reality one step at a time. 
+_“Dad, it’s so cold, I wish these homeless people had a place to go!”_ and _“Mom, I wish I could learn Italian!”_ are opportunities to help your child grow. Yes, these are big challenges, but you WANT her to think big. The trick in tackling a big goal is breaking it into small pieces: _“Let’s go home and get a blanket to give that homeless man,”_ or _“Let’s start learning a few Italian phrases by finding an Italian app to listen to together while we're driving to Grandma's this weekend.”_
+###  7. Remember to model rewarding ourselves 
+...for each step we make in the right direction. Often this reward is as simple as self praise, but every bit of progress deserves celebration. And of course, reward effort as well as results. _"I know you can't actually speak Italian yet, but you've been working so hard on learning new words! Let's celebrate with an Italian dessert tonight."_
+###  8. If your child's passion is to make the world a better place -- 
+And what a wonderful passion that is -- be aware that both of you will be likely to confront feelings of hopelessness as you really engage with the problems of the world. Giving one blanket to a homeless man is likely to make her feel temporarily better, but also to drive home for her just how entrenched injustice is in our society, and how much work there is for all of us to do to heal our world. It helps if you can remind yourself and your child that every positive thing we do matters, even when we can't see how. Remember the starfish story: 
+> A man walking along a beach came upon a little boy running frantically along the sand, picking up starfish and tossing them gently into the water. _“What are you doing?”_ he asked. _“The tide is going out, and these starfish will die here on the shore,”_ the boy answered, barely looking up. The man studied the beach for a minute. There were hundreds of starfish lying in the hot sun. _“But you can’t possibly save them all,”_ he said. _“It isn’t worth it.”_ The boy looked up. _“It’s worth it to this one!”_ he cried, as he tossed another starfish into the ocean.

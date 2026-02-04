@@ -1,0 +1,29 @@
+# Toddler has become Picky Eater: Getting him to eat healthy food?
+
+Source: https://www.peacefulparenthappykids.com/read/toddler-has-become-picky-eater-getting-him-to-eat-healthy-food
+
+---
+
+4 min
+read •
+Question
+Dr. Laura, I fear that I have ruined my child's appetite forever.
+I was a devout follower in the beginning of following the feeding rules. Start out with yellow vegetables as they are the most sour, and only do one a week so you can establish what if any allergies they have.
+Patrick was a terrific eater. He loved vegetables, especially yams. He even loved squash. The only food he rejected was pineapples and bananas which his father and I don't like either so we just figured he was a mini version of us. He especially loved Salmon, and potatoes (not necessarily together, but those were two of his favorite dishes)
+Then last week something happened. All of a sudden he has no interest in eating anything other than cookies and M&M's (or Nummy's as he calls them). He won't eat a yam. He won't touch his yogurt. He wants milk all day long instead of water. He rejects all meat, fish, rice and potatoes, and God forbid we try to give him any sort of fruit or vegetable, including mandarin oranges which he used to eat all the time.
+I have no idea what happened to my good eater. I was so proud of myself for developing such a healthy little boy, and we were on track for a healthy lifestyle, with the occasional treat, and now it's all about fries, cookies, and nummy's.
+Erin
+Answer
+Erin,  
+I have to admit I laughed fondly when I read your post. Far from ruining your child's appetite forever, you've laid a great foundation for Patrick, who will one day again enjoy all kinds of healthy foods. But he's 21 months old, and he's discovered cookies and M & Ms. Why on earth would he eat anything else?
+I'm assuming that you let him feed himself. If you are still feeding him with a spoon, then he might go for Nummies because they're finger food. 21 month olds should definitely be given chunks of soft food to eat with their fingers, as well as plenty of opportunities to try a spoon themselves on yogurt and soup. They need to be in charge of their own eating.
+Presuming he used to feed himself yams and salmon, his new passion for Nummies and fries is just the human preference for sweets and carbs rearing its ugly head. That's why most experts advise parents to wait as long as possible before introducing sweets. (And of course staying away from fries one's whole life could only be a good thing.) But you're still the grown up. That means that you decide WHAT foods to offer, he decides HOW MUCH of them to eat.
+That means that you need some rules, quickly, about nummies. My own house rule when my kids were little was that dessert was always fruit, and we just didn't offer them sweets or fries. Now I have one teen with zero interest in sweets or fries, and one who would live on them if she could!
+So what can you do to get him to eat healthfully without power struggles? One possibility is to limit Nummies to a particular day, like on Saturday after breakfast, but to me that still sounds like a lot of sweets, and also he will certainly learn where you store them, which will set up power struggles. Alternatively, you could just to keep foods like that out of your house. Meals and snacks can always be healthy food, with fruit for treats. My hunch is that you will encounter plenty of sweets outside your house that you will have to limit, especially with the holidays coming up.
+In any case, treats should be a treat, not a regular food item, so he simply doesn't have the option. You can empathize "You LOVE Nummies, but we don't have nummies except on birthdays!" and when he tantrums in the car seat because you're driving past McDonald's you can tell him how sorry you are that he can't have fries, but you don't have to give them to him. He may turn up his nose at your meals for awhile (and he is likely to drink more milk to make up for it), but sooner or later he won't be able to resist healthy food that smells and tastes good. Don't worry, he won't starve.
+Simultaneously, you'll want to make his meals more interesting so he takes a second look at them. One idea I learned from Baby Ebi and his Montessori Mom (who blogs about her days with him on A Bit of This and That) is the Muffin Tin Dinner, in which she puts different bits of food in each "cup" of the muffin tin, to make him a healthy, colorful, quick dinner. So simple, so festive, so appetizing to a child, that it's hard for toddlers to resist it.
+You might experiment with food that will intrigue him, like Cheesy Trees (tiny broccoli florets with cheese), pizza, small colored pasta shapes, etc.
+You might also consider introducing some "healthier" sweets, just to lure him back to the highchair. For instance, anything dipped in ketchup (fish sticks?) tastes sweet. Birch sugar (also called xylitol), available at your health food store, does not have the negative effects of regular sugar, but still sweetens things nicely.You can make pudding and hot chocolate (made with unsweetened baking cocoa) with birch sugar that is actually good for kids and ratchets up their calcium and protein intake (although of course if he's drinking a lot of milk he doesn't need that.) Of course, you still have to be sparing with anything sweet so he doesn't eat only that.
+In general, keep presenting tiny amounts of foods until you find what he keeps enjoying (which is another reason the muffin tin idea works so well.) You can replenish the muffin cups he's eating, but many kids don't like to start with a big plate of food, particularly of just one or two things. And of course most little ones hate it if the foods touch.
+One very good book you might want to look for at the library is Ellyn Satter's   
+Good luck!

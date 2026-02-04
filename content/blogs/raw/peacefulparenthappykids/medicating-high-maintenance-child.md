@@ -1,0 +1,32 @@
+# Medicating "High Maintenance" Child?
+
+Source: https://www.peacefulparenthappykids.com/read/medicating-high-maintenance-child
+
+---
+
+4 min
+read •
+Question
+Hi,  
+I will make this as short as possible, if I can.  
+I have a 6 year old son, who is having some extreme difficulties and we're having difficulties with him as well.  
+He has always been what I call a "high maintenance" child, but upon starting kindergarten last fall our problems just seemed to multiply. We were receiving notes weekly, along with calls from his teacher about the problems he was having.  
+Her biggest complaints were that he was disorganized (as in never having what he was supposed to have-- pencil, books, etc.) he was very nervous, and very talkative. Since we were having problems with him at home as well (although different issues, such as tantrums- which I dubbed meltdowns- and a complete disregard for others' feelings or property) we took him to his family doctor. Based on our description and his "symptoms" his doctor labeled him as ADHD and prescribed Strattera at the lowest dosage. Within a week on the Strattera he became extremely angry and aggressive, so he was taken off and we were given a referral for a psychiatrist.   
+The psychiatrist thought he exhibited too many ADD behaviors and wanted him on Concerta, again at the lowest dosage. With his first dose of Concerta he wound up in the ER because he was exhibiting many odd behaviors, such as facial tics, repetitive actions (he counted to 1,000 in the 15 minute drive from our house to the ER) as well as a highly elevated heart rate. The psychiatrist then concluded that if he had such reactions to both types of ADD/ADHD medications that he was early-onset bipolar. This was suggested because of the family history on my side (not me, but my mother and grandfather, aunts, etc.) having a history of drug and alcohol abuse.   
+At this point, we wanted a third opinion. The psychologist we took him to for that told us that it was all our parenting skills and had nothing to do with him. Needless to say, we left the office quite disgusted and never returned.   
+Our fourth opinion was from another psychologist who said he had PDD. We are at the end of our rope here trying to help our son, and wanted to know if you could perhaps walk through his symptoms with me and see if you can help us get things on the right path to a better diagnosis.  
+Thank You in advance,  
+Ashley 
+Answer
+Dear Ashley,  
+I am so sorry that you and your son are going through all these difficulties. I am sure you are worried sick and ready to tear your hair out. But I do think there are some positive steps you can take now that will help you and your son.  
+Here is my advice.   
+1. I would never let a family doctor diagnose a mental disorder, or any other specialty. Their job is to refer you to a specialist for a consultation. Psychiatrists and Psychologists are the appropriate specialists for a behavioral challenge like this. Unfortunately, many psychiatrists are given great medical training but not so much in the way of psychological training. Psychologists (which I am ) receive the opposite, i.e., no medical training. So many psychologists tend to see everything as environmental, and many psychiatrists as all physical. (Of course I am generalizing here.)   
+2. With all due respect to the psychologist you saw, I think it is highly unlikely that this is “all your parenting.” Every child is different, and half of who any child is can be traced directly to his genes. You have a child who has some challenges.  
+3. That said, it does make a difference how you parent a difficult child. I would advise you to find a good counselor with lots of experience with kids like your son — and yes, there are lots of kids like him! -- who can help you develop parenting behaviors that will support your son in a positive adjustment to school and at home. Left without such support, you are winging it in a very challenging situation. This is the critical period for intervention. You only get one chance to parent your son, and an experienced therapist will know what will best help both your son and you. This is not something you should try to handle alone.  
+4. As a psychologist, my training is inadequate to advise you regarding medication, but I can say a few things. It may well be that in addition to seeing a psychologist with you (and sometimes by himself, as you will see the counselor sometimes without your son), your child will need to be on medication. Your son's bad reaction to both Strattera and Concerta suggests proceeding very carefully with any medication at all, and certainly any medication should be directly related to a diagnosis. That means we do need a diagnosis to guide us in deciding whether medication would be helpful. I should add that Ritalin (Concerta is sustained-released ritalin) is very over-prescribed, and that I have seen many kids improve with excellent coaching/therapy/parenting/teaching. I am not against medication in all circumstances, but your son may do best without any medication, and it is not a panacea, because it comes with problems of its own.   
+5. I cannot diagnose your son by talking with you, although I would be happy to set up a counseling session by telephone to hear more specifics about your son's symptoms and hopefully point you in the right direction. However, I think it would be smartest for you to simply take your son to be evaluated at a good mental health clinic. Six is very early to have a diagnosis of bipolar and most reputable clinics would proceed very carefully with such a diagnosis. PDD, however, can be definitely diagnosed at age 6, based on specific cognitive/motor/social/language delays, and again a good evaluator can either rule out PDD or diagnose it. In any case, a thorough evaluation is in order before more medication is prescribed.  
+I know you must be fed up with all of these “experts.” I don't know where you live, but there are good clinics associated with many universities and hospitals that specialize in mental health evaluations of children. It is probable that after an evaluation at such a clinic, they would refer you to a therapist on their staff who is experienced in working with kids with similar issues, so that by finding a clinic you will also find the counselor you want.  
+Please let me know if this is helpful and if you have more questions.   
+All my best,  
+Dr. Laura Markham

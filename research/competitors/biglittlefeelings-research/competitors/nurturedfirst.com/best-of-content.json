@@ -1,0 +1,15 @@
+{
+  "strategy": "best-of-content",
+  "description": "Comprehensive toolkits and paid courses packaging their expertise into structured learning products. These product pages highlight bundles for solving specific parenting challenges like anger management, body safety, potty training, and school transitions.",
+  "urls": [
+    "https://nurturedfirst.com/product/solving-bedtime-battles/",
+    "https://nurturedfirst.com/product/the-anger-course/",
+    "https://nurturedfirst.com/product/the-anger-toolkit/",
+    "https://nurturedfirst.com/product/the-body-safety-toolkit/",
+    "https://nurturedfirst.com/product/the-friendship-toolkit/",
+    "https://nurturedfirst.com/product/the-playful-parent-toolkit/",
+    "https://nurturedfirst.com/product/the-potty-toolkit/",
+    "https://nurturedfirst.com/product/the-puberty-toolkit/",
+    "https://nurturedfirst.com/product/the-school-toolkit/"
+  ]
+}

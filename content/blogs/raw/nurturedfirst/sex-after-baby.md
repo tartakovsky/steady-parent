@@ -1,0 +1,34 @@
+# [Parent](https://nurturedfirst.com/ages/parent/)
+
+Source: https://nurturedfirst.com/parent/sex-after-baby
+
+---
+
+# Postpartum Sex: Overcoming Challenges for Tired New Moms
+Written By
+Jess VanderWier, MA, RP
+July 18, 2018
+_This article has been reviewed by Nurtured First's team of child development experts._
+## Table of Contents
+* * *
+Dr. Megan Phillips is dishing her expert advice for tired new moms on postpartum sex. She shares some amazing tips that will be helpful if you are a tired new mom, who can't quite imagine what sex after baby would look like. Keep reading to hear some real talk about sex after a baby!
+For many new moms, there is a date that looms on the calendar that they dread…the six-week follow-up visit. This is the day when your OB or Midwife will check out your nether regions to see exactly how destroyed they are from pushing a human out of them. It’s an invasive process designed to answer a very important question — when can you engage in sexual intercourse again?
+Sex after a baby can bring a mix of emotions. Many moms can’t even fathom the idea of inserting anything into their vagina after pushing something the size of a watermelon out of it, but many husbands and partners are extremely eager to hear the “all clear” from the doctor. This love/hate relationship with the six-week follow-up opens up an interesting door of how exactly sex happens once two become three (or more).
+In the best of circumstances, your vagina heals and sex is back on the table. Time to celebrate and get it on, right? Well, for most new parents, sex may be an exciting idea, but putting it into practice can be a challenging prospect.
+## Why many couples struggle with sex after a baby
+First and foremost, although a medical doctor may have cleared your vagina for duty, that doesn’t exactly mean that it will be a smooth process. Many moms find that sex can be downright painful after they give birth, and this may cause them to want to keep penises very far away for a very long time. This is pretty common. Your vagina can be extremely tender and sore after baby, especially if there was any tearing or stitches involved. Your best bet is to invest in some water-based lubrication and try to go slow. With a gentle and supportive partner (and remember, lots of lube), you will start to feel less pain as you keep trying. After a while, the parts will fit together again much as they did before, and you can fall back into your former rhythm.
+However, raise your hand if you’ve ever chosen sleep over sex? Yeah, we’ve _all_ been there. New parents are nearly [constantly tired](https://nurturedfirst.com/a-survival-guide-for-the-overwhelmed-new-mom/), and by the time baby goes to bed, you are lucky if you’re able to put on your PJs before you fall face-first into your pillow. When you are exhausted, sex gets put on the bottom of a very long list of things you need to do. And that’s when couples can find themselves in a sex rut. They fall into a routine of not doing it, and that becomes the status quo. This can become a problem if both parents are not feeling as connected and intimate as they once were. Instead of letting this molehill become a mountain, there are some things you can do to get out of the sexless hole you find yourself in.
+**Related Post:** [A Survival Guide for the Overwhelmed New Mom](https://nurturedfirst.com/a-survival-guide-for-the-overwhelmed-new-mom/)
+## What to do if you are struggling
+### Step 1: Talk to your partner about the sex you aren’t having
+Too many times, the lack of sex becomes an elephant in the room. The longer couples go without talking about it, the harder it becomes to address. It’s also a hard conversation to have because both parties can become defensive and may go on the attack. So, to avoid a fight over something that is really no one’s fault, your best bet is to talk about what you like about sex. Discuss what you look forward to instead of what is lacking. Keep the focus on the positive, and you will avoid defensive reactions and hurt feelings. After this is discussed, you can start to make a plan.
+### Step 2: Schedule sex
+You read that right. I’m talking about finding a day on the calendar when you two will get busy. Mark that down in ink (or let’s be honest, set a calendar reminder on your phone) and stick with it. The goal here is to just have sex at all. This is low expectations sex. No bells and whistles, just get down to basics. Spontaneity and romance can come later after you’ve built up a routine again. But for the first few trials, your goal is simply to engage in sex at all. Anything else is extra. It’s kind of like starting a workout. First you go for a walk. You don’t run 5 miles until you’ve been at it for a while. After a few weeks of getting your groove back, you can mix things up and see if you can go back towards regular sex without the reminders. It may seem like this is too formulaic, but it really does help jumpstart things.
+## What can you do if you are still struggling?
+There are professionals called sex therapists whose whole job is to help couples work through these kinds of ruts. They exist all over the country and they are professional and approachable folks who will never judge you. It might be the ticket to get you both feeling good again.
+When in doubt, remember that you and your partner can and will get a routine again. Sex CAN be enjoyable and regular in your lives, even with a baby around. You just might have to work on it. After all, you’ve never had a sex life with a baby in the picture before, so you sometimes have to go through a little bit of a learning curve to get back on track.
+Now go get it girl!
+**Get simple parenting tools sent straight to your inbox.**
+#####  [Guest Blog by Dr. Megan Phillips, Psy.D.](https://cottonwoodpsychology.com/about/) Dr. Megan is a licensed psychologist in Southern California and her practice specializes in maternal mental health. She is also a survivor of postpartum depression, and she brings empathy and a little bit of humor to her work to help her clients find light through the darkness
+Article By
+Jess is a seasoned Registered Psychotherapist with a deep commitment to enhancing emotional well-being in children and families. Holding a Master's in Counselling Psychology, Jess has extensive clinical experience in guiding parents through their children's intense emotions, sleep struggles, anxiety, and other challenges with empathy and understanding. In addition to individual sessions, she is known for her work educating parents on social media through @nurturedfirst. Outside of her professional life, Jess enjoys the peace of nature hikes and spending as much time as possible enjoying her family.

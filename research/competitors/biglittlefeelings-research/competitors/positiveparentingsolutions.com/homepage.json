@@ -1,0 +1,167 @@
+{
+  "domain": "positiveparentingsolutions.com",
+  "total_score": 23810,
+  "total_keywords_ranking": 44,
+  "average_position": 9.3,
+  "positioning": {
+    "headline": "Get your kids to listen without yelling, nagging, or losing control.",
+    "subheadline": "The All-In-One Parenting Success System® online course gives you the tools you need to finally put an end to exhausting power struggles with your children.",
+    "primary_cta": "FREE ONLINE CLASS",
+    "secondary_cta": "TRANSFORM YOUR FAMILY STARTING TODAY!",
+    "target_audience": "Frustrated parents (toddlers through teens) struggling with behavioral challenges, yelling, power struggles, bedtime/mealtime/homework conflicts, parenting guilt",
+    "key_value_props": [
+      "Eliminate power struggles within days",
+      "49 in-depth video training sessions available 24/7",
+      "Word-for-word scripts for high-stress situations",
+      "37 proven parenting strategies in The Toolbox",
+      "Private community support via Facebook group",
+      "Live group coaching calls included",
+      "Mobile app for on-the-go learning",
+      "Addresses 16+ specific behavioral challenges"
+    ]
+  },
+  "keyword_strategy": {
+    "primary_terms": [
+      "positive parenting solutions",
+      "parenting courses online",
+      "positive parenting",
+      "parenting positively",
+      "parenting programs"
+    ],
+    "course_related_terms": [
+      "parental courses online",
+      "free parenting courses",
+      "free online parenting classes",
+      "parenting courses online free",
+      "online parenting program"
+    ],
+    "challenge_specific_terms": [
+      "tantrums",
+      "sibling rivalry",
+      "roughhousing",
+      "tattletaling"
+    ],
+    "use_cases_mentioned": [
+      "eliminate power struggles",
+      "stop yelling",
+      "handle tantrums",
+      "manage meltdowns",
+      "improve listening",
+      "reduce sibling rivalry",
+      "homework battles",
+      "bedtime resistance",
+      "mealtime conflicts"
+    ],
+    "differentiators_claimed": [
+      "AI-powered (courses)",
+      "Expert-created (Amy McCready expertise)",
+      "Proven methods (37 strategies)",
+      "Comprehensive (16+ challenges addressed)",
+      "Community support"
+    ]
+  },
+  "page_structure": {
+    "sections": [
+      "Hero section with headline, subheadline, and CTA",
+      "Problem statement (You've tried everything...)",
+      "Social proof statistics",
+      "Founder introduction and credibility (Amy McCready)",
+      "Visualization section (Just imagine...)",
+      "Course features and benefits breakdown",
+      "The Toolbox (37 strategies)",
+      "Customer testimonials with photos",
+      "Challenge categories addressed (16+ challenges)",
+      "Media appearances and expert credentials",
+      "Free trial offer",
+      "Footer with newsletter signup"
+    ],
+    "social_proof": "265,000+ happy families across 21 countries | 1.6 million followers | Featured on TODAY Show, NBC, CBS News",
+    "founder_authority": "Amy McCready - parenting expert, author, 14+ years as TODAY Show contributor",
+    "trust_signals": [
+      "Media features (TODAY, NBC, CBS News)",
+      "Large user base (265k+ families)",
+      "Named founder with established authority",
+      "Specific, verified testimonials with names and photos"
+    ]
+  },
+  "top_keywords": [
+    {
+      "keyword": "parental courses online",
+      "search_volume": 4400,
+      "position": 6,
+      "difficulty": "LOW",
+      "relevance": "Perfect homepage keyword - brand aligned"
+    },
+    {
+      "keyword": "parenting positively",
+      "search_volume": 1600,
+      "position": 11,
+      "difficulty": "LOW",
+      "relevance": "Brand-aligned, indicates branded search intent"
+    },
+    {
+      "keyword": "positive parenting",
+      "search_volume": 1600,
+      "position": 8,
+      "difficulty": "LOW",
+      "relevance": "Core category term, strong positioning"
+    },
+    {
+      "keyword": "positive parents",
+      "search_volume": 1600,
+      "position": 6,
+      "difficulty": "LOW",
+      "relevance": "Audience demographic targeting"
+    },
+    {
+      "keyword": "parenting courses",
+      "search_volume": 1300,
+      "position": 5,
+      "difficulty": "LOW",
+      "relevance": "Core product category"
+    },
+    {
+      "keyword": "positive parenting solutions",
+      "search_volume": 1300,
+      "position": 1,
+      "difficulty": "LOW",
+      "relevance": "Branded keyword - strong authority signal"
+    },
+    {
+      "keyword": "free parenting courses",
+      "search_volume": 1300,
+      "position": 10,
+      "difficulty": "LOW",
+      "relevance": "Directly tied to free trial offer"
+    },
+    {
+      "keyword": "parenting programs",
+      "search_volume": 1300,
+      "position": 9,
+      "difficulty": "LOW",
+      "relevance": "Core product descriptor"
+    }
+  ],
+  "content_strategy_analysis": {
+    "homepage_keyword_focus": "Heavily focused on course/program discovery keywords rather than behavioral problem-solving. This indicates a conversion-first strategy prioritizing course signups over organic reach through problem-based searches.",
+    "keyword_positioning_gap": [
+      "Ranks #1 for branded 'positive parenting solutions' - strong brand authority",
+      "Ranks #3-#6 for course-related terms - good product visibility",
+      "Weak presence in behavioral/challenge keywords on homepage (tantrums, behavior, discipline rank on subpages)",
+      "Missing opportunity: Could capture more high-volume tantrums (27,100), sibling rivalry (5,400) traffic on homepage"
+    ],
+    "volume_distribution": "Homepage captures only 2.4% of total keyword volume (23,810 / ~1M across domain). Strategy concentrates traffic distribution to subpages, protecting homepage conversion funnel.",
+    "competitor_positioning": "Premium course positioning vs. content-first competitors. Homepage doesn't serve as comprehensive resource hub - it's a conversion vehicle."
+  },
+  "insights": [
+    "Homepage optimized for course sales, not SEO reach - only 44 keyword rankings vs. 1000 total domain keywords",
+    "Strong brand authority: #1 ranking for branded 'positive parenting solutions' phrase",
+    "Course-first positioning: All homepage keywords relate to online learning, not parenting problems",
+    "Founder authority heavily leveraged (Amy McCready prominence) - key differentiation vs. generic parenting sites",
+    "Large user base (265k+ families) and media mentions (TODAY, NBC, CBS) are primary trust signals, not technical SEO",
+    "Missing high-volume behavioral keywords on homepage - tantrums (27,100 vol) and sibling rivalry (5,400 vol) only rank on subpages",
+    "Free trial strategy explicitly mentioned (Free Online Class CTA) - lower friction entry vs. paid-only competitors",
+    "Community aspect emphasized (Facebook group, live coaching) - differentiator in crowded parenting market",
+    "Content organization strategy: homepage drives to course, subpages drive to specific content hubs by topic"
+  ]
+}

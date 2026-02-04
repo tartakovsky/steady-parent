@@ -1,0 +1,33 @@
+# Daughter Jealous of Each New Half-Sibling Baby
+
+Source: https://www.peacefulparenthappykids.com/read/daughter-jealous-of-each-new-half-sibling-baby
+
+---
+
+5 min
+read •
+Question
+Dr. Laura,  
+Hello, I met my step daughter when she was 2 years old. We shared a close bond until she moved to Portland with her mother and older brother (4 years older) when she was 4. We then kept our bond but only saw each other on holidays and during the summer. 
+My husband and I had our first son a month before Madison came back from Portland for her first summer visit. Madison was terribly jealous. She tried to wear the baby's clothes, sit in his car seat and highchair... you name it. When she was told I was expecting, 2 months before they left the state, she said flatly "I don't want another brother" 
+After she sort of adapted to having a little brother she FORBID me to have any more children. I told her I was sorry but it was not her choice to make. 
+We have since had two more sons both of whom she loves but still (at the age of 12) openly begrudges the attention they take from her. She has always said that our first son "ruined her life". 
+Her mother remarried but had no additional children. 
+My husband and I did not intend to have any more children but I VERY recently found myself pregnant again. At Christmas we had a lovely visit and she had great fun with all her siblings but gave me her customary... "you better not have any more babies" talk. 
+She returns soon and will be devastated especially if the new baby is going to be a girl. I love her and dread telling her that even though we were finally through there will be one more child to love. I want to tell her that no one child is loved more than another or takes love from another. She will eventually get over this but I wonder if you can suggest some other things I might tell her to take the sting out of this and also (frankly) to not speak to me precociously or rudely about our having another baby. 
+Thanking you in advance,  
+Concerned Stepmom
+Answer
+Dear Concerned,  
+First, congratulations on your pregnancy!
+I can understand your frustration at having Madison be rude to you about something that is, of course, not her choice! And I hear your trepidation, especially if the baby is a girl. Of course, you are also correct that Madison will eventually adapt to this new baby, even if it is a girl, just as she has adapted to the others -- and she is not the first child to be jealous of each new sibling!
+To "take the sting out of this" for Madison, we need to start by looking at it from her perspective. Poor Madison lost you and her Dad when she moved to Portland with her mom. I know she sees you on holidays and during the summer, but the truth is that she lost the close bond she had with you at a time when she was unable to really understand what was happening. She probably doesn't even know why she is so upset at these "interlopers" but the part of her that is still two years old and missing you blames them for her loss. 
+So what can you do to take the sting out of this? The usual advice would be to make sure that you and her Dad get positive time alone with Madison so that she knows you still love her. And of course I recommend that. In fact, there's a whole article on my site about how to prepare your child for the new baby to minimize jealousy, which I think you'll want to check out. 
+But the truth is, it will be hard for Madison to give up being angry at her new half sib, and she won't even know why, because she NEEDS to be angry. Her "anger" at her half-sibs is actually a defense against feeling the pain of losing you and her Dad when she was two. (If you think about it, whenever we're angry, there is always something else under that anger, some feeling we don't want to feel, like sadness or fear. So we get angry and attack instead.) 
+So Madison is angry at her half-sibs and at you, so that she won't have to feel that devastation again, of losing you and her dad. But if she could feel those feelings and get through them, she wouldn't need to cling to her anger. If you want to help Madison get past her anger, she will need to get to her sadness. I suggest that you find a time when it is just you, her, and her dad, if possible, even if it means getting a sitter for the other kids, so that you can have this private time alone with her. The trick is that you will need to be somewhere private, for instance in a bedroom upstairs, or in your yard or car (if you can be away from prying eyes even when Madison begins crying or screaming.) 
+Then, tell Madison you've noticed how upset she is about the baby. If she starts to act rude or yell at you, stay calm. Your goal is to get her in touch with the sadness and fear under the anger, so don't hook into her anger and fight with her. Instead, empathize with her deeper feelings. Tell her that you know she's upset, and that under her anger you sense that she is very sad and scared. Tell her you wonder if she feels you and her Dad don't love her as much now. Stay understanding, and she may actually get in touch with those feelings and begin crying. Don't be surprised if she acts like a two year old instead of a twelve year old. She may also go back and forth between anger and sadness. Just keep empathizing with her feelings: "You are so angry with us. I wonder if maybe you're really sad that you can't have us all to yourself." After your "therapy session" with her, I think you'll find she's not so angry anymore.
+Of course, you have to wait until she visits for this, so in the meantime on the phone, you'll just have to be patient with her rudeness. You can say all the same things (reflecting her anger and sadness) but she's not likely to go too deeply into her sadness on the phone. The good part, of course, is that she will have a chance to vent her anger before she actually sees you.
+If the baby is a girl, be sure she knows that you've told the baby all about her wonderful big sister that you want the baby to emulate, and that she knows that with all the boys in the family, she has an extra special role as big sister. Before the birth, tell her the baby needs to hear her voice and have her sing a special song to the baby if she can, especially a song that was Madison's favorite when she was little. Tell her that when she meets the baby, the baby will recognize her by the song (which by the way is true.)
+Madison is lucky to have such a caring stepmom.  
+All blessings to you and your family.
+--Dr. Laura Markham

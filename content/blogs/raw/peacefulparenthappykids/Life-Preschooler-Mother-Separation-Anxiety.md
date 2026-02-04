@@ -1,0 +1,39 @@
+# Managing Your Own Separation Anxiety
+
+Source: https://www.peacefulparenthappykids.com/read/Life-Preschooler-Mother-Separation-Anxiety
+
+---
+
+5 min
+read •
+[Preschoolers](https://www.peacefulparenthappykids.com/search-results?page=1&age\[\]=770115) [Attachment Parenting](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770120) [Anxiety](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770134)[Routines](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=958073)
+If your child is going to school for the first time, you’ve probably put a lot of thought and effort into helping your child adjust to school. And maybe you’ve been looking forward to your new freedom. But if you’re like most parents, you may also have found yourself wiping away a tear or two as well.  
+* * *
+So for a little help managing your own separation anxiety, here’s my 12 Step Program for parents! 
+###  1. Develop goodbye rituals. 
+They help your child know what to expect, so she feels more confident. And they comfort you, as well as your child. Do the same thing, in the same order, every day. So maybe a hug and a rhyme: _"I love you, you love me, have the most fun ever and I'll pick you up at three!"_ and you wave as you leave.   
+###  2. Honor your feelings. 
+Your job as a parent is to be there for your child and protect him. You work hard to have a close relationship with him. Of course you feel sad when you separate, and a bit worried about whether he will be ok. Don't be embarrassed. Nature designed you that way! 
+###  3. Manage your own feelings privately. 
+Manage your emotions on your own, so that you can reassure your child that there’s nothing to be upset about. Kids pick up our cues. You can’t expect your child to look forward to playing with the other kids in preschool if you have tears in your eyes as you say goodbye. If separating from your child triggers your own issues, use this opportunity to work through those old issues with a counselor. You'll feel better, and you'll be liberating your child from having to carry your baggage. 
+###  4. Help your child make a smooth adjustment. 
+Any parent gets upset when her kid wails and clutches at her. But remember that most kids have some separation anxiety they have to work through, and don’t over-react. It makes things harder for your child, and for you. Don't tell your child you'll be in the parking lot in case he needs you -- that just makes it hard for him to settle into the classroom. Instead, say that you will be back to pick him up at a given time, such as after story time. You can always listen outside the classroom (without him knowing you're there) to see when he stops crying, and to hear how the teacher is dealing with his upset. 
+###  5. Have faith in your child, and in nature. 
+Nature designed kids to hang onto their parents for protection, but to start exploring once they feel safe. Worrying about leaving your child at school is a way of saying you don’t believe he can cope. As long as you have confidence in the caregiver – and why would you leave him with a caregiver in whom you don’t have confidence? -- then you can have faith in your child’s inner strength to rise to the occasion and grow. 
+###  6. Get to know the caregiver or teacher. 
+Naturally it’s hard to relax if you don’t really know the person with whom you’re leaving your child. Before you enrolled your child, hopefully you had a discussion with the caregiver about how they handle a child's separation sadness. (An experienced teacher knows that many children will naturally feel sad at saying goodbye, and those children need comfort. Once they bond with the teacher, they will feel much more comfortable letting go of parents.) Stay in touch with the teacher by engaging in brief chats as you pick your child up, sending notes of appreciation, and letting her know about anything big that’s going on in your child’s life. 
+###  7. Make sure you’re a few minutes early to pick your child up at school. 
+Not seeing you immediately will exacerbate any anxieties your child has and may panic her altogether, which will set back your own adjustment. If your child cries when you pick her up, don’t worry. You’re seeing the stress of her having to keep it together all day. Your return signals that it’s safe to be her baby-self again. (We all have baby-selves, but as we get older our executive selves assume more and more control, especially in the outside world.) 
+###  8. Reinforce the bond. 
+Make sure you spend special time every day after school with your child so she knows that she still matters to you. Take every opportunity to connect physically; she’s spent the day being as grown-up as she can, and needs the reassurance of snuggle time with a parent. Be sure you do some physical roughhousing to get your child laughing every afternoon; it helps both of you work through the tension of the separation. 
+###  9. If your child is having trouble adjusting, intervene. 
+You’re not likely to feel happy saying goodbye to your child if he seems to be dreading school. First, talk to the teacher or caregiver. See if she can give him a special job when he arrives. Suggest that he needs to bond with her more, and ask if there are ways she can make that happen. If the problem drags on and you don’t have confidence in the caregiver, consider other options. (For more on [helping your child adjust to school](https://www.peacefulparenthappykids.com/read/Help-kids-adjust-school) and [helping your toddler with separation anxiety](https://www.peacefulparenthappykids.com/read/helping-your-toddler-with-separation-anxiety).) 
+###  10. Get organized at night for the next morning and get enough sleep. 
+If you’re grumpy or rushing, you’ll be impatient with your child. It’s hard for all of you to feel good about saying goodbye and heading off into the day from a mood of emotional upheaval. On the days when you're stressed and "can't be late" to make your big presentation, you can count on your child picking up your stress and clinging. So on those days, get up earlier yourself so you can be ready early, which will help you stay relaxed as you get your child out of the house. 
+###  11. Make a list of things you can’t wait to do. 
+Make a list of things you can’t wait to do with any extra time you’ll have, like catching up at work, meditating, working out more or finally tackling that big project you've been putting off. Make sure you give yourself at least one act of true self-nurturing every day, whether that’s a long bath, lunch with a friend, or reading a novel before bed. 
+###  12. Get a life. 
+Most parents realize that we need other things we’re passionate about besides our children, so we aren't living through them. That's not good for the kids, or for us. But I would take this a step further and say that our most important responsibility as parents is to maintain a sense of well-being, so that we can be emotionally generous with our children. 
+Being a parent is the second most important job you will ever have, because you are responsible for nurturing a human being, whose very brain is taking shape in response to your interactions. 
+So what’s the most important job? Nurturing yourself, because growing up is never finished, and sooner or later we all have to pick up where our parents left off. Sure, others can help, but you’re the only one who has the job of making sure _you're_ well taken care of. How else will you keep growing and be the parent you want to be? 
+If separating from your child gives you a little more time to put yourself back at the center of your life, that's a rare opportunity. Why not take this chance to become more loving and nurturing with yourself?

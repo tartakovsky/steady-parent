@@ -1,0 +1,26 @@
+# How Triggers from Your Childhood Shape Your Parenting
+
+Source: https://www.peacefulparenthappykids.com/read/how-your-childhood-affects-your-parenting
+
+---
+
+3 min
+read •
+Ever wondered why some parents can keep a sense of humor in the face of their child's challenging behavior while another parent starts yelling? Why some parents plague themselves with criticism, worry and doubt while others seem more able to just relax and enjoy their children?
+* * *
+Sometimes, it's just our stress level. We all know that when we're under stress, we're less patient. But often it's our thoughts and attitudes, which means the way we're interpreting the situation. So where one parent might respond to a child's rudeness with quiet dignity and curiosity about why the child is so upset, another might get triggered, assuming that defiance is dangerous and needs to be quashed. 
+We don't even notice such beliefs, which are usually unconscious and were often shaped in early childhood. For instance,
+  * If our parents reacted harshly when we got upset, we may have concluded that getting upset is an emergency, so now we go into fight or flight when our child gets upset. The catch? When we're in "fight," our child looks like the enemy. We end up escalating the drama and making everything worse.
+  * If we weren't treated with respect when we were young, we often grow into adults who perceive others as disrespecting us -- which will trigger us to react with anger to the slightest disrespect, even from a three year old.
+  * If we concluded as children that we simply weren't good enough the way we were, we'll probably set impossibly high standards and torment ourselves with self criticism. Worse yet, perfectionism always sabotages the unconditional love our children need, and they always sense it when we don't accept them as they are.   
+  * If we were bullied or socially ostracized, we may get triggered when our child has social difficulties, which makes it more difficult to help them constructively.
+### Do we all have triggers?
+Virtually all of us, unless we've done a lot of work on ourselves. No matter how loving and responsive our parents were, most of us drew some conclusions from our childhood experiences that don't serve us. 
+And there were bound to be times when you experienced something that was overwhelming for you. Because it was so overwhelming, your brain wasn't able to process that experience in the way that we usually process experiences -- by incorporating the memory into a neural network that stores related memories. Usually when we process memories -- which happens during sleep -- the emotions associated with the memory are stripped away. That's why once we sleep on something for a few nights, it isn't usually so upsetting.
+But any time the memory was so upsetting that your brain wasn't able to process that memory as usual, the memory was stored unprocessed -- with all the emotions you felt at the time. That's why when you experience something similar to that event -- maybe not in actual content, but in the way it makes you feel -- you are suddenly swamped with body sensations that are an over-reaction. Those feelings aren't actually from the present experience. They are stored with that earlier unprocessed memory, which is getting triggered by the current experience.
+Your psyche does this for a reason. If you had a bad experience with a snake in childhood, you're more likely to stay alive later in life if you remember that experience with all the fear you felt initially. So there may have been a time when some mild form of PTSD was beneficial to survival.
+But this doesn't work so well if the experience was being humiliated by a teacher, which might make you quake when you have to speak up at a staff meeting. And it really gets in your way if the original experience was being frightened of, yelled at, or hit by a parent. If those memories were stored unprocessed, then when your child yells at you or hits you, it triggers all those feelings of fear and feeling victimized that you felt as a child. You can't think clearly. You freeze, or you lash out, either verbally or physically.
+So most of us have some unprocessed emotions from childhood, which is another way of saying we're lugging these unprocessed feelings and memories around in our emotional backpacks. This unconscious "baggage" will inevitably get triggered as we go through life. It sends us right into our unconscious, which means we do and say things that we would never do if we were fully conscious and aware. And because these are childhood experiences, our children have an uncanny ability to trigger us.
+Can we heal our triggers? YES! That's our next post.
+Want to support yourself for real change? Register for the [Peaceful Parent, Happy Kids Online Course](https://www.peacefulparenthappykids.com/peaceful-parenting-course). Parents often say in their evaluations of this Course that it helped them more than years of therapy. Gift yourself healing, and gift your whole family a new, happier you! Take a look at the raves from parents who've taken it to see if you think this self-paced course might be a good fit for you.
+[See this article in Spanish.](https://www.peacefulparenthappykids.com/assets/documents/Does-your-own-childhood-affect-your-parenting.docx?updated=1575871432122 "Spanish Translation")

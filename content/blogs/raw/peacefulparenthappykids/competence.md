@@ -1,0 +1,56 @@
+# 12 Tips To Raise a Competent Child
+
+Source: https://www.peacefulparenthappykids.com/read/competence
+
+---
+
+7 min
+read •
+[How To Raise a Child of Character](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770126) [How to Raise an Emotionally Intelligent Child](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770128)
+Competence is the ability to effectively accomplish our goals. A competent person is able to stay on track, notice what's needed in a given situation, and respond accordingly. Competent people act with feeling, even with inspiration, but don't let emotions derail them. In other words, they overcome internal and external obstacles to stay on task and accomplish the goals they set for themselves. That means they're able to read other people and respond appropriately to new situations.
+* * *
+Competence in adults is a prerequisite to achieving professional and personal success. But what is competence in children? Competent children are able to handle emotional challenges well enough to tackle the age-appropriate tasks of each stage of development, master them, and emerge with greater confidence. They have the emotional intelligence to manage themselves and to get along with others. 
+Children who see themselves as competent feel capable and powerful. They're more likely to be resourceful, to believe in themselves, to attempt difficult challenges, and to exhibit resilience in the face of setbacks.
+How can you help your child develop competence, which is really a mix of confidence, resourcefulness, perseverance, mastery, emotional intelligence and other traits??
+### 1. Let him try to do it himself from the earliest age.
+Rein in your own impatience. That doesn’t mean abandoning him to it. Stand by, smiling, ready to be helpful in whatever way actually helps your toddler -- BUT keep your mouth shut and your hands to yourself except to give appropriate encouragement, unless you REALLY need to help physically.
+Clucking anxiously about how worried you are as he climbs that play structure may make you feel better, and it may impress the other parents on the playground with your attentiveness, but it won't help your child. In fact, it unintentionally limits him.
+Just ask if he is keeping himself safe, then stand by and spot him. Smile proudly. Say 
+> _"Look at you way up there! Wow!"_
+(And if he falls, you’re there to catch him. Which is, after all, what allowed him to try it.)
+### 2. Help her build confidence by tackling manageable challenges with your assistance. 
+Emotional development researchers call this "scaffolding," which could be defined as the framework you give your child on which she builds. You demonstrate one step at a time, or use questions to suggest each step, or simply spot her, which helps her to succeed when she tries something new.
+These small successes achieved with your help give her the confidence to try new things herself. Scaffolding also teaches children that help is always available if they need it. You want your kids to know that deep in their bones before they hit adolescence.
+### 3. Don't test him.
+When you say _"What's this color?"_ and your toddler answers correctly, you get excited. But then you keep asking about the next color and the next, and sooner or later you get to a color that he can't identify. To you, that's just one more color you're teaching him. But to him, that's a failure. He's disappointed you. You think you're teaching him colors. But you aren't. You're teaching him that he isn't good enough. (Do you really want to teach colors? Do it just like you do anything else, by using the names in everyday life. _"Let's get the purple one."_) There is never a reason to test your child. And lecturing, drilling and testing aren't the most effective ways to teach. Children learn when they discover for themselves.
+### 4. Empathize with your child's excitement about achievements, instead of evaluating her.
+If you call Grandma in front of your child to report on your child's latest achievement, you're setting your child up to worry that unless she's brilliant and precocious, she's a disappointment. That creates a child who worries that she always needs to impress those around her. If you tell her she's smart, that makes it worse, because she knows that she isn't always smart, and she doesn't know how to get smarter -- it isn't something she has control over. When we make a big deal about kids' achievements, they feel evaluated, and they often worry so much about performance that they refuse even to try new things.
+Instead: 
+  * Comment on what she did that was successful:  _"You kept trying until you got it. I love how you never give up!"_   
+  * Empathize with the excitement she feels about her discovery or her achievement: _"Wow! You figured out how to do that!"_   
+  * Encourage: _"That's a hard puzzle piece, but I see you trying every space to see where it fits. Sooner or later, you'll find the right spot!"_
+### 5. Praise effort, not results.
+> _"I see you worked so hard on this."_
+> _"Tell me about your painting."_
+Notice you aren't telling him what a great artist he is. That's an evaluation, bound to make him freeze up or turn him into a praise junkie, looking outside him for someone to tell him he's good enough. Even if his painting is objectively great, the point is never the product -- you don’t want him resting on his laurels at the age of six, or sixteen. And you don't want him to think he has to live up to some previous pinnacle of achievement. What you want is for him to keep trying, practicing, improving, and to learn that hard work pays off. 
+### 6. Encourage mistakes.
+As Ms. Frizzle of the Magic Schoolbus famously said, _"Get messy! Take chances!"_ Children who get the message that spilled milk is a problem and there's one right way to do things often end up with less initiative and creativity. Just smile, hand her the sponge and say _"We always clean up our own messes. I'll help."_
+### 7. Don’t set him up for failure.
+Should you step in when you see failure ahead, or "let him learn a lesson"? Always a hard call.
+Rescuing children can prevent them from learning important lessons. But children who see their parents stand by and let them fail experience that as not being loved. Instead of learning the lesson that they should have practiced that clarinet, or read the directions on that science kit, they learn the lesson that they're failures, that they cannot manage themselves, and that their parents did not care enough to help them not be failures or teach them to manage themselves.
+**_But isn't stepping in “rescuing them?”_** That all depends on how it's done. If you take over the science fair project and do half of it the night before it's due, that's worse than rescuing: not only does your son learn that you'll bail him out if he goofs off, he learns that he's incompetent.
+But if you observe, intervene early if necessary, and offer structure to help him succeed, he'll learn how to succeed instead of how to fail. In other words, help him each step of the way to organize his ideas and his work, BUT resist the impulse to improve on the project yourself. He'll complete the job hugely proud, and having learned something about how to plan and execute a complex project.
+### 8. Teach self-encouragement.  
+Research shows that children who "talk" themselves through challenges stay calmer and are therefore able to persevere when the going gets tough. So model maxims to repeat as mantras. "Practice makes perfect!" and "If you don't succeed, try, try again!" and "I think I can, I think I can!" work remarkably well to manage ourselves in the face of frustration.
+When your son goofs a piece on the piano and has to start over, or your daughter strikes out with the bases loaded, they need an automatic internal comforting voice to encourage and motivate them, not that harsh, self-disparaging voice. The good news is, the tone they hear from you will become their inner voice.
+### 9. Model positive self-talk.
+If something negative about your child -- or, equally important, about yourself -- starts to come out of your mouth, bite your tongue. Most parents know better than to say "What an idiot!" to their child (and most of them are able to stop themselves), but a surprising number see nothing wrong with berating themselves that way in front of their kids. Whatever you model, your child will learn and will emulate. Just train yourself not to do it. (It certainly isn't good for you, either. Would you let anyone else talk to you that way?)
+### 10. Manage frustrating circumstances.  
+There’s a trend in child-raising philosophy that maintains that children learn best with reasonable doses of frustration. It’s true that we all learn from overcoming challenges, but we always need to ask, what is a reasonable dose? We also learn best when we experience success, which motivates us to tackle more difficult challenges. Mastery begets mastery. Failure sets up a cycle of lack of confidence, giving up and more failure.
+Your child will naturally develop the ability to handle increasing amounts of frustration and anxiety as he attempts more difficult challenges. But those frustrations are inherent in growing up and are guaranteed aplenty in life. There is no benefit whatsoever to setting your child up for extra frustration or negative experience. In fact, he will see your doing so as evidence of your lack of caring (which is always translated in his mind as his lack of value.)
+So when your child is facing a challenge that feels daunting, from cleaning up the spilled milk to starting his history report, see yourself as his companion. Don't do it for him, but go with him, the same way you would if your three year old was afraid of a dark room. And when your child does encounter frustration, remember that your empathy will be a critical factor in his overcoming it.
+### 11. Affirm your child’s ability to impact the world. 
+Minimize the number of times your child gets the message that her actions don't matter.Competence and feelings of mastery are about power and derive from a child's experience of herself as having an effect on the world. "If I stand on the stool, I can flip this light switch and light up the room!"
+All children will experience reasonable limits to their power (_“I can't make the rain stop, and neither can Mommy"_), but the more your child has opportunities to make a difference in the world, the more she will see herself as capable.
+### 12. Foster [Responsibility](https://www.peacefulparenthappykids.com/parenting-tools/character/responsibility), [Good Judgment](https://www.peacefulparenthappykids.com/parenting-tools/character/judgment), [Optimism](https://www.peacefulparenthappykids.com/parenting-tools/emotional-intelligence/optimism) and [Persistence](https://www.peacefulparenthappykids.com/parenting-tools/emotional-intelligence/persistence)
+...all related traits that increase your child's competence. For more ideas on encouraging these characteristics, check out those sections on this site.

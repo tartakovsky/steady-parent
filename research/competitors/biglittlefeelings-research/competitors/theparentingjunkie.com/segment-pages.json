@@ -1,0 +1,11 @@
+{
+  "strategy": "segment-pages",
+  "description": "Content targeting specific parenting situations and life stages. Addresses parents going through particular challenges like attachment issues, bedtime problems, or clingness.",
+  "urls": [
+    "https://theparentingjunkie.com/why-is-my-child-so-clingy/",
+    "https://theparentingjunkie.com/help-bedtime-is-a-nightmare/",
+    "https://theparentingjunkie.com/repair-attachment-all-is-not-lost/",
+    "https://theparentingjunkie.com/parenting-with-no-support-from-family/",
+    "https://theparentingjunkie.com/let-go-of-supermom-syndrome/"
+  ]
+}

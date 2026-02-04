@@ -1,0 +1,61 @@
+# An Age-by-Age Guide to Talking with Children About Race
+
+Source: https://www.peacefulparenthappykids.com/read/an-age-by-age-guide-to-talking-with-children-about-race
+
+---
+
+8 min
+read •
+[Communication](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770121) [Family Life](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770123) [How to Raise an Emotionally Intelligent Child](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770128)
+> _"Your positive parenting model represents a gentler, more conscientious method of parenting than what I grew up with. But it also lays the groundwork for a better world, where people empathize with each other and try to work together towards solutions together. My friends and I want to be honest with our kids about the very real inequalities and prejudices they may encounter, experience, and/or witness, but we also don't want to overwhelm our kids before they are developmentally ready to comprehend these situations."_
+* * *
+_Graphic too small to read? Click_  
+Regardless of our children’s skin color, raising children in a highly racialized society gives us as parents the responsibility to consider the messages we transmit to our children about racial identity. These messages are powerful in shaping our children's identities, relationships and opinions. And they will form the filter through which our children later interpret the negative messages about race that bombard us in our culture. 
+White families often ignore the issue of racism because it makes us uncomfortable, and because we assume that it doesn't affect our children. But racism dehumanizes all of us. We can only end racism by talking with all of our children about how it unfair it is, by admitting that all of us have a tendency to judge people based on appearance, by pointing out the terrible cost to people of color but also to our entire society, and by teaching our children that treating all people fairly matters.  
+Because we as adults struggle with these issues, we will often find ourselves struggling to know how to talk to our children about them. But that doesn't mean we don't have a responsibility to do so. 
+I don't think there is ever one conversation about such a big issue; we need to talk repeatedly about these tough issues on an ongoing basis as they arise. Sometimes current events will create the opportunity or the need for such discussions; sometimes our personal lives will. But if we want things to be different in the next generation, we need to begin these discussions in our homes. 
+Talking with children about race can be challenging. But it's better to have ongoing age-appropriate discussions with them than not. Here's how, at every age. 
+_**Shouldn't we teach children to be color blind? I want my children to know that race is not any more important than hair or eye color.**_
+I grew up with this idea too, and always thought it was the best approach. But it turns out that the problem with teaching kids to be color-blind is that they aren't. Research shows that children perceive racial differences at a very young age and are curious about them. If we ignore those differences, children get the message that race is a shameful topic and cannot be discussed. In fact, silence about race reinforces racism. 
+Another problem with the color-blind approach is that it invalidates the experience of children of color, who are all too aware that society is not color-blind and that their race is a factor in how they are treated. 
+Instead of teaching children to be color-blind, we can teach children to be color-fair and color-rich: appreciative of all skin tones, advocating for fair treatment of all people, and empathic with the experiences of all people. We're all different, and that makes the world a richer place. No race or color is better than another. 
+So go ahead and address race in a positive way -- how wonderful that everyone brings their own unique contribution to the world! 
+It's also important to understand that we have all grown up in a culture with institutional racism, so as White parents, we need to notice any ways in which we might inadvertently give our child impressions about race that aren't what we consciously want to promote. 
+_**At what age should we begin talking about race?**_
+We need to begin talking with our children early. By kindergarten, many children have already formed opinions about race, including valuing lighter skin more than darker skin. 
+Race is an intense topic, but we can have age-appropriate discussions from the time our children are toddlers. Below, I'll give you an age by age guide to talking with your kids. 
+_**Isn't it different to teach about race depending on what race your child is?**_
+You're right that we need to talk about this differently with children of different races. Unfortunately, the experience of racism is a daily occurrence for families of color, so it's a frequent discussion in many African American, Hispanic and Asian homes in the U.S. I'm not the person to give advice on that conversation, but I want to acknowledge how heart-breaking it must be to have to explain to your child that the color of his skin means he may not be treated fairly by our society, that he runs even the risk of death if he happens to be in the wrong place at the wrong time. 
+It would be facile--and just plain not true--to say "Stay out of trouble and you'll be fine." It's easy to give examples of unarmed African American men and women who have been killed during encounters with police. Cory Booker, US Senator from New Jersey, was my son's age when he graduated from Stanford, was honored as a Rhodes Scholar, and later was stopped by six police officers with their guns drawn. They held him for half an hour as a dangerous criminal, barking at him _"I said don't move!"_ while he was on his knees praying and shaking. My children, who are protected from such situations because of the color of their skin, would have been shaking and praying too, but would probably have tried to assert their rights. Booker didn't dare to do so. 
+Obviously each parent will have a somewhat different perspective, so what we choose to say might be different. I can only tell you what I as a White psychologist would say to my own children. Let's take this by age. 
+###  Toddlers 
+You may think that a Toddler is too young to notice race, and many white parents avoid mentioning race because they are afraid that discussing difference will create racist ideas in their children. 
+However, research shows that 
+When your toddler asks questions about race, don't "shush" them, even if the question seems disrespectful. Acknowledge the question in a positive way, such as _"Yes, Diego's skin is darker than yours. It's beautiful, isn't it? Everyone's skin is different."_
+They may not comment, but when you don't talk about it, they assume the conversation is off-limits. So notice your own reactions that may be influenced by race and what cues you're giving your child. Initiate small conversations that communicate your observations and values.  
+###  Preschoolers (3 to 5) 
+Preschoolers are very concerned about fairness and believe that everyone should be treated fairly. They also definitely notice race and draw conclusions based on what they perceive, so it's important to have ongoing discussions with them about race, the value of diversity, fairness, and standing up for what's right. 
+Be prepared for questions like _"Why is that girl's skin brown?"_ and keep your answer simple, maybe something like: _"One of her parents must have given her that beautiful brown skin, just like you got your red hair from your daddy."_
+If your child makes a remark that you think is racist, take a deep breath and ask them what made them say that. Use the opportunity to have a discussion about your own beliefs about fair treatment, empathy and the value of diversity. 
+###  Elementary Schoolers 
+Children age six to ten are old enough to hear about current events from friends or online, so be prepared for questions about race along with other current events. You'll want to ask what they've heard and open a discussion about it, and then tailor your explanation to your child's developmental understanding. 
+For instance, you might ask questions like this to begin a discussion: 
+_“Have you ever felt like someone had an opinion about you based on what you look like? How did that feel? Do you think that was fair?"_
+You can also educate your child about racial injustice. Don't feel like you have to know everything. You can also start a project to look things up and learn together. 
+Many White parents talk about heroes like Rosa Parks and Martin Luther King, and about slavery. We also need to talk about institutionalized racism and about privilege. After all, no one is born a racist. Racism is the product of a racist system that is perpetuated with racist assumptions that permeate our institutions and shape our belief systems. 
+These are tough issues to discuss, even with adults. Maybe the easiest way to teach children about them is with stories. So, for instance, my son (who is now in law school) told me today that he remembers a time when we ran to catch a bus, when he was ten. After we got on the bus, I told him that African-American friends of mine had forbidden their son to run in public, even to catch a bus. They were afraid that a police officer would assume that he was running from a crime and should be apprehended. (Former Attorney General Eric Holder tells a story of how this happened to him when he was already a federal prosecutor.) This evolved into a discussion about privilege, which my son has always remembered. Of course, over the years that ongoing conversation was amplified by my children's own experiences, such as watching their of-color friends get stopped and searched by police officers, when neither of my children were ever searched. 
+Always end the discussion positively. Reassure your child that change is possible, that many people are working to make things better, that progress is slow but real, and that there are things they can do to help. 
+It's important for children to think they can make even a small difference in addressing the injustices they see. In the next section, there are some ideas on taking action that your child may find inspiring. 
+###  Preteens and Teens 
+With Preteens and Teens, you can go into even more depth discussing current events. You can also ask questions like: 
+  * _"Can you think of examples of our individual or group actions and perceptions being shaped by racist ideas that we might not even notice?"_
+  * _"When we see injustice, we all have a responsibility to intervene. Some people call that being actively anti-racist. Can you imagine being in a position where you need to take a stand against racism? What might be hard about that? What might you do?"_
+  * _"Are there smaller, every-day ways for us to be anti-racist"?_
+Preteens and Teens are exploring their identities, working out how they fit into the world, and how they can make a contribution. Taking positive action to address problems they perceive and make the world a better place helps empower teens and keeps them from becoming cynical. Talk with your child about how he or she can take a stand against racism. Brainstorm with them. Here are some ideas to get you started: 
+  * Join a peaceful protest in your town.
+  * Donate to organizations trying to make change, protecting Black lives, or educating people about racism. Your teen can do the research to find an organization whose mission they admire.
+  * Send a letter to your local mayor or government asking what they are doing to prevent police brutality in your town.
+  * Watch 
+### More Resources
+There are many resources online to educate ourselves and our children. Some listings to get you started are below. For most White parents, this is an educational process for us as well, so don't be afraid to say you also are just learning and are trying to understand.
+Thanks to the

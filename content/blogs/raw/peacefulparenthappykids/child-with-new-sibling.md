@@ -1,0 +1,43 @@
+# Everybody's got a hungry heart, especially when siblings are involved.
+
+Source: https://www.peacefulparenthappykids.com/read/child-with-new-sibling
+
+---
+
+5 min
+read •
+[Connection](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770122) [Discipline That Works](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770124) [Helping Siblings Get Along](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770125) [How to Raise an Emotionally Intelligent Child](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770128) [Peaceful Parenting](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770130)
+_"Whereas he was once the center of your universe, he has been displaced from this paradise. He is now in time out, while you coo at his tiny rival. You cannot, of course, push back the clock to a time when he, alone, was the apple of your eye. All the same, trying to imagine how frustrated your 3 year old must often feel can help you counteract his sense of loss. Your expressions of love, gestures of devotion, and moments of intimacy with your son can help him feel less deserted and alone. Helping your son recapture a sense of shared joy in his relationship with you will turn down the fuel of his hate, and smooth the pathway to his identification as a loving, protective, sharing person." - Elizabeth Berger_
+* * *
+Every parent with more than one child knows that some sibling rivalry is inevitable. But what about when your child really acts out -- like when your almost [3-year-old pees on the baby](https://www.peacefulparenthappykids.com/blog/when-you-pee-on-your-brother-youve-gone-too-far)?
+Kids "act out" when they have big feelings they can't put into words. So they act them out, to show you. If you want to change the behavior, help the child with the emotions or needs driving the behavior.
+In other words, don't get stuck in reacting and punishing, which is likely to make the child more defiant and aggressive. Instead, get to the source of the behavior, to prevent it in the future. 
+Remind yourself that your child's acting out is a red flag that he needs your help with his emotions. Yes, of course you set a limit, but every child knows he shouldn't pee on the baby. He just couldn't manage those big feelings enough to stop himself. 
+What if he simply didn't care what was right or wrong? That's a symptom that the child didn't care that his action would upset you, meaning right now he considers his connection to you less important than doing what he wants. It's a red flag that you need to do some work to rebuild your connection with him.
+When a toddler goes so far as to pee on the baby, he's clearly having a hard time sharing you. This starts, of course, when the baby is born. Then there's usually a resurgence of open jealousy when the baby begins crawling and getting into the older child's things.
+But a sibling can be a renewed threat at any age. Think about it. Your child has to share the sometimes scare resource of your time and attention. A sibling means he gets less. _We_ know there's still enough love to go around, but to him, sharing resources could even reduce his chances of survival. You know how kids act out as soon as you get on the phone? Well, your attending to a sibling is like that, but even worse. His genes haven't changed much since the Stone Age, and unconsciously, he's worrying that your decreased attention could be a major threat. If a tiger jumped out of the bushes, who would you save?
+That's why study after study shows that when parents are able to create a strong positive bond with each of their children, there's less sibling rivalry. So instead of punishing when your child acts out, the best cure for sibling rivalry is to feed his hungry heart. How?
+### 1. Re-connect.
+When little ones have strong negative feelings, they get overwhelmed by those emotions and their warm connection with us gets lost. This can happen many times a day, as children feel frustrated, disappointed, hurt, sad, defeated. These feelings often swamp them, disconnect them from their own internal compass of the heart, and leave them feeling isolated and adrift. That's why children need us to reconnect with them, over and over, many times a day. Try a warm smile, a big hug, a joke that gets her laughing.
+### 2. Empathize.
+When your older child is loud near the baby, or overly zealous in his hugs, or has a tantrum because you're changing the baby and didn't come right away to help him, how do you respond? If you're like most of us, you want to snap at him, at best. Can't he see that you have your hands full? But if you can train yourself to empathize as you set limits...
+> _"You wish I could come right away when you need me, I hear you...I will be with you as soon as my hands are free"_
+...you'll protect that connection with your child. And that, after all, is the only reason he follows your guidance.
+### 3. Let her be little.
+Sure, she can dress herself. And yes, your hands are more likely to be full, since you have a baby now. But that's exactly why she wants you to help her. She needs to know that you'll always be there when she needs you, even though there's a new baby in the family. Once she's secure that she can still count on you, she'll be free to explore the part of her that wants to be grown-up and powerful, which includes nurturing and protecting her little brother.
+### 4. Keep your relationship balance in the positive.
+Research with adults repeatedly shows that healthy relationships need at least five positive interactions to make up for every negative interaction. Because kids live so much in the moment, and because we feel guilty about yelling, we often overlook the toll that our irritation can take on our relationship with our child. When you get irritable, make it a practice to apologize:
+> _"You don't deserve to be yelled at, no matter what...All of us need to express our anger in a way that's respectful of each other... I'm working hard to do that, so you can learn to do it, too."_
+Resist the urge to blame (so don't say _"If you would behave, I wouldn't have to yell."_) And then find a way to have at least five positive interactions, and enjoy your child. That's what puts the sweetness back into your relationship.
+### 5. Special Time
+One on one time gives the child the essential--but unfortunately so often elusive--experience of the parent's undivided, 110% attentive, loving presence. Just for maintenance, every child needs one on one time to connect with a parent every single day, even if it's only for 20 minutes. When there's more than one child, especially if one is a baby, that can be hard to do. But it's worth figuring out, because it keeps your bond with your older child strong at a time when your child most needs you. 
+If special time isn't working to reduce sibling rivalry at your house, consider whether you're giving your child your full attention and letting her take the lead. (Here's a whole article on [making special time work for you](https://www.peacefulparenthappykids.com/_blog/Parenting_Blog/post/How_To_Special_Time/).) 
+And if you're still struggling with Sibling rivalry despite daily Special Time, then be sure that most of your interactions are empathic and you're giving your child explicit permission to express his tears and fears about sharing you with his sibling. (Sometimes kids 
+Bottom line: Connection supports your child through whatever challenges he's facing and helps him thrive. It makes it more likely that your children will get along with each other as they get older. And it makes your child WANT to cooperate, rather than peeing on the baby.
+In the end, it is always about love. Love never fails.
+(But what if you're doing daily special time, empathizing, and your child is still acting out? Coming up next: **How much more love and affection can I give him?)**
+Want to read the entire series?
+  * [When You Pee On Your Brother, You've Gone Too Far](https://www.peacefulparenthappykids.com/read/when-you-pee-on-your-brother-youve-gone-too-far)
+  * [Do Sticker Charts Work for Crimes of Passion?](https://www.peacefulparenthappykids.com/read/why-sticker-charts-dont-work)
+  * [Everybody's got a hungry heart, especially when siblings are involved](https://www.peacefulparenthappykids.com/read/child-with-new-sibling).
+  * [When love and attention just aren't enough](https://www.peacefulparenthappykids.com/read/love-and-attention-are-not-enough?_gl=1*vh1e0q*_ga*NjAwNjA2MDEyLjE3MTExMzI4NjA.*_ga_LDCQ04Z31N*MTcxNDQwNTcyNi4yMi4xLjE3MTQ0MDYwODcuMC4wLjA.).

@@ -1,0 +1,62 @@
+# True Grit: 12 Ways to Raise a Resilient, Competent Child
+
+Source: https://www.peacefulparenthappykids.com/read/10-Ways-to-Raise-a-Competent-Confident-Child
+
+---
+
+8 min
+read •
+[How To Raise a Child of Character](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770126) [Peaceful Parenting](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=770130) [Resilience and Stress](https://www.peacefulparenthappykids.com/search-results?page=1&topic\[\]=958079)
+> _"The exhausting cycle of constantly monitoring their work and performance... makes children feel less competent and confident."_ - Elizabeth Kolbert 
+* * *
+Parents are often told that frustration is good for kids, since when they grow up the world will be full of frustrations. That's a bit like saying that it's a cold, cruel world so your child should learn to sleep without blankets. 
+What we really want is to raise kids who have the resilience to find or make blankets (and to create a warmer world where everyone can find blankets!) Resilience doesn’t come from being toughened up or thrown into the deep end. It comes from learning that even when things go wrong, you can pick yourself up, try again, and succeed—with support. 
+So how do we foster that resilience? 
+It has become a commonplace idea that failure builds resilience. But when children fail over and over and don't have the support to keep trying, all they learn is that they're failures. Experiencing disappointment or failure is only half the picture. Resilience comes not from failing, but from the experience of learning that even when everything goes wrong, you can keep going and ultimately succeed. That requires at least some experience of success, and lots of emotional support. 
+We all learn from overcoming challenges, but we learn best when we also experience success, which motivates us to tackle more difficult challenges. Failure without support sets up a cycle of lack of confidence, giving up, and more failure. Mastery, on the other hand, begets mastery. 
+We're also told that we as parents are over-protecting our children, so they don't gain confidence from learning to handle things for themselves. This is anxiety-provoking for any parent, because the line between appropriate support and helicoptering is rarely clear. (Isn't a helicopter parent just someone who hovers more than you do?) All parents want to protect their children—that's our job!—but we also don't want to stymie the development of self-confidence, resourcefulness and resilience. 
+So are kids today really less confident than they used to be? Alfie Kohn, in 
+We certainly know that the more practice kids have in solving their own problems, managing their lives, and overcoming obstacles to meet their goals—whether in autonomous play or simply daily life—the more confidence and competence they'll develop. 
+So how do we hit that sweet spot of giving appropriate support and protection on the one hand, and enough independence to foster confidence and competence on the other? Here are some strategies that strike that balance. 
+###  1. Stop controlling and start coaching. 
+Coaches help kids develop skills, but kids play the game. Your job as a parent is to support your child so she can flourish and develop. Doing things FOR her robs her of the opportunity to become competent. Doing things WITH her teaches her how and builds confidence. This means we have to manage our own anxiety and let go of our need to control. 
+###  2. Remember that perfection is not the goal. 
+Resist the temptation to "improve" on your child's task, unless the outcome is vitally important. Intervention undermines a child's confidence. 
+###  3. Let him try to do it himself from the earliest age. 
+Rein in your own anxiety. That doesn’t mean abandoning him to it. 1. Stand by, smiling, ready to be helpful in whatever way actually helps your child—but keep your mouth shut and your hands to yourself except to give appropriate encouragement, unless you really need to help. 
+Clucking anxiously about how worried you are as he climbs that play structure may make you feel better, and it may impress the other parents on the playground with your attentiveness, but it won't help your child. In fact, it limits him. Just ask if he is keeping himself safe, then stand by and spot him. Smile proudly. Say: 
+> _"Look at you! I knew you could do it!"_
+(And if he falls, you’re there to catch him. Which is, after all, what allowed him to try it.) 
+###  4. Help her build confidence by tackling manageable challenges. 
+Emotional development researchers call this "scaffolding," which could be defined as the framework you give your child on which she builds. You demonstrate how to do something, or you use words to suggest a strategy, or you simply spot her. This assistance helps her to succeed when she tries something new, and small successes achieved with your help give her the confidence to try new things herself. Scaffolding also teaches children that nonjudgmental help is always available if they need it. You want your kids to trust that deep in their bones before they hit adolescence. 
+###  5. Don’t set him up for failure. 
+Offer structure to help him succeed. Should you step in when you see failure ahead, or "let him learn a lesson"? Always a hard call. Rescuing children can prevent them from learning important lessons. But when children see their parents stand by and let them fail, they experience that as not being loved. Instead of learning the lesson that they should have practiced that clarinet, or read the directions on that science kit, they learn the lesson that they are failures, that they cannot manage themselves, and that their parents did not care enough to help them not be failures or teach them to manage themselves. 
+But isn't stepping in “rescuing them?” 
+That all depends on how it's done. If you take over the science fair project and do half of it the night before it's due, that's worse than rescuing: not only does your son learn that you will bail him out if he goofs off, he learns that he is incompetent. 
+But if you help him each step of the way to organize his ideas and his work, BUT resist the impulse to improve on the project yourself, he completes the job, hugely proud, and having learned something about how to plan and execute a complex project. 
+###  6. Autonomous Play Builds Inner Resourcefulness 
+One of the best ways to build both competence and confidence is through autonomous play. When children engage in unstructured play without constant adult direction, they’re not just having fun—they're practicing critical life skills. Whether they're negotiating the rules of a game, solving disputes, or figuring out how to build a fort that won’t fall down, kids are learning to manage challenges and find creative solutions on their own. They're also developing emotional intelligence as they read the cues of their playmates, take others' perspectives, and work through conflicts. This kind of play builds inner resourcefulness—the sense that “I can handle this,” even when things go wrong. Over time, kids gain confidence in their ability to solve problems, navigate relationships, and bounce back from setbacks. 
+###  7. Encourage, Encourage, Encourage. And teach self-encouragement. 
+All humans need encouragement. Encouraging your child not only keeps him feeling more positive and motivated, it also gives him an inner voice that will help him to encourage himself for the rest of his life. Research shows that kids who talk themselves through difficult situations find it easier to master difficult tasks. Give your child maxims to repeat as mantras when the going gets tough. "Practice makes progress!" and "If you don't succeed, try, try again!" and "I think I can, I think I can!" are designed to help us manage our frustration. When your son goofs a piece on the piano and has to start over, or your daughter strikes out with the bases loaded, they need an automatic internal comforting voice to encourage and motivate them. Otherwise the harsh criticizing voice steps in, triggered by the disappointment. 
+###  8. Instead of evaluating, describe and empathize. 
+Praise evaluates the outcome of your child's action:_"Good job!"_ It doesn't give the child much information about what was good about what he did, or why you think it was good, and it teaches the child to rely on external sources to evaluate him. You can refine your praise to make it serve your child better by giving him he power to evaluate for himself. Just describe what he did and empathize with how he must feel:_"You just kept practicing and didn't give up....You must feel so good that you finished that!"_ (For more on how to give helpful encouragement rather than getting stuck in "Good Job" see this article: [What To Say Instead of Praising](https://www.peacefulparenthappykids.com/read/What-To-Say-Instead-of-Praising). 
+###  9. Model positive self-talk. 
+Whatever you model, your child will learn and will emulate. Positive self-talk improves our mood, unlike the self-disparaging comments many of us so automatically make. If something negative about your child -- or, equally important, about yourself -- starts to come out of your mouth, bite your tongue. Most parents know better than to say _"What an idiot!"_ to their child (and most of them are able to stop themselves), but a surprising number see nothing wrong with berating themselves that way in front of their kids. Just train yourself not to do it. (It certainly isn't good for you, either. Would you let anyone else talk to you that way?) 
+###  10. Focus on effort, not results. 
+> _"I see you worked so hard on this."_
+> _"How did you learn to do that?!"_
+Give positive feedback about specific things that she has control over, like hard work or perseverance, rather than things she feels she has no control over, like being smart. The point is never the product -- you don’t want her resting on her laurels at the age of six, or sixteen. Your goal is for her to keep trying, practicing, improving, and for her to learn that when she works hard, she can accomplish her goals. 
+###  11. Don't be afraid of your child's feelings. 
+When your child encounters frustration, remember that your empathy will be a critical factor in his overcoming it. Instead of automatically jumping in to remove the source of the frustration, give it a larger context by communicating your compassion that he has to encounter this circumstance: 
+_"I'm sorry this is so hard..."_
+_"It's really disappointing when...."_
+_"This isn't how you hoped it would turn out..."_
+It's okay for children to get frustrated and to be disappointed. Your child may cry and sulk all day, but your unconditional understanding will help her grieve. Once she's done grieving, she'll be ready to pull herself together to try again the next day, especially when you express your confidence in her. That's how children develop resilience. 
+###  12. Don't set your child up for extra frustration. 
+Your child will naturally develop the ability to handle increasing amounts of frustration and anxiety as he attempts more difficult challenges. But those frustrations are inherent in growing up and are guaranteed aplenty in life. There is no benefit whatsoever to setting your child up for extra frustration or negative experience. In fact, he will see your doing so as evidence of your lack of caring, which is always translated in his mind as his lack of value, and which therefore undermines his resilience. 
+###  13. Affirm your child’s ability to impact the world. 
+Competence and feelings of mastery are about power and derive from a child's experience of herself as having an effect on the world. 
+> _"If I stand on the stool, I can flip this light switch and light up the room!"_
+All children will experience reasonable limits to their power (_“I can't make the rain stop, and neither can Mommy"_), but the more your child has opportunities to make a difference in the world, the more she will see herself as capable. 
+In the end, our job as parents is to work ourselves out of a job, and it starts when our children are very young. All kids eventually grow up and live their lives without us. How they live will depend partly on whether we've been able to rise above our own anxiety and our impulse to control our child. 
+You know the old adage about giving our children roots and wings? Unconditional love is the roots. Confidence is the wings. Young people who have both live bigger lives.
