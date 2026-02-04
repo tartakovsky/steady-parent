@@ -36,6 +36,14 @@ This is a monorepo using NPM workspaces.
 - **Styles:** Shadcn UI (Pro Blocks) and custom Embla/Swiper carousels.
 - **Content:** MDX-driven blog and pages.
 
+## UI/Markup Strategy
+**Goal:** Minimize custom implementation and avoid "reinventing the wheel."
+
+1.  **Reuse Existing:** Check `src/components/` first. Reuse what is already built.
+2.  **ProBlocks:** If a new block is needed, check Shadcn ProBlocks for the closest match and adapt it.
+3.  **Shadcn Primitives:** If no block fits, compose new components using existing Shadcn primitives (`src/components/ui`), strictly adhering to the project's theme and `globals.css`.
+4.  **Avoid Manual CSS:** Never implement custom styles manually if a utility class or existing component can achieve the result.
+
 ## Core Rules for Gemini CLI
 1. **Workspace Awareness:** Always check if a command needs to be scoped to a workspace (e.g., `npm run dev -w landing`).
 2. **Pathing:** Use absolute paths within the monorepo or relative paths from the root to ensure consistency.
