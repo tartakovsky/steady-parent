@@ -111,9 +111,8 @@ export async function generateQuiz(
 
   // Dynamic import — the clients/ package lives outside the landing/ root
   // and isn't available during Next.js build on Railway.
-  const { OpenRouterLLMClient } = await import(
-    "../../../../clients/openrouter"
-  );
+  // @ts-ignore — module is outside the deploy root on Railway
+  const { OpenRouterLLMClient } = await import("../../../../clients/openrouter");
   const client = new OpenRouterLLMClient(key);
 
   const result = await client.ask({
