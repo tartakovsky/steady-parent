@@ -1,22 +1,134 @@
 "use client";
 
+import { useState, useRef, useCallback } from "react";
 import { cn } from "@/lib/utils";
+import { savePdf } from "@/lib/save-pdf";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Check, AlertTriangle, RotateCcw, Share2 } from "lucide-react";
-import type { QuizResult as QuizResultType } from "@/lib/quiz/quiz-engine";
+import {
+  Check,
+  AlertTriangle,
+  RotateCcw,
+  Link2,
+  ClipboardCheck,
+  Info,
+  Sparkles,
+  ArrowRight,
+  Heart,
+  Download,
+} from "lucide-react";
+import type { QuizResult as QuizResultType, DomainResult } from "@/lib/quiz/quiz-engine";
 
 interface QuizResultProps extends React.HTMLAttributes<HTMLDivElement> {
   result: QuizResultType;
   quizMeta: { title: string; shortTitle: string };
   onRetake?: () => void;
 }
+
+// ── Circular score ring ──────────────────────────────────────────────
+
+function ScoreRing({
+  percentage,
+  size = 160,
+  strokeWidth = 10,
+  color,
+}: {
+  percentage: number;
+  size?: number;
+  strokeWidth?: number;
+  color: string;
+}) {
+  const radius = (size - strokeWidth) / 2;
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference - (percentage / 100) * circumference;
+
+  return (
+    <div className="relative" style={{ width: size, height: size }}>
+      <svg width={size} height={size} className="-rotate-90">
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={strokeWidth}
+          className="text-muted/50"
+        />
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          fill="none"
+          stroke={color}
+          strokeWidth={strokeWidth}
+          strokeLinecap="round"
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          style={{ transition: "stroke-dashoffset 1s ease-out" }}
+        />
+      </svg>
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <span className="text-4xl font-bold tracking-tight">{percentage}%</span>
+        <span className="text-xs text-muted-foreground uppercase tracking-widest mt-0.5">
+          readiness
+        </span>
+      </div>
+    </div>
+  );
+}
+
+// ── Mini bar for domain breakdown ────────────────────────────────────
+
+function DomainBar({ domain, color }: { domain: DomainResult; color: string }) {
+  const levelLabel =
+    domain.level === "high"
+      ? "Strong"
+      : domain.level === "medium"
+        ? "Developing"
+        : "Emerging";
+
+  return (
+    <div className="space-y-3">
+      <div className="flex items-baseline justify-between gap-4">
+        <div>
+          <h3 className="font-semibold text-base">{domain.name}</h3>
+          <p className="text-sm text-muted-foreground mt-0.5">{domain.headline}</p>
+        </div>
+        <div className="text-right shrink-0">
+          <span
+            className="text-xs font-medium uppercase tracking-wide px-2 py-0.5 rounded-full"
+            style={{
+              backgroundColor: `${color}18`,
+              color,
+            }}
+          >
+            {levelLabel}
+          </span>
+        </div>
+      </div>
+      {/* Custom bar */}
+      <div className="h-2 w-full rounded-full bg-muted/60 overflow-hidden">
+        <div
+          className="h-full rounded-full transition-all duration-700 ease-out"
+          style={{
+            width: `${domain.percentage}%`,
+            backgroundColor: color,
+          }}
+        />
+      </div>
+      <p className="text-sm text-muted-foreground leading-relaxed">
+        {domain.detail}
+      </p>
+    </div>
+  );
+}
+
+// ── Main component ───────────────────────────────────────────────────
 
 export function QuizResult({
   result,
@@ -25,189 +137,255 @@ export function QuizResult({
   className,
   ...props
 }: QuizResultProps) {
-  const handleShare = async () => {
-    const shareData = {
-      title: quizMeta.shortTitle,
-      text: `I got "${result.headline}" on the ${quizMeta.shortTitle}!`,
-      url: window.location.href,
-    };
+  const [copied, setCopied] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const resultRef = useRef<HTMLDivElement>(null);
 
-    if (navigator.share) {
-      try {
-        await navigator.share(shareData);
-      } catch (err) {
-        // User cancelled or share failed - fall back to clipboard
-        await navigator.clipboard.writeText(window.location.href);
-      }
-    } else {
-      await navigator.clipboard.writeText(window.location.href);
-    }
+  const handleCopyLink = async () => {
+    await navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
-  // Determine result color based on result ID
-  const getResultColor = () => {
+  const handleSavePdf = useCallback(async () => {
+    if (!resultRef.current || saving) return;
+    setSaving(true);
+    try {
+      const slug = quizMeta.shortTitle.toLowerCase().replace(/\s+/g, "-");
+      await savePdf(resultRef.current, `${slug}-results.pdf`);
+    } finally {
+      setSaving(false);
+    }
+  }, [saving, quizMeta.shortTitle]);
+
+  // Result-specific theming
+  const theme = (() => {
     switch (result.resultId) {
       case "ready":
-        return "text-green-600";
+        return {
+          color: "#16a34a",
+          bgGradient: "from-green-50 to-emerald-50/50",
+          label: "Ready to go",
+          icon: <Sparkles className="h-5 w-5" />,
+        };
       case "almost":
-        return "text-amber-600";
+        return {
+          color: "#d97706",
+          bgGradient: "from-amber-50 to-yellow-50/50",
+          label: "Almost there",
+          icon: <Heart className="h-5 w-5" />,
+        };
       case "not-yet":
-        return "text-orange-600";
+        return {
+          color: "#ea580c",
+          bgGradient: "from-orange-50 to-amber-50/30",
+          label: "Give it time",
+          icon: <Heart className="h-5 w-5" />,
+        };
       default:
-        return "text-primary";
+        return {
+          color: "var(--primary)",
+          bgGradient: "from-primary/5 to-primary/0",
+          label: "Your results",
+          icon: <Sparkles className="h-5 w-5" />,
+        };
     }
-  };
+  })();
+
+  // Domain colors - distinct but harmonious
+  const domainColors = ["#0d9488", "#6366f1", "#e11d48"];
 
   return (
-    <div className={cn("space-y-8", className)} {...props}>
-      {/* Hero Section */}
-      <div className="space-y-4">
-        <h1 className={cn("heading-lg", getResultColor())}>{result.headline}</h1>
-        <p className="text-xl text-muted-foreground">{result.subheadline}</p>
-        <p className="text-foreground">{result.explanation}</p>
+    <div ref={resultRef} className={cn("space-y-10", className)} {...props}>
+      {/* ── Hero: Score + Headline ──────────────────────────────── */}
+      <div
+        className={cn(
+          "rounded-2xl bg-gradient-to-br p-8 sm:p-10",
+          theme.bgGradient
+        )}
+      >
+        <div className="flex flex-col sm:flex-row sm:items-center gap-8">
+          <ScoreRing
+            percentage={result.percentage}
+            color={theme.color}
+          />
+          <div className="space-y-3 flex-1">
+            <div
+              className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full"
+              style={{
+                backgroundColor: `${theme.color}15`,
+                color: theme.color,
+              }}
+            >
+              {theme.icon}
+              {theme.label}
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
+              {result.headline}
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              {result.subheadline}
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-6 text-foreground/80 leading-relaxed max-w-prose">
+          {result.explanation}
+        </p>
+
+        {/* Quick actions right in the hero */}
+        <div className="flex gap-3 mt-6">
+          <Button variant="outline" size="sm" onClick={handleCopyLink} className="gap-1.5 bg-background/80">
+            {copied ? (
+              <>
+                <ClipboardCheck className="h-3.5 w-3.5" />
+                Copied!
+              </>
+            ) : (
+              <>
+                <Link2 className="h-3.5 w-3.5" />
+                Share results
+              </>
+            )}
+          </Button>
+          <Button variant="outline" size="sm" onClick={handleSavePdf} disabled={saving} className="gap-1.5 bg-background/80">
+            <Download className="h-3.5 w-3.5" />
+            {saving ? "Saving..." : "Save PDF"}
+          </Button>
+          {onRetake && (
+            <Button variant="ghost" size="sm" onClick={onRetake} className="gap-1.5">
+              <RotateCcw className="h-3.5 w-3.5" />
+              Retake
+            </Button>
+          )}
+        </div>
       </div>
 
-      {/* Overall Score */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Overall Score</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2">
-          <div className="flex justify-between text-sm">
-            <span>
-              {result.totalScore} of {result.maxScore} points
-            </span>
-            <span className="font-medium">{result.percentage}%</span>
-          </div>
-          <Progress value={result.percentage} className="h-3" />
-        </CardContent>
-      </Card>
-
-      {/* Domain Breakdown */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Breakdown by Area</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          {result.domains.map((domain) => (
-            <div key={domain.id} className="space-y-2">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="font-medium">{domain.name}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {domain.headline}
-                  </p>
-                </div>
-                <span className="text-sm font-medium">
-                  {domain.score}/{domain.maxScore}
-                </span>
-              </div>
-              <Progress value={domain.percentage} className="h-2" />
-              <p className="text-sm text-muted-foreground">{domain.detail}</p>
-            </div>
+      {/* ── Domain Breakdown ───────────────────────────────────── */}
+      <div className="space-y-6">
+        <h2 className="text-xl font-bold tracking-tight">
+          Readiness by Area
+        </h2>
+        <div className="grid gap-6">
+          {result.domains.map((domain, i) => (
+            <Card key={domain.id} className="overflow-hidden">
+              <CardContent className="pt-6">
+                <DomainBar
+                  domain={domain}
+                  color={domainColors[i % domainColors.length]!}
+                />
+              </CardContent>
+            </Card>
           ))}
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
-      {/* Strengths */}
-      {result.strengths.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Check className="h-5 w-5 text-green-600" />
-              Strengths
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              {result.strengths.map((strength, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <Check className="h-4 w-4 mt-1 shrink-0 text-green-600" />
-                  <span>{strength}</span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
+      {/* ── Strengths & Concerns side by side ──────────────────── */}
+      {(result.strengths.length > 0 || result.concerns.length > 0) && (
+        <div className="grid sm:grid-cols-2 gap-6">
+          {result.strengths.length > 0 && (
+            <Card className="border-green-100 bg-green-50/30">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center gap-2 text-base">
+                  <div className="flex items-center justify-center w-7 h-7 rounded-full bg-green-100">
+                    <Check className="h-4 w-4 text-green-700" />
+                  </div>
+                  Strengths
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {result.strengths.map((strength, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed">
+                      <Check className="h-4 w-4 mt-0.5 shrink-0 text-green-600" />
+                      <span>{strength}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
+
+          {result.concerns.length > 0 && (
+            <Card className="border-amber-100 bg-amber-50/30">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center gap-2 text-base">
+                  <div className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-100">
+                    <AlertTriangle className="h-4 w-4 text-amber-700" />
+                  </div>
+                  Areas to Watch
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {result.concerns.map((concern, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed">
+                      <AlertTriangle className="h-4 w-4 mt-0.5 shrink-0 text-amber-600" />
+                      <span>{concern}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
+        </div>
       )}
 
-      {/* Concerns */}
-      {result.concerns.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <AlertTriangle className="h-5 w-5 text-amber-600" />
-              Areas to Watch
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              {result.concerns.map((concern, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <AlertTriangle className="h-4 w-4 mt-1 shrink-0 text-amber-600" />
-                  <span>{concern}</span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Next Steps */}
+      {/* ── Next Steps ─────────────────────────────────────────── */}
       <Card>
         <CardHeader>
-          <CardTitle>Next Steps</CardTitle>
+          <CardTitle className="flex items-center gap-2 text-lg">
+            What to Do Next
+          </CardTitle>
         </CardHeader>
         <CardContent>
-          <ol className="space-y-3 list-decimal list-inside">
+          <ol className="space-y-4">
             {result.nextSteps.map((step, i) => (
-              <li key={i} className="text-foreground">
-                {step}
+              <li key={i} className="flex items-start gap-3">
+                <span
+                  className="flex items-center justify-center shrink-0 w-6 h-6 rounded-full text-xs font-bold mt-0.5"
+                  style={{
+                    backgroundColor: `${theme.color}15`,
+                    color: theme.color,
+                  }}
+                >
+                  {i + 1}
+                </span>
+                <span className="leading-relaxed">{step}</span>
               </li>
             ))}
           </ol>
         </CardContent>
       </Card>
 
-      {/* Watch Out For */}
+      {/* ── Good to Know ───────────────────────────────────────── */}
       {result.watchOutFor && (
-        <Card className="border-amber-200 bg-amber-50 dark:border-amber-900 dark:bg-amber-950">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <AlertTriangle className="h-5 w-5 text-amber-600" />
-              Watch Out For
+        <Card className="border-blue-100 bg-blue-50/30">
+          <CardHeader className="pb-3">
+            <CardTitle className="flex items-center gap-2 text-base">
+              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-blue-100">
+                <Info className="h-4 w-4 text-blue-700" />
+              </div>
+              Good to Know
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p>{result.watchOutFor}</p>
+            <p className="leading-relaxed">{result.watchOutFor}</p>
           </CardContent>
         </Card>
       )}
 
-      {/* Encouragement */}
-      <div className="p-6 bg-primary/5 rounded-lg">
-        <p className="text-lg italic text-foreground">{result.encouragement}</p>
-      </div>
-
-      {/* Retake Advice */}
-      {result.retakeAdvice && (
-        <p className="text-muted-foreground">
-          {result.retakeAdvice}
+      {/* ── Encouragement ──────────────────────────────────────── */}
+      <div className="rounded-2xl bg-gradient-to-br from-primary/8 to-primary/3 p-8">
+        <p className="text-lg leading-relaxed text-foreground/90">
+          {result.encouragement}
         </p>
-      )}
-
-      {/* Action Buttons */}
-      <div className="flex flex-col sm:flex-row gap-3">
-        {onRetake && (
-          <Button variant="outline" onClick={onRetake} className="gap-2">
-            <RotateCcw className="h-4 w-4" />
-            Retake Quiz
-          </Button>
+        {result.retakeAdvice && (
+          <p className="mt-3 text-sm text-muted-foreground flex items-center gap-1.5">
+            <ArrowRight className="h-3.5 w-3.5" />
+            {result.retakeAdvice}
+          </p>
         )}
-        <Button onClick={handleShare} className="gap-2">
-          <Share2 className="h-4 w-4" />
-          Share Results
-        </Button>
       </div>
     </div>
   );

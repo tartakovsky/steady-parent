@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,11 @@ import { QuizProgress } from "./quiz-progress";
 import { QuizQuestion } from "./quiz-question";
 import { QuizResult } from "./quiz-result";
 import { QuizEngine } from "@/lib/quiz/quiz-engine";
+import {
+  readStateFromUrl,
+  pushStateToUrl,
+  clearStateFromUrl,
+} from "@/lib/quiz/quiz-url";
 import type {
   QuizData,
   QuizResult as QuizResultType,
@@ -29,6 +34,46 @@ export function QuizContainer({
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [direction, setDirection] = useState<1 | -1>(1);
   const [result, setResult] = useState<QuizResultType | null>(null);
+  const initialized = useRef(false);
+
+  // Restore state from URL (on mount + popstate)
+  const restoreFromUrl = useCallback(() => {
+    const params = new URLSearchParams(window.location.search);
+    const state = readStateFromUrl(params, quiz.questions);
+
+    if (!state) {
+      // Clean URL = fresh quiz
+      setAnswers({});
+      setCurrentIndex(0);
+      setResult(null);
+      setDirection(1);
+      return;
+    }
+
+    setAnswers(state.answers);
+    setCurrentIndex(state.currentIndex);
+
+    if (state.isComplete) {
+      const engine = new QuizEngine(quiz);
+      setResult(engine.assembleResult(state.answers));
+    } else {
+      setResult(null);
+    }
+  }, [quiz]);
+
+  // On mount
+  useEffect(() => {
+    if (initialized.current) return;
+    initialized.current = true;
+    restoreFromUrl();
+  }, [restoreFromUrl]);
+
+  // Browser back/forward
+  useEffect(() => {
+    const handlePopState = () => restoreFromUrl();
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [restoreFromUrl]);
 
   const questions = quiz.questions;
   const currentQuestion = questions[currentIndex]!;
@@ -42,37 +87,36 @@ export function QuizContainer({
 
   const handleSelect = useCallback(
     (optionId: string) => {
-      // Store the answer
-      setAnswers((prev) => ({
-        ...prev,
-        [currentQuestion.id]: optionId,
-      }));
+      const newAnswers = { ...answers, [currentQuestion.id]: optionId };
+      setAnswers(newAnswers);
 
-      // Advance immediately - no delay
       if (isLastQuestion) {
-        // Calculate results
         const engine = new QuizEngine(quiz);
-        const newAnswers = { ...answers, [currentQuestion.id]: optionId };
         const quizResult = engine.assembleResult(newAnswers);
+        pushStateToUrl(newAnswers, currentIndex, quiz.questions, true);
         setResult(quizResult);
         onComplete?.(quizResult);
       } else {
-        // Move to next question
+        const nextIndex = currentIndex + 1;
+        pushStateToUrl(newAnswers, nextIndex, quiz.questions, false);
         setDirection(1);
-        setCurrentIndex((prev) => prev + 1);
+        setCurrentIndex(nextIndex);
       }
     },
-    [currentQuestion, isLastQuestion, answers, quiz, onComplete]
+    [currentQuestion, isLastQuestion, currentIndex, answers, quiz, onComplete]
   );
 
   const handleBack = useCallback(() => {
     if (!isFirstQuestion) {
+      const prevIndex = currentIndex - 1;
+      pushStateToUrl(answers, prevIndex, quiz.questions, false);
       setDirection(-1);
-      setCurrentIndex((prev) => prev - 1);
+      setCurrentIndex(prevIndex);
     }
-  }, [isFirstQuestion]);
+  }, [isFirstQuestion, currentIndex, answers, quiz]);
 
   const handleRetake = useCallback(() => {
+    clearStateFromUrl();
     setCurrentIndex(0);
     setAnswers({});
     setDirection(1);

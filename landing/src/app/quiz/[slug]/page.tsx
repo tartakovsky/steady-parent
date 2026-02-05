@@ -27,6 +27,16 @@ export async function generateMetadata({
   return {
     title: quiz.meta.title,
     description: quiz.meta.description,
+    openGraph: {
+      title: quiz.meta.shortTitle,
+      description: quiz.meta.description,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: quiz.meta.shortTitle,
+      description: quiz.meta.description,
+    },
   };
 }
 
