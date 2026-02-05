@@ -86,7 +86,19 @@ function ScoreRing({
 
 // ── Mini bar for domain breakdown ────────────────────────────────────
 
-function DomainBar({ domain, color }: { domain: DomainResult; color: string }) {
+function getDomainColor(level: DomainResult["level"]): string {
+  switch (level) {
+    case "high":
+      return "#16a34a"; // green
+    case "medium":
+      return "#d97706"; // amber
+    case "low":
+      return "#ea580c"; // orange
+  }
+}
+
+function DomainBar({ domain }: { domain: DomainResult }) {
+  const color = getDomainColor(domain.level);
   const levelLabel =
     domain.level === "high"
       ? "Strong"
@@ -197,8 +209,6 @@ export function QuizResult({
     }
   })();
 
-  // Domain colors - distinct but harmonious
-  const domainColors = ["#0d9488", "#6366f1", "#e11d48"];
 
   return (
     <div ref={resultRef} className={cn("space-y-10", className)} {...props}>
@@ -292,13 +302,10 @@ export function QuizResult({
           Readiness by Area
         </h2>
         <div className="grid gap-6">
-          {result.domains.map((domain, i) => (
+          {result.domains.map((domain) => (
             <Card key={domain.id} className="overflow-hidden">
               <CardContent className="pt-6">
-                <DomainBar
-                  domain={domain}
-                  color={domainColors[i % domainColors.length]!}
-                />
+                <DomainBar domain={domain} />
               </CardContent>
             </Card>
           ))}
