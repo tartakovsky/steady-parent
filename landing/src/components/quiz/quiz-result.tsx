@@ -269,31 +269,33 @@ export function QuizResult({
         </p>
 
         {/* Quick actions right in the hero */}
-        <div className="flex gap-3 mt-6">
-          <Button variant="outline" size="sm" onClick={handleCopyLink} className="gap-1.5 bg-background/80">
-            {copied ? (
-              <>
-                <ClipboardCheck className="h-3.5 w-3.5" />
-                Copied!
-              </>
-            ) : (
-              <>
-                <Link2 className="h-3.5 w-3.5" />
-                Share results
-              </>
-            )}
-          </Button>
-          <Button variant="outline" size="sm" onClick={handleSavePdf} disabled={saving} className="gap-1.5 bg-background/80">
-            <Download className="h-3.5 w-3.5" />
-            {saving ? "Saving..." : "Save PDF"}
-          </Button>
-          {onRetake && (
-            <Button variant="ghost" size="sm" onClick={onRetake} className="gap-1.5">
-              <RotateCcw className="h-3.5 w-3.5" />
-              Retake
+        {!shared && (
+          <div className="flex flex-wrap gap-3 mt-6">
+            <Button onClick={handleCopyLink} className="gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2.5">
+              {copied ? (
+                <>
+                  <ClipboardCheck className="h-4 w-4" />
+                  Copied!
+                </>
+              ) : (
+                <>
+                  <Link2 className="h-4 w-4" />
+                  Share Results
+                </>
+              )}
             </Button>
-          )}
-        </div>
+            <Button variant="outline" size="sm" onClick={handleSavePdf} disabled={saving} className="gap-1.5 bg-background/80">
+              <Download className="h-3.5 w-3.5" />
+              {saving ? "Saving..." : "Save PDF"}
+            </Button>
+            {onRetake && (
+              <Button variant="ghost" size="sm" onClick={onRetake} className="gap-1.5">
+                <RotateCcw className="h-3.5 w-3.5" />
+                Retake
+              </Button>
+            )}
+          </div>
+        )}
       </div>
 
       {/* ── Domain Breakdown ───────────────────────────────────── */}
