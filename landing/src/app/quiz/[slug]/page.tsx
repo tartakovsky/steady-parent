@@ -41,7 +41,7 @@ export async function generateMetadata({
     openGraph: {
       title: quiz.meta.shortTitle,
       description: quiz.meta.description,
-      url: `/quiz/${slug}`,
+      url: answersParam ? `/quiz/${slug}?a=${answersParam}` : `/quiz/${slug}`,
       type: "website",
       images: [
         {
