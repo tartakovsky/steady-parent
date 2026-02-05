@@ -63,6 +63,11 @@ export async function GET(req: NextRequest) {
   const result = engine.assembleResult(answers);
   const theme = getTheme(result.resultId);
 
+  // Safe zone: center 800x500 of 1200x630
+  // That means ~200px horizontal margin, ~65px vertical margin
+  // All critical content must be inside the safe zone
+  // Brand + URL can live in the outer sacrificial area
+
   return new ImageResponse(
     (
       <div
@@ -73,61 +78,61 @@ export async function GET(req: NextRequest) {
           flexDirection: "column",
           backgroundColor: theme.bg,
           fontFamily: "system-ui, sans-serif",
-          padding: "50px 60px",
+          padding: "40px 60px",
         }}
       >
-        {/* Top row: brand + quiz name */}
+        {/* Brand bar — sacrificial, can be cropped */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            marginBottom: "30px",
+            marginBottom: "12px",
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <div
               style={{
-                width: "36px",
-                height: "36px",
+                width: "32px",
+                height: "32px",
                 borderRadius: "8px",
                 backgroundColor: "#16a34a",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 color: "white",
-                fontSize: "18px",
+                fontSize: "16px",
                 fontWeight: 700,
               }}
             >
               SP
             </div>
-            <span
-              style={{ fontSize: "20px", fontWeight: 600, color: "#9ca3af" }}
-            >
+            <span style={{ fontSize: "18px", fontWeight: 600, color: "#9ca3af" }}>
               Steady Parent
             </span>
           </div>
-          <span style={{ fontSize: "18px", color: "#9ca3af" }}>
-            {quiz.meta.shortTitle}
+          <span style={{ fontSize: "16px", color: "#9ca3af" }}>
+            steady-parent.com
           </span>
         </div>
 
-        {/* Main content: score + result */}
+        {/* ── Safe zone content: centered vertically ── */}
         <div
           style={{
             flex: 1,
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
-            gap: "50px",
+            justifyContent: "center",
+            padding: "0 140px",
           }}
         >
-          {/* Score ring */}
+          {/* Score ring — centered */}
           <div
             style={{
               position: "relative",
-              width: "200px",
-              height: "200px",
+              width: "160px",
+              height: "160px",
               flexShrink: 0,
               display: "flex",
               alignItems: "center",
@@ -135,30 +140,30 @@ export async function GET(req: NextRequest) {
             }}
           >
             <svg
-              width="200"
-              height="200"
-              viewBox="0 0 200 200"
+              width="160"
+              height="160"
+              viewBox="0 0 160 160"
               style={{ position: "absolute", top: 0, left: 0 }}
             >
               <circle
-                cx="100"
-                cy="100"
-                r="85"
+                cx="80"
+                cy="80"
+                r="68"
                 fill="none"
                 stroke="#e5e7eb"
-                strokeWidth="14"
+                strokeWidth="12"
               />
               <circle
-                cx="100"
-                cy="100"
-                r="85"
+                cx="80"
+                cy="80"
+                r="68"
                 fill="none"
                 stroke={theme.color}
-                strokeWidth="14"
+                strokeWidth="12"
                 strokeLinecap="round"
-                strokeDasharray={`${2 * Math.PI * 85}`}
-                strokeDashoffset={`${2 * Math.PI * 85 * (1 - result.percentage / 100)}`}
-                transform="rotate(-90 100 100)"
+                strokeDasharray={`${2 * Math.PI * 68}`}
+                strokeDashoffset={`${2 * Math.PI * 68 * (1 - result.percentage / 100)}`}
+                transform="rotate(-90 80 80)"
               />
             </svg>
             <div
@@ -171,7 +176,7 @@ export async function GET(req: NextRequest) {
             >
               <span
                 style={{
-                  fontSize: "52px",
+                  fontSize: "44px",
                   fontWeight: 800,
                   color: "#111827",
                   lineHeight: 1,
@@ -181,11 +186,11 @@ export async function GET(req: NextRequest) {
               </span>
               <span
                 style={{
-                  fontSize: "13px",
+                  fontSize: "11px",
                   fontWeight: 600,
                   color: "#9ca3af",
                   letterSpacing: "0.1em",
-                  marginTop: "4px",
+                  marginTop: "2px",
                 }}
               >
                 READINESS
@@ -193,136 +198,123 @@ export async function GET(req: NextRequest) {
             </div>
           </div>
 
-          {/* Result text + domains */}
+          {/* Headline + subheadline — centered */}
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: "16px",
-              flex: 1,
+              alignItems: "center",
+              marginTop: "16px",
+              gap: "8px",
             }}
           >
             <div
               style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                fontSize: "16px",
-                fontWeight: 700,
-                color: theme.color,
-                textTransform: "uppercase" as const,
-                letterSpacing: "0.08em",
-              }}
-            >
-              My result
-            </div>
-            <div
-              style={{
-                fontSize: "48px",
+                fontSize: "44px",
                 fontWeight: 800,
                 color: "#111827",
                 lineHeight: 1.1,
                 letterSpacing: "-0.02em",
+                textAlign: "center" as const,
               }}
             >
               {result.headline}
             </div>
             <div
               style={{
-                fontSize: "22px",
+                fontSize: "20px",
                 color: "#6b7280",
                 lineHeight: 1.3,
+                textAlign: "center" as const,
               }}
             >
               {result.subheadline}
             </div>
+          </div>
 
-            {/* Domain bars */}
-            <div
-              style={{
-                display: "flex",
-                gap: "12px",
-                marginTop: "8px",
-              }}
-            >
-              {result.domains.map((domain) => {
-                const barColor = getDomainColor(domain.level);
-                return (
+          {/* Domain bars — centered, constrained width */}
+          <div
+            style={{
+              display: "flex",
+              gap: "16px",
+              marginTop: "24px",
+              width: "100%",
+              maxWidth: "700px",
+            }}
+          >
+            {result.domains.map((domain) => {
+              const barColor = getDomainColor(domain.level);
+              return (
+                <div
+                  key={domain.id}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "6px",
+                    flex: 1,
+                  }}
+                >
                   <div
-                    key={domain.id}
                     style={{
                       display: "flex",
-                      flexDirection: "column",
-                      gap: "6px",
-                      flex: 1,
+                      justifyContent: "space-between",
+                      fontSize: "13px",
+                      fontWeight: 600,
+                      color: "#374151",
+                    }}
+                  >
+                    <span>{domain.name}</span>
+                    <span style={{ color: barColor }}>
+                      {domain.percentage}%
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      height: "8px",
+                      borderRadius: "4px",
+                      backgroundColor: "#e5e7eb",
+                      overflow: "hidden",
                     }}
                   >
                     <div
                       style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        fontSize: "14px",
-                        fontWeight: 600,
-                        color: "#374151",
-                      }}
-                    >
-                      <span>{domain.name}</span>
-                      <span style={{ color: barColor }}>
-                        {domain.percentage}%
-                      </span>
-                    </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        height: "8px",
+                        width: `${Math.max(domain.percentage, 2)}%`,
+                        height: "100%",
                         borderRadius: "4px",
-                        backgroundColor: "#e5e7eb",
-                        overflow: "hidden",
+                        backgroundColor: barColor,
                       }}
-                    >
-                      <div
-                        style={{
-                          width: `${domain.percentage}%`,
-                          height: "100%",
-                          borderRadius: "4px",
-                          backgroundColor: barColor,
-                        }}
-                      />
-                    </div>
+                    />
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        {/* Bottom CTA */}
+        {/* Bottom — sacrificial, can be cropped */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: "20px",
+            justifyContent: "center",
+            marginTop: "8px",
           }}
         >
           <div
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "16px",
               backgroundColor: "#16a34a",
               color: "white",
-              padding: "14px 32px",
-              borderRadius: "12px",
-              fontSize: "20px",
+              padding: "10px 28px",
+              borderRadius: "10px",
+              fontSize: "18px",
               fontWeight: 700,
             }}
           >
-            Take the quiz
+            Take the quiz yourself →
           </div>
-          <span style={{ fontSize: "18px", color: "#9ca3af" }}>
-            steady-parent.com
-          </span>
         </div>
       </div>
     ),
@@ -333,6 +325,7 @@ export async function GET(req: NextRequest) {
 function renderGenericCard(quiz: ReturnType<typeof getQuizBySlug>) {
   if (!quiz) return new Response("Not found", { status: 404 });
 
+  // Same safe-zone approach: critical content centered
   return new ImageResponse(
     (
       <div
@@ -342,56 +335,60 @@ function renderGenericCard(quiz: ReturnType<typeof getQuizBySlug>) {
           display: "flex",
           flexDirection: "column",
           backgroundColor: "#fafafa",
-          padding: "60px 70px",
+          padding: "40px 60px",
           fontFamily: "system-ui, sans-serif",
         }}
       >
+        {/* Brand — sacrificial */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "12px",
-            marginBottom: "40px",
+            justifyContent: "space-between",
+            marginBottom: "12px",
           }}
         >
-          <div
-            style={{
-              width: "40px",
-              height: "40px",
-              borderRadius: "10px",
-              backgroundColor: "#16a34a",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "white",
-              fontSize: "20px",
-              fontWeight: 700,
-            }}
-          >
-            SP
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <div
+              style={{
+                width: "32px",
+                height: "32px",
+                borderRadius: "8px",
+                backgroundColor: "#16a34a",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "white",
+                fontSize: "16px",
+                fontWeight: 700,
+              }}
+            >
+              SP
+            </div>
+            <span style={{ fontSize: "18px", fontWeight: 600, color: "#9ca3af" }}>
+              Steady Parent
+            </span>
           </div>
-          <span
-            style={{
-              fontSize: "22px",
-              fontWeight: 600,
-              color: "#6b7280",
-            }}
-          >
-            Steady Parent
+          <span style={{ fontSize: "16px", color: "#9ca3af" }}>
+            steady-parent.com
           </span>
         </div>
+
+        {/* ── Safe zone content ── */}
         <div
           style={{
             flex: 1,
             display: "flex",
             flexDirection: "column",
+            alignItems: "center",
             justifyContent: "center",
+            padding: "0 140px",
             gap: "16px",
           }}
         >
           <div
             style={{
-              fontSize: "20px",
+              fontSize: "18px",
               fontWeight: 600,
               color: "#16a34a",
               textTransform: "uppercase" as const,
@@ -402,59 +399,63 @@ function renderGenericCard(quiz: ReturnType<typeof getQuizBySlug>) {
           </div>
           <div
             style={{
-              fontSize: "56px",
+              fontSize: "48px",
               fontWeight: 800,
               color: "#111827",
               lineHeight: 1.1,
               letterSpacing: "-0.03em",
-              maxWidth: "900px",
+              textAlign: "center" as const,
             }}
           >
             {quiz.meta.title}
           </div>
           <div
             style={{
-              fontSize: "24px",
+              fontSize: "22px",
               color: "#6b7280",
               lineHeight: 1.4,
-              maxWidth: "800px",
-              marginTop: "8px",
+              textAlign: "center" as const,
+              marginTop: "4px",
             }}
           >
             {quiz.meta.description}
           </div>
+          <div
+            style={{
+              display: "flex",
+              gap: "20px",
+              fontSize: "16px",
+              color: "#9ca3af",
+              marginTop: "4px",
+            }}
+          >
+            <span>{quiz.meta.questionCount} questions</span>
+            <span>·</span>
+            <span>{quiz.meta.estimatedTime}</span>
+          </div>
         </div>
+
+        {/* Bottom CTA — sacrificial */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: "24px",
+            justifyContent: "center",
+            marginTop: "8px",
           }}
         >
           <div
             style={{
               backgroundColor: "#16a34a",
               color: "white",
-              padding: "16px 36px",
-              borderRadius: "12px",
-              fontSize: "22px",
+              padding: "10px 28px",
+              borderRadius: "10px",
+              fontSize: "18px",
               fontWeight: 700,
               display: "flex",
             }}
           >
-            Take the quiz
-          </div>
-          <div
-            style={{
-              display: "flex",
-              gap: "24px",
-              fontSize: "20px",
-              color: "#9ca3af",
-            }}
-          >
-            <span>{quiz.meta.questionCount} questions</span>
-            <span>{quiz.meta.estimatedTime}</span>
+            Take the quiz →
           </div>
         </div>
       </div>
