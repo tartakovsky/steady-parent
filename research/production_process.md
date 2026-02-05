@@ -124,6 +124,10 @@ Create canonical URLs for **every planned page** before any content is written:Ñ
 ```
 
 ### 5.2 Link Plan
+<!-- 
+
+ -->
+ 
 For each article, define intended internal links:
 - **Outbound links**: which other articles/assets this article should link to (5-10 per article)
 - **Anchor intent**: brief note on what context the link serves
