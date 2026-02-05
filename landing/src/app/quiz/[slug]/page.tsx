@@ -11,18 +11,29 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-// Generate metadata for SEO
+// Generate metadata for SEO — reads searchParams for result-specific OG
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { slug } = await params;
+  const sp = await searchParams;
   const quiz = getQuizBySlug(slug);
 
   if (!quiz) {
     return { title: "Quiz Not Found" };
   }
+
+  // Build OG image URL — include answers if present for result-specific image
+  const answersParam = typeof sp["a"] === "string" ? sp["a"] : undefined;
+  const ogParams = new URLSearchParams({ slug });
+  if (answersParam) {
+    ogParams.set("a", answersParam);
+  }
+  const ogImageUrl = `/api/og?${ogParams.toString()}`;
 
   return {
     title: quiz.meta.title,
@@ -32,11 +43,20 @@ export async function generateMetadata({
       description: quiz.meta.description,
       url: `/quiz/${slug}`,
       type: "website",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: quiz.meta.shortTitle,
+        },
+      ],
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary_large_image" as const,
       title: quiz.meta.shortTitle,
       description: quiz.meta.description,
+      images: [ogImageUrl],
     },
   };
 }
