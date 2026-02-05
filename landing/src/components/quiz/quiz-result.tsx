@@ -202,6 +202,26 @@ export function QuizResult({
 
   return (
     <div ref={resultRef} className={cn("space-y-10", className)} {...props}>
+      {/* ── Shared CTA (first thing visitors see) ────────────────── */}
+      {shared && (
+        <div className="rounded-2xl border-2 border-green-600 bg-green-50/50 p-6 sm:p-8 text-center space-y-3">
+          <p className="text-lg sm:text-xl font-semibold text-foreground">
+            Curious about your own results?
+          </p>
+          <Button
+            size="lg"
+            onClick={onRetake}
+            className="w-full sm:w-auto text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all bg-green-600 hover:bg-green-700 text-white"
+          >
+            <Sparkles className="h-5 w-5 mr-2" />
+            Take the Quiz Yourself
+          </Button>
+          <p className="text-sm text-muted-foreground">
+            {quizMeta.shortTitle} &middot; Takes about 2 minutes
+          </p>
+        </div>
+      )}
+
       {/* ── Hero: Score + Headline ──────────────────────────────── */}
       <div
         className={cn(
@@ -265,33 +285,6 @@ export function QuizResult({
           )}
         </div>
       </div>
-
-      {/* ── Shared CTA ─────────────────────────────────────────── */}
-      {shared && (
-        <div
-          className="rounded-2xl border-2 p-8 sm:p-10 text-center space-y-4"
-          style={{ borderColor: theme.color }}
-        >
-          <p className="text-lg font-medium text-foreground/80">
-            Curious about your own results?
-          </p>
-          <Button
-            size="lg"
-            onClick={onRetake}
-            className="text-lg px-10 py-6 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all"
-            style={{
-              backgroundColor: theme.color,
-              color: "white",
-            }}
-          >
-            <Sparkles className="h-5 w-5 mr-2" />
-            Take the Quiz Yourself
-          </Button>
-          <p className="text-sm text-muted-foreground">
-            {quizMeta.shortTitle} &middot; Takes about 2 minutes
-          </p>
-        </div>
-      )}
 
       {/* ── Domain Breakdown ───────────────────────────────────── */}
       <div className="space-y-6">

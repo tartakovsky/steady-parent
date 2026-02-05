@@ -81,7 +81,7 @@ export default async function QuizPage({
   }
 
   return (
-    <main className="bg-background section-padding-y">
+    <main className="bg-background py-6 md:py-10 lg:py-12">
       <div className="container-padding-x mx-auto max-w-4xl">
         <QuizContainer quiz={quiz} />
       </div>
