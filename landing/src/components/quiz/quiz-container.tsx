@@ -8,11 +8,11 @@ import { ArrowLeft } from "lucide-react";
 import { QuizProgress } from "./quiz-progress";
 import { QuizQuestion } from "./quiz-question";
 import { QuizResult } from "./quiz-result";
-import { QuizEngine } from "@content/quizzes/quiz-engine";
+import { QuizEngine } from "@/lib/quiz/quiz-engine";
 import type {
   QuizData,
   QuizResult as QuizResultType,
-} from "@content/quizzes/quiz-engine";
+} from "@/lib/quiz/quiz-engine";
 
 interface QuizContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   quiz: QuizData;

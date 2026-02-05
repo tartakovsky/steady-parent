@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { QuizContainer } from "@/components/quiz";
-import { getQuizBySlug, getAllQuizSlugs } from "@content/quizzes";
+import { getQuizBySlug, getAllQuizSlugs } from "@/lib/quiz";
 
 // Disable dynamic params - only pre-generated slugs are valid
 export const dynamicParams = false;

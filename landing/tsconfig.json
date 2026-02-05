@@ -54,9 +54,6 @@
       ],
       "@lib/*": [
         "./src/lib/*"
-      ],
-      "@content/*": [
-        "../content/*"
       ]
     }
   },
@@ -65,8 +62,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "../content/**/*.ts"
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

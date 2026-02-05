@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Check, AlertTriangle, RotateCcw, Share2 } from "lucide-react";
-import type { QuizResult as QuizResultType } from "@content/quizzes/quiz-engine";
+import type { QuizResult as QuizResultType } from "@/lib/quiz/quiz-engine";
 
 interface QuizResultProps extends React.HTMLAttributes<HTMLDivElement> {
   result: QuizResultType;

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { QuizOption } from "./quiz-option";
-import type { QuizQuestion as QuizQuestionType } from "@content/quizzes/quiz-engine";
+import type { QuizQuestion as QuizQuestionType } from "@/lib/quiz/quiz-engine";
 
 interface QuizQuestionProps {
   question: QuizQuestionType;
