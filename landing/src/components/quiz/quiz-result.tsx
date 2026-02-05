@@ -61,10 +61,10 @@ export function QuizResult({
   return (
     <div className={cn("space-y-8", className)} {...props}>
       {/* Hero Section */}
-      <div className="space-y-4 text-center">
+      <div className="space-y-4">
         <h1 className={cn("heading-lg", getResultColor())}>{result.headline}</h1>
         <p className="text-xl text-muted-foreground">{result.subheadline}</p>
-        <p className="text-foreground max-w-2xl mx-auto">{result.explanation}</p>
+        <p className="text-foreground">{result.explanation}</p>
       </div>
 
       {/* Overall Score */}
@@ -185,19 +185,19 @@ export function QuizResult({
       )}
 
       {/* Encouragement */}
-      <div className="text-center p-6 bg-primary/5 rounded-lg">
+      <div className="p-6 bg-primary/5 rounded-lg">
         <p className="text-lg italic text-foreground">{result.encouragement}</p>
       </div>
 
       {/* Retake Advice */}
       {result.retakeAdvice && (
-        <p className="text-center text-muted-foreground">
+        <p className="text-muted-foreground">
           {result.retakeAdvice}
         </p>
       )}
 
       {/* Action Buttons */}
-      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+      <div className="flex flex-col sm:flex-row gap-3">
         {onRetake && (
           <Button variant="outline" onClick={onRetake} className="gap-2">
             <RotateCcw className="h-4 w-4" />
