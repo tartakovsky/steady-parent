@@ -1,0 +1,597 @@
+/**
+ * Quiz: Is My Toddler Ready for Potty Training?
+ *
+ * Scientific basis:
+ * - American Academy of Pediatrics developmental readiness criteria
+ * - Stanford Medicine toilet training guidelines
+ * - Mayo Clinic readiness indicators
+ *
+ * Sources:
+ * - https://www.healthychildren.org/English/ages-stages/toddler/toilet-training
+ * - https://www.stanfordchildrens.org/en/topic/default?id=toilet-training-quiz-40-ToiletTrainingQuiz
+ * - https://mcpress.mayoclinic.org/parenting/toilet-training-recognizing-readiness/
+ */
+
+// ============================================================================
+// TYPES
+// ============================================================================
+
+export interface QuizOption {
+  id: string;
+  text: string;
+  points: number;
+}
+
+export interface QuizQuestion {
+  id: string;
+  domain: 'physical' | 'cognitive' | 'emotional';
+  text: string;
+  subtext?: string;
+  options: QuizOption[];
+  source: string;
+}
+
+export interface DomainConfig {
+  id: string;
+  name: string;
+  maxPoints: number;
+  thresholds: {
+    high: number;   // >= this is "high"
+    medium: number; // >= this is "medium", below is "low"
+  };
+}
+
+export interface DomainLevel {
+  level: 'high' | 'medium' | 'low';
+  headline: string;
+  detail: string;
+  strength?: string;
+  concern?: string;
+}
+
+export interface ResultTemplate {
+  id: 'ready' | 'almost' | 'not-yet';
+  scoreRange: { min: number; max: number };
+  headline: string;
+  subheadline: string;
+  explanation: string;
+  nextSteps: string[];
+  watchOutFor: string;
+  encouragement: string;
+  retakeAdvice?: string;
+}
+
+export interface QuizResult {
+  totalScore: number;
+  maxScore: number;
+  percentage: number;
+  resultType: 'ready' | 'almost' | 'not-yet';
+  headline: string;
+  subheadline: string;
+  explanation: string;
+  domains: {
+    id: string;
+    name: string;
+    score: number;
+    maxScore: number;
+    level: 'high' | 'medium' | 'low';
+    headline: string;
+    detail: string;
+    strength?: string;
+    concern?: string;
+  }[];
+  strengths: string[];
+  concerns: string[];
+  nextSteps: string[];
+  watchOutFor: string;
+  encouragement: string;
+  retakeAdvice?: string;
+}
+
+// ============================================================================
+// QUIZ METADATA
+// ============================================================================
+
+export const quizMeta = {
+  id: 'potty-training-readiness',
+  slug: 'is-my-toddler-ready-for-potty-training',
+
+  // SEO-optimized title (what parents search for)
+  title: 'Is My Toddler Ready for Potty Training?',
+  shortTitle: 'Potty Training Readiness Quiz',
+
+  description: 'A research-backed assessment to help you determine if your toddler is ready to start potty training. Based on AAP guidelines.',
+
+  intro: `Most children show signs of readiness between 18 months and 3 years, but every child is different. This quiz assesses readiness across three research-backed domains: physical readiness, cognitive awareness, and emotional readiness.
+
+Answer based on what your child does NOW, not what you hope they'll do soon.`,
+
+  estimatedTime: '2 minutes',
+  questionCount: 10,
+
+  // For credibility display
+  sources: [
+    {
+      name: 'American Academy of Pediatrics',
+      url: 'https://www.healthychildren.org/English/ages-stages/toddler/toilet-training',
+    },
+    {
+      name: 'Mayo Clinic',
+      url: 'https://mcpress.mayoclinic.org/parenting/toilet-training-recognizing-readiness/',
+    },
+    {
+      name: 'Stanford Medicine',
+      url: 'https://www.stanfordchildrens.org/en/topic/default?id=toilet-training-quiz-40-ToiletTrainingQuiz',
+    },
+  ],
+
+  // Age relevance
+  ageRange: { min: 18, max: 42, unit: 'months' },
+};
+
+// ============================================================================
+// DOMAINS CONFIGURATION
+// ============================================================================
+
+export const domains: Record<string, DomainConfig> = {
+  physical: {
+    id: 'physical',
+    name: 'Physical Readiness',
+    maxPoints: 10,
+    thresholds: {
+      high: 8,    // 8-10 = high
+      medium: 4,  // 4-7 = medium, 0-3 = low
+    },
+  },
+  cognitive: {
+    id: 'cognitive',
+    name: 'Cognitive Awareness',
+    maxPoints: 7,
+    thresholds: {
+      high: 6,    // 6-7 = high
+      medium: 3,  // 3-5 = medium, 0-2 = low
+    },
+  },
+  emotional: {
+    id: 'emotional',
+    name: 'Emotional & Social Readiness',
+    maxPoints: 7,
+    thresholds: {
+      high: 6,    // 6-7 = high
+      medium: 3,  // 3-5 = medium, 0-2 = low
+    },
+  },
+};
+
+// ============================================================================
+// QUESTIONS
+// ============================================================================
+
+export const questions: QuizQuestion[] = [
+  // PHYSICAL DOMAIN (Q1-Q4, max 10 points)
+  {
+    id: 'q1',
+    domain: 'physical',
+    text: 'Can your child stay dry for at least 2 hours at a time during the day?',
+    subtext: 'Check their diaper after naps or quiet play periods.',
+    options: [
+      { id: 'q1a', text: 'Yes, regularly', points: 3 },
+      { id: 'q1b', text: 'Sometimes, but not consistently', points: 1 },
+      { id: 'q1c', text: 'No, they\'re wet frequently', points: 0 },
+    ],
+    source: 'Mayo Clinic - bladder control maturation indicator',
+  },
+  {
+    id: 'q2',
+    domain: 'physical',
+    text: 'Does your child have predictable bowel movements?',
+    subtext: 'Around the same time each day, or after meals.',
+    options: [
+      { id: 'q2a', text: 'Yes, very predictable', points: 3 },
+      { id: 'q2b', text: 'Somewhat predictable', points: 1 },
+      { id: 'q2c', text: 'No pattern at all', points: 0 },
+    ],
+    source: 'AAP - bowel regularity as readiness indicator',
+  },
+  {
+    id: 'q3',
+    domain: 'physical',
+    text: 'Can your child walk to the bathroom and sit on a potty or toilet?',
+    options: [
+      { id: 'q3a', text: 'Yes, easily', points: 2 },
+      { id: 'q3b', text: 'With some help', points: 1 },
+      { id: 'q3c', text: 'Not yet', points: 0 },
+    ],
+    source: 'Stanford Medicine - motor skill requirements',
+  },
+  {
+    id: 'q4',
+    domain: 'physical',
+    text: 'Can your child pull their pants up and down?',
+    subtext: 'Minimal help is okay.',
+    options: [
+      { id: 'q4a', text: 'Yes, mostly by themselves', points: 2 },
+      { id: 'q4b', text: 'With significant help', points: 1 },
+      { id: 'q4c', text: 'Not yet', points: 0 },
+    ],
+    source: 'AAP - fine motor readiness',
+  },
+
+  // COGNITIVE DOMAIN (Q5-Q7, max 7 points)
+  {
+    id: 'q5',
+    domain: 'cognitive',
+    text: 'Does your child show awareness when they\'re peeing or pooping?',
+    subtext: 'Stops playing, squats, goes to a corner, makes a face, or tells you.',
+    options: [
+      { id: 'q5a', text: 'Yes, clearly shows awareness', points: 3 },
+      { id: 'q5b', text: 'Sometimes seems aware', points: 1 },
+      { id: 'q5c', text: 'Shows no awareness', points: 0 },
+    ],
+    source: 'Stanford Medicine - interoceptive awareness',
+  },
+  {
+    id: 'q6',
+    domain: 'cognitive',
+    text: 'Can your child follow simple 2-step instructions?',
+    subtext: 'Example: "Get your shoes and bring them here."',
+    options: [
+      { id: 'q6a', text: 'Yes, consistently', points: 2 },
+      { id: 'q6b', text: 'Sometimes', points: 1 },
+      { id: 'q6c', text: 'Not yet', points: 0 },
+    ],
+    source: 'AAP - cognitive readiness for understanding potty training steps',
+  },
+  {
+    id: 'q7',
+    domain: 'cognitive',
+    text: 'Does your child understand basic potty-related words?',
+    subtext: 'Words like: pee, poop, wet, dry, potty.',
+    options: [
+      { id: 'q7a', text: 'Yes, understands and uses some words', points: 2 },
+      { id: 'q7b', text: 'Understands but doesn\'t use the words', points: 1 },
+      { id: 'q7c', text: 'Doesn\'t seem to understand', points: 0 },
+    ],
+    source: 'Mayo Clinic - language comprehension as readiness indicator',
+  },
+
+  // EMOTIONAL DOMAIN (Q8-Q10, max 7 points)
+  {
+    id: 'q8',
+    domain: 'emotional',
+    text: 'Does your child show discomfort with wet or dirty diapers?',
+    subtext: 'Asks to be changed, pulls at diaper, says "yucky" or similar.',
+    options: [
+      { id: 'q8a', text: 'Yes, clearly dislikes being wet or dirty', points: 3 },
+      { id: 'q8b', text: 'Sometimes bothered', points: 1 },
+      { id: 'q8c', text: 'Doesn\'t seem to notice or care', points: 0 },
+    ],
+    source: 'AAP - motivation indicator',
+  },
+  {
+    id: 'q9',
+    domain: 'emotional',
+    text: 'Does your child show interest in the bathroom or toilet?',
+    subtext: 'Curious about others using the toilet, wants to watch, asks questions.',
+    options: [
+      { id: 'q9a', text: 'Yes, very curious', points: 2 },
+      { id: 'q9b', text: 'Some interest', points: 1 },
+      { id: 'q9c', text: 'No interest', points: 0 },
+    ],
+    source: 'Stanford Medicine - social modeling readiness',
+  },
+  {
+    id: 'q10',
+    domain: 'emotional',
+    text: 'Is your child in a generally cooperative phase right now?',
+    subtext: 'Not in a major "no to everything" phase.',
+    options: [
+      { id: 'q10a', text: 'Yes, mostly cooperative', points: 2 },
+      { id: 'q10b', text: 'Mixed - some cooperation, some resistance', points: 1 },
+      { id: 'q10c', text: 'Very oppositional right now', points: 0 },
+    ],
+    source: 'AAP - timing recommendation to avoid power struggles',
+  },
+];
+
+// ============================================================================
+// DOMAIN-LEVEL CONTENT (Pre-written blocks for each domain at each level)
+// ============================================================================
+
+export const domainContent: Record<string, Record<'high' | 'medium' | 'low', DomainLevel>> = {
+  physical: {
+    high: {
+      level: 'high',
+      headline: 'Body is ready',
+      detail: 'Your child has developed the bladder control and motor skills needed for potty training. They can stay dry for reasonable periods and have the physical coordination to use the toilet.',
+      strength: 'Strong physical readiness - your child\'s body has matured enough for toilet training',
+    },
+    medium: {
+      level: 'medium',
+      headline: 'Physical skills emerging',
+      detail: 'Your child is developing the physical control needed, but it\'s not fully consistent yet. This often improves quickly over a few weeks.',
+      concern: 'Physical control is still developing - you may see more accidents if you start now',
+    },
+    low: {
+      level: 'low',
+      headline: 'Physical maturation in progress',
+      detail: 'Your child\'s body is still developing the bladder and bowel control needed for potty training. This is developmental, not behavioral - it simply takes time.',
+      concern: 'Physical readiness typically develops between 18-30 months. Your child\'s body needs more time.',
+    },
+  },
+  cognitive: {
+    high: {
+      level: 'high',
+      headline: 'Understands the concept',
+      detail: 'Your child can recognize body signals, follow instructions, and understands what the potty is for. This cognitive foundation makes training much smoother.',
+      strength: 'Strong cognitive awareness - your child understands the process and can communicate about it',
+    },
+    medium: {
+      level: 'medium',
+      headline: 'Building understanding',
+      detail: 'Your child is starting to connect the dots but may not fully grasp all the steps yet. Keep talking about it casually to build familiarity.',
+      concern: 'Cognitive understanding is building - expect to repeat instructions often and be patient with confusion',
+    },
+    low: {
+      level: 'low',
+      headline: 'Still developing comprehension',
+      detail: 'Your child isn\'t yet making the connection between body sensations and what to do about them. This is completely normal, especially under age 2.',
+      concern: 'The cognitive connections needed for potty training typically develop between ages 2-3',
+    },
+  },
+  emotional: {
+    high: {
+      level: 'high',
+      headline: 'Motivated and cooperative',
+      detail: 'Your child is interested in the toilet, bothered by wet diapers, and in a cooperative phase. This motivation is a huge advantage.',
+      strength: 'Strong emotional readiness - your child WANTS to do this, which makes everything easier',
+    },
+    medium: {
+      level: 'medium',
+      headline: 'Interest emerging',
+      detail: 'Your child shows some interest but isn\'t fully motivated yet. Nurturing this curiosity without pressure can help it grow.',
+      concern: 'Motivation is still building - forcing it now could create resistance',
+    },
+    low: {
+      level: 'low',
+      headline: 'Not motivated yet',
+      detail: 'Your child isn\'t showing interest in the toilet and isn\'t bothered by diapers. That\'s okay - interest often emerges suddenly when the time is right.',
+      concern: 'Without internal motivation, potty training becomes a power struggle. Let interest develop naturally.',
+    },
+  },
+};
+
+// ============================================================================
+// RESULT TEMPLATES
+// ============================================================================
+
+export const resultTemplates: ResultTemplate[] = [
+  {
+    id: 'ready',
+    scoreRange: { min: 19, max: 24 },
+    headline: 'Green Light!',
+    subheadline: 'Your toddler is showing strong readiness signs.',
+    explanation: 'Your child is demonstrating readiness across all three domains: physical control, cognitive awareness, and emotional willingness. Research shows that children who start potty training when truly ready typically complete the process faster and with fewer setbacks.',
+    nextSteps: [
+      'Pick a calm week to start - avoid major transitions like new siblings, moving, or starting daycare',
+      'Let your child pick out underwear or a potty seat to build excitement',
+      'Use your child\'s natural motivation - children who are ready often train quickly with gentle guidance',
+      'Expect some accidents and treat them matter-of-factly, not as failures',
+    ],
+    watchOutFor: 'Even ready children may regress during stress, illness, or big life changes. If this happens, it\'s normal - stay patient and don\'t treat it as a step backward.',
+    encouragement: 'You\'ve waited for the right time, which sets you up for success. Trust your child\'s readiness and your own instincts.',
+  },
+  {
+    id: 'almost',
+    scoreRange: { min: 12, max: 18 },
+    headline: 'Yellow Light',
+    subheadline: 'Your toddler is getting there - a few more weeks may help.',
+    explanation: 'Your child is showing some readiness signs but may not have all the pieces in place yet. Starting now could work with extra patience, but waiting 2-4 weeks often leads to a smoother process.',
+    nextSteps: [
+      'Don\'t pressure, but DO prepare: read potty books together, let them observe, talk about it casually',
+      'Watch for the missing readiness signs to emerge naturally',
+      'Consider a gentle introduction - a potty chair in the bathroom, sitting on it clothed',
+      'Retake this quiz in 2-4 weeks to check progress',
+    ],
+    watchOutFor: 'If you decide to start now, watch for daily battles or increasing resistance. These are signals to pause and try again later - not signs of failure.',
+    encouragement: 'Your child is close! A little more time often makes a big difference. The readiness signs you\'re already seeing are great progress.',
+    retakeAdvice: 'Retake this quiz in 2-4 weeks',
+  },
+  {
+    id: 'not-yet',
+    scoreRange: { min: 0, max: 11 },
+    headline: 'Not Quite Yet',
+    subheadline: 'Your toddler needs more time - and that\'s completely okay.',
+    explanation: 'Your child isn\'t showing consistent readiness signs yet. This is normal and has nothing to do with intelligence or your parenting. Children trained before they\'re ready actually take longer to complete the process and have more accidents.',
+    nextSteps: [
+      'Zero pressure - avoid making potty training feel like a test or expectation',
+      'Casually introduce the concept through books, observation, and play',
+      'Keep diapers without any shame - "Diapers are for kids who aren\'t ready yet. You\'ll be ready when your body is ready."',
+      'Watch for readiness signs to emerge over the next few months',
+    ],
+    watchOutFor: 'Well-meaning family members may pressure you to start. Remember: research clearly shows that early training doesn\'t lead to earlier completion - it just leads to a longer, harder process.',
+    encouragement: 'The average age for completing potty training is 2.5 to 3.5 years. Your child\'s timeline is their own, and waiting for readiness is the evidence-based approach.',
+    retakeAdvice: 'Retake this quiz in 4-6 weeks',
+  },
+];
+
+// ============================================================================
+// SCORING & RESULT ASSEMBLY LOGIC
+// ============================================================================
+
+/**
+ * Calculate scores from user answers
+ */
+export function calculateScores(
+  answers: Record<string, string> // { questionId: optionId }
+): { total: number; byDomain: Record<string, number> } {
+  const byDomain: Record<string, number> = {
+    physical: 0,
+    cognitive: 0,
+    emotional: 0,
+  };
+
+  for (const question of questions) {
+    const selectedOptionId = answers[question.id];
+    if (!selectedOptionId) continue;
+
+    const selectedOption = question.options.find(o => o.id === selectedOptionId);
+    if (selectedOption) {
+      byDomain[question.domain] += selectedOption.points;
+    }
+  }
+
+  const total = Object.values(byDomain).reduce((sum, score) => sum + score, 0);
+  return { total, byDomain };
+}
+
+/**
+ * Determine the level (high/medium/low) for a domain score
+ */
+export function getDomainLevel(
+  domainId: string,
+  score: number
+): 'high' | 'medium' | 'low' {
+  const config = domains[domainId];
+  if (!config) return 'low';
+
+  if (score >= config.thresholds.high) return 'high';
+  if (score >= config.thresholds.medium) return 'medium';
+  return 'low';
+}
+
+/**
+ * Get the result template based on total score
+ */
+export function getResultTemplate(totalScore: number): ResultTemplate {
+  for (const template of resultTemplates) {
+    if (totalScore >= template.scoreRange.min && totalScore <= template.scoreRange.max) {
+      return template;
+    }
+  }
+  // Fallback to not-yet if something goes wrong
+  return resultTemplates[2];
+}
+
+/**
+ * Assemble the complete result from answers
+ */
+export function assembleResult(
+  answers: Record<string, string>
+): QuizResult {
+  const { total, byDomain } = calculateScores(answers);
+  const maxScore = Object.values(domains).reduce((sum, d) => sum + d.maxPoints, 0);
+  const template = getResultTemplate(total);
+
+  // Build domain results
+  const domainResults = Object.entries(domains).map(([id, config]) => {
+    const score = byDomain[id];
+    const level = getDomainLevel(id, score);
+    const content = domainContent[id][level];
+
+    return {
+      id,
+      name: config.name,
+      score,
+      maxScore: config.maxPoints,
+      level,
+      headline: content.headline,
+      detail: content.detail,
+      strength: content.strength,
+      concern: content.concern,
+    };
+  });
+
+  // Collect strengths (from high-level domains)
+  const strengths = domainResults
+    .filter(d => d.level === 'high' && d.strength)
+    .map(d => d.strength!);
+
+  // Collect concerns (from medium/low-level domains)
+  const concerns = domainResults
+    .filter(d => d.level !== 'high' && d.concern)
+    .map(d => d.concern!);
+
+  return {
+    totalScore: total,
+    maxScore,
+    percentage: Math.round((total / maxScore) * 100),
+    resultType: template.id,
+    headline: template.headline,
+    subheadline: template.subheadline,
+    explanation: template.explanation,
+    domains: domainResults,
+    strengths,
+    concerns,
+    nextSteps: template.nextSteps,
+    watchOutFor: template.watchOutFor,
+    encouragement: template.encouragement,
+    retakeAdvice: template.retakeAdvice,
+  };
+}
+
+// ============================================================================
+// SHAREABLE CARD DATA
+// ============================================================================
+
+export interface ShareableCard {
+  quizTitle: string;
+  resultHeadline: string;
+  resultType: 'ready' | 'almost' | 'not-yet';
+  totalScore: number;
+  maxScore: number;
+  domains: {
+    name: string;
+    score: number;
+    maxScore: number;
+    percentage: number;
+  }[];
+  url: string;
+}
+
+export function generateShareableCard(result: QuizResult): ShareableCard {
+  return {
+    quizTitle: 'Potty Training Readiness',
+    resultHeadline: result.headline,
+    resultType: result.resultType,
+    totalScore: result.totalScore,
+    maxScore: result.maxScore,
+    domains: result.domains.map(d => ({
+      name: d.name,
+      score: d.score,
+      maxScore: d.maxScore,
+      percentage: Math.round((d.score / d.maxScore) * 100),
+    })),
+    url: 'steady-parent.com/quiz/potty-training-readiness',
+  };
+}
+
+// ============================================================================
+// EXAMPLE USAGE
+// ============================================================================
+
+/*
+// User answers (questionId -> optionId)
+const userAnswers = {
+  q1: 'q1a',   // Yes, regularly (3 pts)
+  q2: 'q2a',   // Yes, very predictable (3 pts)
+  q3: 'q3a',   // Yes, easily (2 pts)
+  q4: 'q4b',   // With significant help (1 pt)
+  q5: 'q5a',   // Yes, clearly shows awareness (3 pts)
+  q6: 'q6a',   // Yes, consistently (2 pts)
+  q7: 'q7b',   // Understands but doesn't use (1 pt)
+  q8: 'q8a',   // Yes, clearly dislikes (3 pts)
+  q9: 'q9a',   // Yes, very curious (2 pts)
+  q10: 'q10b', // Mixed cooperation (1 pt)
+};
+
+const result = assembleResult(userAnswers);
+console.log(result);
+
+// Result would show:
+// - totalScore: 21
+// - resultType: 'ready'
+// - domains: physical (9/10 high), cognitive (6/7 high), emotional (6/7 high)
+// - strengths: [physical strength, cognitive strength, emotional strength]
+// - concerns: []
+*/

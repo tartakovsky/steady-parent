@@ -1,0 +1,171 @@
+/**
+ * Test file for potty-training-readiness quiz
+ * Run with: npx tsx content/quizzes/potty-training-readiness.test.ts
+ */
+
+import {
+  questions,
+  domains,
+  calculateScores,
+  getDomainLevel,
+  getResultTemplate,
+  assembleResult,
+  generateShareableCard,
+} from './potty-training-readiness';
+
+// ============================================================================
+// TEST SCENARIOS
+// ============================================================================
+
+// Scenario 1: Fully ready child (all "a" answers)
+const readyChild = {
+  q1: 'q1a', q2: 'q2a', q3: 'q3a', q4: 'q4a',
+  q5: 'q5a', q6: 'q6a', q7: 'q7a',
+  q8: 'q8a', q9: 'q9a', q10: 'q10a',
+};
+
+// Scenario 2: Not ready child (all "c" answers)
+const notReadyChild = {
+  q1: 'q1c', q2: 'q2c', q3: 'q3c', q4: 'q4c',
+  q5: 'q5c', q6: 'q6c', q7: 'q7c',
+  q8: 'q8c', q9: 'q9c', q10: 'q10c',
+};
+
+// Scenario 3: Mixed - physically ready, cognitively/emotionally not quite
+const mixedChild1 = {
+  q1: 'q1a', q2: 'q2a', q3: 'q3a', q4: 'q4a', // physical: 10/10
+  q5: 'q5b', q6: 'q6b', q7: 'q7b',             // cognitive: 3/7
+  q8: 'q8b', q9: 'q9b', q10: 'q10b',           // emotional: 3/7
+};
+
+// Scenario 4: Mixed - emotionally ready, physically not quite
+const mixedChild2 = {
+  q1: 'q1b', q2: 'q2b', q3: 'q3b', q4: 'q4b', // physical: 4/10
+  q5: 'q5a', q6: 'q6a', q7: 'q7a',             // cognitive: 7/7
+  q8: 'q8a', q9: 'q9a', q10: 'q10a',           // emotional: 7/7
+};
+
+// Scenario 5: Borderline (between almost and ready)
+const borderlineChild = {
+  q1: 'q1a', q2: 'q2a', q3: 'q3a', q4: 'q4b', // physical: 9/10
+  q5: 'q5a', q6: 'q6b', q7: 'q7b',             // cognitive: 5/7
+  q8: 'q8b', q9: 'q9a', q10: 'q10b',           // emotional: 4/7
+};
+
+// ============================================================================
+// RUN TESTS
+// ============================================================================
+
+console.log('='.repeat(70));
+console.log('POTTY TRAINING READINESS QUIZ - TEST SCENARIOS');
+console.log('='.repeat(70));
+
+function testScenario(name: string, answers: Record<string, string>) {
+  console.log(`\n${'─'.repeat(70)}`);
+  console.log(`SCENARIO: ${name}`);
+  console.log('─'.repeat(70));
+
+  const result = assembleResult(answers);
+
+  console.log(`\nSCORES:`);
+  console.log(`  Total: ${result.totalScore}/${result.maxScore} (${result.percentage}%)`);
+  console.log(`  Result Type: ${result.resultType.toUpperCase()}`);
+
+  console.log(`\nDOMAINS:`);
+  for (const domain of result.domains) {
+    const bar = '█'.repeat(Math.round((domain.score / domain.maxScore) * 10));
+    const empty = '░'.repeat(10 - bar.length);
+    console.log(`  ${domain.name.padEnd(25)} ${bar}${empty} ${domain.score}/${domain.maxScore} (${domain.level})`);
+  }
+
+  console.log(`\nRESULT:`);
+  console.log(`  Headline: ${result.headline}`);
+  console.log(`  Subheadline: ${result.subheadline}`);
+
+  if (result.strengths.length > 0) {
+    console.log(`\nSTRENGTHS:`);
+    for (const strength of result.strengths) {
+      console.log(`  ✓ ${strength}`);
+    }
+  }
+
+  if (result.concerns.length > 0) {
+    console.log(`\nCONCERNS:`);
+    for (const concern of result.concerns) {
+      console.log(`  ⚠ ${concern}`);
+    }
+  }
+
+  console.log(`\nNEXT STEPS:`);
+  for (const step of result.nextSteps) {
+    console.log(`  • ${step}`);
+  }
+
+  if (result.retakeAdvice) {
+    console.log(`\nRETAKE: ${result.retakeAdvice}`);
+  }
+
+  // Generate shareable card
+  const card = generateShareableCard(result);
+  console.log(`\nSHAREABLE CARD:`);
+  console.log(`  ┌${'─'.repeat(40)}┐`);
+  console.log(`  │ ${card.quizTitle.padEnd(38)} │`);
+  console.log(`  │ ${card.resultHeadline.padEnd(38)} │`);
+  console.log(`  │ Score: ${card.totalScore}/${card.maxScore}`.padEnd(41) + '│');
+  for (const d of card.domains) {
+    const pct = `${d.percentage}%`;
+    console.log(`  │   ${d.name}: ${pct}`.padEnd(41) + '│');
+  }
+  console.log(`  │ ${card.url.padEnd(38)} │`);
+  console.log(`  └${'─'.repeat(40)}┘`);
+}
+
+testScenario('Fully Ready Child (max scores)', readyChild);
+testScenario('Not Ready Child (min scores)', notReadyChild);
+testScenario('Mixed: Physical ready, Cognitive/Emotional developing', mixedChild1);
+testScenario('Mixed: Cognitive/Emotional ready, Physical developing', mixedChild2);
+testScenario('Borderline (between almost and ready)', borderlineChild);
+
+// ============================================================================
+// VALIDATION CHECKS
+// ============================================================================
+
+console.log(`\n${'='.repeat(70)}`);
+console.log('VALIDATION CHECKS');
+console.log('='.repeat(70));
+
+// Check question count
+console.log(`\n✓ Total questions: ${questions.length}`);
+
+// Check max possible score
+const maxPossible = questions.reduce((sum, q) => {
+  const maxOption = Math.max(...q.options.map(o => o.points));
+  return sum + maxOption;
+}, 0);
+const expectedMax = Object.values(domains).reduce((sum, d) => sum + d.maxPoints, 0);
+console.log(`✓ Max possible score: ${maxPossible} (expected: ${expectedMax})`);
+
+// Check domain coverage
+const domainCounts: Record<string, number> = {};
+for (const q of questions) {
+  domainCounts[q.domain] = (domainCounts[q.domain] || 0) + 1;
+}
+console.log(`✓ Questions per domain:`);
+for (const [domain, count] of Object.entries(domainCounts)) {
+  console.log(`    ${domain}: ${count} questions`);
+}
+
+// Check result template coverage
+console.log(`✓ Result templates cover scores 0-${expectedMax}:`);
+const resultCoverage = new Set<number>();
+for (let score = 0; score <= expectedMax; score++) {
+  const template = getResultTemplate(score);
+  resultCoverage.add(score);
+  if (score === 0 || score === 11 || score === 12 || score === 18 || score === 19 || score === expectedMax) {
+    console.log(`    Score ${score} -> ${template.id}`);
+  }
+}
+
+console.log('\n' + '='.repeat(70));
+console.log('ALL TESTS COMPLETE');
+console.log('='.repeat(70) + '\n');
