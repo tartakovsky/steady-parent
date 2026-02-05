@@ -234,13 +234,7 @@ export function QuizResult({
         </p>
 
         {/* Quick actions right in the hero */}
-        <div className="flex flex-wrap gap-3 mt-6">
-          {onRetake && (
-            <Button onClick={onRetake} className="gap-2" style={{ backgroundColor: theme.color }}>
-              <RotateCcw className="h-4 w-4" />
-              Take the quiz yourself
-            </Button>
-          )}
+        <div className="flex gap-3 mt-6">
           <Button variant="outline" size="sm" onClick={handleCopyLink} className="gap-1.5 bg-background/80">
             {copied ? (
               <>
@@ -258,6 +252,12 @@ export function QuizResult({
             <Download className="h-3.5 w-3.5" />
             {saving ? "Saving..." : "Save PDF"}
           </Button>
+          {onRetake && (
+            <Button variant="ghost" size="sm" onClick={onRetake} className="gap-1.5">
+              <RotateCcw className="h-3.5 w-3.5" />
+              Retake
+            </Button>
+          )}
         </div>
       </div>
 
@@ -387,24 +387,6 @@ export function QuizResult({
           </p>
         )}
       </div>
-
-      {/* ── Bottom CTA ────────────────────────────────────────── */}
-      {onRetake && (
-        <div className="text-center space-y-3 pt-2">
-          <Button
-            size="lg"
-            onClick={onRetake}
-            className="gap-2 text-lg px-8 py-6"
-            style={{ backgroundColor: theme.color }}
-          >
-            <RotateCcw className="h-5 w-5" />
-            Take the quiz yourself
-          </Button>
-          <p className="text-sm text-muted-foreground">
-            {quizMeta.shortTitle} &middot; {result.domains.length} areas &middot; 2 minutes
-          </p>
-        </div>
-      )}
     </div>
   );
 }
