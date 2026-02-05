@@ -1,5 +1,11 @@
 # Steady Parent (Monorepo)
 
+## Critical Operational Standards
+**1. Deep Analysis Over Speed:** Never skimp on reading context. When asked for a plan or schema, read the **entire** relevant source file first. Do not rely on memory or "gist."
+**2. Anti-Sycophancy:** Do not just agree with the user to move the conversation forward. If the user points out an error, fix it thoroughly. If the user is mistaken, explain why with evidence. Stop being a "yes man."
+**3. Comprehensive Output:** For architectural or structural tasks, provide the **complete, detailed solution**. Do not offer "half-assed" summaries. If a file has 10 requirements, the output must cover 10 requirements.
+**4. Verification:** Before outputting a schema or plan, cross-reference it against the source text line-by-line to ensure nothing was missed (e.g., Author fields, specific constraints).
+
 ## Project Overview
 Steady Parent is a parenting resources platform designed to provide evidence-based strategies (focused on tantrum resets, emotional regulation, and secure attachment) for parents. The project transitioned from a single Next.js landing page into a monorepo to support multiple services and content research.
 
