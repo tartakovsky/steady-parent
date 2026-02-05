@@ -33,14 +33,32 @@ The pipeline transforms ~1000 crawled articles into ~170 publishable blog posts 
 ## Phase 2: Knowledge Extraction
 <!-- LLM-run per article -->
 
-Use specifically Opus 4.5 with knowledge-extractor skill, one run per article, no batching.
+### 2.1: Extract structured knowledge
+Use specifically Opus 4.5 with knowledge-extractor skill, one run per article, no batching. It will strip authors' style and tone, re-organize the article into logically coherent sequence of knowlege written in punchy hook->paragraph style without losing any info. 
 
+### 2.2: Gather metadata
+Cheap LLM run per knowledge object to get small summary, save into index. Put word count there, source link, file path and so on
+
+blog/index.json:
+```
+"biglittlefeelings/handling-toddler-fears-and-tears": {
+    "title": "Handling Toddler Fears and Tears",
+    "source_url": "https://biglittlefeelings.com/blogs/blf/handling-toddler-fears-and-tears",
+    "source_blog": "biglittlefeelings",
+    "file": "biglittlefeelings/handling-toddler-fears-and-tears.md",
+    "word_count": null,
+    "summary": null,
+  },
+```
 ---
 
 ## Phase 3: Taxonomy & Classification
 
 ### 3.1 Taxonomy Definition
-<!-- One LLM run over all article titles in batch + ask to use it's own domain knowledge + discussion -->
+<!-- 
+- One LLM run over all article titles in batch + ask to use it's own domain knowledge + discussion 
+- Then maybe a few LLM runs with taxonomy + e.g. 20 pairs (title, summary) per batch to detail the taxonomy better. So we know which topics we actually have data for. Categories are extracting well from just titles. Making series would probably better with summaries too.
+-->
 
 Define the parent problem-space taxonomy (see `taxonomy.md`):
 - Currently, 17 top-level clusters (Tantrums, Hitting, Sleep, Siblings, Anxiety, etc.)
@@ -76,7 +94,6 @@ Aggression
 
 ### 4.3 Source Mapping
 <!-- 
-- Cheap LLM run per knowledge object to get small summary
 - Decent LLM run in batches over [title, summary]
 - Give it high-level taxonomy as input and ask to assign knowledge object from the batch to one or more most relevant taxonomy clusters
 - Maybe 20 knowledge object (title+summary, not text) per batch
@@ -96,7 +113,8 @@ For each planned article:
 **This is the critical dependency-resolution phase.** Nothing can be finalized until this is complete.
 
 ### 5.1 URL Inventory
-Create canonical URLs for **every planned page** before any content is written:Ñ‘
+<!-- LLM run over big batches of article titles and category names. Important to verify that there are no duplicates after, as we're compressing long article names into shorter slugs. -->
+Create canonical URLs for **every planned page** before any content is written:
 
 **Blog articles:**
 ```
@@ -116,6 +134,7 @@ Create canonical URLs for **every planned page** before any content is written:Ñ
 ```
 
 **Series landing pages:**
+<!-- Pillar articles on them? -->
 ```
 /tantrums/
 /sleep/
@@ -125,9 +144,9 @@ Create canonical URLs for **every planned page** before any content is written:Ñ
 
 ### 5.2 Link Plan
 <!-- 
-
+LLM over taxonomy, one shot with Opus 4.5 might be enough, the other models will skip stuff. Not for my amount of data though. Probably needs a few shots. First figuring out dependencies between series. Then one shot on each series with one series taxonomy + cross-series connections + tool urls. 
  -->
- 
+
 For each article, define intended internal links:
 - **Outbound links**: which other articles/assets this article should link to (5-10 per article)
 - **Anchor intent**: brief note on what context the link serves
@@ -147,6 +166,19 @@ Linkable assets (tools, quizzes, stats pages) must be planned first because:
 ## Phase 6: Content Synthesis
 
 ### 6.1 Per-Article Source File
+<!-- 
+Merge 1-5 knowledge files, run one Opus 4.5 knowledge-extraction per merged file. That would give aggregated knowledge file source for actual article.
+
+Put linking plan nearby
+
+```
+article1/
+- knowledge_source.md
+- category_taxonomy.md
+- linking.md
+```
+
+ -->
 For each target article, create a single consolidated source file:
 - Aggregate relevant knowledge objects from mapped sources
 - Re-extract/reorganize into article-specific structure
@@ -165,12 +197,14 @@ The source file should specify **link hook points**â€”topics that must be mentio
 ## Phase 7: Article Generation (Pass 1 - Draft)
 
 ### 7.1 Raw Text Generation
+<!-- One LLM run per source file. Probably Opus 4.5, but run Gemini 3 Pro, Opus 4.5 and GPT 5.2 and compare on one article, I forgot which one I wrote the good stuff with -->
 Generate article body text from the per-article source file:
 - Follow structure requirements (`article-structure.md`)
 - In required writing style (`writing-style.md`)
 - Write with link hooks in place (mentions exist, but links not yet embedded)
 
 ### 7.2 Draft Validation
+<!-- One Haiku/Sonnet run per article-->
 - Cheap model run that checks the article against requirements and highlight if something is really wrong
 
 **Output:** Near-final markdown text per article (links not yet embedded)
