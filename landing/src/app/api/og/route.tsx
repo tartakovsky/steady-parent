@@ -13,7 +13,7 @@ function getTheme(resultId: string) {
     case "ready":
       return { color: "#16a34a", bg: "#f0fdf4", accent: "#bbf7d0" };
     case "almost":
-      return { color: "#d97706", bg: "#fffbeb", accent: "#fde68a" };
+      return { color: "#16a34a", bg: "#f0fdf4", accent: "#bbf7d0" };
     case "not-yet":
       return { color: "#ea580c", bg: "#fff7ed", accent: "#fed7aa" };
     default:
@@ -21,7 +21,18 @@ function getTheme(resultId: string) {
   }
 }
 
-const DOMAIN_COLORS = ["#0d9488", "#6366f1", "#e11d48"];
+function getDomainColor(level: string): string {
+  switch (level) {
+    case "high":
+      return "#16a34a";
+    case "medium":
+      return "#d97706";
+    case "low":
+      return "#ea580c";
+    default:
+      return "#6b7280";
+  }
+}
 
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
@@ -234,50 +245,53 @@ export async function GET(req: NextRequest) {
                 marginTop: "8px",
               }}
             >
-              {result.domains.map((domain, i) => (
-                <div
-                  key={domain.id}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "6px",
-                    flex: 1,
-                  }}
-                >
+              {result.domains.map((domain) => {
+                const barColor = getDomainColor(domain.level);
+                return (
                   <div
+                    key={domain.id}
                     style={{
                       display: "flex",
-                      justifyContent: "space-between",
-                      fontSize: "14px",
-                      fontWeight: 600,
-                      color: "#374151",
-                    }}
-                  >
-                    <span>{domain.name}</span>
-                    <span style={{ color: DOMAIN_COLORS[i % 3] }}>
-                      {domain.percentage}%
-                    </span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      height: "8px",
-                      borderRadius: "4px",
-                      backgroundColor: "#e5e7eb",
-                      overflow: "hidden",
+                      flexDirection: "column",
+                      gap: "6px",
+                      flex: 1,
                     }}
                   >
                     <div
                       style={{
-                        width: `${domain.percentage}%`,
-                        height: "100%",
-                        borderRadius: "4px",
-                        backgroundColor: DOMAIN_COLORS[i % 3],
+                        display: "flex",
+                        justifyContent: "space-between",
+                        fontSize: "14px",
+                        fontWeight: 600,
+                        color: "#374151",
                       }}
-                    />
+                    >
+                      <span>{domain.name}</span>
+                      <span style={{ color: barColor }}>
+                        {domain.percentage}%
+                      </span>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        height: "8px",
+                        borderRadius: "4px",
+                        backgroundColor: "#e5e7eb",
+                        overflow: "hidden",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: `${domain.percentage}%`,
+                          height: "100%",
+                          borderRadius: "4px",
+                          backgroundColor: barColor,
+                        }}
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -296,7 +310,7 @@ export async function GET(req: NextRequest) {
               display: "flex",
               alignItems: "center",
               gap: "16px",
-              backgroundColor: theme.color,
+              backgroundColor: "#16a34a",
               color: "white",
               padding: "14px 32px",
               borderRadius: "12px",
