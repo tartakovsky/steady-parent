@@ -34,6 +34,7 @@ export function QuizContainer({
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [direction, setDirection] = useState<1 | -1>(1);
   const [result, setResult] = useState<QuizResultType | null>(null);
+  const [shared, setShared] = useState(false);
   const initialized = useRef(false);
 
   // Restore state from URL (on mount + popstate)
@@ -121,6 +122,13 @@ export function QuizContainer({
     setAnswers({});
     setDirection(1);
     setResult(null);
+    setShared(false);
+  }, []);
+
+  // Detect shared view from URL
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setShared(params.get("s") === "1");
   }, []);
 
   // Show results if quiz is complete
@@ -131,6 +139,7 @@ export function QuizContainer({
           result={result}
           quizMeta={quiz.meta}
           onRetake={handleRetake}
+          shared={shared}
         />
       </div>
     );

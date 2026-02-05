@@ -29,11 +29,18 @@ export async function generateMetadata({
 
   // Build OG image URL — include answers if present for result-specific image
   const answersParam = typeof sp["a"] === "string" ? sp["a"] : undefined;
+  const isShared = sp["s"] === "1";
   const ogParams = new URLSearchParams({ slug });
   if (answersParam) {
     ogParams.set("a", answersParam);
   }
   const ogImageUrl = `/api/og?${ogParams.toString()}`;
+
+  // Build canonical URL — include s=1 so shared links stay shared
+  let canonicalUrl = `/quiz/${slug}`;
+  if (answersParam) {
+    canonicalUrl += `?a=${answersParam}${isShared ? "&s=1" : ""}`;
+  }
 
   return {
     title: quiz.meta.title,
@@ -41,7 +48,7 @@ export async function generateMetadata({
     openGraph: {
       title: quiz.meta.shortTitle,
       description: quiz.meta.description,
-      url: answersParam ? `/quiz/${slug}?a=${answersParam}` : `/quiz/${slug}`,
+      url: canonicalUrl,
       type: "website",
       images: [
         {

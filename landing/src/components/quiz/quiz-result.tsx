@@ -28,6 +28,8 @@ interface QuizResultProps extends React.HTMLAttributes<HTMLDivElement> {
   result: QuizResultType;
   quizMeta: { title: string; shortTitle: string };
   onRetake?: () => void;
+  /** True when viewing someone else's shared result */
+  shared?: boolean;
 }
 
 // ── Circular score ring ──────────────────────────────────────────────
@@ -134,6 +136,7 @@ export function QuizResult({
   result,
   quizMeta,
   onRetake,
+  shared,
   className,
   ...props
 }: QuizResultProps) {
@@ -142,7 +145,9 @@ export function QuizResult({
   const resultRef = useRef<HTMLDivElement>(null);
 
   const handleCopyLink = async () => {
-    await navigator.clipboard.writeText(window.location.href);
+    const url = new URL(window.location.href);
+    url.searchParams.set("s", "1");
+    await navigator.clipboard.writeText(url.toString());
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -260,6 +265,33 @@ export function QuizResult({
           )}
         </div>
       </div>
+
+      {/* ── Shared CTA ─────────────────────────────────────────── */}
+      {shared && (
+        <div
+          className="rounded-2xl border-2 p-8 sm:p-10 text-center space-y-4"
+          style={{ borderColor: theme.color }}
+        >
+          <p className="text-lg font-medium text-foreground/80">
+            Curious about your own results?
+          </p>
+          <Button
+            size="lg"
+            onClick={onRetake}
+            className="text-lg px-10 py-6 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all"
+            style={{
+              backgroundColor: theme.color,
+              color: "white",
+            }}
+          >
+            <Sparkles className="h-5 w-5 mr-2" />
+            Take the Quiz Yourself
+          </Button>
+          <p className="text-sm text-muted-foreground">
+            {quizMeta.shortTitle} &middot; Takes about 2 minutes
+          </p>
+        </div>
+      )}
 
       {/* ── Domain Breakdown ───────────────────────────────────── */}
       <div className="space-y-6">
