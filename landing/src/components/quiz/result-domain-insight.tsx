@@ -5,7 +5,7 @@ import {
   Brain,
   Heart,
   Check,
-  AlertTriangle,
+  Lightbulb,
   type LucideIcon,
 } from "lucide-react";
 import type { DomainResult } from "@/lib/quiz/quiz-engine";
@@ -21,9 +21,21 @@ function getDomainColor(level: DomainResult["level"]): string {
     case "high":
       return "#16a34a";
     case "medium":
-      return "#d97706";
+      return "#e8c840";
     case "low":
-      return "#ea580c";
+      return "#d05597";
+  }
+}
+
+/** Darker shade for badge text — readable against the faint tinted background */
+function getDomainBadgeText(level: DomainResult["level"]): string {
+  switch (level) {
+    case "high":
+      return "#166534";
+    case "medium":
+      return "#854d0e";
+    case "low":
+      return "#9f1239";
   }
 }
 
@@ -48,6 +60,7 @@ export function ResultDomainInsight({
   shared,
 }: ResultDomainInsightProps) {
   const color = getDomainColor(domain.level);
+  const badgeText = getDomainBadgeText(domain.level);
   const Icon = DOMAIN_ICONS[domain.id] ?? Activity;
   const levelLabel = getLevelLabel(domain.level);
 
@@ -67,7 +80,7 @@ export function ResultDomainInsight({
           </h3>
           <span
             className="hidden sm:inline text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full shrink-0"
-            style={{ backgroundColor: `${color}12`, color }}
+            style={{ backgroundColor: `${color}18`, color: badgeText }}
           >
             {levelLabel}
           </span>
@@ -84,7 +97,7 @@ export function ResultDomainInsight({
       {/* Mobile level badge */}
       <span
         className="sm:hidden inline-block text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full mb-4"
-        style={{ backgroundColor: `${color}12`, color }}
+        style={{ backgroundColor: `${color}18`, color: badgeText }}
       >
         {levelLabel}
       </span>
@@ -117,9 +130,9 @@ export function ResultDomainInsight({
           )}
 
           {domain.concern && (
-            <div className="flex items-start gap-2.5 text-base rounded-xl bg-amber-50/70 px-4 py-3">
-              <AlertTriangle className="w-4 h-4 mt-0.5 shrink-0 text-amber-600" />
-              <span className="text-amber-900/80 leading-relaxed">
+            <div className="flex items-start gap-2.5 text-base rounded-xl bg-indigo-50/70 px-4 py-3">
+              <Lightbulb className="w-4 h-4 mt-0.5 shrink-0 text-indigo-600" />
+              <span className="text-indigo-900/80 leading-relaxed">
                 {domain.concern}
               </span>
             </div>

@@ -11,7 +11,7 @@ import {
   RotateCcw,
   Sparkles,
   Check,
-  AlertTriangle,
+  Lightbulb,
   ArrowRight,
   Users,
   ExternalLink,
@@ -46,13 +46,13 @@ function getTheme(resultId: string) {
       };
     case "almost":
       return {
-        color: "#d97706",
-        bgGradient: "from-amber-50/80 to-yellow-50/30",
+        color: "#e8c840",
+        bgGradient: "from-yellow-50/60 to-amber-50/20",
       };
     case "not-yet":
       return {
-        color: "#ea580c",
-        bgGradient: "from-orange-50/80 to-amber-50/20",
+        color: "#d05597",
+        bgGradient: "from-pink-50/70 to-rose-50/20",
       };
     default:
       return {
@@ -257,12 +257,12 @@ export function QuizResult({
                 {result.concerns.map((concern, i) => (
                   <div
                     key={i}
-                    className="flex items-start gap-3 rounded-xl bg-amber-50/60 border border-amber-100/60 px-4 sm:px-5 py-4"
+                    className="flex items-start gap-3 rounded-xl bg-indigo-50/60 border border-indigo-100/60 px-4 sm:px-5 py-4"
                   >
-                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-amber-100 shrink-0 mt-0.5">
-                      <AlertTriangle className="w-3.5 h-3.5 text-amber-700" />
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-indigo-100 shrink-0 mt-0.5">
+                      <Lightbulb className="w-3.5 h-3.5 text-indigo-700" />
                     </div>
-                    <p className="text-base text-amber-900/80 leading-relaxed">
+                    <p className="text-base text-indigo-900/80 leading-relaxed">
                       {concern}
                     </p>
                   </div>
