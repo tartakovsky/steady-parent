@@ -8,6 +8,42 @@ export const runtime = "nodejs";
 
 const SIZE = { width: 1200, height: 630 };
 
+// Load Inter font at multiple weights for Satori.
+// Satori doesn't use system fonts — without explicit font data, all text
+// renders at the same weight regardless of fontWeight in styles.
+async function loadGoogleFont(weight: number): Promise<ArrayBuffer> {
+  const css = await fetch(
+    `https://fonts.googleapis.com/css2?family=Inter:wght@${weight}`,
+    { headers: { "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" } }
+  ).then((r) => r.text());
+
+  const match = css.match(/src: url\((.+?)\) format\('(opentype|truetype|woff2?)'\)/);
+  if (!match?.[1]) throw new Error(`Font weight ${weight} not found`);
+
+  return fetch(match[1]).then((r) => r.arrayBuffer());
+}
+
+let fontsCache: { name: string; data: ArrayBuffer; weight: number; style: string }[] | null = null;
+
+async function getFonts() {
+  if (fontsCache) return fontsCache;
+
+  const [w400, w600, w700, w800] = await Promise.all([
+    loadGoogleFont(400),
+    loadGoogleFont(600),
+    loadGoogleFont(700),
+    loadGoogleFont(800),
+  ]);
+
+  fontsCache = [
+    { name: "Inter", data: w400, weight: 400, style: "normal" },
+    { name: "Inter", data: w600, weight: 600, style: "normal" },
+    { name: "Inter", data: w700, weight: 700, style: "normal" },
+    { name: "Inter", data: w800, weight: 800, style: "normal" },
+  ];
+  return fontsCache;
+}
+
 const R2_PUBLIC_BASE_URL: string | undefined =
   process.env["NEXT_PUBLIC_R2_PUBLIC_BASE_URL"];
 
@@ -34,6 +70,7 @@ function getTheme(resultId: string) {
 }
 
 export async function GET(req: NextRequest) {
+  const fonts = await getFonts();
   const { searchParams } = req.nextUrl;
   const slug = searchParams.get("slug");
   const answersRaw = searchParams.get("a");
@@ -49,13 +86,13 @@ export async function GET(req: NextRequest) {
 
   // If no answers or incomplete, render generic card
   if (!answersRaw || answersRaw.length !== quiz.questions.length) {
-    return renderGenericCard(quiz);
+    return renderGenericCard(quiz, fonts);
   }
 
   // Decode answers and compute result
   const answers = decodeAnswers(answersRaw, quiz.questions);
   if (!answers) {
-    return renderGenericCard(quiz);
+    return renderGenericCard(quiz, fonts);
   }
 
   const engine = new QuizEngine(quiz);
@@ -78,7 +115,7 @@ export async function GET(req: NextRequest) {
           flexDirection: "column",
           alignItems: "center",
           backgroundColor: theme.bg,
-          fontFamily: "system-ui, sans-serif",
+          fontFamily: "Inter, sans-serif",
           padding: "65px 200px",
           position: "relative",
         }}
@@ -258,11 +295,13 @@ export async function GET(req: NextRequest) {
         </div>
       </div>
     ),
-    { ...SIZE }
+    { ...SIZE, fonts }
   );
 }
 
-function renderGenericCard(quiz: ReturnType<typeof getQuizBySlug>) {
+type FontEntry = { name: string; data: ArrayBuffer; weight: number; style: string };
+
+function renderGenericCard(quiz: ReturnType<typeof getQuizBySlug>, fonts: FontEntry[]) {
   if (!quiz) return new Response("Not found", { status: 404 });
 
   return new ImageResponse(
@@ -277,7 +316,7 @@ function renderGenericCard(quiz: ReturnType<typeof getQuizBySlug>) {
           justifyContent: "center",
           backgroundColor: "#fafafa",
           padding: "65px 200px",
-          fontFamily: "system-ui, sans-serif",
+          fontFamily: "Inter, sans-serif",
           gap: "20px",
           position: "relative",
         }}
@@ -352,6 +391,6 @@ function renderGenericCard(quiz: ReturnType<typeof getQuizBySlug>) {
         </div>
       </div>
     ),
-    { ...SIZE }
+    { ...SIZE, fonts }
   );
 }
