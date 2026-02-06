@@ -240,7 +240,7 @@ export function QuizResult({
                     <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 shrink-0 mt-0.5">
                       <Check className="w-3.5 h-3.5 text-green-700" />
                     </div>
-                    <p className="text-sm sm:text-[15px] text-green-900/80 leading-relaxed">
+                    <p className="text-base text-green-900/80 leading-relaxed">
                       {strength}
                     </p>
                   </div>
@@ -262,7 +262,7 @@ export function QuizResult({
                     <div className="flex items-center justify-center w-6 h-6 rounded-full bg-amber-100 shrink-0 mt-0.5">
                       <AlertTriangle className="w-3.5 h-3.5 text-amber-700" />
                     </div>
-                    <p className="text-sm sm:text-[15px] text-amber-900/80 leading-relaxed">
+                    <p className="text-base text-amber-900/80 leading-relaxed">
                       {concern}
                     </p>
                   </div>

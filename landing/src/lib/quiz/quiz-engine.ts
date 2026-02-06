@@ -55,23 +55,80 @@ export interface ResultTemplate {
   retakeAdvice?: string;
 }
 
+export interface QuizMeta {
+  id: string;
+  slug: string;
+  title: string;
+  shortTitle: string;
+  description: string;
+  intro: string;
+  estimatedTime: string;
+  questionCount: number;
+  ageRange?: { min: number; max: number; unit: string };
+  sources: { name: string; url: string }[];
+}
+
 export interface QuizData {
-  meta: {
-    id: string;
-    slug: string;
-    title: string;
-    shortTitle: string;
-    description: string;
-    intro: string;
-    estimatedTime: string;
-    questionCount: number;
-    ageRange?: { min: number; max: number; unit: string };
-    sources: { name: string; url: string }[];
-  };
+  quizType?: string;
+  meta: QuizMeta;
   domains: Record<string, DomainConfig>;
   questions: QuizQuestion[];
   domainContent: Record<string, Record<'high' | 'medium' | 'low', DomainLevelContent>>;
   results: Record<string, ResultTemplate>;
+}
+
+// ── Identity quiz types (Type B) ──
+
+export interface IdentityType {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  strengths: string[];
+  growthEdge: string;
+  encouragement: string;
+  comparativeContext: string;
+}
+
+export interface IdentityOption {
+  id: string;
+  text: string;
+  points: Record<string, number>;
+}
+
+export interface IdentityQuestion {
+  id: string;
+  text: string;
+  subtext?: string;
+  options: IdentityOption[];
+}
+
+export interface IdentityQuizData {
+  quizType: 'identity';
+  meta: QuizMeta;
+  types: Record<string, IdentityType>;
+  questions: IdentityQuestion[];
+}
+
+export interface IdentityTypeResult {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  strengths: string[];
+  growthEdge: string;
+  encouragement: string;
+  comparativeContext: string;
+  score: number;
+  maxScore: number;
+  percentage: number;
+}
+
+export interface IdentityQuizResult {
+  quizId: string;
+  primaryType: IdentityTypeResult;
+  allTypes: IdentityTypeResult[];
+  shareableSummary: string;
 }
 
 export interface DomainResult {

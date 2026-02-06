@@ -100,15 +100,15 @@ export function ResultDomainInsight({
       {/* Detail content — hidden in shared view */}
       {!shared && (
         <div className="mt-4 space-y-3">
-          <p className="font-semibold text-[15px] text-foreground">
+          <p className="font-semibold text-base text-foreground">
             {domain.headline}
           </p>
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          <p className="text-base text-muted-foreground leading-relaxed">
             {domain.detail}
           </p>
 
           {domain.strength && (
-            <div className="flex items-start gap-2.5 text-sm rounded-xl bg-green-50/70 px-4 py-3">
+            <div className="flex items-start gap-2.5 text-base rounded-xl bg-green-50/70 px-4 py-3">
               <Check className="w-4 h-4 mt-0.5 shrink-0 text-green-600" />
               <span className="text-green-900/80 leading-relaxed">
                 {domain.strength}
@@ -117,7 +117,7 @@ export function ResultDomainInsight({
           )}
 
           {domain.concern && (
-            <div className="flex items-start gap-2.5 text-sm rounded-xl bg-amber-50/70 px-4 py-3">
+            <div className="flex items-start gap-2.5 text-base rounded-xl bg-amber-50/70 px-4 py-3">
               <AlertTriangle className="w-4 h-4 mt-0.5 shrink-0 text-amber-600" />
               <span className="text-amber-900/80 leading-relaxed">
                 {domain.concern}

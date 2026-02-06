@@ -44,10 +44,10 @@ export function ResultActionPlan({
             <Info className="w-4 h-4 text-blue-700" />
           </div>
           <div>
-            <p className="font-semibold text-sm text-blue-900/90 mb-1">
+            <p className="font-semibold text-base text-blue-900/90 mb-1">
               Good to Know
             </p>
-            <p className="text-sm text-blue-800/70 leading-relaxed">
+            <p className="text-base text-blue-800/70 leading-relaxed">
               {watchOutFor}
             </p>
           </div>
