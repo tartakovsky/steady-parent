@@ -7,23 +7,23 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 1. TANTRUMS & MELTDOWNS
 **Slug**: /tantrums/
 **Core parent thought**: "My kid completely loses it and I don't know what to do in the moment"
-**Pillar article**: "The complete guide to tantrums and meltdowns: Why they happen and what actually helps"
+**Pillar article**: "The complete guide to tantrums and meltdowns: Why they happen and what actually helps" `/tantrums/`
 
 ### Series articles
-1. "Why do kids have tantrums? 4 scientific reasons behind every meltdown"
-2. "How to handle a tantrum that's already happening (step-by-step scripts)"
-3. "How co-regulation works: Using your calm to end meltdowns faster"
-4. "Why ignoring tantrums doesn't work (and what to do instead)"
-5. "How to handle tantrums in public without losing your mind"
-6. "How to prevent meltdowns before they start: Reading the warning signs"
-7. "Transition meltdowns: How to leave the playground, end screen time, and switch activities"
-8. "Arsenic hour: Why late afternoon is meltdown central and how to survive it"
-9. "Morning routine meltdowns: How to get out the door without tears"
-10. "Holiday meltdowns: How to handle tantrums at family gatherings"
-11. "Are big-kid tantrums normal? When meltdowns continue past toddlerhood"
-12. "When a tantrum turns physical: Head banging, throwing, and self-harm during meltdowns"
-13. "After the meltdown: How to reconnect and repair with your child"
-14. "When to worry about tantrums: Signs that something more is going on"
+1. "Why do kids have tantrums? 4 scientific reasons behind every meltdown" `/tantrums/why-kids-have-tantrums/`
+2. "How to handle a tantrum that's already happening (step-by-step scripts)" `/tantrums/handle-tantrum-scripts/`
+3. "How co-regulation works: Using your calm to end meltdowns faster" `/tantrums/co-regulation/`
+4. "Why ignoring tantrums doesn't work (and what to do instead)" `/tantrums/ignoring-tantrums/`
+5. "How to handle tantrums in public without losing your mind" `/tantrums/tantrums-in-public/`
+6. "How to prevent meltdowns before they start: Reading the warning signs" `/tantrums/prevent-meltdowns/`
+7. "Transition meltdowns: How to leave the playground, end screen time, and switch activities" `/tantrums/transition-meltdowns/`
+8. "Arsenic hour: Why late afternoon is meltdown central and how to survive it" `/tantrums/arsenic-hour/`
+9. "Morning routine meltdowns: How to get out the door without tears" `/tantrums/morning-routine-meltdowns/`
+10. "Holiday meltdowns: How to handle tantrums at family gatherings" `/tantrums/holiday-meltdowns/`
+11. "Are big-kid tantrums normal? When meltdowns continue past toddlerhood" `/tantrums/big-kid-tantrums/`
+12. "When a tantrum turns physical: Head banging, throwing, and self-harm during meltdowns" `/tantrums/physical-tantrums/`
+13. "After the meltdown: How to reconnect and repair with your child" `/tantrums/after-the-meltdown/`
+14. "When to worry about tantrums: Signs that something more is going on" `/tantrums/when-to-worry/`
 
 **Cross-links to other categories**:
 - Links TO Staying Calm: "How to stay calm during your child's tantrum" (Staying Calm) connects to articles 2 and 3 here
@@ -37,22 +37,22 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 2. AGGRESSION
 **Slug**: /aggression/
 **Core parent thought**: "My kid hits, bites, or pushes and I'm mortified and don't know how to stop it"
-**Pillar article**: "Why kids hit, bite, and push: A complete guide to childhood aggression"
+**Pillar article**: "Why kids hit, bite, and push: A complete guide to childhood aggression" `/aggression/`
 
 ### Series articles
-1. "Why kids hit and what parents can do about it"
-2. "When your toddler hits you: Scripts and responses that actually work"
-3. "Why kids hit the parent they feel safest with (and what to do)"
-4. "When older kids hit parents: Why it happens and how to respond differently"
-5. "Why toddlers bite and how to stop it"
-6. "Hair pulling, scratching, pinching, and throwing: Responding to physical behaviors"
-7. "Hitting at daycare and playdates: When your child is aggressive with peers"
-8. "When your child hits a sibling: Scripts for intervening safely"
-9. "Sensory-driven aggression vs. frustration-driven aggression: How to tell the difference"
-10. "4 empathy-building steps that reduce aggression long-term"
-11. "When your child is labeled 'the bully': What to do as a parent"
-12. "Verbal aggression, threats, and 'I want you dead': Responding to scary words"
-13. "When aggression feels explosive and out of proportion: When to seek help"
+1. "Why kids hit and what parents can do about it" `/aggression/why-kids-hit/`
+2. "When your toddler hits you: Scripts and responses that actually work" `/aggression/toddler-hits-you/`
+3. "Why kids hit the parent they feel safest with (and what to do)" `/aggression/hits-safest-parent/`
+4. "When older kids hit parents: Why it happens and how to respond differently" `/aggression/older-kids-hit-parents/`
+5. "Why toddlers bite and how to stop it" `/aggression/toddler-biting/`
+6. "Hair pulling, scratching, pinching, and throwing: Responding to physical behaviors" `/aggression/hair-pulling-scratching/`
+7. "Hitting at daycare and playdates: When your child is aggressive with peers" `/aggression/hitting-at-daycare/`
+8. "When your child hits a sibling: Scripts for intervening safely" `/aggression/hits-a-sibling/`
+9. "Sensory-driven aggression vs. frustration-driven aggression: How to tell the difference" `/aggression/sensory-vs-frustration/`
+10. "4 empathy-building steps that reduce aggression long-term" `/aggression/empathy-reduces-aggression/`
+11. "When your child is labeled 'the bully': What to do as a parent" `/aggression/labeled-the-bully/`
+12. "Verbal aggression, threats, and 'I want you dead': Responding to scary words" `/aggression/verbal-aggression/`
+13. "When aggression feels explosive and out of proportion: When to seek help" `/aggression/explosive-aggression/`
 
 **Cross-links to other categories**:
 - Links TO Tantrums: "When a tantrum turns physical" (Tantrums) links to articles 1 and 9 here
@@ -66,21 +66,21 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 3. SLEEP BATTLES
 **Slug**: /sleep/
 **Core parent thought**: "Bedtime is a war zone and we're all exhausted"
-**Pillar article**: "The complete guide to children's sleep: From bedtime battles to sleeping through the night"
+**Pillar article**: "The complete guide to children's sleep: From bedtime battles to sleeping through the night" `/sleep/`
 
 ### Series articles
-1. "Why kids fight bedtime: 5 common reasons for bedtime battles"
-2. "Bedtime routines that actually work (by age)"
-3. "When your child takes hours to fall asleep: What's going on and how to help"
-4. "Bedtime fears: Why kids get scared at night and how to help (without monster spray)"
-5. "Separation anxiety at bedtime: Why it happens and what to do"
-6. "Nightmares vs. night terrors: The difference matters"
-7. "My child won't sleep through the night: Solutions for night waking"
-8. "Toddler wakes up too early: How to push morning wake time"
-9. "Crib to toddler bed: Making the transition (and getting them to stay)"
-10. "How to help your baby sleep without cry-it-out"
-11. "Sleep regression after a new baby, a move, or starting daycare"
-12. "Parent preference at bedtime: When your child only wants mommy (or daddy)"
+1. "Why kids fight bedtime: 5 common reasons for bedtime battles" `/sleep/why-kids-fight-bedtime/`
+2. "Bedtime routines that actually work (by age)" `/sleep/bedtime-routines-by-age/`
+3. "When your child takes hours to fall asleep: What's going on and how to help" `/sleep/takes-hours-to-sleep/`
+4. "Bedtime fears: Why kids get scared at night and how to help (without monster spray)" `/sleep/bedtime-fears/`
+5. "Separation anxiety at bedtime: Why it happens and what to do" `/sleep/separation-anxiety-bedtime/`
+6. "Nightmares vs. night terrors: The difference matters" `/sleep/nightmares-vs-night-terrors/`
+7. "My child won't sleep through the night: Solutions for night waking" `/sleep/night-waking/`
+8. "Toddler wakes up too early: How to push morning wake time" `/sleep/wakes-up-too-early/`
+9. "Crib to toddler bed: Making the transition (and getting them to stay)" `/sleep/crib-to-toddler-bed/`
+10. "How to help your baby sleep without cry-it-out" `/sleep/baby-sleep-no-cry/`
+11. "Sleep regression after a new baby, a move, or starting daycare" `/sleep/sleep-regression/`
+12. "Parent preference at bedtime: When your child only wants mommy (or daddy)" `/sleep/parent-preference-bedtime/`
 
 **Cross-links to other categories**:
 - Links TO Anxiety: "Bedtime fears" (article 4 here) and "Separation anxiety at bedtime" (article 5 here) link to "How to help your anxious child" (Anxiety)
@@ -93,21 +93,21 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 4. SIBLINGS & NEW BABY
 **Slug**: /siblings/
 **Core parent thought**: "My kids fight constantly and the older one hates the new baby"
-**Pillar article**: "The complete guide to siblings: From preparing for a new baby to stopping the fighting"
+**Pillar article**: "The complete guide to siblings: From preparing for a new baby to stopping the fighting" `/siblings/`
 
 ### Series articles
-1. "How to tell your child a new baby is coming (and what to expect emotionally)"
-2. "Preparing your child for the separation while you birth the new baby"
-3. "When the new baby arrives: Toddler regression, jealousy, and 'I hate the baby'"
-4. "When your older child hits or is rough with the baby: A script"
-5. "Why siblings fight (and why some of it is normal)"
-6. "How to intervene in a sibling fight: A step-by-step script"
-7. "Sibling jealousy and 'that's not fair!': How to dissolve rivalry"
-8. "Emotion coaching to prevent sibling fighting before it starts"
-9. "How to build a strong sibling bond: 12 tips that work"
-10. "One-on-one time: Why it reduces sibling rivalry and how to make it happen"
-11. "Supporting each child's unique position: Oldest, middle, youngest, and only"
-12. "Step-siblings, half-siblings, and blended family sibling dynamics"
+1. "How to tell your child a new baby is coming (and what to expect emotionally)" `/siblings/new-baby-is-coming/`
+2. "Preparing your child for the separation while you birth the new baby" `/siblings/preparing-for-birth/`
+3. "When the new baby arrives: Toddler regression, jealousy, and 'I hate the baby'" `/siblings/new-baby-arrives/`
+4. "When your older child hits or is rough with the baby: A script" `/siblings/rough-with-baby/`
+5. "Why siblings fight (and why some of it is normal)" `/siblings/why-siblings-fight/`
+6. "How to intervene in a sibling fight: A step-by-step script" `/siblings/intervene-sibling-fight/`
+7. "Sibling jealousy and 'that's not fair!': How to dissolve rivalry" `/siblings/sibling-jealousy/`
+8. "Emotion coaching to prevent sibling fighting before it starts" `/siblings/prevent-sibling-fighting/`
+9. "How to build a strong sibling bond: 12 tips that work" `/siblings/build-sibling-bond/`
+10. "One-on-one time: Why it reduces sibling rivalry and how to make it happen" `/siblings/one-on-one-time/`
+11. "Supporting each child's unique position: Oldest, middle, youngest, and only" `/siblings/birth-order/`
+12. "Step-siblings, half-siblings, and blended family sibling dynamics" `/siblings/step-siblings/`
 
 **Cross-links to other categories**:
 - Links TO Aggression: "When your older child hits the baby" (article 4 here) links to "When your child hits a sibling" (Aggression)
@@ -121,21 +121,21 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 5. ANXIETY & FEARS
 **Slug**: /anxiety/
 **Core parent thought**: "My kid is scared or worried all the time and it's holding them back"
-**Pillar article**: "The complete guide to childhood anxiety: From common fears to panic and school refusal"
+**Pillar article**: "The complete guide to childhood anxiety: From common fears to panic and school refusal" `/anxiety/`
 
 ### Series articles
-1. "Common childhood fears by age: When to worry and when it's normal"
-2. "How to help your child manage anxiety: The PAUSE method and other strategies"
-3. "Separation anxiety: Why your child can't let you go and how to help"
-4. "School refusal: When anxiety keeps your child from going to school"
-5. "Bathtime fears, loud noises, dogs, and bugs: Helping kids with specific phobias"
-6. "Worry spirals and catastrophic thinking: Helping the child who worries about everything"
-7. "Panic attacks in kids and teens: What they look like and how to respond"
-8. "OCD-like behaviors in kids: Compulsive spitting, repeating, and rituals"
-9. "Social anxiety and selective mutism: When your child won't speak outside the home"
-10. "Gradual exposure and building bravery: Helping your child face fears step by step"
-11. "Managing your own anxiety about your child's anxiety"
-12. "When anxiety needs professional help: Signs it's time and how to find a therapist"
+1. "Common childhood fears by age: When to worry and when it's normal" `/anxiety/childhood-fears-by-age/`
+2. "How to help your child manage anxiety: The PAUSE method and other strategies" `/anxiety/manage-child-anxiety/`
+3. "Separation anxiety: Why your child can't let you go and how to help" `/anxiety/separation-anxiety/`
+4. "School refusal: When anxiety keeps your child from going to school" `/anxiety/school-refusal/`
+5. "Bathtime fears, loud noises, dogs, and bugs: Helping kids with specific phobias" `/anxiety/specific-phobias/`
+6. "Worry spirals and catastrophic thinking: Helping the child who worries about everything" `/anxiety/worry-spirals/`
+7. "Panic attacks in kids and teens: What they look like and how to respond" `/anxiety/panic-attacks/`
+8. "OCD-like behaviors in kids: Compulsive spitting, repeating, and rituals" `/anxiety/ocd-behaviors/`
+9. "Social anxiety and selective mutism: When your child won't speak outside the home" `/anxiety/social-anxiety/`
+10. "Gradual exposure and building bravery: Helping your child face fears step by step" `/anxiety/gradual-exposure/`
+11. "Managing your own anxiety about your child's anxiety" `/anxiety/parent-anxiety/`
+12. "When anxiety needs professional help: Signs it's time and how to find a therapist" `/anxiety/when-to-get-help/`
 
 **Cross-links to other categories**:
 - Links TO Sleep: "Bedtime fears" and "Separation anxiety at bedtime" (Sleep) link to articles 1, 3, and 5 here
@@ -149,23 +149,23 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 6. DISCIPLINE THAT ACTUALLY WORKS
 **Slug**: /discipline/
 **Core parent thought**: "How do I get my kid to listen without yelling, bribing, or giving in?"
-**Pillar article**: "Discipline that actually works: How to get cooperation without punishment, yelling, or bribery"
+**Pillar article**: "Discipline that actually works: How to get cooperation without punishment, yelling, or bribery" `/discipline/`
 
 ### Series articles
-1. "Punishment vs. discipline: Why spanking, time-outs, and taking things away backfire"
-2. "How to set limits your child will actually respect"
-3. "What to do when your child ignores your limit"
-4. "How to get kids to listen without yelling, threats, or nagging"
-5. "Natural consequences vs. logical consequences: Do they actually work?"
-6. "What to do instead of punishments and consequences"
-7. "How to handle defiance: When your child says 'no!' to everything"
-8. "Backtalk, sass, and 'I hate you!': Responding to disrespectful language"
-9. "Why kids whine (and how to stop the cycle without giving in)"
-10. "Why kids lie at every age and how to build honesty without shame"
-11. "Getting kids to do chores without reminding them 10 times"
-12. "Motivating kids without rewards, sticker charts, or bribes"
-13. "When parents disagree about discipline: Getting on the same page"
-14. "Discipline in public: What to do when everyone is watching"
+1. "Punishment vs. discipline: Why spanking, time-outs, and taking things away backfire" `/discipline/punishment-vs-discipline/`
+2. "How to set limits your child will actually respect" `/discipline/how-to-set-limits/`
+3. "What to do when your child ignores your limit" `/discipline/child-ignores-limits/`
+4. "How to get kids to listen without yelling, threats, or nagging" `/discipline/get-kids-to-listen/`
+5. "Natural consequences vs. logical consequences: Do they actually work?" `/discipline/natural-vs-logical-consequences/`
+6. "What to do instead of punishments and consequences" `/discipline/instead-of-punishment/`
+7. "How to handle defiance: When your child says 'no!' to everything" `/discipline/handle-defiance/`
+8. "Backtalk, sass, and 'I hate you!': Responding to disrespectful language" `/discipline/backtalk-and-sass/`
+9. "Why kids whine (and how to stop the cycle without giving in)" `/discipline/why-kids-whine/`
+10. "Why kids lie at every age and how to build honesty without shame" `/discipline/why-kids-lie/`
+11. "Getting kids to do chores without reminding them 10 times" `/discipline/kids-and-chores/`
+12. "Motivating kids without rewards, sticker charts, or bribes" `/discipline/motivating-without-rewards/`
+13. "When parents disagree about discipline: Getting on the same page" `/discipline/parents-disagree-discipline/`
+14. "Discipline in public: What to do when everyone is watching" `/discipline/discipline-in-public/`
 
 **Cross-links to other categories**:
 - Links TO Tantrums: "How to set limits without triggering a power struggle" (article 2 here) links to "How to prevent meltdowns before they start" (Tantrums)
@@ -179,20 +179,20 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 7. STAYING CALM
 **Slug**: /staying-calm/
 **Core parent thought**: "I keep losing it with my kids and I feel terrible about myself"
-**Pillar article**: "How to stay calm as a parent: Your complete guide to stopping the yelling and finding your cool"
+**Pillar article**: "How to stay calm as a parent: Your complete guide to stopping the yelling and finding your cool" `/staying-calm/`
 
 ### Series articles
-1. "How to stop yelling at your kids: Your 10-Point plan"
-2. "5 things to do when you feel your temper rising"
-3. "How to stay calm when your child pushes every button"
-4. "How to apologize to your child after you've lost it (and why repair matters)"
-5. "When your child's crying triggers rage or panic in you"
-6. "Self-care that actually works for exhausted parents (not just bubble baths)"
-7. "Parental burnout: How to recover when you have nothing left to give"
-8. "The overstimulated parent: When noise, chaos, and constant touching push you to the edge"
-9. "Self-compassion for parents: How to stop beating yourself up for not being perfect"
-10. "Mindfulness and breathing practices that help parents stay regulated"
-11. "When you and your child are stuck in a negative pattern: How to break the cycle"
+1. "How to stop yelling at your kids: Your 10-Point plan" `/staying-calm/stop-yelling/`
+2. "5 things to do when you feel your temper rising" `/staying-calm/temper-rising/`
+3. "How to stay calm when your child pushes every button" `/staying-calm/how-to-stay-calm/`
+4. "How to apologize to your child after you've lost it (and why repair matters)" `/staying-calm/how-to-apologize/`
+5. "When your child's crying triggers rage or panic in you" `/staying-calm/crying-triggers-rage/`
+6. "Self-care that actually works for exhausted parents (not just bubble baths)" `/staying-calm/real-self-care/`
+7. "Parental burnout: How to recover when you have nothing left to give" `/staying-calm/parental-burnout/`
+8. "The overstimulated parent: When noise, chaos, and constant touching push you to the edge" `/staying-calm/overstimulated-parent/`
+9. "Self-compassion for parents: How to stop beating yourself up for not being perfect" `/staying-calm/self-compassion/`
+10. "Mindfulness and breathing practices that help parents stay regulated" `/staying-calm/mindfulness-for-parents/`
+11. "When you and your child are stuck in a negative pattern: How to break the cycle" `/staying-calm/break-negative-patterns/`
 
 **Cross-links to other categories**:
 - Links TO Breaking the Cycle: "When your child's crying triggers rage" (article 5 here) links to "Why your child triggers you" (Breaking the Cycle) for deeper inner work
@@ -206,19 +206,19 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 8. BREAKING THE CYCLE
 **Slug**: /breaking-the-cycle/
 **Core parent thought**: "Why am I parenting like this? I don't want to repeat what was done to me."
-**Pillar article**: "Breaking the cycle: How to heal your childhood wounds so you don't pass them to your kids"
+**Pillar article**: "Breaking the cycle: How to heal your childhood wounds so you don't pass them to your kids" `/breaking-the-cycle/`
 
 ### Series articles
-1. "How triggers from your childhood shape your parenting"
-2. "What is reparenting? How to give your inner child what you never got"
-3. "How to break the intergenerational cycle of yelling, shame, and harsh discipline"
-4. "When parenting brings up your own trauma: Why your kid triggers you"
-5. "Transform your inner critic into your inner nurturing parent"
-6. "Healing the wounds of a critical or emotionally unavailable parent"
-7. "How to stop lugging around old emotional baggage into your parenting"
-8. "How to love unconditionally when you weren't loved that way"
-9. "Is it too late? What to do when you've made mistakes as a parent"
-10. "When to see a therapist: Finding professional help for your parenting journey"
+1. "How triggers from your childhood shape your parenting" `/breaking-the-cycle/childhood-triggers/`
+2. "What is reparenting? How to give your inner child what you never got" `/breaking-the-cycle/reparenting/`
+3. "How to break the intergenerational cycle of yelling, shame, and harsh discipline" `/breaking-the-cycle/intergenerational-cycle/`
+4. "When parenting brings up your own trauma: Why your kid triggers you" `/breaking-the-cycle/parenting-and-trauma/`
+5. "Transform your inner critic into your inner nurturing parent" `/breaking-the-cycle/inner-critic/`
+6. "Healing the wounds of a critical or emotionally unavailable parent" `/breaking-the-cycle/healing-parent-wounds/`
+7. "How to stop lugging around old emotional baggage into your parenting" `/breaking-the-cycle/emotional-baggage/`
+8. "How to love unconditionally when you weren't loved that way" `/breaking-the-cycle/unconditional-love/`
+9. "Is it too late? What to do when you've made mistakes as a parent" `/breaking-the-cycle/is-it-too-late/`
+10. "When to see a therapist: Finding professional help for your parenting journey" `/breaking-the-cycle/finding-a-therapist/`
 
 **Cross-links to other categories**:
 - Links TO Staying Calm: "How triggers from your childhood shape your parenting" (article 1 here) links to "When your child's crying triggers rage" (Staying Calm) for in-the-moment tactics
@@ -232,21 +232,21 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 9. EMOTIONAL INTELLIGENCE & BIG FEELINGS
 **Slug**: /big-feelings/
 **Core parent thought**: "My kid can't handle their emotions and I don't know how to teach them"
-**Pillar article**: "How to raise an emotionally intelligent child: Teaching kids to understand and manage big feelings"
+**Pillar article**: "How to raise an emotionally intelligent child: Teaching kids to understand and manage big feelings" `/big-feelings/`
 
 ### Series articles
-1. "Why naming feelings matters (and how to teach emotional vocabulary by age)"
-2. "Emotion coaching: The 6-Step process for when your child is upset"
-3. "How to teach anger management to kids without suppressing their feelings"
-4. "When your child over-reacts to setbacks and minor disappointments"
-5. "Negative self-talk and 'I'm stupid': How to help a child who puts themselves down"
-6. "When a child says 'I want to die': How to respond and when to worry"
-7. "Building resilience and grit: Helping kids bounce back from hard things"
-8. "Growth mindset for kids: Teaching persistence without toxic positivity"
-9. "Creating a calm-down corner that's not a punishment (plus calming strategies by age)"
-10. "When your child can't cry or shuts down emotionally: Building safety"
-11. "The boredom cure: Why handling boredom is an emotional skill"
-12. "How to help each child with big emotions when you have more than one"
+1. "Why naming feelings matters (and how to teach emotional vocabulary by age)" `/big-feelings/naming-feelings/`
+2. "Emotion coaching: The 6-Step process for when your child is upset" `/big-feelings/emotion-coaching/`
+3. "How to teach anger management to kids without suppressing their feelings" `/big-feelings/anger-management-kids/`
+4. "When your child over-reacts to setbacks and minor disappointments" `/big-feelings/overreacting-to-setbacks/`
+5. "Negative self-talk and 'I'm stupid': How to help a child who puts themselves down" `/big-feelings/negative-self-talk/`
+6. "When a child says 'I want to die': How to respond and when to worry" `/big-feelings/child-says-want-to-die/`
+7. "Building resilience and grit: Helping kids bounce back from hard things" `/big-feelings/building-resilience/`
+8. "Growth mindset for kids: Teaching persistence without toxic positivity" `/big-feelings/growth-mindset/`
+9. "Creating a calm-down corner that's not a punishment (plus calming strategies by age)" `/big-feelings/calm-down-corner/`
+10. "When your child can't cry or shuts down emotionally: Building safety" `/big-feelings/emotional-shutdown/`
+11. "The boredom cure: Why handling boredom is an emotional skill" `/big-feelings/boredom-cure/`
+12. "How to help each child with big emotions when you have more than one" `/big-feelings/multiple-kids-big-feelings/`
 
 **Cross-links to other categories**:
 - Links TO Tantrums: "Emotion coaching" (article 2 here) links to "After the meltdown: How to reconnect" (Tantrums) for post-tantrum teaching
@@ -260,19 +260,19 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 10. POTTY TRAINING
 **Slug**: /potty-training/
 **Core parent thought**: "Potty training is a disaster and I don't know if I'm doing it wrong"
-**Pillar article**: "The complete guide to potty training: From readiness signs to nighttime dryness"
+**Pillar article**: "The complete guide to potty training: From readiness signs to nighttime dryness" `/potty-training/`
 
 ### Series articles
-1. "Signs your child is ready for potty training (and when to wait)"
-2. "Potty training in 3 days: Does it work and how to do it right"
-3. "Child-led potty learning: A lower-stress alternative"
-4. "Potty training power struggles: How to avoid turning the toilet into a battlefield"
-5. "Won't poop on the potty: Why kids pee fine but refuse to poop"
-6. "Withholding, constipation, and fecal retention: Breaking the fear cycle"
-7. "Potty training regression: When your trained child starts having accidents again"
-8. "Potty accidents at age 4, 5, and beyond: When it's still happening"
-9. "Nighttime dryness: When it comes and what to do until then"
-10. "Potty talk obsession: Why kids ages 4-7 can't stop with the bathroom humor"
+1. "Signs your child is ready for potty training (and when to wait)" `/potty-training/readiness-signs/`
+2. "Potty training in 3 days: Does it work and how to do it right" `/potty-training/potty-training-3-days/`
+3. "Child-led potty learning: A lower-stress alternative" `/potty-training/child-led-potty-learning/`
+4. "Potty training power struggles: How to avoid turning the toilet into a battlefield" `/potty-training/power-struggles/`
+5. "Won't poop on the potty: Why kids pee fine but refuse to poop" `/potty-training/wont-poop-on-potty/`
+6. "Withholding, constipation, and fecal retention: Breaking the fear cycle" `/potty-training/withholding-constipation/`
+7. "Potty training regression: When your trained child starts having accidents again" `/potty-training/potty-regression/`
+8. "Potty accidents at age 4, 5, and beyond: When it's still happening" `/potty-training/accidents-age-4-and-up/`
+9. "Nighttime dryness: When it comes and what to do until then" `/potty-training/nighttime-dryness/`
+10. "Potty talk obsession: Why kids ages 4-7 can't stop with the bathroom humor" `/potty-training/potty-talk/`
 
 **Cross-links to other categories**:
 - Links TO Anxiety: "Potty training power struggles" (article 4 here) and "Withholding" (article 6 here) link to "Helping kids with specific phobias" (Anxiety) for toilet fears
@@ -284,18 +284,18 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 11. EATING & MEALTIMES
 **Slug**: /eating/
 **Core parent thought**: "My kid won't eat anything and mealtimes are a battle"
-**Pillar article**: "The complete guide to picky eating and mealtime battles: How to feed kids without the fight"
+**Pillar article**: "The complete guide to picky eating and mealtime battles: How to feed kids without the fight" `/eating/`
 
 ### Series articles
-1. "Why toddlers become picky eaters (and why it's developmental, not your fault)"
-2. "How to expand what your child eats without pressure or bribery"
-3. "Trusting your child's hunger cues: The division of responsibility approach"
-4. "Getting toddlers to sit at the table: Mealtime behavior solutions"
-5. "Food throwing, playing with food, and other mealtime chaos"
-6. "The power of family meals: Why they matter and how to make them work"
-7. "'Just take one bite': Why pressuring kids backfires and what to do instead"
-8. "Building a healthy relationship with food (and preventing disordered eating)"
-9. "Starting solids, weaning from the bottle, and other feeding transitions"
+1. "Why toddlers become picky eaters (and why it's developmental, not your fault)" `/eating/why-picky-eaters/`
+2. "How to expand what your child eats without pressure or bribery" `/eating/expand-picky-eating/`
+3. "Trusting your child's hunger cues: The division of responsibility approach" `/eating/division-of-responsibility/`
+4. "Getting toddlers to sit at the table: Mealtime behavior solutions" `/eating/toddlers-at-the-table/`
+5. "Food throwing, playing with food, and other mealtime chaos" `/eating/food-throwing/`
+6. "The power of family meals: Why they matter and how to make them work" `/eating/family-meals/`
+7. "'Just take one bite': Why pressuring kids backfires and what to do instead" `/eating/dont-pressure-eating/`
+8. "Building a healthy relationship with food (and preventing disordered eating)" `/eating/healthy-food-relationship/`
+9. "Starting solids, weaning from the bottle, and other feeding transitions" `/eating/starting-solids/`
 
 **Cross-links to other categories**:
 - Links TO Discipline: "Why pressuring kids backfires" (article 7 here) links to "Motivating kids without rewards or bribes" (Discipline) for the same philosophy applied broadly
@@ -308,17 +308,17 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 12. SCREEN TIME
 **Slug**: /screens/
 **Core parent thought**: "Screens have taken over my kid's life and every transition off is a meltdown"
-**Pillar article**: "Screen time for kids: How much is too much and how to manage it without meltdowns"
+**Pillar article**: "Screen time for kids: How much is too much and how to manage it without meltdowns" `/screens/`
 
 ### Series articles
-1. "Screen time guidelines by age: What the research actually says"
-2. "Why screens affect your child's emotions, sleep, and attention"
-3. "How to end screen time without a meltdown: Transition strategies that work"
-4. "Need a screen reset? How to dial back when things have gotten out of control"
-5. "Screen-free activities by age that kids actually enjoy"
-6. "The first phone: Rules, timing, and alternatives to smartphones"
-7. "Porn-proofing your child: What every parent needs to know"
-8. "Cyberbullying and online safety: Keeping your child safe online"
+1. "Screen time guidelines by age: What the research actually says" `/screens/guidelines-by-age/`
+2. "Why screens affect your child's emotions, sleep, and attention" `/screens/how-screens-affect-kids/`
+3. "How to end screen time without a meltdown: Transition strategies that work" `/screens/end-screen-time/`
+4. "Need a screen reset? How to dial back when things have gotten out of control" `/screens/screen-reset/`
+5. "Screen-free activities by age that kids actually enjoy" `/screens/screen-free-activities/`
+6. "The first phone: Rules, timing, and alternatives to smartphones" `/screens/first-phone/`
+7. "Porn-proofing your child: What every parent needs to know" `/screens/porn-proofing/`
+8. "Cyberbullying and online safety: Keeping your child safe online" `/screens/online-safety/`
 
 **Cross-links to other categories**:
 - Links TO Tantrums: "How to end screen time without a meltdown" (article 3 here) links to "Transition meltdowns" (Tantrums)
@@ -331,20 +331,20 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 13. SOCIAL SKILLS & FRIENDSHIPS
 **Slug**: /social-skills/
 **Core parent thought**: "My kid is struggling with other kids and I don't know how to help"
-**Pillar article**: "Social skills and friendships: How to help your child make friends, share, and navigate social conflicts"
+**Pillar article**: "Social skills and friendships: How to help your child make friends, share, and navigate social conflicts" `/social-skills/`
 
 ### Series articles
-1. "Why toddlers can't share (and why you shouldn't force them): Teaching turn-taking instead"
-2. "Parallel play, first friendships, and toddler social development explained"
-3. "Helping a shy or anxious child make friends"
-4. "When your child isn't making friends: What to do"
-5. "Friendship problems, exclusion, and 'I won't be your friend': How to help"
-6. "Bossy behavior and social dominance: When your child wants to control every game"
-7. "When your child is being bullied: How to empower them to respond"
-8. "Teaching politeness and manners without forcing ('say thank you!')"
-9. "Should you make your child apologize? What to do instead"
-10. "Teaching empathy and kindness: How kids learn to care about others"
-11. "Teaching assertiveness without aggression: Helping your child find their voice"
+1. "Why toddlers can't share (and why you shouldn't force them): Teaching turn-taking instead" `/social-skills/toddlers-and-sharing/`
+2. "Parallel play, first friendships, and toddler social development explained" `/social-skills/toddler-social-development/`
+3. "Helping a shy or anxious child make friends" `/social-skills/shy-child-make-friends/`
+4. "When your child isn't making friends: What to do" `/social-skills/not-making-friends/`
+5. "Friendship problems, exclusion, and 'I won't be your friend': How to help" `/social-skills/friendship-problems/`
+6. "Bossy behavior and social dominance: When your child wants to control every game" `/social-skills/bossy-behavior/`
+7. "When your child is being bullied: How to empower them to respond" `/social-skills/child-being-bullied/`
+8. "Teaching politeness and manners without forcing ('say thank you!')" `/social-skills/teaching-manners/`
+9. "Should you make your child apologize? What to do instead" `/social-skills/forced-apologies/`
+10. "Teaching empathy and kindness: How kids learn to care about others" `/social-skills/teaching-empathy/`
+11. "Teaching assertiveness without aggression: Helping your child find their voice" `/social-skills/teaching-assertiveness/`
 
 **Cross-links to other categories**:
 - Links TO Anxiety: "Helping a shy or anxious child make friends" (article 3 here) links to "Social anxiety and selective mutism" (Anxiety)
@@ -358,21 +358,21 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 14. BODY SAFETY & HARD CONVERSATIONS
 **Slug**: /body-safety/
 **Core parent thought**: "How do I protect my kid and talk about hard stuff without traumatizing them?"
-**Pillar article**: "Body safety and hard conversations: How to protect your child and talk about the tough stuff"
+**Pillar article**: "Body safety and hard conversations: How to protect your child and talk about the tough stuff" `/body-safety/`
 
 ### Series articles
-1. "Teaching proper anatomical names: Why it matters for safety"
-2. "Body safety 101: Teaching good touch, bad touch, and consent"
-3. "The 'no secrets' rule and other strategies to prevent child sexual abuse"
-4. "What every parent needs to know to keep their child safe from sexual abuse"
-5. "Why 'stranger danger' doesn't work (and what to teach instead)"
-6. "Don't force hugs: Teaching physical autonomy and body boundaries"
-7. "Talking to kids about sex: An age-by-age guide"
-8. "Puberty conversations: How to talk to girls and boys about what's coming"
-9. "How to explain death to children (by age)"
-10. "How to talk to kids about divorce, war, tragedy, and scary world events"
-11. "Is Santa real? Balancing magic and truth with kids"
-12. "Talking to kids about race, diversity, and justice: An age-by-age guide"
+1. "Teaching proper anatomical names: Why it matters for safety" `/body-safety/anatomical-names/`
+2. "Body safety 101: Teaching good touch, bad touch, and consent" `/body-safety/good-touch-bad-touch/`
+3. "The 'no secrets' rule and other strategies to prevent child sexual abuse" `/body-safety/no-secrets-rule/`
+4. "What every parent needs to know to keep their child safe from sexual abuse" `/body-safety/prevent-sexual-abuse/`
+5. "Why 'stranger danger' doesn't work (and what to teach instead)" `/body-safety/stranger-danger/`
+6. "Don't force hugs: Teaching physical autonomy and body boundaries" `/body-safety/dont-force-hugs/`
+7. "Talking to kids about sex: An age-by-age guide" `/body-safety/talking-about-sex/`
+8. "Puberty conversations: How to talk to girls and boys about what's coming" `/body-safety/puberty-talks/`
+9. "How to explain death to children (by age)" `/body-safety/explain-death/`
+10. "How to talk to kids about divorce, war, tragedy, and scary world events" `/body-safety/scary-world-events/`
+11. "Is Santa real? Balancing magic and truth with kids" `/body-safety/is-santa-real/`
+12. "Talking to kids about race, diversity, and justice: An age-by-age guide" `/body-safety/race-and-diversity/`
 
 **Cross-links to other categories**:
 - Links TO Anxiety: "Body safety" (articles 2-4 here) links to "Common childhood fears" (Anxiety) since safety conversations can trigger fear responses
@@ -386,21 +386,21 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 15. POSTPARTUM & NEW PARENT LIFE
 **Slug**: /new-parent/
 **Core parent thought**: "I just had a baby and everything is harder than I expected"
-**Pillar article**: "The new parent survival guide: Navigating postpartum, your baby's first year, and your relationship after baby"
+**Pillar article**: "The new parent survival guide: Navigating postpartum, your baby's first year, and your relationship after baby" `/new-parent/`
 
 ### Series articles
-1. "Baby blues vs. postpartum depression: How to know the difference and get help"
-2. "Postpartum anxiety and intrusive thoughts: What's normal and what's not"
-3. "The postpartum survival guide: Practical tips for the hardest weeks"
-4. "Self-care for new mothers: Realistic tips for overwhelmed parents"
-5. "Why couples fight after baby arrives (and how to stay connected)"
-6. "The mental load and division of labor: How to share parenting fairly"
-7. "Going back to work: Helping your child (and yourself) adjust"
-8. "Understanding why babies cry and how soothing grows their brains"
-9. "How to soothe a fussy or colicky baby"
-10. "Breastfeeding, bottle-feeding, and making peace with your choice"
-11. "Weaning: The emotional and practical guide for when it's time"
-12. "Bonding activities for newborns (and what to do when bonding doesn't come naturally)"
+1. "Baby blues vs. postpartum depression: How to know the difference and get help" `/new-parent/postpartum-depression/`
+2. "Postpartum anxiety and intrusive thoughts: What's normal and what's not" `/new-parent/postpartum-anxiety/`
+3. "The postpartum survival guide: Practical tips for the hardest weeks" `/new-parent/postpartum-survival/`
+4. "Self-care for new mothers: Realistic tips for overwhelmed parents" `/new-parent/new-mom-self-care/`
+5. "Why couples fight after baby arrives (and how to stay connected)" `/new-parent/couples-after-baby/`
+6. "The mental load and division of labor: How to share parenting fairly" `/new-parent/mental-load/`
+7. "Going back to work: Helping your child (and yourself) adjust" `/new-parent/back-to-work/`
+8. "Understanding why babies cry and how soothing grows their brains" `/new-parent/why-babies-cry/`
+9. "How to soothe a fussy or colicky baby" `/new-parent/soothe-colicky-baby/`
+10. "Breastfeeding, bottle-feeding, and making peace with your choice" `/new-parent/breastfeeding-choices/`
+11. "Weaning: The emotional and practical guide for when it's time" `/new-parent/weaning-guide/`
+12. "Bonding activities for newborns (and what to do when bonding doesn't come naturally)" `/new-parent/newborn-bonding/`
 
 **Cross-links to other categories**:
 - Links TO Staying Calm: "Triggered by your baby's crying" maps to "When your child's crying triggers rage" (Staying Calm)
@@ -414,21 +414,21 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 16. TWEENS & TEENS
 **Slug**: /teens/
 **Core parent thought**: "My teenager is pulling away, pushing back, and I'm losing my influence"
-**Pillar article**: "Parenting tweens and teens: How to stay connected, set limits, and let go"
+**Pillar article**: "Parenting tweens and teens: How to stay connected, set limits, and let go" `/teens/`
 
 ### Series articles
-1. "Why teens pull away (and why it's developmentally necessary)"
-2. "30 ways to stay connected to your teenager without being clingy"
-3. "Setting limits with preteens and teens: It's not the same as toddlers"
-4. "What to do instead of grounding your teenager"
-5. "Rude, disrespectful preteen behavior: What's behind it and how to respond"
-6. "Teen anger, moodiness, and emotional volatility: When to worry"
-7. "Depression, self-harm, and suicidal thoughts in teens: Warning signs and what to do"
-8. "Teen social pressure, peer influence, and unhealthy friendships"
-9. "Navigating your teen's independence: Trustworthiness, freedom, and letting go"
-10. "Talking to teens about alcohol, drugs, and hard topics"
-11. "When your teen breaks house rules: Rebuilding trust"
-12. "Preparing your teen for college: The emotional side of letting go"
+1. "Why teens pull away (and why it's developmentally necessary)" `/teens/why-teens-pull-away/`
+2. "30 ways to stay connected to your teenager without being clingy" `/teens/stay-connected-to-teen/`
+3. "Setting limits with preteens and teens: It's not the same as toddlers" `/teens/limits-with-teens/`
+4. "What to do instead of grounding your teenager" `/teens/instead-of-grounding/`
+5. "Rude, disrespectful preteen behavior: What's behind it and how to respond" `/teens/disrespectful-preteen/`
+6. "Teen anger, moodiness, and emotional volatility: When to worry" `/teens/teen-anger-moodiness/`
+7. "Depression, self-harm, and suicidal thoughts in teens: Warning signs and what to do" `/teens/teen-depression-self-harm/`
+8. "Teen social pressure, peer influence, and unhealthy friendships" `/teens/teen-peer-pressure/`
+9. "Navigating your teen's independence: Trustworthiness, freedom, and letting go" `/teens/teen-independence/`
+10. "Talking to teens about alcohol, drugs, and hard topics" `/teens/teens-drugs-alcohol/`
+11. "When your teen breaks house rules: Rebuilding trust" `/teens/teen-breaks-rules/`
+12. "Preparing your teen for college: The emotional side of letting go" `/teens/preparing-for-college/`
 
 **Cross-links to other categories**:
 - Links TO Discipline: "Setting limits with teens" (article 3 here) links to "How to set limits your child will actually respect" (Discipline) for the foundational approach
@@ -442,19 +442,19 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 17. MAJOR LIFE TRANSITIONS
 **Slug**: /transitions/
 **Core parent thought**: "Something big happened in our family and I don't know how to help my kid through it"
-**Pillar article**: "Helping kids through major life transitions: Divorce, death, moving, and other big changes"
+**Pillar article**: "Helping kids through major life transitions: Divorce, death, moving, and other big changes" `/transitions/`
 
 ### Series articles
-1. "How to tell your kids about divorce (and help them through it)"
-2. "Co-parenting after divorce: Helping kids adjust to two homes"
-3. "Fighting in front of the kids: How to do damage control"
-4. "Helping children through grief and loss (including loss of pets)"
-5. "Helping kids adjust to a move, new school, or major family change"
-6. "Blended families and stepparenting: How to make it work"
-7. "Preparing kids for medical procedures, hospital stays, and health challenges"
-8. "When a child witnesses violence or experiences trauma: How to help them heal"
-9. "Holiday stress survival guide: Managing expectations, family gatherings, and your sanity"
-10. "Providing reassurance and stability when things go wrong: Community tragedy and scary events"
+1. "How to tell your kids about divorce (and help them through it)" `/transitions/telling-kids-about-divorce/`
+2. "Co-parenting after divorce: Helping kids adjust to two homes" `/transitions/co-parenting-divorce/`
+3. "Fighting in front of the kids: How to do damage control" `/transitions/fighting-in-front-of-kids/`
+4. "Helping children through grief and loss (including loss of pets)" `/transitions/grief-and-loss/`
+5. "Helping kids adjust to a move, new school, or major family change" `/transitions/adjusting-to-a-move/`
+6. "Blended families and stepparenting: How to make it work" `/transitions/blended-families/`
+7. "Preparing kids for medical procedures, hospital stays, and health challenges" `/transitions/medical-procedures/`
+8. "When a child witnesses violence or experiences trauma: How to help them heal" `/transitions/childhood-trauma/`
+9. "Holiday stress survival guide: Managing expectations, family gatherings, and your sanity" `/transitions/holiday-stress/`
+10. "Providing reassurance and stability when things go wrong: Community tragedy and scary events" `/transitions/reassurance-after-tragedy/`
 
 **Cross-links to other categories**:
 - Links TO Anxiety: "Kids anxious about family changes" across articles here links to "Worry spirals and catastrophic thinking" (Anxiety)
@@ -468,20 +468,20 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 18. SPIRITED & SENSITIVE KIDS
 **Slug**: /spirited-kids/
 **Core parent thought**: "My kid is MORE -- more intense, more persistent, more everything -- and regular advice doesn't work"
-**Pillar article**: "Parenting a spirited or sensitive child: Why regular advice doesn't work and what to do instead"
+**Pillar article**: "Parenting a spirited or sensitive child: Why regular advice doesn't work and what to do instead" `/spirited-kids/`
 
 ### Series articles
-1. "What makes a child 'strong-willed': Temperament, not defiance"
-2. "Getting cooperation from a child who resists everything"
-3. "The highly sensitive child: Why they feel everything more intensely"
-4. "Why highly sensitive kids have bigger meltdowns (and how to help)"
-5. "Overstimulation and sensory overload: What's happening and what helps"
-6. "Attention-seeking reframed: Why your child needs connection, not correction"
-7. "The child who can't play alone: Clinginess vs. genuine need for connection"
-8. "When behavior might signal ADHD, sensory processing issues, or ASD"
-9. "ODD: Is it a real diagnosis or a relationship problem?"
-10. "When regular discipline advice doesn't work for your child"
-11. "Finding the right therapist or specialist for your differently wired child"
+1. "What makes a child 'strong-willed': Temperament, not defiance" `/spirited-kids/strong-willed-child/`
+2. "Getting cooperation from a child who resists everything" `/spirited-kids/getting-cooperation/`
+3. "The highly sensitive child: Why they feel everything more intensely" `/spirited-kids/highly-sensitive-child/`
+4. "Why highly sensitive kids have bigger meltdowns (and how to help)" `/spirited-kids/sensitive-kids-meltdowns/`
+5. "Overstimulation and sensory overload: What's happening and what helps" `/spirited-kids/sensory-overload/`
+6. "Attention-seeking reframed: Why your child needs connection, not correction" `/spirited-kids/attention-seeking/`
+7. "The child who can't play alone: Clinginess vs. genuine need for connection" `/spirited-kids/cant-play-alone/`
+8. "When behavior might signal ADHD, sensory processing issues, or ASD" `/spirited-kids/adhd-sensory-asd-signs/`
+9. "ODD: Is it a real diagnosis or a relationship problem?" `/spirited-kids/odd-diagnosis/`
+10. "When regular discipline advice doesn't work for your child" `/spirited-kids/discipline-doesnt-work/`
+11. "Finding the right therapist or specialist for your differently wired child" `/spirited-kids/finding-specialist/`
 
 **Cross-links to other categories**:
 - Links TO Tantrums: "Why highly sensitive kids have bigger meltdowns" (article 4 here) links to "Are big-kid tantrums normal?" (Tantrums)
@@ -495,20 +495,20 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 19. PARENTING PHILOSOPHY
 **Slug**: /parenting-approach/
 **Core parent thought**: "Am I doing this right? What kind of parent do I actually want to be?"
-**Pillar article**: "What is gentle parenting? A complete guide to raising kids with firmness, warmth, and respect"
+**Pillar article**: "What is gentle parenting? A complete guide to raising kids with firmness, warmth, and respect" `/parenting-approach/`
 
 ### Series articles
-1. "What gentle parenting actually means (and what it doesn't)"
-2. "Does gentle parenting mean letting kids do whatever they want? (No, and here's why)"
-3. "Parenting styles compared: Authoritative, permissive, authoritarian, and where you fit"
-4. "The sweet spot between strict and permissive parenting"
-5. "What every parent needs to know about praise (and what to say instead)"
-6. "How children develop shame (and how to prevent it)"
-7. "Building self-esteem and confidence: What actually works"
-8. "Raising kind, empathetic, responsible kids who want to do the right thing"
-9. "Raising independent kids without raising entitled ones"
-10. "How to respond when people criticize your parenting approach"
-11. "Love & Logic, bRAND_123_MAGIC, and other popular methods: An honest critique"
+1. "What gentle parenting actually means (and what it doesn't)" `/parenting-approach/gentle-parenting-explained/`
+2. "Does gentle parenting mean letting kids do whatever they want? (No, and here's why)" `/parenting-approach/gentle-parenting-myths/`
+3. "Parenting styles compared: Authoritative, permissive, authoritarian, and where you fit" `/parenting-approach/parenting-styles-compared/`
+4. "The sweet spot between strict and permissive parenting" `/parenting-approach/strict-vs-permissive/`
+5. "What every parent needs to know about praise (and what to say instead)" `/parenting-approach/how-to-praise-kids/`
+6. "How children develop shame (and how to prevent it)" `/parenting-approach/childhood-shame/`
+7. "Building self-esteem and confidence: What actually works" `/parenting-approach/building-self-esteem/`
+8. "Raising kind, empathetic, responsible kids who want to do the right thing" `/parenting-approach/raising-kind-kids/`
+9. "Raising independent kids without raising entitled ones" `/parenting-approach/independent-not-entitled/`
+10. "How to respond when people criticize your parenting approach" `/parenting-approach/parenting-criticism/`
+11. "Love & Logic, 1-2-3 Magic, and other popular methods: An honest critique" `/parenting-approach/popular-methods-reviewed/`
 
 **Cross-links to other categories**:
 - Links TO Discipline: "Parenting styles compared" (article 3 here) links to "Punishment vs. discipline" (Discipline) for the practical application
@@ -522,18 +522,18 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 ## 20. THE SCIENCE BEHIND IT ALL
 **Slug**: /parenting-science/
 **Core parent thought**: "I want to understand WHY this works -- give me the evidence"
-**Pillar article**: "The science behind gentle parenting: Attachment theory, brain development, and why connection works"
+**Pillar article**: "The science behind gentle parenting: Attachment theory, brain development, and why connection works" `/parenting-science/`
 
 ### Series articles
-1. "Attachment theory in plain english: What secure attachment really means"
-2. "The developing brain: Why kids can't 'just behave' (prefrontal cortex explained)"
-3. "Co-regulation and the neuroscience of how your calm becomes their calm"
-4. "Polyvagal theory for parents: Why your nervous system runs the show"
-5. "Why punishment backfires: The brain science of consequences, shame, and fear"
-6. "The research behind connection-based parenting: What studies actually show"
-7. "The science of temperament: Why kids are wired differently"
-8. "How soothing babies grows their brains: The neuroscience of responsiveness"
-9. "Why play matters more than you think: The research on play and brain development"
+1. "Attachment theory in plain english: What secure attachment really means" `/parenting-science/attachment-theory/`
+2. "The developing brain: Why kids can't 'just behave' (prefrontal cortex explained)" `/parenting-science/developing-brain/`
+3. "Co-regulation and the neuroscience of how your calm becomes their calm" `/parenting-science/neuroscience-co-regulation/`
+4. "Polyvagal theory for parents: Why your nervous system runs the show" `/parenting-science/polyvagal-theory/`
+5. "Why punishment backfires: The brain science of consequences, shame, and fear" `/parenting-science/brain-science-punishment/`
+6. "The research behind connection-based parenting: What studies actually show" `/parenting-science/connection-parenting-research/`
+7. "The science of temperament: Why kids are wired differently" `/parenting-science/science-of-temperament/`
+8. "How soothing babies grows their brains: The neuroscience of responsiveness" `/parenting-science/soothing-grows-brains/`
+9. "Why play matters more than you think: The research on play and brain development" `/parenting-science/why-play-matters/`
 
 **Cross-links to other categories**:
 - Links TO Parenting Philosophy: "The research behind connection-based parenting" (article 6 here) links to "What gentle parenting actually means" (Parenting Philosophy)
@@ -541,6 +541,78 @@ Based on analysis of 965 source article titles. Final taxonomy with 20 categorie
 - Links TO Staying Calm: "Co-regulation and the neuroscience" (article 3 here) links to "How to stay calm when your child pushes every button" (Staying Calm)
 - Links TO Breaking the Cycle: "Why punishment backfires" (article 5 here) links to "How to break the intergenerational cycle of shame" (Breaking the Cycle)
 - Links TO New Parent: "How soothing babies grows their brains" (article 8 here) links to "Understanding why babies cry" (New Parent)
+
+---
+
+# Linkable Assets
+
+## Quizzes
+
+| # | Quiz | URL | Connects to |
+|---|------|-----|-------------|
+| 1 | What's Your Parenting Style? | `/quiz/parenting-style/` | parenting-approach, discipline, parenting-science |
+| 2 | What's Your Bedtime Battle Style? | `/quiz/bedtime-battle-style/` | sleep |
+| 3 | Are You Repeating Your Parents' Patterns? | `/quiz/parents-patterns/` | breaking-the-cycle, staying-calm, parenting-approach |
+| 4 | What Kind of Worried Parent Are You? | `/quiz/worried-parent/` | anxiety, new-parent, parenting-science |
+| 5 | What's Your Parenting Love Language? | `/quiz/parenting-love-language/` | big-feelings, parenting-approach |
+| 6 | How Would Your Kid Describe You? | `/quiz/kid-describe-you/` | parenting-approach, big-feelings, breaking-the-cycle |
+| 7 | What's Your Parenting Superpower? | `/quiz/parenting-superpower/` | staying-calm, big-feelings, parenting-approach |
+| 8 | What Kind of Parent Are You at 2 AM? | `/quiz/parent-at-2am/` | sleep, staying-calm, new-parent |
+| 9 | What's Your Parenting Era? | `/quiz/parenting-era/` | parenting-approach, discipline |
+| 10 | What Kind of Co-Parent Team Are You? | `/quiz/co-parent-team/` | discipline, staying-calm, new-parent |
+| 11 | Potty Training Readiness | `/quiz/potty-training-readiness/` | potty-training |
+| 12 | Kindergarten Readiness | `/quiz/kindergarten-readiness/` | social-skills, anxiety, transitions |
+| 13 | Solid Foods Readiness | `/quiz/solid-foods-readiness/` | new-parent, eating |
+| 14 | Drop the Nap | `/quiz/drop-the-nap/` | sleep |
+| 15 | Sleepover Readiness | `/quiz/sleepover-readiness/` | anxiety, social-skills, transitions |
+| 16 | Second Child Readiness | `/quiz/second-child-readiness/` | new-parent, siblings, staying-calm |
+| 17 | Parenting Battery | `/quiz/parenting-battery/` | staying-calm, breaking-the-cycle, new-parent |
+| 18 | Screen Dependence | `/quiz/screen-dependence/` | screens, discipline |
+| 19 | Child's Emotional Intelligence | `/quiz/emotional-intelligence/` | big-feelings, social-skills |
+| 20 | Child's Social Confidence | `/quiz/social-confidence/` | social-skills, anxiety |
+| 21 | Communication Safety | `/quiz/communication-safety/` | big-feelings, breaking-the-cycle, parenting-approach |
+| 22 | Bedtime Routine Builder | `/quiz/bedtime-routine/` | sleep |
+| 23 | Age-Appropriate Chores | `/quiz/age-appropriate-chores/` | discipline, parenting-approach |
+| 24 | Calm-Down Toolkit | `/quiz/calm-down-toolkit/` | big-feelings, tantrums, spirited-kids |
+
+## Courses
+
+**General course**: "The Steady Parent Method" `/course/steady-parent-method/` (also `/`)
+
+| # | Course | URL | Category |
+|---|--------|-----|----------|
+| 1 | Tantrum Toolkit | `/course/tantrum-toolkit/` | tantrums |
+| 2 | Beyond Hitting | `/course/beyond-hitting/` | aggression |
+| 3 | Sleep Solutions | `/course/sleep-solutions/` | sleep |
+| 4 | Sibling Harmony | `/course/sibling-harmony/` | siblings |
+| 5 | Childhood Anxiety | `/course/childhood-anxiety/` | anxiety |
+| 6 | Discipline Without Punishment | `/course/discipline-without-punishment/` | discipline |
+| 7 | The Calm Parent | `/course/calm-parent/` | staying-calm |
+| 8 | Breaking the Cycle | `/course/breaking-the-cycle/` | breaking-the-cycle |
+| 9 | Big Feelings | `/course/big-feelings/` | big-feelings |
+| 10 | Potty Training | `/course/potty-training/` | potty-training |
+| 11 | Peaceful Mealtimes | `/course/peaceful-mealtimes/` | eating |
+| 12 | Screen Sanity | `/course/screen-sanity/` | screens |
+| 13 | Social Skills | `/course/social-skills/` | social-skills |
+| 14 | Body Safety Conversations | `/course/body-safety/` | body-safety |
+| 15 | New Parent Survival | `/course/new-parent/` | new-parent |
+| 16 | Parenting Teens | `/course/parenting-teens/` | teens |
+| 17 | Life Transitions | `/course/life-transitions/` | transitions |
+| 18 | Spirited Kids | `/course/spirited-kids/` | spirited-kids |
+| 19 | Intentional Parenting | `/course/intentional-parenting/` | parenting-approach |
+| 20 | The Science of Parenting | `/course/parenting-science/` | parenting-science |
+
+**Strategy**: Each article funnels to its category's specialized course landing page. The landing page can frame the general course through that specific lens (hybrid approach) or be a true standalone course — decided per-course based on wait list demand.
+
+## Community
+
+| Asset | URL |
+|-------|-----|
+| Skool Community | `https://www.skool.com/steady-parent-1727` |
+
+## Freebies
+
+Embedded ConvertKit components. Each freebie is its own form/component — not a URL-based CTA. Specific freebies TBD per category.
 
 ---
 
