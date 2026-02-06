@@ -154,32 +154,100 @@ Create canonical URLs for **every planned page** before any content is written:
 ```
 
 ### 5.2 Link Plan
-One shot with Opus 4.6 over the full taxonomy might be enough for smaller sites, but at ~245 articles it probably needs a few shots. Approach: first figure out dependencies between series, then one shot per series with that series' taxonomy + cross-series connections + tool URLs.
 
-For each article, define intended internal links:
-- **Outbound links**: which other articles/assets this article should link to (5-10 per article)
-- **Anchor intent**: brief note on what context the link serves
+One LLM call per category (~20 calls total). Each call receives: the category's articles with URLs, the cross-link map, all articles in connected categories with URLs, and available quizzes/courses for that category. The LLM produces a link plan for every article in the category.
 
-This is a **list per article**, not a graph visualization—executable data.
+**Output schema** — `research/article_link_plan.json`, array of objects, one per article:
+
+```json
+{
+  "article": "How to handle tantrums in public without losing your mind",
+  "url": "/tantrums/tantrums-in-public/",
+  "links": [
+    {"url": "/tantrums/", "type": "pillar", "intent": "link to the pillar article for this series"},
+    {"url": "/tantrums/ignoring-tantrums/", "type": "prev", "intent": "link to the previous article in the series"},
+    {"url": "/tantrums/prevent-meltdowns/", "type": "next", "intent": "link to the next article in the series"},
+    {"url": "/staying-calm/how-to-stay-calm/", "type": "cross", "intent": "when discussing the parent's own emotional regulation in the moment"},
+    {"url": "/discipline/discipline-in-public/", "type": "cross", "intent": "when discussing discipline or limit-setting during a public tantrum"},
+    {"url": "/tantrums/handle-tantrum-scripts/", "type": "sibling", "intent": "when mentioning what to say or do step-by-step"},
+    {"url": "/staying-calm/self-compassion/", "type": "cross", "intent": "when addressing the guilt or shame the parent feels afterward"},
+    {"url": "/quiz/calm-down-toolkit/", "type": "quiz", "intent": "when discussing calming strategies or tools for self-regulation"}
+  ],
+  "ctas": [
+    {"url": "/course/tantrum-toolkit/", "type": "course", "intent": "sell the course at the most natural point in the article"},
+    {"url": "https://www.skool.com/steady-parent-1727", "type": "community", "intent": "offer the community at the most natural point in the article"},
+    {"url": null, "type": "freebie", "intent": "offer the freebie at the most natural point in the article"}
+  ]
+}
+```
+
+**Schema rules — every object in `links` and `ctas` has exactly three keys: `url`, `type`, `intent`.**
+
+**Link types:**
+- `pillar` — structural link to the category's pillar article
+- `prev` — structural link to the previous article in the series
+- `next` — structural link to the next article in the series
+- `series_preview` — (pillar articles only) link to a series article, used in the pillar's sequential preview structure
+- `sibling` — another article in the same category (not adjacent)
+- `cross` — article in a different category
+- `quiz` — link to a quiz (quizzes are internal links, not CTAs)
+
+**CTA types:**
+- `course` — the category's specialized course
+- `community` — Skool community
+- `freebie` — lead magnet (URL may be null if TBD)
+
+**Intent rules — what to write for each type:**
+
+| Type | Intent is... | Example |
+|------|-------------|---------|
+| `pillar` | Always: "link to the pillar article for this series" | — |
+| `prev` | Always: "link to the previous article in the series" | — |
+| `next` | Always: "link to the next article in the series" | — |
+| `series_preview` | Always: "preview and link to article N in the series" | — |
+| `sibling`, `cross`, `quiz` | A "use when" trigger: when in the article's topic would this link be relevant? The LLM chooses which topic bridge connects the two articles. | "when discussing the parent's own emotional regulation in the moment" |
+| `course` | Always: "sell the course at the most natural point in the article" | — |
+| `community` | Always: "offer the community at the most natural point in the article" | — |
+| `freebie` | Always: "offer the freebie at the most natural point in the article" | — |
+
+**What intent is NOT:**
+- NOT a description of the destination article ("detailed calm techniques")
+- NOT reader psychology ("reader wants practical tools")
+- NOT placement instructions ("link in the third paragraph")
+- NOT article structure assumptions ("link when the article shifts to prevention")
+
+Intent tells the writer model WHY this link exists in the plan and WHEN it's relevant, so the writer can find the right spot in whatever content it actually produces from the source material.
+
+**Pillar articles vs. series articles — two different structures:**
+
+Pillar articles are hub pages. Their structure is rigid:
+1. Table of contents linking to all series articles in order
+2. For each series article (in order): a short preview of the topic, then a link to the full article
+3. The pillar walks the reader through the entire series sequentially — "first we cover X (link), then Y (link), then Z (link)"
+4. Plus cross-category links and quiz links woven into the previews where relevant
+
+Pillar link plans include ALL series articles as `series_preview` type links (in order), plus a few cross-category and quiz links. Pillar articles do NOT have `pillar`, `prev`, or `next` links.
+
+Series articles are standalone pieces. Their link plan has:
+- `cross`, `sibling`, `quiz` links: distributed in the article body wherever the writer sees fit
+- `pillar`, `prev`, `next` links: always at the END of the article as a navigation block. The last lines should read something like: "This article is part of the [Series Name] series (pillar link). Previous: [title] (prev link). Next: [title] (next link)."
+
+**Link counts:**
+- Series articles `links`: 5-10 total (3 mandatory structural + 2-7 editorial picks by the LLM)
+- Pillar articles `links`: all series articles as `series_preview` + 2-5 cross-category/quiz links
+- `ctas`: always exactly 3 (course, community, freebie)
+- First/last articles in a series have no prev/next respectively — they get one fewer mandatory link
+
+**General writer instruction** (added to the writer prompt in Phase 7, not in this file):
+Every link should lead the reader to more detailed, relevant information in a connected article. Links should flow naturally from the surrounding content — not inserted mechanically but woven into the narrative so clicking feels like a natural next step.
 
 ### 5.3 Linkable Assets & CTA Inventory
-Linkable assets (tools, quizzes, stats pages) must be planned first because:
-- Many articles will link to them
-- They serve as hub pages for backlink acquisition
-- Their existence shapes what articles can reference
 
-Build a structured CTA inventory that the writer receives as input. Each CTA entry includes:
-- URL
-- Short description (what it is)
-- Usage context (when to use it — e.g., "use when discussing parent regulation" or "use when giving scripts")
-- CTA type (community, course, freebie, quiz, tool)
-
-Example:
-```
-- [Quiz] /quiz/parenting-style/ — "Take the parenting style quiz" — use when discussing parenting approaches
-- [Freebie] /resources/tantrum-scripts-pdf/ — "Free tantrum scripts cheatsheet" — use when giving step-by-step scripts
-- [Course] /courses/calm-parent/ — "The Staying Calm course" — use when discussing parent regulation
-```
+All linkable assets live in the `# Linkable Assets` section of `research/taxonomy_v3.md`:
+- 24 quizzes with URLs and category connections
+- 21 courses (1 general + 20 specialized, one per category) with URLs
+- Skool community URL
+- Freebies: embedded ConvertKit components, TBD per category
 
 **Output:** Complete URL registry + per-article link plan + CTA inventory (all frozen before writing begins)
 
