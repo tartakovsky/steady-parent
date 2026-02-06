@@ -56,6 +56,7 @@ export const ResultTemplateSchema = z.object({
   nextSteps: z.array(z.string().min(10).max(300)).min(2).max(6).describe("Actionable next steps"),
   watchOutFor: z.string().min(10).max(500).describe("Important nuance for the parent"),
   encouragement: z.string().min(10).max(400).describe("Warm, supportive closing message"),
+  comparativeContext: z.string().min(10).max(300).describe("Social proof context, e.g. 'Most parents who score in this range successfully potty train within 1-2 weeks.'"),
   retakeAdvice: z.string().max(200).optional().describe("When to retake, e.g. 'Retake in 2-4 weeks'"),
 });
 

@@ -51,6 +51,7 @@ export interface ResultTemplate {
   nextSteps: string[];
   watchOutFor: string;
   encouragement: string;
+  comparativeContext: string;
   retakeAdvice?: string;
 }
 
@@ -101,6 +102,10 @@ export interface QuizResult {
   nextSteps: string[];
   watchOutFor: string;
   encouragement: string;
+  comparativeContext: string;
+  shareableSummary: string;
+  strongestDomain: { name: string; percentage: number };
+  weakestDomain: { name: string; percentage: number };
   retakeAdvice?: string | undefined;
 }
 
@@ -251,11 +256,23 @@ export class QuizEngine {
       .filter(d => d.level !== 'high' && d.concern)
       .map(d => d.concern!);
 
+    // Strongest and weakest domains
+    const sorted = [...domainResults].sort((a, b) => b.percentage - a.percentage);
+    const strongestDomain = { name: sorted[0]!.name, percentage: sorted[0]!.percentage };
+    const weakestDomain = { name: sorted[sorted.length - 1]!.name, percentage: sorted[sorted.length - 1]!.percentage };
+
+    // Shareable summary
+    const pct = Math.round((total / maxTotal) * 100);
+    const shareableSummary =
+      strongestDomain.name === weakestDomain.name
+        ? `At ${pct}% readiness, your toddler is developing evenly across all areas.`
+        : `At ${pct}% readiness, your toddler is showing strong ${strongestDomain.name} but needs more time with ${weakestDomain.name}.`;
+
     return {
       quizId: this.quiz.meta.id,
       totalScore: total,
       maxScore: maxTotal,
-      percentage: Math.round((total / maxTotal) * 100),
+      percentage: pct,
       resultId: template.id,
       headline: template.headline,
       subheadline: template.subheadline,
@@ -266,6 +283,10 @@ export class QuizEngine {
       nextSteps: template.nextSteps,
       watchOutFor: template.watchOutFor,
       encouragement: template.encouragement,
+      comparativeContext: template.comparativeContext,
+      shareableSummary,
+      strongestDomain,
+      weakestDomain,
       retakeAdvice: template.retakeAdvice,
     };
   }

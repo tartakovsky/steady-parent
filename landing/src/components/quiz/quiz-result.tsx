@@ -1,144 +1,81 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { savePdf } from "@/lib/save-pdf";
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Check,
-  AlertTriangle,
-  RotateCcw,
   Link2,
   ClipboardCheck,
-  Info,
-  Sparkles,
-  ArrowRight,
-  Heart,
   Download,
+  RotateCcw,
+  Sparkles,
+  Check,
+  AlertTriangle,
+  ArrowRight,
+  Users,
+  ExternalLink,
 } from "lucide-react";
-import type { QuizResult as QuizResultType, DomainResult } from "@/lib/quiz/quiz-engine";
+import type { QuizResult as QuizResultType } from "@/lib/quiz/quiz-engine";
+import { ResultHero } from "./result-hero";
+import { ResultDomainInsight } from "./result-domain-insight";
+import { ResultActionPlan } from "./result-action-plan";
+
+// ── Types ────────────────────────────────────────────────────────────
 
 interface QuizResultProps extends React.HTMLAttributes<HTMLDivElement> {
   result: QuizResultType;
-  quizMeta: { title: string; shortTitle: string };
+  quizMeta: {
+    title: string;
+    shortTitle: string;
+    estimatedTime?: string;
+    sources?: { name: string; url: string }[];
+  };
   onRetake?: () => void;
-  /** True when viewing someone else's shared result */
   shared?: boolean;
 }
 
-// ── Circular score ring ──────────────────────────────────────────────
+// ── Theme ────────────────────────────────────────────────────────────
 
-function ScoreRing({
-  percentage,
-  size = 160,
-  strokeWidth = 10,
-  color,
-}: {
-  percentage: number;
-  size?: number;
-  strokeWidth?: number;
-  color: string;
-}) {
-  const radius = (size - strokeWidth) / 2;
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (percentage / 100) * circumference;
-
-  return (
-    <div className="relative" style={{ width: size, height: size }}>
-      <svg width={size} height={size} className="-rotate-90">
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={strokeWidth}
-          className="text-muted/50"
-        />
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill="none"
-          stroke={color}
-          strokeWidth={strokeWidth}
-          strokeLinecap="round"
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-          style={{ transition: "stroke-dashoffset 1s ease-out" }}
-        />
-      </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-4xl font-bold tracking-tight">{percentage}%</span>
-        <span className="text-xs text-muted-foreground uppercase tracking-widest mt-0.5">
-          readiness
-        </span>
-      </div>
-    </div>
-  );
-}
-
-// ── Mini bar for domain breakdown ────────────────────────────────────
-
-function getDomainColor(level: DomainResult["level"]): string {
-  switch (level) {
-    case "high":
-      return "#16a34a"; // green
-    case "medium":
-      return "#d97706"; // amber
-    case "low":
-      return "#ea580c"; // orange
+function getTheme(resultId: string) {
+  switch (resultId) {
+    case "ready":
+      return {
+        color: "#16a34a",
+        bgGradient: "from-green-50/80 to-emerald-50/30",
+      };
+    case "almost":
+      return {
+        color: "#d97706",
+        bgGradient: "from-amber-50/80 to-yellow-50/30",
+      };
+    case "not-yet":
+      return {
+        color: "#ea580c",
+        bgGradient: "from-orange-50/80 to-amber-50/20",
+      };
+    default:
+      return {
+        color: "#6366f1",
+        bgGradient: "from-violet-50/80 to-indigo-50/30",
+      };
   }
 }
 
-function DomainBar({ domain }: { domain: DomainResult }) {
-  const color = getDomainColor(domain.level);
-  const levelLabel =
-    domain.level === "high"
-      ? "Strong"
-      : domain.level === "medium"
-        ? "Developing"
-        : "Emerging";
+// ── Section heading ──────────────────────────────────────────────────
 
+function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <div className="space-y-3">
-      <div className="flex items-baseline justify-between gap-4">
-        <div>
-          <h3 className="font-semibold text-base">{domain.name}</h3>
-          <p className="text-sm text-muted-foreground mt-0.5">{domain.headline}</p>
-        </div>
-        <div className="text-right shrink-0">
-          <span
-            className="text-xs font-medium uppercase tracking-wide px-2 py-0.5 rounded-full"
-            style={{
-              backgroundColor: `${color}18`,
-              color,
-            }}
-          >
-            {levelLabel}
-          </span>
-        </div>
-      </div>
-      {/* Custom bar */}
-      <div className="h-2 w-full rounded-full bg-muted/60 overflow-hidden">
-        <div
-          className="h-full rounded-full transition-all duration-700 ease-out"
-          style={{
-            width: `${domain.percentage}%`,
-            backgroundColor: color,
-          }}
-        />
-      </div>
-      <p className="text-sm text-muted-foreground leading-relaxed">
-        {domain.detail}
-      </p>
-    </div>
+    <motion.h2
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4 }}
+      className="text-2xl font-extrabold tracking-tight text-foreground"
+    >
+      {children}
+    </motion.h2>
   );
 }
 
@@ -156,13 +93,28 @@ export function QuizResult({
   const [saving, setSaving] = useState(false);
   const resultRef = useRef<HTMLDivElement>(null);
 
-  const handleCopyLink = async () => {
+  const handleShare = useCallback(async () => {
     const url = new URL(window.location.href);
     url.searchParams.set("s", "1");
-    await navigator.clipboard.writeText(url.toString());
+    const shareUrl = url.toString();
+
+    if (typeof navigator.share === "function") {
+      try {
+        await navigator.share({
+          title: `My ${quizMeta.shortTitle} Results`,
+          text: result.shareableSummary,
+          url: shareUrl,
+        });
+        return;
+      } catch {
+        // User cancelled or not available — fall through to clipboard
+      }
+    }
+
+    await navigator.clipboard.writeText(shareUrl);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+    setTimeout(() => setCopied(false), 2500);
+  }, [quizMeta.shortTitle, result.shareableSummary]);
 
   const handleSavePdf = useCallback(async () => {
     if (!resultRef.current || saving) return;
@@ -175,48 +127,24 @@ export function QuizResult({
     }
   }, [saving, quizMeta.shortTitle]);
 
-  // Result-specific theming
-  const theme = (() => {
-    switch (result.resultId) {
-      case "ready":
-        return {
-          color: "#16a34a",
-          bgGradient: "from-green-50 to-emerald-50/50",
-          label: "Ready to go",
-          icon: <Sparkles className="h-5 w-5" />,
-        };
-      case "almost":
-        return {
-          color: "#d97706",
-          bgGradient: "from-amber-50 to-yellow-50/50",
-          label: "Almost there",
-          icon: <Heart className="h-5 w-5" />,
-        };
-      case "not-yet":
-        return {
-          color: "#ea580c",
-          bgGradient: "from-orange-50 to-amber-50/30",
-          label: "Give it time",
-          icon: <Heart className="h-5 w-5" />,
-        };
-      default:
-        return {
-          color: "var(--primary)",
-          bgGradient: "from-primary/5 to-primary/0",
-          label: "Your results",
-          icon: <Sparkles className="h-5 w-5" />,
-        };
-    }
-  })();
-
+  const theme = getTheme(result.resultId);
 
   return (
-    <div ref={resultRef} className={cn("space-y-10", className)} {...props}>
-      {/* ── Shared CTA (first thing visitors see) ────────────────── */}
+    <div
+      ref={resultRef}
+      className={cn("space-y-12 sm:space-y-16", className)}
+      {...props}
+    >
+      {/* ── 1. Shared CTA (visitors see this first) ────────────── */}
       {shared && (
-        <div className="rounded-2xl border-2 border-green-600 bg-green-50/50 p-6 sm:p-8 text-center space-y-3">
-          <p className="text-lg sm:text-xl font-semibold text-foreground">
-            Curious about your own results?
+        <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="rounded-2xl border-2 border-green-200 bg-green-50/40 p-6 sm:p-8 text-center space-y-4"
+        >
+          <p className="text-lg sm:text-xl font-bold text-foreground">
+            Curious about your own child&apos;s readiness?
           </p>
           <Button
             size="lg"
@@ -227,200 +155,264 @@ export function QuizResult({
             Take the Quiz Yourself
           </Button>
           <p className="text-sm text-muted-foreground">
-            {quizMeta.shortTitle} &middot; Takes about 2 minutes
+            {quizMeta.shortTitle} &middot;{" "}
+            {quizMeta.estimatedTime ?? "2 minutes"}
           </p>
-        </div>
+        </motion.div>
       )}
 
-      {/* ── Hero: Score + Headline ──────────────────────────────── */}
-      <div
-        className={cn(
-          "rounded-2xl bg-gradient-to-br p-8 sm:p-10",
-          theme.bgGradient
-        )}
+      {/* ── 2. Hero ────────────────────────────────────────────── */}
+      <ResultHero
+        percentage={result.percentage}
+        headline={result.headline}
+        subheadline={result.subheadline}
+        themeColor={theme.color}
+        bgGradient={theme.bgGradient}
+        shared={shared}
+      />
+
+      {/* ── 3. Shareable Summary + Comparative Context ─────────── */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="text-center px-4 py-2"
       >
-        <div className="flex flex-col sm:flex-row sm:items-center gap-8">
-          <ScoreRing
-            percentage={result.percentage}
-            color={theme.color}
-          />
-          <div className="space-y-3 flex-1">
+        <p className="text-xl sm:text-2xl leading-relaxed text-foreground/80 max-w-2xl mx-auto">
+          {result.shareableSummary}
+        </p>
+        <div className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground">
+          <Users className="w-4 h-4 shrink-0" />
+          <span>{result.comparativeContext}</span>
+        </div>
+      </motion.section>
+
+      {/* ── 4. Share / Save CTAs (owner only) ──────────────────── */}
+      {!shared && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="flex flex-wrap items-center justify-center gap-3"
+        >
+          <Button
+            onClick={handleShare}
+            className="gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2.5 rounded-xl text-base"
+          >
+            {copied ? (
+              <>
+                <ClipboardCheck className="h-4 w-4" />
+                Link Copied!
+              </>
+            ) : (
+              <>
+                <Link2 className="h-4 w-4" />
+                Share Results
+              </>
+            )}
+          </Button>
+          <Button
+            variant="outline"
+            onClick={handleSavePdf}
+            disabled={saving}
+            className="gap-2 rounded-xl"
+          >
+            <Download className="h-4 w-4" />
+            {saving ? "Saving..." : "Save PDF"}
+          </Button>
+          {onRetake && (
+            <Button
+              variant="ghost"
+              onClick={onRetake}
+              className="gap-2 rounded-xl"
+            >
+              <RotateCcw className="h-4 w-4" />
+              Retake
+            </Button>
+          )}
+        </motion.div>
+      )}
+
+      {/* ── 5. Domain Insights ─────────────────────────────────── */}
+      <section className="space-y-6">
+        <SectionHeading>A Closer Look</SectionHeading>
+        <div className="grid gap-4">
+          {result.domains.map((domain, i) => (
+            <ResultDomainInsight
+              key={domain.id}
+              domain={domain}
+              index={i}
+              shared={shared}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* ── Shared-view second CTA ─────────────────────────────── */}
+      {shared && (
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <Button
+            size="lg"
+            onClick={onRetake}
+            className="text-base sm:text-lg px-10 py-6 rounded-xl font-bold bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-xl transition-all"
+          >
+            <Sparkles className="h-5 w-5 mr-2" />
+            Find Out Your Child&apos;s Readiness
+          </Button>
+        </motion.div>
+      )}
+
+      {/* ── Owner-only sections ─────────────────────────────────── */}
+      {!shared && (
+        <>
+          {/* ── 6. Strengths ────────────────────────────────────── */}
+          {result.strengths.length > 0 && (
+            <section className="space-y-5">
+              <SectionHeading>Where Your Child Shines</SectionHeading>
+              <div className="grid gap-3">
+                {result.strengths.map((strength, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    className="flex items-start gap-3 rounded-xl bg-green-50/60 border border-green-100/60 px-4 sm:px-5 py-4"
+                  >
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 shrink-0 mt-0.5">
+                      <Check className="w-3.5 h-3.5 text-green-700" />
+                    </div>
+                    <p className="text-sm sm:text-[15px] text-green-900/80 leading-relaxed">
+                      {strength}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* ── 7. Growth Areas ─────────────────────────────────── */}
+          {result.concerns.length > 0 && (
+            <section className="space-y-5">
+              <SectionHeading>Room to Grow</SectionHeading>
+              <div className="grid gap-3">
+                {result.concerns.map((concern, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    className="flex items-start gap-3 rounded-xl bg-amber-50/60 border border-amber-100/60 px-4 sm:px-5 py-4"
+                  >
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-amber-100 shrink-0 mt-0.5">
+                      <AlertTriangle className="w-3.5 h-3.5 text-amber-700" />
+                    </div>
+                    <p className="text-sm sm:text-[15px] text-amber-900/80 leading-relaxed">
+                      {concern}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* ── 8. Action Plan ──────────────────────────────────── */}
+          <section className="space-y-6">
+            <SectionHeading>What to Do Next</SectionHeading>
+            <ResultActionPlan
+              steps={result.nextSteps}
+              watchOutFor={result.watchOutFor}
+              themeColor={theme.color}
+            />
+          </section>
+
+          {/* ── 9. Encouragement ────────────────────────────────── */}
+          <motion.section
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <div
-              className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full"
+              className="rounded-2xl px-6 sm:px-8 py-8 sm:py-10 text-center"
               style={{
-                backgroundColor: `${theme.color}15`,
-                color: theme.color,
+                background: `linear-gradient(135deg, ${theme.color}08 0%, ${theme.color}04 100%)`,
               }}
             >
-              {theme.icon}
-              {theme.label}
-            </div>
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
-              {result.headline}
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {result.subheadline}
-            </p>
-          </div>
-        </div>
-
-        <p className="mt-6 text-foreground/80 leading-relaxed max-w-prose">
-          {result.explanation}
-        </p>
-
-        {/* Quick actions right in the hero */}
-        {!shared && (
-          <div className="flex flex-wrap gap-3 mt-6">
-            <Button onClick={handleCopyLink} className="gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2.5">
-              {copied ? (
-                <>
-                  <ClipboardCheck className="h-4 w-4" />
-                  Copied!
-                </>
-              ) : (
-                <>
-                  <Link2 className="h-4 w-4" />
-                  Share Results
-                </>
+              <p className="text-lg sm:text-xl leading-relaxed text-foreground/85 max-w-2xl mx-auto">
+                {result.encouragement}
+              </p>
+              {result.retakeAdvice && (
+                <p className="mt-4 text-sm text-muted-foreground inline-flex items-center gap-1.5">
+                  <ArrowRight className="w-3.5 h-3.5" />
+                  {result.retakeAdvice}
+                </p>
               )}
+            </div>
+          </motion.section>
+
+          {/* ── Bottom CTAs ─────────────────────────────────────── */}
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Button
+              onClick={handleShare}
+              className="gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2.5 rounded-xl"
+            >
+              <Link2 className="h-4 w-4" />
+              Share Results
             </Button>
-            <Button variant="outline" size="sm" onClick={handleSavePdf} disabled={saving} className="gap-1.5 bg-background/80">
-              <Download className="h-3.5 w-3.5" />
-              {saving ? "Saving..." : "Save PDF"}
+            <Button
+              variant="outline"
+              onClick={handleSavePdf}
+              disabled={saving}
+              className="gap-2 rounded-xl"
+            >
+              <Download className="h-4 w-4" />
+              Save PDF
             </Button>
             {onRetake && (
-              <Button variant="ghost" size="sm" onClick={onRetake} className="gap-1.5">
-                <RotateCcw className="h-3.5 w-3.5" />
-                Retake
+              <Button
+                variant="ghost"
+                onClick={onRetake}
+                className="gap-2 rounded-xl"
+              >
+                <RotateCcw className="h-4 w-4" />
+                Retake Quiz
               </Button>
             )}
           </div>
-        )}
-      </div>
-
-      {/* ── Domain Breakdown ───────────────────────────────────── */}
-      <div className="space-y-6">
-        <h2 className="text-xl font-bold tracking-tight">
-          Readiness by Area
-        </h2>
-        <div className="grid gap-6">
-          {result.domains.map((domain) => (
-            <Card key={domain.id} className="overflow-hidden">
-              <CardContent className="pt-6">
-                <DomainBar domain={domain} />
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-
-      {/* ── Strengths & Concerns side by side ──────────────────── */}
-      {(result.strengths.length > 0 || result.concerns.length > 0) && (
-        <div className="grid sm:grid-cols-2 gap-6">
-          {result.strengths.length > 0 && (
-            <Card className="border-green-100 bg-green-50/30">
-              <CardHeader className="pb-3">
-                <CardTitle className="flex items-center gap-2 text-base">
-                  <div className="flex items-center justify-center w-7 h-7 rounded-full bg-green-100">
-                    <Check className="h-4 w-4 text-green-700" />
-                  </div>
-                  Strengths
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {result.strengths.map((strength, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed">
-                      <Check className="h-4 w-4 mt-0.5 shrink-0 text-green-600" />
-                      <span>{strength}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          )}
-
-          {result.concerns.length > 0 && (
-            <Card className="border-amber-100 bg-amber-50/30">
-              <CardHeader className="pb-3">
-                <CardTitle className="flex items-center gap-2 text-base">
-                  <div className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-100">
-                    <AlertTriangle className="h-4 w-4 text-amber-700" />
-                  </div>
-                  Areas to Watch
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {result.concerns.map((concern, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed">
-                      <AlertTriangle className="h-4 w-4 mt-0.5 shrink-0 text-amber-600" />
-                      <span>{concern}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          )}
-        </div>
+        </>
       )}
 
-      {/* ── Next Steps ─────────────────────────────────────────── */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-lg">
-            What to Do Next
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ol className="space-y-4">
-            {result.nextSteps.map((step, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <span
-                  className="flex items-center justify-center shrink-0 w-6 h-6 rounded-full text-xs font-bold mt-0.5"
-                  style={{
-                    backgroundColor: `${theme.color}15`,
-                    color: theme.color,
-                  }}
-                >
-                  {i + 1}
-                </span>
-                <span className="leading-relaxed">{step}</span>
-              </li>
-            ))}
-          </ol>
-        </CardContent>
-      </Card>
-
-      {/* ── Good to Know ───────────────────────────────────────── */}
-      {result.watchOutFor && (
-        <Card className="border-blue-100 bg-blue-50/30">
-          <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-2 text-base">
-              <div className="flex items-center justify-center w-7 h-7 rounded-full bg-blue-100">
-                <Info className="h-4 w-4 text-blue-700" />
-              </div>
-              Good to Know
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="leading-relaxed">{result.watchOutFor}</p>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* ── Encouragement ──────────────────────────────────────── */}
-      <div className="rounded-2xl bg-gradient-to-br from-primary/8 to-primary/3 p-8">
-        <p className="text-lg leading-relaxed text-foreground/90">
-          {result.encouragement}
-        </p>
-        {result.retakeAdvice && (
-          <p className="mt-3 text-sm text-muted-foreground flex items-center gap-1.5">
-            <ArrowRight className="h-3.5 w-3.5" />
-            {result.retakeAdvice}
+      {/* ── Sources (always visible) ───────────────────────────── */}
+      {quizMeta.sources && quizMeta.sources.length > 0 && (
+        <div className="text-center space-y-2 pt-2">
+          <p className="text-xs font-medium text-muted-foreground/60 uppercase tracking-wider">
+            Based on research from
           </p>
-        )}
-      </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+            {quizMeta.sources.map((source) => (
+              <a
+                key={source.url}
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
+              >
+                {source.name}
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

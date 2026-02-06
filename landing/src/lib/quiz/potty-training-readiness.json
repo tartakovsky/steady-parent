@@ -245,7 +245,8 @@
         "Expect some accidents and treat them matter-of-factly, not as failures"
       ],
       "watchOutFor": "Even ready children may regress during stress, illness, or big life changes. If this happens, it's normal - stay patient and don't treat it as a step backward.",
-      "encouragement": "You've waited for the right time, which sets you up for success. Trust your child's readiness and your own instincts."
+      "encouragement": "You've waited for the right time, which sets you up for success. Trust your child's readiness and your own instincts.",
+      "comparativeContext": "Most parents who score in this range successfully potty train within 1-2 weeks."
     },
     "almost": {
       "id": "almost",
@@ -261,6 +262,7 @@
       ],
       "watchOutFor": "If you decide to start now, watch for daily battles or increasing resistance. These are signals to pause and try again later - not signs of failure.",
       "encouragement": "Your child is close! A little more time often makes a big difference. The readiness signs you're already seeing are great progress.",
+      "comparativeContext": "Most parents in this range find their child ready within 2-3 months.",
       "retakeAdvice": "Retake this quiz in 2-4 weeks"
     },
     "not-yet": {
@@ -277,6 +279,7 @@
       ],
       "watchOutFor": "Well-meaning family members may pressure you to start. Remember: research clearly shows that early training doesn't lead to earlier completion - it just leads to a longer, harder process.",
       "encouragement": "The average age for completing potty training is 2.5 to 3.5 years. Your child's timeline is their own, and waiting for readiness is the evidence-based approach.",
+      "comparativeContext": "Most children develop these readiness signs between ages 2 and 3 — you're right on track.",
       "retakeAdvice": "Retake this quiz in 4-6 weeks"
     }
   }
