@@ -64,7 +64,7 @@ function getTheme(resultId: string) {
     case "ready":
       return { color: "#16a34a", bg: "#f0fdf4" };
     case "almost":
-      return { color: "#16a34a", bg: "#f0fdf4" };
+      return { color: "#d97706", bg: "#fffbeb" };
     case "not-yet":
       return { color: "#ea580c", bg: "#fff7ed" };
     default:
