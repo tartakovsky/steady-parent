@@ -131,6 +131,13 @@ export function QuizContainer({
     setShared(params.get("s") === "1");
   }, []);
 
+  // Scroll to top when results appear
+  useEffect(() => {
+    if (result) {
+      window.scrollTo({ top: 0 });
+    }
+  }, [result]);
+
   // Show results if quiz is complete
   if (result) {
     return (

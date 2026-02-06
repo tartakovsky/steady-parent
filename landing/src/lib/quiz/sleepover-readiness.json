@@ -1,0 +1,299 @@
+{
+  "quizType": "readiness",
+  "meta": {
+    "id": "sleepover-readiness",
+    "slug": "sleepover-readiness",
+    "title": "Is Your Child Ready for a Sleepover?",
+    "shortTitle": "Sleepover Readiness Quiz",
+    "description": "A developmental assessment to help you determine if your child is ready for their first sleepover. Based on separation comfort, self-care independence, and emotional regulation research.",
+    "intro": "A first sleepover is a big milestone — and readiness isn't just about age. It's about how comfortable your child is separating from you, managing their own routines, and handling unexpected emotions in an unfamiliar place.\n\nAnswer based on what your child does most of the time, not their best or worst day.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 9,
+    "ageRange": { "min": 5, "max": 10, "unit": "years" },
+    "sources": [
+      {
+        "name": "Child Development Institute — Separation Anxiety",
+        "url": "https://childdevelopmentinfo.com/child-psychology/separation-anxiety/"
+      },
+      {
+        "name": "Zero to Three — Building Self-Help Skills",
+        "url": "https://www.zerotothree.org/resource/encouraging-your-childs-sense-of-independence/"
+      }
+    ]
+  },
+
+  "domains": {
+    "separation-comfort": {
+      "id": "separation-comfort",
+      "name": "Separation Comfort",
+      "maxPoints": 9,
+      "thresholds": { "high": 7, "medium": 4 }
+    },
+    "self-care": {
+      "id": "self-care",
+      "name": "Self-Care Independence",
+      "maxPoints": 6,
+      "thresholds": { "high": 5, "medium": 3 }
+    },
+    "communication": {
+      "id": "communication",
+      "name": "Communication Skills",
+      "maxPoints": 6,
+      "thresholds": { "high": 5, "medium": 3 }
+    },
+    "emotional-regulation": {
+      "id": "emotional-regulation",
+      "name": "Emotional Regulation Away from Home",
+      "maxPoints": 6,
+      "thresholds": { "high": 5, "medium": 3 }
+    }
+  },
+
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "separation-comfort",
+      "text": "How does your child handle being away from you overnight at a familiar place?",
+      "subtext": "Think about grandparents' house or a close relative's home.",
+      "source": "CDI — overnight separation as sleepover readiness indicator",
+      "options": [
+        { "id": "q1a", "text": "Has done it before and was fine", "points": 3 },
+        { "id": "q1b", "text": "Has tried it but had a rough time or needed to come home early", "points": 1 },
+        { "id": "q1c", "text": "Hasn't spent a night away from us yet", "points": 0 }
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "separation-comfort",
+      "text": "When you drop your child off at a friend's house to play, what happens?",
+      "subtext": "Focus on the moment you leave, not how they do once distracted.",
+      "source": "Zero to Three — separation comfort in peer settings",
+      "options": [
+        { "id": "q2a", "text": "Waves goodbye and dives right into playing", "points": 3 },
+        { "id": "q2b", "text": "A little hesitant but settles in after a minute or two", "points": 1 },
+        { "id": "q2c", "text": "Gets anxious or upset when I try to leave", "points": 0 }
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "separation-comfort",
+      "text": "Has your child ever asked to do a sleepover at a friend's house?",
+      "subtext": "Interest doesn't guarantee readiness, but it signals comfort with the idea.",
+      "source": "CDI — child-initiated separation as readiness signal",
+      "options": [
+        { "id": "q3a", "text": "Yes, and they've been excited about the idea", "points": 3 },
+        { "id": "q3b", "text": "They've mentioned it but seem uncertain", "points": 1 },
+        { "id": "q3c", "text": "No, or they actively say they don't want to", "points": 0 }
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "self-care",
+      "text": "Can your child get ready for bed on their own?",
+      "subtext": "Brushing teeth, putting on pajamas, using the bathroom — with minimal reminders.",
+      "source": "Zero to Three — bedtime routines and independence",
+      "options": [
+        { "id": "q4a", "text": "Yes, handles the full routine without much help", "points": 3 },
+        { "id": "q4b", "text": "Can do most of it but needs reminders or help with a step or two", "points": 1 },
+        { "id": "q4c", "text": "Needs significant help with the bedtime routine", "points": 0 }
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "self-care",
+      "text": "Does your child wake up during the night needing comfort or help?",
+      "subtext": "Think about the last few weeks — not unusual one-off nights.",
+      "source": "Zero to Three — nighttime independence and sleep continuity",
+      "options": [
+        { "id": "q5a", "text": "Almost never — sleeps through the night consistently", "points": 3 },
+        { "id": "q5b", "text": "Occasionally wakes but can usually settle back down alone", "points": 1 },
+        { "id": "q5c", "text": "Wakes often and needs a parent to help them fall back asleep", "points": 0 }
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "communication",
+      "text": "Can your child clearly tell an adult what they need?",
+      "subtext": "'I'm hungry,' 'I need to use the bathroom,' 'I don't feel well.'",
+      "source": "CDI — expressive language for needs in unfamiliar settings",
+      "options": [
+        { "id": "q6a", "text": "Yes, speaks up clearly when they need something", "points": 3 },
+        { "id": "q6b", "text": "Usually, but might be shy with adults they don't know well", "points": 1 },
+        { "id": "q6c", "text": "Has a hard time asking for help, especially from non-parents", "points": 0 }
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "communication",
+      "text": "If something goes wrong at a friend's house, would your child tell you later?",
+      "subtext": "Someone was mean, they felt scared, they didn't like the food.",
+      "source": "CDI — debriefing and emotional disclosure after separation",
+      "options": [
+        { "id": "q7a", "text": "Yes, they share what happened — good and bad", "points": 3 },
+        { "id": "q7b", "text": "Sometimes, especially if I ask specific questions", "points": 1 },
+        { "id": "q7c", "text": "Tends to keep things to themselves", "points": 0 }
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "emotional-regulation",
+      "text": "How does your child handle disappointment or frustration away from home?",
+      "subtext": "Losing a game, not getting a turn, feeling left out.",
+      "source": "Zero to Three — emotional regulation in peer settings",
+      "options": [
+        { "id": "q8a", "text": "Can handle it — might be upset but recovers without melting down", "points": 3 },
+        { "id": "q8b", "text": "Gets upset but can be talked through it by a trusted adult", "points": 1 },
+        { "id": "q8c", "text": "Has a hard time — needs a parent to calm down", "points": 0 }
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "emotional-regulation",
+      "text": "If your child started missing you during a sleepover, what would likely happen?",
+      "subtext": "This is predictive — base it on how they've handled being homesick before.",
+      "source": "CDI — homesickness and self-soothing readiness",
+      "options": [
+        { "id": "q9a", "text": "They'd probably tell the adult and work through it", "points": 3 },
+        { "id": "q9b", "text": "They might get upset but could be comforted by the other parent", "points": 1 },
+        { "id": "q9c", "text": "They'd spiral and need to be picked up", "points": 0 }
+      ]
+    }
+  ],
+
+  "domainContent": {
+    "separation-comfort": {
+      "high": {
+        "level": "high",
+        "headline": "Comfortable being away from you",
+        "detail": "Your child has experience separating from you overnight or for extended periods, and they handle it well. This kind of separation confidence is the single biggest predictor of sleepover success.",
+        "strength": "Strong separation comfort — your child can handle being away from you overnight without significant anxiety"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Building separation confidence",
+        "detail": "Your child is growing more comfortable with separations but hasn't fully crossed the threshold yet. This is common — many children need practice with shorter separations before they're ready for an overnight away.",
+        "concern": "Separation comfort is still developing — consider building up to a sleepover with shorter visits or an overnight at a very familiar place first"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Still building separation comfort",
+        "detail": "Your child relies on your presence for security and hasn't spent much time away from you, especially overnight. This is developmentally normal — some children are ready at 6, others at 9. Rushing this milestone can backfire.",
+        "concern": "Separation readiness is not there yet. Sleepovers work best when the child initiates the idea and has successfully spent nights away from parents before."
+      }
+    },
+    "self-care": {
+      "high": {
+        "level": "high",
+        "headline": "Independent with nighttime routines",
+        "detail": "Your child can handle bedtime and nighttime routines without much help. This means they won't need the host parent to manage every step — and they're less likely to wake up confused or scared in an unfamiliar place.",
+        "strength": "Strong nighttime independence — your child can manage bedtime and sleep routines without needing a parent's help"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Mostly independent at night",
+        "detail": "Your child can handle most bedtime tasks but still relies on you for some parts of the routine or occasionally wakes needing help. This won't necessarily derail a sleepover, but it does add complexity for the host family.",
+        "concern": "Self-care independence is progressing — practice bedtime routines without parental help to build confidence for sleepovers"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Still needs help with nighttime routines",
+        "detail": "Your child relies heavily on you at bedtime and overnight. Sleepovers are harder when a child needs significant help settling down or wakes needing comfort — it puts pressure on the host parent and can lead to a distressing experience for your child.",
+        "concern": "Nighttime independence is still developing. Focus on building bedtime routines your child can manage solo before attempting sleepovers."
+      }
+    },
+    "communication": {
+      "high": {
+        "level": "high",
+        "headline": "Speaks up when they need something",
+        "detail": "Your child can clearly express their needs to adults and will tell you what happened when they get home. This communication ability is critical — it's how they'll ask for help, set boundaries, and process the experience afterward.",
+        "strength": "Strong communication skills — your child can express needs to other adults and will share their experience with you afterward"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Learning to speak up",
+        "detail": "Your child can communicate needs in familiar settings but may struggle with less familiar adults or situations. This is workable — a sleepover at a close friend's house with a parent your child knows well is very different from a newer friendship.",
+        "concern": "Communication skills are still strengthening — your child may hesitate to ask for help from adults they don't know well"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Still learning to advocate for themselves",
+        "detail": "Your child has a hard time asking for what they need, especially from non-parents. Sleepovers require kids to speak up — 'I'm hungry,' 'I don't feel well,' 'I want to go home' — and a child who can't do that is at risk for a negative experience.",
+        "concern": "Communication readiness is a concern. Practice helping your child find words for needs and feelings before attempting overnight separations."
+      }
+    },
+    "emotional-regulation": {
+      "high": {
+        "level": "high",
+        "headline": "Can manage big feelings away from home",
+        "detail": "Your child can handle disappointment, frustration, and homesickness without needing you to step in. This emotional resilience is what allows sleepovers to be fun instead of stressful — they know they can handle whatever comes up.",
+        "strength": "Strong emotional regulation — your child can manage disappointment and homesickness without needing a parent to intervene"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Emotional regulation is emerging",
+        "detail": "Your child can handle some emotional challenges away from you but still needs support for bigger feelings. This is typical for younger or less experienced children — emotional regulation strengthens with practice and brain development.",
+        "concern": "Emotional regulation is still developing — your child may struggle if things don't go as expected during a sleepover"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Needs parent support for big emotions",
+        "detail": "Your child relies on you to help them through difficult emotions. Sleepovers involve unpredictability — different rules, unfamiliar food, sibling dynamics, homesickness — and a child who can't self-soothe is more likely to have a hard time.",
+        "concern": "Emotional regulation away from parents is not yet solid. Consider waiting until your child can manage disappointment and frustration without needing you present."
+      }
+    }
+  },
+
+  "results": {
+    "ready": {
+      "id": "ready",
+      "scoreRange": { "min": 21, "max": 27 },
+      "headline": "Green Light!",
+      "subheadline": "Your child is showing strong readiness for a sleepover.",
+      "explanation": "Your child has the separation comfort, independence, communication skills, and emotional regulation to handle a night away from you. That doesn't mean it will be perfect — first sleepovers are still a big deal — but the foundations are there.",
+      "nextSteps": [
+        "Start with a sleepover at a very familiar place — a close friend whose family your child knows well",
+        "Talk through what the night will look like: bedtime routine, what happens if they miss you, when you'll pick them up",
+        "Send comfort items — a stuffed animal, favorite pajamas, a family photo",
+        "Have a pickup plan ready — it's okay to come get them early if needed, and knowing that option exists often prevents needing it"
+      ],
+      "watchOutFor": "Even very ready kids can get homesick. If they call upset, resist the urge to rush over immediately — sometimes talking it through is enough. But if they truly want to come home, go get them without shame. A positive first attempt (even if shortened) is better than powering through a miserable night.",
+      "encouragement": "Your child has built the skills for this milestone. They might surprise you with how well they do — or they might need a few tries to get comfortable. Either way, you're giving them the chance to practice independence in a safe way.",
+      "comparativeContext": "Children who score in this range typically handle their first sleepover well, though some homesickness or early pickup is still common and developmentally normal.",
+      "retakeAdvice": "No need to retake — your child is showing clear readiness signs"
+    },
+    "almost": {
+      "id": "almost",
+      "scoreRange": { "min": 10, "max": 20 },
+      "headline": "Almost There",
+      "subheadline": "Your child is building readiness — a few areas could use more time or practice.",
+      "explanation": "Your child has some readiness signs and some areas still developing. This is the most common result. Look at the domain breakdown below to see what might need more practice or experience before trying an overnight away.",
+      "nextSteps": [
+        "Focus on the 'Room to Grow' areas below — separation practice, bedtime independence, or emotional coaching depending on what's flagged",
+        "If your child hasn't spent a night away from you, start there — grandparents or a trusted relative, not a friend's house",
+        "Build up gradually: longer playdates, late pickups, then an overnight at a very familiar place before attempting a peer sleepover",
+        "Talk openly about sleepovers — what sounds fun, what sounds scary — and let your child set the pace"
+      ],
+      "watchOutFor": "Peer pressure (or parent pressure) can push kids into sleepovers before they're ready. A bad first experience can set back separation comfort for months. If your child is hesitant or if separation anxiety is flagged below, give it more time.",
+      "encouragement": "Your child is closer than you might think. The fact that you're asking these questions — rather than just saying yes to the first invite — means you're paying attention. That instinct will guide you better than any quiz.",
+      "comparativeContext": "Most children who score in this range do better after a few more months of building independence and separation practice. There's no rush.",
+      "retakeAdvice": "Retake this quiz in 2-3 months to track progress"
+    },
+    "not-yet": {
+      "id": "not-yet",
+      "scoreRange": { "min": 0, "max": 9 },
+      "headline": "Not Yet",
+      "subheadline": "Your child isn't ready for a sleepover — and that's completely fine.",
+      "explanation": "Your child doesn't have the separation comfort, independence, or emotional regulation needed to make a sleepover a positive experience right now. This isn't a deficit — it's a developmental timeline. Some children are ready at 6, others at 10. Forcing it too early can create anxiety that lasts much longer than one night.",
+      "nextSteps": [
+        "Practice separations in lower-stakes ways: playdates, drop-off activities, a few hours with grandparents",
+        "Work on nighttime independence at home — bedtime routines they can do solo, sleeping through the night without needing you",
+        "Talk about feelings and practice asking for help from trusted adults",
+        "Let your child lead — when they start asking for sleepovers, that's a readiness signal worth listening to"
+      ],
+      "watchOutFor": "Well-meaning friends or family may push: 'Just try it, they'll be fine!' But you know your child. A child who's not ready will likely have a distressing experience that makes the next attempt even harder. Protecting them from that is not overprotective — it's responsive parenting.",
+      "encouragement": "You're doing the right thing by pausing and assessing. Sleepovers are not a developmental requirement — they're a social milestone that works best when the child is genuinely ready. There's no harm in waiting, and significant benefit in getting the timing right.",
+      "comparativeContext": "Many children who score in this range become ready after 6-12 months of building separation comfort and independence. Revisit the idea when your child shows consistent interest and separation confidence.",
+      "retakeAdvice": "Retake this quiz in 4-6 months"
+    }
+  }
+}

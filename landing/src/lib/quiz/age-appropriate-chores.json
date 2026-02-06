@@ -1,0 +1,276 @@
+{
+  "quizType": "readiness",
+  "meta": {
+    "id": "age-appropriate-chores",
+    "slug": "age-appropriate-chores",
+    "title": "What Chores Can Your Child Handle?",
+    "shortTitle": "Age-Appropriate Chores Quiz",
+    "description": "A developmental assessment to help you identify which household responsibilities match your child's current abilities. Based on child development research and practical parenting approaches.",
+    "intro": "Chores aren't just about getting dishes done — they build competence, independence, and a sense of contribution to the family. But the wrong chore at the wrong age sets everyone up for frustration.\n\nAnswer based on what your child can do consistently right now, not what you've seen them do once.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 9,
+    "ageRange": { "min": 2, "max": 10, "unit": "years" },
+    "sources": [
+      {
+        "name": "Developmental Science — Executive Function and Chores",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5641405/"
+      },
+      {
+        "name": "University of Minnesota — Benefits of Household Responsibilities",
+        "url": "https://www.cehd.umn.edu/news/importance-of-chores/"
+      }
+    ]
+  },
+
+  "domains": {
+    "age-readiness": {
+      "id": "age-readiness",
+      "name": "Developmental Readiness",
+      "maxPoints": 9,
+      "thresholds": { "high": 7, "medium": 4 }
+    },
+    "independence-level": {
+      "id": "independence-level",
+      "name": "Independence Level",
+      "maxPoints": 8,
+      "thresholds": { "high": 6, "medium": 3 }
+    },
+    "household-setup": {
+      "id": "household-setup",
+      "name": "Household Context",
+      "maxPoints": 7,
+      "thresholds": { "high": 5, "medium": 3 }
+    }
+  },
+
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "age-readiness",
+      "text": "Can your child follow a simple multi-step routine without reminders?",
+      "subtext": "Like: get dressed, brush teeth, put pajamas in the hamper — three steps in sequence.",
+      "source": "Executive function as predictor of chore readiness",
+      "options": [
+        { "id": "q1a", "text": "Yes, they can complete 3-4 steps in order on their own", "points": 3 },
+        { "id": "q1b", "text": "They can do it with verbal reminders between steps", "points": 1 },
+        { "id": "q1c", "text": "They need help with each individual step", "points": 0 }
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "age-readiness",
+      "text": "How does your child handle things that require fine motor control?",
+      "subtext": "Pouring water, using utensils, picking up small objects, buttoning.",
+      "source": "Fine motor development milestones",
+      "options": [
+        { "id": "q2a", "text": "Confident — can pour, use utensils, and manipulate small items with control", "points": 3 },
+        { "id": "q2b", "text": "Getting there — can do some tasks but still spills or fumbles often", "points": 1 },
+        { "id": "q2c", "text": "Still developing — has trouble with precision tasks", "points": 0 }
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "age-readiness",
+      "text": "Can your child sustain focus on a simple task until it's done?",
+      "subtext": "Not complex work — think 'put all the toys in the bin' or 'wipe the table.'",
+      "source": "Attention span and task completion",
+      "options": [
+        { "id": "q3a", "text": "Yes, they'll finish simple tasks without wandering off", "points": 3 },
+        { "id": "q3b", "text": "They start well but often get distracted halfway through", "points": 1 },
+        { "id": "q3c", "text": "They lose interest within a minute or two", "points": 0 }
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "independence-level",
+      "text": "How does your child feel about doing things 'like a big kid'?",
+      "subtext": "Do they want to help, or resist when asked to contribute?",
+      "source": "Intrinsic motivation and household contribution",
+      "options": [
+        { "id": "q4a", "text": "Eager to help and proud when they accomplish something independently", "points": 3 },
+        { "id": "q4b", "text": "Willing if asked nicely, but doesn't seek out ways to contribute", "points": 1 },
+        { "id": "q4c", "text": "Actively resists — sees it as punishment or boring adult work", "points": 0 }
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "independence-level",
+      "text": "Can your child manage their own belongings in daily routines?",
+      "subtext": "Putting shoes by the door, backpack in its spot, dirty clothes in the hamper.",
+      "source": "Self-help skills and organizational readiness",
+      "options": [
+        { "id": "q5a", "text": "Yes, they put things away without being asked most of the time", "points": 3 },
+        { "id": "q5b", "text": "They'll do it when reminded but don't do it automatically", "points": 1 },
+        { "id": "q5c", "text": "Everything gets dropped wherever they happen to be", "points": 0 }
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "independence-level",
+      "text": "When your child tries something and messes it up, what happens?",
+      "subtext": "Spilling water they were trying to pour, knocking things over while cleaning, etc.",
+      "source": "Resilience and learning through mistakes",
+      "options": [
+        { "id": "q6a", "text": "They're willing to try again or help clean it up", "points": 2 },
+        { "id": "q6b", "text": "They get frustrated but recover with encouragement", "points": 1 },
+        { "id": "q6c", "text": "They melt down or refuse to try again", "points": 0 }
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "household-setup",
+      "text": "Are your household tools accessible to your child?",
+      "subtext": "Step stools, child-sized broom, dishes they can reach, hamper at their level.",
+      "source": "Environmental design for independence",
+      "options": [
+        { "id": "q7a", "text": "Yes, most things are set up so they can participate without adult help", "points": 3 },
+        { "id": "q7b", "text": "Some things are accessible, but they still need me to reach or set things up", "points": 1 },
+        { "id": "q7c", "text": "Most household tools aren't designed for their use yet", "points": 0 }
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "household-setup",
+      "text": "How much time do you realistically have to supervise or guide chores?",
+      "subtext": "Be honest — some chores require more coaching than others.",
+      "source": "Parent availability and chore sustainability",
+      "options": [
+        { "id": "q8a", "text": "I can be present for setup and check-in, but not hovering the whole time", "points": 2 },
+        { "id": "q8b", "text": "I can supervise closely if needed, at least during the learning phase", "points": 1 },
+        { "id": "q8c", "text": "I'm stretched thin — I need tasks they can do completely independently", "points": 0 }
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "household-setup",
+      "text": "How much mess tolerance do you have during the learning phase?",
+      "subtext": "Water on the floor, dishes put away crooked, clothes folded 'creatively.'",
+      "source": "Parent expectations and skill-building environment",
+      "options": [
+        { "id": "q9a", "text": "I'm fine with messy first attempts — it's part of learning", "points": 2 },
+        { "id": "q9b", "text": "I can handle it if I know it won't last forever", "points": 1 },
+        { "id": "q9c", "text": "Honestly, it's easier if I just do it myself", "points": 0 }
+      ]
+    }
+  ],
+
+  "domainContent": {
+    "age-readiness": {
+      "high": {
+        "level": "high",
+        "headline": "Developmentally ready for structured responsibility",
+        "detail": "Your child has the cognitive and motor skills to handle multi-step tasks, follow through to completion, and manage basic precision work. These are the building blocks for real household contributions — not just 'helping,' but actually completing age-appropriate chores independently.",
+        "strength": "Strong developmental readiness — your child can follow routines, sustain attention, and manage fine motor tasks"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Building the skills for increasing responsibility",
+        "detail": "Your child is developing the focus and motor control needed for chores, but still needs support to complete tasks consistently. This is a great phase to introduce simple, single-step chores with clear endpoints while continuing to build multi-step routines.",
+        "concern": "Developmental skills are emerging — stick with shorter tasks and provide reminders to build success patterns"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Still growing into chore readiness",
+        "detail": "Your child is still developing the attention span and motor skills that make chores manageable. This doesn't mean they can't contribute — but their contributions will be more about participation and learning than actual task completion. Focus on one-step tasks with lots of support.",
+        "concern": "Developmental readiness is still building — choose very simple, single-step tasks and expect to do most of it together"
+      }
+    },
+    "independence-level": {
+      "high": {
+        "level": "high",
+        "headline": "Eager contributor with growing independence",
+        "detail": "Your child takes pride in doing things on their own, manages their belongings without constant reminders, and can bounce back from mistakes. This is the sweet spot for introducing chores — they want to help, and they're capable enough to succeed with minimal hovering.",
+        "strength": "High independence and motivation — your child is ready to take ownership of age-appropriate household tasks"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Willing helper with room for more autonomy",
+        "detail": "Your child can handle some independent tasks but still needs coaching, reminders, or encouragement. Start with chores they find satisfying or can see results from quickly — visible progress builds motivation.",
+        "concern": "Independence is developing — choose tasks with clear visual results and provide consistent structure"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Just starting to build self-reliance",
+        "detail": "Your child is still learning to manage basic self-care and belongings, and may see chores as boring adult work. This is normal — many young children aren't intrinsically motivated by household tasks yet. The goal right now is exposure and positive association, not output.",
+        "concern": "Independence is still emerging — keep expectations low and focus on making participation feel collaborative, not like work"
+      }
+    },
+    "household-setup": {
+      "high": {
+        "level": "high",
+        "headline": "Environment supports child participation",
+        "detail": "Your home is set up for your child to contribute: tools are accessible, you have time to coach, and you're comfortable with the mess that comes with learning. This setup makes chores sustainable — not a one-week experiment that fizzles out.",
+        "strength": "Great household setup — accessible tools and realistic expectations make it easier for your child to succeed"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Some adjustments would help",
+        "detail": "Your household has some supports for child participation, but a few tweaks could make chores more sustainable. Think about what's blocking independence: Is it physical access? Time to supervise? Tolerance for imperfection?",
+        "concern": "Household setup is workable but could be optimized — consider small changes to reduce friction (step stool, labeled bins, realistic time expectations)"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Environment needs setup before chores can stick",
+        "detail": "Right now, your household isn't set up for your child to contribute easily — either tools aren't accessible, time is limited, or the mess feels like more trouble than it's worth. This is honest and practical, not a failing. Start with changes to the environment before introducing chores.",
+        "concern": "Household setup is a barrier — before adding chores, consider what physical or time changes would make participation realistic"
+      }
+    }
+  },
+
+  "results": {
+    "ready": {
+      "id": "ready",
+      "scoreRange": { "min": 18, "max": 24 },
+      "headline": "Ready for Responsibility",
+      "subheadline": "Your child has the skills and motivation to handle real household chores.",
+      "explanation": "Your child is showing the developmental readiness, independence, and household support that makes chores sustainable — not a battle. They can follow routines, manage tasks to completion, and your home is set up to let them contribute. This is the phase where chores become part of life, not a struggle.",
+      "nextSteps": [
+        "**Ages 2-3:** Put toys in bins, wipe spills with a cloth, carry non-breakable items to the table, put dirty clothes in hamper, help feed pets (with supervision)",
+        "**Ages 4-5:** Set the table (napkins, utensils), water plants, match socks from laundry, put away groceries (pantry items), make their bed (simple version — pull up covers)",
+        "**Ages 6-7:** Clear their dishes after meals, fold simple laundry (towels, washcloths), sweep small areas, pack their school lunch (with prep done), take out bathroom trash",
+        "**Ages 8-10:** Load/unload dishwasher, vacuum rooms, prepare simple meals (sandwiches, cereal), do their own laundry (with supervision at first), walk the dog, wash the car",
+        "Start with one chore and build consistency before adding more — the habit matters more than the quantity"
+      ],
+      "watchOutFor": "Even capable kids will resist sometimes. Chores aren't always fun, and that's the point — learning to contribute even when you're not in the mood is part of the skill. Expect pushback occasionally, but don't take it as a sign they're 'not ready.'",
+      "encouragement": "You've set your child up to succeed. The research is clear: kids who have regular household responsibilities develop better executive function, stronger work ethic, and more empathy. You're not just getting help with dishes — you're building competence.",
+      "comparativeContext": "Children who score in this range typically handle age-appropriate chores with minimal resistance after a few weeks of consistency.",
+      "retakeAdvice": "No need to retake — your child is ready for the next level of responsibility"
+    },
+    "almost": {
+      "id": "almost",
+      "scoreRange": { "min": 9, "max": 17 },
+      "headline": "Building Independence",
+      "subheadline": "Your child can handle some responsibilities — start small and build gradually.",
+      "explanation": "Your child has some strong readiness signs and some areas still developing. This is the most common result — very few children are independently managing chores across the board. Look at the domain breakdown below to see where to focus your energy first.",
+      "nextSteps": [
+        "**Start with simple, one-step tasks:** Put dirty clothes in hamper, push in their chair, put shoes by the door, throw trash in the bin",
+        "**Make tools accessible:** Step stool for sink, child-sized broom, bins at their level, dishes they can reach",
+        "**Do it together first:** 'I'll spray, you wipe' or 'I'll pour, you stir' — collaborative work builds skills without overwhelming them",
+        "**Focus on one consistent chore before adding more:** Pick something short with immediate visible results (wipe the table, feed the cat)",
+        "**If household setup is the bottleneck, start there:** A $15 step stool and some labeled bins can make participation 10x easier"
+      ],
+      "watchOutFor": "Don't fall into the trap of redoing what they just did. Crooked forks and wrinkled towels are fine — perfection kills motivation. If you need it done right, do it yourself. If you want them to learn, let it be messy.",
+      "encouragement": "Your child is closer to readiness than you might think. The skills that make chores stick — persistence, pride in contribution, tolerance for mistakes — grow through practice, not waiting. Start smaller than feels useful, and build from there.",
+      "comparativeContext": "Most children who score in this range can handle 1-2 consistent chores within a few months, with gradual independence building over time.",
+      "retakeAdvice": "Retake this quiz in 4-6 weeks after introducing one consistent chore"
+    },
+    "not-yet": {
+      "id": "not-yet",
+      "scoreRange": { "min": 0, "max": 8 },
+      "headline": "Starting Small",
+      "subheadline": "Your child is still building the foundation for household responsibility.",
+      "explanation": "Your child isn't showing consistent readiness signs for structured chores yet. This doesn't mean they can't contribute — but right now, their participation is about learning that they're part of the family team, not about task completion. Focus on exposure, not output.",
+      "nextSteps": [
+        "**Ages 2-3:** Hand you items while you load the dishwasher, help push laundry into the washer, carry their plate to the counter, 'help' wipe their high chair tray",
+        "**Ages 4-5:** Put one category of toys away (all the blocks in the bin), water one plant with a small cup, help set the table (napkins only), throw their napkin in the trash after meals",
+        "**All ages:** Do chores together as companionship, not productivity — let them 'help' even when it slows you down",
+        "**Fix the environment first:** If tools aren't accessible or you don't have time to supervise, chores will feel like constant nagging. Start with setup changes before adding expectations.",
+        "**Build independence in self-care first:** Managing their own toys, putting on shoes, cleaning up spills they made — these are readiness skills for broader chores"
+      ],
+      "watchOutFor": "Resist the urge to push chores before readiness is there. Forced participation at this stage teaches 'chores are a punishment' instead of 'I'm a contributing member of this family.' Wait until they can succeed with support, not just comply under pressure.",
+      "encouragement": "You're asking the right questions at the right time. The fact that you're thinking about readiness — rather than just assigning tasks and hoping for the best — means you're already setting your child up for long-term success. Give it time.",
+      "comparativeContext": "Many parents find their child ready for simple, consistent chores after another 6-12 months of development. There's no rush — early positive experiences matter more than early productivity.",
+      "retakeAdvice": "Retake this quiz in 3-4 months as skills develop"
+    }
+  }
+}

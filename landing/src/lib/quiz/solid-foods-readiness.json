@@ -1,0 +1,303 @@
+{
+  "quizType": "readiness",
+  "meta": {
+    "id": "solid-foods-readiness",
+    "slug": "solid-foods-readiness",
+    "title": "Is Your Baby Ready for Solid Foods?",
+    "shortTitle": "Solid Foods Readiness Quiz",
+    "description": "A research-backed assessment to help you determine if your baby is ready to start solid foods. Based on developmental milestones from the AAP, WHO, and CDC.",
+    "intro": "Starting solids isn't about hitting a specific age — it's about watching for developmental readiness. Your baby needs the oral motor control, physical stability, and digestive maturity to handle food safely.\n\nAnswer based on what your baby does consistently, not just once or twice.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 9,
+    "ageRange": { "min": 4, "max": 8, "unit": "months" },
+    "sources": [
+      {
+        "name": "American Academy of Pediatrics — Starting Solid Foods",
+        "url": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Starting-Solid-Foods.aspx"
+      },
+      {
+        "name": "World Health Organization — Infant Feeding Guidelines",
+        "url": "https://www.who.int/health-topics/infant-nutrition"
+      },
+      {
+        "name": "CDC — When, What, and How to Introduce Solid Foods",
+        "url": "https://www.cdc.gov/nutrition/infantandtoddlernutrition/foods-and-drinks/when-to-introduce-solid-foods.html"
+      }
+    ]
+  },
+
+  "domains": {
+    "oral-motor": {
+      "id": "oral-motor",
+      "name": "Oral Motor Skills",
+      "maxPoints": 12,
+      "thresholds": { "high": 10, "medium": 6 }
+    },
+    "interest-signals": {
+      "id": "interest-signals",
+      "name": "Interest & Hunger Cues",
+      "maxPoints": 6,
+      "thresholds": { "high": 5, "medium": 3 }
+    },
+    "digestive-readiness": {
+      "id": "digestive-readiness",
+      "name": "Digestive Readiness",
+      "maxPoints": 3,
+      "thresholds": { "high": 3, "medium": 2 }
+    },
+    "sitting-stability": {
+      "id": "sitting-stability",
+      "name": "Sitting Stability",
+      "maxPoints": 6,
+      "thresholds": { "high": 5, "medium": 3 }
+    }
+  },
+
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "oral-motor",
+      "text": "What happens when you put a soft spoon or teething toy near your baby's mouth?",
+      "subtext": "Watch how they move their tongue and jaw.",
+      "source": "AAP — tongue thrust reflex reduction",
+      "options": [
+        { "id": "q1a", "text": "They close their lips around it and move it back with their tongue", "points": 3 },
+        { "id": "q1b", "text": "They mouth it but push it out with their tongue sometimes", "points": 1 },
+        { "id": "q1c", "text": "Their tongue automatically pushes everything forward and out", "points": 0 }
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "oral-motor",
+      "text": "Can your baby move food or a toy from one side of their mouth to the other?",
+      "subtext": "This lateral tongue movement is key for chewing and swallowing safely.",
+      "source": "WHO — oral motor development for feeding",
+      "options": [
+        { "id": "q2a", "text": "Yes, they move things side to side in their mouth", "points": 3 },
+        { "id": "q2b", "text": "Sometimes, but not consistently", "points": 1 },
+        { "id": "q2c", "text": "Everything stays in the center or falls out", "points": 0 }
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "oral-motor",
+      "text": "Does your baby make chewing motions when watching you eat?",
+      "subtext": "Mimicking eating is a strong readiness signal — they're learning by watching.",
+      "source": "AAP — social feeding cues",
+      "options": [
+        { "id": "q3a", "text": "Yes, they move their mouth and jaw like they're eating too", "points": 3 },
+        { "id": "q3b", "text": "They watch intently but don't mimic yet", "points": 1 },
+        { "id": "q3c", "text": "They don't seem interested in watching us eat", "points": 0 }
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "interest-signals",
+      "text": "How does your baby react when they see you eating?",
+      "subtext": "Interest in your food is one of the clearest readiness signs.",
+      "source": "CDC — signs of readiness for solids",
+      "options": [
+        { "id": "q4a", "text": "Reaches for your food, leans in, or tries to grab it", "points": 3 },
+        { "id": "q4b", "text": "Watches with interest but doesn't reach", "points": 1 },
+        { "id": "q4c", "text": "Doesn't pay attention to our meals", "points": 0 }
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "interest-signals",
+      "text": "Is your baby still satisfied after a full milk feeding?",
+      "subtext": "If they're draining bottles or nursing more frequently and still seem hungry, they may be ready for more calories.",
+      "source": "WHO — complementary feeding timing",
+      "options": [
+        { "id": "q5a", "text": "No, they seem hungry even after a full feeding", "points": 3 },
+        { "id": "q5b", "text": "Usually satisfied, but occasionally want more", "points": 1 },
+        { "id": "q5c", "text": "Yes, milk is still filling them up completely", "points": 0 }
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "digestive-readiness",
+      "text": "How are your baby's bowel movements?",
+      "subtext": "Regular, predictable digestion is a sign their gut is maturing.",
+      "source": "AAP — digestive maturity markers",
+      "options": [
+        { "id": "q6a", "text": "Pretty regular and predictable", "points": 3 },
+        { "id": "q6b", "text": "Somewhat irregular but not concerning", "points": 2 },
+        { "id": "q6c", "text": "All over the place — very inconsistent", "points": 0 }
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "sitting-stability",
+      "text": "Can your baby sit upright in a high chair or on your lap with minimal support?",
+      "subtext": "They don't need to sit independently yet, but their trunk should be stable enough to hold their head and torso upright.",
+      "source": "CDC — sitting stability for safe feeding",
+      "options": [
+        { "id": "q7a", "text": "Yes, sits upright with steady head and trunk control", "points": 3 },
+        { "id": "q7b", "text": "Mostly upright but needs some propping or support", "points": 1 },
+        { "id": "q7c", "text": "Slumps over or can't hold their head steady", "points": 0 }
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "sitting-stability",
+      "text": "Can your baby hold their head steady and upright during a feeding?",
+      "subtext": "Strong neck control is essential for swallowing safely.",
+      "source": "AAP — head control and aspiration prevention",
+      "options": [
+        { "id": "q8a", "text": "Yes, their head stays steady the whole time", "points": 3 },
+        { "id": "q8b", "text": "Mostly steady but wobbles a bit when tired", "points": 1 },
+        { "id": "q8c", "text": "Head is still wobbly and needs support", "points": 0 }
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "oral-motor",
+      "text": "When you offer your baby a spoon of water or breastmilk, what happens?",
+      "subtext": "This tests whether they can pull liquid off a spoon without gagging or pushing it out.",
+      "source": "WHO — spoon feeding readiness",
+      "options": [
+        { "id": "q9a", "text": "They pull it off the spoon and swallow it smoothly", "points": 3 },
+        { "id": "q9b", "text": "They get some in but push the spoon out with their tongue", "points": 1 },
+        { "id": "q9c", "text": "They gag, spit it out, or it dribbles right back out", "points": 0 }
+      ]
+    }
+  ],
+
+  "domainContent": {
+    "oral-motor": {
+      "high": {
+        "level": "high",
+        "headline": "Mouth skills are ready",
+        "detail": "Your baby's tongue thrust reflex has faded, they can move food around in their mouth, and they're mimicking chewing. These are the oral motor skills that make eating possible — and safe.",
+        "strength": "Strong oral motor control — your baby can manage food in their mouth and is ready to learn swallowing solids"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Oral skills are emerging",
+        "detail": "Your baby is developing the oral motor control needed for solids, but it's not fully consistent yet. Letting them mouth spoons and safe teething toys helps these skills strengthen quickly.",
+        "concern": "Oral motor skills are still developing — practicing with spoons and safe mouthing toys will help these skills emerge"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Tongue thrust still strong",
+        "detail": "Your baby's tongue is still pushing things forward and out of their mouth — this is the protective tongue thrust reflex. It usually fades between 4-6 months, but some babies take longer. Until it does, food will just get pushed right back out.",
+        "concern": "The tongue thrust reflex is still active. Give it a few more weeks — this reflex usually fades on its own by 6 months."
+      }
+    },
+    "interest-signals": {
+      "high": {
+        "level": "high",
+        "headline": "Curious and hungry",
+        "detail": "Your baby is showing clear interest in your food and may not be fully satisfied by milk alone anymore. These are strong behavioral signs that they're ready to explore eating.",
+        "strength": "Clear hunger and interest cues — your baby is signaling they're ready for more than just milk"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Interest is growing",
+        "detail": "Your baby is starting to notice food, but they're not actively reaching for it or showing signs that milk isn't enough yet. This is normal — interest often comes in waves as they get closer to readiness.",
+        "concern": "Interest in food is emerging but not strong yet — letting them watch you eat and explore safe objects with their mouth builds curiosity"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Still content with milk",
+        "detail": "Your baby isn't showing interest in your food and is still satisfied by milk alone. This is perfectly fine — especially if they're younger or just not developmentally ready yet. Interest will come.",
+        "concern": "Your baby isn't signaling hunger for solids yet. No need to rush — continue with milk and watch for interest to emerge in the coming weeks."
+      }
+    },
+    "digestive-readiness": {
+      "high": {
+        "level": "high",
+        "headline": "Digestion is stable",
+        "detail": "Your baby's digestive system is showing signs of maturity with regular, predictable bowel movements. This suggests their gut is ready to handle the transition to solid foods.",
+        "strength": "Digestive system is mature and stable — your baby's gut is ready for the complexity of solid foods"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Digestion is maturing",
+        "detail": "Your baby's digestion is mostly stable but not completely predictable yet. This is common and doesn't prevent starting solids — just means you may see some changes in bowel movements as you introduce new foods.",
+        "concern": "Digestive patterns are still settling — expect some variability when you start solids, which is completely normal"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Digestion still unpredictable",
+        "detail": "Your baby's digestive system is still figuring things out. While irregular bowel movements alone don't prevent starting solids, it's worth mentioning to your pediatrician — especially if combined with other signs of unreadiness.",
+        "concern": "Digestive irregularity is worth monitoring. If your baby also shows other signs of unreadiness, give their gut a bit more time to mature."
+      }
+    },
+    "sitting-stability": {
+      "high": {
+        "level": "high",
+        "headline": "Steady and stable",
+        "detail": "Your baby has the trunk and head control needed to sit upright during feeding. This stability is critical for safe swallowing — it keeps their airway aligned and reduces choking risk.",
+        "strength": "Excellent sitting stability — your baby can maintain the upright position needed for safe eating"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Sitting is improving",
+        "detail": "Your baby can sit with some support, but isn't completely stable yet. This is fine for early solids as long as you're propping them securely in a high chair — just watch that their head doesn't wobble during swallowing.",
+        "concern": "Sitting stability is developing — use good support in a high chair and watch that head control stays steady during eating"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Not ready to sit upright",
+        "detail": "Your baby doesn't have the trunk or head control to sit upright safely yet. Feeding solids to a baby who can't hold their head steady increases choking risk. Give them a few more weeks to build this core strength.",
+        "concern": "Sitting stability is a safety issue. Wait until your baby can hold their head and trunk steady before introducing solids."
+      }
+    }
+  },
+
+  "results": {
+    "ready": {
+      "id": "ready",
+      "scoreRange": { "min": 22, "max": 27 },
+      "headline": "Green Light!",
+      "subheadline": "Your baby is showing clear readiness for solid foods.",
+      "explanation": "Your baby has the oral motor control, physical stability, digestive maturity, and interest signals that research links to successful solid food introduction. They're ready to explore eating — and you're ready to let them.",
+      "nextSteps": [
+        "Start with single-ingredient foods — avocado, banana, sweet potato — and wait 3-5 days before introducing the next one to watch for reactions",
+        "Let them touch, smush, and explore food with their hands — this is learning, not mess",
+        "Offer solids after a milk feeding at first — they'll be calmer and more willing to experiment when not ravenous",
+        "Expect most of the food to end up on the floor or in their hair — swallowing is a learned skill that takes weeks of practice"
+      ],
+      "watchOutFor": "Gagging is normal and protective — it sounds scary but it's their body learning where food should go. Choking is silent. Learn the difference, take an infant CPR class if you haven't, and trust that gagging means their reflexes are working.",
+      "encouragement": "Starting solids is one of those milestones that feels huge — and it is. But it's also just the beginning of a long, messy, hilarious process. You've got this.",
+      "comparativeContext": "Babies who show these readiness signs typically transition to solids smoothly, though expect a learning curve in the first 2-3 weeks.",
+      "retakeAdvice": "No need to retake — your baby is ready to start"
+    },
+    "almost": {
+      "id": "almost",
+      "scoreRange": { "min": 10, "max": 21 },
+      "headline": "Almost There",
+      "subheadline": "Your baby is building readiness — a few areas could use more time.",
+      "explanation": "Your baby has some strong readiness signs and some areas still developing. This is common, especially for younger babies or those who haven't had much exposure to spoons or watching you eat. Look at the domain breakdown below to see where a little more time or practice could help.",
+      "nextSteps": [
+        "Let your baby watch you eat — sit them in a high chair at the table even if they're not eating yet",
+        "Practice with a spoon by offering breast milk or formula on a soft baby spoon",
+        "Give them safe things to mouth and explore — silicone spoons, teething toys — to build oral motor skills",
+        "Work on sitting practice — tummy time and supported sitting build the core strength needed for safe eating"
+      ],
+      "watchOutFor": "Don't feel pressured to start at exactly 6 months if your baby isn't showing readiness. The WHO and AAP recommend starting 'around 6 months' — which means anywhere from 5.5 to 7 months depending on the individual baby. A few weeks of extra development can make the whole process easier.",
+      "encouragement": "Your baby is closer than you think. The fact that you're paying attention to readiness signs instead of just starting on a calendar date means you're already setting them up for success.",
+      "comparativeContext": "Most babies who score in this range are ready within 2-4 weeks. Retake this quiz when you notice changes in sitting or oral motor skills.",
+      "retakeAdvice": "Retake this quiz in 2-3 weeks to track progress"
+    },
+    "not-yet": {
+      "id": "not-yet",
+      "scoreRange": { "min": 0, "max": 9 },
+      "headline": "Give It More Time",
+      "subheadline": "Your baby has room to develop before starting solids — and that's completely fine.",
+      "explanation": "Your baby isn't showing consistent readiness signs yet. This is especially common in younger babies (under 5.5 months) or those who haven't had much exposure to watching eating, handling spoons, or practicing sitting. Readiness unfolds on its own timeline — pushing it before they're ready just makes the process harder for everyone.",
+      "nextSteps": [
+        "Keep offering breast milk or formula — it's still nutritionally complete until they're ready for solids",
+        "Let them watch you eat from a supported seat — just being present at meals builds interest",
+        "Work on tummy time and supported sitting to build the core strength needed for safe feeding",
+        "Talk to your pediatrician at your next visit about readiness signs and when to expect them based on your baby's development"
+      ],
+      "watchOutFor": "If your baby is approaching 7 months and still isn't showing any readiness signs — especially sitting stability or reduced tongue thrust — mention it to your pediatrician. Most of the time it's just normal developmental variation, but occasionally it signals a need for extra support.",
+      "encouragement": "Your baby will get there. Readiness isn't something you teach — it's something that emerges when their body and brain are ready. You're doing exactly the right thing by waiting and watching.",
+      "comparativeContext": "Many babies who score in this range show clear readiness within 3-6 weeks. Development happens in bursts, and sitting and oral motor skills often emerge quickly once they start.",
+      "retakeAdvice": "Retake this quiz in 3-4 weeks"
+    }
+  }
+}

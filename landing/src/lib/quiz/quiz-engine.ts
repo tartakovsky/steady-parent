@@ -322,8 +322,8 @@ export class QuizEngine {
     const pct = Math.round((total / maxTotal) * 100);
     const shareableSummary =
       strongestDomain.name === weakestDomain.name
-        ? `At ${pct}% readiness, your toddler is developing evenly across all areas.`
-        : `At ${pct}% readiness, your toddler is showing strong ${strongestDomain.name} but needs more time with ${weakestDomain.name}.`;
+        ? `At ${pct}% readiness, your child is developing evenly across all areas.`
+        : `At ${pct}% readiness, your child is showing strong ${strongestDomain.name} but needs more time with ${weakestDomain.name}.`;
 
     return {
       quizId: this.quiz.meta.id,

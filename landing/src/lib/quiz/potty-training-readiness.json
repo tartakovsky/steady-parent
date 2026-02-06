@@ -2,14 +2,18 @@
   "quizType": "readiness",
   "meta": {
     "id": "potty-training-readiness",
-    "slug": "is-my-toddler-ready-for-potty-training",
+    "slug": "potty-training-readiness",
     "title": "Is My Toddler Ready for Potty Training?",
     "shortTitle": "Potty Training Readiness Quiz",
     "description": "A research-backed assessment to help you determine if your toddler is ready to start potty training. Based on AAP guidelines.",
     "intro": "Most children show signs of readiness between 18 months and 3 years, but every child is different. This quiz assesses readiness across three research-backed domains: physical readiness, cognitive awareness, and emotional readiness.\n\nAnswer based on what your child does NOW, not what you hope they'll do soon.",
     "estimatedTime": "2 minutes",
     "questionCount": 10,
-    "ageRange": { "min": 18, "max": 42, "unit": "months" },
+    "ageRange": {
+      "min": 18,
+      "max": 42,
+      "unit": "months"
+    },
     "sources": [
       {
         "name": "American Academy of Pediatrics",
@@ -25,28 +29,35 @@
       }
     ]
   },
-
   "domains": {
     "physical": {
       "id": "physical",
       "name": "Physical Readiness",
       "maxPoints": 10,
-      "thresholds": { "high": 8, "medium": 4 }
+      "thresholds": {
+        "high": 8,
+        "medium": 4
+      }
     },
     "cognitive": {
       "id": "cognitive",
       "name": "Cognitive Awareness",
       "maxPoints": 7,
-      "thresholds": { "high": 6, "medium": 3 }
+      "thresholds": {
+        "high": 6,
+        "medium": 3
+      }
     },
     "emotional": {
       "id": "emotional",
       "name": "Emotional & Social Readiness",
       "maxPoints": 7,
-      "thresholds": { "high": 6, "medium": 3 }
+      "thresholds": {
+        "high": 6,
+        "medium": 3
+      }
     }
   },
-
   "questions": [
     {
       "id": "q1",
@@ -55,9 +66,21 @@
       "subtext": "Check their diaper after naps or quiet play periods.",
       "source": "Mayo Clinic - bladder control maturation indicator",
       "options": [
-        { "id": "q1a", "text": "Yes, regularly", "points": 3 },
-        { "id": "q1b", "text": "Sometimes, but not consistently", "points": 1 },
-        { "id": "q1c", "text": "No, they're wet frequently", "points": 0 }
+        {
+          "id": "q1a",
+          "text": "Yes, regularly",
+          "points": 3
+        },
+        {
+          "id": "q1b",
+          "text": "Sometimes, but not consistently",
+          "points": 1
+        },
+        {
+          "id": "q1c",
+          "text": "No, they're wet frequently",
+          "points": 0
+        }
       ]
     },
     {
@@ -67,9 +90,21 @@
       "subtext": "Around the same time each day, or after meals.",
       "source": "AAP - bowel regularity as readiness indicator",
       "options": [
-        { "id": "q2a", "text": "Yes, very predictable", "points": 3 },
-        { "id": "q2b", "text": "Somewhat predictable", "points": 1 },
-        { "id": "q2c", "text": "No pattern at all", "points": 0 }
+        {
+          "id": "q2a",
+          "text": "Yes, very predictable",
+          "points": 3
+        },
+        {
+          "id": "q2b",
+          "text": "Somewhat predictable",
+          "points": 1
+        },
+        {
+          "id": "q2c",
+          "text": "No pattern at all",
+          "points": 0
+        }
       ]
     },
     {
@@ -78,9 +113,21 @@
       "text": "Can your child walk to the bathroom and sit on a potty or toilet?",
       "source": "Stanford Medicine - motor skill requirements",
       "options": [
-        { "id": "q3a", "text": "Yes, easily", "points": 2 },
-        { "id": "q3b", "text": "With some help", "points": 1 },
-        { "id": "q3c", "text": "Not yet", "points": 0 }
+        {
+          "id": "q3a",
+          "text": "Yes, easily",
+          "points": 2
+        },
+        {
+          "id": "q3b",
+          "text": "With some help",
+          "points": 1
+        },
+        {
+          "id": "q3c",
+          "text": "Not yet",
+          "points": 0
+        }
       ]
     },
     {
@@ -90,9 +137,21 @@
       "subtext": "Minimal help is okay.",
       "source": "AAP - fine motor readiness",
       "options": [
-        { "id": "q4a", "text": "Yes, mostly by themselves", "points": 2 },
-        { "id": "q4b", "text": "With significant help", "points": 1 },
-        { "id": "q4c", "text": "Not yet", "points": 0 }
+        {
+          "id": "q4a",
+          "text": "Yes, mostly by themselves",
+          "points": 2
+        },
+        {
+          "id": "q4b",
+          "text": "With significant help",
+          "points": 1
+        },
+        {
+          "id": "q4c",
+          "text": "Not yet",
+          "points": 0
+        }
       ]
     },
     {
@@ -102,9 +161,21 @@
       "subtext": "Stops playing, squats, goes to a corner, makes a face, or tells you.",
       "source": "Stanford Medicine - interoceptive awareness",
       "options": [
-        { "id": "q5a", "text": "Yes, clearly shows awareness", "points": 3 },
-        { "id": "q5b", "text": "Sometimes seems aware", "points": 1 },
-        { "id": "q5c", "text": "Shows no awareness", "points": 0 }
+        {
+          "id": "q5a",
+          "text": "Yes, clearly shows awareness",
+          "points": 3
+        },
+        {
+          "id": "q5b",
+          "text": "Sometimes seems aware",
+          "points": 1
+        },
+        {
+          "id": "q5c",
+          "text": "Shows no awareness",
+          "points": 0
+        }
       ]
     },
     {
@@ -114,9 +185,21 @@
       "subtext": "Example: \"Get your shoes and bring them here.\"",
       "source": "AAP - cognitive readiness for understanding potty training steps",
       "options": [
-        { "id": "q6a", "text": "Yes, consistently", "points": 2 },
-        { "id": "q6b", "text": "Sometimes", "points": 1 },
-        { "id": "q6c", "text": "Not yet", "points": 0 }
+        {
+          "id": "q6a",
+          "text": "Yes, consistently",
+          "points": 2
+        },
+        {
+          "id": "q6b",
+          "text": "Sometimes",
+          "points": 1
+        },
+        {
+          "id": "q6c",
+          "text": "Not yet",
+          "points": 0
+        }
       ]
     },
     {
@@ -126,9 +209,21 @@
       "subtext": "Words like: pee, poop, wet, dry, potty.",
       "source": "Mayo Clinic - language comprehension as readiness indicator",
       "options": [
-        { "id": "q7a", "text": "Yes, understands and uses some words", "points": 2 },
-        { "id": "q7b", "text": "Understands but doesn't use the words", "points": 1 },
-        { "id": "q7c", "text": "Doesn't seem to understand", "points": 0 }
+        {
+          "id": "q7a",
+          "text": "Yes, understands and uses some words",
+          "points": 2
+        },
+        {
+          "id": "q7b",
+          "text": "Understands but doesn't use the words",
+          "points": 1
+        },
+        {
+          "id": "q7c",
+          "text": "Doesn't seem to understand",
+          "points": 0
+        }
       ]
     },
     {
@@ -138,9 +233,21 @@
       "subtext": "Asks to be changed, pulls at diaper, says \"yucky\" or similar.",
       "source": "AAP - motivation indicator",
       "options": [
-        { "id": "q8a", "text": "Yes, clearly dislikes being wet or dirty", "points": 3 },
-        { "id": "q8b", "text": "Sometimes bothered", "points": 1 },
-        { "id": "q8c", "text": "Doesn't seem to notice or care", "points": 0 }
+        {
+          "id": "q8a",
+          "text": "Yes, clearly dislikes being wet or dirty",
+          "points": 3
+        },
+        {
+          "id": "q8b",
+          "text": "Sometimes bothered",
+          "points": 1
+        },
+        {
+          "id": "q8c",
+          "text": "Doesn't seem to notice or care",
+          "points": 0
+        }
       ]
     },
     {
@@ -150,9 +257,21 @@
       "subtext": "Curious about others using the toilet, wants to watch, asks questions.",
       "source": "Stanford Medicine - social modeling readiness",
       "options": [
-        { "id": "q9a", "text": "Yes, very curious", "points": 2 },
-        { "id": "q9b", "text": "Some interest", "points": 1 },
-        { "id": "q9c", "text": "No interest", "points": 0 }
+        {
+          "id": "q9a",
+          "text": "Yes, very curious",
+          "points": 2
+        },
+        {
+          "id": "q9b",
+          "text": "Some interest",
+          "points": 1
+        },
+        {
+          "id": "q9c",
+          "text": "No interest",
+          "points": 0
+        }
       ]
     },
     {
@@ -162,13 +281,24 @@
       "subtext": "Not in a major \"no to everything\" phase.",
       "source": "AAP - timing recommendation to avoid power struggles",
       "options": [
-        { "id": "q10a", "text": "Yes, mostly cooperative", "points": 2 },
-        { "id": "q10b", "text": "Mixed - some cooperation, some resistance", "points": 1 },
-        { "id": "q10c", "text": "Very oppositional right now", "points": 0 }
+        {
+          "id": "q10a",
+          "text": "Yes, mostly cooperative",
+          "points": 2
+        },
+        {
+          "id": "q10b",
+          "text": "Mixed - some cooperation, some resistance",
+          "points": 1
+        },
+        {
+          "id": "q10c",
+          "text": "Very oppositional right now",
+          "points": 0
+        }
       ]
     }
   ],
-
   "domainContent": {
     "physical": {
       "high": {
@@ -231,11 +361,13 @@
       }
     }
   },
-
   "results": {
     "ready": {
       "id": "ready",
-      "scoreRange": { "min": 19, "max": 24 },
+      "scoreRange": {
+        "min": 19,
+        "max": 24
+      },
       "headline": "Green Light!",
       "subheadline": "Your toddler is showing strong readiness signs.",
       "explanation": "Your child is demonstrating readiness across all three domains: physical control, cognitive awareness, and emotional willingness. Research shows that children who start potty training when truly ready typically complete the process faster and with fewer setbacks.",
@@ -251,7 +383,10 @@
     },
     "almost": {
       "id": "almost",
-      "scoreRange": { "min": 12, "max": 18 },
+      "scoreRange": {
+        "min": 12,
+        "max": 18
+      },
       "headline": "Yellow Light",
       "subheadline": "Your toddler is getting there - a few more weeks may help.",
       "explanation": "Your child is showing some readiness signs but may not have all the pieces in place yet. Starting now could work with extra patience, but waiting 2-4 weeks often leads to a smoother process.",
@@ -268,7 +403,10 @@
     },
     "not-yet": {
       "id": "not-yet",
-      "scoreRange": { "min": 0, "max": 11 },
+      "scoreRange": {
+        "min": 0,
+        "max": 11
+      },
       "headline": "Not Quite Yet",
       "subheadline": "Your toddler needs more time - and that's completely okay.",
       "explanation": "Your child isn't showing consistent readiness signs yet. This is normal and has nothing to do with intelligence or your parenting. Children trained before they're ready actually take longer to complete the process and have more accidents.",

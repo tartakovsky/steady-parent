@@ -1,0 +1,456 @@
+{
+  "quizType": "readiness",
+  "meta": {
+    "id": "communication-safety",
+    "slug": "communication-safety",
+    "title": "How Safe Does Your Child Feel Talking to You?",
+    "shortTitle": "Communication Safety Quiz",
+    "description": "A research-backed assessment to help you understand how emotionally safe your child feels coming to you with hard feelings, mistakes, and vulnerable moments.",
+    "intro": "Emotional safety isn't about being perfect. It's about creating a relationship where your child knows they can bring you the hard stuff — the anger, the mistakes, the embarrassing moments — and still feel loved.\n\nAnswer based on what you typically do, not on your best or worst day. No one gets this right every time.",
+    "estimatedTime": "3 minutes",
+    "questionCount": 10,
+    "ageRange": {
+      "min": 3,
+      "max": 12,
+      "unit": "years"
+    },
+    "sources": [
+      {
+        "name": "Dr. Becky Kennedy — Good Inside",
+        "url": "https://www.goodinside.com"
+      },
+      {
+        "name": "Circle of Security — Attachment Research",
+        "url": "https://www.circleofsecurityinternational.com"
+      },
+      {
+        "name": "John Gottman — Emotion Coaching",
+        "url": "https://www.gottman.com/parents/research/"
+      }
+    ]
+  },
+  "domains": {
+    "emotional-safety": {
+      "id": "emotional-safety",
+      "name": "Emotional Safety",
+      "maxPoints": 9,
+      "thresholds": {
+        "high": 7,
+        "medium": 4
+      }
+    },
+    "repair": {
+      "id": "repair",
+      "name": "Repair After Conflict",
+      "maxPoints": 9,
+      "thresholds": {
+        "high": 7,
+        "medium": 4
+      }
+    },
+    "judgment-free": {
+      "id": "judgment-free",
+      "name": "Judgment-Free Responses",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    },
+    "vulnerability": {
+      "id": "vulnerability",
+      "name": "Vulnerability Comfort",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "emotional-safety",
+      "text": "When your child comes to you upset about something, what do you typically do first?",
+      "subtext": "Think about the immediate moment — before problem-solving or advice.",
+      "source": "Gottman — emotion coaching foundations",
+      "options": [
+        {
+          "id": "q1a",
+          "text": "Get physically close, listen, and validate the feeling before anything else",
+          "points": 3
+        },
+        {
+          "id": "q1b",
+          "text": "Ask what happened and try to understand the situation",
+          "points": 1
+        },
+        {
+          "id": "q1c",
+          "text": "Jump to fixing it or explaining why it's not a big deal",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "emotional-safety",
+      "text": "When your child expresses a 'negative' emotion like anger, jealousy, or frustration, how do you respond?",
+      "subtext": "Not about whether you allow the behavior — about how you treat the feeling itself.",
+      "source": "Circle of Security — accepting all feelings",
+      "options": [
+        {
+          "id": "q2a",
+          "text": "Name the feeling and let them know it's okay to feel that way",
+          "points": 3
+        },
+        {
+          "id": "q2b",
+          "text": "Listen but try to redirect them toward a more positive perspective",
+          "points": 1
+        },
+        {
+          "id": "q2c",
+          "text": "Tell them not to feel that way or that it's not something to be upset about",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "emotional-safety",
+      "text": "How often does your child come to you when something goes wrong at school or with friends?",
+      "subtext": "Focus on whether they bring you the hard stuff, not just the good news.",
+      "source": "Dr. Becky Kennedy — emotional openness as safety indicator",
+      "options": [
+        {
+          "id": "q3a",
+          "text": "Almost always — they tell me about struggles, not just wins",
+          "points": 3
+        },
+        {
+          "id": "q3b",
+          "text": "Sometimes — depends on the situation or their mood",
+          "points": 1
+        },
+        {
+          "id": "q3c",
+          "text": "Rarely — I usually hear about problems from others or much later",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "repair",
+      "text": "When you lose your patience and say something harsh, what happens next?",
+      "subtext": "Not whether you lose it — everyone does. What comes after.",
+      "source": "Rupture and repair research — attachment security",
+      "options": [
+        {
+          "id": "q4a",
+          "text": "I apologize directly, name what I did, and reconnect before moving on",
+          "points": 3
+        },
+        {
+          "id": "q4b",
+          "text": "I soften my tone or try to be extra nice afterward",
+          "points": 1
+        },
+        {
+          "id": "q4c",
+          "text": "I move on and hope they forget about it",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "repair",
+      "text": "After a big conflict with your child, how do you know things are okay again?",
+      "subtext": "What signals 'we're good' — and who initiates that repair?",
+      "source": "Gottman — repair attempts after conflict",
+      "options": [
+        {
+          "id": "q5a",
+          "text": "We talk it through, apologize if needed, and both feel reconnected",
+          "points": 3
+        },
+        {
+          "id": "q5b",
+          "text": "Things just settle down naturally after some time apart",
+          "points": 1
+        },
+        {
+          "id": "q5c",
+          "text": "I'm not always sure — sometimes it feels unresolved",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "judgment-free",
+      "text": "When your child admits to doing something wrong, what's your first response?",
+      "subtext": "The moment right after 'I broke it' or 'I hit them' — before consequences.",
+      "source": "Dr. Becky Kennedy — separating behavior from identity",
+      "options": [
+        {
+          "id": "q6a",
+          "text": "I acknowledge that telling me took courage, then we talk about what happened",
+          "points": 3
+        },
+        {
+          "id": "q6b",
+          "text": "I stay calm and focus on understanding why it happened",
+          "points": 1
+        },
+        {
+          "id": "q6c",
+          "text": "I react immediately with disappointment or frustration",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "judgment-free",
+      "text": "When your child makes a mistake or fails at something, what message do they get from you?",
+      "subtext": "Think about your tone, body language, and words — not just what you say.",
+      "source": "Growth mindset research — Carol Dweck",
+      "options": [
+        {
+          "id": "q7a",
+          "text": "Mistakes are normal, and I'm here to help them learn from it",
+          "points": 3
+        },
+        {
+          "id": "q7b",
+          "text": "I try to encourage them but sometimes my frustration shows through",
+          "points": 1
+        },
+        {
+          "id": "q7c",
+          "text": "I feel impatient or disappointed, and they can probably tell",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "vulnerability",
+      "text": "When your child is nervous or scared about something you think is minor, what do you do?",
+      "subtext": "'It's just a birthday party' or 'You've done this before, you'll be fine.'",
+      "source": "Circle of Security — taking seriously vs. dismissing",
+      "options": [
+        {
+          "id": "q8a",
+          "text": "I validate that it feels big to them, even if it seems small to me",
+          "points": 3
+        },
+        {
+          "id": "q8b",
+          "text": "I reassure them it will be okay and encourage them to try",
+          "points": 1
+        },
+        {
+          "id": "q8c",
+          "text": "I minimize the fear or tell them there's nothing to worry about",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "vulnerability",
+      "text": "Does your child feel comfortable crying in front of you?",
+      "subtext": "Not just toddler tantrums — real sadness, disappointment, or overwhelm.",
+      "source": "Dr. Becky Kennedy — emotional permission",
+      "options": [
+        {
+          "id": "q9a",
+          "text": "Yes — they cry when they need to, and I stay close",
+          "points": 3
+        },
+        {
+          "id": "q9b",
+          "text": "Sometimes — depends on the situation or how I'm reacting",
+          "points": 1
+        },
+        {
+          "id": "q9c",
+          "text": "Not really — they tend to hold it in or cry alone",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "repair",
+      "text": "When your child tries to reconnect with you after a fight (a hug, a joke, a drawing), how do you respond?",
+      "subtext": "Those small bids for connection after conflict — not a direct apology, just trying to be close again.",
+      "source": "John Gottman — bids for connection",
+      "options": [
+        {
+          "id": "q10a",
+          "text": "I meet them there — I accept the bid and reconnect warmly",
+          "points": 3
+        },
+        {
+          "id": "q10b",
+          "text": "I respond but keep some distance until I feel ready",
+          "points": 1
+        },
+        {
+          "id": "q10c",
+          "text": "I ignore it or stay cold until they apologize properly",
+          "points": 0
+        }
+      ]
+    }
+  ],
+  "domainContent": {
+    "emotional-safety": {
+      "high": {
+        "level": "high",
+        "headline": "Your child feels safe bringing you the hard stuff",
+        "detail": "You're creating a relationship where big feelings are welcome, not something to hide. Your child knows they can come to you upset, angry, or overwhelmed — and you'll stay calm enough to help them through it. This is the foundation of emotional security.",
+        "strength": "Strong emotional safety — your child trusts you with their hardest feelings"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Building emotional safety in most moments",
+        "detail": "You're often able to stay present with your child's big feelings, but it's not always easy. That's normal — being the calm one when your kid is melting down takes practice. What matters is that you're working on it and your child sees that effort.",
+        "concern": "Emotional safety strengthens when your child knows you can handle their feelings even when they're messy or inconvenient"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Your child may be learning to hide hard feelings",
+        "detail": "When big emotions feel unwelcome or overwhelming to you, kids pick up on that fast. They start self-editing — showing you only the feelings they think you can handle. The good news: this pattern can shift with small changes in how you respond.",
+        "concern": "Emotional safety grows when you can stay regulated enough to validate feelings before fixing, teaching, or redirecting"
+      }
+    },
+    "repair": {
+      "high": {
+        "level": "high",
+        "headline": "You repair conflicts clearly and consistently",
+        "detail": "You know that ruptures happen — and that what matters most is the repair. When you lose your patience or a conflict escalates, you come back, own your part, and reconnect. This teaches your child that relationships are resilient, not fragile.",
+        "strength": "Strong repair skills — your child learns that mistakes don't break relationships"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Repair happens, but not always clearly",
+        "detail": "You want to reconnect after conflicts, but you're not always sure how. Maybe you soften your tone or let time pass, hoping things settle on their own. That helps — but explicit repair ('I'm sorry I yelled') is what builds lasting trust.",
+        "concern": "Repair is most powerful when it's named out loud — kids need to hear you acknowledge what went wrong"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Conflicts often go unrepaired",
+        "detail": "When things blow up, you might move on without circling back. Maybe it feels awkward, or you're worried it will reopen the fight. But unrepaired conflicts leave emotional residue — and over time, your child may stop trusting that connection can be restored.",
+        "concern": "Learning to repair — even imperfectly — is one of the most powerful relationship skills you can model"
+      }
+    },
+    "judgment-free": {
+      "high": {
+        "level": "high",
+        "headline": "Your child can mess up and still feel loved",
+        "detail": "When your child makes a mistake or does something wrong, they know you'll be disappointed in the behavior — not in them. That distinction is everything. It's what allows kids to take risks, admit mistakes, and grow without shame.",
+        "strength": "Judgment-free environment — your child can be imperfect and still feel worthy"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "You try to separate the child from the behavior",
+        "detail": "You know you're supposed to focus on the action, not the kid — but in the heat of the moment, frustration can blur that line. Your child sometimes feels your disappointment as a judgment about them, even when you don't mean it that way.",
+        "concern": "Judgment-free responses grow stronger when you slow down your reaction and name the behavior clearly"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Mistakes feel like moral failures",
+        "detail": "When your child messes up, your response might feel big — disappointment, frustration, or lectures about 'why would you do that?' Over time, this can teach kids that mistakes make them bad, not that mistakes are part of learning. That's a heavy burden.",
+        "concern": "Your child needs to know that messing up doesn't make them less lovable — behavior and identity are separate"
+      }
+    },
+    "vulnerability": {
+      "high": {
+        "level": "high",
+        "headline": "Your child feels safe being vulnerable with you",
+        "detail": "Your child knows they can show fear, sadness, and uncertainty without being minimized, rushed, or told they're overreacting. You take their inner world seriously — even when it doesn't make sense to you. That's how trust deepens.",
+        "strength": "Vulnerability is welcome — your child knows you'll meet them where they are emotionally"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Vulnerability is sometimes okay, sometimes not",
+        "detail": "Your child can be vulnerable with you in some moments, but in others, they might sense you need them to move on or toughen up. This inconsistency isn't failure — it's just where most of us live. What matters is recognizing when you're dismissing and course-correcting.",
+        "concern": "Vulnerability safety strengthens when you resist the urge to fix, minimize, or rush past hard feelings"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Vulnerability feels risky to your child",
+        "detail": "Your child may have learned that showing certain feelings — fear, sadness, neediness — doesn't go well. Maybe you react with impatience, or you try to logic them out of it. Either way, they're learning to keep the soft stuff to themselves.",
+        "concern": "When vulnerability feels unsafe, kids either shut down or act out. Creating space for soft feelings is how you prevent both."
+      }
+    }
+  },
+  "results": {
+    "ready": {
+      "id": "ready",
+      "scoreRange": {
+        "min": 24,
+        "max": 30
+      },
+      "headline": "Your child feels safe with you",
+      "subheadline": "You're building a relationship where vulnerability, mistakes, and hard feelings are met with steadiness.",
+      "explanation": "Your child knows they can bring you the messy stuff — the anger, the mistakes, the fears that don't make sense — and you'll stay close. That doesn't mean you're perfect. It means you're consistent enough that your child trusts the relationship can handle the hard moments. That's everything.",
+      "nextSteps": [
+        "Keep doing what you're doing — consistency is what builds lasting trust",
+        "Notice the moments when your child chooses to come to you instead of hiding. That's proof of safety.",
+        "Model your own vulnerability occasionally. 'I'm frustrated right now' or 'I made a mistake' shows them emotional honesty.",
+        "Remember that even secure relationships have ruptures. What matters is the repair."
+      ],
+      "watchOutFor": "High emotional safety doesn't mean no conflict. You'll still lose your patience, your child will still hide things occasionally, and repairs won't always be smooth. That's normal. What you've built is a foundation strong enough to weather those moments.",
+      "encouragement": "You're doing the invisible, unrecognized work of emotional parenting — and it's showing up in your relationship. Your child is learning that love doesn't require perfection. That's a gift that will shape them for life.",
+      "comparativeContext": "Parents who score in this range typically have children who are more willing to discuss struggles, recover faster from conflict, and show greater emotional resilience.",
+      "retakeAdvice": "Retake this quiz in 6 months if you're curious about how the relationship evolves as your child grows"
+    },
+    "almost": {
+      "id": "almost",
+      "scoreRange": {
+        "min": 12,
+        "max": 23
+      },
+      "headline": "You're building safety, one moment at a time",
+      "subheadline": "Your child feels safe with you in some moments, but not all. That's fixable.",
+      "explanation": "You're doing some things really well — and other patterns are getting in the way. The good news: emotional safety isn't all-or-nothing. Every time you validate a feeling, repair a conflict, or stay calm when your kid melts down, you're building trust. Look at the domain breakdown to see where small shifts could make a big difference.",
+      "nextSteps": [
+        "Pick one domain from 'Room to Grow' below and focus on that for two weeks. Don't try to fix everything at once.",
+        "When your child comes to you upset, try this script: 'That sounds really hard. Tell me more.' Then just listen.",
+        "After you lose your patience, come back within an hour and say: 'I yelled, and that wasn't okay. I'm sorry.' That's repair.",
+        "Notice when you're dismissing feelings because you're stressed or overwhelmed. It's not about being perfect — it's about catching yourself."
+      ],
+      "watchOutFor": "The urge to fix, teach, or redirect feelings comes from wanting to help — but it can accidentally shut kids down. Sometimes the most helpful thing you can do is just stay close while they feel what they're feeling.",
+      "encouragement": "You're here, asking the hard questions. That's not nothing. The fact that you care about how safe your child feels means you're already moving in the right direction. Small changes in how you respond create big shifts over time.",
+      "comparativeContext": "Most parents score in this range — emotional safety is hard to build while managing everything else. Progress happens when you focus on one area at a time.",
+      "retakeAdvice": "Retake this quiz in 4-6 weeks to track progress as you focus on specific domains"
+    },
+    "not-yet": {
+      "id": "not-yet",
+      "scoreRange": {
+        "min": 0,
+        "max": 11
+      },
+      "headline": "Your child may not feel safe coming to you with hard things",
+      "subheadline": "This is hard to see — but seeing it is the first step toward change.",
+      "explanation": "Right now, your child may be learning to hide their hardest feelings, biggest mistakes, or deepest fears. That doesn't mean you're a bad parent. It means the patterns in your relationship right now are making vulnerability feel risky. The hopeful part: this can change. Not overnight, but with intention.",
+      "nextSteps": [
+        "Start small: when your child is upset, try just sitting close and saying 'I'm here.' That's it. No fixing, no teaching. Just presence.",
+        "When you lose your patience, repair it out loud. 'I yelled and that was scary. I'm sorry. You didn't deserve that.' Even clumsy repair builds trust.",
+        "Notice your own hard feelings. If you're constantly overwhelmed, angry, or numb, it's almost impossible to hold space for your child's emotions. Get support for yourself.",
+        "Consider working with a therapist who specializes in parent-child relationships. This is learnable, but it's hard to do alone."
+      ],
+      "watchOutFor": "Shame is the enemy of change. Beating yourself up for past patterns won't help your child — but showing up differently starting today will. You don't have to fix everything. You just have to start noticing and repairing.",
+      "encouragement": "You're asking these questions, and that matters. A lot of parents never get this far. Emotional safety isn't about perfection — it's about being willing to see what's not working and try something different. You're already doing that.",
+      "comparativeContext": "Many parents who score in this range find that their own childhoods didn't model emotional safety. Learning to offer what you didn't receive is incredibly hard — and incredibly possible.",
+      "retakeAdvice": "Retake this quiz in 2-3 months after focusing on the foundational skills in the 'Room to Grow' sections"
+    }
+  }
+}

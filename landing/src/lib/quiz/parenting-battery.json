@@ -1,0 +1,304 @@
+{
+  "quizType": "readiness",
+  "meta": {
+    "id": "parenting-battery",
+    "slug": "parenting-battery",
+    "title": "How's Your Parenting Battery Right Now?",
+    "shortTitle": "Parenting Battery Quiz",
+    "description": "An honest check-in about your current energy, support, and reserves. Based on parental burnout research and validated stress measures.",
+    "intro": "Parenting runs on a battery that no one tells you needs charging. Between the physical exhaustion, emotional labor, and identity shifts, it's easy to end up running on fumes without realizing it.\n\nThis quiz isn't about judgment — it's about seeing where you are right now. Answer honestly based on the past two weeks, not your best day or your worst.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 9,
+    "sources": [
+      {
+        "name": "APA — Parental Burnout and Stress",
+        "url": "https://www.apa.org/topics/parenting/stress"
+      },
+      {
+        "name": "Parental Burnout Inventory Research",
+        "url": "https://www.parentalburnout.org/"
+      },
+      {
+        "name": "Journal of Child and Family Studies — Parental Self-Care",
+        "url": "https://www.springer.com/journal/10826"
+      }
+    ]
+  },
+
+  "domains": {
+    "emotional-reserves": {
+      "id": "emotional-reserves",
+      "name": "Emotional Reserves",
+      "maxPoints": 7,
+      "thresholds": { "high": 6, "medium": 3 }
+    },
+    "physical-energy": {
+      "id": "physical-energy",
+      "name": "Physical Energy",
+      "maxPoints": 6,
+      "thresholds": { "high": 5, "medium": 2 }
+    },
+    "support-system": {
+      "id": "support-system",
+      "name": "Support System",
+      "maxPoints": 6,
+      "thresholds": { "high": 5, "medium": 2 }
+    },
+    "identity-beyond-parenting": {
+      "id": "identity-beyond-parenting",
+      "name": "Identity Beyond Parenting",
+      "maxPoints": 6,
+      "thresholds": { "high": 5, "medium": 2 }
+    }
+  },
+
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "emotional-reserves",
+      "text": "When your child has a meltdown right now, how do you typically respond?",
+      "subtext": "Think about what happens in your body and mind, not just your actions.",
+      "source": "APA — emotional regulation under parental stress",
+      "options": [
+        { "id": "q1a", "text": "I can stay calm and help them through it", "points": 3 },
+        { "id": "q1b", "text": "I feel stretched but can usually hold it together", "points": 1 },
+        { "id": "q1c", "text": "I'm one tantrum away from losing it myself", "points": 0 }
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "emotional-reserves",
+      "text": "How much do you find yourself snapping at your kids over small things?",
+      "subtext": "The shoes left out, the spilled juice, the 47th 'why.'",
+      "source": "Parental Burnout Inventory — irritability indicators",
+      "options": [
+        { "id": "q2a", "text": "Rarely — I can let the small stuff go most days", "points": 2 },
+        { "id": "q2b", "text": "More than I'd like, but I can still catch myself", "points": 1 },
+        { "id": "q2c", "text": "Constantly — everything feels like too much", "points": 0 }
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "emotional-reserves",
+      "text": "At the end of a typical day with your kids, how do you feel?",
+      "subtext": "Not how you think you should feel — how you actually feel.",
+      "source": "Journal of Child and Family Studies — parental exhaustion patterns",
+      "options": [
+        { "id": "q3a", "text": "Tired but satisfied — I gave what I had to give", "points": 2 },
+        { "id": "q3b", "text": "Drained and counting the minutes until bedtime", "points": 1 },
+        { "id": "q3c", "text": "Empty, guilty, or like I failed somehow", "points": 0 }
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "physical-energy",
+      "text": "How's your sleep right now?",
+      "subtext": "Both the amount and the quality — waking up to check on kids counts as interrupted.",
+      "source": "APA — sleep deprivation and parental functioning",
+      "options": [
+        { "id": "q4a", "text": "I'm sleeping enough and waking up rested most days", "points": 3 },
+        { "id": "q4b", "text": "I'm getting some sleep but it's not restorative", "points": 1 },
+        { "id": "q4c", "text": "I can't remember the last time I felt rested", "points": 0 }
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "physical-energy",
+      "text": "When was the last time you moved your body in a way that felt good?",
+      "subtext": "Not exercise you forced yourself to do — movement that actually felt restorative.",
+      "source": "Journal of Child and Family Studies — physical self-care and burnout",
+      "options": [
+        { "id": "q5a", "text": "This week — a walk, yoga, dancing in the kitchen, something", "points": 3 },
+        { "id": "q5b", "text": "It's been a few weeks but I remember what it feels like", "points": 1 },
+        { "id": "q5c", "text": "I honestly can't remember", "points": 0 }
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "support-system",
+      "text": "If you needed a two-hour break right now, could you get one?",
+      "subtext": "Not theoretically — realistically. Who would watch the kids?",
+      "source": "Parental Burnout Inventory — social support indicators",
+      "options": [
+        { "id": "q6a", "text": "Yes, I have people I trust and can ask", "points": 3 },
+        { "id": "q6b", "text": "Maybe, but it would take serious logistics or guilt", "points": 1 },
+        { "id": "q6c", "text": "No, I'm on my own for this", "points": 0 }
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "support-system",
+      "text": "How often do you talk to someone who actually gets what you're going through?",
+      "subtext": "Not advice-givers or fixers — someone who just listens and understands.",
+      "source": "APA — social connection and parental wellbeing",
+      "options": [
+        { "id": "q7a", "text": "Regularly — I have people I can vent to", "points": 3 },
+        { "id": "q7b", "text": "Occasionally, but it's hard to find the time or energy", "points": 1 },
+        { "id": "q7c", "text": "Almost never — I feel pretty isolated", "points": 0 }
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "identity-beyond-parenting",
+      "text": "When was the last time you did something just for yourself?",
+      "subtext": "Not self-care you had to squeeze in — something you genuinely wanted to do.",
+      "source": "Journal of Child and Family Studies — identity preservation and resilience",
+      "options": [
+        { "id": "q8a", "text": "This week — even if it was small", "points": 3 },
+        { "id": "q8b", "text": "It's been a few weeks but I can remember what I did", "points": 1 },
+        { "id": "q8c", "text": "I don't even know what I'd do anymore", "points": 0 }
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "identity-beyond-parenting",
+      "text": "How much of your identity right now feels like 'parent' versus 'you'?",
+      "subtext": "When you think about who you are, what comes up first?",
+      "source": "Parental Burnout Inventory — identity loss as burnout indicator",
+      "options": [
+        { "id": "q9a", "text": "I still feel like myself — parenting is part of me, not all of me", "points": 3 },
+        { "id": "q9b", "text": "Parent is the main thing, but there's still 'me' in there somewhere", "points": 1 },
+        { "id": "q9c", "text": "I honestly don't know who I am outside of being a parent anymore", "points": 0 }
+      ]
+    }
+  ],
+
+  "domainContent": {
+    "emotional-reserves": {
+      "high": {
+        "level": "high",
+        "headline": "You're holding steady emotionally",
+        "detail": "You have enough in the tank to meet your kids' emotional needs without constantly running on empty. You're not perfect — no one is — but you're not white-knuckling it through every day either. This emotional resilience is what allows you to actually be present instead of just surviving.",
+        "strength": "Strong emotional capacity — you can regulate yourself well enough to help your kids do the same"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "You're running low but not empty yet",
+        "detail": "Your emotional reserves are stretched thin. You're still showing up, but it's taking more effort than it used to. This is the zone where small replenishments — a good conversation, an hour to yourself, one full night's sleep — can make a big difference.",
+        "concern": "Emotional reserves are depleting — you're still functional but closer to burnout than you'd like to be"
+      },
+      "low": {
+        "level": "low",
+        "headline": "You're giving everything you've got",
+        "detail": "Your emotional tank is close to empty. You're snapping more, feeling more irritable, and probably beating yourself up for both. This isn't a character flaw — it's what happens when you pour from an empty cup for too long. You need more than a bubble bath. You need structural support.",
+        "concern": "Emotional reserves are critically low — burnout symptoms are showing up and you need real recovery, not just rest"
+      }
+    },
+    "physical-energy": {
+      "high": {
+        "level": "high",
+        "headline": "Your body is keeping up",
+        "detail": "You're getting enough sleep and movement to sustain the physical demands of parenting. You're not running marathons — you're just not constantly exhausted. This baseline of physical wellness is protective against burnout and illness.",
+        "strength": "Solid physical foundation — you're sleeping enough and moving your body in ways that restore rather than deplete"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "You're physically tired but managing",
+        "detail": "Your body is working hard and feeling it. Sleep is inconsistent, movement is rare, and you're probably leaning on caffeine or sugar to make it through the day. You're not broken, but you're also not operating at full capacity.",
+        "concern": "Physical energy is low — sleep deprivation and lack of movement are catching up with you"
+      },
+      "low": {
+        "level": "low",
+        "headline": "Your body is exhausted",
+        "detail": "You're running on fumes. Sleep is either impossible or not restorative, you can't remember the last time you felt energized, and your body is telling you to stop. Chronic exhaustion isn't just uncomfortable — it makes everything harder: emotional regulation, patience, decision-making, immunity.",
+        "concern": "Physical depletion is severe — sleep and restorative movement need to become non-negotiable priorities"
+      }
+    },
+    "support-system": {
+      "high": {
+        "level": "high",
+        "headline": "You're not doing this alone",
+        "detail": "You have people you can call, lean on, and be honest with. Whether it's a partner, family, friends, or a parenting group, you're not carrying the full weight by yourself. This social support is one of the strongest buffers against parental burnout.",
+        "strength": "Strong support network — you have people who can help practically and emotionally, and you're willing to ask"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "You have some support but not enough",
+        "detail": "You have people in your corner, but accessing that support requires logistics, guilt, or asking for help when you're already depleted. The support exists, but the barriers to reaching it are real. Small shifts — like setting up a regular childcare swap — can make this support feel more accessible.",
+        "concern": "Support is available but hard to access — reducing the friction to asking for help could ease the load significantly"
+      },
+      "low": {
+        "level": "low",
+        "headline": "You're carrying this mostly alone",
+        "detail": "You don't have reliable backup. Whether it's geography, relationship dynamics, or lack of community, you're the default for everything. This isolation is one of the strongest predictors of parental burnout. You need structural support, not just willpower.",
+        "concern": "Isolation is a major risk factor — building or accessing support systems needs to be a priority for your wellbeing"
+      }
+    },
+    "identity-beyond-parenting": {
+      "high": {
+        "level": "high",
+        "headline": "You still know who you are",
+        "detail": "Parenting is a huge part of your life, but it's not the only part. You have interests, relationships, and parts of yourself that exist outside of your kids. This sense of self is protective — it gives you something to return to when parenting feels all-consuming.",
+        "strength": "Preserved sense of self — you're a parent AND still you, which makes you more resilient to burnout"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "The 'you' is still in there somewhere",
+        "detail": "You remember who you were before kids, but that person feels distant right now. You can recall your interests and passions, but you don't have the time or energy to engage with them. This isn't permanent — but it does require intentional reclaiming.",
+        "concern": "Identity is fading but not gone — small, regular reconnections with your pre-parent self can help you feel less lost"
+      },
+      "low": {
+        "level": "low",
+        "headline": "You've disappeared into the role",
+        "detail": "When someone asks what you like to do, you draw a blank. Your entire identity has collapsed into 'parent' and it's disorienting. This identity loss is a core symptom of parental burnout. Recovering yourself isn't selfish — it's necessary for your mental health and your ability to parent well.",
+        "concern": "Identity loss is significant — reconnecting with hobbies, relationships, or passions outside of parenting is critical"
+      }
+    }
+  },
+
+  "results": {
+    "ready": {
+      "id": "ready",
+      "scoreRange": { "min": 19, "max": 25 },
+      "headline": "Fully Charged",
+      "subheadline": "Your battery isn't full, but it's charged enough to sustain you.",
+      "explanation": "You're managing. You have enough emotional reserves, physical energy, support, and sense of self to meet the demands of parenting without completely depleting yourself. You're not coasting — parenting is still hard — but you're not running on empty either.",
+      "nextSteps": [
+        "Protect what's working. The sleep, the support, the small moments for yourself — those aren't luxuries, they're infrastructure.",
+        "Notice when your battery starts to dip and intervene early. It's easier to recharge from 60% than from 5%.",
+        "Keep checking in with yourself. What you need will shift as your kids grow and life changes.",
+        "If you're the 'doing fine' parent in your circle, consider being the one who admits it's hard sometimes — it gives others permission to be honest too."
+      ],
+      "watchOutFor": "Just because you're managing doesn't mean you can't ask for more support. 'Fine' is not the same as 'thriving,' and you deserve better than fine.",
+      "encouragement": "You're doing the thing everyone says is impossible: taking care of your kids AND yourself. That's not an accident. You're prioritizing what matters, asking for help when you need it, and protecting your own wellbeing. Keep going.",
+      "comparativeContext": "Parents who score in this range report lower rates of burnout and higher satisfaction with parenting overall.",
+      "retakeAdvice": "Retake this quiz every few months as a check-in — especially during major transitions"
+    },
+    "almost": {
+      "id": "almost",
+      "scoreRange": { "min": 9, "max": 18 },
+      "headline": "Running Low",
+      "subheadline": "Your battery is in the yellow zone — still functioning, but barely.",
+      "explanation": "You're running on fumes more often than not. Some areas of your life are holding steady, but others are critically low. You're still showing up for your kids, but it's costing you more than it should. The good news: you're not empty yet. There's still time to intervene before full burnout hits.",
+      "nextSteps": [
+        "Look at the 'Room to Grow' areas below and pick ONE to focus on first. You can't fix everything at once.",
+        "If sleep is the issue, treat it like the emergency it is. Sleep deprivation is not a badge of honor — it's a health crisis.",
+        "If support is the issue, ask for help even if it feels impossible. One recurring break per week is more valuable than occasional heroic efforts.",
+        "If identity is the issue, do ONE small thing this week that reminds you who you are outside of 'parent.' It doesn't have to be big.",
+        "Consider talking to a therapist who specializes in parental burnout. This isn't something you have to white-knuckle through alone."
+      ],
+      "watchOutFor": "The temptation to keep pushing through is strong. But 'almost empty' becomes 'empty' fast, and recovering from full burnout takes much longer than preventing it.",
+      "encouragement": "You're not failing. You're doing something incredibly hard with insufficient support, and you're still here. That's not weakness — that's resilience. But resilience isn't infinite. You need more than you're getting, and that's not your fault.",
+      "comparativeContext": "Most parents hit this zone at some point. The ones who recover are the ones who take it seriously and make structural changes, not just self-care tweaks.",
+      "retakeAdvice": "Retake this quiz in 4-6 weeks after making changes to see if things are shifting"
+    },
+    "not-yet": {
+      "id": "not-yet",
+      "scoreRange": { "min": 0, "max": 8 },
+      "headline": "Time to Recharge",
+      "subheadline": "Your battery is depleted. This is burnout, and it's real.",
+      "explanation": "You're running on empty across multiple areas of your life. You're exhausted, isolated, emotionally depleted, and you've lost touch with who you are outside of being a parent. This isn't a personality flaw or a lack of trying hard enough — this is what burnout looks like. You need real support, not just rest.",
+      "nextSteps": [
+        "Talk to your doctor or a therapist. Parental burnout has physical and mental health consequences — it's not 'just stress.'",
+        "If you have a partner, show them this result. You need structural changes, not just them 'helping more.'",
+        "Identify ONE thing you can offload or stop doing entirely. Not optimize — stop. Something has to give.",
+        "If you're isolated, finding even one other parent to be honest with can break the spiral. Online groups count.",
+        "Consider whether your current setup is sustainable. Sometimes burnout is a signal that something systemic needs to change — your job, your childcare, your living situation."
+      ],
+      "watchOutFor": "Burnout makes you feel like you're the problem. You're not. The problem is a system that expects parents to function without adequate sleep, support, or resources. Your body is doing what it's supposed to do — telling you this isn't working.",
+      "encouragement": "You're not broken. You're not a bad parent. You're a human being who has been asked to do too much for too long with too little support. The fact that you're here, taking this quiz, means you're still trying — and that matters. But you can't think your way out of burnout. You need structural change, real rest, and actual support. You deserve all three.",
+      "comparativeContext": "Parental burnout is increasingly recognized as a serious mental health condition. Recovery is possible, but it requires more than willpower — it requires systemic change and professional support.",
+      "retakeAdvice": "Retake this quiz after 2-3 months of structural changes and support to track recovery"
+    }
+  }
+}

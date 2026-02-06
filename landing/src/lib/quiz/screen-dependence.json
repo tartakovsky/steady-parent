@@ -1,0 +1,298 @@
+{
+  "quizType": "readiness",
+  "meta": {
+    "id": "screen-dependence",
+    "slug": "screen-dependence",
+    "title": "How Screen-Dependent Is Your Family?",
+    "shortTitle": "Screen Dependence Quiz",
+    "description": "A judgment-free assessment to help you understand your family's relationship with screens. Based on guidelines from the AAP and Common Sense Media.",
+    "intro": "Screens are a tool — not a moral failing. Every family uses them. The question isn't 'are we using screens?' but 'how much are we leaning on them?'\n\nAnswer honestly based on what actually happens, not what you wish happened.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 9,
+    "sources": [
+      {
+        "name": "American Academy of Pediatrics — Screen Time Guidelines",
+        "url": "https://www.healthychildren.org/English/family-life/Media/Pages/Where-We-Stand-TV-Viewing-Time.aspx"
+      },
+      {
+        "name": "Common Sense Media — Screen Time Research",
+        "url": "https://www.commonsensemedia.org/research/the-common-sense-census-media-use-by-kids-age-zero-to-eight-2020"
+      }
+    ]
+  },
+
+  "domains": {
+    "child-screen-habits": {
+      "id": "child-screen-habits",
+      "name": "Child Screen Habits",
+      "maxPoints": 9,
+      "thresholds": { "high": 7, "medium": 4 }
+    },
+    "parent-modeling": {
+      "id": "parent-modeling",
+      "name": "Parent Modeling",
+      "maxPoints": 6,
+      "thresholds": { "high": 5, "medium": 3 }
+    },
+    "screen-free-alternatives": {
+      "id": "screen-free-alternatives",
+      "name": "Screen-Free Alternatives",
+      "maxPoints": 6,
+      "thresholds": { "high": 5, "medium": 3 }
+    },
+    "transition-ease": {
+      "id": "transition-ease",
+      "name": "Transition Ease",
+      "maxPoints": 6,
+      "thresholds": { "high": 5, "medium": 3 }
+    }
+  },
+
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "child-screen-habits",
+      "text": "How much total screen time does your child have on a typical day?",
+      "subtext": "Count TV, tablets, phones, games — everything that has a screen. Be honest.",
+      "source": "AAP — daily screen time recommendations",
+      "options": [
+        { "id": "q1a", "text": "Under 1 hour", "points": 3 },
+        { "id": "q1b", "text": "1-2 hours", "points": 2 },
+        { "id": "q1c", "text": "2+ hours", "points": 0 }
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "child-screen-habits",
+      "text": "When does your child typically use screens?",
+      "subtext": "Think about when screens appear during the day.",
+      "source": "Common Sense Media — context and timing of screen use",
+      "options": [
+        { "id": "q2a", "text": "Intentional times — weekend mornings, long car rides, specific show times", "points": 3 },
+        { "id": "q2b", "text": "Whenever we need a break or things get hard", "points": 1 },
+        { "id": "q2c", "text": "Pretty much whenever they ask", "points": 0 }
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "child-screen-habits",
+      "text": "Does your child watch or interact with screens during meals?",
+      "subtext": "Breakfast, lunch, dinner, snacks — at home or out.",
+      "source": "AAP — screen-free zones for family connection",
+      "options": [
+        { "id": "q3a", "text": "Rarely or never — meals are mostly screen-free", "points": 3 },
+        { "id": "q3b", "text": "Sometimes — when we're desperate or out to eat", "points": 1 },
+        { "id": "q3c", "text": "Often or always — it's the only way meals happen", "points": 0 }
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "parent-modeling",
+      "text": "How often are you on your phone when you're with your child?",
+      "subtext": "Not working — just scrolling, texting, checking things.",
+      "source": "Common Sense Media — parental screen use and modeling",
+      "options": [
+        { "id": "q4a", "text": "Rarely — I put it away during playtime and meals", "points": 3 },
+        { "id": "q4b", "text": "Sometimes — I check it but try to be present", "points": 1 },
+        { "id": "q4c", "text": "Often — my phone is almost always in my hand", "points": 0 }
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "parent-modeling",
+      "text": "When you're waiting somewhere (doctor's office, restaurant, line at the store), what's your default?",
+      "subtext": "For yourself, not your kid.",
+      "source": "AAP — boredom tolerance and downtime",
+      "options": [
+        { "id": "q5a", "text": "I look around, talk to my kid, or just wait", "points": 3 },
+        { "id": "q5b", "text": "I usually pull out my phone", "points": 1 },
+        { "id": "q5c", "text": "Phone comes out immediately every time", "points": 0 }
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "screen-free-alternatives",
+      "text": "Can your child occupy themselves for 15-20 minutes without a screen?",
+      "subtext": "Playing independently — not you entertaining them, just them doing their thing.",
+      "source": "Common Sense Media — independent play and creativity",
+      "options": [
+        { "id": "q6a", "text": "Yes, regularly — they play, build, draw, imagine", "points": 3 },
+        { "id": "q6b", "text": "Sometimes, but it depends on their mood", "points": 1 },
+        { "id": "q6c", "text": "No, they need constant engagement or ask for screens", "points": 0 }
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "screen-free-alternatives",
+      "text": "When your child says 'I'm bored,' what usually happens?",
+      "subtext": "Be real. What actually happens, not what you wish happened.",
+      "source": "AAP — boredom as opportunity for creativity",
+      "options": [
+        { "id": "q7a", "text": "They figure something out, or I suggest non-screen options", "points": 3 },
+        { "id": "q7b", "text": "Sometimes screens, sometimes other things", "points": 1 },
+        { "id": "q7c", "text": "I hand them a screen — it's just easier", "points": 0 }
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "transition-ease",
+      "text": "What happens when you say it's time to turn off the screen?",
+      "subtext": "Think about the typical reaction, not the worst meltdown you've ever had.",
+      "source": "Common Sense Media — screen time transitions and self-regulation",
+      "options": [
+        { "id": "q8a", "text": "They turn it off without a fight, maybe after one more minute", "points": 3 },
+        { "id": "q8b", "text": "Some whining or negotiating, but they comply", "points": 1 },
+        { "id": "q8c", "text": "Major meltdown, tears, or refusal", "points": 0 }
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "transition-ease",
+      "text": "How hard would it be for your family to go screen-free for a full day?",
+      "subtext": "Not as punishment — just to see if you could.",
+      "source": "AAP — screen dependence and flexibility",
+      "options": [
+        { "id": "q9a", "text": "Totally doable — we've done it or could easily", "points": 3 },
+        { "id": "q9b", "text": "Challenging but possible with planning", "points": 1 },
+        { "id": "q9c", "text": "Nearly impossible — it would be a disaster", "points": 0 }
+      ]
+    }
+  ],
+
+  "domainContent": {
+    "child-screen-habits": {
+      "high": {
+        "level": "high",
+        "headline": "Your child's screen use is intentional and boundaried",
+        "detail": "Screens are a tool in your house, not the default. Your child has clear limits, screen-free times, and doesn't automatically reach for a device when bored. This balanced approach sets them up to use screens intentionally as they grow.",
+        "strength": "Screens are a tool, not a crutch — your child has healthy boundaries around when and how much they use devices"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Screen habits are mostly under control",
+        "detail": "Your child uses screens regularly, but you have some structure around it. There's room to tighten boundaries — especially around meals, total time, or the 'whenever they ask' moments — but you're not in crisis mode.",
+        "concern": "Screen time is frequent enough that it's becoming a go-to. Small adjustments — like screen-free meals or a clearer daily limit — can shift this quickly."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Screens are doing a lot of heavy lifting",
+        "detail": "Your child is spending a significant amount of time on screens, often at mealtimes or whenever requested. Screens have become the default solution for boredom, waiting, or hard moments. This is common — but it's worth noticing.",
+        "concern": "High screen time, especially during meals or as an automatic response to boredom, can limit opportunities for creativity, conversation, and self-regulation."
+      }
+    },
+    "parent-modeling": {
+      "high": {
+        "level": "high",
+        "headline": "You're modeling the relationship with screens you want your child to have",
+        "detail": "You put your phone away during meals and playtime. You can wait without pulling out your device. Your child is learning from watching you that screens are useful, but not necessary every moment.",
+        "strength": "You're showing your child that screens are optional — the most powerful screen-time lesson doesn't come from rules, it comes from watching you"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "You're somewhat present, but your phone is often nearby",
+        "detail": "You try to be present with your child, but your phone is a frequent companion. Kids are watching — and when they see us default to screens in every waiting moment, they learn to do the same.",
+        "concern": "Your child is learning screen habits by watching you. If your phone is always in hand, their tablet will be too."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Your phone is almost always in hand",
+        "detail": "You're on your phone a lot when you're with your child — scrolling, checking, reflexively pulling it out in every downtime moment. This is incredibly common, but it's hard to enforce screen limits for kids when they see us glued to our devices.",
+        "concern": "Kids mirror what they see. If you're constantly on your phone, they'll assume constant screen use is normal — because for them, it is."
+      }
+    },
+    "screen-free-alternatives": {
+      "high": {
+        "level": "high",
+        "headline": "Your child can entertain themselves without a screen",
+        "detail": "Your child plays independently, handles boredom without defaulting to screens, and has other ways to occupy themselves. This is huge — the ability to self-entertain and tolerate boredom is one of the most important skills screens can erode.",
+        "strength": "Your child has built the creativity and frustration tolerance that screens can quietly replace — this will serve them for life"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Screen-free play happens sometimes",
+        "detail": "Your child can play independently occasionally, but screens are still a frequent solution to boredom or restlessness. The more often screens fill empty time, the less practice they get inventing their own entertainment.",
+        "concern": "Your child's ability to self-entertain is developing, but screens are still the frequent fallback. More screen-free downtime builds that muscle."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Screens have become the primary entertainment",
+        "detail": "Your child struggles to occupy themselves without a screen. Boredom equals screen time. This is common — screens are designed to be easy — but it means they're losing opportunities to develop creativity, problem-solving, and frustration tolerance.",
+        "concern": "Constant screen access replaces the boredom that leads to creativity. Kids who never have to invent their own fun lose practice tolerating discomfort."
+      }
+    },
+    "transition-ease": {
+      "high": {
+        "level": "high",
+        "headline": "Screens don't control the mood in your house",
+        "detail": "Your child can turn off screens without major drama, and going screen-free for a day wouldn't cause chaos. This flexibility shows screens haven't become emotionally central — they're an option, not a need.",
+        "strength": "Your child can take screens or leave them — this flexibility shows they're not emotionally dependent on devices"
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Transitions are bumpy but manageable",
+        "detail": "Ending screen time involves some negotiation or whining, and going fully screen-free would take effort. Your child is attached to screens, but not totally dependent. There's still room to build flexibility.",
+        "concern": "Difficulty transitioning off screens suggests they've become emotionally important. Practicing earlier warnings and shorter sessions helps."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Screens have become emotionally necessary",
+        "detail": "Turning off screens causes major conflict, and the idea of a screen-free day feels impossible. Your child has come to rely on screens not just for entertainment, but for emotional regulation. This is a sign that screens have moved from tool to crutch.",
+        "concern": "When ending screen time causes meltdowns and screen-free days feel impossible, screens have become a coping mechanism rather than entertainment."
+      }
+    }
+  },
+
+  "results": {
+    "ready": {
+      "id": "ready",
+      "scoreRange": { "min": 21, "max": 27 },
+      "headline": "Balanced Screen Use",
+      "subheadline": "Your family has a healthy relationship with screens.",
+      "explanation": "Screens are part of your life, but they're not running the show. You have boundaries, your child can tolerate screen-free time, and you're modeling the kind of intentional use that helps kids develop a healthy relationship with technology.",
+      "nextSteps": [
+        "Keep doing what you're doing — consistency matters more than perfection",
+        "As your child grows, involve them in screen-time decisions: 'You get 30 minutes today — do you want it now or after dinner?'",
+        "Periodically check in: is screen time creeping up? Are mealtimes still screen-free? Habits drift, and that's fine — just notice.",
+        "Remember that balanced doesn't mean zero. Screens are part of modern life. You're teaching moderation, not abstinence."
+      ],
+      "watchOutFor": "Life gets hard — sickness, new babies, stressful work weeks — and screen time will spike. That's fine. What matters is whether you notice and recalibrate afterward, not whether you're perfect every week.",
+      "encouragement": "You've found a rhythm that works. Your child is learning that screens are useful but optional, and that's exactly the lesson you want them to carry into adolescence.",
+      "comparativeContext": "Families who score in this range report that their children handle boredom well, transition off screens without major conflict, and have diverse interests beyond devices.",
+      "retakeAdvice": "No need to retake — but check in every 6 months as your child grows and screen temptations evolve"
+    },
+    "almost": {
+      "id": "almost",
+      "scoreRange": { "min": 11, "max": 20 },
+      "headline": "Leaning on Screens",
+      "subheadline": "Screens are playing a bigger role than you might want — and it's worth noticing.",
+      "explanation": "Your family uses screens regularly, and they've become a frequent solution to boredom, transitions, or hard moments. You're not in crisis, but there's room to pull back — especially in the areas flagged below.",
+      "nextSteps": [
+        "Pick one boundary to reinforce first: screen-free meals, a daily time limit, or no screens during the first/last hour of the day",
+        "Find one non-screen activity your child genuinely enjoys and protect time for it daily — even 15 minutes",
+        "Notice when YOU reach for your phone, and practice putting it down. Your child is watching.",
+        "Expect resistance when you tighten limits. It will be hard for a week, then easier. Kids adapt faster than we expect."
+      ],
+      "watchOutFor": "Don't shame yourself or your child for where you are. Screens are designed to be irresistible — that's not a moral failing. What matters is noticing the pattern and deciding if you want to shift it.",
+      "encouragement": "Awareness is the hard part, and you're already there. Small changes compound quickly. A month from now, this can look completely different.",
+      "comparativeContext": "Many families in this range find that one or two targeted changes — like screen-free meals or a firmer daily limit — shift the dynamic significantly within a few weeks.",
+      "retakeAdvice": "Retake this quiz in 4-6 weeks after making one or two adjustments"
+    },
+    "not-yet": {
+      "id": "not-yet",
+      "scoreRange": { "min": 0, "max": 10 },
+      "headline": "Screen-Heavy Household",
+      "subheadline": "Screens are doing a lot of heavy lifting in your house — and that's worth paying attention to.",
+      "explanation": "Your family is relying heavily on screens for entertainment, emotional regulation, and time-filling. Meals happen with screens, transitions off devices are hard, and going screen-free feels nearly impossible. This is not a judgment — it's just reality. And it's fixable.",
+      "nextSteps": [
+        "Start small: pick ONE screen-free zone or time (meals, the hour before bed, weekend mornings) and protect it fiercely",
+        "Address your own phone use first — you can't enforce limits you don't model. Put your phone in another room during meals and playtime.",
+        "Expect withdrawal-like behavior when you start pulling back. It will be hard. Your child may melt down. That's actually proof that the change matters.",
+        "Build a library of non-screen options: art supplies, audiobooks, outdoor time, building toys. Make them as accessible as the tablet."
+      ],
+      "watchOutFor": "If reducing screen time feels impossible or causes multi-hour meltdowns daily, talk to your pediatrician. Sometimes extreme screen dependence masks underlying challenges with regulation, attention, or sensory needs.",
+      "encouragement": "You're here, reading this, which means you're already questioning the status quo. That's the hardest step. Change doesn't happen overnight — but it does happen, one small boundary at a time.",
+      "comparativeContext": "Research shows that even families with very high screen use can shift to balanced habits within 2-3 months of consistent boundary-setting. The first two weeks are the hardest.",
+      "retakeAdvice": "Retake this quiz in 6-8 weeks after establishing one or two firm boundaries"
+    }
+  }
+}
