@@ -5,7 +5,7 @@
     "slug": "screen-dependence",
     "title": "How Screen-Dependent Is Your Family?",
     "shortTitle": "Family Screen Check",
-    "description": "A judgment-free assessment of your family's relationship with screens — who reaches for them, when, and why. Based on validated instruments from pediatric and media psychology research.",
+    "description": "A judgment-free look at your family's relationship with screens — who's reaching for them, when, and why. Based on validated instruments from pediatric and media psychology research.",
     "intro": "This isn't about counting hours or feeling guilty. Screens are a tool — every family uses them. What matters is the pattern: who reaches for them, when, and what happens when they're not available.\n\nAnswer for your family as it actually is, not as you wish it were.",
     "estimatedTime": "3 minutes",
     "questionCount": 12,
@@ -27,33 +27,33 @@
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6411079/"
       },
       {
-        "name": "MEPA-20 — Media Parenting Scale (Vacek et al., 2021)",
+        "name": "MEPA — Media Parenting Scale (Vacek et al., 2021)",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8431513/"
       }
     ]
   },
 
   "domains": {
-    "media-environment": {
-      "id": "media-environment",
-      "name": "Media Environment",
+    "media-ecology": {
+      "id": "media-ecology",
+      "name": "Home Media Environment",
       "maxPoints": 9,
       "thresholds": { "high": 7, "medium": 4 }
     },
-    "screen-motivation": {
-      "id": "screen-motivation",
-      "name": "Screen Motivation",
+    "why-screens": {
+      "id": "why-screens",
+      "name": "Why Screens Come Out",
       "maxPoints": 9,
       "thresholds": { "high": 7, "medium": 4 }
     },
-    "content-engagement": {
-      "id": "content-engagement",
-      "name": "Content Engagement",
+    "screen-quality": {
+      "id": "screen-quality",
+      "name": "How Screens Fit In",
       "maxPoints": 9,
       "thresholds": { "high": 7, "medium": 4 }
     },
-    "family-flexibility": {
-      "id": "family-flexibility",
+    "flexibility": {
+      "id": "flexibility",
       "name": "Family Flexibility",
       "maxPoints": 9,
       "thresholds": { "high": 7, "medium": 4 }
@@ -63,291 +63,287 @@
   "questions": [
     {
       "id": "q1",
-      "domain": "media-environment",
-      "text": "How does your family's device situation look at home?",
-      "subtext": "Think about what's available and how easily anyone can reach for a screen.",
-      "source": "ScreenQ — device access is the strongest environmental predictor of total screen time",
+      "domain": "media-ecology",
+      "text": "How does your child access screens?",
+      "subtext": "Think about what devices are available and how easily they can get to them.",
+      "source": "ScreenQ — device access is the strongest environmental predictor of screen time",
       "options": [
-        { "id": "q1a", "text": "We have a family tablet and a TV, both stored away until someone decides to use them", "points": 3 },
-        { "id": "q1b", "text": "A shared tablet lives on the counter and the TV is in the main room, but our kids ask before using them", "points": 2 },
-        { "id": "q1c", "text": "Our kids have their own devices and know where to find them", "points": 1 },
-        { "id": "q1d", "text": "There's a screen within arm's reach in every room — tablets, phones, TVs", "points": 0 }
+        { "id": "q1a", "text": "They use ours when we hand it to them — no device of their own", "points": 3 },
+        { "id": "q1b", "text": "There's a shared family tablet or TV they can ask to use", "points": 2 },
+        { "id": "q1c", "text": "They have their own device and know where it is", "points": 1 },
+        { "id": "q1d", "text": "Multiple devices within reach — TV, tablet, phone", "points": 0 }
       ]
     },
     {
       "id": "q2",
-      "domain": "media-environment",
-      "text": "What's the background noise in your home on a typical afternoon?",
-      "subtext": "Not deliberate watching — just what's playing while life happens.",
-      "source": "SCREENS-Q — background media is a major unmeasured exposure source in family media ecology",
+      "domain": "media-ecology",
+      "text": "Is there usually a screen on in the background at home?",
+      "subtext": "TV playing while no one's actively watching, phone propped up during cooking, etc.",
+      "source": "SCREENS-Q — background media is a major unmeasured exposure source",
       "options": [
-        { "id": "q2a", "text": "Music, conversation, or silence — screens are only on when someone sits down to watch", "points": 3 },
-        { "id": "q2b", "text": "The TV runs during cooking or cleanup, then gets turned off", "points": 2 },
-        { "id": "q2c", "text": "Something is usually playing — it's just the soundtrack of our house", "points": 1 },
-        { "id": "q2d", "text": "Multiple screens going at once is a normal scene in our living room", "points": 0 }
+        { "id": "q2a", "text": "No — screens are only on when someone's actively watching something", "points": 3 },
+        { "id": "q2b", "text": "The TV is on during meals or while we get ready, but not all day", "points": 2 },
+        { "id": "q2c", "text": "There's usually something playing — it's just how our house sounds", "points": 1 },
+        { "id": "q2d", "text": "Multiple screens going at once is pretty normal for us", "points": 0 }
       ]
     },
     {
       "id": "q3",
-      "domain": "media-environment",
-      "text": "What do screen rules look like in your family?",
-      "source": "MEPA-20 — restrictive mediation subscale: rule presence predicts healthy screen patterns more than total hours",
+      "domain": "media-ecology",
+      "text": "Does your family have clear rules about when screens are and aren't allowed?",
+      "source": "MEPA — rule presence is a stronger predictor of healthy screen patterns than total hours",
       "options": [
-        { "id": "q3a", "text": "We have specific, consistent rules everyone knows — no screens at meals, time limits, device curfews", "points": 3 },
-        { "id": "q3b", "text": "We have loose guidelines that bend depending on the day and our energy", "points": 2 },
-        { "id": "q3c", "text": "We've tried setting rules, but they didn't stick for more than a week", "points": 1 },
-        { "id": "q3d", "text": "No real rules — screens happen when they happen", "points": 0 }
+        { "id": "q3a", "text": "Yes — specific rules everyone knows (no screens at meals, time limits, etc.)", "points": 3 },
+        { "id": "q3b", "text": "Some loose guidelines, but they flex depending on the day", "points": 2 },
+        { "id": "q3c", "text": "Not really — screen time happens organically", "points": 1 },
+        { "id": "q3d", "text": "We've tried rules but couldn't stick to them", "points": 0 }
       ]
     },
     {
       "id": "q4",
-      "domain": "screen-motivation",
-      "text": "You need 20 uninterrupted minutes — a work call, cooking dinner, a shower. What happens?",
-      "source": "PSUS — screens-as-childcare subscale: the most common parent-driven use pattern",
+      "domain": "why-screens",
+      "text": "When you need to get something done — cooking, a work call, a shower — what happens?",
+      "source": "PSUS — screens-as-childcare is the most common parent-driven use pattern",
       "options": [
-        { "id": "q4a", "text": "My kids play independently, or another adult steps in — screens don't enter the picture", "points": 3 },
-        { "id": "q4b", "text": "Sometimes I hand them a device, sometimes they entertain themselves — depends on the day", "points": 2 },
-        { "id": "q4c", "text": "I hand them a tablet before I even start — it's the most reliable way to buy myself time", "points": 1 },
-        { "id": "q4d", "text": "I can't get anything done without a screen running — it's the only thing that keeps them occupied", "points": 0 }
+        { "id": "q4a", "text": "My child plays on their own or another adult helps", "points": 3 },
+        { "id": "q4b", "text": "Sometimes a screen, sometimes they find something else to do", "points": 2 },
+        { "id": "q4c", "text": "A screen is my go-to — it's the most reliable way to buy time", "points": 1 },
+        { "id": "q4d", "text": "I honestly can't get anything done without handing them a device", "points": 0 }
       ]
     },
     {
       "id": "q5",
-      "domain": "screen-motivation",
-      "text": "Your family is stuck in a waiting room, a restaurant, or a long car ride. How do screens factor in?",
-      "source": "PSUS — screens as transition management; ScreenQ — frequency of use during waiting",
+      "domain": "why-screens",
+      "text": "During transitions — waiting rooms, restaurants, car rides — how do screens enter the picture?",
+      "source": "ScreenQ — use during waiting; PSUS — screens as transition management tool",
       "options": [
-        { "id": "q5a", "text": "We bring books, snacks, or small toys — screens aren't part of our out-of-the-house kit", "points": 3 },
-        { "id": "q5b", "text": "For a long wait we might pull out a phone, but it's not automatic and it's not the first thing we try", "points": 2 },
-        { "id": "q5c", "text": "I pre-load something on the tablet before we leave — it's part of our getting-out-the-door routine", "points": 1 },
-        { "id": "q5d", "text": "A screen comes out within the first two minutes, every time — it's how we survive public spaces", "points": 0 }
+        { "id": "q5a", "text": "We usually don't bring screens for these moments", "points": 3 },
+        { "id": "q5b", "text": "For long waits we might bring something, but it's not automatic", "points": 2 },
+        { "id": "q5c", "text": "I pre-load something before we leave — it's part of the routine", "points": 1 },
+        { "id": "q5d", "text": "A screen comes out within the first few minutes, every time", "points": 0 }
       ]
     },
     {
       "id": "q6",
-      "domain": "screen-motivation",
-      "text": "Your child is melting down — overtired, frustrated, inconsolable. What's your first move?",
-      "source": "PSUS — screens as mood regulation subscale; PMUM-SF — mood regulation dependence marker",
+      "domain": "why-screens",
+      "text": "When your child is having a hard moment — meltdown, overtired, frustrated — what's your first move?",
+      "source": "PSUS — screens as mood regulation; PMUM-SF — mood regulation dependence marker",
       "options": [
-        { "id": "q6a", "text": "I sit with them, name the feeling, and wait it out — or just hold them until it passes", "points": 3 },
-        { "id": "q6b", "text": "I try comfort first, but if it's been a rough day I'll pull out a screen to help everyone reset", "points": 2 },
-        { "id": "q6c", "text": "A screen calms things down in seconds — and after a long day, that speed matters", "points": 1 },
-        { "id": "q6d", "text": "A screen is the only thing that works — nothing else even comes close to settling them", "points": 0 }
+        { "id": "q6a", "text": "Comfort, talk through it, or give them space to feel it", "points": 3 },
+        { "id": "q6b", "text": "Depends on the day — sometimes comfort, sometimes a screen", "points": 2 },
+        { "id": "q6c", "text": "A screen usually calms things down fastest", "points": 1 },
+        { "id": "q6d", "text": "A screen is the only thing that reliably works", "points": 0 }
       ]
     },
     {
       "id": "q7",
-      "domain": "content-engagement",
-      "text": "When your child is watching something on a screen, where are you?",
-      "source": "ScreenQ — co-viewing domain; MEPA-20 — active mediation subscale",
+      "domain": "screen-quality",
+      "text": "When your child is on a screen, what are you usually doing?",
+      "source": "ScreenQ — co-viewing domain; MEPA — active mediation subscale",
       "options": [
-        { "id": "q7a", "text": "Watching with them — we pause to talk about what's happening or laugh at the same parts", "points": 3 },
-        { "id": "q7b", "text": "In the same room, half-watching — I check in on what they're seeing every few minutes", "points": 2 },
-        { "id": "q7c", "text": "Using the time to get other things done — that's the whole point of screen time", "points": 1 },
-        { "id": "q7d", "text": "Honestly, I'm usually in another room and not sure what they're watching", "points": 0 }
+        { "id": "q7a", "text": "Watching or playing with them — we talk about what's happening", "points": 3 },
+        { "id": "q7b", "text": "Nearby, sometimes watching, sometimes doing my own thing", "points": 2 },
+        { "id": "q7c", "text": "Using the time to get other things done — that's kind of the point", "points": 1 },
+        { "id": "q7d", "text": "I'm not sure what they're watching most of the time", "points": 0 }
       ]
     },
     {
       "id": "q8",
-      "domain": "content-engagement",
-      "text": "Who chooses what your child watches or plays on screens?",
-      "source": "ScreenQ — content domain; DSEQ — educational vs. entertainment content categories",
+      "domain": "screen-quality",
+      "text": "What does your child mostly do on screens?",
+      "source": "ScreenQ — content domain; DSEQ — educational vs. non-educational content",
       "options": [
-        { "id": "q8a", "text": "We pick everything — specific shows, specific apps, nothing left to the algorithm", "points": 3 },
-        { "id": "q8b", "text": "We set up a playlist or app library, and they choose from within that", "points": 2 },
-        { "id": "q8c", "text": "They mostly navigate on their own — YouTube recommendations, app store browsing, autoplay", "points": 1 },
-        { "id": "q8d", "text": "I've lost track of what they're watching — they find new things faster than I can keep up", "points": 0 }
+        { "id": "q8a", "text": "Mostly content we've picked — educational shows, specific apps", "points": 3 },
+        { "id": "q8b", "text": "A mix — some chosen by us, some they pick themselves", "points": 2 },
+        { "id": "q8c", "text": "Mostly whatever they navigate to — YouTube, games, autoplay", "points": 1 },
+        { "id": "q8d", "text": "I've lost track of what they're watching — they find their own stuff", "points": 0 }
       ]
     },
     {
       "id": "q9",
-      "domain": "content-engagement",
-      "text": "Your child announces they're bored. What happens next?",
-      "subtext": "Think about who makes the first move toward a screen.",
-      "source": "PSUS — family norms subscale; SCREENS-Q — context of use",
+      "domain": "screen-quality",
+      "text": "When your child says 'I'm bored,' who reaches for a screen first?",
+      "source": "PSUS — family norms; SCREENS-Q — context of use",
       "options": [
-        { "id": "q9a", "text": "We suggest drawing, building, going outside — or just let them sit with the boredom until they invent something", "points": 3 },
-        { "id": "q9b", "text": "They ask for a screen, and about half the time I redirect them to something else first", "points": 2 },
-        { "id": "q9c", "text": "I offer a screen before they even ask — it solves the problem and I don't have to hear about it", "points": 1 },
-        { "id": "q9d", "text": "Boredom doesn't really come up because a screen is usually already going", "points": 0 }
+        { "id": "q9a", "text": "Neither — we suggest other activities or let them figure it out", "points": 3 },
+        { "id": "q9b", "text": "They ask for a screen, and sometimes I say yes", "points": 2 },
+        { "id": "q9c", "text": "I offer a screen before they ask — it solves the problem quickly", "points": 1 },
+        { "id": "q9d", "text": "Boredom doesn't come up — a screen is usually already going", "points": 0 }
       ]
     },
     {
       "id": "q10",
-      "domain": "family-flexibility",
-      "text": "Think back over the past three months. Has your family's screen time quietly shifted?",
-      "subtext": "Not a conscious decision — just a gradual drift.",
-      "source": "PMUM-SF — tolerance item: gradual increase in screen time is a universal creep pattern",
+      "domain": "flexibility",
+      "text": "Has your family's screen time quietly increased over the past few months?",
+      "subtext": "Not a conscious decision to watch more — just a gradual drift.",
+      "source": "PMUM-SF — tolerance item: screen time gradually increasing is a universal creep pattern",
       "options": [
-        { "id": "q10a", "text": "It's held steady or actually decreased — we've been intentional about keeping it in check", "points": 3 },
-        { "id": "q10b", "text": "It creeps up during stressful stretches but comes back down when things settle", "points": 2 },
-        { "id": "q10c", "text": "It's noticeably higher than it was three months ago, and nobody made a decision for that to happen", "points": 1 },
-        { "id": "q10d", "text": "It's been climbing steadily — screens fill more and more of the day", "points": 0 }
+        { "id": "q10a", "text": "No — it's stayed about the same or decreased", "points": 3 },
+        { "id": "q10b", "text": "A little — it creeps up during busy or stressful stretches", "points": 2 },
+        { "id": "q10c", "text": "Yes — noticeably more than it was, without anyone deciding it should be", "points": 1 },
+        { "id": "q10d", "text": "Significantly — screens have taken over more and more of the day", "points": 0 }
       ]
     },
     {
       "id": "q11",
-      "domain": "family-flexibility",
-      "text": "The tablet is dead, the WiFi is out, the TV broke. What does the next hour look like?",
-      "source": "PMUM-SF — withdrawal and behavioral disruption markers",
+      "domain": "flexibility",
+      "text": "What happens when screens are suddenly unavailable — dead battery, no wifi, forgot the tablet?",
+      "source": "PMUM-SF — withdrawal and loss of control markers",
       "options": [
-        { "id": "q11a", "text": "Nobody notices for a while — someone eventually grabs a book or heads outside", "points": 3 },
-        { "id": "q11b", "text": "Some grumbling and complaining, but within 15 minutes everyone has found something else", "points": 2 },
-        { "id": "q11c", "text": "Major protests and whining — it throws off the whole afternoon and I have to scramble to fill the time", "points": 1 },
-        { "id": "q11d", "text": "It feels like a crisis — for the kids and honestly for me too", "points": 0 }
+        { "id": "q11a", "text": "Everyone adjusts — it's not a big deal", "points": 3 },
+        { "id": "q11b", "text": "Some complaining, but they find something else within 10 minutes", "points": 2 },
+        { "id": "q11c", "text": "Major protests — it throws off our whole routine", "points": 1 },
+        { "id": "q11d", "text": "It feels like a crisis — for the kids AND for me", "points": 0 }
       ]
     },
     {
       "id": "q12",
-      "domain": "family-flexibility",
-      "text": "Be honest: could your whole family — adults included — go screen-free for one full Saturday?",
-      "subtext": "Not as punishment or a detox. Just: could you do it without it being miserable?",
-      "source": "DREAMER framework — family media ecology assesses the whole household, not just children",
+      "domain": "flexibility",
+      "text": "How hard would it be for your WHOLE family — adults included — to go screen-free for a Saturday?",
+      "subtext": "Not as punishment. Just: could you do it?",
+      "source": "DREAMER framework — family media ecology means everyone, not just the children",
       "options": [
-        { "id": "q12a", "text": "Absolutely — we'd plan activities and probably enjoy the day more than usual", "points": 3 },
-        { "id": "q12b", "text": "It would take planning and some willpower, but we could pull it off", "points": 2 },
-        { "id": "q12c", "text": "Someone would cave by lunchtime — probably me", "points": 1 },
-        { "id": "q12d", "text": "I genuinely cannot picture how that day would work", "points": 0 }
+        { "id": "q12a", "text": "Totally doable — we'd enjoy it", "points": 3 },
+        { "id": "q12b", "text": "Hard but possible with planning", "points": 2 },
+        { "id": "q12c", "text": "Very hard — someone would cave by lunchtime", "points": 1 },
+        { "id": "q12d", "text": "Honestly can't imagine it working", "points": 0 }
       ]
     }
   ],
 
   "domainContent": {
-    "media-environment": {
+    "media-ecology": {
       "high": {
         "level": "high",
-        "headline": "Your home setup is working for you",
-        "detail": "Devices aren't freely accessible, background screens are rare, and your family has rules that actually hold. Your physical environment naturally limits screen time without requiring constant policing. Research consistently shows that the home media environment is the single strongest predictor of how much families use screens — and yours is set up to support healthy patterns.",
-        "strength": "Your home environment naturally limits screen time through intentional device placement and consistent rules"
+        "headline": "Your home media setup is intentional",
+        "detail": "Screens aren't freely available, background media is minimal, and you have rules that stick. Your child's screen access is shaped by deliberate choices, not default availability. Research shows that the home media environment is the strongest predictor of how much children use screens — environment shapes behavior more than willpower.",
+        "strength": "Your home setup naturally limits screen time without requiring constant enforcement"
       },
       "medium": {
         "level": "medium",
-        "headline": "Solid structure with some soft spots",
-        "detail": "You've got the basics in place — some rules, some boundaries around access. That matters, and it's working more than you might realize. The gaps are common ones: background media drifting on, devices that are a little too easy to grab, or rules that flex on hard days. The research says tightening the environment (moving a device, firming up one rule) works better than trying to police usage in the moment.",
-        "concern": "Pick one environmental tweak — a screen-free zone, a device charging station in another room — and try it for two weeks before adding another"
+        "headline": "Your media environment has some structure",
+        "detail": "Devices are around and accessible, rules are flexible, and background screens are part of the landscape some of the time. This is extremely common — most homes look like this. The research shows that tightening the environment (moving devices, firming up one or two rules) is more effective than trying to police usage in the moment.",
+        "concern": "A few small environmental changes — like a screen-free zone or putting the tablet in a specific spot — can shift patterns without any willpower required"
       },
       "low": {
         "level": "low",
-        "headline": "Screens are everywhere and always on",
-        "detail": "Multiple devices are within reach, background media runs most of the time, and rules haven't stuck. This is not unusual — screens are designed to be frictionless, and most homes drift here without anyone choosing it. The upside: environmental changes are the easiest, most effective lever you have. Moving one device or turning off background TV during meals creates more change than any time-limit conversation.",
-        "concern": "Start with one physical change — move a device to a drawer, turn off the TV during dinner — and see how the pattern shifts before adding rules"
+        "headline": "Screens are always within reach",
+        "detail": "Multiple devices are available, background media is common, and rules haven't stuck. When screens are everywhere and always on, they become the default activity — not because anyone chose it, but because it's the easiest thing in the room. This is the area where small physical changes (moving a device, turning off the TV during meals) have the biggest impact.",
+        "concern": "The research is clear: reducing access is more effective than restricting usage. Moving one device out of easy reach does more than adding a new time rule."
       }
     },
-    "screen-motivation": {
+    "why-screens": {
       "high": {
         "level": "high",
-        "headline": "You reach for more than just screens",
-        "detail": "When your family needs to manage a hard moment — buying time, surviving a wait, weathering a meltdown — screens aren't the automatic move. You've built a parenting toolkit with multiple strategies, and screens are one option among many rather than the default. This doesn't mean you never use screens as a tool. It means your family isn't dependent on them for emotional regulation or logistical survival.",
-        "strength": "Your family has diverse coping strategies — screens are a choice, not a reflex"
+        "headline": "You have non-screen strategies for the hard moments",
+        "detail": "When you need to get things done, manage transitions, or weather a meltdown, screens aren't your first move. You've built a toolkit of other approaches — independent play, comfort, patience, distraction, or accepting the chaos. This doesn't mean you never use screens. It means they're one option among many.",
+        "strength": "You have a diverse parenting toolkit — screens are an option, not the only option"
       },
       "medium": {
         "level": "medium",
-        "headline": "Screens are one tool among several",
-        "detail": "Sometimes you reach for a screen, sometimes you don't — it depends on the day, your energy, and how many things are going sideways at once. That flexibility is real and worth acknowledging. The pattern to watch is whether certain moments (needing to cook, a restaurant wait, an end-of-day meltdown) have become automatic screen triggers. One backup strategy for your most common trigger moment is all it takes to break that reflex.",
-        "concern": "Identify your most frequent screen-trigger moment and experiment with one non-screen alternative for just that situation"
+        "headline": "Screens are one tool in your parenting toolkit",
+        "detail": "Sometimes you reach for a screen, sometimes you don't. It depends on the day, your energy, and what's happening. This is honest and realistic — no parent has infinite patience. What the research suggests is paying attention to which moments automatically trigger screen use, and having one backup plan for those specific moments.",
+        "concern": "Notice which moments you reflexively reach for a screen — that's where one alternative strategy (even an imperfect one) can break the automatic pattern"
       },
       "low": {
         "level": "low",
-        "headline": "Screens are doing the heavy lifting",
-        "detail": "When things get hard — you need a break, your child is melting down, you're stuck waiting somewhere — a screen is the move. This is not a moral failing. Screens work. They're fast, reliable, and parenting is exhausting. The useful insight is that most of your family's screen time is being driven by parental need, not child demand. That's actually easier to shift, because you're the one making the call.",
-        "concern": "Most of your family's screen time is parent-initiated — that's actually easier to change than child-driven habits, one trigger moment at a time"
+        "headline": "Screens have become your go-to parenting tool",
+        "detail": "When things get hard — you need a break, your child is melting down, you're stuck in a waiting room — a screen is the move. This isn't a moral failing. Screens work. They're fast, they're reliable, and parenting is exhausting. But it does mean your child's screen time is driven mostly by YOUR needs, not their demand for screens. That's actually useful information — it means the change is yours to make, at your own pace.",
+        "concern": "Your child's screen time is mostly parent-initiated. That's easier to change than child-driven dependency — you're the one with the remote."
       }
     },
-    "content-engagement": {
+    "screen-quality": {
       "high": {
         "level": "high",
-        "headline": "Screen time is active, not passive",
-        "detail": "Your family knows what's on the screen, someone chose it on purpose, and a parent is often present and engaged during viewing. When boredom strikes, screens aren't the reflex. Research is clear that co-viewed, curated content is a fundamentally different experience from solo autoplay — even at the same number of hours. Your family's screen time falls into the higher-quality category.",
-        "strength": "The quality and context of your family's screen use is strong — curated, co-viewed, and intentional"
+        "headline": "Screen time is intentional and engaged",
+        "detail": "You know what your child is watching, you've chosen much of it, and you're often present when they're using screens. When boredom strikes, screens aren't the first thing anyone reaches for. Research shows that co-viewed, curated content is a fundamentally different experience from solo, autoplay-driven screen time — even at the same duration.",
+        "strength": "The quality and context of your family's screen use matters more than the hours — and yours is strong"
       },
       "medium": {
         "level": "medium",
-        "headline": "A mix of intentional and autopilot",
-        "detail": "Some of your family's screen time is engaged and chosen — watching together, discussing what's happening, curated content. That part is genuinely valuable. The rest runs more on autopilot: solo viewing, algorithm-driven content, screens filling boredom gaps. You don't need to co-view everything. Even knowing what your child watches regularly and occasionally asking about it transforms passive consumption into something more connected.",
-        "concern": "Try watching one episode of whatever your child watches most and ask them about it — even occasional engagement shifts the quality of screen time"
+        "headline": "Some screen time is engaged, some is background noise",
+        "detail": "You have a mix: sometimes you're watching together and talking about it, sometimes screens are running while you do other things, and sometimes your child is navigating on their own. The research suggests that the engaged moments are doing real good — and even small shifts toward more co-viewing and content curation have measurable benefits.",
+        "concern": "You don't need to co-view everything — but knowing what your child watches regularly and talking about it occasionally makes a real difference"
       },
       "low": {
         "level": "low",
         "headline": "Screens are running on autopilot",
-        "detail": "Your child mostly navigates their own screen experience — choosing content, managing boredom with a device, and watching without much adult awareness or involvement. This is common when screens serve a childcare function, which is exactly how many families use them. The concern isn't duration — it's that unsupervised, algorithm-driven content is the least beneficial type of screen use. Small steps toward knowing what they watch make a real difference.",
-        "concern": "You don't have to co-view everything — start by sitting down with them for 10 minutes this week and asking what they're watching and why they like it"
+        "detail": "Your child mostly navigates their own screen experience — choosing content, handling boredom with a device, and watching without much adult involvement. This is common when screens are used for childcare time, which is exactly how many families use them. The concern isn't duration — it's that unsupervised, auto-played content is the least beneficial type of screen use for developing minds.",
+        "concern": "You don't have to watch with them all the time — but knowing what they're consuming and occasionally joining in transforms screen time from passive to engaged."
       }
     },
-    "family-flexibility": {
+    "flexibility": {
       "high": {
         "level": "high",
         "headline": "Your family can take screens or leave them",
-        "detail": "Screen time hasn't crept up, going without doesn't cause drama, and a screen-free day sounds pleasant rather than impossible. This flexibility is the clearest signal that screens haven't become emotionally or logistically necessary — they're genuinely optional. Research identifies this adaptability as the strongest protective factor against problematic use as children get older and screens get more compelling.",
+        "detail": "Screen time hasn't crept up, unavailability doesn't cause drama, and a screen-free day is doable. This flexibility is the clearest signal that screens haven't become emotionally or logistically necessary — they're genuinely optional for your family. This is the strongest protective factor against problematic use as your child grows.",
         "strength": "Your family has genuine flexibility around screens — the strongest predictor of healthy long-term media habits"
       },
       "medium": {
         "level": "medium",
-        "headline": "Some attachment, but still adaptable",
-        "detail": "Screen time has probably drifted up a bit, going without would be uncomfortable but not catastrophic, and there's some protest when devices disappear. This is where most families live, and it's a manageable place to be. The gradual creep is normal — screens are designed to be easy to reach for. The fact that you notice it puts you ahead of most families, because awareness is the prerequisite for adjustment.",
-        "concern": "Watch for the slow creep — it's not dramatic enough to notice day by day, but checking in monthly keeps your family's baseline from quietly resetting"
+        "headline": "There's some screen attachment, but it's manageable",
+        "detail": "Screen time has probably drifted up a bit, going without would be uncomfortable but not catastrophic, and there's some protest when screens are taken away. This is the zone most families live in. The 'creep' is normal — screens are designed to be easy to reach for. Noticing it is the hard part, and you've already done that.",
+        "concern": "The gradual creep is the pattern to watch — it's not dramatic enough to notice day by day, but over months it shifts what feels 'normal' for everyone"
       },
       "low": {
         "level": "low",
-        "headline": "Screens feel necessary right now",
-        "detail": "Screen time has been climbing, unavailability causes real disruption, and a screen-free day feels genuinely impossible — for the kids and possibly for you too. When screens reach this level of entrenchment, it's less about willpower and more about restructuring routines and environment. The research on families who have successfully pulled back is consistent: it takes about two weeks of change for the new pattern to stop feeling hard.",
-        "concern": "The first two weeks of pulling back are genuinely hard — after that it gets dramatically easier. Start with one screen-free window (like dinner to bedtime) rather than a full day."
+        "headline": "Screens have become hard to live without",
+        "detail": "Screen time has increased significantly, unavailability causes real disruption, and a screen-free day feels impossible — for the kids and possibly for you too. When screens have reached this level of entrenchment, it's less about individual willpower and more about restructuring the environment and routines. The research on families who've successfully pulled back shows it takes about 2 weeks of consistent change for the new normal to feel normal.",
+        "concern": "The first two weeks of pulling back are genuinely hard. After that, it gets dramatically easier. Expect resistance — it's proof the change matters, not proof it's wrong."
       }
     }
   },
 
   "results": {
-    "balanced": {
-      "id": "balanced",
+    "ready": {
+      "id": "ready",
       "scoreRange": { "min": 28, "max": 36 },
       "headline": "Balanced Screen Ecology",
       "subheadline": "Your family has a healthy, flexible relationship with screens.",
-      "explanation": "Screens are part of your family's life, but they're not organizing it. Your home environment is set up intentionally, you have multiple strategies for the hard parenting moments, screen content is mostly curated and engaged, and everyone can go without when needed. This doesn't mean zero screens — it means screens are a genuine choice, not a dependency.",
+      "explanation": "Screens are part of your life, but they're not structuring it. Your home environment is intentional, you have strategies beyond screens for the hard moments, screen time is mostly engaged and curated, and your whole family can go without when needed. This doesn't mean zero screens — it means screens are a choice, not a crutch.",
       "nextSteps": [
-        "Protect what's working — consistency over time matters more than perfection on any given day",
-        "As your kids grow, involve them in screen decisions: 'You get 30 minutes — do you want them now or after dinner?'",
-        "Check in every few months to see if screen time has quietly crept up — habits drift, and that's normal as long as you notice",
-        "Talk about what they watch, not to police it, but to stay connected to their world"
+        "Keep doing what you're doing — consistency matters more than perfection",
+        "As your child grows, involve them in screen decisions: 'You get 30 minutes — do you want it now or after dinner?'",
+        "Check in every few months: is screen time creeping? Habits drift, and that's fine — just notice it",
+        "Talk about what they watch. Not to police it, but to stay connected to their world"
       ],
-      "watchOutFor": "Stressful stretches — illness, a new baby, a work crunch — will temporarily spike screen time for everyone. That's normal. What matters is whether your family recalibrates afterward, not whether you're perfect every week.",
-      "encouragement": "You've built a family culture where screens are genuinely optional. That's rare, and it didn't happen by accident. That intentionality will serve your family well as devices get more compelling in the years ahead.",
-      "comparativeContext": "Research shows families in this range tend to have children who handle boredom well, transition off screens without extended conflict, and maintain diverse non-screen interests.",
-      "shareableSummary": "Our family has a pretty healthy screen balance — we're intentional about when and why screens come out, and everyone can go without when needed."
+      "watchOutFor": "Stressful periods (illness, new baby, work crunch) will spike screen time. That's normal. What matters is whether you recalibrate afterward, not whether you're perfect every week.",
+      "encouragement": "You've built a family culture where screens are genuinely optional. That's rare and valuable — and it will serve your child well as screens get more compelling in the years ahead.",
+      "comparativeContext": "Families who score in this range tend to have children who handle boredom well, transition off screens without conflict, and have diverse non-screen interests."
     },
-    "leaning": {
-      "id": "leaning",
+    "almost": {
+      "id": "almost",
       "scoreRange": { "min": 15, "max": 27 },
       "headline": "Leaning on Screens",
-      "subheadline": "Screens are playing a bigger role than you probably planned — and it's worth looking at where.",
-      "explanation": "Your family uses screens regularly, and they've quietly become the default for more moments than anyone decided they should. The domain breakdown below shows you where the lean is heaviest — it might be the environment making screens too easy to reach for, it might be screens becoming your go-to for difficult parenting moments, or it might be creeping dependence. Knowing where the weight is tells you what to change first.",
+      "subheadline": "Screens are playing a bigger role than you might want — and it's worth looking at where.",
+      "explanation": "Your family uses screens regularly, and they've quietly become the default for more moments than you probably planned. The domain breakdown below shows WHERE the lean is — it might be the environment (too many devices, too accessible), it might be parent-driven convenience (screens as your go-to for hard moments), or it might be creeping dependence. Knowing where the weight is tells you what to change.",
       "nextSteps": [
-        "Look at your domain breakdown and pick the lowest-scoring area — make ONE change there and stick with it for two weeks",
-        "If Media Environment is low: move one device or establish one screen-free zone in your home",
-        "If Screen Motivation is low: identify the one moment you most reliably hand over a screen and find a single alternative for just that moment",
-        "If Family Flexibility is low: try one screen-free evening this week — not a full day, just dinner to bedtime"
+        "Look at your domain breakdown — pick the lowest-scoring area and make ONE change there",
+        "If 'Why Screens Come Out' is low: identify your top screen-trigger moment and find one alternative for just that moment",
+        "If 'Home Media Environment' is low: move one device or establish one screen-free zone",
+        "If 'Flexibility' is low: try a screen-free evening (not a whole day — just dinner to bedtime) this week"
       ],
-      "watchOutFor": "The temptation is to overhaul everything at once. Don't. Pick one domain, make one adjustment, live with it for two weeks. Trying to change four things simultaneously usually means nothing sticks.",
-      "encouragement": "You're in the zone where small, targeted changes make the biggest difference. A month from now this can look completely different — not through a revolution, just one or two adjustments in the right spot.",
-      "comparativeContext": "Most families score in this range. Research shows that one or two targeted environmental changes — like a screen-free mealtime or moving a device — typically shift family screen patterns within two to three weeks.",
-      "shareableSummary": "We're leaning on screens more than we probably want to — time to pick one thing to change and see what shifts.",
-      "retakeAdvice": "Retake in 4-6 weeks after making one targeted change"
+      "watchOutFor": "Don't try to change everything at once. Pick one domain, make one adjustment, live with it for 2 weeks. Then reassess.",
+      "encouragement": "You're in the zone where small changes make the biggest difference. A month from now, this can look completely different — and it doesn't require a revolution, just one or two tweaks in the right spot.",
+      "comparativeContext": "Most families score in this range. One or two targeted changes — like a screen-free mealtime or a specific 'no screens for this' moment — typically shift the dynamic within a few weeks.",
+      "retakeAdvice": "Retake this quiz in 4-6 weeks after making one adjustment"
     },
-    "heavy": {
-      "id": "heavy",
+    "not-yet": {
+      "id": "not-yet",
       "scoreRange": { "min": 0, "max": 14 },
       "headline": "Screen-Heavy Household",
       "subheadline": "Screens are doing a lot of heavy lifting in your family right now.",
-      "explanation": "Devices are available and always on, screens are the go-to for hard moments and downtime, much of the content runs unsupervised, and going without feels impossible. This isn't about anyone being addicted — it's about your whole family's system having gradually made screens central. The domain breakdown below shows you exactly where to start, and the research is clear: families who make targeted environmental changes see real shifts within two to three weeks.",
+      "explanation": "Devices are available and always on, screens are the go-to for hard moments and downtime, much of the content is unsupervised, and going without feels impossible. This is not about your child being 'addicted' — it's about your whole family's system having made screens central. The good news: the domain breakdown below shows you exactly where to start, and the research says families who make targeted environmental changes see real shifts within 2-3 weeks.",
       "nextSteps": [
-        "Start with the ENVIRONMENT, not the rules: move one device, turn off the background TV, or create one screen-free zone in your home",
+        "Start with the ENVIRONMENT, not the rules: move one device, turn off background TV, or create one screen-free zone",
         "Pick your easiest win from the domain breakdown — whichever area feels most changeable right now",
-        "Expect one to two hard weeks when you start changing things — that's the adjustment period, not proof it's failing",
-        "Look at your own screen habits too — the research is clear that family-wide changes stick better than rules that only apply to kids"
+        "Expect 1-2 hard weeks when you start changing things. That's the adjustment period, not proof it's not working.",
+        "Look at your own screen use too — the research is clear that family-wide changes stick better than child-only rules"
       ],
-      "watchOutFor": "If reducing screen time causes extreme, prolonged meltdowns daily for more than two weeks, talk to your pediatrician. Sometimes intense screen dependence signals underlying regulation challenges that deserve professional attention.",
-      "encouragement": "You're here reading this, which means you're questioning the pattern. That awareness is genuinely the hardest step. Research on families who successfully pulled back shows one consistent finding: they didn't do it all at once. They changed one thing, stuck with it, then changed one more.",
-      "comparativeContext": "Research shows that even families with very high screen use can shift to balanced patterns within two to three months of consistent environmental changes. The first two weeks are the hardest — it gets markedly easier after that.",
-      "shareableSummary": "Screens have quietly taken over more of our family's day than we realized — time to start pulling back, one small change at a time.",
-      "retakeAdvice": "Retake in 6-8 weeks after making one or two environmental changes"
+      "watchOutFor": "If reducing screen time causes extreme, multi-hour meltdowns daily for more than 2 weeks, talk to your pediatrician. Sometimes intense screen dependence signals underlying regulation challenges that deserve attention.",
+      "encouragement": "You're reading this, which means you're questioning the current pattern. That awareness is genuinely the hardest step. The research on families who successfully pulled back shows one consistent thing: they didn't do it all at once. They changed one thing, stuck with it, then changed one more.",
+      "comparativeContext": "Research shows that even families with very high screen use can shift to balanced patterns within 2-3 months of consistent environmental changes. The first two weeks are the hardest.",
+      "retakeAdvice": "Retake this quiz in 6-8 weeks after making one or two environmental changes"
     }
   }
 }

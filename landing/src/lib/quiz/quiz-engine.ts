@@ -53,7 +53,6 @@ export interface ResultTemplate {
   encouragement: string;
   comparativeContext: string;
   retakeAdvice?: string;
-  shareableSummary?: string;
 }
 
 export interface QuizMeta {
@@ -319,12 +318,12 @@ export class QuizEngine {
     const strongestDomain = { name: sorted[0]!.name, percentage: sorted[0]!.percentage };
     const weakestDomain = { name: sorted[sorted.length - 1]!.name, percentage: sorted[sorted.length - 1]!.percentage };
 
-    // Shareable summary — use pre-authored from result template if available
+    // Shareable summary
     const pct = Math.round((total / maxTotal) * 100);
-    const shareableSummary = template.shareableSummary ??
-      (strongestDomain.name === weakestDomain.name
-        ? `At ${pct}%, scores are even across all areas.`
-        : `At ${pct}%, strongest area is ${strongestDomain.name} with room to grow in ${weakestDomain.name}.`);
+    const shareableSummary =
+      strongestDomain.name === weakestDomain.name
+        ? `At ${pct}% readiness, your child is developing evenly across all areas.`
+        : `At ${pct}% readiness, your child is showing strong ${strongestDomain.name} but needs more time with ${weakestDomain.name}.`;
 
     return {
       quizId: this.quiz.meta.id,

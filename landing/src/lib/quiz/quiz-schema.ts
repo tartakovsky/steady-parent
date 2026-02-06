@@ -151,8 +151,6 @@ export const ResultTemplateSchema = z.object({
     .describe("Social proof context, e.g. 'Most parents who score in this range successfully potty train within 1-2 weeks.'"),
   retakeAdvice: z.string().max(200).optional()
     .describe("When to retake, e.g. 'Retake in 2-4 weeks'"),
-  shareableSummary: z.string().min(10).max(300).optional()
-    .describe("A natural standalone sentence summarizing this result — NO domain names crammed in. Used in the shareable card and result page. If omitted, the engine generates one (poorly)."),
 });
 
 // ── Readiness quiz main schema ──────────────────────────────────────
