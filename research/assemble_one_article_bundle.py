@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Assemble a single "writer input bundle" for one target article.
+Assemble a single "article input assembly map" for one target article.
 
 Inputs (repo files):
 - research/source_to_article_assignment.json
@@ -10,7 +10,7 @@ Inputs (repo files):
 - research/seo/writing-style.md
 
 Output:
-- research/bundles/<safe-slug>.md
+- research/bundles/<safe-slug>.md (a lightweight map; no source content copied)
 """
 
 from __future__ import annotations
@@ -60,6 +60,7 @@ class SourceRef:
     title: str
     source_url: str | None
     file_rel: str
+    recap: str | None = None
 
     @property
     def extract_path(self) -> Path:
@@ -123,6 +124,7 @@ def _resolve_sources(
                 title=title,
                 source_url=meta.get("source_url"),
                 file_rel=file_rel,
+                recap=meta.get("recap"),
             )
         )
 
@@ -146,9 +148,6 @@ def assemble_bundle(article_title: str, out_path: Path | None) -> Path:
     extracts_index = _read_json(EXTRACTS_INDEX_PATH)
     link_plan = _read_json(LINK_PLAN_PATH)
 
-    article_structure = _read_text(ARTICLE_STRUCTURE_PATH)
-    writing_style = _read_text(WRITING_STYLE_PATH)
-
     source_titles = _iter_assignments_for_article(assignments_by_category, article_title)
     title_to_keys = _build_title_to_keys(extracts_index)
     sources, missing_sources = _resolve_sources(source_titles, extracts_index, title_to_keys)
@@ -163,7 +162,7 @@ def assemble_bundle(article_title: str, out_path: Path | None) -> Path:
 
     now = dt.datetime.now().isoformat(timespec="seconds")
     parts: list[str] = []
-    parts.append(f"# Writer bundle\n\nGenerated: {now}\n")
+    parts.append(f"# Article input assembly map\n\nGenerated: {now}\n")
     parts.append("## Article\n")
     parts.append(f"- Title: {article_title}\n")
     parts.append(f"- URL: {plan.get('url')}\n")
@@ -173,12 +172,11 @@ def assemble_bundle(article_title: str, out_path: Path | None) -> Path:
     parts.append(_format_link_plan_block(plan))
     parts.append("```\n")
 
-    parts.append("\n## Mandatory rules — Article structure\n\n")
-    parts.append(article_structure)
-    parts.append("\n## Mandatory rules — Writing style\n\n")
-    parts.append(writing_style)
+    parts.append("\n## Rules (references)\n")
+    parts.append(f"- Article structure: `{os.path.relpath(ARTICLE_STRUCTURE_PATH, REPO_ROOT)}`\n")
+    parts.append(f"- Writing style: `{os.path.relpath(WRITING_STYLE_PATH, REPO_ROOT)}`\n")
 
-    parts.append("\n## Sources (resolved extracts)\n")
+    parts.append("\n## Sources (extract references only)\n")
     parts.append(f"- Assigned source titles: {len(source_titles)}\n")
     parts.append(f"- Resolved extract files: {len(sources)}\n")
     parts.append(f"- Missing extracts: {len(missing_sources)}\n\n")
@@ -195,13 +193,10 @@ def assemble_bundle(article_title: str, out_path: Path | None) -> Path:
         parts.append(f"- Key: `{src.key}`\n")
         if src.source_url:
             parts.append(f"- URL: {src.source_url}\n")
-        parts.append(f"- File: `{rel}`\n\n")
-        parts.append("```md\n")
-        try:
-            parts.append(_read_text(src.extract_path))
-        except FileNotFoundError:
-            parts.append(f"[MISSING FILE ON DISK] {rel}\n")
-        parts.append("```\n\n")
+        parts.append(f"- Extract file: `{rel}`\n")
+        if src.recap:
+            parts.append(f"- Recap: {src.recap}\n")
+        parts.append("\n")
 
     out_path.write_text("".join(parts), encoding="utf-8")
     return out_path
