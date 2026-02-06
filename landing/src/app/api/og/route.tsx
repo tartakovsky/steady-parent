@@ -23,7 +23,10 @@ async function loadGoogleFont(weight: number): Promise<ArrayBuffer> {
   return fetch(match[1]).then((r) => r.arrayBuffer());
 }
 
-let fontsCache: { name: string; data: ArrayBuffer; weight: number; style: string }[] | null = null;
+type Weight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+type FontStyle = "normal" | "italic";
+
+let fontsCache: { name: string; data: ArrayBuffer; weight: Weight; style: FontStyle }[] | null = null;
 
 async function getFonts() {
   if (fontsCache) return fontsCache;
@@ -299,7 +302,7 @@ export async function GET(req: NextRequest) {
   );
 }
 
-type FontEntry = { name: string; data: ArrayBuffer; weight: number; style: string };
+type FontEntry = { name: string; data: ArrayBuffer; weight: Weight; style: FontStyle };
 
 function renderGenericCard(quiz: ReturnType<typeof getQuizBySlug>, fonts: FontEntry[]) {
   if (!quiz) return new Response("Not found", { status: 404 });
