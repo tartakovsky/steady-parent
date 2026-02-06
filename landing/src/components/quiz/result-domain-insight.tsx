@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   Activity,
   Brain,
@@ -41,13 +40,11 @@ function getLevelLabel(level: DomainResult["level"]): string {
 
 interface ResultDomainInsightProps {
   domain: DomainResult;
-  index: number;
   shared?: boolean | undefined;
 }
 
 export function ResultDomainInsight({
   domain,
-  index,
   shared,
 }: ResultDomainInsightProps) {
   const color = getDomainColor(domain.level);
@@ -55,13 +52,7 @@ export function ResultDomainInsight({
   const levelLabel = getLevelLabel(domain.level);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay: index * 0.12 }}
-      className="rounded-2xl border border-border/50 bg-card p-5 sm:p-6"
-    >
+    <div className="rounded-2xl border border-border/50 bg-card p-5 sm:p-6">
       {/* Header row */}
       <div className="flex items-center justify-between gap-3 mb-4">
         <div className="flex items-center gap-3 min-w-0">
@@ -100,17 +91,9 @@ export function ResultDomainInsight({
 
       {/* Progress bar */}
       <div className="h-2 w-full rounded-full bg-foreground/[0.04] overflow-hidden">
-        <motion.div
+        <div
           className="h-full rounded-full"
-          style={{ backgroundColor: color }}
-          initial={{ width: 0 }}
-          whileInView={{ width: `${domain.percentage}%` }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.8,
-            ease: "easeOut",
-            delay: index * 0.12 + 0.2,
-          }}
+          style={{ backgroundColor: color, width: `${domain.percentage}%` }}
         />
       </div>
 
@@ -143,6 +126,6 @@ export function ResultDomainInsight({
           )}
         </div>
       )}
-    </motion.div>
+    </div>
   );
 }

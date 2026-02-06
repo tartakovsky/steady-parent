@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Info } from "lucide-react";
 
 interface ResultActionPlanProps {
@@ -26,14 +23,7 @@ export function ResultActionPlan({
 
         <div className="space-y-6">
           {steps.map((step, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4, delay: i * 0.12 }}
-              className="relative"
-            >
+            <div key={i} className="relative">
               {/* Numbered circle */}
               <div
                 className="absolute -left-12 top-0.5 flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold text-white"
@@ -42,20 +32,14 @@ export function ResultActionPlan({
                 {i + 1}
               </div>
               <p className="text-foreground/90 leading-relaxed">{step}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
 
       {/* Watch-out-for callout */}
       {watchOutFor && (
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex items-start gap-3.5 rounded-2xl bg-blue-50/50 border border-blue-100/50 px-5 py-4"
-        >
+        <div className="flex items-start gap-3.5 rounded-2xl bg-blue-50/50 border border-blue-100/50 px-5 py-4">
           <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 shrink-0">
             <Info className="w-4 h-4 text-blue-700" />
           </div>
@@ -67,7 +51,7 @@ export function ResultActionPlan({
               {watchOutFor}
             </p>
           </div>
-        </motion.div>
+        </div>
       )}
     </div>
   );

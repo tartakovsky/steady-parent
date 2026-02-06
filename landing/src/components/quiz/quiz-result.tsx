@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { savePdf } from "@/lib/save-pdf";
 import { Button } from "@/components/ui/button";
@@ -67,15 +66,9 @@ function getTheme(resultId: string) {
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <motion.h2
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4 }}
-      className="text-2xl font-extrabold tracking-tight text-foreground"
-    >
+    <h2 className="text-2xl font-extrabold tracking-tight text-foreground">
       {children}
-    </motion.h2>
+    </h2>
   );
 }
 
@@ -96,25 +89,10 @@ export function QuizResult({
   const handleShare = useCallback(async () => {
     const url = new URL(window.location.href);
     url.searchParams.set("s", "1");
-    const shareUrl = url.toString();
-
-    if (typeof navigator.share === "function") {
-      try {
-        await navigator.share({
-          title: `My ${quizMeta.shortTitle} Results`,
-          text: result.shareableSummary,
-          url: shareUrl,
-        });
-        return;
-      } catch {
-        // User cancelled or not available — fall through to clipboard
-      }
-    }
-
-    await navigator.clipboard.writeText(shareUrl);
+    await navigator.clipboard.writeText(url.toString());
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
-  }, [quizMeta.shortTitle, result.shareableSummary]);
+  }, []);
 
   const handleSavePdf = useCallback(async () => {
     if (!resultRef.current || saving) return;
@@ -137,12 +115,7 @@ export function QuizResult({
     >
       {/* ── 1. Shared CTA (visitors see this first) ────────────── */}
       {shared && (
-        <motion.div
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="rounded-2xl border-2 border-green-200 bg-green-50/40 p-6 sm:p-8 text-center space-y-4"
-        >
+        <div className="rounded-2xl border-2 border-green-200 bg-green-50/40 p-6 sm:p-8 text-center space-y-4">
           <p className="text-lg sm:text-xl font-bold text-foreground">
             Curious about your own child&apos;s readiness?
           </p>
@@ -158,7 +131,7 @@ export function QuizResult({
             {quizMeta.shortTitle} &middot;{" "}
             {quizMeta.estimatedTime ?? "2 minutes"}
           </p>
-        </motion.div>
+        </div>
       )}
 
       {/* ── 2. Hero ────────────────────────────────────────────── */}
@@ -172,13 +145,7 @@ export function QuizResult({
       />
 
       {/* ── 3. Shareable Summary + Comparative Context ─────────── */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="text-center px-4 py-2"
-      >
+      <section className="text-center px-4 py-2">
         <p className="text-xl sm:text-2xl leading-relaxed text-foreground/80 max-w-2xl mx-auto">
           {result.shareableSummary}
         </p>
@@ -186,17 +153,11 @@ export function QuizResult({
           <Users className="w-4 h-4 shrink-0" />
           <span>{result.comparativeContext}</span>
         </div>
-      </motion.section>
+      </section>
 
       {/* ── 4. Share / Save CTAs (owner only) ──────────────────── */}
       {!shared && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="flex flex-wrap items-center justify-center gap-3"
-        >
+        <div className="flex flex-wrap items-center justify-center gap-3">
           <Button
             onClick={handleShare}
             className="gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2.5 rounded-xl text-base"
@@ -232,18 +193,17 @@ export function QuizResult({
               Retake
             </Button>
           )}
-        </motion.div>
+        </div>
       )}
 
       {/* ── 5. Domain Insights ─────────────────────────────────── */}
       <section className="space-y-6">
         <SectionHeading>A Closer Look</SectionHeading>
         <div className="grid gap-4">
-          {result.domains.map((domain, i) => (
+          {result.domains.map((domain) => (
             <ResultDomainInsight
               key={domain.id}
               domain={domain}
-              index={i}
               shared={shared}
             />
           ))}
@@ -252,12 +212,7 @@ export function QuizResult({
 
       {/* ── Shared-view second CTA ─────────────────────────────── */}
       {shared && (
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
+        <div className="text-center">
           <Button
             size="lg"
             onClick={onRetake}
@@ -266,7 +221,7 @@ export function QuizResult({
             <Sparkles className="h-5 w-5 mr-2" />
             Find Out Your Child&apos;s Readiness
           </Button>
-        </motion.div>
+        </div>
       )}
 
       {/* ── Owner-only sections ─────────────────────────────────── */}
@@ -278,12 +233,8 @@ export function QuizResult({
               <SectionHeading>Where Your Child Shines</SectionHeading>
               <div className="grid gap-3">
                 {result.strengths.map((strength, i) => (
-                  <motion.div
+                  <div
                     key={i}
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
                     className="flex items-start gap-3 rounded-xl bg-green-50/60 border border-green-100/60 px-4 sm:px-5 py-4"
                   >
                     <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 shrink-0 mt-0.5">
@@ -292,7 +243,7 @@ export function QuizResult({
                     <p className="text-sm sm:text-[15px] text-green-900/80 leading-relaxed">
                       {strength}
                     </p>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </section>
@@ -304,12 +255,8 @@ export function QuizResult({
               <SectionHeading>Room to Grow</SectionHeading>
               <div className="grid gap-3">
                 {result.concerns.map((concern, i) => (
-                  <motion.div
+                  <div
                     key={i}
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
                     className="flex items-start gap-3 rounded-xl bg-amber-50/60 border border-amber-100/60 px-4 sm:px-5 py-4"
                   >
                     <div className="flex items-center justify-center w-6 h-6 rounded-full bg-amber-100 shrink-0 mt-0.5">
@@ -318,7 +265,7 @@ export function QuizResult({
                     <p className="text-sm sm:text-[15px] text-amber-900/80 leading-relaxed">
                       {concern}
                     </p>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </section>
@@ -335,12 +282,7 @@ export function QuizResult({
           </section>
 
           {/* ── 9. Encouragement ────────────────────────────────── */}
-          <motion.section
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <section>
             <div
               className="rounded-2xl px-6 sm:px-8 py-8 sm:py-10 text-center"
               style={{
@@ -357,7 +299,7 @@ export function QuizResult({
                 </p>
               )}
             </div>
-          </motion.section>
+          </section>
 
           {/* ── Bottom CTAs ─────────────────────────────────────── */}
           <div className="flex flex-wrap items-center justify-center gap-3">
