@@ -6,17 +6,17 @@ This document defines the structure requirements for Steady Parent blog articles
 
 | Requirement | Value | Source |
 |-------------|-------|--------|
-| Minimum word count | 2,000 words | Long-form = 9x more leads, 37% strong results vs 20% for 1,000-1,500 |
-| Maximum word count for normal articles | 2,500 words | Long-form = 9x more leads, 37% strong results vs 20% for 1,000-1,500 |
+| Minimum word count | 1,800 words | Long-form = 9x more leads, 37% strong results vs 20% for 1,000-1,500 |
+| Maximum word count for normal articles | 2,200 words | Long-form = 9x more leads, 37% strong results vs 20% for 1,000-1,500 |
 | Maximum word count for pillar articles | 3,500 words | Avoid filler, pillar articles aggregate a bunch of normal articles by covering road, strokes, providing previews of each of the smaller articles and linking to them. |
 | Heading hierarchy | H1 → H2 → H3 only | 2.8x higher AI citation likelihood |
 | H1 count | Exactly 1 per page | Reserved for title/hook |
-| AI answer length | 40-60 words | Optimal for AI extraction and featured snippets |
+| AI answer length | ~45 words  | Optimal for AI extraction and featured snippets. Target 45 as safety buffer. |
 | FAQ count | 3-5 questions | Schema requirement |
-| FAQ answer length | 40-60 words each | Optimal for FAQPage schema |
+| FAQ answer length | ~45 words each | Optimal for FAQPage schema. Target 45 as safety buffer so slight overruns stay in range. |
 | Internal links | 5-10 per article | ~1 per 200-300 words |
 | External links | 1-3 authoritative sources | Citing research, guidelines, experts |
-| Reading time | 8-20 minutes | Based on 250 wpm average |
+| Reading time | 7-15 minutes | Based on 250 wpm average |
 
 ## Article Structure (Top to Bottom)
 
@@ -32,6 +32,7 @@ This document defines the structure requirements for Steady Parent blog articles
 - 40-60 words exactly
 - Self-contained summary that answers the headline's implied question
 - Dense with value, no filler
+- Write this in the same voice as the rest of the article. It should be interesting to read and extractable by AI, not a Wikipedia abstract.
 - Maps to `description` in Article schema
 - This is what AI systems extract for citations
 
@@ -67,7 +68,7 @@ This document defines the structure requirements for Steady Parent blog articles
 
 ### 5. FAQ Section
 - 3-5 questions minimum
-- Each answer: 40-60 words exactly
+- Each answer: ~45 words (40-60 acceptable)
 - Always visible (non-interactive, no accordion collapse)
 - Questions should be actual queries people search for
 - Answers must be self-contained
@@ -133,7 +134,7 @@ H1: The Complete Guide to Toddler Bedtime Routines
 
 Before publishing, verify:
 
-- [ ] Word count ≥ 2,000
+- [ ] Word count ≥ 1,800
 - [ ] Single H1 (title)
 - [ ] H2 → H3 hierarchy only (no skipped levels)
 - [ ] AI answer block: 40-60 words

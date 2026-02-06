@@ -152,6 +152,16 @@ These work because:
 
 ---
 
+## Inline Formatting
+
+Break up walls of text with visual accents that give scanning readers something to catch their eye.
+
+Use **bold** for key statements a scanning reader should catch: punchlines, takeaways, reframes. Don't overuse.
+
+Use *italics* for internal parent voice, emphasis on a pivotal word, and reframes.
+
+---
+
 ## Sentence & Paragraph Rules
 
 | Rule | Why |
