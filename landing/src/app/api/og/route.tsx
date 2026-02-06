@@ -59,17 +59,10 @@ function r2Url(path: string): string {
 
 const LOGO_SRC = r2Url("sdp_logo_big_text.png");
 
-function getTheme(resultId: string) {
-  switch (resultId) {
-    case "ready":
-      return { color: "#16a34a", bg: "#f0fdf4" };
-    case "almost":
-      return { color: "#d97706", bg: "#fffbeb" };
-    case "not-yet":
-      return { color: "#ea580c", bg: "#fff7ed" };
-    default:
-      return { color: "#6366f1", bg: "#f5f3ff" };
-  }
+function getTheme(percentage: number) {
+  if (percentage >= 75) return { color: "#16a34a", bg: "#f0fdf4" };
+  if (percentage >= 40) return { color: "#d97706", bg: "#fffbeb" };
+  return { color: "#ea580c", bg: "#fff7ed" };
 }
 
 export async function GET(req: NextRequest) {
@@ -100,7 +93,7 @@ export async function GET(req: NextRequest) {
 
   const engine = new QuizEngine(quiz);
   const result = engine.assembleResult(answers);
-  const theme = getTheme(result.resultId);
+  const theme = getTheme(result.percentage);
 
   const RING = 280;
   const R = 118;

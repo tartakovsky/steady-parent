@@ -37,29 +37,23 @@ interface QuizResultProps extends React.HTMLAttributes<HTMLDivElement> {
 
 // ── Theme ────────────────────────────────────────────────────────────
 
-function getTheme(resultId: string) {
-  switch (resultId) {
-    case "ready":
-      return {
-        color: "#16a34a",
-        bgGradient: "from-green-50/80 to-emerald-50/30",
-      };
-    case "almost":
-      return {
-        color: "#e8c840",
-        bgGradient: "from-yellow-50/60 to-amber-50/20",
-      };
-    case "not-yet":
-      return {
-        color: "#d05597",
-        bgGradient: "from-pink-50/70 to-rose-50/20",
-      };
-    default:
-      return {
-        color: "#6366f1",
-        bgGradient: "from-violet-50/80 to-indigo-50/30",
-      };
+function getTheme(percentage: number) {
+  if (percentage >= 75) {
+    return {
+      color: "#16a34a",
+      bgGradient: "from-green-50/80 to-emerald-50/30",
+    };
   }
+  if (percentage >= 40) {
+    return {
+      color: "#e8c840",
+      bgGradient: "from-yellow-50/60 to-amber-50/20",
+    };
+  }
+  return {
+    color: "#d05597",
+    bgGradient: "from-pink-50/70 to-rose-50/20",
+  };
 }
 
 // ── Section heading ──────────────────────────────────────────────────
@@ -105,7 +99,7 @@ export function QuizResult({
     }
   }, [saving, quizMeta.shortTitle]);
 
-  const theme = getTheme(result.resultId);
+  const theme = getTheme(result.percentage);
 
   return (
     <div
@@ -117,7 +111,7 @@ export function QuizResult({
       {shared && (
         <div className="rounded-2xl border-2 border-green-200 bg-green-50/40 p-6 sm:p-8 text-center space-y-4">
           <p className="text-lg sm:text-xl font-bold text-foreground">
-            Curious about your own child&apos;s readiness?
+            Want to take this quiz yourself?
           </p>
           <Button
             size="lg"
@@ -219,7 +213,7 @@ export function QuizResult({
             className="text-base sm:text-lg px-10 py-6 rounded-xl font-bold bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-xl transition-all"
           >
             <Sparkles className="h-5 w-5 mr-2" />
-            Find Out Your Child&apos;s Readiness
+            Take This Quiz Yourself
           </Button>
         </div>
       )}
@@ -230,7 +224,7 @@ export function QuizResult({
           {/* ── 6. Strengths ────────────────────────────────────── */}
           {result.strengths.length > 0 && (
             <section className="space-y-5">
-              <SectionHeading>Where Your Child Shines</SectionHeading>
+              <SectionHeading>What&apos;s Going Well</SectionHeading>
               <div className="grid gap-3">
                 {result.strengths.map((strength, i) => (
                   <div
