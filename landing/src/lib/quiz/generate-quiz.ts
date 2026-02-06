@@ -41,45 +41,50 @@ You produce quiz data as structured JSON. Every quiz is adapted from real, publi
 
 ## DOMAIN NAMING (CRITICAL)
 
-Domain names are inserted into UI sentences like "Your strongest area is [domain name]." They MUST be short noun phrases that work grammatically in those contexts.
+Domain names are inserted into UI sentences like "Your strongest area is [domain name]" and "needs more time with [domain name]." They MUST be short noun phrases that work grammatically in those contexts.
 
-Rule: 1-3 words, noun phrase, works in "strong [name]" and "developing [name]". Never use questions, clauses, or sentences as domain names.
+GOOD domain names: "Physical Readiness", "Media Environment", "Screen Motivation", "Social Skills", "Emotional Regulation", "Content Quality", "Family Flexibility"
+BAD domain names: "Why Screens Come Out", "How Screens Fit In", "Is Your Child Ready", "What Happens at Bedtime"
+
+Rule: 1-3 words, noun phrase, works in "strong [name]" and "developing [name]".
 
 ## QUESTION DESIGN
 
 - Each option describes a CONCRETE situation a real family would recognize — a specific scene, not a vague frequency
-- Options must capture the actual dynamic accurately — who initiates the behavior, what the real situation looks like
+- Options must capture WHO is driving the behavior. If parents initiate screen use, the option says "I hand them a screen" not "they watch screens." If the child initiates, say so.
 - NEVER use severity/frequency scales (always/sometimes/rarely/never). Every option is a distinct scenario.
-- Options must not assume the situation happens. If a question is about "when X happens," one option should cover "X doesn't really happen for us" or equivalent.
-- Options must describe REALISTIC situations. Don't describe physically impossible or bizarre scenarios.
-- Each question cites which validated instrument subscale it adapts from in the "source" field
+- Each question cites which validated instrument it adapts from in the "source" field
 - 3-5 options per question, points 0 to 3. Every question has exactly one 0-point option.
 
-## DOMAIN CONTENT LEVELS (CRITICAL)
+## DOMAIN CONTENT LEVELS (CRITICAL — READ CAREFULLY)
 
 The score bar shows the numerical score prominently (e.g., "6/9"). The text must match what that score looks like visually.
 
-**HIGH** (top ~25% of range): Celebrate what's working. Be specific. Include a "strength" field.
+**HIGH** (top ~25% of range): Celebrate what's working. Name the specific positive pattern. Include a "strength" field.
 
 **MEDIUM** (middle ~40% of range): This person scored 50-75%. That's a solid B. The text MUST:
-  - Open by acknowledging what IS working — they got more right than wrong
+  - Open by acknowledging what IS working at this level — they got more right than wrong
   - Then note what could improve
   - Tone: "You're doing well here, and here's what would make it even better"
   - NEVER frame medium as "it's bad but common" or describe only what's lacking
-  Include a "concern" field framed as a specific, actionable next step.
+  Include a "concern" field framed as a specific, actionable next step (not a problem statement).
 
 **LOW** (bottom ~35% of range): Gentle, normalizing, concrete direction. Include a "concern" field framed as opportunity.
 
 ## RESULT TEMPLATES
 
-- Headlines must match the quiz topic. Never use generic tier labels ("Green Light", "Not Yet Ready") unless the quiz is literally about readiness.
-- "comparativeContext" must cite what research shows about families/children in this score range
-- "shareableSummary" is a standalone sentence summarizing the result. It should read naturally — no domain names crammed in, no percentage references.
+- Headlines and text MUST match the quiz topic. A screen quiz says "Balanced Screen Use" not "Green Light." A burnout quiz says "Running on Fumes" not "Not Yet Ready."
+- "comparativeContext" must cite what research shows about families in this score range — specific, not filler
+- "shareableSummary" is a standalone sentence summarizing the result WITHOUT cramming domain names into it. It should read naturally, like something you'd text a friend: "Your family has a pretty healthy screen balance — intentional about when and why screens come out, with room to tighten up the environment."
 
 ## SUBJECT AWARENESS
 
 The input specifies the quiz subject: "your child", "your family", or "you as a parent".
-ALL content — strengths, concerns, domain text, result text — must use the correct subject consistently.
+ALL content must use the correct subject:
+- Strength text about a family quiz → "Your family has genuine flexibility around screens"
+- NOT: "Your child shines at screen flexibility" (wrong subject)
+- Domain detail about a parent quiz → "You have strategies beyond screens for hard moments"
+- NOT: "Your child has strategies" (wrong subject)
 
 ## SCORING
 
@@ -92,7 +97,7 @@ ALL content — strengths, concerns, domain text, result text — must use the c
 ## SOURCES
 
 - meta.sources: 3-5 validated instruments with real PubMed/DOI URLs
-- Each question's "source" field names which instrument subscale it adapts from`;
+- Each question's "source" field names which instrument it adapts from`;
 }
 
 function buildUserPrompt(input: GenerateQuizInput): string {
