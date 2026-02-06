@@ -125,7 +125,7 @@ export async function GET(req: NextRequest) {
         <img
           src={LOGO_SRC}
           alt=""
-          width={280}
+          width={238}
           style={{ position: "absolute", bottom: "20px", right: "20px" }}
         />
 
@@ -326,7 +326,7 @@ function renderGenericCard(quiz: ReturnType<typeof getQuizBySlug>, fonts: FontEn
         <img
           src={LOGO_SRC}
           alt=""
-          width={280}
+          width={238}
           style={{ position: "absolute", bottom: "20px", right: "20px" }}
         />
 
