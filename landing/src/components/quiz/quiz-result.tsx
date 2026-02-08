@@ -19,6 +19,7 @@ import type { QuizResult as QuizResultType } from "@/lib/quiz/quiz-engine";
 import { ResultHero } from "./result-hero";
 import { ResultDomainInsight } from "./result-domain-insight";
 import { ResultActionPlan } from "./result-action-plan";
+import { CommunityCTA } from "@/components/blog/community-cta";
 
 // ── Types ────────────────────────────────────────────────────────────
 
@@ -33,6 +34,12 @@ interface QuizResultProps extends React.HTMLAttributes<HTMLDivElement> {
     levelLabels?: { high: string; medium: string; low: string };
     sectionLabels?: { strengths?: string; concerns?: string };
     sources?: string[];
+    communityCta?: {
+      eyebrow: string;
+      title: string;
+      body: string;
+      buttonText: string;
+    };
   };
   onRetake?: () => void;
   shared?: boolean;
@@ -276,6 +283,16 @@ export function QuizResult({
               )}
             </div>
           </section>
+
+          {/* ── Community CTA ─────────────────────────────────── */}
+          {quizMeta.communityCta && (
+            <CommunityCTA
+              eyebrow={quizMeta.communityCta.eyebrow}
+              title={quizMeta.communityCta.title}
+              body={quizMeta.communityCta.body}
+              buttonText={quizMeta.communityCta.buttonText}
+            />
+          )}
 
           {/* ── Bottom CTAs ─────────────────────────────────────── */}
           <div className="flex flex-wrap items-center justify-center gap-3">

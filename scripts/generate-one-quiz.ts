@@ -9,10 +9,11 @@
  * Quiz definitions are in READINESS_QUIZZES and IDENTITY_QUIZZES below.
  */
 import { writeFileSync } from "fs";
-import { ReadinessQuizDataSchema, IdentityQuizDataSchema } from "../landing/src/lib/quiz/quiz-schema";
+import { ReadinessQuizDataSchema, IdentityQuizDataSchema, LikertQuizDataSchema } from "../landing/src/lib/quiz/quiz-schema";
 import {
   buildSystemPrompt, buildUserPrompt, type QuizDef,
   buildIdentitySystemPrompt, buildIdentityUserPrompt, type IdentityQuizDef,
+  buildLikertSystemPrompt, buildLikertUserPrompt, type LikertQuizDef,
 } from "../landing/src/lib/quiz/quiz-prompt";
 
 const READINESS_QUIZZES: Record<string, QuizDef> = {
@@ -236,23 +237,23 @@ const READINESS_QUIZZES: Record<string, QuizDef> = {
   },
 };
 
-const IDENTITY_QUIZZES: Record<string, IdentityQuizDef> = {
+const IDENTITY_QUIZZES: Record<string, IdentityQuizDef> = {};
+
+const LIKERT_QUIZZES: Record<string, LikertQuizDef> = {
   "parenting-style": {
     slug: "parenting-style",
     topic: "What's Your Parenting Style?",
     description:
-      "The signature identity quiz. Animal/metaphor framework. Every parent wonders which style they lean toward. Result shows primary type + blend percentages.",
-    typeCount: 5,
-    questionCount: 8,
-    suggestedTypes: [
-      "Lighthouse — warm + firm + explains reasoning",
-      "Dolphin — flexible, collaborative, playful structure",
-      "Tiger — high expectations, driven",
-      "Jellyfish — high warmth, go-with-the-flow",
-      "Elephant — nurturing, protective, emotion-first",
+      "Rate how often each parenting behavior describes you. Reveals your blend across authoritative, authoritarian, and permissive approaches using validated dimensions from PSDQ research.",
+    statementCount: 18,
+    scale: ["Never", "Rarely", "Sometimes", "Often", "Always"],
+    suggestedDimensions: [
+      { id: "steady-guide", name: "The Steady Guide" },
+      { id: "firm-protector", name: "The Firm Protector" },
+      { id: "free-spirit", name: "The Free Spirit" },
     ],
     additionalContext:
-      "Show as blend percentages, not a single box. Questions should be concrete parenting scenarios (kid melts down in store, homework battles, friend conflicts). Every type is positive — no 'bad' parenting style. Type names can use the animal metaphor in the name (e.g. 'Lighthouse Parent'). Share trigger: 'I'm a Lighthouse Parent' = Instagram story identity badge.",
+      "This is the flagship parenting style quiz. Based on Baumrind's typology and PSDQ dimensions. 6 statements per dimension (18 total). Include 2-3 reverse-scored statements spread across dimensions. Statements should describe concrete daily behaviors (not beliefs). Subject is 'you'. The dimension names (Steady Guide, Firm Protector, Free Spirit) are our branded versions of authoritative, authoritarian, and permissive — use exactly these names and IDs.",
   },
 };
 
@@ -260,12 +261,19 @@ const IDENTITY_QUIZZES: Record<string, IdentityQuizDef> = {
 
 const MODEL = "anthropic/claude-opus-4-6";
 
-const ALL_KEYS = [...Object.keys(READINESS_QUIZZES), ...Object.keys(IDENTITY_QUIZZES)];
+const ALL_KEYS = [...Object.keys(READINESS_QUIZZES), ...Object.keys(IDENTITY_QUIZZES), ...Object.keys(LIKERT_QUIZZES)];
 
-function getQuizType(key: string): "readiness" | "identity" | null {
+function getQuizType(key: string): "readiness" | "identity" | "likert" | null {
   if (READINESS_QUIZZES[key]) return "readiness";
   if (IDENTITY_QUIZZES[key]) return "identity";
+  if (LIKERT_QUIZZES[key]) return "likert";
   return null;
+}
+
+function getSlug(key: string, quizType: "readiness" | "identity" | "likert"): string {
+  if (quizType === "readiness") return READINESS_QUIZZES[key]!.slug;
+  if (quizType === "identity") return IDENTITY_QUIZZES[key]!.slug;
+  return LIKERT_QUIZZES[key]!.slug;
 }
 
 async function main() {
@@ -275,12 +283,11 @@ async function main() {
     console.error(`Usage: npx tsx scripts/generate-one-quiz.ts <quiz-key>`);
     console.error(`Readiness: ${Object.keys(READINESS_QUIZZES).join(", ")}`);
     console.error(`Identity:  ${Object.keys(IDENTITY_QUIZZES).join(", ")}`);
+    console.error(`Likert:    ${Object.keys(LIKERT_QUIZZES).join(", ")}`);
     process.exit(1);
   }
 
-  const slug = quizType === "readiness"
-    ? READINESS_QUIZZES[quizKey]!.slug
-    : IDENTITY_QUIZZES[quizKey]!.slug;
+  const slug = getSlug(quizKey, quizType);
   const outputPath = `landing/src/lib/quiz/${slug}.json`;
   const apiKey = process.env["OPENROUTER_API_KEY"];
   if (!apiKey) throw new Error("OPENROUTER_API_KEY not set");
@@ -294,6 +301,9 @@ async function main() {
   if (quizType === "identity") {
     systemPrompt = buildIdentitySystemPrompt();
     userPrompt = buildIdentityUserPrompt(IDENTITY_QUIZZES[quizKey]!);
+  } else if (quizType === "likert") {
+    systemPrompt = buildLikertSystemPrompt();
+    userPrompt = buildLikertUserPrompt(LIKERT_QUIZZES[quizKey]!);
   } else {
     systemPrompt = buildSystemPrompt();
     userPrompt = buildUserPrompt(READINESS_QUIZZES[quizKey]!);
@@ -390,7 +400,7 @@ async function main() {
     console.log(`Domains: ${Object.keys(result.data.domains).join(", ")}`);
     console.log(`Results: ${Object.keys(result.data.results).join(", ")}`);
     runPostChecks(json);
-  } else {
+  } else if (quizType === "identity") {
     // Identity quiz validation
     const result = IdentityQuizDataSchema.safeParse(parsed);
     if (!result.success) {
@@ -408,6 +418,25 @@ async function main() {
     console.log(`\nWritten: ${outputPath}`);
     console.log(`Questions: ${result.data.questions.length}`);
     console.log(`Types: ${Object.keys(result.data.types).join(", ")}`);
+    runPostChecks(json);
+  } else {
+    // Likert quiz validation
+    const result = LikertQuizDataSchema.safeParse(parsed);
+    if (!result.success) {
+      writeFileSync(outputPath + ".raw.json", JSON.stringify(parsed, null, 2) + "\n");
+      console.error("\nZod validation errors:");
+      for (const issue of result.error.issues) {
+        console.error(`  ${issue.path.join(".")}: ${issue.message}`);
+      }
+      console.error(`\nRaw saved to: ${outputPath}.raw.json`);
+      process.exit(1);
+    }
+
+    const json = JSON.stringify(result.data, null, 2);
+    writeFileSync(outputPath, json + "\n");
+    console.log(`\nWritten: ${outputPath}`);
+    console.log(`Statements: ${result.data.statements.length}`);
+    console.log(`Dimensions: ${Object.keys(result.data.dimensions).join(", ")}`);
     runPostChecks(json);
   }
 }

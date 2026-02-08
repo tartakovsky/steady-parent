@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ArrowRight, RotateCcw } from "lucide-react";
 import { LikertResult } from "./likert-result";
+import { QuizPreview } from "./quiz-preview";
 import { scoreLikertQuiz } from "@/lib/quiz/quiz-engine";
 import {
   readStateFromUrl,
@@ -77,6 +78,7 @@ export function LikertQuiz({ quiz, onComplete }: LikertQuizProps) {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [result, setResult] = useState<LikertQuizResult | null>(null);
   const [shared, setShared] = useState(false);
+  const [preview, setPreview] = useState(false);
   const initialized = useRef(false);
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -121,6 +123,7 @@ export function LikertQuiz({ quiz, onComplete }: LikertQuizProps) {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     setShared(params.get("s") === "1");
+    setPreview(params.get("p") === "1");
   }, []);
 
   useEffect(() => {
@@ -153,8 +156,9 @@ export function LikertQuiz({ quiz, onComplete }: LikertQuizProps) {
   const handleSubmit = useCallback(() => {
     if (!allAnswered) return;
     const quizResult = scoreLikertQuiz(quiz, answers);
-    pushStateToUrl(answers, total - 1, quiz.questions, true);
+    pushStateToUrl(answers, total - 1, quiz.questions, true, true);
     setResult(quizResult);
+    setPreview(true);
     onComplete?.(quizResult);
   }, [allAnswered, answers, quiz, total, onComplete]);
 
@@ -163,11 +167,23 @@ export function LikertQuiz({ quiz, onComplete }: LikertQuizProps) {
     setAnswers({});
     setResult(null);
     setShared(false);
+    setPreview(false);
   }, []);
 
   // ── Result view ──
 
   if (result) {
+    // Preview mode: show teaser + email gate
+    if (preview && !shared) {
+      return (
+        <QuizPreview
+          result={result}
+          quizMeta={quiz.meta}
+          onRetake={handleRetake}
+        />
+      );
+    }
+
     return (
       <LikertResult
         result={result}

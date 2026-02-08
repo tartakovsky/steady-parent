@@ -6,5 +6,6 @@ export { QuizResult } from "./quiz-result";
 export { IdentityResult } from "./identity-result";
 export { ProfileResult } from "./profile-result";
 export { RecommendationResult } from "./recommendation-result";
+export { QuizPreview } from "./quiz-preview";
 export { LikertQuiz } from "./likert-quiz";
 export { LikertResult } from "./likert-result";

@@ -1,302 +1,129 @@
 {
+  "quizType": "likert",
   "meta": {
     "id": "emotional-intelligence",
     "slug": "emotional-intelligence",
     "title": "How Emotionally Intelligent Is Your Child?",
     "shortTitle": "Emotional Intelligence",
-    "description": "See where your child shines emotionally — and where they're still growing. A strength-focused look at four key areas of emotional development.",
-    "intro": "Answer based on what your child does most of the time — not their best day or worst day. Every child develops differently, and there are no bad scores here.",
+    "description": "See where your child shines emotionally and where they're still building skills. A profile across four dimensions of emotional development for kids ages 3-10.",
+    "intro": "Rate each statement based on what your child typically does — not their best day or their worst. There are no bad scores, just a clearer picture.",
     "estimatedTime": "3 minutes",
-    "questionCount": 10,
+    "questionCount": 20,
     "scoreLabel": "EQ Profile",
     "subject": "your child",
-    "resultDisplay": "profile",
-    "shareCta": "See your child's emotional intelligence profile",
-    "levelLabels": {
-      "high": "Strong",
-      "medium": "Developing",
-      "low": "Emerging"
-    },
-    "sectionLabels": {
-      "strengths": "Where they shine",
-      "concerns": "Where they're growing"
-    },
+    "shareCta": "See your child's emotional intelligence profile — take the quiz",
     "ageRange": { "min": 3, "max": 10, "unit": "years" },
     "sources": [
       "Salovey-Mayer emotional intelligence model",
       "Gottman emotion coaching research",
       "CASEL social-emotional learning framework"
-    ]
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your child's complete emotional intelligence profile",
+      "body": "See how your child scores across all four dimensions, what their strengths look like in practice, and where a small shift could make the biggest difference.",
+      "buttonText": "Send my child's profile"
+    },
+    "previewPromises": [
+      "How your child scores across all four EQ dimensions",
+      "Concrete strengths you can actually see in daily life",
+      "Their growth edge — one area where a small shift changes the most",
+      "How their dimensions compare to each other",
+      "A shareable snapshot of their emotional profile"
+    ],
+    "communityCta": {
+      "eyebrow": "Feelings are a skill set, not a personality trait",
+      "title": "Get real strategies for building emotional intelligence at every age",
+      "body": "When your kid melts down because the blue cup is dirty, or freezes instead of saying what's wrong — you need something more specific than 'validate their feelings.' That's what the community is for.",
+      "buttonText": "Join for $7/month"
+    }
   },
-  "domains": {
+  "scale": {
+    "labels": ["Never", "Rarely", "Sometimes", "Often", "Always"],
+    "points": [1, 2, 3, 4, 5]
+  },
+  "dimensions": {
     "emotion-vocabulary": {
       "id": "emotion-vocabulary",
       "name": "Emotion Vocabulary",
-      "maxPoints": 9,
-      "thresholds": { "high": 7, "medium": 4 }
+      "themeColor": "#3b82f6",
+      "tagline": "Your child has words for what's happening inside — not just 'fine' and 'mad.'",
+      "description": "Your child can name what they're feeling with more precision than most adults at a dinner party. They distinguish between frustrated and disappointed, nervous and scared. When emotions hit, they reach for language instead of just volume.",
+      "strengths": [
+        "Uses specific feeling words instead of defaulting to 'fine' or 'bad'",
+        "Can describe what made them feel a certain way, not just that they feel it",
+        "Recognizes emotions in others based on facial expressions and tone"
+      ],
+      "growthEdge": "Having the words doesn't always mean using them in the moment. When the emotional temperature spikes, the vocabulary tends to shrink back to grunting and door-slamming.",
+      "encouragement": "A child who can name their feelings is already doing something most adults struggle with. This foundation makes every other emotional skill easier to build — regulation, empathy, conflict resolution all start here.",
+      "comparativeContext": "Research finds that children who can label emotions accurately show measurably better social skills and fewer behavior problems by school age."
     },
     "self-regulation": {
       "id": "self-regulation",
       "name": "Self-Regulation",
-      "maxPoints": 9,
-      "thresholds": { "high": 7, "medium": 4 }
+      "themeColor": "#10b981",
+      "tagline": "Your child can feel the big feeling without becoming the big feeling.",
+      "description": "Your child has strategies — however clumsy — for managing emotions that would otherwise run the show. They might take deep breaths, walk away, squeeze a pillow, or ask for help. The meltdowns still happen, but there's a growing gap between feeling the emotion and acting on it.",
+      "strengths": [
+        "Uses calming strategies without always needing a parent to initiate them",
+        "Can recover from disappointment or frustration without the whole day unraveling",
+        "Shows increasing ability to wait, pause, or redirect when upset"
+      ],
+      "growthEdge": "Self-regulation is the first skill to bail when a child is tired, hungry, or overstimulated. The strategies work until they don't — and that's normal, not a failure.",
+      "encouragement": "Every time your child pauses instead of exploding — even once — that's a neural pathway getting stronger. Self-regulation isn't about never losing it. It's about the recovery time getting shorter. That's real, measurable progress.",
+      "comparativeContext": "Studies show self-regulation develops gradually through age 10, with the biggest gains happening between ages 4 and 7 when the prefrontal cortex is rapidly maturing."
     },
     "empathy": {
       "id": "empathy",
       "name": "Empathy",
-      "maxPoints": 6,
-      "thresholds": { "high": 5, "medium": 3 }
+      "themeColor": "#f43f5e",
+      "tagline": "Your child notices when someone else is having a hard time — and actually cares.",
+      "description": "Your child picks up on other people's emotions and responds with something beyond 'not my problem.' They notice the sad kid at the playground, offer comfort to a crying sibling, or get visibly uncomfortable when someone is being treated unfairly. It's not performance — they genuinely feel it.",
+      "strengths": [
+        "Notices emotional shifts in others without being told to look",
+        "Offers comfort or help spontaneously, not just when prompted",
+        "Shows concern for fairness and gets bothered when things aren't right"
+      ],
+      "growthEdge": "Empathy without boundaries turns into absorbing everyone else's emotions. Your child may need help distinguishing between 'I care about your feelings' and 'your feelings are now my problem to fix.'",
+      "encouragement": "A child who notices and responds to others' pain is building the foundation for every meaningful relationship they'll ever have. Empathy isn't softness — it's social intelligence. The kids who have it navigate friendships, conflict, and collaboration better than their peers.",
+      "comparativeContext": "Research shows empathic responding is present from toddlerhood but becomes more sophisticated and consistent between ages 4 and 8."
     },
     "frustration-tolerance": {
       "id": "frustration-tolerance",
       "name": "Frustration Tolerance",
-      "maxPoints": 6,
-      "thresholds": { "high": 5, "medium": 3 }
+      "themeColor": "#f59e0b",
+      "tagline": "Your child can handle things not going their way without the world ending.",
+      "description": "Your child encounters setbacks — losing a game, getting the wrong color cup, waiting longer than expected — and manages to not completely come apart. They might grumble, they might huff, but they keep going. The frustration doesn't become a full-system shutdown.",
+      "strengths": [
+        "Can lose a game or miss a turn without a full emotional collapse",
+        "Handles waiting and delays with visible effort but reasonable success",
+        "Tries again after making a mistake instead of quitting immediately"
+      ],
+      "growthEdge": "Frustration tolerance is highly context-dependent. Your child might handle losing at soccer like a champ and completely fall apart over a Lego piece that won't fit. That inconsistency is normal — not backsliding.",
+      "encouragement": "Every time your child pushes through frustration instead of quitting, they're building a skill that predicts academic success, relationship quality, and career outcomes better than IQ does. The grit is real, even when it doesn't look graceful.",
+      "comparativeContext": "Frustration tolerance is one of the strongest predictors of school readiness, with research linking it to both academic performance and peer relationships."
     }
   },
-  "questions": [
-    {
-      "id": "q1",
-      "domain": "emotion-vocabulary",
-      "text": "Your child comes home upset after school. When you ask what happened, they say...",
-      "subtext": "Think about their typical response.",
-      "options": [
-        { "id": "q1a", "text": "\"I don't know!\" and runs to their room", "points": 0 },
-        { "id": "q1b", "text": "\"I'm mad\" — they name the basic feeling", "points": 1 },
-        { "id": "q1c", "text": "\"I feel sad and kind of angry at the same time\"", "points": 2 },
-        { "id": "q1d", "text": "\"I'm frustrated because Jake took my turn and the teacher didn't see it\"", "points": 3 }
-      ]
-    },
-    {
-      "id": "q2",
-      "domain": "self-regulation",
-      "text": "Your child doesn't get the toy they really wanted for their birthday. What happens?",
-      "options": [
-        { "id": "q2a", "text": "Full meltdown — takes a long time to recover", "points": 0 },
-        { "id": "q2b", "text": "Pouts and sulks for most of the day", "points": 1 },
-        { "id": "q2c", "text": "Visibly disappointed, might cry, but moves on within a few minutes", "points": 2 },
-        { "id": "q2d", "text": "Says \"I'm really disappointed\" but handles it and finds something to enjoy", "points": 3 }
-      ]
-    },
-    {
-      "id": "q3",
-      "domain": "empathy",
-      "text": "A younger child at the playground falls down and starts crying. Your kid...",
-      "options": [
-        { "id": "q3a", "text": "Doesn't notice or walks away", "points": 0 },
-        { "id": "q3b", "text": "Looks over but keeps playing", "points": 1 },
-        { "id": "q3c", "text": "Goes over to check on them or tells an adult", "points": 2 },
-        { "id": "q3d", "text": "Tries to comfort them — \"Are you okay? Do you want me to help you up?\"", "points": 3 }
-      ]
-    },
-    {
-      "id": "q4",
-      "domain": "frustration-tolerance",
-      "text": "Your child is building something with blocks and it keeps falling apart. They...",
-      "options": [
-        { "id": "q4a", "text": "Throws it across the room or screams", "points": 0 },
-        { "id": "q4b", "text": "Gets upset and needs you to calm them down before they'll try again", "points": 1 },
-        { "id": "q4c", "text": "Asks for help before getting too frustrated", "points": 2 },
-        { "id": "q4d", "text": "Gets frustrated but tries a different approach on their own", "points": 3 }
-      ]
-    },
-    {
-      "id": "q5",
-      "domain": "emotion-vocabulary",
-      "text": "When reading a book together, can your child identify how the characters are feeling?",
-      "options": [
-        { "id": "q5a", "text": "Rarely — they focus on what's happening, not how people feel", "points": 0 },
-        { "id": "q5b", "text": "Sometimes — they notice \"happy\" and \"sad\"", "points": 1 },
-        { "id": "q5c", "text": "Often — they pick up on things like \"worried\" or \"embarrassed\"", "points": 2 },
-        { "id": "q5d", "text": "Regularly — they predict emotional reactions and explain why characters feel that way", "points": 3 }
-      ]
-    },
-    {
-      "id": "q6",
-      "domain": "self-regulation",
-      "text": "When your child is told they can't have something they want right now...",
-      "options": [
-        { "id": "q6a", "text": "Screaming, crying, full tantrum — every time", "points": 0 },
-        { "id": "q6b", "text": "Usually upset — sometimes can accept it with a lot of explanation", "points": 1 },
-        { "id": "q6c", "text": "Disappointed but can wait if they know when they'll get it", "points": 2 },
-        { "id": "q6d", "text": "Handles it most of the time — might negotiate but accepts the answer", "points": 3 }
-      ]
-    },
-    {
-      "id": "q7",
-      "domain": "empathy",
-      "text": "When someone in the family is visibly sad or stressed, your child...",
-      "options": [
-        { "id": "q7a", "text": "Seems unaware — continues what they're doing", "points": 0 },
-        { "id": "q7b", "text": "Notices something is off but doesn't know what to do", "points": 1 },
-        { "id": "q7c", "text": "Asks \"What's wrong?\" or tries to help in some way", "points": 2 },
-        { "id": "q7d", "text": "Adjusts their behavior — speaks more quietly, brings you something, offers comfort", "points": 3 }
-      ]
-    },
-    {
-      "id": "q8",
-      "domain": "frustration-tolerance",
-      "text": "When your child loses a game...",
-      "options": [
-        { "id": "q8a", "text": "Major meltdown — crying, accusing others of cheating, wants to quit", "points": 0 },
-        { "id": "q8b", "text": "Gets upset but calms down with some help from you", "points": 1 },
-        { "id": "q8c", "text": "Disappointed but can congratulate the winner with a little prompting", "points": 2 },
-        { "id": "q8d", "text": "Handles it well — might say \"good game\" or ask to play again", "points": 3 }
-      ]
-    },
-    {
-      "id": "q9",
-      "domain": "emotion-vocabulary",
-      "text": "When your child is angry, they typically...",
-      "options": [
-        { "id": "q9a", "text": "Lash out physically — hitting, throwing, biting", "points": 0 },
-        { "id": "q9b", "text": "Yell or scream without naming what they're feeling", "points": 1 },
-        { "id": "q9c", "text": "Say \"I'm angry!\" or \"I'm mad!\" — even if loudly", "points": 2 },
-        { "id": "q9d", "text": "Express what they're angry about and sometimes suggest what would help", "points": 3 }
-      ]
-    },
-    {
-      "id": "q10",
-      "domain": "self-regulation",
-      "text": "How does your child handle transitions — leaving the park, turning off screens, switching activities?",
-      "options": [
-        { "id": "q10a", "text": "Major resistance every time — tantrums, refusal, bargaining", "points": 0 },
-        { "id": "q10b", "text": "Hard but getting better — still needs a lot of support", "points": 1 },
-        { "id": "q10c", "text": "Usually manages with a warning (\"5 more minutes\")", "points": 2 },
-        { "id": "q10d", "text": "Transitions fairly smoothly with minimal reminders", "points": 3 }
-      ]
-    }
-  ],
-  "domainContent": {
-    "emotion-vocabulary": {
-      "high": {
-        "level": "high",
-        "headline": "Rich emotional vocabulary",
-        "detail": "Your child can name a wide range of feelings and describe what's driving them. They distinguish between similar emotions (frustrated vs. angry, nervous vs. scared) and can articulate the cause. This is a genuine strength — emotional literacy is one of the strongest predictors of social success.",
-        "strength": "They have the words to process what they're feeling instead of acting it out"
-      },
-      "medium": {
-        "level": "medium",
-        "headline": "Building their feelings dictionary",
-        "detail": "Your child can name basic emotions (happy, sad, mad, scared) and is starting to get more nuanced. They don't always have the words in the heat of the moment, but can often reflect on feelings afterward. This is exactly where most kids their age are.",
-        "strength": "They're developing the language foundation — keep narrating emotions in daily life"
-      },
-      "low": {
-        "level": "low",
-        "headline": "Feelings are still hard to name",
-        "detail": "Your child experiences big feelings but doesn't yet have the vocabulary to identify or describe them. This often shows up as physical reactions (hitting, shutting down, running away) instead of words. This is very common and completely workable.",
-        "concern": "Try labeling their emotions for them: \"It looks like you're feeling frustrated because...\" — you're building the dictionary they'll use later"
-      }
-    },
-    "self-regulation": {
-      "high": {
-        "level": "high",
-        "headline": "Strong self-regulation skills",
-        "detail": "Your child can manage their impulses, handle disappointment, and recover from emotional intensity without extended meltdowns. They're developing the ability to pause between feeling and reacting — which is genuinely impressive at any age.",
-        "strength": "They can feel a big emotion without being completely hijacked by it"
-      },
-      "medium": {
-        "level": "medium",
-        "headline": "Regulation is a work in progress",
-        "detail": "Your child can sometimes manage their reactions, especially when they're not too tired or hungry. Other times, feelings overwhelm their coping skills and they need your help to co-regulate. This back-and-forth is completely normal — self-regulation develops gradually.",
-        "strength": "They're showing signs of self-management — consistency and patience will build on this"
-      },
-      "low": {
-        "level": "low",
-        "headline": "Still learning to manage big reactions",
-        "detail": "When feelings hit, your child gets flooded — meltdowns are intense and recovery takes time. They rely heavily on you to calm down. This isn't a character flaw; their brain's regulation circuitry is still under construction.",
-        "concern": "Focus on co-regulation first: stay calm yourself, narrate what's happening, and trust that your calm is slowly teaching theirs"
-      }
-    },
-    "empathy": {
-      "high": {
-        "level": "high",
-        "headline": "Naturally tuned into others",
-        "detail": "Your child notices other people's emotions and responds with genuine care. They adjust their behavior based on how others are feeling and often try to help without being asked. This is a beautiful strength that reflects deep emotional awareness.",
-        "strength": "They read emotional cues that many adults miss"
-      },
-      "medium": {
-        "level": "medium",
-        "headline": "Empathy is developing",
-        "detail": "Your child is starting to notice and care about other people's feelings, especially in obvious situations. They might not always know how to respond, but the awareness is there. Empathy grows with practice and modeling — they're on track.",
-        "strength": "They notice others' distress — the caring response will catch up with the awareness"
-      },
-      "low": {
-        "level": "low",
-        "headline": "Still developing perspective-taking",
-        "detail": "Your child is mostly focused on their own experience right now, which is developmentally normal — especially for younger kids. Empathy requires perspective-taking skills that are literally still being wired in their brain.",
-        "concern": "Narrate other people's feelings in everyday moments: \"Look, that boy dropped his ice cream — I bet he feels really sad.\" You're building empathy circuits."
-      }
-    },
-    "frustration-tolerance": {
-      "high": {
-        "level": "high",
-        "headline": "Handles setbacks well",
-        "detail": "Your child can tolerate frustration without falling apart. When things don't go their way, they might be disappointed, but they can problem-solve, try again, or move on. This persistence will serve them well in school and life.",
-        "strength": "They can sit with discomfort long enough to find a solution"
-      },
-      "medium": {
-        "level": "medium",
-        "headline": "Getting better at bouncing back",
-        "detail": "Frustration still knocks your child off course sometimes, but they're getting better at recovering. With some support, they can usually get back to trying. The gap between frustration and recovery is shrinking.",
-        "strength": "They're building the muscle — each time they recover a little faster is real progress"
-      },
-      "low": {
-        "level": "low",
-        "headline": "Frustration hits hard",
-        "detail": "When things don't work or aren't fair, your child's frustration overwhelms their ability to cope. Setbacks feel catastrophic in the moment. This isn't stubbornness or manipulation — their window of tolerance for frustration is still narrow.",
-        "concern": "Start with tiny frustration exposures and celebrate recovery: \"You were so frustrated, and you tried again anyway. That's really brave.\""
-      }
-    }
-  },
-  "results": {
-    "strong-eq": {
-      "id": "strong-eq",
-      "themeColor": "#16a34a",
-      "scoreRange": { "min": 22, "max": 30 },
-      "headline": "Your child has strong emotional intelligence",
-      "subheadline": "They're building an inner world that will serve them for life.",
-      "explanation": "Across all four dimensions, your child is showing well-developed emotional skills. They can name their feelings, manage their reactions, empathize with others, and handle frustration. This didn't happen by accident — someone is modeling and teaching these skills.",
-      "nextSteps": [
-        "Keep doing what you're doing — talk about emotions, validate feelings, and model self-regulation",
-        "Challenge them with slightly harder emotional scenarios (conflict resolution with friends, delayed gratification)",
-        "Let them be an emotional leader — they can help siblings or friends navigate feelings"
-      ],
-      "watchOutFor": "High emotional intelligence in kids sometimes comes with high sensitivity. Make sure they know it's OK to not fix everyone else's feelings.",
-      "encouragement": "These skills are a better predictor of life success than IQ. Your child is building the foundation for strong relationships, resilience, and self-awareness.",
-      "comparativeContext": "Research from the CASEL framework shows that children with strong social-emotional skills perform better academically and have fewer behavioral challenges."
-    },
-    "developing-eq": {
-      "id": "developing-eq",
-      "themeColor": "#e8b94a",
-      "scoreRange": { "min": 11, "max": 21 },
-      "headline": "Your child's emotional intelligence is actively developing",
-      "subheadline": "They've got the building blocks — now it's about practice.",
-      "explanation": "Your child shows strength in some emotional areas and is still growing in others. This is exactly where most children are — emotional intelligence isn't a switch that flips, it's a set of skills that develop over years with practice and support.",
-      "nextSteps": [
-        "Focus on the domains where they scored lower — small daily practices make a big difference",
-        "Name emotions out loud throughout the day, for yourself and for them",
-        "Use books, shows, and real-life moments to practice identifying feelings"
-      ],
-      "watchOutFor": "Don't overwork the areas where they struggle — emotional learning happens best when kids feel safe, not pressured.",
-      "encouragement": "The fact that you're paying attention to your child's emotional development puts you ahead of the curve. Most of these skills develop dramatically between ages 4-8 with consistent support.",
-      "comparativeContext": "Most children in this age range score in the developing range. Emotional intelligence continues to grow well into adulthood."
-    },
-    "emerging-eq": {
-      "id": "emerging-eq",
-      "themeColor": "#ef4444",
-      "scoreRange": { "min": 0, "max": 10 },
-      "headline": "Your child's emotional skills are just getting started",
-      "subheadline": "This isn't a problem — it's a starting point.",
-      "explanation": "Your child is still early in developing the ability to name feelings, manage reactions, and understand others' perspectives. This is very common and not a reflection of your parenting. Every child's emotional development follows its own timeline.",
-      "nextSteps": [
-        "Start with emotion labeling — \"You look frustrated\" gives them words they don't have yet",
-        "Focus on co-regulation: stay calm during their storms, which slowly teaches them to calm themselves",
-        "Use simple feelings charts or emotion cards as daily conversation starters"
-      ],
-      "watchOutFor": "If your child is consistently unable to recover from emotional distress or is aggressive/withdrawn in ways that concern you, talk to your pediatrician.",
-      "encouragement": "Young children literally don't have the brain wiring for complex emotional skills yet — the prefrontal cortex isn't fully developed until the mid-twenties. What you're doing right now by showing up and trying is building the scaffolding they need.",
-      "comparativeContext": "Emotional development varies enormously between children of the same age. Where your child is now says very little about where they'll be in two years."
-    }
-  }
+  "statements": [
+    { "id": "s1", "text": "My child uses specific words for their emotions beyond just 'happy,' 'sad,' or 'mad.'", "dimension": "emotion-vocabulary" },
+    { "id": "s2", "text": "My child can calm themselves down after getting upset without my help.", "dimension": "self-regulation" },
+    { "id": "s3", "text": "My child notices when another child is sad or upset.", "dimension": "empathy" },
+    { "id": "s4", "text": "My child can handle losing a game without a meltdown.", "dimension": "frustration-tolerance" },
+    { "id": "s5", "text": "My child can explain what made them feel a certain way.", "dimension": "emotion-vocabulary" },
+    { "id": "s6", "text": "My child tries to comfort someone who is crying or hurt.", "dimension": "empathy" },
+    { "id": "s7", "text": "My child uses a strategy to manage big feelings (deep breaths, walking away, squeezing something).", "dimension": "self-regulation" },
+    { "id": "s8", "text": "My child keeps trying after making a mistake instead of giving up.", "dimension": "frustration-tolerance" },
+    { "id": "s9", "text": "My child can tell the difference between feeling nervous and feeling angry.", "dimension": "emotion-vocabulary" },
+    { "id": "s10", "text": "My child waits for their turn without falling apart.", "dimension": "frustration-tolerance" },
+    { "id": "s11", "text": "My child stops what they're doing to check on someone who seems upset.", "dimension": "empathy" },
+    { "id": "s12", "text": "My child can recover from a disappointment and move on with their day.", "dimension": "self-regulation" },
+    { "id": "s13", "text": "My child names the feeling they're having when upset, without being asked.", "dimension": "emotion-vocabulary" },
+    { "id": "s14", "text": "My child handles unexpected changes to plans without a major reaction.", "dimension": "frustration-tolerance" },
+    { "id": "s15", "text": "My child adjusts their behavior when they see someone is bothered by it.", "dimension": "empathy" },
+    { "id": "s16", "text": "My child asks for help managing their emotions instead of just escalating.", "dimension": "self-regulation" },
+    { "id": "s17", "text": "My child talks about characters' feelings when reading books or watching shows.", "dimension": "emotion-vocabulary" },
+    { "id": "s18", "text": "My child sticks with a difficult task even when it's frustrating.", "dimension": "frustration-tolerance" },
+    { "id": "s19", "text": "My child expresses concern about fairness when someone is being treated badly.", "dimension": "empathy" },
+    { "id": "s20", "text": "My child can pause and think before reacting when something upsets them.", "dimension": "self-regulation" }
+  ]
 }

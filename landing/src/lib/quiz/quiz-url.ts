@@ -104,7 +104,8 @@ export function pushStateToUrl(
   answers: Record<string, string>,
   currentIndex: number,
   questions: Question[],
-  isComplete: boolean
+  isComplete: boolean,
+  preview?: boolean
 ): void {
   const encoded = encodeAnswers(answers, questions);
   if (!encoded) {
@@ -112,7 +113,8 @@ export function pushStateToUrl(
     return;
   }
 
-  const params = `${ANSWERS_PARAM}=${encoded}${isComplete ? "" : `&${STEP_PARAM}=${currentIndex}`}`;
+  let params = `${ANSWERS_PARAM}=${encoded}${isComplete ? "" : `&${STEP_PARAM}=${currentIndex}`}`;
+  if (preview) params += "&p=1";
   const url = `${window.location.pathname}?${params}`;
   window.history.pushState(null, "", url);
 }

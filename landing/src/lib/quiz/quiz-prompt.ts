@@ -63,6 +63,29 @@ INSTEAD write:
 - sectionLabels.strengths: heading for the strengths section
 - sectionLabels.concerns: heading for the growth areas section (default: "Room to Grow")
 
+## CTA fields — REQUIRED
+Every quiz must include these three CTA blocks in meta. They power the email gate and community funnel.
+
+### previewCta (email gate — shown BEFORE full results)
+The user completed the quiz and sees a preview with their score and a taste of the results. This CTA asks them to enter their email to unlock the full report.
+- eyebrow: short hook, e.g. "Want the full breakdown?"
+- title: what they'll get, specific to THIS quiz, e.g. "Get your child's complete readiness profile"
+- body: 1-2 sentences describing what the full results contain — must match what THIS quiz type actually shows (readiness quizzes have action plans and domain insights; classification quizzes have type descriptions and blend percentages)
+- buttonText: action label, e.g. "Send my results" or "Send my profile"
+
+### previewPromises (bullet list on preview page)
+3-5 short bullet points listing what full results include. Must accurately reflect what the result page actually renders. Examples:
+- Readiness: "What each domain score means for your child", "A prioritized action plan you can start today"
+- Classification: "Detailed description of your primary type", "Your growth edge — where a small shift makes the biggest difference"
+Do NOT promise things the results page doesn't show.
+
+### communityCta (shown on FULL results page)
+After seeing their results, this CTA invites them to the Steady Parent community ($7/month on Skool).
+- eyebrow: short hook that connects their specific quiz result to the community value
+- title: make the community relevant to THIS quiz's topic — not generic "join our community"
+- body: 1-2 sentences. Why the community helps with THIS specific topic. Concrete scenarios they'd get help with.
+- buttonText: ALWAYS exactly "Join for $7/month"
+
 ## Scoring rules
 - Each question has 2-4 options with points ranging from 0 to the max for that question
 - Every question MUST have at least one 0-point option
@@ -112,7 +135,25 @@ Return ONLY valid JSON matching this exact shape (no markdown, no code fences):
     "shareCta": "CTA for shared results visitors",
     "levelLabels": { "high": "Strong", "medium": "Moderate", "low": "Low" },
     "sectionLabels": { "strengths": "Strengths Heading" },
-    "sources": ["AAP toilet training guidelines", "CDC developmental milestones"]
+    "sources": ["AAP toilet training guidelines", "CDC developmental milestones"],
+    "previewCta": {
+      "eyebrow": "Want the full report?",
+      "title": "Get your child's complete readiness profile",
+      "body": "Detailed domain scores, what they mean, and a prioritized action plan.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "What each domain score means for your child",
+      "Your child's strongest areas to celebrate",
+      "Targeted next steps for developing areas",
+      "A prioritized action plan you can start today"
+    ],
+    "communityCta": {
+      "eyebrow": "Hook connecting quiz topic to community",
+      "title": "Community headline relevant to THIS quiz topic",
+      "body": "1-2 sentences. Why the community helps with this specific topic.",
+      "buttonText": "Join for $7/month"
+    }
   },
   "domains": {
     "domain-id": { "id": "domain-id", "name": "Domain Name", "maxPoints": 9, "thresholds": { "high": 7, "medium": 4 } }
@@ -178,7 +219,11 @@ export function buildUserPrompt(def: QuizDef): string {
     "- Score ranges in results cover exactly 0 to the sum of all domain maxPoints",
     "- Every question has at least one 0-point option",
     "- Each result template has a themeColor hex value (green=#16a34a for best tier, yellow=#e8c840 for middle, pink=#d05597 for lowest)",
-    "- Sources are plain strings like 'AAP guidelines' — NO URLs, NO article titles"
+    "- Sources are plain strings like 'AAP guidelines' — NO URLs, NO article titles",
+    "- previewCta, previewPromises, and communityCta are all present in meta",
+    "- previewPromises accurately reflect what readiness result pages show (domain insights, action plan, encouragement)",
+    "- communityCta.buttonText is exactly 'Join for $7/month'",
+    "- communityCta.title and body connect THIS quiz's specific topic to the community — not generic"
   );
 
   return parts.join("\n");
@@ -220,6 +265,31 @@ INSTEAD write:
 - scoreLabel: not used for identity quizzes — omit or set to "Match"
 - subject: who the quiz is about (e.g. "you", "your parenting style")
 - shareCta: CTA text for visitors who see shared results
+
+## CTA fields — REQUIRED
+Every quiz must include these three CTA blocks in meta. They power the email gate and community funnel.
+
+### previewCta (email gate — shown BEFORE full results)
+The user completed the quiz and sees a preview with their primary type name and a taste of the results. This CTA asks for their email to unlock the full report.
+- eyebrow: short hook, e.g. "Want the full breakdown?"
+- title: what they'll get, e.g. "Get your complete parenting style profile"
+- body: 1-2 sentences describing what full results contain — identity quizzes show type description, strengths, growth edge, blend percentages. Do NOT promise action plans or next steps (identity quizzes don't have those).
+- buttonText: e.g. "Send my profile"
+
+### previewPromises (bullet list on preview page)
+3-5 short bullets listing what full results include. For identity quizzes:
+- "Detailed description of your primary type"
+- "Your unique strengths"
+- "Your growth edge — where a small shift makes the biggest difference"
+- "How you compare across all types"
+Do NOT promise action plans, next steps, or domain scores (identity quizzes don't have those).
+
+### communityCta (shown on FULL results page)
+After seeing their type, this CTA invites them to the Steady Parent community ($7/month on Skool).
+- eyebrow: short hook connecting their type result to community value
+- title: make the community relevant to THIS quiz topic
+- body: 1-2 sentences. Concrete scenarios where the community helps with this topic.
+- buttonText: ALWAYS exactly "Join for $7/month"
 
 ## Scoring rules — IDENTITY QUIZZES
 - Each option has a "points" object with an entry for EVERY type ID
@@ -265,7 +335,25 @@ Return ONLY valid JSON matching this exact shape (no markdown, no code fences):
     "estimatedTime": "2 minutes", "questionCount": 8,
     "subject": "you",
     "shareCta": "CTA for shared results visitors",
-    "sources": ["Baumrind parenting styles framework", "Maccoby & Martin typology"]
+    "sources": ["Baumrind parenting styles framework", "Maccoby & Martin typology"],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your complete type profile",
+      "body": "Your primary type, strengths, growth edge, and how you compare across all types.",
+      "buttonText": "Send my profile"
+    },
+    "previewPromises": [
+      "Detailed description of your primary type",
+      "Your unique strengths",
+      "Your growth edge — one shift that changes the most",
+      "How you compare across all types"
+    ],
+    "communityCta": {
+      "eyebrow": "Hook connecting quiz topic to community",
+      "title": "Community headline relevant to THIS quiz topic",
+      "body": "1-2 sentences. Why the community helps with this specific topic.",
+      "buttonText": "Join for $7/month"
+    }
   },
   "types": {
     "type-id": {
@@ -288,6 +376,199 @@ Return ONLY valid JSON matching this exact shape (no markdown, no code fences):
     ]
   }]
 }`;
+}
+
+// ============================================================================
+// LIKERT QUIZ PROMPTS (Type C)
+// ============================================================================
+
+export interface LikertQuizDef {
+  slug: string;
+  topic: string;
+  description: string;
+  statementCount: number;
+  scale: string[];
+  suggestedDimensions?: { id: string; name: string }[];
+  additionalContext?: string;
+}
+
+export function buildLikertSystemPrompt(): string {
+  return `You are an expert in parenting and child development who creates Likert-scale rating quizzes for the Steady Parent brand.
+
+You produce quiz data as structured JSON. Likert quizzes work differently from multiple-choice:
+1. Each statement is rated on a 1-5 scale (Never → Always)
+2. Each statement maps to ONE dimension
+3. Score = mean rating per dimension. Primary = highest mean.
+4. Reverse-scored statements flip the rating before averaging.
+5. Every dimension is framed positively — no "bad" results
+
+## VOICE — THIS IS CRITICAL
+The Steady Parent voice is: wry, self-deprecating, rational, direct.
+We acknowledge parenting is hard, but we don't do sugary validation.
+
+NEVER write:
+- "You're not alone" / "You're doing great just by being here" / "That matters enormously"
+- "mama" or "girl" language
+- Toxic positivity ("Every moment is a gift!")
+- Hedging ("Maybe try..." / "You might consider...")
+- Excessive exclamation points
+- Generic therapist-speak
+- Platitudes disguised as encouragement
+
+INSTEAD write:
+- Dry humor, ironic observations about parenting absurdity
+- Specific, concrete observations — not abstract validation
+- Direct statements — be confident, not soothing
+- Ridiculous-but-true examples parents recognize
+
+## Meta fields
+- scoreLabel: appears next to scores, e.g. "Style"
+- subject: who the quiz is about (e.g. "you", "your parenting")
+- shareCta: CTA text for visitors who see shared results
+
+## CTA fields — REQUIRED
+Every quiz must include these three CTA blocks in meta.
+
+### previewCta (email gate)
+Shown before full results. Asks for email to unlock.
+- eyebrow: short hook, e.g. "Want the full breakdown?"
+- title: what they'll get, e.g. "Get your complete parenting style profile"
+- body: 1-2 sentences. Likert results show dimension profiles, strengths, growth edges, blend comparison. Do NOT promise action plans (Likert quizzes don't have those).
+- buttonText: e.g. "Send my profile"
+
+### previewPromises (bullet list on preview page)
+3-5 short bullets listing what full results include. For Likert quizzes:
+- Detailed breakdown per dimension
+- Strengths unique to their primary dimension
+- Growth edge / one shift that changes the most
+- How dimensions compare
+Do NOT promise action plans or next steps.
+
+### communityCta (shown on full results page)
+Invites them to Steady Parent community ($7/month on Skool).
+- eyebrow: hook connecting their profile result to community
+- title: make community relevant to THIS quiz topic
+- body: 1-2 sentences. Concrete scenarios.
+- buttonText: ALWAYS exactly "Join for $7/month"
+
+## Statement writing rules
+- Each statement is a concrete parenting behavior: "I explain the reasons behind my rules"
+- NOT beliefs or opinions: avoid "I believe children need..."
+- NOT questions: these are "I do X" statements
+- Each statement maps to exactly ONE dimension
+- Use reversed=true for negatively-worded statements (e.g. "I raise my voice to get my child to listen" measuring firm-protector)
+- Each dimension needs at least 3 statements, ideally 5-6 for 18+ statement quizzes
+- Mix up the dimension order so statements for the same dimension aren't clustered together
+
+## Content rules — KEEP IT TIGHT
+- tagline: 1 sentence (~100 chars) — the shareable identity badge
+- description: 2-3 sentences (~300 chars) — recognizable, specific
+- growthEdge: 1-2 sentences (~180 chars) — honest, direct
+- encouragement: 2-3 sentences (~300 chars) — direct closing
+- comparativeContext: 1 sentence (~180 chars) — plain statistic
+- strengths: 2-4 items, each a concrete behavior (~120 chars each)
+- intro: 2 sentences max (~200 chars)
+
+## Citation rules — CRITICAL
+- NEVER include academic citations
+- You CAN say "research shows" — no specific attributions
+- meta.sources: plain strings — NO URLs, NO author names
+
+## Required JSON structure
+Return ONLY valid JSON matching this exact shape (no markdown, no code fences):
+{
+  "quizType": "likert",
+  "meta": {
+    "id": "the-slug", "slug": "the-slug",
+    "title": "Full Title as Question?", "shortTitle": "Short Title",
+    "description": "SEO description under 300 chars",
+    "intro": "2 sentences. What the quiz measures.",
+    "estimatedTime": "3 minutes", "questionCount": 18,
+    "scoreLabel": "Style", "subject": "you",
+    "shareCta": "CTA for shared results visitors",
+    "sources": ["Baumrind parenting typology", "Maccoby & Martin framework"],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your complete profile",
+      "body": "Description of what full results contain.",
+      "buttonText": "Send my profile"
+    },
+    "previewPromises": [
+      "Detailed breakdown for each dimension",
+      "Your unique strengths",
+      "Your growth edge — one shift that changes the most",
+      "How your dimensions compare"
+    ],
+    "communityCta": {
+      "eyebrow": "Hook connecting to community",
+      "title": "Community headline for THIS topic",
+      "body": "Why the community helps with this specific topic.",
+      "buttonText": "Join for $7/month"
+    }
+  },
+  "scale": {
+    "labels": ["Never", "Rarely", "Sometimes", "Often", "Always"],
+    "points": [1, 2, 3, 4, 5]
+  },
+  "dimensions": {
+    "dim-id": {
+      "id": "dim-id", "name": "Display Name",
+      "themeColor": "#3b82f6",
+      "tagline": "One shareable sentence.",
+      "description": "2-3 sentences. Recognizable.",
+      "strengths": ["Concrete strength 1", "Concrete strength 2"],
+      "growthEdge": "1-2 sentences. Honest.",
+      "encouragement": "2-3 sentences. Direct.",
+      "comparativeContext": "Plain statistic."
+    }
+  },
+  "statements": [
+    { "id": "s1", "text": "I explain the reasons behind my rules.", "dimension": "dim-id" },
+    { "id": "s2", "text": "I raise my voice to get compliance.", "dimension": "other-dim", "reversed": true }
+  ]
+}`;
+}
+
+export function buildLikertUserPrompt(def: LikertQuizDef): string {
+  const parts = [
+    `Create a complete Likert-scale quiz for: "${def.topic}"`,
+    `Description: ${def.description}`,
+    `Number of statements: ${def.statementCount}`,
+    `Scale: ${def.scale.join(", ")}`,
+  ];
+
+  if (def.suggestedDimensions?.length) {
+    parts.push(
+      `Suggested dimensions: ${def.suggestedDimensions.map((d) => `${d.id} (${d.name})`).join(", ")}`
+    );
+  }
+
+  if (def.additionalContext) {
+    parts.push(`\nAdditional context: ${def.additionalContext}`);
+  }
+
+  parts.push(
+    "",
+    `Slug and ID must be: ${def.slug}`,
+    "",
+    "Make sure:",
+    "- quizType is exactly 'likert'",
+    "- meta.questionCount matches the number of statements",
+    "- Every statement references a valid dimension ID",
+    "- Each dimension has at least 3 statements",
+    "- Dimension record keys match the id field inside each dimension",
+    "- scale.labels and scale.points arrays are the same length",
+    "- Statement IDs are unique (s1, s2, s3...)",
+    "- Statements for the same dimension are NOT clustered together — mix the order",
+    "- Each dimension has a distinct themeColor hex value",
+    "- Sources are plain strings — NO URLs, NO article titles",
+    "- previewCta, previewPromises, and communityCta are all present in meta",
+    "- previewPromises reflect Likert results (dimension profiles, strengths, growth edge) — do NOT promise action plans",
+    "- communityCta.buttonText is exactly 'Join for $7/month'",
+    "- communityCta.title and body connect THIS quiz's specific topic to the community"
+  );
+
+  return parts.join("\n");
 }
 
 export function buildIdentityUserPrompt(def: IdentityQuizDef): string {
@@ -320,7 +601,11 @@ export function buildIdentityUserPrompt(def: IdentityQuizDef): string {
     "- Each question has options that favor at least 2 different types",
     "- Type record keys match the id field inside each type object",
     "- Each type has a distinct themeColor hex value",
-    "- Sources are plain strings — NO URLs, NO article titles"
+    "- Sources are plain strings — NO URLs, NO article titles",
+    "- previewCta, previewPromises, and communityCta are all present in meta",
+    "- previewPromises reflect what identity result pages show (type description, strengths, growth edge, blend) — do NOT promise action plans or next steps",
+    "- communityCta.buttonText is exactly 'Join for $7/month'",
+    "- communityCta.title and body connect THIS quiz's specific topic to the community — not generic"
   );
 
   return parts.join("\n");

@@ -1,17 +1,18 @@
 {
+  "quizType": "readiness",
   "meta": {
     "id": "calm-down-toolkit",
     "slug": "calm-down-toolkit",
     "title": "Build Your Child's Calm-Down Toolkit",
     "shortTitle": "Calm-Down Toolkit",
-    "description": "Answer a few questions about how your child processes big emotions, and get a personalized set of calming strategies matched to their temperament.",
-    "intro": "Every child calms down differently. Some need to move, some need to squeeze something, some need to talk it out. This quiz builds a toolkit that actually fits YOUR kid — not a generic checklist.",
+    "description": "Discover which calming strategies actually work for your child. This evidence-based assessment matches your kid to movement, sensory, and verbal techniques based on how they naturally self-regulate.",
+    "intro": "Not every calm-down strategy works for every kid. Some children need to move, some need to squeeze something, and some need to talk it through. This quiz figures out which toolkit your child actually needs.",
     "estimatedTime": "2 minutes",
     "questionCount": 9,
     "scoreLabel": "Toolkit",
     "subject": "your child",
     "resultDisplay": "recommendation",
-    "shareCta": "Build a personalized calm-down toolkit for your child",
+    "shareCta": "Which calm-down strategies actually work for your kid? Find out.",
     "levelLabels": {
       "high": "Primary strategy",
       "medium": "Supporting strategy",
@@ -21,133 +22,162 @@
       "strengths": "Best strategies",
       "concerns": "Also consider"
     },
-    "ageRange": { "min": 2, "max": 10, "unit": "years" },
+    "ageRange": {
+      "min": 2,
+      "max": 10,
+      "unit": "years"
+    },
     "sources": [
       "Zones of Regulation framework",
       "Alert Program sensory regulation research",
       "Stuart Shanker self-regulation model"
-    ]
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full strategy breakdown?",
+      "title": "Get your child's personalized calm-down toolkit",
+      "body": "See which strategy types are the best match for your child, with specific techniques for each domain and a concrete action plan to start building their toolkit today.",
+      "buttonText": "Send my toolkit"
+    },
+    "previewPromises": [
+      "Which calm-down strategy type is the strongest match for your child",
+      "Specific techniques ranked by how well they fit your child's style",
+      "What each strategy domain means for your child's regulation",
+      "A prioritized action plan with techniques to try this week"
+    ],
+    "communityCta": {
+      "eyebrow": "Meltdowns don't wait for you to Google solutions",
+      "title": "Get calm-down scripts and strategies from parents who've tested them",
+      "body": "The Steady Parent community shares real-time strategies for the grocery store meltdown, the bedtime explosion, and the after-school shutdown. Weekly coaching calls plus a library of regulation scripts sorted by age.",
+      "buttonText": "Join for $7/month"
+    }
   },
   "domains": {
     "movement": {
       "id": "movement",
       "name": "Movement & Energy Release",
       "maxPoints": 9,
-      "thresholds": { "high": 7, "medium": 4 }
+      "thresholds": {
+        "high": 7,
+        "medium": 4
+      }
     },
     "sensory": {
       "id": "sensory",
       "name": "Sensory & Tactile Input",
       "maxPoints": 9,
-      "thresholds": { "high": 7, "medium": 4 }
+      "thresholds": {
+        "high": 7,
+        "medium": 4
+      }
     },
     "verbal": {
       "id": "verbal",
       "name": "Verbal & Cognitive Processing",
       "maxPoints": 9,
-      "thresholds": { "high": 7, "medium": 4 }
+      "thresholds": {
+        "high": 7,
+        "medium": 4
+      }
     }
   },
   "questions": [
     {
       "id": "q1",
       "domain": "movement",
-      "text": "When your child is wound up or upset, their body usually...",
+      "text": "When your child is upset, what does their body do?",
+      "subtext": "Think about the last few meltdowns — feet, hands, whole body.",
       "options": [
-        { "id": "q1a", "text": "Gets very physical — running, jumping, climbing, throwing things", "points": 3 },
-        { "id": "q1b", "text": "Gets tense — clenching fists, stiffening up, stomping", "points": 2 },
-        { "id": "q1c", "text": "Goes still — freezing, shutting down, curling up", "points": 1 },
-        { "id": "q1d", "text": "It varies a lot depending on the situation", "points": 1 }
+        { "id": "q1a", "text": "They get physically restless — running, jumping, flailing, can't sit still", "points": 3 },
+        { "id": "q1b", "text": "Some fidgeting or stomping, but they mostly stay in place", "points": 1 },
+        { "id": "q1c", "text": "They go still — freeze, curl up, or get very quiet", "points": 0 }
       ]
     },
     {
       "id": "q2",
       "domain": "sensory",
-      "text": "What tends to soothe your child when they're overwhelmed?",
+      "text": "How does your child respond to physical comfort when they're dysregulated?",
+      "subtext": "Tight hugs, blankets, holding a stuffed animal, squeezing something.",
       "options": [
-        { "id": "q2a", "text": "Being wrapped in a blanket, a tight hug, or deep pressure", "points": 3 },
-        { "id": "q2b", "text": "Quiet music, white noise, or rhythmic sounds", "points": 2 },
-        { "id": "q2c", "text": "They don't really have a go-to sensory comfort yet", "points": 0 },
-        { "id": "q2d", "text": "Fidgeting with something — squishing, tearing, pulling", "points": 3 }
+        { "id": "q2a", "text": "They actively seek it out — grabs a blanket, asks for a hug, clutches a lovey", "points": 3 },
+        { "id": "q2b", "text": "They'll accept it if offered, but don't seek it on their own", "points": 1 },
+        { "id": "q2c", "text": "They push away physical comfort or don't seem to notice it", "points": 0 }
       ]
     },
     {
       "id": "q3",
       "domain": "verbal",
-      "text": "After your child calms down from a meltdown, they typically...",
-      "subtext": "Think about what happens once the storm passes.",
+      "text": "After a meltdown, can your child talk about what happened?",
+      "subtext": "Even hours later, once they're fully calm.",
       "options": [
-        { "id": "q3a", "text": "Want to talk about what happened and why they were upset", "points": 3 },
-        { "id": "q3b", "text": "Can talk about it if you bring it up gently", "points": 2 },
-        { "id": "q3c", "text": "Don't want to talk about it at all — they just want to move on", "points": 0 },
-        { "id": "q3d", "text": "Can't really explain what happened even if they try", "points": 1 }
+        { "id": "q3a", "text": "Yes — they can name the feeling and explain what set them off", "points": 3 },
+        { "id": "q3b", "text": "Partially — they'll say something like \"I was mad\" but can't explain much more", "points": 1 },
+        { "id": "q3c", "text": "Not really — they change the subject or say \"I don't know\"", "points": 0 }
       ]
     },
     {
       "id": "q4",
       "domain": "movement",
-      "text": "When your child has been sitting still for too long (car ride, waiting room, class), they...",
+      "text": "What happens when your child has been sitting still for a long time and then gets frustrated?",
+      "subtext": "Car rides, waiting rooms, long meals — the pressure cooker moments.",
       "options": [
-        { "id": "q4a", "text": "Start bouncing, fidgeting, or literally climbing the walls", "points": 3 },
-        { "id": "q4b", "text": "Get increasingly cranky and irritable", "points": 2 },
-        { "id": "q4c", "text": "Zone out or get quiet", "points": 0 },
-        { "id": "q4d", "text": "Can manage for a while but get restless eventually", "points": 1 }
+        { "id": "q4a", "text": "The frustration is much worse — like the stillness built up pressure they need to release", "points": 3 },
+        { "id": "q4b", "text": "It's a little worse than usual, but manageable", "points": 1 },
+        { "id": "q4c", "text": "Doesn't seem to matter — frustration looks the same regardless", "points": 0 }
       ]
     },
     {
       "id": "q5",
       "domain": "sensory",
-      "text": "How does your child respond to unexpected loud noises or chaotic environments?",
+      "text": "How does your child respond to changes in sensory environment when upset?",
+      "subtext": "Dimming lights, turning off music, running cold water on hands, offering a crunchy snack.",
       "options": [
-        { "id": "q5a", "text": "Covers ears, hides, or cries — very sensitive to sensory overload", "points": 3 },
-        { "id": "q5b", "text": "Gets a bit unsettled but can usually cope", "points": 2 },
-        { "id": "q5c", "text": "Barely notices — they're pretty unfazed by noise and chaos", "points": 0 },
-        { "id": "q5d", "text": "Gets MORE energized — loud environments seem to amp them up", "points": 1 }
+        { "id": "q5a", "text": "It clearly helps — the shift in sensation resets something", "points": 3 },
+        { "id": "q5b", "text": "Sometimes it helps, sometimes they don't seem to notice", "points": 1 },
+        { "id": "q5c", "text": "Sensory changes don't seem to make a difference either way", "points": 0 }
       ]
     },
     {
       "id": "q6",
       "domain": "verbal",
-      "text": "If you gave your child a choice between calming strategies, they'd most likely pick...",
+      "text": "If you narrate what's happening during a meltdown (\"You're angry because the tower fell\"), how does your child react?",
+      "subtext": "The classic sportscaster technique — labeling the feeling out loud.",
       "options": [
-        { "id": "q6a", "text": "\"Let's talk about what happened\" or looking at a feelings chart together", "points": 3 },
-        { "id": "q6b", "text": "\"Count to 10\" or taking deep breaths", "points": 2 },
-        { "id": "q6c", "text": "They wouldn't pick any — they're not ready for deliberate strategies yet", "points": 0 },
-        { "id": "q6d", "text": "Something physical — squeeze a ball, jump, hit a pillow", "points": 1 }
+        { "id": "q6a", "text": "It visibly helps — they calm down faster when their feelings are named", "points": 3 },
+        { "id": "q6b", "text": "Mixed results — sometimes it helps, sometimes they yell \"STOP TALKING\"", "points": 1 },
+        { "id": "q6c", "text": "It makes things worse or they completely ignore it", "points": 0 }
       ]
     },
     {
       "id": "q7",
       "domain": "movement",
-      "text": "After running around or doing something physical, your child usually...",
+      "text": "When your child successfully calms themselves down (rare and beautiful), what did they do?",
+      "subtext": "Think of a time they pulled out of a spiral on their own.",
       "options": [
-        { "id": "q7a", "text": "Is visibly calmer and more regulated — the energy release really helps", "points": 3 },
-        { "id": "q7b", "text": "Is somewhat calmer but can also get more wound up", "points": 2 },
-        { "id": "q7c", "text": "Doesn't seem to change much — physical activity isn't a reset button for them", "points": 0 },
-        { "id": "q7d", "text": "Gets more dysregulated — high energy leads to higher energy", "points": 1 }
+        { "id": "q7a", "text": "Something physical — ran around, jumped, hit a pillow, squeezed their fists", "points": 3 },
+        { "id": "q7b", "text": "A mix — some movement and some talking or deep breathing", "points": 1 },
+        { "id": "q7c", "text": "They talked it through, took breaths, or used words to process", "points": 0 }
       ]
     },
     {
       "id": "q8",
       "domain": "sensory",
-      "text": "Does your child seek out any of these when they're stressed?",
-      "subtext": "Think about their natural comfort-seeking behavior.",
+      "text": "Does your child have strong preferences about textures, temperatures, or physical sensations in daily life?",
+      "subtext": "Sock seams, food textures, bath water temperature, clothing tags — the sensory landmines.",
       "options": [
-        { "id": "q8a", "text": "A favorite soft toy, blanket, or clothing item with a specific texture", "points": 3 },
-        { "id": "q8b", "text": "Water play, playdough, sand, or other hands-on materials", "points": 3 },
-        { "id": "q8c", "text": "Not really — they don't gravitate toward tactile comfort objects", "points": 0 },
-        { "id": "q8d", "text": "Food or sucking/chewing (thumb, chewy toy, snacks)", "points": 2 }
+        { "id": "q8a", "text": "Definitely — they have strong opinions about how things feel on their body", "points": 3 },
+        { "id": "q8b", "text": "A few preferences, but nothing extreme", "points": 1 },
+        { "id": "q8c", "text": "Not particularly — they're pretty flexible about sensory stuff", "points": 0 }
       ]
     },
     {
       "id": "q9",
       "domain": "verbal",
-      "text": "When you try to help your child name their feelings during a tough moment...",
+      "text": "How does your child use counting, breathing exercises, or self-talk when they're escalating?",
+      "subtext": "\"Take three deep breaths\" / \"Count to ten\" / \"I can handle this.\"",
       "options": [
-        { "id": "q9a", "text": "It actually helps — they calm down faster when they can label what's happening", "points": 3 },
-        { "id": "q9b", "text": "Sometimes helps, sometimes they're too far gone to listen", "points": 2 },
-        { "id": "q9c", "text": "Makes things worse — they yell \"STOP TALKING!\" or escalate", "points": 0 },
-        { "id": "q9d", "text": "They don't understand the emotion words yet — it goes over their head", "points": 1 }
+        { "id": "q9a", "text": "They can actually use these tools (at least sometimes) — and it helps", "points": 3 },
+        { "id": "q9b", "text": "They've tried but it's hit-or-miss — works maybe 30% of the time", "points": 1 },
+        { "id": "q9c", "text": "These go over their head or they flat-out refuse", "points": 0 }
       ]
     }
   ],
@@ -155,112 +185,112 @@
     "movement": {
       "high": {
         "level": "high",
-        "headline": "Movement is their reset button",
-        "detail": "Your child processes big emotions through their body. When feelings build up, they NEED to move — it's not misbehavior, it's their nervous system doing its job. Physical release is the fastest path back to calm for this kid.",
-        "strength": "Build these into the toolkit:\n• **Jump station** — mini trampoline, jumping jacks, or \"jump 10 times as hard as you can\"\n• **Push & pull** — push against a wall, carry heavy things, tug-of-war with a towel\n• **Run it out** — a designated \"run to the fence and back\" route\n• **Animal walks** — bear crawls, crab walks, frog jumps (works indoors too)\n• **Squeeze station** — stress balls, playdough, balled-up socks to squeeze and throw"
+        "headline": "Body-first regulator",
+        "detail": "Your child processes big feelings through their body first. When emotions spike, their nervous system is screaming for physical output — and movement-based strategies will be your most reliable tools.",
+        "strength": "Movement strategies like jumping, wall pushups, stomping, dancing, and squeezing playdough are a natural match. Build a physical calm-down menu they can access independently."
       },
       "medium": {
         "level": "medium",
-        "headline": "Movement helps, but isn't everything",
-        "detail": "Physical activity can help your child regulate, but it's not their primary channel. Some movement is good, but they'll also benefit from other types of calming strategies alongside it.",
-        "strength": "Include some movement options:\n• **Shake it out** — 30 seconds of full-body shaking, then freeze\n• **Wall push-ups** — push against the wall 10 times\n• **Stretching** — simple yoga poses (downward dog, child's pose)\n• Pair these with a quieter strategy for best results"
+        "headline": "Some movement helps",
+        "detail": "Your child gets partial benefit from physical strategies. Movement alone won't resolve a meltdown, but it can take the edge off enough for other strategies to land.",
+        "concern": "Try pairing short movement bursts (10 jumping jacks, wall pushes) with a verbal or sensory follow-up. Movement opens the door — something else walks through it."
       },
       "low": {
         "level": "low",
-        "headline": "Movement isn't their go-to",
-        "detail": "Your child doesn't naturally seek physical release when upset. Forcing them to \"run it off\" might actually increase their stress. They regulate through other channels — look at their sensory and verbal scores for better-matched strategies.",
-        "concern": "Skip high-energy calming tools for now. Gentle movement (rocking, swaying, slow walking) may work better than intense activity."
+        "headline": "Movement isn't the key",
+        "detail": "Your child doesn't naturally turn to physical activity when upset. That's fine — it just means their nervous system regulates through a different channel. Forcing a run-it-off approach will likely backfire.",
+        "concern": "Don't push \"go run around and burn it off\" strategies. Focus on sensory or verbal tools instead, and add gentle movement (stretching, slow walking) only as a supplement."
       }
     },
     "sensory": {
       "high": {
         "level": "high",
-        "headline": "Sensory input is their anchor",
-        "detail": "Your child is highly tuned into sensory experience — they seek out specific textures, pressures, and inputs when overwhelmed. A well-stocked sensory toolkit will be your most powerful calming resource.",
-        "strength": "Build these into the toolkit:\n• **Calm-down bin** — playdough, kinetic sand, water beads, fidget toys in a box they can grab\n• **Heavy work** — weighted lap pad, stuffed animal with weight, or a heavy blanket\n• **Deep pressure** — firm hugs, \"burrito roll\" in a blanket, compression vest\n• **Oral input** — chewy snacks, frozen fruit, a water bottle with a straw\n• **Noise reduction** — kid-safe ear defenders or noise-canceling headphones for overstimulating environments"
+        "headline": "Sensory-driven soother",
+        "detail": "Your child's nervous system calms through physical sensation. Textures, temperatures, pressure, and tactile input are their regulation language — they need to feel something different to feel better.",
+        "strength": "Build a sensory toolkit: weighted blanket or lap pad, fidget tools, ice cubes to hold, cold water on wrists, crunchy snacks, and textured squeeze balls. Keep one in every room."
       },
       "medium": {
         "level": "medium",
-        "headline": "Some sensory tools will help",
-        "detail": "Your child responds to sensory input but doesn't rely on it exclusively. Having a few tactile tools available is smart, even if they're not the primary strategy.",
-        "strength": "Keep these on hand:\n• **Fidget tools** — a few different textures to cycle through\n• **Cozy corner** — a soft space with a blanket where they can retreat\n• **Water play** — simple hand-washing or splashing can be surprisingly regulating\n• Let them choose which sensory tools feel right"
+        "headline": "Sensory tools work sometimes",
+        "detail": "Your child responds to sensory input in some situations but not consistently. This is a supporting strategy — useful in the toolkit but not the lead tool.",
+        "concern": "Experiment with specific sensory inputs to find the ones that click. Cold sensations, deep pressure (tight hugs), and fidgets each hit different pathways. Track what works when."
       },
       "low": {
         "level": "low",
-        "headline": "Sensory tools aren't a match — yet",
-        "detail": "Your child doesn't naturally gravitate toward tactile or sensory soothing. That doesn't mean sensory tools won't ever work, but they're not the first thing to reach for when things get big.",
-        "concern": "Don't force sensory tools if they're not interested. Some kids find fidgets distracting rather than calming. Focus on strategies that match their other scores."
+        "headline": "Sensory isn't the path in",
+        "detail": "Your child doesn't naturally calm through tactile or sensory input. They might not notice sensory changes when upset, or the input doesn't register as calming. Their regulation channel is elsewhere.",
+        "concern": "Skip the weighted blanket as a first move. Sensory tools might help for general focus, but during a meltdown, lead with movement or verbal strategies instead."
       }
     },
     "verbal": {
       "high": {
         "level": "high",
-        "headline": "Talking it through works",
-        "detail": "Your child can use words and cognitive strategies to process emotions. They benefit from naming feelings, understanding causes, and being walked through what's happening in their body and brain.",
-        "strength": "Build these into the toolkit:\n• **Feelings check-in** — \"What's the feeling? Where do you feel it in your body? What do you need?\"\n• **Feelings chart** — visual chart on the wall they can point to\n• **Breathing exercises** — \"smell the flowers, blow out the candles\" or box breathing\n• **Problem-solving script** — \"What happened? How do I feel? What can I do?\"\n• **Countdown** — \"Let's count backward from 10 together\"\n• **Debrief ritual** — after the storm passes, review what happened and what helped"
+        "headline": "Talks it through",
+        "detail": "Your child processes emotions through language and cognition. Naming feelings, talking through problems, and having their experience validated verbally — these are the strategies that land.",
+        "strength": "Lean into sportscasting (\"You're frustrated because...\"), feeling wheels, breathing with counting, and structured problem-solving scripts. Their brain calms through understanding."
       },
       "medium": {
         "level": "medium",
-        "headline": "Words help — but timing matters",
-        "detail": "Your child can use verbal and cognitive strategies, but usually not in the peak of the storm. These tools work best as a follow-up — after the initial wave passes and they're ready to think again.",
-        "strength": "Use these AFTER the peak:\n• **Simple choices** — \"Do you want a hug or some space?\"\n• **Visual prompts** — a simple feelings poster or 3-step calming card\n• **Breathing together** — model it rather than instructing\n• Save the conversation for when they're calm — don't try to reason with a flooded brain"
+        "headline": "Words help — after the peak",
+        "detail": "Verbal strategies work for your child, but timing matters. In the heat of the moment, words can backfire. Once they're halfway down from the peak, talking and naming feelings becomes effective.",
+        "concern": "Wait until the intensity drops below about a 6/10 before introducing verbal strategies. Use a physical or sensory bridge first, then switch to naming and talking."
       },
       "low": {
         "level": "low",
-        "headline": "Words aren't the way in — yet",
-        "detail": "Right now, verbal strategies aren't effective during or after emotional episodes. Your child either can't access language when overwhelmed, or doesn't yet have the developmental readiness for cognitive calming techniques. That's OK — there are better entry points.",
-        "concern": "Skip the explanations during meltdowns. Focus on physical presence, sensory tools, or movement first. You can gently introduce emotion words later — but the body needs to calm before the brain can learn."
+        "headline": "Words don't land yet",
+        "detail": "Your child doesn't regulate through verbal processing right now. That could be developmental (they're young), temperamental, or just not their channel. Talking during a meltdown likely makes it worse.",
+        "concern": "Stop trying to reason during the storm. Use physical or sensory strategies to bring the intensity down first. Verbal processing can come later — hours later — when their thinking brain is back online."
       }
     }
   },
   "results": {
-    "movement-primary": {
-      "id": "movement-primary",
-      "themeColor": "#f97316",
+    "toolkit-strong": {
+      "id": "toolkit-strong",
+      "themeColor": "#16a34a",
       "scoreRange": { "min": 20, "max": 27 },
-      "headline": "Your Child's Toolkit: Body-First Calming",
-      "subheadline": "They need to move it to lose it.",
-      "explanation": "Your child processes emotions through their body first. The most effective calming strategies will involve physical release, sensory input, and hands-on tools. Cognitive strategies can come second — once the body is calm, the brain can engage.",
+      "headline": "Clear Regulation Style",
+      "subheadline": "Your child has strong natural preferences for specific calming strategies, which means you can build a targeted toolkit instead of guessing.",
+      "explanation": "High scores across domains mean your child already shows you what works — through their behavior, not their words. Kids with clear regulation preferences respond faster to the right tools because their nervous system is already wired for that input. Your job is to formalize what's already happening and make those tools accessible before the meltdown hits peak.",
       "nextSteps": [
-        "Set up a designated calm-down space with physical tools (trampoline, squeeze toys, crash pad)",
-        "Build a \"when I'm upset\" routine that starts with movement before talking",
-        "Practice calming strategies when they're already calm — so they're familiar when the storm hits"
+        "Build a portable calm-down kit based on their top-scoring domain — keep one at home, one in the car, one in the school bag",
+        "Practice the tools during calm moments so they become automatic during stress",
+        "Create a visual menu of their top 3-4 strategies they can point to when words aren't available"
       ],
-      "watchOutFor": "Physical regulation needs can look like \"bad behavior\" to others. Advocate for your child's need to move — it's not acting out, it's self-regulation.",
-      "encouragement": "A child who knows how to use their body to regulate is learning a lifelong skill. Most adults still haven't figured this out. You're building it in early.",
-      "comparativeContext": "Occupational therapy research shows that physical regulation strategies are the most effective starting point for young children."
+      "watchOutFor": "Strong preferences can become rigid dependencies. Make sure you're building a toolkit with multiple tools, not a crutch with one. If only one strategy works, widen the repertoire gradually.",
+      "encouragement": "You're not starting from scratch — you're organizing what already works. That's a fundamentally different problem than having no tools at all.",
+      "comparativeContext": "Children with clear regulation preferences typically respond to targeted calm-down strategies within 3-5 minutes, compared to 10-15 minutes with generic approaches."
     },
-    "balanced-toolkit": {
-      "id": "balanced-toolkit",
-      "themeColor": "#e8b94a",
+    "toolkit-building": {
+      "id": "toolkit-building",
+      "themeColor": "#e8c840",
       "scoreRange": { "min": 10, "max": 19 },
-      "headline": "Your Child's Toolkit: The Mix & Match Kit",
-      "subheadline": "They benefit from variety — different tools for different moments.",
-      "explanation": "Your child doesn't have one dominant regulation channel — they use a mix of physical, sensory, and verbal strategies depending on the situation. This is actually an advantage: it means you can build a versatile toolkit and let them choose what fits the moment.",
+      "headline": "Toolkit Taking Shape",
+      "subheadline": "Your child shows moderate preferences across regulation channels — they're not locked into one strategy type, which gives you room to experiment.",
+      "explanation": "Mid-range scores usually mean one of two things: your child uses a mix of strategies inconsistently, or they haven't had enough exposure to find their primary channel yet. Either way, the path forward is structured experimentation. Try specific tools from each domain and track what actually works versus what you wish would work.",
       "nextSteps": [
-        "Offer 2-3 strategy choices during calm-down: \"Do you want to squeeze something, take breaths, or go for a run?\"",
-        "Rotate strategies so they build a wide repertoire",
-        "Notice which strategies work for which triggers — anger might need movement while sadness might need sensory"
+        "Run a two-week experiment: try one strategy from each domain and note which ones your child gravitates toward naturally",
+        "Focus on their highest-scoring domain first — that's the strongest signal even if it's not a slam dunk",
+        "Introduce calm-down tools during low-stress moments before expecting them to work during a meltdown"
       ],
-      "watchOutFor": "Having too many options during a meltdown can be overwhelming. Narrow it to 2 choices in the heat of the moment.",
-      "encouragement": "A flexible regulation toolkit means your child is building multiple pathways to calm. That's the goal for all kids — and yours is getting there naturally.",
-      "comparativeContext": "The Zones of Regulation framework recommends building a diverse toolkit rather than relying on a single strategy."
+      "watchOutFor": "Don't confuse \"hasn't found it yet\" with \"nothing works.\" Kids in this range often need 10-15 exposures to a strategy before it becomes a usable tool. Most parents give up after 2-3 tries.",
+      "encouragement": "A mixed profile is actually an advantage — your child has more pathways into calm than a kid who can only use one channel. The work is narrowing down, not building from nothing.",
+      "comparativeContext": "Research shows most children need 2-4 weeks of consistent practice with a new regulation strategy before they can use it independently during emotional peaks."
     },
-    "gentle-approach": {
-      "id": "gentle-approach",
-      "themeColor": "#8b5cf6",
+    "toolkit-starting": {
+      "id": "toolkit-starting",
+      "themeColor": "#d05597",
       "scoreRange": { "min": 0, "max": 9 },
-      "headline": "Your Child's Toolkit: Start Gentle, Build Slowly",
-      "subheadline": "Less is more right now — simplicity and presence are the tools.",
-      "explanation": "Your child is still early in developing self-regulation skills, and that's completely normal. Right now, the most effective \"tool\" is you — your calm presence, your co-regulation, your predictability. The toolkit will grow as they do.",
+      "headline": "Starting From Scratch",
+      "subheadline": "Your child doesn't have clear regulation preferences yet, which is actually normal — especially for younger kids whose nervous systems are still developing these pathways.",
+      "explanation": "Low scores across all domains mean your child's self-regulation system is still under construction. This isn't a failure — it's a developmental stage. Kids under 5 are neurologically incapable of consistent self-regulation, and many older kids simply haven't been taught specific strategies yet. The biggest mistake at this stage is assuming they should already know how to calm down.",
       "nextSteps": [
-        "Focus on YOUR calm first — you are the primary regulation tool right now",
-        "Start with just one simple strategy and practice it daily when things are calm",
-        "Create a predictable calm-down routine: same place, same sequence, every time"
+        "Start with co-regulation — you calm down first, then use your calm to anchor them. Tools come later.",
+        "Introduce ONE strategy from any domain and practice it daily during calm moments for two weeks before evaluating",
+        "Focus on reducing the intensity and duration of meltdowns rather than preventing them entirely"
       ],
-      "watchOutFor": "Don't introduce too many strategies at once. One well-practiced tool beats ten that haven't been rehearsed.",
-      "encouragement": "Co-regulation — where your calm helps their calm — IS the toolkit right now. Every time you stay regulated while they fall apart, you're literally building their brain's capacity to do it for themselves later.",
-      "comparativeContext": "Stuart Shanker's research shows that self-regulation is always preceded by co-regulation. Your child learning to borrow your calm is the necessary first step."
+      "watchOutFor": "When nothing seems to work, the instinct is to try everything at once. Resist that. One tool, practiced consistently, beats a rotating buffet of strategies your child never learns to use.",
+      "encouragement": "Every regulation strategy your child eventually masters started with a parent modeling it 50 times while it didn't seem to work. You're at step one, not step zero.",
+      "comparativeContext": "Studies show that co-regulation (parent-led calming) is the primary regulation mechanism for children under 5, and remains important through age 10."
     }
   }
 }

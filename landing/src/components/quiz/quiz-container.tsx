@@ -11,6 +11,7 @@ import { QuizResult } from "./quiz-result";
 import { IdentityResult } from "./identity-result";
 import { ProfileResult } from "./profile-result";
 import { RecommendationResult } from "./recommendation-result";
+import { QuizPreview } from "./quiz-preview";
 import { QuizEngine, scoreIdentityQuiz } from "@/lib/quiz/quiz-engine";
 import {
   readStateFromUrl,
@@ -65,6 +66,7 @@ export function QuizContainer({
   const [direction, setDirection] = useState<1 | -1>(1);
   const [result, setResult] = useState<AnyResult | null>(null);
   const [shared, setShared] = useState(false);
+  const [preview, setPreview] = useState(false);
   const initialized = useRef(false);
 
   const computeResult = useCallback(
@@ -131,8 +133,9 @@ export function QuizContainer({
 
       if (isLastQuestion) {
         const quizResult = computeResult(newAnswers);
-        pushStateToUrl(newAnswers, currentIndex, quiz.questions, true);
+        pushStateToUrl(newAnswers, currentIndex, quiz.questions, true, true);
         setResult(quizResult);
+        setPreview(true);
         onComplete?.(quizResult);
       } else {
         const nextIndex = currentIndex + 1;
@@ -160,12 +163,14 @@ export function QuizContainer({
     setDirection(1);
     setResult(null);
     setShared(false);
+    setPreview(false);
   }, []);
 
-  // Detect shared view from URL
+  // Detect shared/preview view from URL
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     setShared(params.get("s") === "1");
+    setPreview(params.get("p") === "1");
   }, []);
 
   // Scroll to top when results appear
@@ -177,6 +182,19 @@ export function QuizContainer({
 
   // Show results if quiz is complete
   if (result) {
+    // Preview mode: show teaser + email gate
+    if (preview && !shared) {
+      return (
+        <div className={cn("", className)} {...props}>
+          <QuizPreview
+            result={result}
+            quizMeta={quiz.meta}
+            onRetake={handleRetake}
+          />
+        </div>
+      );
+    }
+
     if (isIdentityResult(result)) {
       return (
         <div className={cn("", className)} {...props}>

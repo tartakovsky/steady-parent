@@ -79,6 +79,19 @@ export interface QuizMeta {
   };
   ageRange?: { min: number; max: number; unit: string };
   resultDisplay?: 'readiness' | 'profile' | 'recommendation';
+  previewCta?: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    buttonText: string;
+  };
+  previewPromises?: string[];
+  communityCta?: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    buttonText: string;
+  };
   sources: string[];
 }
 

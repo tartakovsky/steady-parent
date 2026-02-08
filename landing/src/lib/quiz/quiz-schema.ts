@@ -64,6 +64,28 @@ export const QuizMetaSchema = z.object({
     .describe("Target child age range if applicable"),
   sources: z.array(z.string().min(1).max(100)).min(1).max(5)
     .describe("Plain-text research basis, e.g. 'AAP toilet training guidelines', 'CDC developmental milestones'. Organization name + topic only. NO URLs, NO article titles, NO author names."),
+  previewCta: z.object({
+    eyebrow: z.string().min(1).max(60)
+      .describe("Small label above the title, e.g. 'Want the full breakdown?'"),
+    title: z.string().min(1).max(120)
+      .describe("Main CTA headline, e.g. 'Get your child's complete readiness profile'"),
+    body: z.string().min(1).max(300)
+      .describe("1-2 sentences describing what the full results contain — must match what this quiz type actually renders"),
+    buttonText: z.string().min(1).max(40)
+      .describe("Button label, e.g. 'Send my results'"),
+  }).describe("Email gate CTA shown on the preview page before full results are unlocked"),
+  previewPromises: z.array(z.string().min(1).max(120)).min(3).max(5)
+    .describe("Bullet points listing what full results include — must accurately reflect what the result display renders"),
+  communityCta: z.object({
+    eyebrow: z.string().min(1).max(80)
+      .describe("Hook that connects to their specific quiz result"),
+    title: z.string().min(1).max(120)
+      .describe("Community CTA headline — make the community relevant to this quiz's topic"),
+    body: z.string().min(1).max(300)
+      .describe("1-2 sentences. Why the community helps with THIS specific topic. Concrete, not generic."),
+    buttonText: z.literal("Join for $7/month")
+      .describe("Always 'Join for $7/month'"),
+  }).describe("Community CTA shown on the full results page — must connect the quiz topic to the community value"),
 });
 
 // ═════════════════════════════════════════════════════════════════════

@@ -16,6 +16,7 @@ import {
   Users,
 } from "lucide-react";
 import type { LikertQuizResult, LikertDimensionResult } from "@/lib/quiz/quiz-engine";
+import { CommunityCTA } from "@/components/blog/community-cta";
 
 interface LikertResultProps extends React.HTMLAttributes<HTMLDivElement> {
   result: LikertQuizResult;
@@ -25,6 +26,12 @@ interface LikertResultProps extends React.HTMLAttributes<HTMLDivElement> {
     estimatedTime?: string;
     shareCta?: string;
     sources?: string[];
+    communityCta?: {
+      eyebrow: string;
+      title: string;
+      body: string;
+      buttonText: string;
+    };
   };
   onRetake?: () => void;
   shared?: boolean;
@@ -325,6 +332,16 @@ export function LikertResult({
               </p>
             </div>
           </section>
+
+          {/* ── Community CTA ──────────────────────────────────── */}
+          {quizMeta.communityCta && (
+            <CommunityCTA
+              eyebrow={quizMeta.communityCta.eyebrow}
+              title={quizMeta.communityCta.title}
+              body={quizMeta.communityCta.body}
+              buttonText={quizMeta.communityCta.buttonText}
+            />
+          )}
 
           {/* ── Bottom CTAs ──────────────────────────────────────── */}
           <div className="flex flex-wrap items-center justify-center gap-3">

@@ -10,8 +10,7 @@ import { hydrateLikertQuestions } from './quiz-engine';
 
 export type AnyQuizData = QuizData | IdentityQuizData | LikertQuizData;
 
-import parentingStyleData from './parenting-style-likert.json';
-import parentingApproachData from './parenting-approach.json';
+import parentingStyleData from './parenting-style.json';
 import emotionalIntelligenceData from './emotional-intelligence.json';
 import calmDownToolkitData from './calm-down-toolkit.json';
 
@@ -26,8 +25,7 @@ function hydrateLikert(raw: Record<string, unknown>): LikertQuizData {
 
 export const quizzes: Record<string, AnyQuizData> = {
   'parenting-style': hydrateLikert(parentingStyleData as unknown as Record<string, unknown>),
-  'parenting-approach': parentingApproachData as unknown as IdentityQuizData,
-  'emotional-intelligence': emotionalIntelligenceData as unknown as QuizData,
+  'emotional-intelligence': hydrateLikert(emotionalIntelligenceData as unknown as Record<string, unknown>),
   'calm-down-toolkit': calmDownToolkitData as unknown as QuizData,
 };
 
