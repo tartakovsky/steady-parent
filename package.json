@@ -2,7 +2,8 @@
   "name": "steady-parent",
   "private": true,
   "workspaces": [
-    "landing"
+    "landing",
+    "content-spec"
   ],
   "dependencies": {
     "zod-to-json-schema": "^3.25.1"
