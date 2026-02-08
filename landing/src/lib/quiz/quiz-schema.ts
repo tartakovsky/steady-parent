@@ -77,15 +77,15 @@ export const QuizMetaSchema = z.object({
   previewPromises: z.array(z.string().min(1).max(120)).min(3).max(5)
     .describe("Bullet points listing what full results include — must accurately reflect what the result display renders"),
   communityCta: z.object({
-    eyebrow: z.string().min(1).max(80)
-      .describe("Hook that connects to their specific quiz result"),
-    title: z.string().min(1).max(120)
-      .describe("Community CTA headline — make the community relevant to this quiz's topic"),
-    body: z.string().min(1).max(300)
-      .describe("1-2 sentences. Why the community helps with THIS specific topic. Concrete, not generic."),
-    buttonText: z.literal("Join for $7/month")
-      .describe("Always 'Join for $7/month'"),
-  }).describe("Community CTA shown on the full results page — must connect the quiz topic to the community value"),
+    eyebrow: z.string().min(1).max(50)
+      .describe("Short hook, 3-6 words, e.g. 'Want help with this?'"),
+    title: z.string().min(1).max(80)
+      .describe("One line: why THIS parent should join the community for THIS topic"),
+    body: z.string().min(1).max(160)
+      .describe("One sentence. What they'll get in the community that helps with this quiz's topic. Name a concrete thing: scripts, routines, peer support, expert Q&A."),
+    buttonText: z.literal("Join the community")
+      .describe("Always 'Join the community'"),
+  }).describe("Community upsell shown on full results page — sells the community, not the quiz"),
 });
 
 // ═════════════════════════════════════════════════════════════════════

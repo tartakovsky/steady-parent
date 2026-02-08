@@ -51,7 +51,7 @@ export const articles = pgTable("articles", {
     .$type<{ anchor: string; url: string }[]>()
     .notNull(),
   ctaComponents: jsonb("cta_components")
-    .$type<{ type: string; title?: string; body?: string; href?: string }[]>()
+    .$type<{ type: string; eyebrow?: string; title?: string; body?: string; buttonText?: string; href?: string }[]>()
     .notNull(),
   imageDescriptions: jsonb("image_descriptions").$type<string[]>().notNull(),
   syncId: integer("sync_id").references(() => syncs.id),

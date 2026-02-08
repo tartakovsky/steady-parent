@@ -32,10 +32,10 @@
       "A shareable snapshot of their emotional profile"
     ],
     "communityCta": {
-      "eyebrow": "Feelings are a skill set, not a personality trait",
-      "title": "Get real strategies for building emotional intelligence at every age",
-      "body": "When your kid melts down because the blue cup is dirty, or freezes instead of saying what's wrong — you need something more specific than 'validate their feelings.' That's what the community is for.",
-      "buttonText": "Join for $7/month"
+      "eyebrow": "Beyond the profile",
+      "title": "Get EQ-building scripts from parents in the same boat",
+      "body": "A private group with bite-sized scripts and daily support from founders who actually show up.",
+      "buttonText": "Join the community"
     }
   },
   "scale": {
@@ -70,7 +70,7 @@
         "Shows increasing ability to wait, pause, or redirect when upset"
       ],
       "growthEdge": "Self-regulation is the first skill to bail when a child is tired, hungry, or overstimulated. The strategies work until they don't — and that's normal, not a failure.",
-      "encouragement": "Every time your child pauses instead of exploding — even once — that's a neural pathway getting stronger. Self-regulation isn't about never losing it. It's about the recovery time getting shorter. That's real, measurable progress.",
+      "encouragement": "Every time your child pauses instead of exploding — even once — that's a neural pathway getting stronger. Self-regulation isn't about never losing it. It's about the recovery time getting shorter.",
       "comparativeContext": "Studies show self-regulation develops gradually through age 10, with the biggest gains happening between ages 4 and 7 when the prefrontal cortex is rapidly maturing."
     },
     "empathy": {
@@ -85,7 +85,7 @@
         "Shows concern for fairness and gets bothered when things aren't right"
       ],
       "growthEdge": "Empathy without boundaries turns into absorbing everyone else's emotions. Your child may need help distinguishing between 'I care about your feelings' and 'your feelings are now my problem to fix.'",
-      "encouragement": "A child who notices and responds to others' pain is building the foundation for every meaningful relationship they'll ever have. Empathy isn't softness — it's social intelligence. The kids who have it navigate friendships, conflict, and collaboration better than their peers.",
+      "encouragement": "A child who notices and responds to others' pain is building the foundation for every meaningful relationship they'll ever have. Empathy isn't softness — it's social intelligence.",
       "comparativeContext": "Research shows empathic responding is present from toddlerhood but becomes more sophisticated and consistent between ages 4 and 8."
     },
     "frustration-tolerance": {
@@ -99,7 +99,7 @@
         "Handles waiting and delays with visible effort but reasonable success",
         "Tries again after making a mistake instead of quitting immediately"
       ],
-      "growthEdge": "Frustration tolerance is highly context-dependent. Your child might handle losing at soccer like a champ and completely fall apart over a Lego piece that won't fit. That inconsistency is normal — not backsliding.",
+      "growthEdge": "Frustration tolerance is context-dependent. Your child might handle losing at soccer like a champ and fall apart over a Lego piece that won't fit. That's normal, not backsliding.",
       "encouragement": "Every time your child pushes through frustration instead of quitting, they're building a skill that predicts academic success, relationship quality, and career outcomes better than IQ does. The grit is real, even when it doesn't look graceful.",
       "comparativeContext": "Frustration tolerance is one of the strongest predictors of school readiness, with research linking it to both academic performance and peer relationships."
     }
@@ -111,18 +111,18 @@
     { "id": "s4", "text": "My child can handle losing a game without a meltdown.", "dimension": "frustration-tolerance" },
     { "id": "s5", "text": "My child can explain what made them feel a certain way.", "dimension": "emotion-vocabulary" },
     { "id": "s6", "text": "My child tries to comfort someone who is crying or hurt.", "dimension": "empathy" },
-    { "id": "s7", "text": "My child uses a strategy to manage big feelings (deep breaths, walking away, squeezing something).", "dimension": "self-regulation" },
+    { "id": "s7", "text": "My child uses a strategy to manage big feelings like deep breaths, walking away, or squeezing something.", "dimension": "self-regulation" },
     { "id": "s8", "text": "My child keeps trying after making a mistake instead of giving up.", "dimension": "frustration-tolerance" },
     { "id": "s9", "text": "My child can tell the difference between feeling nervous and feeling angry.", "dimension": "emotion-vocabulary" },
     { "id": "s10", "text": "My child waits for their turn without falling apart.", "dimension": "frustration-tolerance" },
     { "id": "s11", "text": "My child stops what they're doing to check on someone who seems upset.", "dimension": "empathy" },
     { "id": "s12", "text": "My child can recover from a disappointment and move on with their day.", "dimension": "self-regulation" },
-    { "id": "s13", "text": "My child names the feeling they're having when upset, without being asked.", "dimension": "emotion-vocabulary" },
+    { "id": "s13", "text": "My child says 'I don't know' or shrugs when asked how they're feeling.", "dimension": "emotion-vocabulary", "reversed": true },
     { "id": "s14", "text": "My child handles unexpected changes to plans without a major reaction.", "dimension": "frustration-tolerance" },
     { "id": "s15", "text": "My child adjusts their behavior when they see someone is bothered by it.", "dimension": "empathy" },
-    { "id": "s16", "text": "My child asks for help managing their emotions instead of just escalating.", "dimension": "self-regulation" },
+    { "id": "s16", "text": "My child's emotions escalate quickly with no pause between feeling upset and reacting.", "dimension": "self-regulation", "reversed": true },
     { "id": "s17", "text": "My child talks about characters' feelings when reading books or watching shows.", "dimension": "emotion-vocabulary" },
-    { "id": "s18", "text": "My child sticks with a difficult task even when it's frustrating.", "dimension": "frustration-tolerance" },
+    { "id": "s18", "text": "My child quits or throws things when a task gets difficult.", "dimension": "frustration-tolerance", "reversed": true },
     { "id": "s19", "text": "My child expresses concern about fairness when someone is being treated badly.", "dimension": "empathy" },
     { "id": "s20", "text": "My child can pause and think before reacting when something upsets them.", "dimension": "self-regulation" }
   ]

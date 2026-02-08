@@ -1,4 +1,12 @@
 {
+  "community": {
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents going through the same things you are — active, supportive, and ready to discuss how it really works.",
+    "founder_presence": "The founders are present daily and try to answer everything that comes up.",
+    "content": "Regular useful content including bite-sized scripts, long-form explanations, and supplementary materials.",
+    "do_not_promise": ["weekly expert Q&As", "live coaching calls", "video content", "1-on-1 access", "guaranteed response times"]
+  },
   "tantrums": {
     "course_name": "The Tantrum Toolkit",
     "course_url": "/course/tantrum-toolkit/",

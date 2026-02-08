@@ -81,11 +81,20 @@ function extractHeadings(text: string): { level: number; text: string }[] {
 
 function extractCtaComponents(
   text: string,
-): { type: string; title?: string; body?: string; href?: string }[] {
+): {
+  type: string;
+  eyebrow?: string;
+  title?: string;
+  body?: string;
+  buttonText?: string;
+  href?: string;
+}[] {
   const components: {
     type: string;
+    eyebrow?: string;
     title?: string;
     body?: string;
+    buttonText?: string;
     href?: string;
   }[] = [];
   for (const m of text.matchAll(CTA_FULL_RE)) {
@@ -102,12 +111,16 @@ function extractCtaComponents(
     }
     const comp: {
       type: string;
+      eyebrow?: string;
       title?: string;
       body?: string;
+      buttonText?: string;
       href?: string;
     } = { type };
+    if (props["eyebrow"] != null) comp.eyebrow = props["eyebrow"];
     if (props["title"] != null) comp.title = props["title"];
     if (props["body"] != null) comp.body = props["body"];
+    if (props["buttonText"] != null) comp.buttonText = props["buttonText"];
     if (props["href"] != null) comp.href = props["href"];
     components.push(comp);
   }

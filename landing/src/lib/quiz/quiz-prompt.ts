@@ -1,9 +1,7 @@
 /**
  * Shared quiz generation prompts — single source of truth.
  *
- * Used by:
- *   - scripts/generate-one-quiz.ts (CLI generation)
- *   - landing/src/lib/quiz/generate-quiz.ts (programmatic generation)
+ * Used by background Claude Code agents for quiz generation.
  */
 
 export interface QuizDef {
@@ -80,11 +78,17 @@ The user completed the quiz and sees a preview with their score and a taste of t
 Do NOT promise things the results page doesn't show.
 
 ### communityCta (shown on FULL results page)
-After seeing their results, this CTA invites them to the Steady Parent community ($7/month on Skool).
-- eyebrow: short hook that connects their specific quiz result to the community value
-- title: make the community relevant to THIS quiz's topic — not generic "join our community"
-- body: 1-2 sentences. Why the community helps with THIS specific topic. Concrete scenarios they'd get help with.
-- buttonText: ALWAYS exactly "Join for $7/month"
+Sells the Steady Parent community. Here is EXACTLY what the community is — do not add, invent, or embellish:
+- A private group of parents going through the same things, active, supportive, discussing how it really works
+- Founders present daily, answering what comes up
+- Regular content: bite-sized scripts, long-form explanations, supplementary materials
+NEVER promise: weekly Q&As, live coaching, video, 1-on-1 access, guaranteed response times.
+
+Fields:
+- eyebrow: 3-6 words (max 50 chars)
+- title: One line selling the community for THIS topic (max 80 chars)
+- body: One sentence. Draw ONLY from the community description above. (max 160 chars)
+- buttonText: ALWAYS exactly "Join the community"
 
 ## Scoring rules
 - Each question has 2-4 options with points ranging from 0 to the max for that question
@@ -149,10 +153,10 @@ Return ONLY valid JSON matching this exact shape (no markdown, no code fences):
       "A prioritized action plan you can start today"
     ],
     "communityCta": {
-      "eyebrow": "Hook connecting quiz topic to community",
-      "title": "Community headline relevant to THIS quiz topic",
-      "body": "1-2 sentences. Why the community helps with this specific topic.",
-      "buttonText": "Join for $7/month"
+      "eyebrow": "Want help with this?",
+      "title": "Get scripts and routines from parents who've been here",
+      "body": "Weekly Q&As, real scripts for real meltdowns, and a group that gets it.",
+      "buttonText": "Join the community"
     }
   },
   "domains": {
@@ -222,8 +226,8 @@ export function buildUserPrompt(def: QuizDef): string {
     "- Sources are plain strings like 'AAP guidelines' — NO URLs, NO article titles",
     "- previewCta, previewPromises, and communityCta are all present in meta",
     "- previewPromises accurately reflect what readiness result pages show (domain insights, action plan, encouragement)",
-    "- communityCta.buttonText is exactly 'Join for $7/month'",
-    "- communityCta.title and body connect THIS quiz's specific topic to the community — not generic"
+    "- communityCta.buttonText is exactly 'Join the community'",
+    "- communityCta sells the COMMUNITY (scripts, routines, peer support, Q&As) — not the quiz topic"
   );
 
   return parts.join("\n");
@@ -285,11 +289,17 @@ The user completed the quiz and sees a preview with their primary type name and 
 Do NOT promise action plans, next steps, or domain scores (identity quizzes don't have those).
 
 ### communityCta (shown on FULL results page)
-After seeing their type, this CTA invites them to the Steady Parent community ($7/month on Skool).
-- eyebrow: short hook connecting their type result to community value
-- title: make the community relevant to THIS quiz topic
-- body: 1-2 sentences. Concrete scenarios where the community helps with this topic.
-- buttonText: ALWAYS exactly "Join for $7/month"
+Sells the Steady Parent community. Here is EXACTLY what the community is — do not add, invent, or embellish:
+- A private group of parents going through the same things, active, supportive, discussing how it really works
+- Founders present daily, answering what comes up
+- Regular content: bite-sized scripts, long-form explanations, supplementary materials
+NEVER promise: weekly Q&As, live coaching, video, 1-on-1 access, guaranteed response times.
+
+Fields:
+- eyebrow: 3-6 words (max 50 chars)
+- title: One line selling the community for THIS topic (max 80 chars)
+- body: One sentence. Draw ONLY from the community description above. (max 160 chars)
+- buttonText: ALWAYS exactly "Join the community"
 
 ## Scoring rules — IDENTITY QUIZZES
 - Each option has a "points" object with an entry for EVERY type ID
@@ -349,10 +359,10 @@ Return ONLY valid JSON matching this exact shape (no markdown, no code fences):
       "How you compare across all types"
     ],
     "communityCta": {
-      "eyebrow": "Hook connecting quiz topic to community",
-      "title": "Community headline relevant to THIS quiz topic",
-      "body": "1-2 sentences. Why the community helps with this specific topic.",
-      "buttonText": "Join for $7/month"
+      "eyebrow": "Now what?",
+      "title": "Get strategies matched to your style from parents who get it",
+      "body": "Real scripts, weekly Q&As, and a group figuring out the same stuff you are.",
+      "buttonText": "Join the community"
     }
   },
   "types": {
@@ -445,11 +455,17 @@ Shown before full results. Asks for email to unlock.
 Do NOT promise action plans or next steps.
 
 ### communityCta (shown on full results page)
-Invites them to Steady Parent community ($7/month on Skool).
-- eyebrow: hook connecting their profile result to community
-- title: make community relevant to THIS quiz topic
-- body: 1-2 sentences. Concrete scenarios.
-- buttonText: ALWAYS exactly "Join for $7/month"
+Sells the Steady Parent community. Here is EXACTLY what the community is — do not add, invent, or embellish:
+- A private group of parents going through the same things, active, supportive, discussing how it really works
+- Founders present daily, answering what comes up
+- Regular content: bite-sized scripts, long-form explanations, supplementary materials
+NEVER promise: weekly Q&As, live coaching, video, 1-on-1 access, guaranteed response times.
+
+Fields:
+- eyebrow: 3-6 words (max 50 chars)
+- title: One line selling the community for THIS topic (max 80 chars)
+- body: One sentence. Draw ONLY from the community description above. (max 160 chars)
+- buttonText: ALWAYS exactly "Join the community"
 
 ## Statement writing rules
 - Each statement is a concrete parenting behavior: "I explain the reasons behind my rules"
@@ -500,10 +516,10 @@ Return ONLY valid JSON matching this exact shape (no markdown, no code fences):
       "How your dimensions compare"
     ],
     "communityCta": {
-      "eyebrow": "Hook connecting to community",
-      "title": "Community headline for THIS topic",
-      "body": "Why the community helps with this specific topic.",
-      "buttonText": "Join for $7/month"
+      "eyebrow": "Now what?",
+      "title": "Get strategies matched to your style from parents who get it",
+      "body": "Real scripts, weekly Q&As, and a group figuring out the same stuff you are.",
+      "buttonText": "Join the community"
     }
   },
   "scale": {
@@ -564,8 +580,8 @@ export function buildLikertUserPrompt(def: LikertQuizDef): string {
     "- Sources are plain strings — NO URLs, NO article titles",
     "- previewCta, previewPromises, and communityCta are all present in meta",
     "- previewPromises reflect Likert results (dimension profiles, strengths, growth edge) — do NOT promise action plans",
-    "- communityCta.buttonText is exactly 'Join for $7/month'",
-    "- communityCta.title and body connect THIS quiz's specific topic to the community"
+    "- communityCta.buttonText is exactly 'Join the community'",
+    "- communityCta sells the COMMUNITY (scripts, routines, peer support, Q&As) — not the quiz topic"
   );
 
   return parts.join("\n");
@@ -604,8 +620,8 @@ export function buildIdentityUserPrompt(def: IdentityQuizDef): string {
     "- Sources are plain strings — NO URLs, NO article titles",
     "- previewCta, previewPromises, and communityCta are all present in meta",
     "- previewPromises reflect what identity result pages show (type description, strengths, growth edge, blend) — do NOT promise action plans or next steps",
-    "- communityCta.buttonText is exactly 'Join for $7/month'",
-    "- communityCta.title and body connect THIS quiz's specific topic to the community — not generic"
+    "- communityCta.buttonText is exactly 'Join the community'",
+    "- communityCta sells the COMMUNITY (scripts, routines, peer support, Q&As) — not the quiz topic"
   );
 
   return parts.join("\n");

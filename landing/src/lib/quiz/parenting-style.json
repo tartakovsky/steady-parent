@@ -6,7 +6,7 @@
     "title": "What's Your Parenting Style?",
     "shortTitle": "Parenting Style Quiz",
     "description": "Discover your dominant parenting style based on validated parenting research. Rate 18 everyday behaviors to see your unique blend of Steady Guide, Firm Protector, and Free Spirit.",
-    "intro": "Rate how often you do each of these 18 parenting behaviors. Your results show which style drives most of your decisions \u2014 and where you might be overcompensating.",
+    "intro": "Rate how often you do each of these 18 parenting behaviors. Your results show which style drives most of your decisions — and where you might be overcompensating.",
     "estimatedTime": "3 minutes",
     "questionCount": 18,
     "scoreLabel": "Style",
@@ -27,14 +27,14 @@
       "Your primary parenting style and what it looks like in daily life",
       "How all three dimensions compare in your profile",
       "Strengths specific to your dominant style",
-      "Your growth edge \u2014 the one shift that changes the most",
+      "Your growth edge — the one shift that changes the most",
       "How your blend compares to other parents"
     ],
     "communityCta": {
-      "eyebrow": "Your style works. It could work even better.",
-      "title": "Get parenting strategies matched to your style",
-      "body": "The community is full of parents figuring out when to hold the line and when to let it go. Real scenarios, real scripts, no judgment about how you got here.",
-      "buttonText": "Join for $7/month"
+      "eyebrow": "Now what?",
+      "title": "Get strategies matched to your style",
+      "body": "Bite-sized scripts, real-talk explanations, and a private group of parents figuring out the same stuff you are.",
+      "buttonText": "Join the community"
     }
   },
   "scale": {
@@ -47,14 +47,14 @@
       "name": "The Steady Guide",
       "themeColor": "#00b86b",
       "tagline": "You explain the why, hold the line, and somehow keep your voice level at bedtime.",
-      "description": "You parent like someone who actually read the manual and then rewrote the parts that didn't make sense. You set clear expectations but you also listen \u2014 genuinely listen, not the performative nodding kind. Your kids know the rules AND the reasoning behind them, which means they argue with you using your own logic.",
+      "description": "You parent like someone who actually read the manual and then rewrote the parts that didn't make sense. You set clear expectations but you also listen — genuinely listen, not the performative nodding kind. Your kids know the rules AND the reasoning behind them, which means they argue with you using your own logic.",
       "strengths": [
         "You give reasons for your rules, which builds critical thinking even when it's exhausting",
         "You adjust your approach when something isn't working instead of doubling down",
-        "You validate feelings without caving on boundaries \u2014 the parenting tightrope walk"
+        "You validate feelings without caving on boundaries — the parenting tightrope walk"
       ],
       "growthEdge": "You can over-explain. Sometimes a kid needs a firm \"because I said so\" more than a TED Talk on natural consequences. Not every moment requires a teaching opportunity.",
-      "encouragement": "Research consistently links this style to kids who are self-regulated, socially competent, and academically resilient. That doesn't mean your house isn't chaos \u2014 it means the chaos has a foundation. Keep trusting the process even on days when it looks like it's not working.",
+      "encouragement": "Research consistently links this style to kids who are self-regulated, socially competent, and academically resilient. That doesn't mean your house isn't chaos — it means the chaos has a foundation. Keep trusting the process even on days when it looks like it's not working.",
       "comparativeContext": "Studies find that roughly 35-40% of parents in Western cultures lean primarily toward this balanced, reasoning-based approach."
     },
     "firm-protector": {
@@ -62,14 +62,14 @@
       "name": "The Firm Protector",
       "themeColor": "#e07937",
       "tagline": "Your house has rules, your kids know them, and bedtime is not a negotiation.",
-      "description": "You believe structure IS love, and frankly, you're not wrong. Your kids don't wonder what's expected of them because you've made it crystal clear. You're the parent who follows through on consequences even when it would be easier to let it slide \u2014 because you know that consistency now saves everyone grief later.",
+      "description": "You believe structure IS love, and frankly, you're not wrong. Your kids don't wonder what's expected of them because you've made it crystal clear. You're the parent who follows through on consequences even when it would be easier to let it slide — because you know that consistency now saves everyone grief later.",
       "strengths": [
         "You follow through on consequences consistently, which builds genuine security",
         "You set clear expectations so your kids aren't guessing at the rules",
         "You provide predictable routines that help anxious or spirited kids feel safe"
       ],
       "growthEdge": "Consistency is your superpower, but rigidity is its shadow. When your kid pushes back, check whether they need compliance or to be heard. One conversation won't unravel your authority.",
-      "encouragement": "Your kids have structure, and structure is genuinely protective. The research is clear that children with consistent boundaries feel safer and develop better self-regulation. The next level for you isn't less firmness \u2014 it's adding more warmth to the firmness you already have.",
+      "encouragement": "Your kids have structure, and structure is genuinely protective. The research is clear that children with consistent boundaries feel safer and develop better self-regulation. The next level for you isn't less firmness — it's adding more warmth to the firmness you already have.",
       "comparativeContext": "About 25-30% of parents primarily use a structure-first approach, and it's especially common in families that value respect and responsibility."
     },
     "free-spirit": {
@@ -77,14 +77,14 @@
       "name": "The Free Spirit",
       "themeColor": "#9c83f2",
       "tagline": "You'd rather say yes than no, and your kids have opinions about everything.",
-      "description": "You prioritize your child's experience, autonomy, and emotional world \u2014 sometimes at the expense of your own sanity. You're the parent who lets them wear the costume to the grocery store, who negotiates bedtime like it's a peace treaty, and who genuinely believes kids deserve a voice. Your home is warm, creative, and occasionally a little lawless.",
+      "description": "You prioritize your child's experience, autonomy, and emotional world — sometimes at the expense of your own sanity. You're the parent who lets them wear the costume to the grocery store, who negotiates bedtime like it's a peace treaty, and who genuinely believes kids deserve a voice. Your home is warm, creative, and occasionally a little lawless.",
       "strengths": [
         "You create an environment where your kids feel safe to express anything",
         "You prioritize emotional connection, which builds secure attachment",
         "You encourage independence and creative thinking by defaulting to yes"
       ],
-      "growthEdge": "Saying yes to everything means your kid doesn't know where the edges are. They need guardrails \u2014 not to limit them, but so they have something solid to push against when the world gets overwhelming.",
-      "encouragement": "Your kids know they're loved and that their feelings matter. That's not small. Research shows warm, responsive parenting predicts secure attachment and emotional intelligence. The growth isn't becoming stricter \u2014 it's getting comfortable with the discomfort of holding a boundary when your kid is upset about it.",
+      "growthEdge": "Saying yes to everything means your kid doesn't know where the edges are. They need guardrails — not to limit them, but so they have something solid to push against when the world gets overwhelming.",
+      "encouragement": "Your kids know they're loved and that their feelings matter. That's not small. Research shows warm, responsive parenting predicts secure attachment and emotional intelligence. The growth isn't becoming stricter — it's getting comfortable with the discomfort of holding a boundary when your kid is upset about it.",
       "comparativeContext": "Roughly 20-25% of parents lean primarily toward a freedom-first, connection-driven style."
     }
   },
@@ -163,7 +163,7 @@
     },
     {
       "id": "s15",
-      "text": "I prioritize my child's happiness in the moment over long-term lessons.",
+      "text": "I drop everything to comfort my child even when they're overreacting.",
       "dimension": "free-spirit"
     },
     {
@@ -178,8 +178,9 @@
     },
     {
       "id": "s18",
-      "text": "I say yes to my child more often than I say no.",
-      "dimension": "free-spirit"
+      "text": "I threaten consequences I know I won't follow through on.",
+      "dimension": "free-spirit",
+      "reversed": true
     }
   ]
 }

@@ -24,8 +24,10 @@ export interface ParsedArticle {
   links: { anchor: string; url: string }[];
   ctaComponents: {
     type: string;
+    eyebrow?: string;
     title?: string;
     body?: string;
+    buttonText?: string;
     href?: string;
   }[];
   imageDescriptions: string[];

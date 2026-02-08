@@ -62,7 +62,11 @@ Place exactly 3 CTA components spread through the article. Never cluster them to
 **Rules:**
 - CourseCTA `title` MUST use the canonical course name exactly as shown above.
 - FreebieCTA `title` MUST use the canonical freebie name exactly as shown above.
-- CommunityCTA `title` should mention "Steady Parent Community" or similar.
+- CommunityCTA must sell the community. Here is EXACTLY what it is — do not add, invent, or embellish:
+  - A private group of parents going through the same things, active, supportive, discussing how it really works
+  - Founders present daily, answering what comes up
+  - Regular content: bite-sized scripts, long-form explanations, supplementary materials
+  - NEVER promise: weekly Q&As, live coaching, video, 1-on-1 access, guaranteed response times
 - CTA `body` text must be consistent with the canonical promise. You may rephrase for the article context, but do NOT change what the product delivers.
 - Write custom `eyebrow` and `buttonText` that flow from the surrounding article content.
 
