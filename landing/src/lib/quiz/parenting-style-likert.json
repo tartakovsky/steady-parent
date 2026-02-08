@@ -1,0 +1,93 @@
+{
+  "quizType": "likert",
+  "meta": {
+    "id": "parenting-style",
+    "slug": "parenting-style",
+    "title": "What's Your Parenting Style?",
+    "shortTitle": "Parenting Style Quiz",
+    "description": "Discover your dominant parenting approach based on how you actually handle daily moments with your kids.",
+    "intro": "Rate how often each statement describes your typical behavior. There are no right or wrong answers — just honest ones.",
+    "estimatedTime": "3 minutes",
+    "questionCount": 18,
+    "scoreLabel": "Style",
+    "subject": "you",
+    "shareCta": "What's your parenting style? Take the quiz and find out.",
+    "sources": [
+      "Baumrind parenting typology research",
+      "PSDQ (Parenting Styles and Dimensions Questionnaire)",
+      "Robinson et al. parenting dimensions framework"
+    ]
+  },
+  "scale": {
+    "labels": ["Never", "Rarely", "Sometimes", "Often", "Always"],
+    "points": [1, 2, 3, 4, 5]
+  },
+  "dimensions": {
+    "steady-guide": {
+      "id": "steady-guide",
+      "name": "The Steady Guide",
+      "themeColor": "#00b86b",
+      "tagline": "You set the bar high and hold their hand while they reach for it.",
+      "description": "You balance warmth with structure — explaining the reasons behind your rules, listening to your child's perspective, and adjusting when it makes sense. You're firm without being rigid and loving without being a pushover.",
+      "strengths": [
+        "You explain your reasoning instead of relying on 'because I said so'",
+        "You adjust boundaries based on your child's development and the situation",
+        "Your kids feel safe enough to disagree with you — and that's a feature, not a bug",
+        "You model the self-regulation you're asking them to learn"
+      ],
+      "growthEdge": "You can overthink decisions and second-guess yourself. Sometimes the right call is the quick one — not every boundary needs a dissertation.",
+      "encouragement": "Your kids are learning that rules and love aren't opposites. The fact that you question your approach means you're doing it with intention. That's exactly what they need.",
+      "comparativeContext": "Research consistently links this approach with the best outcomes for child wellbeing, self-regulation, and social competence."
+    },
+    "firm-protector": {
+      "id": "firm-protector",
+      "name": "The Firm Protector",
+      "themeColor": "#e07937",
+      "tagline": "You keep the guardrails strong because the world won't do it for them.",
+      "description": "You believe kids thrive with clear expectations and consistent consequences. Structure isn't something you apologize for — it's how you show love. Your house has rules, and everyone knows what they are.",
+      "strengths": [
+        "Your kids always know exactly where the line is",
+        "You follow through on consequences — your word means something",
+        "You provide the kind of stability that builds security"
+      ],
+      "growthEdge": "Sometimes the rules become the point instead of the child. Try adding a brief 'here's why' when you set a limit — it doesn't weaken your authority, it strengthens it.",
+      "encouragement": "Structure is genuinely important — kids without it feel anxious, not free. Your instinct to protect and organize is real love. Adding a little flexibility alongside your consistency will make your approach even more powerful.",
+      "comparativeContext": "About 1 in 4 parents lean toward structure-first approaches. Many report feeling like the 'strict' parent among their friends."
+    },
+    "free-spirit": {
+      "id": "free-spirit",
+      "name": "The Free Spirit",
+      "themeColor": "#9c83f2",
+      "tagline": "You trust your kids to figure things out — with you in their corner.",
+      "description": "You prioritize your child's autonomy, happiness, and emotional experience. You're the parent who says yes more than no, who follows your kid's lead, and who'd rather be their safe person than their enforcer.",
+      "strengths": [
+        "Your kids feel genuinely heard and valued as individuals",
+        "You create space for creativity, exploration, and self-expression",
+        "Your relationship with your child is warm, open, and connected"
+      ],
+      "growthEdge": "Saying no is a form of love too. Kids need the discomfort of limits to develop self-regulation. Start small — pick one non-negotiable boundary and hold it consistently for a week.",
+      "encouragement": "The closeness you've built with your child is real and valuable. Adding more structure won't damage that bond — it'll actually deepen it, because kids feel safer when they know someone's in charge.",
+      "comparativeContext": "About 1 in 5 parents identify primarily with a permissive approach. It's especially common among parents who grew up with very strict parents themselves."
+    }
+  },
+  "statements": [
+    { "id": "s1", "text": "I explain the reasons behind my rules to my child.", "dimension": "steady-guide" },
+    { "id": "s2", "text": "I use firm consequences when my child breaks a rule.", "dimension": "firm-protector" },
+    { "id": "s3", "text": "I let my child decide things for themselves, even if I disagree with their choice.", "dimension": "free-spirit" },
+    { "id": "s4", "text": "I encourage my child to talk about their feelings when they're upset.", "dimension": "steady-guide" },
+    { "id": "s5", "text": "I expect my child to follow rules without needing an explanation.", "dimension": "firm-protector" },
+    { "id": "s6", "text": "I have a hard time saying no when my child really wants something.", "dimension": "free-spirit" },
+    { "id": "s7", "text": "I adjust my expectations based on how my child is developing.", "dimension": "steady-guide" },
+    { "id": "s8", "text": "I believe children need strict discipline to learn right from wrong.", "dimension": "firm-protector" },
+    { "id": "s9", "text": "I avoid setting rules that might upset my child.", "dimension": "free-spirit" },
+    { "id": "s10", "text": "I give my child choices within boundaries I've set.", "dimension": "steady-guide" },
+    { "id": "s11", "text": "I raise my voice or use a stern tone to get my child to listen.", "dimension": "firm-protector" },
+    { "id": "s12", "text": "I let natural consequences teach the lesson instead of imposing punishments.", "dimension": "free-spirit" },
+    { "id": "s13", "text": "I apologize to my child when I've overreacted or made a mistake.", "dimension": "steady-guide" },
+    { "id": "s14", "text": "I expect my child to obey immediately when I give an instruction.", "dimension": "firm-protector" },
+    { "id": "s15", "text": "I find it easier to give in than to deal with a meltdown.", "dimension": "free-spirit" },
+    { "id": "s16", "text": "I take my child's opinion into account when making family decisions.", "dimension": "steady-guide" },
+    { "id": "s17", "text": "I set clear, non-negotiable rules about safety and respect.", "dimension": "firm-protector" },
+    { "id": "s18", "text": "I let my child stay up late or skip routines when they don't feel like it.", "dimension": "free-spirit" }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "tantrums": {
+    "course_name": "The Tantrum Toolkit",
+    "course_url": "/course/tantrum-toolkit/",
+    "course_promise": "Step-by-step audio lessons and illustrated guides for every tantrum scenario, from grocery store meltdowns to bedtime battles.",
+    "freebie_name": "The 3-Step Tantrum Script Cheat Sheet",
+    "freebie_promise": "A one-page printable with the exact phrases for validate, boundary, and redirect."
+  },
+  "aggression": {
+    "course_name": "Beyond Hitting",
+    "course_url": "/course/beyond-hitting/",
+    "course_promise": "Audio lessons and illustrated guides for responding to hitting, biting, and physical aggression at every age.",
+    "freebie_name": "The Hitting Response Flowchart",
+    "freebie_promise": "A printable decision tree for what to say and do when your child gets physical."
+  },
+  "sleep": {
+    "course_name": "Sleep Solutions",
+    "course_url": "/course/sleep-solutions/",
+    "course_promise": "Audio lessons and illustrated guides for building sleep routines that stick, without cry-it-out or co-sleeping guilt.",
+    "freebie_name": "Bedtime Routine Cards by Age",
+    "freebie_promise": "Printable visual step-by-step routine cards for toddlers, preschoolers, and school-age kids."
+  },
+  "siblings": {
+    "course_name": "Sibling Harmony",
+    "course_url": "/course/sibling-harmony/",
+    "course_promise": "Audio lessons and illustrated guides for reducing sibling conflict and building genuine connection between your kids.",
+    "freebie_name": "The Sibling Conflict Script Card",
+    "freebie_promise": "A printable card with exact phrases for when they're fighting, and when to step in versus stay out."
+  },
+  "anxiety": {
+    "course_name": "Childhood Anxiety",
+    "course_url": "/course/childhood-anxiety/",
+    "course_promise": "Audio lessons and illustrated guides for helping your child manage worry, fear, and avoidance behaviors.",
+    "freebie_name": "The Worry Time Toolkit",
+    "freebie_promise": "A printable worry journal page and worry time rules card for kids."
+  },
+  "discipline": {
+    "course_name": "Discipline Without Punishment",
+    "course_url": "/course/discipline-without-punishment/",
+    "course_promise": "Audio lessons and illustrated guides for setting firm limits without punishment, threats, or yelling.",
+    "freebie_name": "The Boundary Scripts Cheat Sheet",
+    "freebie_promise": "A one-page printable with exact phrases for setting limits in the ten most common situations."
+  },
+  "staying-calm": {
+    "course_name": "The Calm Parent",
+    "course_url": "/course/calm-parent/",
+    "course_promise": "Audio lessons and guided exercises for staying regulated when your kids push every button you have.",
+    "freebie_name": "The Parent Calm-Down Card",
+    "freebie_promise": "A printable pocket card with your personal regulation steps for when you're about to lose it."
+  },
+  "breaking-the-cycle": {
+    "course_name": "Breaking the Cycle",
+    "course_url": "/course/breaking-the-cycle/",
+    "course_promise": "Audio lessons and guided exercises for identifying and changing inherited parenting patterns.",
+    "freebie_name": "The Trigger Map Worksheet",
+    "freebie_promise": "A printable worksheet for identifying your parenting triggers and planning alternative responses."
+  },
+  "big-feelings": {
+    "course_name": "Big Feelings",
+    "course_url": "/course/big-feelings/",
+    "course_promise": "Audio lessons and illustrated guides for helping kids experience and process intense emotions safely.",
+    "freebie_name": "The Feelings Vocabulary Poster",
+    "freebie_promise": "A printable poster with age-appropriate feeling words kids can point to when they can't find the words."
+  },
+  "potty-training": {
+    "course_name": "Potty Training",
+    "course_url": "/course/potty-training/",
+    "course_promise": "Audio lessons and illustrated day-by-day guides for stress-free potty training on your child's timeline.",
+    "freebie_name": "The Potty Training Readiness Checklist",
+    "freebie_promise": "A one-page printable with readiness signs to watch for and a first-week starter plan."
+  },
+  "eating": {
+    "course_name": "Peaceful Mealtimes",
+    "course_url": "/course/peaceful-mealtimes/",
+    "course_promise": "Audio lessons and illustrated guides for ending mealtime battles using the division of responsibility approach.",
+    "freebie_name": "The No-Pressure Meal Planner",
+    "freebie_promise": "A printable one-week meal planning template with division of responsibility reminders built in."
+  },
+  "screens": {
+    "course_name": "Screen Sanity",
+    "course_url": "/course/screen-sanity/",
+    "course_promise": "Audio lessons and illustrated guides for managing screens without constant fights or guilt.",
+    "freebie_name": "The Family Screen Agreement",
+    "freebie_promise": "A printable fill-in-the-blank screen time agreement the whole family signs together."
+  },
+  "social-skills": {
+    "course_name": "Social Skills",
+    "course_url": "/course/social-skills/",
+    "course_promise": "Audio lessons and illustrated guides for building your child's social confidence and friendship skills.",
+    "freebie_name": "The Playdate Prep Card",
+    "freebie_promise": "A printable card with what to practice before playdates and scripts for common social conflicts."
+  },
+  "body-safety": {
+    "course_name": "Body Safety Conversations",
+    "course_url": "/course/body-safety/",
+    "course_promise": "Audio lessons and illustrated guides for age-appropriate body safety and consent conversations.",
+    "freebie_name": "Body Safety Conversation Starters",
+    "freebie_promise": "A printable set of age-appropriate scripts for starting body safety conversations with your child."
+  },
+  "new-parent": {
+    "course_name": "New Parent Survival",
+    "course_url": "/course/new-parent/",
+    "course_promise": "Audio lessons and illustrated guides for surviving and enjoying the first year without losing yourself.",
+    "freebie_name": "The First 30 Days Survival Card",
+    "freebie_promise": "A one-page printable with the feeding, sleep, and crying essentials for the first month."
+  },
+  "teens": {
+    "course_name": "Parenting Teens",
+    "course_url": "/course/parenting-teens/",
+    "course_promise": "Audio lessons and illustrated guides for staying connected through adolescence without becoming the enemy.",
+    "freebie_name": "Teen Conversation Starters",
+    "freebie_promise": "A printable list of ten non-interrogation questions that actually get teenagers talking."
+  },
+  "transitions": {
+    "course_name": "Life Transitions",
+    "course_url": "/course/life-transitions/",
+    "course_promise": "Audio lessons and illustrated guides for helping kids through major life changes with less anxiety.",
+    "freebie_name": "The Transition Prep Checklist",
+    "freebie_promise": "A printable step-by-step checklist for preparing your child for any big change."
+  },
+  "spirited-kids": {
+    "course_name": "Spirited Kids",
+    "course_url": "/course/spirited-kids/",
+    "course_promise": "Audio lessons and illustrated guides for parenting high-intensity children without breaking either of you.",
+    "freebie_name": "The Spirited Child Temperament Map",
+    "freebie_promise": "A printable worksheet for mapping your child's intensity patterns and finding what calms them."
+  },
+  "parenting-approach": {
+    "course_name": "Intentional Parenting",
+    "course_url": "/course/intentional-parenting/",
+    "course_promise": "Audio lessons and illustrated guides for building a parenting approach that fits your actual family.",
+    "freebie_name": "The Parenting Values Worksheet",
+    "freebie_promise": "A printable worksheet for clarifying what matters most to your family and turning it into daily practice."
+  },
+  "parenting-science": {
+    "course_name": "The Science of Parenting",
+    "course_url": "/course/parenting-science/",
+    "course_promise": "Audio lessons and illustrated breakdowns of the research behind common parenting advice.",
+    "freebie_name": "The Research Decoder Card",
+    "freebie_promise": "A printable guide for reading parenting studies without getting tricked by headlines."
+  }
+}

@@ -2,7 +2,7 @@ import type React from "react";
 
 import Link from "next/link";
 
-import { blogCategories, blogPosts } from "@/content/blog/posts";
+import { blogCategories, blogPosts, postHref } from "@/content/blog/posts";
 
 export default async function BlogIndexPage(): Promise<React.JSX.Element> {
   const posts = await Promise.all(
@@ -46,7 +46,7 @@ export default async function BlogIndexPage(): Promise<React.JSX.Element> {
             {posts.map((p) => (
               <Link
                 key={p.slug}
-                href={`/blog/${p.slug}`}
+                href={postHref(p)}
                 className="rounded-xl border bg-card p-5 transition-colors hover:bg-accent"
               >
                 <div className="flex flex-col gap-2">

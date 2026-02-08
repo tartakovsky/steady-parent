@@ -24,11 +24,13 @@ function AnimatedCounter({ value }: { value: number }) {
 function ScoreRing({
   percentage,
   color,
+  label = "Score",
   size = 200,
   strokeWidth = 14,
 }: {
   percentage: number;
   color: string;
+  label?: string | undefined;
   size?: number;
   strokeWidth?: number;
 }) {
@@ -72,7 +74,7 @@ function ScoreRing({
           </span>
         </div>
         <span className="text-[11px] font-semibold text-muted-foreground/60 uppercase tracking-[0.16em] mt-1">
-          Readiness
+          {label}
         </span>
       </div>
     </div>
@@ -83,8 +85,9 @@ interface ResultHeroProps {
   percentage: number;
   headline: string;
   subheadline: string;
+  quizTitle: string;
   themeColor: string;
-  bgGradient: string;
+  scoreLabel?: string | undefined;
   shared?: boolean | undefined;
 }
 
@@ -92,8 +95,9 @@ export function ResultHero({
   percentage,
   headline,
   subheadline,
+  quizTitle,
   themeColor,
-  bgGradient,
+  scoreLabel,
   shared,
 }: ResultHeroProps) {
   return (
@@ -101,7 +105,10 @@ export function ResultHero({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`relative overflow-hidden rounded-3xl py-12 sm:py-16 px-6 sm:px-8 bg-gradient-to-br ${bgGradient}`}
+      className="relative overflow-hidden rounded-3xl py-12 sm:py-16 px-6 sm:px-8"
+      style={{
+        background: `linear-gradient(to bottom right, ${themeColor}0D, ${themeColor}08)`,
+      }}
     >
       {/* Decorative gradient blob */}
       <div
@@ -115,13 +122,17 @@ export function ResultHero({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.1 }}
-            className="text-sm font-medium text-muted-foreground mb-8 tracking-wide"
+            className="text-sm font-medium text-muted-foreground mb-6 tracking-wide"
           >
             Someone shared their results with you
           </motion.p>
         )}
 
-        <ScoreRing percentage={percentage} color={themeColor} />
+        <p className="text-xs font-semibold text-muted-foreground/50 uppercase tracking-[0.16em] mb-6">
+          {quizTitle}
+        </p>
+
+        <ScoreRing percentage={percentage} color={themeColor} label={scoreLabel} />
 
         <motion.h1
           initial={{ opacity: 0, y: 16 }}

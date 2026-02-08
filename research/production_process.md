@@ -128,11 +128,11 @@ LLM run over big batches of article titles and category names to generate slugs.
 
 Create canonical URLs for **every planned page** before any content is written:
 
-**Blog articles:**
+**Blog articles** (all prefixed with `/blog/` to match the site's URL structure):
 ```
-/tantrums/why-toddlers-have-tantrums/
-/tantrums/how-to-handle-tantrum-in-progress/
-/tantrums/preventing-meltdowns/
+/blog/tantrums/why-toddlers-have-tantrums/
+/blog/tantrums/how-to-handle-tantrum-in-progress/
+/blog/tantrums/preventing-meltdowns/
 ...
 ```
 
@@ -162,15 +162,15 @@ One LLM call per category (~20 calls total). Each call receives: the category's 
 ```json
 {
   "article": "How to handle tantrums in public without losing your mind",
-  "url": "/tantrums/tantrums-in-public/",
+  "url": "/blog/tantrums/tantrums-in-public/",
   "links": [
-    {"url": "/tantrums/", "type": "pillar", "intent": "link to the pillar article for this series"},
-    {"url": "/tantrums/ignoring-tantrums/", "type": "prev", "intent": "link to the previous article in the series"},
-    {"url": "/tantrums/prevent-meltdowns/", "type": "next", "intent": "link to the next article in the series"},
-    {"url": "/staying-calm/how-to-stay-calm/", "type": "cross", "intent": "when discussing the parent's own emotional regulation in the moment"},
-    {"url": "/discipline/discipline-in-public/", "type": "cross", "intent": "when discussing discipline or limit-setting during a public tantrum"},
-    {"url": "/tantrums/handle-tantrum-scripts/", "type": "sibling", "intent": "when mentioning what to say or do step-by-step"},
-    {"url": "/staying-calm/self-compassion/", "type": "cross", "intent": "when addressing the guilt or shame the parent feels afterward"},
+    {"url": "/blog/tantrums/", "type": "pillar", "intent": "link to the pillar article for this series"},
+    {"url": "/blog/tantrums/ignoring-tantrums/", "type": "prev", "intent": "link to the previous article in the series"},
+    {"url": "/blog/tantrums/prevent-meltdowns/", "type": "next", "intent": "link to the next article in the series"},
+    {"url": "/blog/staying-calm/how-to-stay-calm/", "type": "cross", "intent": "when discussing the parent's own emotional regulation in the moment"},
+    {"url": "/blog/discipline/discipline-in-public/", "type": "cross", "intent": "when discussing discipline or limit-setting during a public tantrum"},
+    {"url": "/blog/tantrums/handle-tantrum-scripts/", "type": "sibling", "intent": "when mentioning what to say or do step-by-step"},
+    {"url": "/blog/staying-calm/self-compassion/", "type": "cross", "intent": "when addressing the guilt or shame the parent feels afterward"},
     {"url": "/quiz/calm-down-toolkit/", "type": "quiz", "intent": "when discussing calming strategies or tools for self-regulation"}
   ],
   "ctas": [
@@ -180,6 +180,8 @@ One LLM call per category (~20 calls total). Each call receives: the category's 
   ]
 }
 ```
+
+**URL prefix note:** All article URLs in `article_link_plan.json` have been prefixed with `/blog/` (e.g., `/blog/tantrums/slug/` not `/tantrums/slug/`). Quiz URLs (`/quiz/...`), course URLs (`/course/...`), and community URLs remain unchanged. The site serves articles at `/blog/[category]/[slug]`, so the link plan URLs match the actual site paths.
 
 **Schema rules — every object in `links` and `ctas` has exactly three keys: `url`, `type`, `intent`.**
 
@@ -258,38 +260,104 @@ All linkable assets live in the `# Linkable Assets` section of `research/taxonom
 No consolidation or re-extraction step. The writer handles raw multi-source input directly (experimentally validated — no quality loss vs. pre-consolidated input, and avoids an intermediate LLM step that could lose content or make unwanted editorial decisions).
 
 ### 6.1 Assemble Writer Input Bundle
-For each target article, collect:
 
-1. **Raw source files**: Full, unmodified knowledge extracts from Phase 4.4 assignment (typically 3-8 files, ~4-15k words total)
-2. **Link plan**: Available internal links with URLs and one-line descriptions (from Phase 5.2)
-3. **CTA inventory**: Available CTAs with URLs, descriptions, and usage context (from Phase 5.3)
-4. **Article context**: Category name, pillar vs. series designation, position in series
-5. **Style and structure rules**: `article-structure.md` + `writing-style.md` (inlined into prompt)
+**Script:** `research/generate_article.py`
 
-**Output:** One input bundle per target article — no LLM cost in this phase, just file assembly
+```bash
+# Assemble prompt for one article (writes prompt file, does not call LLM):
+python3 research/generate_article.py --article "Article title here"
+
+# Preview prompt without writing file:
+python3 research/generate_article.py --article "Article title here" --dry-run
+```
+
+The script reads five data sources and the prompt template, then outputs an assembled prompt:
+
+| Input | File | Purpose |
+|-------|------|---------|
+| Prompt template | `research/writer_prompt.md` | All writer constraints in one file with `{{VARIABLE}}` placeholders |
+| Link plan | `research/article_link_plan.json` | Links, CTAs, article URL (all article URLs have `/blog/` prefix) |
+| Source assignments | `research/source_to_article_assignment.json` | Which source titles feed this article |
+| Extract index | `content/blog/extracts/index.json` | Source title → extract file path |
+| Canonical CTAs | `research/category_ctas.json` | Per-category course name, course promise, freebie name, freebie promise |
+
+The script:
+1. Finds the article's link plan entry (exact title match)
+2. Determines article type (pillar if has `series_preview` links, else series)
+3. Finds all assigned sources and reads their extract files
+4. Splits links into body links (cross, sibling, quiz) vs. navigation links (pillar, prev, next)
+5. Formats CTA component instructions with correct href props
+6. Looks up canonical CTA definitions for the article's category
+7. Populates the template and writes to `research/bundles/{slug}.mdx.prompt.md`
+
+**Output:** One assembled prompt per article (~7-15k words depending on source count). No LLM cost.
+
+### 6.2 Canonical CTA Consistency System
+
+**Problem:** Each article's CTAs are written independently by Opus. Without constraints, articles in the same category would promise different course names and freebie products, creating an inconsistent reader experience.
+
+**Solution:** `research/category_ctas.json` defines canonical CTA names and promises for all 20 categories:
+
+```json
+{
+  "tantrums": {
+    "course_name": "The Tantrum Toolkit",
+    "course_url": "/course/tantrum-toolkit/",
+    "course_promise": "Step-by-step audio lessons and illustrated guides for every tantrum scenario...",
+    "freebie_name": "The 3-Step Tantrum Script Cheat Sheet",
+    "freebie_promise": "A one-page printable with the exact phrases for validate, boundary, and redirect."
+  }
+}
+```
+
+**How it works:**
+1. `generate_article.py` loads `category_ctas.json` and injects the canonical names/promises into `{{CTA_CANONICAL}}` in the prompt
+2. The writer prompt instructs: "CourseCTA `title` MUST use the canonical course name exactly. FreebieCTA `title` MUST use the canonical freebie name exactly. Body text must be consistent with the canonical promise but may vary wording."
+3. `validate_article.py` checks that CTA titles contain the canonical name (case-insensitive substring match)
+
+**What can vary:** eyebrow text, body wording (as long as the promise is the same), button text.
+**What must match:** CourseCTA title = canonical course name, FreebieCTA title = canonical freebie name.
+
+**Community CTAs** use one global URL (`https://www.skool.com/steady-parent-1727`) across all categories. Title should mention "Steady Parent Community" or similar.
+
+**Course format constraint:** All courses contain text lessons, audio, and illustrations. NEVER video. The validator checks CTA body text for the word "video" and fails if found.
 
 ---
 
 ## Phase 7: Article Generation
 
 ### 7.1 Article Writing
-One Opus 4.6 run per article. The writer receives the full input bundle from Phase 6 and outputs a complete article with links and images inline.
 
-The writer prompt has this structure:
-1. **Role and task**: article title, category, word count target
-2. **Article structure rules**: inlined from `article-structure.md`
-3. **Writing style rules**: inlined from `writing-style.md`
-4. **Creative task instructions**: synthesize fragments into coherent narrative, build a story arc, add the Steady Parent voice, verify psychological correctness
-5. **Available internal links**: real URLs with one-line descriptions — writer picks 5-10 and weaves them in with natural anchor text
-6. **Available CTAs**: real URLs with descriptions and usage context — writer picks 3 and leads into them with copy matching surrounding content
-7. **Image instructions**: writer suggests 3 images (1 cover + 2 inline) with scene descriptions that are specific and memorable, not generic
-8. **Raw source material**: full content of all assigned source knowledge files
+One Opus 4.6 run per article. Feed the assembled prompt from Phase 6 and the writer outputs a complete MDX file.
 
-The writer outputs:
-- Complete article in markdown with real internal links embedded
-- 3 CTA placements with real URLs and lead-in copy
-- 3 image placeholders with scene descriptions and alt text
-- FAQ section with schema-ready Q&A pairs
+**How to run:**
+1. `python3 research/generate_article.py --article "Title"` — writes prompt to `research/bundles/{slug}.mdx.prompt.md`
+2. Send the prompt to Opus (via agent, API, or paste) — output is the MDX file
+3. Save output to `landing/src/content/blog/posts/{slug}.mdx`
+4. `python3 research/validate_article.py landing/src/content/blog/posts/{slug}.mdx` — validate
+
+If validation fails: fix the **prompt template** (`research/writer_prompt.md`), not the article. Then regenerate. Never manually fix generated articles — the system must produce correct output for all 245 articles without per-article review.
+
+**The prompt template** (`research/writer_prompt.md`) is the most important file. It encodes all constraints:
+
+| Constraint | How the prompt prevents it |
+|---|---|
+| Duplicate description in body | "The `description` field IS the AI answer block... DO NOT repeat it as a paragraph in the body" |
+| External links | "Do not link to external websites... The ONLY https:// URLs allowed are inside CTA component `href` props" |
+| Video promises in CTAs | "NEVER promise video, video walkthroughs, or video demonstrations" |
+| HTML comments in MDX | Shows `{/* IMAGE: ... */}` syntax explicitly, "NOT HTML comments" |
+| Wrong heading levels | "NEVER use H1 or H4+" |
+| Missing links | Lists every URL that MUST appear, split into body vs. navigation |
+| Hallucinated URLs | "Do not invent URLs. Do not link to any other URL" |
+| Inconsistent CTA names | Canonical CTA definitions injected via `{{CTA_CANONICAL}}`; "MUST use the canonical course/freebie name exactly" |
+| Word count overshoot | "(HARD LIMIT — do not exceed the upper bound)" added to word count target |
+| FAQ answers too long | "35-55 words (HARD LIMIT — no answer over 55 words)" |
+
+**Writer output format:** MDX file starting with `export const metadata = { ... }`, body starting at H2. Includes:
+- 3 CTA components (CourseCTA, CommunityCTA, FreebieCTA) with custom copy
+- 3 image placeholders as `{/* IMAGE: ... */}` MDX comments
+- FAQ section with bold-question format
+- Navigation block at end (pillar/prev/next links)
 
 ### 7.2 Image Generation
 Separate step after article writing. For each article's 3 image descriptions:
@@ -300,15 +368,59 @@ Separate step after article writing. For each article's 3 image descriptions:
 - Image descriptions from the writer should be specific and memorable, not generic stock-art scenes
 
 ### 7.3 Article Validation
-Cheap model (Haiku/Sonnet) checks each article against structural requirements. Plus a **deterministic script** that:
-- Extracts all URLs from the article
-- Validates each URL exists in the URL registry from Phase 5
-- Flags any URLs that are not in the registry (hallucinated links)
-- Counts internal links (target: 5-10)
-- Checks word count, heading hierarchy, FAQ count
-- Verifies all 3 CTAs are present and use real URLs
 
-**Output:** Complete article markdown with embedded links, CTAs, and image placeholders + generated images
+**Script:** `research/validate_article.py`
+
+```bash
+# Validate one article:
+python3 research/validate_article.py landing/src/content/blog/posts/slug.mdx
+
+# Validate all articles in a directory:
+python3 research/validate_article.py landing/src/content/blog/posts/
+```
+
+Exit code 0 = all articles pass, exit code 1 = at least one fails. The validator is a deterministic Python script (no LLM). It checks:
+
+**Errors (FAIL — must regenerate):**
+- Missing required links (every URL from the link plan must appear)
+- Unauthorized/hallucinated URLs (any URL not in the registry)
+- Missing CTA components (need exactly 3)
+- HTML comments `<!-- -->` (MDX build error, must use `{/* */}`)
+- Missing metadata fields (title, description, date, category)
+- Missing TLDR section
+- Missing FAQ section or too few questions
+- Too few image placeholders (need exactly 3)
+- Too few internal links (min 5)
+- Video promise in CTA body text
+- Article too short (hard floor)
+- CTA title doesn't match canonical name (from `category_ctas.json`)
+
+**Warnings (PASS — acceptable but noted):**
+- Word count slightly over target
+- FAQ answer length off target (~45 words each)
+- Em-dashes (style guide forbids)
+- Gendered language (style guide forbids "mama", "girl", etc.)
+- Title over 110 chars (SEO)
+- Description word count off target (40-60 words)
+- Cover image not before first H2
+- Navigation-only links before FAQ section (URLs that serve as both body and nav links are exempt)
+- Too many image placeholders
+
+**Technical notes on the validator:**
+- Metadata regex handles escaped quotes in description fields (e.g., `\"I see you're upset\"`)
+- Navigation link position check skips URLs that appear in both body links and nav links (these legitimately appear in the article body and at the end)
+- CTA title consistency uses case-insensitive substring match against `category_ctas.json`
+
+**Artifact report (INFO — asset production manifest):**
+- Freebie CTA copy (title + body) — tells us what downloadable to produce
+- Course CTA copy (title + body) — tells us what course copy was promised
+- Image descriptions (cover + 2 inline) — tells us what to generate in Phase 7.2
+
+When running at scale, collect all artifact reports to build:
+- Freebie manifest: deduplicate per category, produce actual downloadable assets
+- Image manifest: all image descriptions across 245 articles for batch generation
+
+**Output:** Complete article MDX with embedded links, CTAs, and image placeholders + validation report
 
 ---
 

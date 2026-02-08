@@ -1,6 +1,6 @@
 # Article input assembly map
 
-Generated: 2026-02-06T18:23:37
+Generated: 2026-02-07T14:41:04
 ## Article
 - Title: How to handle a tantrum that's already happening (step-by-step scripts)
 - URL: /tantrums/handle-tantrum-scripts/

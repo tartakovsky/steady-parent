@@ -14,7 +14,6 @@ import {
   Lightbulb,
   ArrowRight,
   Users,
-  ExternalLink,
 } from "lucide-react";
 import type { QuizResult as QuizResultType } from "@/lib/quiz/quiz-engine";
 import { ResultHero } from "./result-hero";
@@ -29,37 +28,14 @@ interface QuizResultProps extends React.HTMLAttributes<HTMLDivElement> {
     title: string;
     shortTitle: string;
     estimatedTime?: string;
-    sources?: { name: string; url: string }[];
+    scoreLabel?: string;
+    shareCta?: string;
+    levelLabels?: { high: string; medium: string; low: string };
+    sectionLabels?: { strengths?: string; concerns?: string };
+    sources?: string[];
   };
   onRetake?: () => void;
   shared?: boolean;
-}
-
-// ── Theme ────────────────────────────────────────────────────────────
-
-function getTheme(resultId: string) {
-  switch (resultId) {
-    case "ready":
-      return {
-        color: "#16a34a",
-        bgGradient: "from-green-50/80 to-emerald-50/30",
-      };
-    case "almost":
-      return {
-        color: "#e8c840",
-        bgGradient: "from-yellow-50/60 to-amber-50/20",
-      };
-    case "not-yet":
-      return {
-        color: "#d05597",
-        bgGradient: "from-pink-50/70 to-rose-50/20",
-      };
-    default:
-      return {
-        color: "#6366f1",
-        bgGradient: "from-violet-50/80 to-indigo-50/30",
-      };
-  }
 }
 
 // ── Section heading ──────────────────────────────────────────────────
@@ -105,7 +81,7 @@ export function QuizResult({
     }
   }, [saving, quizMeta.shortTitle]);
 
-  const theme = getTheme(result.resultId);
+  const themeColor = result.themeColor;
 
   return (
     <div
@@ -117,7 +93,7 @@ export function QuizResult({
       {shared && (
         <div className="rounded-2xl border-2 border-green-200 bg-green-50/40 p-6 sm:p-8 text-center space-y-4">
           <p className="text-lg sm:text-xl font-bold text-foreground">
-            Curious about your own child&apos;s readiness?
+            {quizMeta.shareCta || 'Curious? Take the quiz yourself'}
           </p>
           <Button
             size="lg"
@@ -139,21 +115,21 @@ export function QuizResult({
         percentage={result.percentage}
         headline={result.headline}
         subheadline={result.subheadline}
-        themeColor={theme.color}
-        bgGradient={theme.bgGradient}
+        quizTitle={quizMeta.shortTitle}
+        themeColor={themeColor}
+        scoreLabel={quizMeta.scoreLabel}
         shared={shared}
       />
 
-      {/* ── 3. Shareable Summary + Comparative Context ─────────── */}
-      <section className="text-center px-4 py-2">
-        <p className="text-xl sm:text-2xl leading-relaxed text-foreground/80 max-w-2xl mx-auto">
-          {result.shareableSummary}
-        </p>
-        <div className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground">
-          <Users className="w-4 h-4 shrink-0" />
-          <span>{result.comparativeContext}</span>
-        </div>
-      </section>
+      {/* ── 3. Comparative Context ──────────────────────────────── */}
+      {result.comparativeContext && (
+        <section className="flex items-start gap-3 px-5 py-4 rounded-xl bg-muted/40 max-w-xl mx-auto">
+          <Users className="w-4 h-4 shrink-0 mt-0.5 text-muted-foreground/60" />
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {result.comparativeContext}
+          </p>
+        </section>
+      )}
 
       {/* ── 4. Share / Save CTAs (owner only) ──────────────────── */}
       {!shared && (
@@ -204,7 +180,7 @@ export function QuizResult({
             <ResultDomainInsight
               key={domain.id}
               domain={domain}
-              shared={shared}
+              levelLabels={quizMeta.levelLabels}
             />
           ))}
         </div>
@@ -219,7 +195,7 @@ export function QuizResult({
             className="text-base sm:text-lg px-10 py-6 rounded-xl font-bold bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-xl transition-all"
           >
             <Sparkles className="h-5 w-5 mr-2" />
-            Find Out Your Child&apos;s Readiness
+            {quizMeta.shareCta || 'Take the Quiz Yourself'}
           </Button>
         </div>
       )}
@@ -230,7 +206,7 @@ export function QuizResult({
           {/* ── 6. Strengths ────────────────────────────────────── */}
           {result.strengths.length > 0 && (
             <section className="space-y-5">
-              <SectionHeading>Where Your Child Shines</SectionHeading>
+              <SectionHeading>{quizMeta.sectionLabels?.strengths || "What's Going Well"}</SectionHeading>
               <div className="grid gap-3">
                 {result.strengths.map((strength, i) => (
                   <div
@@ -252,7 +228,7 @@ export function QuizResult({
           {/* ── 7. Growth Areas ─────────────────────────────────── */}
           {result.concerns.length > 0 && (
             <section className="space-y-5">
-              <SectionHeading>Room to Grow</SectionHeading>
+              <SectionHeading>{quizMeta.sectionLabels?.concerns || "Room to Grow"}</SectionHeading>
               <div className="grid gap-3">
                 {result.concerns.map((concern, i) => (
                   <div
@@ -277,7 +253,7 @@ export function QuizResult({
             <ResultActionPlan
               steps={result.nextSteps}
               watchOutFor={result.watchOutFor}
-              themeColor={theme.color}
+              themeColor={themeColor}
             />
           </section>
 
@@ -286,7 +262,7 @@ export function QuizResult({
             <div
               className="rounded-2xl px-6 sm:px-8 py-8 sm:py-10 text-center"
               style={{
-                background: `linear-gradient(135deg, ${theme.color}08 0%, ${theme.color}04 100%)`,
+                background: `linear-gradient(135deg, ${themeColor}08 0%, ${themeColor}04 100%)`,
               }}
             >
               <p className="text-lg sm:text-xl leading-relaxed text-foreground/85 max-w-2xl mx-auto">
@@ -340,17 +316,13 @@ export function QuizResult({
             Based on research from
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
-            {quizMeta.sources.map((source) => (
-              <a
-                key={source.url}
-                href={source.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
+            {quizMeta.sources.map((source, i) => (
+              <span
+                key={i}
+                className="text-xs text-muted-foreground"
               >
-                {source.name}
-                <ExternalLink className="w-3 h-3" />
-              </a>
+                {source}
+              </span>
             ))}
           </div>
         </div>

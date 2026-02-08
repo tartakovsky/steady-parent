@@ -44,6 +44,7 @@ export interface DomainLevelContent {
 
 export interface ResultTemplate {
   id: string;
+  themeColor: string;
   scoreRange: { min: number; max: number };
   headline: string;
   subheadline: string;
@@ -64,8 +65,21 @@ export interface QuizMeta {
   intro: string;
   estimatedTime: string;
   questionCount: number;
+  scoreLabel?: string;
+  subject?: string;
+  shareCta?: string;
+  levelLabels?: {
+    high: string;
+    medium: string;
+    low: string;
+  };
+  sectionLabels?: {
+    strengths?: string;
+    concerns?: string;
+  };
   ageRange?: { min: number; max: number; unit: string };
-  sources: { name: string; url: string }[];
+  resultDisplay?: 'readiness' | 'profile' | 'recommendation';
+  sources: string[];
 }
 
 export interface QuizData {
@@ -83,6 +97,7 @@ export interface IdentityType {
   id: string;
   name: string;
   tagline: string;
+  themeColor: string;
   description: string;
   strengths: string[];
   growthEdge: string;
@@ -114,6 +129,7 @@ export interface IdentityTypeResult {
   id: string;
   name: string;
   tagline: string;
+  themeColor: string;
   description: string;
   strengths: string[];
   growthEdge: string;
@@ -128,6 +144,64 @@ export interface IdentityQuizResult {
   quizId: string;
   primaryType: IdentityTypeResult;
   allTypes: IdentityTypeResult[];
+  shareableSummary: string;
+}
+
+// ── Likert quiz types (Type C) ──
+
+export interface LikertScale {
+  labels: string[];
+  points: number[];
+}
+
+export interface LikertDimension {
+  id: string;
+  name: string;
+  themeColor: string;
+  tagline: string;
+  description: string;
+  strengths: string[];
+  growthEdge: string;
+  encouragement: string;
+  comparativeContext: string;
+}
+
+export interface LikertStatement {
+  id: string;
+  text: string;
+  dimension: string;
+  reversed?: boolean;
+}
+
+export interface LikertQuizData {
+  quizType: 'likert';
+  meta: QuizMeta;
+  scale: LikertScale;
+  dimensions: Record<string, LikertDimension>;
+  statements: LikertStatement[];
+  /** questions — runtime-generated from statements + scale for URL encoding compat */
+  questions: { id: string; options: { id: string }[] }[];
+}
+
+export interface LikertDimensionResult {
+  id: string;
+  name: string;
+  themeColor: string;
+  tagline: string;
+  description: string;
+  strengths: string[];
+  growthEdge: string;
+  encouragement: string;
+  comparativeContext: string;
+  meanScore: number;
+  maxScore: number;
+  percentage: number;
+}
+
+export interface LikertQuizResult {
+  quizId: string;
+  primaryDimension: LikertDimensionResult;
+  allDimensions: LikertDimensionResult[];
   shareableSummary: string;
 }
 
@@ -150,6 +224,7 @@ export interface QuizResult {
   maxScore: number;
   percentage: number;
   resultId: string;
+  themeColor: string;
   headline: string;
   subheadline: string;
   explanation: string;
@@ -320,10 +395,11 @@ export class QuizEngine {
 
     // Shareable summary
     const pct = Math.round((total / maxTotal) * 100);
+    const label = (this.quiz.meta.scoreLabel || 'score').toLowerCase();
     const shareableSummary =
-      strongestDomain.name === weakestDomain.name
-        ? `At ${pct}% readiness, your child is developing evenly across all areas.`
-        : `At ${pct}% readiness, your child is showing strong ${strongestDomain.name} but needs more time with ${weakestDomain.name}.`;
+      strongestDomain.percentage === weakestDomain.percentage
+        ? `${pct}% ${label} — even across all areas.`
+        : `${pct}% ${label} — strongest in ${strongestDomain.name}, room to grow in ${weakestDomain.name}.`;
 
     return {
       quizId: this.quiz.meta.id,
@@ -331,6 +407,7 @@ export class QuizEngine {
       maxScore: maxTotal,
       percentage: pct,
       resultId: template.id,
+      themeColor: template.themeColor,
       headline: template.headline,
       subheadline: template.subheadline,
       explanation: template.explanation,
@@ -426,30 +503,185 @@ export class QuizEngine {
 }
 
 // ============================================================================
-// USAGE
+// IDENTITY QUIZ SCORING (Type B)
 // ============================================================================
 
-/*
-import quizData from './potty-training-readiness.json';
+/**
+ * Score an identity/classification quiz.
+ *
+ * Each option distributes points across ALL types. The primary type is the one
+ * with the highest percentage of its max possible score.
+ */
+export function scoreIdentityQuiz(
+  quiz: IdentityQuizData,
+  answers: Record<string, string>,
+): IdentityQuizResult {
+  const typeIds = Object.keys(quiz.types);
 
-const engine = new QuizEngine(quizData);
+  // Sum selected points per type
+  const scores: Record<string, number> = {};
+  for (const id of typeIds) scores[id] = 0;
 
-// Validate the quiz configuration
-const validation = engine.validate();
-if (!validation.valid) {
-  console.error('Quiz validation failed:', validation.errors);
+  for (const question of quiz.questions) {
+    const selectedId = answers[question.id];
+    if (!selectedId) continue;
+    const option = question.options.find(o => o.id === selectedId);
+    if (!option) continue;
+    for (const [typeId, pts] of Object.entries(option.points)) {
+      scores[typeId] = (scores[typeId] || 0) + pts;
+    }
+  }
+
+  // Calculate max possible per type (sum of max points for that type across all questions)
+  const maxScores: Record<string, number> = {};
+  for (const id of typeIds) maxScores[id] = 0;
+
+  for (const question of quiz.questions) {
+    for (const typeId of typeIds) {
+      const maxPts = Math.max(...question.options.map(o => o.points[typeId] ?? 0));
+      maxScores[typeId] = (maxScores[typeId] || 0) + maxPts;
+    }
+  }
+
+  // Build sorted type results — percentages are independent match strength (score/max),
+  // NOT proportional blend. "50% Lighthouse" = "you exhibit half of Lighthouse traits."
+  const allTypes: IdentityTypeResult[] = typeIds
+    .map(id => {
+      const type = quiz.types[id]!;
+      const score = scores[id] || 0;
+      const max = maxScores[id] || 1;
+      return {
+        id,
+        name: type.name,
+        tagline: type.tagline,
+        themeColor: type.themeColor,
+        description: type.description,
+        strengths: type.strengths,
+        growthEdge: type.growthEdge,
+        encouragement: type.encouragement,
+        comparativeContext: type.comparativeContext,
+        score,
+        maxScore: max,
+        percentage: Math.round((score / max) * 100),
+      };
+    })
+    .sort((a, b) => b.percentage - a.percentage);
+
+  const primary = allTypes[0]!;
+  const secondary = allTypes[1];
+
+  const shareableSummary = secondary
+    ? `I'm a ${primary.name} with ${secondary.name} tendencies`
+    : `I'm a ${primary.name}`;
+
+  return {
+    quizId: quiz.meta.id,
+    primaryType: primary,
+    allTypes,
+    shareableSummary,
+  };
 }
 
-// Get questions for display
-const questions = engine.getQuestions();
+// ============================================================================
+// LIKERT QUIZ HELPERS
+// ============================================================================
 
-// After user completes quiz, assemble result
-const userAnswers = {
-  q1: 'q1a',
-  q2: 'q2b',
-  // ... etc
-};
+/**
+ * Build the `questions` array for URL encoding compatibility.
+ * Each statement becomes a "question" with N options (one per scale point).
+ */
+export function hydrateLikertQuestions(
+  statements: LikertStatement[],
+  scale: LikertScale,
+): { id: string; options: { id: string }[] }[] {
+  return statements.map(s => ({
+    id: s.id,
+    options: scale.points.map((_, i) => ({ id: `${s.id}_${i}` })),
+  }));
+}
 
-const result = engine.assembleResult(userAnswers);
-const card = engine.generateShareableCard(result);
-*/
+// ============================================================================
+// LIKERT QUIZ SCORING (Type C)
+// ============================================================================
+
+/**
+ * Score a Likert-scale quiz.
+ *
+ * Each statement is rated on a scale (e.g. 1-5). Statements map to dimensions.
+ * Reverse-scored statements are flipped. Result = mean per dimension, highest wins.
+ */
+export function scoreLikertQuiz(
+  quiz: LikertQuizData,
+  answers: Record<string, string>,
+): LikertQuizResult {
+  const scaleMax = Math.max(...quiz.scale.points);
+  const scaleMin = Math.min(...quiz.scale.points);
+  const dimensionIds = Object.keys(quiz.dimensions);
+
+  // Collect ratings per dimension
+  const ratings: Record<string, number[]> = {};
+  for (const id of dimensionIds) ratings[id] = [];
+
+  for (const statement of quiz.statements) {
+    const selectedOptionId = answers[statement.id];
+    if (!selectedOptionId) continue;
+
+    // Option ID format: "s1_1", "s1_2", etc. — extract the scale index
+    const optionIndex = quiz.questions
+      .find(q => q.id === statement.id)
+      ?.options.findIndex(o => o.id === selectedOptionId);
+
+    if (optionIndex === undefined || optionIndex === -1) continue;
+
+    let rating = quiz.scale.points[optionIndex]!;
+
+    // Reverse scoring: flip the rating
+    if (statement.reversed) {
+      rating = scaleMax + scaleMin - rating;
+    }
+
+    ratings[statement.dimension]?.push(rating);
+  }
+
+  // Build dimension results
+  const allDimensions: LikertDimensionResult[] = dimensionIds.map(id => {
+    const dim = quiz.dimensions[id]!;
+    const dimRatings = ratings[id] || [];
+    const meanScore = dimRatings.length > 0
+      ? dimRatings.reduce((sum, r) => sum + r, 0) / dimRatings.length
+      : 0;
+
+    // Percentage: (mean - min) / (max - min) * 100
+    const range = scaleMax - scaleMin;
+    const percentage = range > 0 ? Math.round(((meanScore - scaleMin) / range) * 100) : 0;
+
+    return {
+      id,
+      name: dim.name,
+      themeColor: dim.themeColor,
+      tagline: dim.tagline,
+      description: dim.description,
+      strengths: dim.strengths,
+      growthEdge: dim.growthEdge,
+      encouragement: dim.encouragement,
+      comparativeContext: dim.comparativeContext,
+      meanScore: Math.round(meanScore * 10) / 10, // 1 decimal place
+      maxScore: scaleMax,
+      percentage,
+    };
+  }).sort((a, b) => b.meanScore - a.meanScore);
+
+  const primary = allDimensions[0]!;
+  const secondary = allDimensions[1];
+
+  const shareableSummary = secondary && secondary.meanScore > scaleMin
+    ? `I'm primarily ${primary.name} with ${secondary.name} tendencies`
+    : `I'm ${primary.name}`;
+
+  return {
+    quizId: quiz.meta.id,
+    primaryDimension: primary,
+    allDimensions,
+    shareableSummary,
+  };
+}

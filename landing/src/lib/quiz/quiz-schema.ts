@@ -28,23 +28,42 @@ export const QuizMetaSchema = z.object({
     .describe("Short title for sharing, e.g. 'Potty Training Readiness Quiz'"),
   description: z.string().min(20).max(300)
     .describe("SEO meta description"),
-  intro: z.string().min(20).max(600)
-    .describe("Intro paragraph shown before question 1. Set expectations and reduce anxiety."),
+  intro: z.string().min(20).max(250)
+    .describe("2 sentences. What this quiz measures and why it matters. Not a blog post."),
   estimatedTime: z.string().min(1).max(20)
     .describe("e.g. '2 minutes'"),
   questionCount: z.int().min(3).max(30)
     .describe("Number of questions — MUST match questions array length"),
+  scoreLabel: z.string().min(1).max(30).optional()
+    .describe("Label shown under the percentage in the score ring, e.g. 'Readiness', 'Battery', 'Score'. Defaults to 'Score' if omitted."),
+  subject: z.string().min(1).max(60).optional()
+    .describe("Who the quiz is about, used in shareable summary, e.g. 'your child', 'you', 'your family'. Defaults to 'your child' if omitted."),
+  shareCta: z.string().min(1).max(120).optional()
+    .describe("CTA text shown to visitors who receive shared results, e.g. 'Curious about your own parenting battery?'. Defaults to 'Curious? Take the quiz yourself' if omitted."),
+  levelLabels: z.object({
+    high: z.string().min(1).max(20)
+      .describe("Badge label for high-scoring domains, e.g. 'Strong', 'Healthy', 'Solid'"),
+    medium: z.string().min(1).max(20)
+      .describe("Badge label for medium-scoring domains, e.g. 'Developing', 'Moderate', 'Mixed'"),
+    low: z.string().min(1).max(20)
+      .describe("Badge label for low-scoring domains, e.g. 'Emerging', 'Low', 'Depleted'"),
+  }).optional()
+    .describe("Badge labels for domain score levels. Must make semantic sense with every domain name in this quiz (e.g. 'Energy: Moderate' not 'Energy: Developing'). Defaults to Strong/Developing/Emerging."),
+  sectionLabels: z.object({
+    strengths: z.string().max(60).optional()
+      .describe("Heading for the strengths section, e.g. 'Where Your Child Shines' or 'Where You're Doing Well'. Defaults to 'What's Going Well'."),
+    concerns: z.string().max(60).optional()
+      .describe("Heading for the growth areas section, e.g. 'Room to Grow'. Defaults to 'Room to Grow'."),
+  }).optional()
+    .describe("Optional section heading overrides. Use when the default headings don't fit the quiz subject."),
   ageRange: z.object({
     min: z.number().min(0),
     max: z.number().min(0),
     unit: z.string().min(1).max(20),
   }).optional()
     .describe("Target child age range if applicable"),
-  sources: z.array(z.object({
-    name: z.string().min(1).max(100),
-    url: z.string().url(),
-  })).min(1).max(10)
-    .describe("Research sources backing the quiz — must be real, verifiable URLs"),
+  sources: z.array(z.string().min(1).max(100)).min(1).max(5)
+    .describe("Plain-text research basis, e.g. 'AAP toilet training guidelines', 'CDC developmental milestones'. Organization name + topic only. NO URLs, NO article titles, NO author names."),
 });
 
 // ═════════════════════════════════════════════════════════════════════
@@ -102,51 +121,53 @@ export const DomainHighContentSchema = z.object({
   level: z.literal("high"),
   headline: z.string().min(1).max(80)
     .describe("Short positive headline, e.g. 'Body is ready'"),
-  detail: z.string().min(10).max(500)
-    .describe("Detailed explanation paragraph — warm, supportive tone"),
-  strength: z.string().min(10).max(300)
-    .describe("Strength statement shown in the 'Where Your Child Shines' section"),
+  detail: z.string().min(10).max(300)
+    .describe("2-3 sentences. What this level means practically."),
+  strength: z.string().min(10).max(250)
+    .describe("1-2 sentences for the strengths section."),
 });
 
 export const DomainMediumContentSchema = z.object({
   level: z.literal("medium"),
   headline: z.string().min(1).max(80)
-    .describe("Short encouraging headline, e.g. 'Physical skills emerging'"),
-  detail: z.string().min(10).max(500)
-    .describe("Detailed explanation — acknowledge progress, normalize the gap"),
-  concern: z.string().min(10).max(300)
-    .describe("Concern statement shown in the 'Room to Grow' section — frame as opportunity, not deficit"),
+    .describe("Short honest headline"),
+  detail: z.string().min(10).max(300)
+    .describe("2-3 sentences. Honest about where they are."),
+  concern: z.string().min(10).max(250)
+    .describe("1-2 sentences for the growth areas section."),
 });
 
 export const DomainLowContentSchema = z.object({
   level: z.literal("low"),
   headline: z.string().min(1).max(80)
-    .describe("Short gentle headline, e.g. 'Physical maturation in progress'"),
-  detail: z.string().min(10).max(500)
-    .describe("Detailed explanation — normalize, reassure, explain the developmental timeline"),
-  concern: z.string().min(10).max(300)
-    .describe("Concern statement for 'Room to Grow' — developmental framing, never blame"),
+    .describe("Short direct headline"),
+  detail: z.string().min(10).max(300)
+    .describe("2-3 sentences. What's happening developmentally."),
+  concern: z.string().min(10).max(250)
+    .describe("1-2 sentences for the growth areas section."),
 });
 
 export const ResultTemplateSchema = z.object({
   id: z.string().min(1).max(40)
     .describe("Result ID, e.g. 'ready', 'almost', 'not-yet'"),
+  themeColor: z.string().regex(/^#[0-9a-fA-F]{6}$/)
+    .describe("Hex color for this result tier's UI theme, e.g. '#16a34a' for green. Used for score ring, action plan, encouragement section."),
   scoreRange: z.object({
     min: z.int().min(0).describe("Minimum total score (inclusive)"),
     max: z.int().min(0).describe("Maximum total score (inclusive)"),
   }),
   headline: z.string().min(1).max(80)
-    .describe("Bold result headline, e.g. 'Green Light!'"),
-  subheadline: z.string().min(1).max(200)
-    .describe("Softer follow-up line under the headline"),
+    .describe("Short, evocative result title (2-5 words). Must NOT restate the score or range — the ring already shows the percentage. Examples: 'Green Light!', 'Fully Charged', 'Almost There'. Think bumper sticker, not data label."),
+  subheadline: z.string().min(1).max(180)
+    .describe("One sentence with a concrete insight the reader didn't already know from the headline. Not a dry domain summary."),
   explanation: z.string().min(20).max(600)
-    .describe("What this score means — warm, specific, actionable"),
-  nextSteps: z.array(z.string().min(10).max(300)).min(2).max(6)
-    .describe("Actionable next steps — specific and practical, not generic"),
-  watchOutFor: z.string().min(10).max(500)
-    .describe("Important nuance — a thoughtful caveat, not a warning"),
-  encouragement: z.string().min(10).max(400)
-    .describe("Warm, supportive closing message — should feel like a hug"),
+    .describe("3-4 sentences. What this pattern looks like in daily life and what to do about it."),
+  nextSteps: z.array(z.string().min(10).max(200)).min(2).max(5)
+    .describe("Actionable next steps — specific and practical"),
+  watchOutFor: z.string().min(10).max(300)
+    .describe("One counterintuitive insight or nuance"),
+  encouragement: z.string().min(10).max(350)
+    .describe("2-3 sentences. Direct closing — what the score means and what to do. No platitudes."),
   comparativeContext: z.string().min(10).max(300)
     .describe("Social proof context, e.g. 'Most parents who score in this range successfully potty train within 1-2 weeks.'"),
   retakeAdvice: z.string().max(200).optional()
@@ -314,18 +335,20 @@ export const IdentityTypeSchema = z.object({
     .describe("Type ID, e.g. 'lighthouse'. Must match the key in the types record."),
   name: z.string().min(2).max(60)
     .describe("Display name, e.g. 'Lighthouse Parent'"),
-  tagline: z.string().min(10).max(200)
-    .describe("One-line identity statement, e.g. 'You guide without hovering.' — this is what gets shared"),
-  description: z.string().min(50).max(800)
-    .describe("Full paragraph explaining this type — warm, validating, specific. Should make the user think 'wow, this is so me.'"),
-  strengths: z.array(z.string().min(10).max(200)).min(2).max(5)
-    .describe("Specific strengths of this type — concrete behaviors, not vague praise"),
-  growthEdge: z.string().min(10).max(300)
-    .describe("One growth area framed positively — 'You might sometimes...' not 'Your weakness is...'"),
-  encouragement: z.string().min(10).max(400)
-    .describe("Warm closing message specific to this type"),
-  comparativeContext: z.string().min(10).max(300)
-    .describe("Social proof or normalizing context, e.g. 'This is the most common style among parents who...'"),
+  tagline: z.string().min(10).max(120)
+    .describe("One shareable sentence — the identity badge. Direct and specific."),
+  themeColor: z.string().regex(/^#[0-9a-fA-F]{6}$/)
+    .describe("Hex color for this type's UI. Each type gets a distinct color."),
+  description: z.string().min(50).max(400)
+    .describe("2-3 sentences. Specific, recognizable description — make the reader think 'that's me.' No generic praise."),
+  strengths: z.array(z.string().min(10).max(150)).min(2).max(4)
+    .describe("Specific strengths — concrete behaviors, not vague praise"),
+  growthEdge: z.string().min(10).max(200)
+    .describe("1-2 sentences. One honest growth area — direct, not hedging."),
+  encouragement: z.string().min(10).max(350)
+    .describe("2-3 sentences. Direct closing — what this type means and what to lean into. No platitudes."),
+  comparativeContext: z.string().min(10).max(200)
+    .describe("1 sentence. Plain statistic or normalizing context."),
 });
 
 export const IdentityOptionSchema = z.object({
@@ -495,11 +518,131 @@ export const IdentityQuizDataSchema = z.object({
 
 
 // ═════════════════════════════════════════════════════════════════════
+// TYPE C: LIKERT / RATING SCALE
+// ═════════════════════════════════════════════════════════════════════
+//
+// Each statement rated on a scale (e.g. 1-5 Never→Always).
+// Statements map to dimensions. Score = mean rating per dimension.
+// Result = primary dimension (highest mean) + profile.
+// Modeled after PSDQ / PAQ parenting style assessments.
+
+export const LikertScaleSchema = z.object({
+  labels: z.array(z.string().min(1).max(30)).min(3).max(7)
+    .describe("Scale point labels from low to high, e.g. ['Never','Rarely','Sometimes','Often','Always']"),
+  points: z.array(z.int().min(0).max(10)).min(3).max(7)
+    .describe("Numeric values for each scale point, e.g. [1,2,3,4,5]"),
+});
+
+export const LikertDimensionSchema = z.object({
+  id: z.string().min(1).max(40)
+    .describe("Dimension ID — must match the key in the dimensions record"),
+  name: z.string().min(2).max(60)
+    .describe("Friendly display name, e.g. 'Steady Guide' (NOT academic jargon like 'Authoritative')"),
+  themeColor: z.string().regex(/^#[0-9a-fA-F]{6}$/)
+    .describe("Hex color for this dimension's UI. Each dimension gets a distinct color."),
+  tagline: z.string().min(10).max(120)
+    .describe("One shareable sentence — the identity badge for this dimension."),
+  description: z.string().min(50).max(400)
+    .describe("2-3 sentences. Recognizable description — make the reader think 'that's me.'"),
+  strengths: z.array(z.string().min(10).max(150)).min(2).max(4)
+    .describe("Specific strengths — concrete behaviors, not vague praise"),
+  growthEdge: z.string().min(10).max(200)
+    .describe("1-2 sentences. One honest growth area — direct, not hedging."),
+  encouragement: z.string().min(10).max(350)
+    .describe("2-3 sentences. Direct closing — what scoring high here means. No platitudes."),
+  comparativeContext: z.string().min(10).max(200)
+    .describe("1 sentence. Plain statistic or normalizing context."),
+});
+
+export const LikertStatementSchema = z.object({
+  id: z.string().min(1).max(20)
+    .describe("Unique statement ID, e.g. 's1'"),
+  text: z.string().min(10).max(200)
+    .describe("Statement text — a concrete parenting behavior, not a belief or opinion"),
+  dimension: z.string().min(1).max(40)
+    .describe("Dimension ID this statement measures — must exist in the dimensions record"),
+  reversed: z.boolean().optional()
+    .describe("If true, rating is reverse-scored (5→1, 4→2, etc.) before computing mean"),
+});
+
+// ── Likert quiz main schema ──────────────────────────────────────────
+
+export const LikertQuizDataSchema = z.object({
+  quizType: z.literal("likert")
+    .describe("Quiz type discriminator — always 'likert' for rating-scale quizzes"),
+  meta: QuizMetaSchema,
+  scale: LikertScaleSchema
+    .describe("Rating scale configuration"),
+  dimensions: z.record(z.string(), LikertDimensionSchema)
+    .describe("Parenting dimensions keyed by dimension ID"),
+  statements: z.array(LikertStatementSchema).min(6).max(30)
+    .describe("Statements in display order — will be rated on the scale"),
+})
+
+// Refinement 1: questionCount matches statements array length
+.refine(
+  (data) => data.meta.questionCount === data.statements.length,
+  { message: "meta.questionCount must match statements array length" },
+)
+
+// Refinement 2: all statements reference valid dimensions
+.refine(
+  (data) => {
+    const dimIds = new Set(Object.keys(data.dimensions));
+    return data.statements.every((s) => dimIds.has(s.dimension));
+  },
+  { message: "All statements must reference a dimension that exists in the dimensions record" },
+)
+
+// Refinement 3: each dimension has at least 3 statements
+.refine(
+  (data) => {
+    const counts: Record<string, number> = {};
+    for (const s of data.statements) {
+      counts[s.dimension] = (counts[s.dimension] || 0) + 1;
+    }
+    return Object.keys(data.dimensions).every((id) => (counts[id] || 0) >= 3);
+  },
+  { message: "Each dimension must have at least 3 statements" },
+)
+
+// Refinement 4: statement IDs must be unique
+.refine(
+  (data) => {
+    const ids = data.statements.map((s) => s.id);
+    return new Set(ids).size === ids.length;
+  },
+  { message: "All statement IDs must be unique" },
+)
+
+// Refinement 5: dimension record keys must match the id field
+.refine(
+  (data) => {
+    return Object.entries(data.dimensions).every(([key, dim]) => key === dim.id);
+  },
+  { message: "Dimension record key must match the dimension's id field" },
+)
+
+// Refinement 6: scale labels and points arrays must be same length
+.refine(
+  (data) => data.scale.labels.length === data.scale.points.length,
+  { message: "scale.labels and scale.points must have the same length" },
+)
+
+// Refinement 7: must have at least 2 dimensions
+.refine(
+  (data) => Object.keys(data.dimensions).length >= 2,
+  { message: "Likert quizzes must have at least 2 dimensions" },
+);
+
+
+// ═════════════════════════════════════════════════════════════════════
 // INFERRED TYPES
 // ═════════════════════════════════════════════════════════════════════
 
 export type ReadinessQuizData = z.infer<typeof ReadinessQuizDataSchema>;
 export type IdentityQuizData = z.infer<typeof IdentityQuizDataSchema>;
+export type LikertQuizData = z.infer<typeof LikertQuizDataSchema>;
 
 // ═════════════════════════════════════════════════════════════════════
 // BACKWARD COMPAT — existing code imports these names
@@ -527,11 +670,18 @@ export function validateIdentityQuiz(data: unknown): IdentityQuizData {
   return IdentityQuizDataSchema.parse(data);
 }
 
-export function validateQuizData(data: unknown): ReadinessQuizData | IdentityQuizData {
+export function validateLikertQuiz(data: unknown): LikertQuizData {
+  return LikertQuizDataSchema.parse(data);
+}
+
+export function validateQuizData(data: unknown): ReadinessQuizData | IdentityQuizData | LikertQuizData {
   if (typeof data === "object" && data !== null && "quizType" in data) {
     const { quizType } = data as { quizType: unknown };
     if (quizType === "identity") {
       return IdentityQuizDataSchema.parse(data);
+    }
+    if (quizType === "likert") {
+      return LikertQuizDataSchema.parse(data);
     }
   }
   return ReadinessQuizDataSchema.parse(data);

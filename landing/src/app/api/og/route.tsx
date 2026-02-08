@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { type NextRequest } from "next/server";
-import { getQuizBySlug } from "@/lib/quiz";
-import { QuizEngine } from "@/lib/quiz/quiz-engine";
+import { getQuizBySlug, isIdentityQuiz, isLikertQuiz } from "@/lib/quiz";
+import { QuizEngine, scoreIdentityQuiz, scoreLikertQuiz } from "@/lib/quiz/quiz-engine";
 import { decodeAnswers } from "@/lib/quiz/quiz-url";
 
 export const runtime = "nodejs";
@@ -59,17 +59,13 @@ function r2Url(path: string): string {
 
 const LOGO_SRC = r2Url("sdp_logo_big_text.png");
 
-function getTheme(resultId: string) {
-  switch (resultId) {
-    case "ready":
-      return { color: "#16a34a", bg: "#f0fdf4" };
-    case "almost":
-      return { color: "#d97706", bg: "#fffbeb" };
-    case "not-yet":
-      return { color: "#ea580c", bg: "#fff7ed" };
-    default:
-      return { color: "#6366f1", bg: "#f5f3ff" };
-  }
+/** Derive a very light tinted background from any hex color */
+function lightBg(hex: string): string {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  // Mix with white at 5% strength
+  return `rgb(${Math.round(255 - (255 - r) * 0.05)}, ${Math.round(255 - (255 - g) * 0.05)}, ${Math.round(255 - (255 - b) * 0.05)})`;
 }
 
 export async function GET(req: NextRequest) {
@@ -98,9 +94,25 @@ export async function GET(req: NextRequest) {
     return renderGenericCard(quiz, fonts);
   }
 
+  // Identity quizzes get a different OG card
+  if (isIdentityQuiz(quiz)) {
+    const identityResult = scoreIdentityQuiz(quiz, answers);
+    return renderIdentityCard(quiz, identityResult, fonts);
+  }
+
+  // Likert quizzes — same card as identity (type name + tagline)
+  if (isLikertQuiz(quiz)) {
+    const likertResult = scoreLikertQuiz(quiz, answers);
+    const primary = likertResult.primaryDimension;
+    return renderIdentityCard(
+      quiz,
+      { primaryType: { name: primary.name, tagline: primary.tagline, themeColor: primary.themeColor, percentage: primary.percentage }, shareableSummary: likertResult.shareableSummary },
+      fonts,
+    );
+  }
+
   const engine = new QuizEngine(quiz);
   const result = engine.assembleResult(answers);
-  const theme = getTheme(result.resultId);
 
   const RING = 280;
   const R = 118;
@@ -117,7 +129,7 @@ export async function GET(req: NextRequest) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          backgroundColor: theme.bg,
+          backgroundColor: lightBg(result.themeColor),
           fontFamily: "Inter, sans-serif",
           padding: "65px 200px",
           position: "relative",
@@ -195,7 +207,7 @@ export async function GET(req: NextRequest) {
                   cy={RING / 2}
                   r={R}
                   fill="none"
-                  stroke={theme.color}
+                  stroke={result.themeColor}
                   strokeWidth={STROKE}
                   strokeLinecap="round"
                   strokeDasharray={`${circumference}`}
@@ -248,7 +260,7 @@ export async function GET(req: NextRequest) {
                 style={{
                   fontSize: "18px",
                   fontWeight: 700,
-                  color: theme.color,
+                  color: result.themeColor,
                   textTransform: "uppercase" as const,
                   letterSpacing: "0.08em",
                 }}
@@ -303,6 +315,121 @@ export async function GET(req: NextRequest) {
 }
 
 type FontEntry = { name: string; data: ArrayBuffer; weight: Weight; style: FontStyle };
+
+function renderIdentityCard(
+  quiz: { meta: { shortTitle: string } },
+  result: { primaryType: { name: string; tagline: string; themeColor: string; percentage: number }; shareableSummary: string },
+  fonts: FontEntry[],
+) {
+  const primary = result.primaryType;
+
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          backgroundColor: lightBg(primary.themeColor),
+          fontFamily: "Inter, sans-serif",
+          padding: "65px 120px",
+          position: "relative",
+        }}
+      >
+        {/* Logo */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={LOGO_SRC}
+          alt=""
+          width={238}
+          style={{ position: "absolute", bottom: "20px", right: "20px" }}
+        />
+
+        {/* Quiz title */}
+        <div
+          style={{
+            fontSize: "48px",
+            fontWeight: 800,
+            color: "#111827",
+            textAlign: "center" as const,
+            lineHeight: 1.1,
+            letterSpacing: "-0.02em",
+            flexShrink: 0,
+          }}
+        >
+          {quiz.meta.shortTitle}
+        </div>
+
+        {/* Middle — type name + tagline */}
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "16px",
+          }}
+        >
+          <div
+            style={{
+              fontSize: "18px",
+              fontWeight: 700,
+              color: primary.themeColor,
+              textTransform: "uppercase" as const,
+              letterSpacing: "0.08em",
+            }}
+          >
+            My result
+          </div>
+          <div
+            style={{
+              fontSize: "68px",
+              fontWeight: 800,
+              color: "#111827",
+              lineHeight: 1.05,
+              letterSpacing: "-0.02em",
+              textAlign: "center" as const,
+            }}
+          >
+            {primary.name}
+          </div>
+          <div
+            style={{
+              fontSize: "28px",
+              color: "#6b7280",
+              lineHeight: 1.35,
+              maxWidth: "600px",
+              textAlign: "center" as const,
+            }}
+          >
+            {primary.tagline}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div
+          style={{
+            backgroundColor: "#16a34a",
+            color: "white",
+            fontSize: "32px",
+            fontWeight: 700,
+            padding: "24px 80px",
+            borderRadius: "18px",
+            letterSpacing: "-0.01em",
+            flexShrink: 0,
+            display: "flex",
+          }}
+        >
+          Take the Quiz Yourself →
+        </div>
+      </div>
+    ),
+    { ...SIZE, fonts }
+  );
+}
 
 function renderGenericCard(quiz: ReturnType<typeof getQuizBySlug>, fonts: FontEntry[]) {
   if (!quiz) return new Response("Not found", { status: 404 });

@@ -1,0 +1,601 @@
+{
+  "quizType": "identity",
+  "meta": {
+    "id": "parenting-style",
+    "slug": "parenting-style",
+    "title": "What's Your Parenting Style?",
+    "shortTitle": "Parenting Style Quiz",
+    "description": "Discover your parenting style blend — Lighthouse, Dolphin, Tiger, Jellyfish, or Elephant. Concrete scenarios, no judgment, just recognition. See your primary type plus how much of each style runs through your parenting.",
+    "intro": "Eight real scenarios. No trick questions. You'll see which parenting animal you lead with — and how much of each style is secretly running the show.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 8,
+    "subject": "your parenting style",
+    "shareCta": "Find out your parenting style blend — take the quiz",
+    "sources": [
+      "Baumrind parenting styles framework",
+      "Maccoby and Martin four-style typology",
+      "Gottman emotion coaching research",
+      "Positive discipline developmental literature"
+    ]
+  },
+  "types": {
+    "lighthouse": {
+      "id": "lighthouse",
+      "name": "Lighthouse Parent",
+      "tagline": "You're the steady beam — warm, firm, and always explaining why.",
+      "themeColor": "#2563eb",
+      "description": "You set clear boundaries and then actually explain the reasoning behind them, which means you spend a lot of time saying 'because here's the thing...' to a person who's four. You balance warmth with structure, and your kids know exactly where the lines are — even when they test every single one.",
+      "strengths": [
+        "Sets boundaries and explains the reasoning without writing a thesis",
+        "Stays calm-ish when the meltdown hits peak volume",
+        "Follows through on consequences even when it's deeply inconvenient",
+        "Makes kids feel heard without caving to every demand"
+      ],
+      "growthEdge": "Sometimes the explanation can wait. Not every teachable moment needs to be taught right now — especially at full volume in a parking lot.",
+      "encouragement": "Your kids are building an internal compass because you bother to explain the 'why.' That's tedious work that pays off when they're fifteen and making decisions you can't supervise. The consistency matters more than getting it perfect every time.",
+      "comparativeContext": "Research consistently links this warm-but-firm approach with strong self-regulation and social skills in kids across cultures."
+    },
+    "dolphin": {
+      "id": "dolphin",
+      "name": "Dolphin Parent",
+      "tagline": "Structure through play — you make the rules feel like a group project.",
+      "themeColor": "#06b6d4",
+      "description": "You'd rather negotiate a creative solution than lay down the law, and you're weirdly good at turning conflict into collaboration. Your household runs on flexibility and humor, which looks chaotic from the outside but actually has more structure than people realize. You read the room before you pick your battles.",
+      "strengths": [
+        "Turns a brewing power struggle into a problem-solving session",
+        "Adapts the plan when the plan is clearly not working",
+        "Uses humor to defuse tension without dismissing feelings",
+        "Gives kids real input on decisions that affect them"
+      ],
+      "growthEdge": "Not everything is a negotiation. Some boundaries need to just be boundaries, even when your kid makes a surprisingly compelling counterargument.",
+      "encouragement": "Your kids are learning flexibility, creative problem-solving, and how to advocate for themselves — skills most adults still struggle with. The collaborative approach takes more energy upfront, but you're building people who can think on their feet.",
+      "comparativeContext": "Studies find that collaborative problem-solving builds stronger executive function skills than either strict control or no structure at all."
+    },
+    "tiger": {
+      "id": "tiger",
+      "name": "Tiger Parent",
+      "tagline": "High bar, deep investment — you see potential and you go after it.",
+      "themeColor": "#f59e0b",
+      "description": "You believe your kids are capable of more than they think, and you're willing to push through the complaining to prove it. You don't set high expectations out of cruelty — you set them because you've watched your kid rise to a challenge and light up. You're playing the long game, even when today's battle is over ten minutes of piano practice.",
+      "strengths": [
+        "Sees potential in your kid that they haven't spotted yet",
+        "Teaches persistence by actually requiring it",
+        "Provides clear structure and routines that reduce daily chaos",
+        "Invests serious time and energy into your kid's development"
+      ],
+      "growthEdge": "The line between 'pushing through resistance' and 'pushing past the point of diminishing returns' is real. Your kid's frustration is sometimes data, not just noise.",
+      "encouragement": "Your kids are learning that effort leads somewhere, which is genuinely one of the most important things a person can internalize. The grit you're building doesn't come from nowhere — it comes from a parent who showed up and held the bar steady.",
+      "comparativeContext": "Research shows high expectations paired with emotional support consistently predict academic achievement and resilience."
+    },
+    "jellyfish": {
+      "id": "jellyfish",
+      "name": "Jellyfish Parent",
+      "tagline": "Warmth first, always — your home runs on connection and trust.",
+      "themeColor": "#a855f7",
+      "description": "Your default setting is warmth, and your kids know they can come to you with anything. You'd rather preserve the relationship than win the argument, and your home feels like a genuinely safe place to land. Rules exist, but they bend when the situation calls for it — because you trust your read on what your kid actually needs in the moment.",
+      "strengths": [
+        "Creates a home where kids feel safe enough to be honest",
+        "Picks up on emotional shifts before they become full meltdowns",
+        "Prioritizes connection over control in high-stress moments",
+        "Builds the kind of trust that keeps communication open long-term"
+      ],
+      "growthEdge": "Warmth is your superpower, but kids also need to bump into firm limits sometimes. The discomfort of a boundary isn't the same as a broken relationship.",
+      "encouragement": "The emotional safety you create is the foundation everything else gets built on. Kids who feel securely attached take more risks, recover faster from setbacks, and actually listen better — because they're not spending energy on anxiety. That warmth is doing more structural work than it looks like.",
+      "comparativeContext": "Attachment research consistently finds that emotional warmth is the single strongest predictor of a child's willingness to accept guidance."
+    },
+    "elephant": {
+      "id": "elephant",
+      "name": "Elephant Parent",
+      "tagline": "Nurturing, protective, and tuned into every emotional frequency.",
+      "themeColor": "#64748b",
+      "description": "You lead with empathy and your instinct is to protect. You're the parent who notices the subtle mood shift after school, who creates rituals that make your kid feel anchored, and who will absolutely position yourself between your child and anything that threatens their wellbeing. Emotions get processed in your house — not shoved under the rug.",
+      "strengths": [
+        "Notices the quiet emotional signals other people miss",
+        "Creates stability through routines and family rituals",
+        "Models emotional processing instead of just demanding it",
+        "Fiercely advocates for your child when the situation calls for it"
+      ],
+      "growthEdge": "Protecting your kid from hard things and helping them through hard things aren't the same move. Sometimes the most nurturing thing is stepping back and letting them struggle a little.",
+      "encouragement": "Your kids have a deep emotional vocabulary because you taught them feelings aren't dangerous. That's not soft — that's strategic. Emotionally literate kids navigate friendships, setbacks, and their own inner world with tools most people don't develop until their thirties.",
+      "comparativeContext": "Emotion coaching research finds that kids whose parents help them label and process feelings show stronger social skills and stress regulation."
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Your five-year-old has a full meltdown in the grocery store because you won't buy the cereal with the cartoon tiger on it. What's your move?",
+      "subtext": "Be honest — not aspirational.",
+      "options": [
+        {
+          "id": "q1a",
+          "text": "Get down to their level, acknowledge the feeling, then calmly explain why the answer is still no",
+          "points": {
+            "lighthouse": 5,
+            "dolphin": 1,
+            "tiger": 1,
+            "jellyfish": 2,
+            "elephant": 2
+          }
+        },
+        {
+          "id": "q1b",
+          "text": "Offer a choice: 'You can pick between these two cereals — which one looks good?'",
+          "points": {
+            "lighthouse": 1,
+            "dolphin": 5,
+            "tiger": 0,
+            "jellyfish": 2,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q1c",
+          "text": "Hold the line with a firm 'We're not doing this right now' and keep moving",
+          "points": {
+            "lighthouse": 2,
+            "dolphin": 0,
+            "tiger": 5,
+            "jellyfish": 0,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q1d",
+          "text": "Honestly, you probably just buy the cereal — this isn't the hill to die on today",
+          "points": {
+            "lighthouse": 0,
+            "dolphin": 1,
+            "tiger": 0,
+            "jellyfish": 5,
+            "elephant": 2
+          }
+        },
+        {
+          "id": "q1e",
+          "text": "Scoop them up, find a quiet corner, and help them calm down before doing anything else",
+          "points": {
+            "lighthouse": 1,
+            "dolphin": 0,
+            "tiger": 0,
+            "jellyfish": 2,
+            "elephant": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "It's 7:45 PM and your third-grader hasn't started homework. They claim they 'forgot.' What happens next?",
+      "subtext": "A classic Tuesday night scenario.",
+      "options": [
+        {
+          "id": "q2a",
+          "text": "Sit with them and walk through it — but also set up a system so 'forgetting' stops being an option",
+          "points": {
+            "lighthouse": 5,
+            "dolphin": 2,
+            "tiger": 2,
+            "jellyfish": 0,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q2b",
+          "text": "Ask them what they think would help them remember tomorrow — make it their problem to solve",
+          "points": {
+            "lighthouse": 2,
+            "dolphin": 5,
+            "tiger": 1,
+            "jellyfish": 0,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q2c",
+          "text": "They're doing it now, no screens until it's done, and tomorrow there's a new homework-first rule",
+          "points": {
+            "lighthouse": 1,
+            "dolphin": 0,
+            "tiger": 5,
+            "jellyfish": 0,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q2d",
+          "text": "Let it go tonight — one missed assignment won't tank their future, and they're already tired",
+          "points": {
+            "lighthouse": 0,
+            "dolphin": 1,
+            "tiger": 0,
+            "jellyfish": 5,
+            "elephant": 2
+          }
+        },
+        {
+          "id": "q2e",
+          "text": "Check in first — 'Did something happen today?' — because 'forgot' sometimes means something else",
+          "points": {
+            "lighthouse": 1,
+            "dolphin": 1,
+            "tiger": 0,
+            "jellyfish": 1,
+            "elephant": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "Your kid comes home upset because their best friend didn't invite them to a birthday party. What do you do?",
+      "subtext": "The friend drama that hits harder than it should.",
+      "options": [
+        {
+          "id": "q3a",
+          "text": "Listen, validate the hurt, then help them think through what might be going on and what they could do about it",
+          "points": {
+            "lighthouse": 5,
+            "dolphin": 2,
+            "tiger": 1,
+            "jellyfish": 1,
+            "elephant": 2
+          }
+        },
+        {
+          "id": "q3b",
+          "text": "Brainstorm together — 'Want to invite a different friend to do something cool that same day?'",
+          "points": {
+            "lighthouse": 1,
+            "dolphin": 5,
+            "tiger": 0,
+            "jellyfish": 2,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q3c",
+          "text": "Use it as a lesson: friendships shift, it's normal, and they need to learn to handle disappointment",
+          "points": {
+            "lighthouse": 2,
+            "dolphin": 0,
+            "tiger": 5,
+            "jellyfish": 0,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q3d",
+          "text": "Comfort them, don't push, let them feel it — they'll work it out when they're ready",
+          "points": {
+            "lighthouse": 0,
+            "dolphin": 1,
+            "tiger": 0,
+            "jellyfish": 5,
+            "elephant": 3
+          }
+        },
+        {
+          "id": "q3e",
+          "text": "Sit with them, hold space for the sadness, and maybe quietly check in with the other parent later",
+          "points": {
+            "lighthouse": 0,
+            "dolphin": 0,
+            "tiger": 1,
+            "jellyfish": 2,
+            "elephant": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "Your kid refuses to try the new food you made for dinner. Arms crossed, lip out, full protest mode. Your response?",
+      "subtext": "You spent 45 minutes on this meal, for the record.",
+      "options": [
+        {
+          "id": "q4a",
+          "text": "'You don't have to love it, but the rule is one real bite before you decide.' Then hold that line.",
+          "points": {
+            "lighthouse": 5,
+            "dolphin": 1,
+            "tiger": 3,
+            "jellyfish": 0,
+            "elephant": 0
+          }
+        },
+        {
+          "id": "q4b",
+          "text": "Make it a game — 'Rate it 1-10 like a food critic' — and let them feel in control of the verdict",
+          "points": {
+            "lighthouse": 1,
+            "dolphin": 5,
+            "tiger": 0,
+            "jellyfish": 1,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q4c",
+          "text": "This is dinner. There's no backup meal. They'll eat when they're hungry enough.",
+          "points": {
+            "lighthouse": 1,
+            "dolphin": 0,
+            "tiger": 5,
+            "jellyfish": 0,
+            "elephant": 0
+          }
+        },
+        {
+          "id": "q4d",
+          "text": "Make them something quick they'll actually eat — mealtime shouldn't be a battleground",
+          "points": {
+            "lighthouse": 0,
+            "dolphin": 2,
+            "tiger": 0,
+            "jellyfish": 5,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q4e",
+          "text": "Sit with them, try the food yourself, talk about how new things can feel weird — no pressure",
+          "points": {
+            "lighthouse": 1,
+            "dolphin": 1,
+            "tiger": 0,
+            "jellyfish": 2,
+            "elephant": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "You find out your kid lied about brushing their teeth — for probably the third time this week. Now what?",
+      "subtext": "The dental hygiene hill you didn't plan to die on.",
+      "options": [
+        {
+          "id": "q5a",
+          "text": "Explain why lying breaks trust, set a consequence, and establish a check-in system going forward",
+          "points": {
+            "lighthouse": 5,
+            "dolphin": 1,
+            "tiger": 2,
+            "jellyfish": 0,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q5b",
+          "text": "Ask what would make brushing less of a drag — new toothbrush? A timer? A ridiculous song?",
+          "points": {
+            "lighthouse": 0,
+            "dolphin": 5,
+            "tiger": 0,
+            "jellyfish": 2,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q5c",
+          "text": "Supervised brushing every night until they earn back the privilege of doing it alone",
+          "points": {
+            "lighthouse": 2,
+            "dolphin": 0,
+            "tiger": 5,
+            "jellyfish": 0,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q5d",
+          "text": "Gently remind them, but honestly — you're not going to turn teeth-brushing into a nightly standoff",
+          "points": {
+            "lighthouse": 0,
+            "dolphin": 1,
+            "tiger": 0,
+            "jellyfish": 5,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q5e",
+          "text": "Focus on the lying part first — 'What made you feel like you needed to lie to me about this?'",
+          "points": {
+            "lighthouse": 2,
+            "dolphin": 0,
+            "tiger": 0,
+            "jellyfish": 1,
+            "elephant": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "Saturday morning. No plans. Your kid asks 'What are we doing today?' How does the day unfold?",
+      "subtext": "The blank canvas test.",
+      "options": [
+        {
+          "id": "q6a",
+          "text": "You suggest a few options with a rough schedule — fun but with some structure so the day doesn't dissolve",
+          "points": {
+            "lighthouse": 5,
+            "dolphin": 2,
+            "tiger": 1,
+            "jellyfish": 0,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q6b",
+          "text": "You plan it together — each person picks one activity and you build the day as a team",
+          "points": {
+            "lighthouse": 1,
+            "dolphin": 5,
+            "tiger": 0,
+            "jellyfish": 1,
+            "elephant": 2
+          }
+        },
+        {
+          "id": "q6c",
+          "text": "You already had something in mind — a hike, a project, a skill to practice. Free time is opportunity time.",
+          "points": {
+            "lighthouse": 0,
+            "dolphin": 1,
+            "tiger": 5,
+            "jellyfish": 0,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q6d",
+          "text": "Whatever happens, happens. Pajamas until noon is a legitimate Saturday plan.",
+          "points": {
+            "lighthouse": 0,
+            "dolphin": 1,
+            "tiger": 0,
+            "jellyfish": 5,
+            "elephant": 2
+          }
+        },
+        {
+          "id": "q6e",
+          "text": "You focus on connection — a slow morning together, maybe baking or a long walk where you just talk",
+          "points": {
+            "lighthouse": 0,
+            "dolphin": 1,
+            "tiger": 0,
+            "jellyfish": 3,
+            "elephant": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "Your kid's teacher emails to say they've been disruptive in class. What's your first move at home?",
+      "subtext": "The email that makes your stomach drop a little.",
+      "options": [
+        {
+          "id": "q7a",
+          "text": "Talk it through — get their side, explain why it matters, and agree on a plan together",
+          "points": {
+            "lighthouse": 5,
+            "dolphin": 2,
+            "tiger": 1,
+            "jellyfish": 0,
+            "elephant": 2
+          }
+        },
+        {
+          "id": "q7b",
+          "text": "Problem-solve with them: 'What was going on? What could you do differently next time?'",
+          "points": {
+            "lighthouse": 2,
+            "dolphin": 5,
+            "tiger": 0,
+            "jellyfish": 0,
+            "elephant": 2
+          }
+        },
+        {
+          "id": "q7c",
+          "text": "There's a clear consequence — and you email the teacher back to coordinate so there's no gap",
+          "points": {
+            "lighthouse": 1,
+            "dolphin": 0,
+            "tiger": 5,
+            "jellyfish": 0,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q7d",
+          "text": "Talk to them gently, but don't overreact — kids are disruptive sometimes, it's not a crisis",
+          "points": {
+            "lighthouse": 0,
+            "dolphin": 1,
+            "tiger": 0,
+            "jellyfish": 5,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q7e",
+          "text": "Before anything else, check in emotionally — disruption usually means something's going on underneath",
+          "points": {
+            "lighthouse": 0,
+            "dolphin": 1,
+            "tiger": 0,
+            "jellyfish": 1,
+            "elephant": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "text": "Bedtime. Your kid asks for 'just one more' story/song/hug/glass of water for the fourth time. What's the call?",
+      "subtext": "The nightly negotiation that tests every parent's resolve.",
+      "options": [
+        {
+          "id": "q8a",
+          "text": "'We agreed on two stories and we did two. I love you, and it's time for sleep.' Door closed.",
+          "points": {
+            "lighthouse": 5,
+            "dolphin": 0,
+            "tiger": 3,
+            "jellyfish": 0,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q8b",
+          "text": "'One more — but you have to tell ME a story this time.' Make it fun, then done.",
+          "points": {
+            "lighthouse": 1,
+            "dolphin": 5,
+            "tiger": 0,
+            "jellyfish": 2,
+            "elephant": 1
+          }
+        },
+        {
+          "id": "q8c",
+          "text": "Firm no. The routine is the routine. Consistency now means fewer battles later.",
+          "points": {
+            "lighthouse": 2,
+            "dolphin": 0,
+            "tiger": 5,
+            "jellyfish": 0,
+            "elephant": 0
+          }
+        },
+        {
+          "id": "q8d",
+          "text": "You cave. They're only little once, and honestly you kind of enjoy the extra cuddle time too.",
+          "points": {
+            "lighthouse": 0,
+            "dolphin": 0,
+            "tiger": 0,
+            "jellyfish": 5,
+            "elephant": 3
+          }
+        },
+        {
+          "id": "q8e",
+          "text": "Lie down with them for a few minutes — sometimes they just need to feel you close before they can settle",
+          "points": {
+            "lighthouse": 0,
+            "dolphin": 1,
+            "tiger": 0,
+            "jellyfish": 2,
+            "elephant": 5
+          }
+        }
+      ]
+    }
+  ]
+}

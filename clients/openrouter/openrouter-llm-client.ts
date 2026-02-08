@@ -16,7 +16,20 @@ function shortText(s: string, n: number): string {
 
 function sanitizeJsonSchemaForOpenRouter(schema: Record<string, unknown>): Record<string, unknown> {
   // OpenRouter's `response_format: { type: "json_schema" }` is picky.
-  // In practice, stripping meta keys like "$schema" avoids provider-side errors.
+  // zod-to-json-schema with `name` option produces:
+  //   { "$ref": "#/definitions/Name", "definitions": { "Name": {...} }, "$schema": "..." }
+  // We need to extract the actual schema from definitions if it's a $ref wrapper.
+  const defs = (schema as any).definitions as Record<string, unknown> | undefined;
+  const ref = (schema as any).$ref as string | undefined;
+  if (ref && defs) {
+    // Extract "Name" from "#/definitions/Name"
+    const refName = ref.replace('#/definitions/', '');
+    const resolved = defs[refName] as Record<string, unknown> | undefined;
+    if (resolved) {
+      const { $schema: _s, definitions: _d, ...rest } = resolved as any;
+      return rest as Record<string, unknown>;
+    }
+  }
   const { $schema: _schema, definitions: _definitions, ...rest } = schema as any;
   return rest as Record<string, unknown>;
 }

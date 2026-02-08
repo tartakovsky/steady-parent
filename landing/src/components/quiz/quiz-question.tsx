@@ -3,10 +3,16 @@
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { QuizOption } from "./quiz-option";
-import type { QuizQuestion as QuizQuestionType } from "@/lib/quiz/quiz-engine";
+
+interface DisplayQuestion {
+  id: string;
+  text: string;
+  subtext?: string;
+  options: { id: string; text: string }[];
+}
 
 interface QuizQuestionProps {
-  question: QuizQuestionType;
+  question: DisplayQuestion;
   selectedAnswer?: string | undefined;
   onSelect: (optionId: string) => void;
   direction: 1 | -1;

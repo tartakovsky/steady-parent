@@ -8,12 +8,17 @@ import { FreebieCTA } from "@/components/blog/freebie-cta";
 
 export const dynamicParams = false;
 
-export function generateStaticParams(): { slug: string }[] {
-  return blogPosts.map((p) => ({ slug: p.meta.slug }));
+export function generateStaticParams(): { category: string; slug: string }[] {
+  return blogPosts.map((p) => ({
+    category: p.meta.categorySlug,
+    slug: p.meta.slug,
+  }));
 }
 
-function getPostBySlug(slug: string): BlogPostEntry {
-  const post = blogPosts.find((p) => p.meta.slug === slug);
+function getPost(category: string, slug: string): BlogPostEntry {
+  const post = blogPosts.find(
+    (p) => p.meta.categorySlug === category && p.meta.slug === slug,
+  );
   if (!post) notFound();
   return post;
 }
@@ -21,10 +26,10 @@ function getPostBySlug(slug: string): BlogPostEntry {
 export default async function BlogPostPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ category: string; slug: string }>;
 }): Promise<React.JSX.Element> {
-  const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const { category, slug } = await params;
+  const post = getPost(category, slug);
   const mod = await post.load();
   const Post = mod.default;
 
@@ -53,4 +58,3 @@ export default async function BlogPostPage({
     </>
   );
 }
-

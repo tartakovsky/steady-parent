@@ -13,7 +13,7 @@ const components: MDXComponents = {
   a: ({ href, children }) => (
     <a
       href={typeof href === "string" ? href : undefined}
-      className="underline underline-offset-4 decoration-muted-foreground/50 hover:decoration-foreground"
+      className="text-blue-700/70 visited:text-purple-700/60 underline underline-offset-4 decoration-blue-700/30 hover:decoration-blue-700/60 hover:text-blue-700/90"
       target={typeof href === "string" && href.startsWith("/") ? undefined : "_blank"}
       rel={typeof href === "string" && href.startsWith("/") ? undefined : "noreferrer"}
     >

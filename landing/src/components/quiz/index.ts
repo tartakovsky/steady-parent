@@ -3,3 +3,8 @@ export { QuizProgress } from "./quiz-progress";
 export { QuizQuestion } from "./quiz-question";
 export { QuizOption } from "./quiz-option";
 export { QuizResult } from "./quiz-result";
+export { IdentityResult } from "./identity-result";
+export { ProfileResult } from "./profile-result";
+export { RecommendationResult } from "./recommendation-result";
+export { LikertQuiz } from "./likert-quiz";
+export { LikertResult } from "./likert-result";

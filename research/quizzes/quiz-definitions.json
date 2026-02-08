@@ -1,0 +1,652 @@
+[
+  {
+    "slug": "parenting-style",
+    "number": 1,
+    "title": "What's Your Parenting Style?",
+    "shortTitle": "Parenting Style",
+    "description": "Discover your natural parenting approach — are you the steady explainer, the firm boundary-setter, or the free-spirited adventurer?",
+    "dataModel": "likert",
+    "resultDisplay": "profile",
+    "subject": "you",
+    "statementCount": 18,
+    "scale": ["Never", "Rarely", "Sometimes", "Often", "Always"],
+    "dimensions": [
+      { "id": "steady-guide", "name": "Steady Guide" },
+      { "id": "firm-protector", "name": "Firm Protector" },
+      { "id": "free-spirit", "name": "Free Spirit" }
+    ],
+    "connectsTo": ["parenting-approach", "discipline", "parenting-science"],
+    "sources": ["Baumrind parenting typology", "Maccoby & Martin framework"],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your complete parenting style profile",
+      "body": "Your detailed blend across all three approaches — which instincts are strongest, where you flex, and specific tips to lean into your natural strengths.",
+      "buttonText": "Send my profile"
+    },
+    "notes": "Already built as Likert. Also has a forced-choice variant at /quiz/parenting-approach."
+  },
+  {
+    "slug": "parenting-approach",
+    "number": "1b",
+    "title": "What's Your Parenting Approach?",
+    "shortTitle": "Parenting Approach",
+    "description": "10 real parenting scenarios — pick what you'd actually do and find out which approach drives your instincts.",
+    "dataModel": "identity",
+    "resultDisplay": "classification",
+    "subject": "you",
+    "questionCount": 10,
+    "types": [
+      { "id": "steady-guide", "name": "Steady Guide" },
+      { "id": "firm-protector", "name": "Firm Protector" },
+      { "id": "free-spirit", "name": "Free Spirit" }
+    ],
+    "connectsTo": ["parenting-approach", "discipline", "parenting-science"],
+    "sources": ["Baumrind parenting typology", "Maccoby & Martin framework"],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your complete parenting approach profile",
+      "body": "Your primary approach explained — why it works, where to watch out, your unique strengths as a parent, and a concrete action plan.",
+      "buttonText": "Send my profile"
+    },
+    "notes": "Already built. Forced-choice alternative to the Likert version."
+  },
+  {
+    "slug": "bedtime-battle-style",
+    "number": 2,
+    "title": "What's Your Bedtime Battle Style?",
+    "shortTitle": "Bedtime Battle Style",
+    "description": "Every family's bedtime looks different. Find out which bedtime warrior you are — and why it's working better than you think.",
+    "dataModel": "identity",
+    "resultDisplay": "classification",
+    "subject": "you",
+    "questionCount": 8,
+    "types": [
+      { "id": "the-negotiator", "name": "The Negotiator" },
+      { "id": "the-ritual-master", "name": "The Ritual Master" },
+      { "id": "the-softie", "name": "The Softie" },
+      { "id": "the-tag-team", "name": "The Tag Team" },
+      { "id": "the-surrender", "name": "The Surrender" }
+    ],
+    "connectsTo": ["sleep"],
+    "sources": ["Pediatric sleep research", "Mindell bedtime routine studies"],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your bedtime battle survival guide",
+      "body": "Your style explained — why you default to it, what's secretly working, the one tweak that would make the biggest difference, and scripts for your toughest bedtime moments.",
+      "buttonText": "Send my guide"
+    }
+  },
+  {
+    "slug": "parents-patterns",
+    "number": 3,
+    "title": "Are You Repeating Your Parents' Patterns?",
+    "shortTitle": "Parents' Patterns",
+    "description": "Not a therapy session — just an honest look at which patterns you're carrying forward, which you've dropped, and where you're still figuring it out.",
+    "dataModel": "identity",
+    "resultDisplay": "classification",
+    "subject": "you",
+    "questionCount": 10,
+    "types": [
+      { "id": "the-overcorrector", "name": "The Overcorrector" },
+      { "id": "the-healer", "name": "The Healer" },
+      { "id": "the-awakener", "name": "The Awakener" },
+      { "id": "the-integrator", "name": "The Integrator" },
+      { "id": "the-protector", "name": "The Protector" }
+    ],
+    "connectsTo": ["breaking-the-cycle", "staying-calm", "parenting-approach"],
+    "sources": ["ACE studies", "Attachment theory", "Intergenerational trauma research"],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your complete pattern profile",
+      "body": "Which patterns you've kept, which you've broken, and the specific places where your childhood still shows up in your parenting — plus what to do about it.",
+      "buttonText": "Send my profile"
+    }
+  },
+  {
+    "slug": "worried-parent",
+    "number": 4,
+    "title": "What Kind of Worried Parent Are You?",
+    "shortTitle": "Worried Parent",
+    "description": "All parents worry — yours just has a specific flavor. Find out your worry style and why it actually makes sense.",
+    "dataModel": "identity",
+    "resultDisplay": "classification",
+    "subject": "you",
+    "questionCount": 8,
+    "types": [
+      { "id": "the-researcher", "name": "The Researcher" },
+      { "id": "the-worst-case-thinker", "name": "The Worst-Case Thinker" },
+      { "id": "the-comparer", "name": "The Comparer" },
+      { "id": "the-gut-truster", "name": "The Gut-Truster" },
+      { "id": "the-nighttime-spiraler", "name": "The Nighttime Spiraler" }
+    ],
+    "connectsTo": ["anxiety", "new-parent", "parenting-science"],
+    "sources": ["Parental anxiety research", "Cognitive behavioral models"],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your worry style decoded",
+      "body": "Why your brain does this, what it's actually protecting, the specific triggers to watch for, and 3 evidence-based techniques matched to your worry style.",
+      "buttonText": "Send my guide"
+    }
+  },
+  {
+    "slug": "parenting-love-language",
+    "number": 5,
+    "title": "What's Your Parenting Love Language?",
+    "shortTitle": "Parenting Love Language",
+    "description": "You show your kid you love them every day — but how? Discover which love channel you default to.",
+    "dataModel": "identity",
+    "resultDisplay": "classification",
+    "subject": "you",
+    "questionCount": 10,
+    "types": [
+      { "id": "quality-time", "name": "Quality Time" },
+      { "id": "words-of-affirmation", "name": "Words of Affirmation" },
+      { "id": "acts-of-service", "name": "Acts of Service" },
+      { "id": "physical-touch", "name": "Physical Touch" },
+      { "id": "playful-connection", "name": "Playful Connection" }
+    ],
+    "connectsTo": ["big-feelings", "parenting-approach"],
+    "sources": ["Chapman love languages framework", "Gottman relationship research"],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your parenting love language profile",
+      "body": "Your primary and secondary channels — how your child actually receives them, specific ways to amplify what's already working, and how to speak your child's language back.",
+      "buttonText": "Send my profile"
+    }
+  },
+  {
+    "slug": "kid-describe-you",
+    "number": 6,
+    "title": "How Would Your Kid Describe You?",
+    "shortTitle": "Kid's View of You",
+    "description": "Answer about your habits — get back a portrait of yourself through your child's eyes. Warning: it might make you cry.",
+    "dataModel": "identity",
+    "resultDisplay": "classification",
+    "subject": "you",
+    "questionCount": 8,
+    "types": [
+      { "id": "the-safe-one", "name": "The Safe One" },
+      { "id": "the-fun-one", "name": "The Fun One" },
+      { "id": "the-steady-one", "name": "The Steady One" },
+      { "id": "the-cheerleader", "name": "The Cheerleader" },
+      { "id": "the-wise-one", "name": "The Wise One" }
+    ],
+    "connectsTo": ["parenting-approach", "big-feelings", "breaking-the-cycle"],
+    "sources": ["Attachment theory", "Child development perspective-taking research"],
+    "previewCta": {
+      "eyebrow": "Want the full portrait?",
+      "title": "Get your child's-eye-view profile",
+      "body": "The full portrait through your kid's eyes — what they notice most, what they'll remember when they're grown, and the specific moments that are building your relationship.",
+      "buttonText": "Send my portrait"
+    }
+  },
+  {
+    "slug": "parenting-superpower",
+    "number": 7,
+    "title": "What's Your Parenting Superpower?",
+    "shortTitle": "Parenting Superpower",
+    "description": "You have one — even on the days it doesn't feel like it. Take 2 minutes and find out what your kids are lucky to have.",
+    "dataModel": "identity",
+    "resultDisplay": "classification",
+    "subject": "you",
+    "questionCount": 8,
+    "types": [
+      { "id": "patience", "name": "Patience" },
+      { "id": "humor", "name": "Humor" },
+      { "id": "creativity", "name": "Creativity" },
+      { "id": "resilience", "name": "Resilience" },
+      { "id": "empathy", "name": "Empathy" }
+    ],
+    "connectsTo": ["staying-calm", "big-feelings", "parenting-approach"],
+    "sources": ["VIA character strengths", "Positive psychology research"],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your superpower field guide",
+      "body": "How your superpower shows up in daily parenting, the situations where it shines brightest, the blind spot that comes with it, and how to use it deliberately when things get hard.",
+      "buttonText": "Send my guide"
+    }
+  },
+  {
+    "slug": "parent-at-2am",
+    "number": 8,
+    "title": "What Kind of Parent Are You at 2 AM?",
+    "shortTitle": "Parent at 2 AM",
+    "description": "The mask comes off at 2 AM. Find out which exhausted alter-ego runs the show when the sun is down.",
+    "dataModel": "identity",
+    "resultDisplay": "classification",
+    "subject": "you",
+    "questionCount": 8,
+    "types": [
+      { "id": "zombie-autopilot", "name": "The Zombie Autopilot" },
+      { "id": "phone-scroller", "name": "The Phone Scroller" },
+      { "id": "rage-whisperer", "name": "The Rage Whisperer" },
+      { "id": "is-this-normal-googler", "name": "The \"Is This Normal?\" Googler" },
+      { "id": "the-overthinker", "name": "The Overthinker" }
+    ],
+    "connectsTo": ["sleep", "staying-calm", "new-parent"],
+    "sources": ["Parental sleep deprivation research", "Stress response models"],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your 2 AM survival profile",
+      "body": "Why your brain defaults to this mode, what it says about your stress response, and specific middle-of-the-night strategies designed for your alter-ego.",
+      "buttonText": "Send my profile"
+    }
+  },
+  {
+    "slug": "parenting-era",
+    "number": 9,
+    "title": "What's Your Parenting Era?",
+    "shortTitle": "Parenting Era",
+    "description": "Gentle parenting purist? Chaos realist? 80s free-range throwback? Find your era.",
+    "dataModel": "identity",
+    "resultDisplay": "classification",
+    "subject": "you",
+    "questionCount": 8,
+    "types": [
+      { "id": "free-range-80s", "name": "80s Free-Range" },
+      { "id": "structured-90s", "name": "90s Structured" },
+      { "id": "gentle-parenting-purist", "name": "Gentle Parenting Purist" },
+      { "id": "chaos-realist", "name": "Chaos Realist" },
+      { "id": "the-hybrid", "name": "The Hybrid" }
+    ],
+    "connectsTo": ["parenting-approach", "discipline"],
+    "sources": ["Parenting trend research", "Cultural parenting norms"],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your parenting era decoded",
+      "body": "Where your era comes from, what's working about it, the one thing your era tends to overcorrect on, and how to keep the best parts while dropping the rest.",
+      "buttonText": "Send my profile"
+    }
+  },
+  {
+    "slug": "co-parent-team",
+    "number": 10,
+    "title": "What Kind of Co-Parent Team Are You?",
+    "shortTitle": "Co-Parent Team",
+    "description": "Both partners take it. Find out what kind of tag team you've become — and why it's probably working better than you think.",
+    "dataModel": "identity",
+    "resultDisplay": "classification",
+    "subject": "you",
+    "questionCount": 8,
+    "types": [
+      { "id": "good-cop-bad-cop", "name": "Good Cop / Bad Cop" },
+      { "id": "the-tag-team", "name": "The Tag Team" },
+      { "id": "divide-and-conquer", "name": "Divide and Conquer" },
+      { "id": "the-united-front", "name": "The United Front" },
+      { "id": "well-figure-it-out", "name": "The \"We'll Figure It Out\"" }
+    ],
+    "connectsTo": ["discipline", "staying-calm", "new-parent"],
+    "sources": ["Co-parenting alliance research", "Feinberg co-parenting model"],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your co-parenting team playbook",
+      "body": "How your team dynamic works, the friction points to watch for, and specific conversation starters that help your particular team style run smoother.",
+      "buttonText": "Send our playbook"
+    }
+  },
+  {
+    "slug": "potty-training-readiness",
+    "number": 11,
+    "title": "Is Your Toddler Ready for Potty Training?",
+    "shortTitle": "Potty Training Readiness",
+    "description": "Skip the guessing. Answer 8 quick questions and find out if your toddler is showing the signs — or if waiting a bit longer will save everyone tears.",
+    "dataModel": "assessment",
+    "resultDisplay": "readiness",
+    "subject": "your child",
+    "questionCount": 8,
+    "ageRange": { "min": 18, "max": 48, "unit": "months" },
+    "domains": [
+      { "id": "physical-readiness", "name": "Physical Readiness" },
+      { "id": "communication", "name": "Communication" },
+      { "id": "interest", "name": "Interest & Awareness" },
+      { "id": "routine-readiness", "name": "Routine Readiness" }
+    ],
+    "connectsTo": ["potty-training"],
+    "sources": ["AAP toilet training guidelines", "Brazelton readiness model"],
+    "previewCta": {
+      "eyebrow": "Want the full report?",
+      "title": "Get your toddler's complete potty readiness report",
+      "body": "Exactly which signs are strong, which aren't there yet, and a step-by-step starting plan matched to where your child actually is — not a generic timeline.",
+      "buttonText": "Send my report"
+    }
+  },
+  {
+    "slug": "kindergarten-readiness",
+    "number": 12,
+    "title": "Is Your Child Ready for Kindergarten?",
+    "shortTitle": "Kindergarten Readiness",
+    "description": "Not just ABCs — the real skills that predict a smooth start. See where your child shines and where a little practice helps.",
+    "dataModel": "assessment",
+    "resultDisplay": "readiness",
+    "subject": "your child",
+    "questionCount": 10,
+    "ageRange": { "min": 4, "max": 6, "unit": "years" },
+    "domains": [
+      { "id": "social-emotional", "name": "Social-Emotional Skills" },
+      { "id": "self-help-skills", "name": "Self-Help Skills" },
+      { "id": "academic-foundations", "name": "Academic Foundations" },
+      { "id": "communication", "name": "Communication" }
+    ],
+    "connectsTo": ["social-skills", "anxiety", "transitions"],
+    "sources": ["CDC developmental milestones", "Kindergarten readiness research"],
+    "previewCta": {
+      "eyebrow": "Want the full report?",
+      "title": "Get your child's kindergarten readiness report",
+      "body": "A detailed breakdown across all four skill areas — where they're ahead, where to focus this summer, and fun daily activities that build the skills that matter most.",
+      "buttonText": "Send my report"
+    }
+  },
+  {
+    "slug": "solid-foods-readiness",
+    "number": 13,
+    "title": "Is Your Baby Ready for Solid Foods?",
+    "shortTitle": "Solid Foods Readiness",
+    "description": "Age alone doesn't tell you. Check the actual developmental signs that say your baby is ready to start eating.",
+    "dataModel": "assessment",
+    "resultDisplay": "readiness",
+    "subject": "your baby",
+    "questionCount": 8,
+    "ageRange": { "min": 4, "max": 8, "unit": "months" },
+    "domains": [
+      { "id": "oral-motor-skills", "name": "Oral Motor Skills" },
+      { "id": "interest-signals", "name": "Interest Signals" },
+      { "id": "digestive-readiness", "name": "Digestive Readiness" },
+      { "id": "sitting-stability", "name": "Sitting Stability" }
+    ],
+    "connectsTo": ["new-parent", "eating"],
+    "sources": ["WHO complementary feeding guidelines", "AAP solid foods introduction"],
+    "previewCta": {
+      "eyebrow": "Want the full report?",
+      "title": "Get your baby's complete solids readiness report",
+      "body": "Which developmental signs are present, which to wait for, recommended first foods for your baby's stage, and a week-by-week introduction plan.",
+      "buttonText": "Send my report"
+    }
+  },
+  {
+    "slug": "drop-the-nap",
+    "number": 14,
+    "title": "Is Your Child Ready to Drop the Nap?",
+    "shortTitle": "Drop the Nap",
+    "description": "The nap is sacred — until it starts ruining bedtime. Find out if it's time to let go or hold on a little longer.",
+    "dataModel": "assessment",
+    "resultDisplay": "readiness",
+    "subject": "your child",
+    "questionCount": 8,
+    "ageRange": { "min": 2, "max": 5, "unit": "years" },
+    "domains": [
+      { "id": "sleep-duration", "name": "Sleep Duration" },
+      { "id": "mood-without-nap", "name": "Mood Without Nap" },
+      { "id": "age-appropriate-signs", "name": "Age-Appropriate Signs" },
+      { "id": "bedtime-impact", "name": "Bedtime Impact" }
+    ],
+    "connectsTo": ["sleep"],
+    "sources": ["Pediatric sleep guidelines", "Nap transition research"],
+    "previewCta": {
+      "eyebrow": "Want the full report?",
+      "title": "Get your nap transition game plan",
+      "body": "Whether to drop it now or hold on, a day-by-day transition schedule if it's time, and exactly how to handle the cranky 4pm window.",
+      "buttonText": "Send my plan"
+    }
+  },
+  {
+    "slug": "sleepover-readiness",
+    "number": 15,
+    "title": "Is Your Child Ready for a Sleepover?",
+    "shortTitle": "Sleepover Readiness",
+    "description": "It's not about age — it's about whether YOUR kid has the specific skills to handle a night away. Check the real signs.",
+    "dataModel": "assessment",
+    "resultDisplay": "readiness",
+    "subject": "your child",
+    "questionCount": 8,
+    "ageRange": { "min": 5, "max": 12, "unit": "years" },
+    "domains": [
+      { "id": "separation-comfort", "name": "Separation Comfort" },
+      { "id": "self-care-independence", "name": "Self-Care Independence" },
+      { "id": "communication-skills", "name": "Communication Skills" },
+      { "id": "emotional-regulation", "name": "Emotional Regulation Away from Home" }
+    ],
+    "connectsTo": ["anxiety", "social-skills", "transitions"],
+    "sources": ["Separation anxiety research", "Child independence milestones"],
+    "previewCta": {
+      "eyebrow": "Want the full report?",
+      "title": "Get your child's sleepover readiness report",
+      "body": "Which skills are solid, which need practice first, a prep checklist for before the big night, and exactly what to say if they call wanting to come home.",
+      "buttonText": "Send my report"
+    }
+  },
+  {
+    "slug": "second-child-readiness",
+    "number": 16,
+    "title": "Is Your Family Ready for a Second Child?",
+    "shortTitle": "Second Child Readiness",
+    "description": "The biological clock is ticking but is the rest of you ready? An honest check across the dimensions that actually matter.",
+    "dataModel": "assessment",
+    "resultDisplay": "readiness",
+    "subject": "your family",
+    "questionCount": 10,
+    "domains": [
+      { "id": "emotional-bandwidth", "name": "Emotional Bandwidth" },
+      { "id": "logistical-readiness", "name": "Logistical Readiness" },
+      { "id": "relationship-stability", "name": "Relationship Stability" },
+      { "id": "first-child-stage", "name": "First Child's Stage" }
+    ],
+    "connectsTo": ["new-parent", "siblings", "staying-calm"],
+    "sources": ["Family planning research", "Sibling spacing studies"],
+    "previewCta": {
+      "eyebrow": "Want the full report?",
+      "title": "Get your complete family readiness report",
+      "body": "An honest breakdown across all four dimensions — what's strong, what needs attention first, and a practical pre-baby checklist based on your specific situation.",
+      "buttonText": "Send my report"
+    }
+  },
+  {
+    "slug": "parenting-battery",
+    "number": 17,
+    "title": "How's Your Parenting Battery Right Now?",
+    "shortTitle": "Parenting Battery",
+    "description": "Rate a few statements about your week and see where you're charged, where you're running low, and what would actually help.",
+    "dataModel": "likert",
+    "resultDisplay": "profile",
+    "subject": "you",
+    "statementCount": 20,
+    "scale": ["Never", "Rarely", "Sometimes", "Often", "Always"],
+    "dimensions": [
+      { "id": "emotional-reserves", "name": "Emotional Reserves" },
+      { "id": "physical-energy", "name": "Physical Energy" },
+      { "id": "support-system", "name": "Support System" },
+      { "id": "identity-beyond-parenting", "name": "Identity Beyond Parenting" }
+    ],
+    "connectsTo": ["staying-calm", "breaking-the-cycle", "new-parent"],
+    "sources": ["Parental Burnout Assessment", "Maslach Burnout Inventory adapted", "Roskam & Mikolajczak parental burnout model"],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your complete energy profile with recharge plan",
+      "body": "Which reserves are drained, which are holding up, and specific daily micro-actions to recharge the ones running lowest — matched to YOUR life, not generic self-care advice.",
+      "buttonText": "Send my recharge plan"
+    }
+  },
+  {
+    "slug": "screen-dependence",
+    "number": 18,
+    "title": "How Screen-Dependent Is Your Family?",
+    "shortTitle": "Screen Dependence",
+    "description": "No judgment — just an honest look at your family's screen habits across four dimensions. Knowledge is power.",
+    "dataModel": "likert",
+    "resultDisplay": "profile",
+    "subject": "your family",
+    "statementCount": 20,
+    "scale": ["Never", "Rarely", "Sometimes", "Often", "Always"],
+    "dimensions": [
+      { "id": "child-screen-habits", "name": "Child Screen Habits" },
+      { "id": "parent-modeling", "name": "Parent Modeling" },
+      { "id": "screen-free-alternatives", "name": "Screen-Free Alternatives" },
+      { "id": "transition-ease", "name": "Screen Transition Ease" }
+    ],
+    "connectsTo": ["screens", "discipline"],
+    "sources": ["AAP screen time guidelines", "PRISM screen media instrument", "Common Sense Media research"],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your family's screen habits report with an action plan",
+      "body": "Which habits are fine, which are worth changing, and a realistic week-by-week plan to shift the balance — without going cold turkey or starting a war.",
+      "buttonText": "Send my action plan"
+    }
+  },
+  {
+    "slug": "emotional-intelligence",
+    "number": 19,
+    "title": "How Emotionally Intelligent Is Your Child?",
+    "shortTitle": "Emotional Intelligence",
+    "description": "See where your child shines emotionally — and where they're still growing. A strength-focused look at four key areas.",
+    "dataModel": "likert",
+    "resultDisplay": "profile",
+    "subject": "your child",
+    "statementCount": 20,
+    "scale": ["Never", "Rarely", "Sometimes", "Often", "Always"],
+    "ageRange": { "min": 3, "max": 10, "unit": "years" },
+    "dimensions": [
+      { "id": "emotion-vocabulary", "name": "Emotion Vocabulary" },
+      { "id": "self-regulation", "name": "Self-Regulation" },
+      { "id": "empathy", "name": "Empathy" },
+      { "id": "frustration-tolerance", "name": "Frustration Tolerance" }
+    ],
+    "connectsTo": ["big-feelings", "social-skills"],
+    "sources": ["Salovey-Mayer emotional intelligence model", "Gottman emotion coaching research", "CASEL social-emotional learning framework"],
+    "previewCta": {
+      "eyebrow": "Want the full profile?",
+      "title": "Get your child's complete emotional development map",
+      "body": "Detailed scores across all four dimensions — which skills are strongest, which are still building, and specific daily activities to nurture each area at your child's level.",
+      "buttonText": "Send my child's profile"
+    },
+    "notes": "Currently built as single-choice Type A with 10 questions. Target: regenerate as Likert with 20 statements."
+  },
+  {
+    "slug": "social-confidence",
+    "number": 20,
+    "title": "How Strong Is Your Child's Social Confidence?",
+    "shortTitle": "Social Confidence",
+    "description": "Not \"is your kid popular\" — a strengths-based look at the four skills that predict social success at any age.",
+    "dataModel": "likert",
+    "resultDisplay": "profile",
+    "subject": "your child",
+    "statementCount": 20,
+    "scale": ["Never", "Rarely", "Sometimes", "Often", "Always"],
+    "ageRange": { "min": 3, "max": 12, "unit": "years" },
+    "dimensions": [
+      { "id": "peer-comfort", "name": "Peer Comfort" },
+      { "id": "conflict-navigation", "name": "Conflict Navigation" },
+      { "id": "empathy-expression", "name": "Empathy Expression" },
+      { "id": "assertiveness", "name": "Assertiveness" }
+    ],
+    "connectsTo": ["social-skills", "anxiety"],
+    "sources": ["Social Skills Rating System", "CASEL framework", "Child social competence research"],
+    "previewCta": {
+      "eyebrow": "Want the full profile?",
+      "title": "Get your child's social confidence profile with coaching tips",
+      "body": "Where they're naturally strong, where they need support, and age-appropriate practice scenarios you can use at home to build each skill — no awkward role-playing required.",
+      "buttonText": "Send my child's profile"
+    }
+  },
+  {
+    "slug": "communication-safety",
+    "number": 21,
+    "title": "How Safe Does Your Child Feel Talking to You?",
+    "shortTitle": "Communication Safety",
+    "description": "The conversations they bring to you — and the ones they don't — tell a story. See how open the channel really is.",
+    "dataModel": "likert",
+    "resultDisplay": "profile",
+    "subject": "your child",
+    "statementCount": 20,
+    "scale": ["Never", "Rarely", "Sometimes", "Often", "Always"],
+    "ageRange": { "min": 4, "max": 14, "unit": "years" },
+    "dimensions": [
+      { "id": "emotional-safety", "name": "Emotional Safety" },
+      { "id": "repair-after-conflict", "name": "Repair After Conflict" },
+      { "id": "judgment-free-responses", "name": "Judgment-Free Responses" },
+      { "id": "vulnerability-comfort", "name": "Vulnerability Comfort" }
+    ],
+    "connectsTo": ["big-feelings", "breaking-the-cycle", "parenting-approach"],
+    "sources": ["Gottman emotion coaching research", "Parent-child communication research", "Attachment security measures"],
+    "previewCta": {
+      "eyebrow": "Want the full profile?",
+      "title": "Get your communication openness report with conversation scripts",
+      "body": "Which channels are wide open, which are narrower than you think, and exact phrases to use after conflict, during hard conversations, and when they shut down.",
+      "buttonText": "Send my report"
+    }
+  },
+  {
+    "slug": "bedtime-routine",
+    "number": 22,
+    "title": "Build Your Child's Bedtime Routine",
+    "shortTitle": "Bedtime Routine",
+    "description": "Answer a few questions about your child's sleep patterns and get a personalized bedtime routine built for how YOUR kid actually works.",
+    "dataModel": "assessment",
+    "resultDisplay": "recommendation",
+    "subject": "your child",
+    "questionCount": 9,
+    "ageRange": { "min": 1, "max": 10, "unit": "years" },
+    "domains": [
+      { "id": "sleep-hygiene", "name": "Sleep Hygiene" },
+      { "id": "schedule-consistency", "name": "Schedule Consistency" },
+      { "id": "sleep-environment", "name": "Sleep Environment" }
+    ],
+    "connectsTo": ["sleep"],
+    "sources": ["Mindell bedtime routine studies", "Pediatric sleep hygiene guidelines", "National Sleep Foundation recommendations"],
+    "previewCta": {
+      "eyebrow": "Want the full routine?",
+      "title": "Get your child's personalized bedtime routine",
+      "body": "A step-by-step evening sequence matched to your child's sleep personality — what to do, in what order, how long each step takes, and what to say when they resist.",
+      "buttonText": "Send my routine"
+    }
+  },
+  {
+    "slug": "age-appropriate-chores",
+    "number": 23,
+    "title": "What Chores Can Your Child Handle?",
+    "shortTitle": "Age-Appropriate Chores",
+    "description": "Get a personalized chore list matched to your child's actual abilities — not a generic age chart.",
+    "dataModel": "assessment",
+    "resultDisplay": "recommendation",
+    "subject": "your child",
+    "questionCount": 9,
+    "ageRange": { "min": 2, "max": 12, "unit": "years" },
+    "domains": [
+      { "id": "age-readiness", "name": "Age & Developmental Readiness" },
+      { "id": "independence-level", "name": "Independence Level" },
+      { "id": "household-setup", "name": "Household Setup" }
+    ],
+    "connectsTo": ["discipline", "parenting-approach"],
+    "sources": ["Montessori practical life framework", "Child responsibility development research"],
+    "previewCta": {
+      "eyebrow": "Want the full chore list?",
+      "title": "Get your child's personalized chore list with teaching tips",
+      "body": "Specific chores matched to your child's actual abilities — what they can do independently, what needs supervision, and how to introduce each one without it turning into a battle.",
+      "buttonText": "Send my chore list"
+    }
+  },
+  {
+    "slug": "calm-down-toolkit",
+    "number": 24,
+    "title": "Build Your Child's Calm-Down Toolkit",
+    "shortTitle": "Calm-Down Toolkit",
+    "description": "Answer a few questions about how your child processes big emotions, and get a personalized set of calming strategies matched to their temperament.",
+    "dataModel": "assessment",
+    "resultDisplay": "recommendation",
+    "subject": "your child",
+    "questionCount": 9,
+    "ageRange": { "min": 2, "max": 10, "unit": "years" },
+    "domains": [
+      { "id": "movement", "name": "Movement & Energy Release" },
+      { "id": "sensory", "name": "Sensory & Tactile Input" },
+      { "id": "verbal", "name": "Verbal & Cognitive Processing" }
+    ],
+    "connectsTo": ["big-feelings", "tantrums", "spirited-kids"],
+    "sources": ["Zones of Regulation framework", "Alert Program sensory regulation research", "Stuart Shanker self-regulation model"],
+    "previewCta": {
+      "eyebrow": "Want the full toolkit?",
+      "title": "Get your child's personalized calm-down strategy kit",
+      "body": "The exact calming techniques matched to your child's temperament — which strategies to try first, how to introduce them, and a printable cheat sheet for mid-meltdown moments.",
+      "buttonText": "Send my toolkit"
+    },
+    "notes": "Already built as single-choice Type A with 9 questions."
+  }
+]

@@ -5,40 +5,33 @@
  * and export them for use in pages and components.
  */
 
-import pottyTraining from './potty-training-readiness.json';
-import kindergartenReadiness from './kindergarten-readiness.json';
-import solidFoods from './solid-foods-readiness.json';
-import dropTheNap from './drop-the-nap.json';
-import sleepover from './sleepover-readiness.json';
-import secondChild from './second-child-readiness.json';
-import parentingBattery from './parenting-battery.json';
-import screenDependence from './screen-dependence.json';
-import emotionalIntelligence from './emotional-intelligence.json';
-import socialConfidence from './social-confidence.json';
-import communicationSafety from './communication-safety.json';
-import bedtimeRoutine from './bedtime-routine.json';
-import ageAppropriateChores from './age-appropriate-chores.json';
-import calmDownToolkit from './calm-down-toolkit.json';
-import type { QuizData } from './quiz-engine';
+import type { QuizData, IdentityQuizData, LikertQuizData } from './quiz-engine';
+import { hydrateLikertQuestions } from './quiz-engine';
 
-export const quizzes: Record<string, QuizData> = {
-  'potty-training-readiness': pottyTraining as QuizData,
-  'kindergarten-readiness': kindergartenReadiness as QuizData,
-  'solid-foods-readiness': solidFoods as QuizData,
-  'drop-the-nap': dropTheNap as QuizData,
-  'sleepover-readiness': sleepover as QuizData,
-  'second-child-readiness': secondChild as QuizData,
-  'parenting-battery': parentingBattery as QuizData,
-  'screen-dependence': screenDependence as QuizData,
-  'emotional-intelligence': emotionalIntelligence as QuizData,
-  'social-confidence': socialConfidence as QuizData,
-  'communication-safety': communicationSafety as QuizData,
-  'bedtime-routine': bedtimeRoutine as QuizData,
-  'age-appropriate-chores': ageAppropriateChores as QuizData,
-  'calm-down-toolkit': calmDownToolkit as QuizData,
+export type AnyQuizData = QuizData | IdentityQuizData | LikertQuizData;
+
+import parentingStyleData from './parenting-style-likert.json';
+import parentingApproachData from './parenting-approach.json';
+import emotionalIntelligenceData from './emotional-intelligence.json';
+import calmDownToolkitData from './calm-down-toolkit.json';
+
+/** Hydrate a raw Likert JSON into a full LikertQuizData with computed questions array */
+function hydrateLikert(raw: Record<string, unknown>): LikertQuizData {
+  const data = raw as unknown as Omit<LikertQuizData, 'questions'>;
+  return {
+    ...data,
+    questions: hydrateLikertQuestions(data.statements, data.scale),
+  } as LikertQuizData;
+}
+
+export const quizzes: Record<string, AnyQuizData> = {
+  'parenting-style': hydrateLikert(parentingStyleData as unknown as Record<string, unknown>),
+  'parenting-approach': parentingApproachData as unknown as IdentityQuizData,
+  'emotional-intelligence': emotionalIntelligenceData as unknown as QuizData,
+  'calm-down-toolkit': calmDownToolkitData as unknown as QuizData,
 };
 
-export function getQuizBySlug(slug: string): QuizData | undefined {
+export function getQuizBySlug(slug: string): AnyQuizData | undefined {
   return quizzes[slug];
 }
 
@@ -46,6 +39,14 @@ export function getAllQuizSlugs(): string[] {
   return Object.keys(quizzes);
 }
 
-export function getAllQuizzes(): QuizData[] {
+export function getAllQuizzes(): AnyQuizData[] {
   return Object.values(quizzes);
+}
+
+export function isIdentityQuiz(quiz: AnyQuizData): quiz is IdentityQuizData {
+  return quiz.quizType === 'identity';
+}
+
+export function isLikertQuiz(quiz: AnyQuizData): quiz is LikertQuizData {
+  return quiz.quizType === 'likert';
 }

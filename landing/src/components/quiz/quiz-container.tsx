@@ -8,20 +8,41 @@ import { ArrowLeft } from "lucide-react";
 import { QuizProgress } from "./quiz-progress";
 import { QuizQuestion } from "./quiz-question";
 import { QuizResult } from "./quiz-result";
-import { QuizEngine } from "@/lib/quiz/quiz-engine";
+import { IdentityResult } from "./identity-result";
+import { ProfileResult } from "./profile-result";
+import { RecommendationResult } from "./recommendation-result";
+import { QuizEngine, scoreIdentityQuiz } from "@/lib/quiz/quiz-engine";
 import {
   readStateFromUrl,
   pushStateToUrl,
   clearStateFromUrl,
 } from "@/lib/quiz/quiz-url";
+import { LikertQuiz } from "./likert-quiz";
 import type {
-  QuizData,
+  IdentityQuizData,
+  LikertQuizData,
   QuizResult as QuizResultType,
+  IdentityQuizResult,
 } from "@/lib/quiz/quiz-engine";
+import type { AnyQuizData } from "@/lib/quiz";
+
+type AnyResult = QuizResultType | IdentityQuizResult;
+
+function isIdentity(quiz: AnyQuizData): quiz is IdentityQuizData {
+  return quiz.quizType === "identity";
+}
+
+function isLikert(quiz: AnyQuizData): quiz is LikertQuizData {
+  return quiz.quizType === "likert";
+}
+
+function isIdentityResult(result: AnyResult): result is IdentityQuizResult {
+  return "primaryType" in result;
+}
 
 interface QuizContainerProps extends React.HTMLAttributes<HTMLDivElement> {
-  quiz: QuizData;
-  onComplete?: (result: QuizResultType) => void;
+  quiz: AnyQuizData;
+  onComplete?: (result: AnyResult) => void;
 }
 
 export function QuizContainer({
@@ -30,12 +51,32 @@ export function QuizContainer({
   className,
   ...props
 }: QuizContainerProps) {
+  // Likert quizzes have their own container with a completely different interaction model
+  if (isLikert(quiz)) {
+    return (
+      <div className={cn("", className)} {...props}>
+        <LikertQuiz quiz={quiz} />
+      </div>
+    );
+  }
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [direction, setDirection] = useState<1 | -1>(1);
-  const [result, setResult] = useState<QuizResultType | null>(null);
+  const [result, setResult] = useState<AnyResult | null>(null);
   const [shared, setShared] = useState(false);
   const initialized = useRef(false);
+
+  const computeResult = useCallback(
+    (ans: Record<string, string>): AnyResult => {
+      if (isIdentity(quiz)) {
+        return scoreIdentityQuiz(quiz, ans);
+      }
+      const engine = new QuizEngine(quiz);
+      return engine.assembleResult(ans);
+    },
+    [quiz]
+  );
 
   // Restore state from URL (on mount + popstate)
   const restoreFromUrl = useCallback(() => {
@@ -43,7 +84,6 @@ export function QuizContainer({
     const state = readStateFromUrl(params, quiz.questions);
 
     if (!state) {
-      // Clean URL = fresh quiz
       setAnswers({});
       setCurrentIndex(0);
       setResult(null);
@@ -55,12 +95,11 @@ export function QuizContainer({
     setCurrentIndex(state.currentIndex);
 
     if (state.isComplete) {
-      const engine = new QuizEngine(quiz);
-      setResult(engine.assembleResult(state.answers));
+      setResult(computeResult(state.answers));
     } else {
       setResult(null);
     }
-  }, [quiz]);
+  }, [quiz, computeResult]);
 
   // On mount
   useEffect(() => {
@@ -81,7 +120,6 @@ export function QuizContainer({
   const isFirstQuestion = currentIndex === 0;
   const isLastQuestion = currentIndex === questions.length - 1;
 
-  // Safety check - should never happen with proper quiz data
   if (!currentQuestion && !result) {
     return <div>Invalid quiz state</div>;
   }
@@ -92,8 +130,7 @@ export function QuizContainer({
       setAnswers(newAnswers);
 
       if (isLastQuestion) {
-        const engine = new QuizEngine(quiz);
-        const quizResult = engine.assembleResult(newAnswers);
+        const quizResult = computeResult(newAnswers);
         pushStateToUrl(newAnswers, currentIndex, quiz.questions, true);
         setResult(quizResult);
         onComplete?.(quizResult);
@@ -104,7 +141,7 @@ export function QuizContainer({
         setCurrentIndex(nextIndex);
       }
     },
-    [currentQuestion, isLastQuestion, currentIndex, answers, quiz, onComplete]
+    [currentQuestion, isLastQuestion, currentIndex, answers, quiz, onComplete, computeResult]
   );
 
   const handleBack = useCallback(() => {
@@ -140,6 +177,49 @@ export function QuizContainer({
 
   // Show results if quiz is complete
   if (result) {
+    if (isIdentityResult(result)) {
+      return (
+        <div className={cn("", className)} {...props}>
+          <IdentityResult
+            result={result}
+            quizMeta={quiz.meta}
+            onRetake={handleRetake}
+            shared={shared}
+          />
+        </div>
+      );
+    }
+
+    // Branch on resultDisplay for Type A quizzes
+    const displayType = quiz.meta.resultDisplay;
+
+    if (displayType === "profile") {
+      return (
+        <div className={cn("", className)} {...props}>
+          <ProfileResult
+            result={result}
+            quizMeta={quiz.meta}
+            onRetake={handleRetake}
+            shared={shared}
+          />
+        </div>
+      );
+    }
+
+    if (displayType === "recommendation") {
+      return (
+        <div className={cn("", className)} {...props}>
+          <RecommendationResult
+            result={result}
+            quizMeta={quiz.meta}
+            onRetake={handleRetake}
+            shared={shared}
+          />
+        </div>
+      );
+    }
+
+    // Default: readiness display
     return (
       <div className={cn("", className)} {...props}>
         <QuizResult

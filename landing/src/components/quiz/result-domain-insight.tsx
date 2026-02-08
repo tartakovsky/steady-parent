@@ -39,30 +39,22 @@ function getDomainBadgeText(level: DomainResult["level"]): string {
   }
 }
 
-function getLevelLabel(level: DomainResult["level"]): string {
-  switch (level) {
-    case "high":
-      return "Strong";
-    case "medium":
-      return "Developing";
-    case "low":
-      return "Emerging";
-  }
-}
+const DEFAULT_LEVEL_LABELS = { high: "Strong", medium: "Developing", low: "Emerging" };
 
 interface ResultDomainInsightProps {
   domain: DomainResult;
-  shared?: boolean | undefined;
+  levelLabels?: { high: string; medium: string; low: string } | undefined;
 }
 
 export function ResultDomainInsight({
   domain,
-  shared,
+  levelLabels,
 }: ResultDomainInsightProps) {
   const color = getDomainColor(domain.level);
   const badgeText = getDomainBadgeText(domain.level);
   const Icon = DOMAIN_ICONS[domain.id] ?? Activity;
-  const levelLabel = getLevelLabel(domain.level);
+  const labels = levelLabels ?? DEFAULT_LEVEL_LABELS;
+  const levelLabel = labels[domain.level];
 
   return (
     <div className="rounded-2xl border border-border/50 bg-card p-5 sm:p-6">
@@ -110,35 +102,33 @@ export function ResultDomainInsight({
         />
       </div>
 
-      {/* Detail content — hidden in shared view */}
-      {!shared && (
-        <div className="mt-4 space-y-3">
-          <p className="font-semibold text-base text-foreground">
-            {domain.headline}
-          </p>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            {domain.detail}
-          </p>
+      {/* Detail content */}
+      <div className="mt-4 space-y-3">
+        <p className="font-semibold text-base text-foreground">
+          {domain.headline}
+        </p>
+        <p className="text-base text-muted-foreground leading-relaxed">
+          {domain.detail}
+        </p>
 
-          {domain.strength && (
-            <div className="flex items-start gap-2.5 text-base rounded-xl bg-green-50/70 px-4 py-3">
-              <Check className="w-4 h-4 mt-0.5 shrink-0 text-green-600" />
-              <span className="text-green-900/80 leading-relaxed">
-                {domain.strength}
-              </span>
-            </div>
-          )}
+        {domain.strength && (
+          <div className="flex items-start gap-2.5 text-base rounded-xl bg-green-50/70 px-4 py-3">
+            <Check className="w-4 h-4 mt-0.5 shrink-0 text-green-600" />
+            <span className="text-green-900/80 leading-relaxed">
+              {domain.strength}
+            </span>
+          </div>
+        )}
 
-          {domain.concern && (
-            <div className="flex items-start gap-2.5 text-base rounded-xl bg-indigo-50/70 px-4 py-3">
-              <Lightbulb className="w-4 h-4 mt-0.5 shrink-0 text-indigo-600" />
-              <span className="text-indigo-900/80 leading-relaxed">
-                {domain.concern}
-              </span>
-            </div>
-          )}
-        </div>
-      )}
+        {domain.concern && (
+          <div className="flex items-start gap-2.5 text-base rounded-xl bg-indigo-50/70 px-4 py-3">
+            <Lightbulb className="w-4 h-4 mt-0.5 shrink-0 text-indigo-600" />
+            <span className="text-indigo-900/80 leading-relaxed">
+              {domain.concern}
+            </span>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,290 @@
+{
+  "quizType": "identity",
+  "meta": {
+    "id": "parenting-approach",
+    "slug": "parenting-approach",
+    "title": "What Kind of Parent Are You, Really?",
+    "shortTitle": "Parenting Approach",
+    "description": "Ten real scenarios, three honest options each. No trick questions — just find out whether you lead with structure, flexibility, or warmth.",
+    "intro": "Pick the response that's closest to what you'd actually do — not what you think you should do. There are no wrong answers.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 10,
+    "subject": "your parenting approach",
+    "shareCta": "What kind of parent are you, really? Take the quiz.",
+    "sources": [
+      "Baumrind parenting typology research",
+      "PSDQ (Parenting Styles and Dimensions Questionnaire)",
+      "Robinson et al. parenting dimensions framework"
+    ]
+  },
+  "types": {
+    "steady-guide": {
+      "id": "steady-guide",
+      "name": "The Steady Guide",
+      "tagline": "You set the bar high and hold their hand while they reach for it.",
+      "themeColor": "#00b86b",
+      "description": "You balance warmth with structure — explaining the reasons behind your rules, listening to your child's perspective, and adjusting when it makes sense. You're firm without being rigid and loving without being a pushover.",
+      "strengths": [
+        "You explain your reasoning instead of relying on 'because I said so'",
+        "You adjust boundaries based on your child's development and the situation",
+        "Your kids feel safe enough to disagree with you — and that's a feature, not a bug",
+        "You model the self-regulation you're asking them to learn"
+      ],
+      "growthEdge": "You can overthink decisions and second-guess yourself. Sometimes the right call is the quick one — not every boundary needs a dissertation.",
+      "encouragement": "Your kids are learning that rules and love aren't opposites. The fact that you question your approach means you're doing it with intention. That's exactly what they need.",
+      "comparativeContext": "Research consistently links this approach with the best outcomes for child wellbeing, self-regulation, and social competence."
+    },
+    "firm-protector": {
+      "id": "firm-protector",
+      "name": "The Firm Protector",
+      "tagline": "You keep the guardrails strong because the world won't do it for them.",
+      "themeColor": "#e07937",
+      "description": "You believe kids thrive with clear expectations and consistent consequences. Structure isn't something you apologize for — it's how you show love. Your house has rules, and everyone knows what they are.",
+      "strengths": [
+        "Your kids always know exactly where the line is",
+        "You follow through on consequences — your word means something",
+        "You provide the kind of stability that builds security"
+      ],
+      "growthEdge": "Sometimes the rules become the point instead of the child. Try adding a brief 'here's why' when you set a limit — it doesn't weaken your authority, it strengthens it.",
+      "encouragement": "Structure is genuinely important — kids without it feel anxious, not free. Your instinct to protect and organize is real love. Adding a little flexibility alongside your consistency will make your approach even more powerful.",
+      "comparativeContext": "About 1 in 4 parents lean toward structure-first approaches. Many report feeling like the 'strict' parent among their friends."
+    },
+    "free-spirit": {
+      "id": "free-spirit",
+      "name": "The Free Spirit",
+      "tagline": "You trust your kids to figure things out — with you in their corner.",
+      "themeColor": "#9c83f2",
+      "description": "You prioritize your child's autonomy, happiness, and emotional experience. You're the parent who says yes more than no, who follows your kid's lead, and who'd rather be their safe person than their enforcer.",
+      "strengths": [
+        "Your kids feel genuinely heard and valued as individuals",
+        "You create space for creativity, exploration, and self-expression",
+        "Your relationship with your child is warm, open, and connected"
+      ],
+      "growthEdge": "Saying no is a form of love too. Kids need the discomfort of limits to develop self-regulation. Start small — pick one non-negotiable boundary and hold it consistently for a week.",
+      "encouragement": "The closeness you've built with your child is real and valuable. Adding more structure won't damage that bond — it'll actually deepen it, because kids feel safer when they know someone's in charge.",
+      "comparativeContext": "About 1 in 5 parents identify primarily with a permissive approach. It's especially common among parents who grew up with very strict parents themselves."
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Your five-year-old has a full meltdown in the grocery store because you won't buy the cereal with the cartoon tiger. What's your move?",
+      "subtext": "Be honest — not aspirational.",
+      "options": [
+        {
+          "id": "q1a",
+          "text": "Kneel down, name the feeling, briefly explain why not, and offer them a choice between two other options",
+          "points": { "steady-guide": 1, "firm-protector": 0, "free-spirit": 0 }
+        },
+        {
+          "id": "q1b",
+          "text": "\"That's not happening. Let's go.\" Keep moving — the grocery store is not a negotiation table",
+          "points": { "steady-guide": 0, "firm-protector": 1, "free-spirit": 0 }
+        },
+        {
+          "id": "q1c",
+          "text": "Toss it in the cart — you pick your battles and this one isn't worth a scene",
+          "points": { "steady-guide": 0, "firm-protector": 0, "free-spirit": 1 }
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "It's 7:45 PM and your third-grader hasn't started homework. They claim they 'forgot.' What happens next?",
+      "subtext": "A classic Tuesday night scenario.",
+      "options": [
+        {
+          "id": "q2a",
+          "text": "Sit with them, help them knock it out, and then set up a system together so 'forgetting' stops being the default",
+          "points": { "steady-guide": 1, "firm-protector": 0, "free-spirit": 0 }
+        },
+        {
+          "id": "q2b",
+          "text": "They're doing it now. No screens until it's done. Tomorrow there's a new homework-before-anything rule",
+          "points": { "steady-guide": 0, "firm-protector": 1, "free-spirit": 0 }
+        },
+        {
+          "id": "q2c",
+          "text": "Let it go tonight — they're tired, you're tired, and one missed assignment won't tank their future",
+          "points": { "steady-guide": 0, "firm-protector": 0, "free-spirit": 1 }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "Your kid hits their sibling during an argument over a toy. What's your first move?",
+      "subtext": "The one that happens three times a week.",
+      "options": [
+        {
+          "id": "q3a",
+          "text": "Separate them, acknowledge the anger is real, then explain why hitting isn't OK and help them find words instead",
+          "points": { "steady-guide": 1, "firm-protector": 0, "free-spirit": 0 }
+        },
+        {
+          "id": "q3b",
+          "text": "Immediate time-out. Hitting has a clear consequence every single time — no exceptions",
+          "points": { "steady-guide": 0, "firm-protector": 1, "free-spirit": 0 }
+        },
+        {
+          "id": "q3c",
+          "text": "Comfort the hurt sibling first, then talk it through calmly when everyone's settled — no punishment needed",
+          "points": { "steady-guide": 0, "firm-protector": 0, "free-spirit": 1 }
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "Bedtime. Your kid asks for 'just one more' story/song/hug/water for the fourth time tonight. What's the call?",
+      "subtext": "The nightly negotiation that tests every parent's resolve.",
+      "options": [
+        {
+          "id": "q4a",
+          "text": "\"We did our routine. I love you. You can handle falling asleep on your own.\" Firm but warm.",
+          "points": { "steady-guide": 1, "firm-protector": 0, "free-spirit": 0 }
+        },
+        {
+          "id": "q4b",
+          "text": "\"Bed. Now.\" Door closed. The routine is the routine and everyone knows it",
+          "points": { "steady-guide": 0, "firm-protector": 1, "free-spirit": 0 }
+        },
+        {
+          "id": "q4c",
+          "text": "Lie down with them — they're only little once, and honestly you kind of enjoy it too",
+          "points": { "steady-guide": 0, "firm-protector": 0, "free-spirit": 1 }
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "Your kid flat-out refuses the dinner you spent 45 minutes making. Arms crossed, lip out, full protest. Your response?",
+      "subtext": "You really did put effort into this meal.",
+      "options": [
+        {
+          "id": "q5a",
+          "text": "\"One real bite before you decide. If you don't like it after that, totally fine.\" Then hold the line.",
+          "points": { "steady-guide": 1, "firm-protector": 0, "free-spirit": 0 }
+        },
+        {
+          "id": "q5b",
+          "text": "This is dinner. There's no backup meal. They'll eat when they're hungry enough.",
+          "points": { "steady-guide": 0, "firm-protector": 1, "free-spirit": 0 }
+        },
+        {
+          "id": "q5c",
+          "text": "Heat up something they'll actually eat — mealtime shouldn't be a battleground",
+          "points": { "steady-guide": 0, "firm-protector": 0, "free-spirit": 1 }
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "Your kid's teacher emails to say they've been disruptive in class. What's your first move at home?",
+      "subtext": "The email that makes your stomach drop a little.",
+      "options": [
+        {
+          "id": "q6a",
+          "text": "Get their side of the story first, explain why classroom behavior matters, and agree on a plan together",
+          "points": { "steady-guide": 1, "firm-protector": 0, "free-spirit": 0 }
+        },
+        {
+          "id": "q6b",
+          "text": "Clear consequence at home, and you email the teacher back to coordinate — no gap between school and home",
+          "points": { "steady-guide": 0, "firm-protector": 1, "free-spirit": 0 }
+        },
+        {
+          "id": "q6c",
+          "text": "Talk to them gently but don't overreact — kids are disruptive sometimes, it's not a crisis",
+          "points": { "steady-guide": 0, "firm-protector": 0, "free-spirit": 1 }
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "You catch your kid lying about having brushed their teeth — for probably the third time this week. Now what?",
+      "subtext": "The dental hygiene hill you didn't plan to die on.",
+      "options": [
+        {
+          "id": "q7a",
+          "text": "\"I'm more worried about the lying than the teeth. What made you feel like you had to hide this from me?\"",
+          "points": { "steady-guide": 1, "firm-protector": 0, "free-spirit": 0 }
+        },
+        {
+          "id": "q7b",
+          "text": "Supervised brushing every night until they prove they can be trusted to do it alone",
+          "points": { "steady-guide": 0, "firm-protector": 1, "free-spirit": 0 }
+        },
+        {
+          "id": "q7c",
+          "text": "Remind them gently but move on — you're not turning teeth-brushing into a nightly standoff",
+          "points": { "steady-guide": 0, "firm-protector": 0, "free-spirit": 1 }
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "text": "Your kid comes home devastated because their best friend didn't invite them to a birthday party. What do you do?",
+      "subtext": "The friend drama that hits harder than it should.",
+      "options": [
+        {
+          "id": "q8a",
+          "text": "Listen, validate how much it hurts, then help them think through what might be going on and what they could do",
+          "points": { "steady-guide": 1, "firm-protector": 0, "free-spirit": 0 }
+        },
+        {
+          "id": "q8b",
+          "text": "Acknowledge it stings, then use it as a lesson — friendships shift, and learning to handle rejection is a life skill",
+          "points": { "steady-guide": 0, "firm-protector": 1, "free-spirit": 0 }
+        },
+        {
+          "id": "q8c",
+          "text": "Hold them, let them cry it out, don't try to fix it — they just need to feel it right now",
+          "points": { "steady-guide": 0, "firm-protector": 0, "free-spirit": 1 }
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "text": "Your kid throws a screaming tantrum at the playground — in front of six other parents who are definitely watching. Your move?",
+      "subtext": "The audience makes everything worse.",
+      "options": [
+        {
+          "id": "q9a",
+          "text": "Stay calm, set the limit quietly, leave if you need to — and debrief in the car once everyone's cooled down",
+          "points": { "steady-guide": 1, "firm-protector": 0, "free-spirit": 0 }
+        },
+        {
+          "id": "q9b",
+          "text": "Pick them up and leave immediately. You don't negotiate with tantrums, period.",
+          "points": { "steady-guide": 0, "firm-protector": 1, "free-spirit": 0 }
+        },
+        {
+          "id": "q9c",
+          "text": "Let it run its course — all kids tantrum, the other parents get it, and it'll pass faster if you don't escalate",
+          "points": { "steady-guide": 0, "firm-protector": 0, "free-spirit": 1 }
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "text": "Saturday morning, no plans. Your kid asks 'What are we doing today?' How does the day unfold?",
+      "subtext": "The blank canvas test.",
+      "options": [
+        {
+          "id": "q10a",
+          "text": "Suggest a few options together and build a loose plan — enough structure so the day doesn't dissolve into screen time",
+          "points": { "steady-guide": 1, "firm-protector": 0, "free-spirit": 0 }
+        },
+        {
+          "id": "q10b",
+          "text": "You already had something in mind — a hike, a project, something productive. Free time is opportunity time.",
+          "points": { "steady-guide": 0, "firm-protector": 1, "free-spirit": 0 }
+        },
+        {
+          "id": "q10c",
+          "text": "Whatever happens, happens. Pajamas until noon is a perfectly legitimate Saturday plan.",
+          "points": { "steady-guide": 0, "firm-protector": 0, "free-spirit": 1 }
+        }
+      ]
+    }
+  ]
+}
