@@ -10,6 +10,18 @@ import { eq } from "drizzle-orm";
 import fs from "fs/promises";
 import path from "path";
 
+import {
+  buildUrlRegistry,
+  findPlanEntry,
+  parseMdxArticle,
+  validateArticle,
+} from "@steady-parent/content-spec";
+import type {
+  CtaDefinition,
+  LinkPlanEntry,
+  PageType,
+} from "@steady-parent/content-spec";
+
 import { db } from "@/lib/db";
 import {
   articles as articlesTable,
@@ -19,13 +31,112 @@ import {
 } from "@/lib/db/schema";
 import { kitTags as kitTagConfig } from "@/lib/kit-config";
 
-import {
-  buildUrlRegistry,
-  findPlanEntry,
-  validateArticle,
-} from "./article-validator";
-import { parseMdxArticle } from "./mdx-parser";
-import type { LinkPlanEntry, SyncSummary } from "./types";
+// ---------------------------------------------------------------------------
+// SyncSummary (local — no longer imported from types.ts)
+// ---------------------------------------------------------------------------
+
+interface SyncSummary {
+  syncId: number;
+  articleCount: number;
+  registeredCount: number;
+  errorCount: number;
+  warningCount: number;
+  planEntryCount: number;
+  deployedCount: number;
+}
+
+// ---------------------------------------------------------------------------
+// Default page type configs
+// ---------------------------------------------------------------------------
+
+const PILLAR_PAGE_TYPE: PageType = {
+  name: "pillar",
+  constraints: {
+    wordCount: { min: 2500, max: 4000 },
+    h2Count: { min: 3, max: 15 },
+    ctaCount: { min: 3, max: 3 },
+    imageCount: { min: 3, max: 3 },
+    faqQuestionCount: { min: 3, max: 7 },
+    requiresTldr: true,
+    requiresFaq: true,
+    minInternalLinks: 5,
+  },
+};
+
+const SERIES_PAGE_TYPE: PageType = {
+  name: "series",
+  constraints: {
+    wordCount: { min: 1600, max: 2400 },
+    h2Count: { min: 3, max: 10 },
+    ctaCount: { min: 3, max: 3 },
+    imageCount: { min: 3, max: 3 },
+    faqQuestionCount: { min: 3, max: 7 },
+    requiresTldr: true,
+    requiresFaq: true,
+    minInternalLinks: 5,
+  },
+};
+
+// ---------------------------------------------------------------------------
+// Category CTAs → CtaDefinition[] adapter
+// ---------------------------------------------------------------------------
+
+interface OldCategoryCta {
+  course_name: string;
+  course_url: string;
+  course_promise?: string;
+  freebie_name: string;
+  freebie_promise?: string;
+}
+
+interface OldCommunity {
+  name: string;
+  url: string;
+  what_it_is?: string;
+  do_not_promise?: string[];
+}
+
+function adaptCategoryCtas(
+  raw: Record<string, unknown>,
+): CtaDefinition[] {
+  const result: CtaDefinition[] = [];
+
+  for (const [key, value] of Object.entries(raw)) {
+    if (key === "community") {
+      const comm = value as OldCommunity;
+      result.push({
+        id: "community",
+        type: "community",
+        name: comm.name,
+        url: comm.url,
+        what_it_is: comm.what_it_is ?? "",
+        can_promise: [],
+        cant_promise: comm.do_not_promise ?? [],
+      });
+      continue;
+    }
+    const cat = value as OldCategoryCta;
+    result.push({
+      id: `course-${key}`,
+      type: "course",
+      name: cat.course_name,
+      url: cat.course_url,
+      what_it_is: cat.course_promise ?? "",
+      can_promise: [],
+      cant_promise: [],
+    });
+    result.push({
+      id: `freebie-${key}`,
+      type: "freebie",
+      name: cat.freebie_name,
+      what_it_is: cat.freebie_promise ?? "",
+      can_promise: [],
+      cant_promise: [],
+    });
+  }
+
+  return result;
+}
 
 // ---------------------------------------------------------------------------
 // File paths — dev vs prod
@@ -128,6 +239,16 @@ async function getRegisteredSlugs(): Promise<Set<string>> {
 }
 
 // ---------------------------------------------------------------------------
+// Page type detection
+// ---------------------------------------------------------------------------
+
+function getPageType(plan: LinkPlanEntry | null): PageType {
+  const isPillar =
+    plan?.links?.some((l) => l.type === "series_preview") ?? false;
+  return isPillar ? PILLAR_PAGE_TYPE : SERIES_PAGE_TYPE;
+}
+
+// ---------------------------------------------------------------------------
 // Main sync
 // ---------------------------------------------------------------------------
 
@@ -155,16 +276,12 @@ export async function runFullSync(): Promise<SyncSummary> {
     }
     const urlRegistry = buildUrlRegistry(linkPlan);
 
-    // 3. Read category CTAs
-    let categoryCtas:
-      | Record<string, { course_name: string; freebie_name: string }>
-      | undefined;
+    // 3. Read category CTAs and adapt to new format
+    let ctaCatalog: CtaDefinition[] | undefined;
     try {
       const ctasRaw = await fs.readFile(getCategoryCtasPath(), "utf-8");
-      categoryCtas = JSON.parse(ctasRaw) as Record<
-        string,
-        { course_name: string; freebie_name: string }
-      >;
+      const raw = JSON.parse(ctasRaw) as Record<string, unknown>;
+      ctaCatalog = adaptCategoryCtas(raw);
     } catch {
       // Category CTAs might not exist yet
     }
@@ -197,11 +314,13 @@ export async function runFullSync(): Promise<SyncSummary> {
       if (!parsed) continue;
 
       const plan = findPlanEntry(linkPlan, parsed);
+      const pageType = getPageType(plan);
       const validation = validateArticle(
         parsed,
         plan,
         urlRegistry,
-        categoryCtas,
+        pageType,
+        ctaCatalog,
       );
 
       const isRegistered = registeredSlugs.has(slug);

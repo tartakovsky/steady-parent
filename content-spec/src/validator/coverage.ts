@@ -3,8 +3,8 @@
  * Shows how many planned entries are deployed, per-category breakdown.
  */
 
-import type { LinkPlanEntry, ParsedArticle } from "../types.js";
-import { findPlanEntry } from "./article.js";
+import type { LinkPlanEntry, ParsedArticle } from "../types";
+import { findPlanEntry } from "./article";
 
 export interface CoverageReport {
   totalPlanned: number;

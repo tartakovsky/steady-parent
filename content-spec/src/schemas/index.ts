@@ -6,13 +6,13 @@ export {
   ArticleTaxonomySchema,
   QuizEntrySchema,
   QuizTaxonomySchema,
-} from "./taxonomy.js";
+} from "./taxonomy";
 
 export {
   CtaTypeEnum,
   CtaDefinitionSchema,
   CtaCatalogSchema,
-} from "./cta-catalog.js";
+} from "./cta-catalog";
 
 export {
   MailingTagSchema,
@@ -20,7 +20,7 @@ export {
   FormTagMappingSchema,
   FormTagMappingsSchema,
   validateFormTagRefs,
-} from "./mailing.js";
+} from "./mailing";
 
 export {
   LinkTypeEnum,
@@ -28,36 +28,36 @@ export {
   PlannedCtaSchema,
   LinkPlanEntrySchema,
   LinkPlanSchema,
-} from "./link-plan.js";
+} from "./link-plan";
 
 export {
   RangeSchema,
   PageTypeSchema,
   PageTypesSchema,
-} from "./page-types.js";
+} from "./page-types";
 
 export {
   JsonLdFieldSchema,
   JsonLdRequirementSchema,
   JsonLdRequirementsSchema,
-} from "./json-ld.js";
+} from "./json-ld";
 
 // Stage 2: Generation output schemas
 export {
   ArticleBodyOutputSchema,
   CtaComponentOutputSchema,
   JsonLdOutputSchema,
-} from "./generation.js";
+} from "./generation";
 
 export {
   PagePartSchema,
   PageCompositionSchema,
   PageCompositionsSchema,
-} from "./composition.js";
+} from "./composition";
 
 // Stage 3: Parser output schemas
 export {
   CtaComponentSchema,
   ParsedMetadataSchema,
   ParsedArticleSchema,
-} from "./parsed-article.js";
+} from "./parsed-article";

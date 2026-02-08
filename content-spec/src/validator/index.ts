@@ -2,6 +2,6 @@ export {
   validateArticle,
   buildUrlRegistry,
   findPlanEntry,
-} from "./article.js";
-export { analyzeCoverage } from "./coverage.js";
-export type { CoverageReport } from "./coverage.js";
+} from "./article";
+export { analyzeCoverage } from "./coverage";
+export type { CoverageReport } from "./coverage";

@@ -5,7 +5,7 @@
  * Extracts metadata, links, CTAs, headings, images, FAQ, word count, etc.
  */
 
-import type { ParsedArticle, ParsedMetadata } from "../types.js";
+import type { ParsedArticle, ParsedMetadata } from "../types";
 
 // ---------------------------------------------------------------------------
 // Regex patterns (ported from validate_article.py)

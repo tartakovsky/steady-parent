@@ -29,7 +29,7 @@ import type {
   CtaComponentSchema,
   ParsedMetadataSchema,
   ParsedArticleSchema,
-} from "./schemas/index.js";
+} from "./schemas/index";
 
 // ---------------------------------------------------------------------------
 // Stage 1: Plan types

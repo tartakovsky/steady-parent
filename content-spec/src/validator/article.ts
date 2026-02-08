@@ -12,7 +12,7 @@ import type {
   PageType,
   CtaDefinition,
   ValidationResult,
-} from "../types.js";
+} from "../types";
 
 // ---------------------------------------------------------------------------
 // URL registry builder

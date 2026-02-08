@@ -17,6 +17,9 @@ const nextConfig: NextConfig = {
   // Required for standalone output on Railway
   output: "standalone",
 
+  // Transpile workspace packages (TypeScript source)
+  transpilePackages: ["@steady-parent/content-spec"],
+
   // Silence "workspace root" warnings when multiple lockfiles exist elsewhere.
   outputFileTracingRoot: __dirname,
 

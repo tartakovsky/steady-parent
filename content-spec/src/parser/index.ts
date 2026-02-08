@@ -1,1 +1,1 @@
-export { parseMdxArticle } from "./mdx-parser.js";
+export { parseMdxArticle } from "./mdx-parser";

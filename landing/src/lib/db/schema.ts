@@ -9,6 +9,8 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 
+import type { CtaComponent } from "@steady-parent/content-spec";
+
 // --- Syncs (audit log) ---
 
 export const syncs = pgTable("syncs", {
@@ -51,7 +53,7 @@ export const articles = pgTable("articles", {
     .$type<{ anchor: string; url: string }[]>()
     .notNull(),
   ctaComponents: jsonb("cta_components")
-    .$type<{ type: string; eyebrow?: string; title?: string; body?: string; buttonText?: string; href?: string }[]>()
+    .$type<CtaComponent[]>()
     .notNull(),
   imageDescriptions: jsonb("image_descriptions").$type<string[]>().notNull(),
   syncId: integer("sync_id").references(() => syncs.id),

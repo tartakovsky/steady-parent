@@ -1,12 +1,17 @@
 // Schemas
-export * from "./schemas/index.js";
+export * from "./schemas/index";
 
 // Types
-export * from "./types.js";
+export * from "./types";
 
 // Parser
-export { parseMdxArticle } from "./parser/index.js";
+export { parseMdxArticle } from "./parser/index";
 
 // Validator
-export { validateArticle } from "./validator/index.js";
-export { analyzeCoverage } from "./validator/coverage.js";
+export {
+  validateArticle,
+  buildUrlRegistry,
+  findPlanEntry,
+} from "./validator/index";
+export { analyzeCoverage } from "./validator/coverage";
+export type { CoverageReport } from "./validator/coverage";

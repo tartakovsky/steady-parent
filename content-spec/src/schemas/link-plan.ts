@@ -1,5 +1,5 @@
 import { z } from "zod/v4";
-import { CtaTypeEnum } from "./cta-catalog.js";
+import { CtaTypeEnum } from "./cta-catalog";
 
 export const LinkTypeEnum = z.enum([
   "series_preview",
