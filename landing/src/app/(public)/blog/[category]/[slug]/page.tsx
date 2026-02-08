@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import type { BlogPostEntry } from "@/content/blog/posts";
 import { blogPosts } from "@/content/blog/posts";
 import { FreebieCTA } from "@/components/blog/freebie-cta";
+import { getFreebieForCategory } from "@/lib/cta-catalog";
 
 export const dynamicParams = false;
 
@@ -32,6 +33,7 @@ export default async function BlogPostPage({
   const post = getPost(category, slug);
   const mod = await post.load();
   const Post = mod.default;
+  const freebie = await getFreebieForCategory(category);
 
   return (
     <>
@@ -54,7 +56,15 @@ export default async function BlogPostPage({
           </article>
         </div>
       </main>
-      <FreebieCTA fullWidth />
+      <FreebieCTA
+        fullWidth
+        {...(freebie
+          ? {
+              title: `Get ${freebie.name.startsWith("The ") ? "" : "the "}${freebie.name}`,
+              body: freebie.description,
+            }
+          : {})}
+      />
     </>
   );
 }
