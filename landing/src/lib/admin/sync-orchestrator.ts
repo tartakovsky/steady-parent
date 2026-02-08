@@ -12,7 +12,9 @@ import path from "path";
 
 import {
   buildUrlRegistry,
+  CtaCatalogSchema,
   findPlanEntry,
+  PageTypesSchema,
   parseMdxArticle,
   validateArticle,
 } from "@steady-parent/content-spec";
@@ -46,10 +48,10 @@ interface SyncSummary {
 }
 
 // ---------------------------------------------------------------------------
-// Default page type configs
+// Fallback page type configs (used if page_types.json not found)
 // ---------------------------------------------------------------------------
 
-const PILLAR_PAGE_TYPE: PageType = {
+const FALLBACK_PILLAR: PageType = {
   name: "pillar",
   constraints: {
     wordCount: { min: 2500, max: 4000 },
@@ -63,7 +65,7 @@ const PILLAR_PAGE_TYPE: PageType = {
   },
 };
 
-const SERIES_PAGE_TYPE: PageType = {
+const FALLBACK_SERIES: PageType = {
   name: "series",
   constraints: {
     wordCount: { min: 1600, max: 2400 },
@@ -76,67 +78,6 @@ const SERIES_PAGE_TYPE: PageType = {
     minInternalLinks: 5,
   },
 };
-
-// ---------------------------------------------------------------------------
-// Category CTAs → CtaDefinition[] adapter
-// ---------------------------------------------------------------------------
-
-interface OldCategoryCta {
-  course_name: string;
-  course_url: string;
-  course_promise?: string;
-  freebie_name: string;
-  freebie_promise?: string;
-}
-
-interface OldCommunity {
-  name: string;
-  url: string;
-  what_it_is?: string;
-  do_not_promise?: string[];
-}
-
-function adaptCategoryCtas(
-  raw: Record<string, unknown>,
-): CtaDefinition[] {
-  const result: CtaDefinition[] = [];
-
-  for (const [key, value] of Object.entries(raw)) {
-    if (key === "community") {
-      const comm = value as OldCommunity;
-      result.push({
-        id: "community",
-        type: "community",
-        name: comm.name,
-        url: comm.url,
-        what_it_is: comm.what_it_is ?? "",
-        can_promise: [],
-        cant_promise: comm.do_not_promise ?? [],
-      });
-      continue;
-    }
-    const cat = value as OldCategoryCta;
-    result.push({
-      id: `course-${key}`,
-      type: "course",
-      name: cat.course_name,
-      url: cat.course_url,
-      what_it_is: cat.course_promise ?? "",
-      can_promise: [],
-      cant_promise: [],
-    });
-    result.push({
-      id: `freebie-${key}`,
-      type: "freebie",
-      name: cat.freebie_name,
-      what_it_is: cat.freebie_promise ?? "",
-      can_promise: [],
-      cant_promise: [],
-    });
-  }
-
-  return result;
-}
 
 // ---------------------------------------------------------------------------
 // File paths — dev vs prod
@@ -161,11 +102,18 @@ function getLinkPlanPath(): string {
   return path.join(process.cwd(), "..", "research", "article_link_plan.json");
 }
 
-function getCategoryCtasPath(): string {
+function getCtaCatalogPath(): string {
   if (process.env["NODE_ENV"] === "production") {
-    return path.join(process.cwd(), "mdx-sources", "category_ctas.json");
+    return path.join(process.cwd(), "mdx-sources", "cta_catalog.json");
   }
-  return path.join(process.cwd(), "..", "research", "category_ctas.json");
+  return path.join(process.cwd(), "..", "research", "cta_catalog.json");
+}
+
+function getPageTypesPath(): string {
+  if (process.env["NODE_ENV"] === "production") {
+    return path.join(process.cwd(), "mdx-sources", "page_types.json");
+  }
+  return path.join(process.cwd(), "..", "research", "page_types.json");
 }
 
 // ---------------------------------------------------------------------------
@@ -242,10 +190,14 @@ async function getRegisteredSlugs(): Promise<Set<string>> {
 // Page type detection
 // ---------------------------------------------------------------------------
 
-function getPageType(plan: LinkPlanEntry | null): PageType {
+function getPageType(
+  plan: LinkPlanEntry | null,
+  pageTypes: Map<string, PageType>,
+): PageType {
   const isPillar =
     plan?.links?.some((l) => l.type === "series_preview") ?? false;
-  return isPillar ? PILLAR_PAGE_TYPE : SERIES_PAGE_TYPE;
+  const name = isPillar ? "pillar" : "series";
+  return pageTypes.get(name) ?? (isPillar ? FALLBACK_PILLAR : FALLBACK_SERIES);
 }
 
 // ---------------------------------------------------------------------------
@@ -276,14 +228,25 @@ export async function runFullSync(): Promise<SyncSummary> {
     }
     const urlRegistry = buildUrlRegistry(linkPlan);
 
-    // 3. Read category CTAs and adapt to new format
+    // 3. Read CTA catalog (schema-validated)
     let ctaCatalog: CtaDefinition[] | undefined;
     try {
-      const ctasRaw = await fs.readFile(getCategoryCtasPath(), "utf-8");
-      const raw = JSON.parse(ctasRaw) as Record<string, unknown>;
-      ctaCatalog = adaptCategoryCtas(raw);
+      const ctasRaw = await fs.readFile(getCtaCatalogPath(), "utf-8");
+      ctaCatalog = CtaCatalogSchema.parse(JSON.parse(ctasRaw));
     } catch {
-      // Category CTAs might not exist yet
+      // CTA catalog might not exist yet
+    }
+
+    // 3b. Read page type configs (schema-validated)
+    const pageTypeMap = new Map<string, PageType>();
+    try {
+      const ptRaw = await fs.readFile(getPageTypesPath(), "utf-8");
+      const pageTypes = PageTypesSchema.parse(JSON.parse(ptRaw));
+      for (const pt of pageTypes) {
+        pageTypeMap.set(pt.name, pt);
+      }
+    } catch {
+      // Page types might not exist yet — fallbacks used
     }
 
     // 4. Read all MDX files
@@ -314,7 +277,7 @@ export async function runFullSync(): Promise<SyncSummary> {
       if (!parsed) continue;
 
       const plan = findPlanEntry(linkPlan, parsed);
-      const pageType = getPageType(plan);
+      const pageType = getPageType(plan, pageTypeMap);
       const validation = validateArticle(
         parsed,
         plan,

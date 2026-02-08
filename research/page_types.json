@@ -1,0 +1,28 @@
+[
+  {
+    "name": "pillar",
+    "constraints": {
+      "wordCount": { "min": 2500, "max": 4000 },
+      "h2Count": { "min": 3, "max": 15 },
+      "ctaCount": { "min": 3, "max": 3 },
+      "imageCount": { "min": 3, "max": 3 },
+      "faqQuestionCount": { "min": 3, "max": 7 },
+      "requiresTldr": true,
+      "requiresFaq": true,
+      "minInternalLinks": 5
+    }
+  },
+  {
+    "name": "series",
+    "constraints": {
+      "wordCount": { "min": 1600, "max": 2400 },
+      "h2Count": { "min": 3, "max": 10 },
+      "ctaCount": { "min": 3, "max": 3 },
+      "imageCount": { "min": 3, "max": 3 },
+      "faqQuestionCount": { "min": 3, "max": 7 },
+      "requiresTldr": true,
+      "requiresFaq": true,
+      "minInternalLinks": 5
+    }
+  }
+]

@@ -1,0 +1,229 @@
+{
+  "entries": [
+    {
+      "slug": "parenting-style",
+      "title": "What's Your Parenting Style?",
+      "url": "/quiz/parenting-style",
+      "connectsTo": [
+        "parenting-approach",
+        "discipline",
+        "parenting-science"
+      ]
+    },
+    {
+      "slug": "bedtime-battle-style",
+      "title": "What's Your Bedtime Battle Style?",
+      "url": "/quiz/bedtime-battle-style",
+      "connectsTo": [
+        "sleep"
+      ]
+    },
+    {
+      "slug": "parents-patterns",
+      "title": "Are You Repeating Your Parents' Patterns?",
+      "url": "/quiz/parents-patterns",
+      "connectsTo": [
+        "breaking-the-cycle",
+        "staying-calm",
+        "parenting-approach"
+      ]
+    },
+    {
+      "slug": "worried-parent",
+      "title": "What Kind of Worried Parent Are You?",
+      "url": "/quiz/worried-parent",
+      "connectsTo": [
+        "anxiety",
+        "new-parent",
+        "parenting-science"
+      ]
+    },
+    {
+      "slug": "parenting-love-language",
+      "title": "What's Your Parenting Love Language?",
+      "url": "/quiz/parenting-love-language",
+      "connectsTo": [
+        "big-feelings",
+        "parenting-approach"
+      ]
+    },
+    {
+      "slug": "kid-describe-you",
+      "title": "How Would Your Kid Describe You?",
+      "url": "/quiz/kid-describe-you",
+      "connectsTo": [
+        "parenting-approach",
+        "big-feelings",
+        "breaking-the-cycle"
+      ]
+    },
+    {
+      "slug": "parenting-superpower",
+      "title": "What's Your Parenting Superpower?",
+      "url": "/quiz/parenting-superpower",
+      "connectsTo": [
+        "staying-calm",
+        "big-feelings",
+        "parenting-approach"
+      ]
+    },
+    {
+      "slug": "parent-at-2am",
+      "title": "What Kind of Parent Are You at 2 AM?",
+      "url": "/quiz/parent-at-2am",
+      "connectsTo": [
+        "sleep",
+        "staying-calm",
+        "new-parent"
+      ]
+    },
+    {
+      "slug": "parenting-era",
+      "title": "What's Your Parenting Era?",
+      "url": "/quiz/parenting-era",
+      "connectsTo": [
+        "parenting-approach",
+        "discipline"
+      ]
+    },
+    {
+      "slug": "co-parent-team",
+      "title": "What Kind of Co-Parent Team Are You?",
+      "url": "/quiz/co-parent-team",
+      "connectsTo": [
+        "discipline",
+        "staying-calm",
+        "new-parent"
+      ]
+    },
+    {
+      "slug": "potty-training-readiness",
+      "title": "Is Your Toddler Ready for Potty Training?",
+      "url": "/quiz/potty-training-readiness",
+      "connectsTo": [
+        "potty-training"
+      ]
+    },
+    {
+      "slug": "kindergarten-readiness",
+      "title": "Is Your Child Ready for Kindergarten?",
+      "url": "/quiz/kindergarten-readiness",
+      "connectsTo": [
+        "social-skills",
+        "anxiety",
+        "transitions"
+      ]
+    },
+    {
+      "slug": "solid-foods-readiness",
+      "title": "Is Your Baby Ready for Solid Foods?",
+      "url": "/quiz/solid-foods-readiness",
+      "connectsTo": [
+        "new-parent",
+        "eating"
+      ]
+    },
+    {
+      "slug": "drop-the-nap",
+      "title": "Is Your Child Ready to Drop the Nap?",
+      "url": "/quiz/drop-the-nap",
+      "connectsTo": [
+        "sleep"
+      ]
+    },
+    {
+      "slug": "sleepover-readiness",
+      "title": "Is Your Child Ready for a Sleepover?",
+      "url": "/quiz/sleepover-readiness",
+      "connectsTo": [
+        "anxiety",
+        "social-skills",
+        "transitions"
+      ]
+    },
+    {
+      "slug": "second-child-readiness",
+      "title": "Is Your Family Ready for a Second Child?",
+      "url": "/quiz/second-child-readiness",
+      "connectsTo": [
+        "new-parent",
+        "siblings",
+        "staying-calm"
+      ]
+    },
+    {
+      "slug": "parenting-battery",
+      "title": "How's Your Parenting Battery Right Now?",
+      "url": "/quiz/parenting-battery",
+      "connectsTo": [
+        "staying-calm",
+        "breaking-the-cycle",
+        "new-parent"
+      ]
+    },
+    {
+      "slug": "screen-dependence",
+      "title": "How Screen-Dependent Is Your Family?",
+      "url": "/quiz/screen-dependence",
+      "connectsTo": [
+        "screens",
+        "discipline"
+      ]
+    },
+    {
+      "slug": "emotional-intelligence",
+      "title": "How Emotionally Intelligent Is Your Child?",
+      "url": "/quiz/emotional-intelligence",
+      "connectsTo": [
+        "big-feelings",
+        "social-skills"
+      ]
+    },
+    {
+      "slug": "social-confidence",
+      "title": "How Strong Is Your Child's Social Confidence?",
+      "url": "/quiz/social-confidence",
+      "connectsTo": [
+        "social-skills",
+        "anxiety"
+      ]
+    },
+    {
+      "slug": "communication-safety",
+      "title": "How Safe Does Your Child Feel Talking to You?",
+      "url": "/quiz/communication-safety",
+      "connectsTo": [
+        "big-feelings",
+        "breaking-the-cycle",
+        "parenting-approach"
+      ]
+    },
+    {
+      "slug": "bedtime-routine",
+      "title": "Build Your Child's Bedtime Routine",
+      "url": "/quiz/bedtime-routine",
+      "connectsTo": [
+        "sleep"
+      ]
+    },
+    {
+      "slug": "age-appropriate-chores",
+      "title": "What Chores Can Your Child Handle?",
+      "url": "/quiz/age-appropriate-chores",
+      "connectsTo": [
+        "discipline",
+        "parenting-approach"
+      ]
+    },
+    {
+      "slug": "calm-down-toolkit",
+      "title": "Build Your Child's Calm-Down Toolkit",
+      "url": "/quiz/calm-down-toolkit",
+      "connectsTo": [
+        "big-feelings",
+        "tantrums",
+        "spirited-kids"
+      ]
+    }
+  ]
+}
