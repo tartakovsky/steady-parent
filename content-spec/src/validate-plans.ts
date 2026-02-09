@@ -15,6 +15,7 @@ import {
   CtaCatalogSchema,
   LinkPlanSchema,
   PageTypesSchema,
+  QuizPageTypesSchema,
   MailingTagTaxonomySchema,
   FormTagMappingsSchema,
 } from "./schemas/index";
@@ -96,6 +97,9 @@ async function main() {
   );
   results.push(
     await validateFile("mailing_tags.json", "MailingTagTaxonomySchema", MailingTagTaxonomySchema),
+  );
+  results.push(
+    await validateFile("quiz_page_types.json", "QuizPageTypesSchema", QuizPageTypesSchema),
   );
   results.push(
     await validateFile("form_tag_mappings.json", "FormTagMappingsSchema", FormTagMappingsSchema),

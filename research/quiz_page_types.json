@@ -1,0 +1,33 @@
+[
+  {
+    "name": "likert",
+    "constraints": {
+      "statementCount": { "min": 10, "max": 25 },
+      "dimensionCount": { "min": 3, "max": 5 },
+      "scalePoints": 5,
+      "optionsPerQuestion": { "min": 5, "max": 5 },
+      "requiresSources": true,
+      "requiresIntro": true
+    }
+  },
+  {
+    "name": "identity",
+    "constraints": {
+      "questionCount": { "min": 8, "max": 12 },
+      "typeCount": { "min": 3, "max": 6 },
+      "optionsPerQuestion": { "min": 3, "max": 5 },
+      "requiresSources": true,
+      "requiresIntro": true
+    }
+  },
+  {
+    "name": "assessment",
+    "constraints": {
+      "questionCount": { "min": 8, "max": 15 },
+      "domainCount": { "min": 3, "max": 5 },
+      "optionsPerQuestion": { "min": 3, "max": 5 },
+      "requiresSources": true,
+      "requiresIntro": true
+    }
+  }
+]

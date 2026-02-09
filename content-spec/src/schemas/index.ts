@@ -37,6 +37,19 @@ export {
 } from "./page-types";
 
 export {
+  QuizTypeEnum,
+  QuizPageTypeSchema,
+  QuizPageTypesSchema,
+} from "./quiz-page-types";
+
+export {
+  QuizMetaSchema,
+  LikertQuizOutputSchema,
+  IdentityQuizOutputSchema,
+  AssessmentQuizOutputSchema,
+} from "./quiz-output";
+
+export {
   JsonLdFieldSchema,
   JsonLdRequirementSchema,
   JsonLdRequirementsSchema,

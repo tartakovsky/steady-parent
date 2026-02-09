@@ -17,6 +17,12 @@ import type {
   LinkPlanSchema,
   PageTypeSchema,
   PageTypesSchema,
+  QuizPageTypeSchema,
+  QuizPageTypesSchema,
+  QuizMetaSchema,
+  LikertQuizOutputSchema,
+  IdentityQuizOutputSchema,
+  AssessmentQuizOutputSchema,
   JsonLdFieldSchema,
   JsonLdRequirementSchema,
   JsonLdRequirementsSchema,
@@ -52,6 +58,12 @@ export type LinkPlanEntry = z.infer<typeof LinkPlanEntrySchema>;
 export type LinkPlan = z.infer<typeof LinkPlanSchema>;
 export type PageType = z.infer<typeof PageTypeSchema>;
 export type PageTypes = z.infer<typeof PageTypesSchema>;
+export type QuizPageType = z.infer<typeof QuizPageTypeSchema>;
+export type QuizPageTypes = z.infer<typeof QuizPageTypesSchema>;
+export type QuizMeta = z.infer<typeof QuizMetaSchema>;
+export type LikertQuizOutput = z.infer<typeof LikertQuizOutputSchema>;
+export type IdentityQuizOutput = z.infer<typeof IdentityQuizOutputSchema>;
+export type AssessmentQuizOutput = z.infer<typeof AssessmentQuizOutputSchema>;
 export type JsonLdField = z.infer<typeof JsonLdFieldSchema>;
 export type JsonLdRequirement = z.infer<typeof JsonLdRequirementSchema>;
 export type JsonLdRequirements = z.infer<typeof JsonLdRequirementsSchema>;

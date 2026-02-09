@@ -15,3 +15,4 @@ export {
 } from "./validator/index";
 export { analyzeCoverage } from "./validator/coverage";
 export type { CoverageReport } from "./validator/coverage";
+export { validateQuiz } from "./validator/quiz";

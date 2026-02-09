@@ -41,6 +41,7 @@ interface CtaDefinition {
   name: string;
   url?: string | undefined;
   what_it_is: string;
+  founder_presence?: string | undefined;
   can_promise: string[];
   cant_promise: string[];
 }
@@ -285,34 +286,50 @@ function Row({ label, value }: { label: string; value: string }) {
 function CtasTab({ data }: { data: CtaDefinition[] | null }) {
   if (!data) return <p className="text-muted-foreground">No CTA data.</p>;
 
-  const community = data.find((c) => c.type === "community");
+  const globalCommunity = data.find(
+    (c) => c.type === "community" && c.id === "community",
+  );
+  const perCatCommunities = data.filter(
+    (c) => c.type === "community" && c.id !== "community",
+  );
   const courses = data.filter((c) => c.type === "course");
   const freebies = data.filter((c) => c.type === "freebie");
 
-  // Pair courses with freebies by extracting category slug from id
-  const categorySlug = (id: string) => id.replace(/^(course|freebie)-/, "");
+  const categorySlug = (id: string) =>
+    id.replace(/^(course|freebie|community)-/, "");
+
+  const communityBySlug = new Map(
+    perCatCommunities.map((c) => [categorySlug(c.id), c]),
+  );
 
   return (
     <div className="space-y-6">
-      {/* Community CTA */}
-      {community && (
+      {/* Global community info */}
+      {globalCommunity && (
         <div className="rounded-lg border bg-blue-50 p-4 dark:bg-blue-950/20">
-          <h3 className="text-sm font-semibold">Community: {community.name}</h3>
+          <h3 className="text-sm font-semibold">
+            Community: {globalCommunity.name}
+          </h3>
           <p className="mt-1 text-sm text-muted-foreground">
-            {community.what_it_is}
+            {globalCommunity.what_it_is}
           </p>
-          {community.url && (
+          {globalCommunity.url && (
             <p className="mt-1 font-mono text-xs text-muted-foreground">
-              {community.url}
+              {globalCommunity.url}
             </p>
           )}
-          {community.cant_promise.length > 0 && (
+          {globalCommunity.founder_presence && (
+            <p className="mt-1 text-xs text-emerald-700 dark:text-emerald-400">
+              {globalCommunity.founder_presence}
+            </p>
+          )}
+          {globalCommunity.cant_promise.length > 0 && (
             <div className="mt-2">
               <p className="text-xs font-medium text-red-600 dark:text-red-400">
                 Do not promise:
               </p>
               <ul className="mt-0.5 list-inside list-disc text-xs text-muted-foreground">
-                {community.cant_promise.map((p) => (
+                {globalCommunity.cant_promise.map((p) => (
                   <li key={p}>{p}</li>
                 ))}
               </ul>
@@ -321,12 +338,15 @@ function CtasTab({ data }: { data: CtaDefinition[] | null }) {
         </div>
       )}
 
-      {/* Per-category course + freebie table */}
+      {/* Per-category table: Community + Course + Freebie */}
       <div className="rounded-md border">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b bg-muted/50">
               <th className="px-3 py-2 text-left font-medium">Category</th>
+              <th className="px-3 py-2 text-left font-medium">
+                Community Pitch
+              </th>
               <th className="px-3 py-2 text-left font-medium">Course</th>
               <th className="px-3 py-2 text-left font-medium">Freebie</th>
             </tr>
@@ -337,12 +357,24 @@ function CtasTab({ data }: { data: CtaDefinition[] | null }) {
               const freebie = freebies.find(
                 (f) => categorySlug(f.id) === slug,
               );
+              const community = communityBySlug.get(slug);
               return (
                 <tr key={course.id} className="border-b hover:bg-muted/30">
                   <td className="px-3 py-2">
                     <span className="rounded bg-muted px-1.5 py-0.5 text-xs">
                       {slug}
                     </span>
+                  </td>
+                  <td className="px-3 py-2">
+                    {community ? (
+                      <div className="text-xs text-muted-foreground">
+                        {community.what_it_is}
+                      </div>
+                    ) : (
+                      <span className="text-xs text-amber-600 dark:text-amber-400">
+                        Not generated
+                      </span>
+                    )}
                   </td>
                   <td className="px-3 py-2">
                     <div className="font-medium">{course.name}</div>
@@ -364,7 +396,9 @@ function CtasTab({ data }: { data: CtaDefinition[] | null }) {
                         </div>
                       </>
                     ) : (
-                      <span className="text-xs text-muted-foreground">—</span>
+                      <span className="text-xs text-muted-foreground">
+                        —
+                      </span>
                     )}
                   </td>
                 </tr>
