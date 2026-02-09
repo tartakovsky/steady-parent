@@ -54,6 +54,18 @@ interface CtaDefinition {
   cant_promise: string[];
 }
 
+interface QuizEntry {
+  slug: string;
+  title: string;
+  url: string;
+  connectsTo: string[];
+}
+
+interface QuizPageType {
+  name: string;
+  constraints: Record<string, unknown>;
+}
+
 interface MailingTag {
   id: string;
   name: string;
@@ -67,7 +79,9 @@ interface ValidationResult {
 
 interface SpecData {
   taxonomy: { categories: Category[]; entries: ArticleEntry[] } | null;
+  quizTaxonomy: { entries: QuizEntry[] } | null;
   pageTypes: PageType[] | null;
+  quizPageTypes: QuizPageType[] | null;
   ctaCatalog: CtaDefinition[] | null;
   mailingTags: MailingTag[] | null;
   ctaValidation: ValidationResult | null;
@@ -130,8 +144,15 @@ export default function SpecPage() {
         ))}
       </div>
 
-      {tab === "taxonomy" && <TaxonomyTab data={data.taxonomy} />}
-      {tab === "pageTypes" && <PageTypesTab data={data.pageTypes} />}
+      {tab === "taxonomy" && (
+        <TaxonomyTab
+          data={data.taxonomy}
+          quizData={data.quizTaxonomy}
+        />
+      )}
+      {tab === "pageTypes" && (
+        <PageTypesTab data={data.pageTypes} quizData={data.quizPageTypes} />
+      )}
       {tab === "ctas" && (
         <CtasTab data={data.ctaCatalog} validation={data.ctaValidation} />
       )}
@@ -146,16 +167,21 @@ export default function SpecPage() {
 
 function TaxonomyTab({
   data,
+  quizData,
 }: {
   data: { categories: Category[]; entries: ArticleEntry[] } | null;
+  quizData: { entries: QuizEntry[] } | null;
 }) {
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
 
-  if (!data) return <p className="text-muted-foreground">No taxonomy data.</p>;
+  if (!data && !quizData)
+    return <p className="text-muted-foreground">No taxonomy data.</p>;
 
-  const { categories, entries } = data;
+  const categories = data?.categories ?? [];
+  const entries = data?.entries ?? [];
   const pillarCount = entries.filter((e) => e.type === "pillar").length;
   const seriesCount = entries.filter((e) => e.type === "series").length;
+  const quizzes = quizData?.entries ?? [];
 
   const entriesByCategory = new Map<string, ArticleEntry[]>();
   for (const entry of entries) {
@@ -163,6 +189,16 @@ function TaxonomyTab({
     const list = entriesByCategory.get(cat) ?? [];
     list.push(entry);
     entriesByCategory.set(cat, list);
+  }
+
+  // Map quizzes by connected categories
+  const quizzesByCategory = new Map<string, QuizEntry[]>();
+  for (const quiz of quizzes) {
+    for (const slug of quiz.connectsTo) {
+      const list = quizzesByCategory.get(slug) ?? [];
+      list.push(quiz);
+      quizzesByCategory.set(slug, list);
+    }
   }
 
   function toggle(slug: string) {
@@ -175,85 +211,155 @@ function TaxonomyTab({
   }
 
   return (
-    <div className="space-y-4">
-      <p className="text-sm text-muted-foreground">
-        {categories.length} categories, {entries.length} articles ({pillarCount}{" "}
-        pillar, {seriesCount} series)
-      </p>
+    <div className="space-y-6">
+      {/* Articles */}
+      {data && (
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Articles</h3>
+          <p className="text-sm text-muted-foreground">
+            {categories.length} categories, {entries.length} articles ({pillarCount}{" "}
+            pillar, {seriesCount} series)
+          </p>
 
-      <div className="space-y-2">
-        {categories.map((cat) => {
-          const articles = entriesByCategory.get(cat.slug) ?? [];
-          const isOpen = expanded.has(cat.slug);
-          const pillar = articles.find((a) => a.type === "pillar");
-          return (
-            <div key={cat.slug} className="rounded-lg border">
-              <button
-                onClick={() => toggle(cat.slug)}
-                className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm hover:bg-muted/30"
-              >
-                {isOpen ? (
-                  <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground" />
-                ) : (
-                  <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
-                )}
-                <span className="font-medium">{cat.name}</span>
-                <span className="text-xs text-muted-foreground">
-                  {articles.length} articles
-                </span>
-              </button>
-              {isOpen && (
-                <div className="border-t px-4 py-2">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="text-left text-xs text-muted-foreground">
-                        <th className="pb-1 font-medium">Type</th>
-                        <th className="pb-1 font-medium">Title</th>
-                        <th className="pb-1 font-medium">URL</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {articles
-                        .sort((a, b) => {
-                          if (a.type === "pillar") return -1;
-                          if (b.type === "pillar") return 1;
-                          return (a.seriesPosition ?? 99) - (b.seriesPosition ?? 99);
-                        })
-                        .map((a) => (
-                          <tr key={a.slug} className="border-t border-dashed">
-                            <td className="py-1 pr-2">
-                              <span
-                                className={`rounded px-1.5 py-0.5 text-xs ${
-                                  a.type === "pillar"
-                                    ? "bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400"
-                                    : "bg-muted text-muted-foreground"
-                                }`}
-                              >
-                                {a.type}
-                                {a.seriesPosition != null
-                                  ? ` #${a.seriesPosition}`
-                                  : ""}
-                              </span>
-                            </td>
-                            <td className="py-1 pr-2">{a.title}</td>
-                            <td className="py-1 font-mono text-xs text-muted-foreground">
-                              {a.url}
-                            </td>
+          <div className="space-y-2">
+            {categories.map((cat) => {
+              const articles = entriesByCategory.get(cat.slug) ?? [];
+              const catQuizzes = quizzesByCategory.get(cat.slug) ?? [];
+              const isOpen = expanded.has(cat.slug);
+              const pillar = articles.find((a) => a.type === "pillar");
+              return (
+                <div key={cat.slug} className="rounded-lg border">
+                  <button
+                    onClick={() => toggle(cat.slug)}
+                    className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm hover:bg-muted/30"
+                  >
+                    {isOpen ? (
+                      <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                    )}
+                    <span className="font-medium">{cat.name}</span>
+                    <span className="text-xs text-muted-foreground">
+                      {articles.length} articles
+                    </span>
+                    {catQuizzes.length > 0 && (
+                      <span className="text-xs text-violet-600 dark:text-violet-400">
+                        {catQuizzes.length} quiz{catQuizzes.length > 1 ? "zes" : ""}
+                      </span>
+                    )}
+                  </button>
+                  {isOpen && (
+                    <div className="border-t px-4 py-2">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="text-left text-xs text-muted-foreground">
+                            <th className="pb-1 font-medium">Type</th>
+                            <th className="pb-1 font-medium">Title</th>
+                            <th className="pb-1 font-medium">URL</th>
                           </tr>
-                        ))}
-                    </tbody>
-                  </table>
-                  {pillar && (
-                    <p className="mt-2 text-xs text-muted-foreground">
-                      Pillar: {pillar.title}
-                    </p>
+                        </thead>
+                        <tbody>
+                          {articles
+                            .sort((a, b) => {
+                              if (a.type === "pillar") return -1;
+                              if (b.type === "pillar") return 1;
+                              return (a.seriesPosition ?? 99) - (b.seriesPosition ?? 99);
+                            })
+                            .map((a) => (
+                              <tr key={a.slug} className="border-t border-dashed">
+                                <td className="py-1 pr-2">
+                                  <span
+                                    className={`rounded px-1.5 py-0.5 text-xs ${
+                                      a.type === "pillar"
+                                        ? "bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400"
+                                        : "bg-muted text-muted-foreground"
+                                    }`}
+                                  >
+                                    {a.type}
+                                    {a.seriesPosition != null
+                                      ? ` #${a.seriesPosition}`
+                                      : ""}
+                                  </span>
+                                </td>
+                                <td className="py-1 pr-2">{a.title}</td>
+                                <td className="py-1 font-mono text-xs text-muted-foreground">
+                                  {a.url}
+                                </td>
+                              </tr>
+                            ))}
+                          {catQuizzes.map((q) => (
+                            <tr key={q.slug} className="border-t border-dashed">
+                              <td className="py-1 pr-2">
+                                <span className="rounded bg-violet-100 px-1.5 py-0.5 text-xs text-violet-700 dark:bg-violet-900/30 dark:text-violet-400">
+                                  quiz
+                                </span>
+                              </td>
+                              <td className="py-1 pr-2">{q.title}</td>
+                              <td className="py-1 font-mono text-xs text-muted-foreground">
+                                {q.url}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                      {pillar && (
+                        <p className="mt-2 text-xs text-muted-foreground">
+                          Pillar: {pillar.title}
+                        </p>
+                      )}
+                    </div>
                   )}
                 </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Quizzes */}
+      {quizzes.length > 0 && (
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Quizzes</h3>
+          <p className="text-sm text-muted-foreground">
+            {quizzes.length} quizzes
+          </p>
+          <div className="rounded-md border">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b bg-muted/50">
+                  <th className="px-3 py-2 text-left font-medium">Title</th>
+                  <th className="px-3 py-2 text-left font-medium">URL</th>
+                  <th className="px-3 py-2 text-left font-medium">
+                    Connects To
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {quizzes.map((q) => (
+                  <tr key={q.slug} className="border-b hover:bg-muted/30">
+                    <td className="px-3 py-2">{q.title}</td>
+                    <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
+                      {q.url}
+                    </td>
+                    <td className="px-3 py-2">
+                      <div className="flex flex-wrap gap-1">
+                        {q.connectsTo.map((slug) => (
+                          <span
+                            key={slug}
+                            className="rounded bg-muted px-1.5 py-0.5 text-xs text-muted-foreground"
+                          >
+                            {slug}
+                          </span>
+                        ))}
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -262,26 +368,81 @@ function TaxonomyTab({
 // Page Types tab
 // ---------------------------------------------------------------------------
 
-function PageTypesTab({ data }: { data: PageType[] | null }) {
-  if (!data) return <p className="text-muted-foreground">No page type data.</p>;
+function PageTypesTab({
+  data,
+  quizData,
+}: {
+  data: PageType[] | null;
+  quizData: QuizPageType[] | null;
+}) {
+  if (!data && !quizData)
+    return <p className="text-muted-foreground">No page type data.</p>;
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
-      {data.map((pt) => (
-        <div key={pt.name} className="rounded-lg border p-4">
-          <h3 className="mb-3 text-lg font-semibold capitalize">{pt.name}</h3>
-          <dl className="space-y-1.5 text-sm">
-            <Row label="Word count" value={`${pt.constraints.wordCount.min} – ${pt.constraints.wordCount.max}`} />
-            <Row label="H2 headings" value={`${pt.constraints.h2Count.min} – ${pt.constraints.h2Count.max}`} />
-            <Row label="CTA components" value={`${pt.constraints.ctaCount.min} – ${pt.constraints.ctaCount.max}`} />
-            <Row label="Image slots" value={`${pt.constraints.imageCount.min} – ${pt.constraints.imageCount.max}`} />
-            <Row label="FAQ questions" value={`${pt.constraints.faqQuestionCount.min} – ${pt.constraints.faqQuestionCount.max}`} />
-            <Row label="Min internal links" value={`${pt.constraints.minInternalLinks}`} />
-            <Row label="Requires TL;DR" value={pt.constraints.requiresTldr ? "Yes" : "No"} />
-            <Row label="Requires FAQ" value={pt.constraints.requiresFaq ? "Yes" : "No"} />
-          </dl>
+    <div className="space-y-6">
+      {/* Article page types */}
+      {data && (
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Article Page Types</h3>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {data.map((pt) => (
+              <div key={pt.name} className="rounded-lg border p-4">
+                <h4 className="mb-3 text-base font-semibold capitalize">
+                  {pt.name}
+                </h4>
+                <dl className="space-y-1.5 text-sm">
+                  <Row label="Word count" value={`${pt.constraints.wordCount.min} – ${pt.constraints.wordCount.max}`} />
+                  <Row label="H2 headings" value={`${pt.constraints.h2Count.min} – ${pt.constraints.h2Count.max}`} />
+                  <Row label="CTA components" value={`${pt.constraints.ctaCount.min} – ${pt.constraints.ctaCount.max}`} />
+                  <Row label="Image slots" value={`${pt.constraints.imageCount.min} – ${pt.constraints.imageCount.max}`} />
+                  <Row label="FAQ questions" value={`${pt.constraints.faqQuestionCount.min} – ${pt.constraints.faqQuestionCount.max}`} />
+                  <Row label="Min internal links" value={`${pt.constraints.minInternalLinks}`} />
+                  <Row label="Requires TL;DR" value={pt.constraints.requiresTldr ? "Yes" : "No"} />
+                  <Row label="Requires FAQ" value={pt.constraints.requiresFaq ? "Yes" : "No"} />
+                </dl>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
+      )}
+
+      {/* Quiz page types */}
+      {quizData && quizData.length > 0 && (
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Quiz Page Types</h3>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {quizData.map((qt) => (
+              <div key={qt.name} className="rounded-lg border p-4">
+                <h4 className="mb-3 text-base font-semibold capitalize">
+                  {qt.name}
+                </h4>
+                <dl className="space-y-1.5 text-sm">
+                  {Object.entries(qt.constraints).map(([key, value]) => {
+                    let display: string;
+                    if (
+                      typeof value === "object" &&
+                      value !== null &&
+                      "min" in value &&
+                      "max" in value
+                    ) {
+                      const range = value as { min: number; max: number };
+                      display = `${range.min} – ${range.max}`;
+                    } else if (typeof value === "boolean") {
+                      display = value ? "Yes" : "No";
+                    } else {
+                      display = String(value);
+                    }
+                    const label = key
+                      .replace(/([A-Z])/g, " $1")
+                      .replace(/^./, (s) => s.toUpperCase());
+                    return <Row key={key} label={label} value={display} />;
+                  })}
+                </dl>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

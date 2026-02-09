@@ -7,6 +7,8 @@ import {
   CtaCatalogSchema,
   MailingTagTaxonomySchema,
   PageTypesSchema,
+  QuizTaxonomySchema,
+  QuizPageTypesSchema,
   validateCtaCatalog,
 } from "@steady-parent/content-spec";
 
@@ -30,9 +32,11 @@ async function loadAndValidate<T>(
 }
 
 export async function GET() {
-  const [taxonomy, pageTypes, ctaCatalog, mailingTags] = await Promise.all([
+  const [taxonomy, quizTaxonomy, pageTypes, quizPageTypes, ctaCatalog, mailingTags] = await Promise.all([
     loadAndValidate("article_taxonomy.json", ArticleTaxonomySchema),
+    loadAndValidate("quiz_taxonomy.json", QuizTaxonomySchema),
     loadAndValidate("page_types.json", PageTypesSchema),
+    loadAndValidate("quiz_page_types.json", QuizPageTypesSchema),
     loadAndValidate("cta_catalog.json", CtaCatalogSchema),
     loadAndValidate("mailing_tags.json", MailingTagTaxonomySchema),
   ]);
@@ -46,7 +50,9 @@ export async function GET() {
 
   return NextResponse.json({
     taxonomy,
+    quizTaxonomy,
     pageTypes,
+    quizPageTypes,
     ctaCatalog,
     mailingTags,
     ctaValidation,
