@@ -48,7 +48,6 @@ interface CtaDefinition {
   name: string;
   url?: string | undefined;
   what_it_is: string;
-  button_text?: string | undefined;
   founder_presence?: string | undefined;
   cta_copy?: CtaCopy | undefined;
   can_promise: string[];
@@ -443,38 +442,62 @@ function CtasTab({
                     )}
                   </td>
                   <td className="px-3 py-2">
-                    <div className="font-medium">{course.name}</div>
-                    <div className="text-xs text-muted-foreground">
-                      {course.what_it_is}
-                    </div>
-                    {course.url && (
-                      <div className="font-mono text-xs text-muted-foreground">
-                        {course.url}
+                    {course.cta_copy ? (
+                      <div className="text-xs">
+                        <div className="text-muted-foreground">
+                          {course.cta_copy.eyebrow}
+                        </div>
+                        <div className="font-medium">
+                          {course.cta_copy.title}
+                        </div>
+                        <div className="text-muted-foreground">
+                          {course.cta_copy.body}
+                        </div>
+                        {course.url && (
+                          <div className="mt-0.5 font-mono text-muted-foreground">
+                            {course.url}
+                          </div>
+                        )}
+                        <div className="mt-1">
+                          <span className="inline-block rounded-full bg-stone-800 px-2.5 py-0.5 text-[10px] font-medium text-white dark:bg-stone-200 dark:text-stone-900">
+                            {course.cta_copy.buttonText}
+                          </span>
+                        </div>
                       </div>
-                    )}
-                    {course.button_text && (
-                      <div className="mt-1">
-                        <span className="inline-block rounded-full bg-stone-800 px-2.5 py-0.5 text-[10px] font-medium text-white dark:bg-stone-200 dark:text-stone-900">
-                          {course.button_text}
-                        </span>
+                    ) : (
+                      <div>
+                        <div className="font-medium">{course.name}</div>
+                        <div className="text-xs text-amber-600 dark:text-amber-400">
+                          No cta_copy
+                        </div>
                       </div>
                     )}
                   </td>
                   <td className="px-3 py-2">
-                    {freebie ? (
-                      <>
-                        <div className="font-medium">{freebie.name}</div>
-                        <div className="text-xs text-muted-foreground">
-                          {freebie.what_it_is}
+                    {freebie?.cta_copy ? (
+                      <div className="text-xs">
+                        <div className="text-muted-foreground">
+                          {freebie.cta_copy.eyebrow}
                         </div>
-                        {freebie.button_text && (
-                          <div className="mt-1">
-                            <span className="inline-block rounded-full bg-stone-800 px-2.5 py-0.5 text-[10px] font-medium text-white dark:bg-stone-200 dark:text-stone-900">
-                              {freebie.button_text}
-                            </span>
-                          </div>
-                        )}
-                      </>
+                        <div className="font-medium">
+                          {freebie.cta_copy.title}
+                        </div>
+                        <div className="text-muted-foreground">
+                          {freebie.cta_copy.body}
+                        </div>
+                        <div className="mt-1">
+                          <span className="inline-block rounded-full bg-stone-800 px-2.5 py-0.5 text-[10px] font-medium text-white dark:bg-stone-200 dark:text-stone-900">
+                            {freebie.cta_copy.buttonText}
+                          </span>
+                        </div>
+                      </div>
+                    ) : freebie ? (
+                      <div>
+                        <div className="font-medium">{freebie.name}</div>
+                        <div className="text-xs text-amber-600 dark:text-amber-400">
+                          No cta_copy
+                        </div>
+                      </div>
                     ) : (
                       <span className="text-xs text-muted-foreground">
                         —

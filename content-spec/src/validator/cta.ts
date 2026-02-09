@@ -2,12 +2,12 @@
  * CTA catalog validator — checks business rules beyond what the Zod schema catches.
  *
  * Validates:
- * - Per-category community entries have cta_copy with correct field lengths
- * - buttonText is always "Join the community"
- * - body ends with fixed founder line
+ * - All per-category entries (community, course, freebie) have cta_copy
+ * - Community: buttonText = "Join the community", body includes founder line
+ * - Course/freebie: title contains the product name
+ * - Word count constraints on eyebrow, title, body
  * - No exclamation marks or forbidden terms
  * - Category coverage (every taxonomy category has community + course + freebie)
- * - Courses and freebies have what_it_is
  *
  * Returns { errors, warnings } — same pattern as quiz and article validators.
  */
@@ -32,6 +32,54 @@ function wordCount(s: string): number {
 interface CtaValidationResult {
   errors: string[];
   warnings: string[];
+}
+
+/**
+ * Validate cta_copy fields shared by all entry types.
+ * Returns errors for the given prefix.
+ */
+function validateCtaCopy(
+  prefix: string,
+  eyebrow: string,
+  title: string,
+  body: string,
+  _buttonText: string,
+): string[] {
+  const errs: string[] = [];
+
+  // Eyebrow: 2-5 words
+  const eyebrowWc = wordCount(eyebrow);
+  if (eyebrowWc < 2 || eyebrowWc > 5) {
+    errs.push(`${prefix}: eyebrow "${eyebrow}" is ${eyebrowWc} words (must be 2-5)`);
+  }
+
+  // Title: 3-12 words
+  const titleWc = wordCount(title);
+  if (titleWc < 3 || titleWc > 12) {
+    errs.push(`${prefix}: title is ${titleWc} words (must be 3-12)`);
+  }
+
+  // Body: 8-35 words
+  const bodyWc = wordCount(body);
+  if (bodyWc < 8 || bodyWc > 35) {
+    errs.push(`${prefix}: body is ${bodyWc} words (must be 8-35)`);
+  }
+
+  // No exclamation marks
+  const allText = [eyebrow, title, body, _buttonText].join(" ");
+  if (allText.includes("!")) {
+    errs.push(`${prefix}: contains exclamation mark`);
+  }
+
+  // No forbidden terms
+  const lowerText = allText.toLowerCase();
+  for (const term of FORBIDDEN_TERMS) {
+    if (lowerText.includes(term)) {
+      errs.push(`${prefix}: contains forbidden term "${term}"`);
+    }
+  }
+
+  return errs;
 }
 
 /**
@@ -72,53 +120,24 @@ export function validateCtaCatalog(
     const slug = entry.id.replace(/^community-/, "");
     const prefix = `community-${slug}`;
 
-    // Must have cta_copy
     if (!entry.cta_copy) {
-      errors.push(`${prefix}: missing cta_copy (eyebrow, title, body, buttonText required)`);
+      errors.push(`${prefix}: missing cta_copy`);
       continue;
     }
 
     const { eyebrow, title, body, buttonText } = entry.cta_copy;
 
-    // buttonText must be exactly "Join the community"
+    // Community-specific: fixed buttonText
     if (buttonText !== COMMUNITY_BUTTON_TEXT) {
       errors.push(`${prefix}: buttonText must be "${COMMUNITY_BUTTON_TEXT}", got "${buttonText}"`);
     }
 
-    // body must end with founder line
+    // Community-specific: founder line in body
     if (!body.includes(COMMUNITY_FOUNDER_LINE)) {
       errors.push(`${prefix}: body must contain "${COMMUNITY_FOUNDER_LINE}"`);
     }
 
-    // Word count checks
-    const eyebrowWc = wordCount(eyebrow);
-    if (eyebrowWc < 2 || eyebrowWc > 5) {
-      errors.push(`${prefix}: eyebrow "${eyebrow}" is ${eyebrowWc} words (must be 2-5)`);
-    }
-
-    const titleWc = wordCount(title);
-    if (titleWc < 5 || titleWc > 12) {
-      errors.push(`${prefix}: title is ${titleWc} words (must be 5-12)`);
-    }
-
-    const bodyWc = wordCount(body);
-    if (bodyWc < 12 || bodyWc > 35) {
-      errors.push(`${prefix}: body is ${bodyWc} words (must be 12-35)`);
-    }
-
-    // No exclamation marks
-    const allText = [eyebrow, title, body, buttonText].join(" ");
-    if (allText.includes("!")) {
-      errors.push(`${prefix}: contains exclamation mark`);
-    }
-
-    // No forbidden terms
-    const lowerText = allText.toLowerCase();
-    for (const term of FORBIDDEN_TERMS) {
-      if (lowerText.includes(term)) {
-        errors.push(`${prefix}: contains forbidden term "${term}"`);
-      }
-    }
+    errors.push(...validateCtaCopy(prefix, eyebrow, title, body, buttonText));
 
     // can_promise and cant_promise should be empty
     if (entry.can_promise.length > 0) {
@@ -131,11 +150,23 @@ export function validateCtaCatalog(
 
   // --- Course and freebie checks ---
   for (const entry of [...courses, ...freebies]) {
+    const prefix = entry.id;
+
     if (!entry.what_it_is) {
-      errors.push(`${entry.id}: missing what_it_is`);
+      errors.push(`${prefix}: missing what_it_is`);
     }
-    if (!entry.button_text) {
-      errors.push(`${entry.id}: missing button_text`);
+
+    if (!entry.cta_copy) {
+      errors.push(`${prefix}: missing cta_copy`);
+      continue;
+    }
+
+    const { eyebrow, title, body, buttonText } = entry.cta_copy;
+    errors.push(...validateCtaCopy(prefix, eyebrow, title, body, buttonText));
+
+    // Title should reference the product name
+    if (!title.toLowerCase().includes(entry.name.toLowerCase())) {
+      warnings.push(`${prefix}: title "${title}" does not contain product name "${entry.name}"`);
     }
   }
 

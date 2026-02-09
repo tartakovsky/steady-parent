@@ -4,7 +4,7 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents going through the same things you are \u2014 active, supportive, and ready to discuss how it really works.",
+    "what_it_is": "A private group of parents going through the same things you are — active, supportive, and ready to discuss how it really works.",
     "founder_presence": "Founders are active and present daily.",
     "can_promise": [],
     "cant_promise": [
@@ -301,18 +301,28 @@
     "name": "Beyond Hitting",
     "url": "/course/beyond-hitting/",
     "what_it_is": "Audio lessons and illustrated guides for responding to hitting, biting, and physical aggression at every age.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "When they lash out",
+      "title": "Start the Beyond Hitting course",
+      "body": "Audio lessons and illustrated guides for responding to hitting, biting, and physical aggression — so you know exactly what to do next time.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-aggression",
     "type": "freebie",
     "name": "The Hitting Response Flowchart",
     "what_it_is": "A printable decision tree for what to say and do when your child gets physical.",
-    "button_text": "Send me the flowchart",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Next time they hit",
+      "title": "Get The Hitting Response Flowchart",
+      "body": "A printable decision tree that tells you exactly what to say and do when your child gets physical — so you stop freezing in the moment.",
+      "buttonText": "Send me the flowchart"
+    }
   },
   {
     "id": "course-anxiety",
@@ -320,18 +330,28 @@
     "name": "Childhood Anxiety",
     "url": "/course/childhood-anxiety/",
     "what_it_is": "Audio lessons and illustrated guides for helping your child manage worry, fear, and avoidance behaviors.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Worry is taking over",
+      "title": "Start the Childhood Anxiety course",
+      "body": "Audio lessons and illustrated guides that help your child face worry and fear instead of being ruled by them.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-anxiety",
     "type": "freebie",
     "name": "The Worry Time Toolkit",
     "what_it_is": "A printable worry journal page and worry time rules card for kids.",
-    "button_text": "Send me the toolkit",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Give worry a place",
+      "title": "Get The Worry Time Toolkit",
+      "body": "A printable worry journal page and worry time rules card so your child can process anxious thoughts without them taking over the whole day.",
+      "buttonText": "Send me the toolkit"
+    }
   },
   {
     "id": "course-big-feelings",
@@ -339,18 +359,28 @@
     "name": "Big Feelings",
     "url": "/course/big-feelings/",
     "what_it_is": "Audio lessons and illustrated guides for helping kids experience and process intense emotions safely.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Emotions are overwhelming",
+      "title": "Start the Big Feelings course",
+      "body": "Audio lessons and illustrated guides for helping kids experience intense emotions safely — without shutting them down or letting chaos take over.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-big-feelings",
     "type": "freebie",
     "name": "The Feelings Vocabulary Poster",
     "what_it_is": "A printable poster with age-appropriate feeling words kids can point to when they can't find the words.",
-    "button_text": "Send me the poster",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "When words fail them",
+      "title": "Get The Feelings Vocabulary Poster",
+      "body": "A printable poster with age-appropriate feeling words your child can point to when they can't find the words themselves.",
+      "buttonText": "Send me the poster"
+    }
   },
   {
     "id": "course-body-safety",
@@ -358,18 +388,28 @@
     "name": "Body Safety Conversations",
     "url": "/course/body-safety/",
     "what_it_is": "Audio lessons and illustrated guides for age-appropriate body safety and consent conversations.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "These talks matter early",
+      "title": "Start the Body Safety Conversations course",
+      "body": "Audio lessons and illustrated guides for having age-appropriate body safety and consent conversations you actually feel prepared for.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-body-safety",
     "type": "freebie",
     "name": "Body Safety Conversation Starters",
     "what_it_is": "A printable set of age-appropriate scripts for starting body safety conversations with your child.",
-    "button_text": "Send me the scripts",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Start the conversation today",
+      "title": "Get the Body Safety Conversation Starters",
+      "body": "A printable set of age-appropriate scripts so you can start body safety conversations with confidence instead of dread.",
+      "buttonText": "Send me the scripts"
+    }
   },
   {
     "id": "course-breaking-the-cycle",
@@ -377,18 +417,28 @@
     "name": "Breaking the Cycle",
     "url": "/course/breaking-the-cycle/",
     "what_it_is": "Audio lessons and guided exercises for identifying and changing inherited parenting patterns.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "You can parent differently",
+      "title": "Start the Breaking the Cycle course",
+      "body": "Audio lessons and guided exercises for identifying the patterns you inherited and building the ones you actually want to pass on.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-breaking-the-cycle",
     "type": "freebie",
     "name": "The Trigger Map Worksheet",
     "what_it_is": "A printable worksheet for identifying your parenting triggers and planning alternative responses.",
-    "button_text": "Send me the worksheet",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Know your triggers first",
+      "title": "Get The Trigger Map Worksheet",
+      "body": "A printable worksheet for identifying the moments you get activated and planning how you actually want to respond instead.",
+      "buttonText": "Send me the worksheet"
+    }
   },
   {
     "id": "course-discipline",
@@ -396,18 +446,28 @@
     "name": "Discipline Without Punishment",
     "url": "/course/discipline-without-punishment/",
     "what_it_is": "Audio lessons and illustrated guides for setting firm limits without punishment, threats, or yelling.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Limits without the guilt",
+      "title": "Start the Discipline Without Punishment course",
+      "body": "Audio lessons and illustrated guides for setting firm, clear boundaries without resorting to punishment, threats, or yelling.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-discipline",
     "type": "freebie",
     "name": "The Boundary Scripts Cheat Sheet",
     "what_it_is": "A one-page printable with exact phrases for setting limits in the ten most common situations.",
-    "button_text": "Send me the cheat sheet",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Words ready when needed",
+      "title": "Get The Boundary Scripts Cheat Sheet",
+      "body": "A one-page printable with exact phrases for setting limits in the ten situations where you're most likely to cave or yell.",
+      "buttonText": "Send me the cheat sheet"
+    }
   },
   {
     "id": "course-eating",
@@ -415,18 +475,28 @@
     "name": "Peaceful Mealtimes",
     "url": "/course/peaceful-mealtimes/",
     "what_it_is": "Audio lessons and illustrated guides for ending mealtime battles using the division of responsibility approach.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Mealtimes are a battle",
+      "title": "Start the Peaceful Mealtimes course",
+      "body": "Audio lessons and illustrated guides for ending food fights using the division of responsibility — so everyone can actually enjoy dinner.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-eating",
     "type": "freebie",
     "name": "The No-Pressure Meal Planner",
     "what_it_is": "A printable one-week meal planning template with division of responsibility reminders built in.",
-    "button_text": "Send me the planner",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Plan meals without stress",
+      "title": "Get The No-Pressure Meal Planner",
+      "body": "A printable one-week meal planning template with division of responsibility reminders built in — so dinner stops being a negotiation.",
+      "buttonText": "Send me the planner"
+    }
   },
   {
     "id": "course-new-parent",
@@ -434,18 +504,28 @@
     "name": "New Parent Survival",
     "url": "/course/new-parent/",
     "what_it_is": "Audio lessons and illustrated guides for surviving and enjoying the first year without losing yourself.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "The first year",
+      "title": "Start the New Parent Survival course",
+      "body": "Audio lessons and illustrated guides for surviving and genuinely enjoying the first year without losing yourself in the process.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-new-parent",
     "type": "freebie",
     "name": "The First 30 Days Survival Card",
     "what_it_is": "A one-page printable with the feeding, sleep, and crying essentials for the first month.",
-    "button_text": "Send me the card",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Keep this on your fridge",
+      "title": "Get The First 30 Days Survival Card",
+      "body": "A one-page printable with the feeding, sleep, and crying essentials you need for the first month — nothing extra, just what matters.",
+      "buttonText": "Send me the card"
+    }
   },
   {
     "id": "course-parenting-approach",
@@ -453,18 +533,28 @@
     "name": "Intentional Parenting",
     "url": "/course/intentional-parenting/",
     "what_it_is": "Audio lessons and illustrated guides for building a parenting approach that fits your actual family.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Find what fits your family",
+      "title": "Start the Intentional Parenting course",
+      "body": "Audio lessons and illustrated guides for building a parenting approach grounded in your real values, your real kids, and your real life.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-parenting-approach",
     "type": "freebie",
     "name": "The Parenting Values Worksheet",
     "what_it_is": "A printable worksheet for clarifying what matters most to your family and turning it into daily practice.",
-    "button_text": "Send me the worksheet",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Clarity changes everything",
+      "title": "Get The Parenting Values Worksheet",
+      "body": "A printable worksheet for getting clear on what matters most to your family and turning those values into daily decisions.",
+      "buttonText": "Send me the worksheet"
+    }
   },
   {
     "id": "course-parenting-science",
@@ -472,18 +562,28 @@
     "name": "The Science of Parenting",
     "url": "/course/parenting-science/",
     "what_it_is": "Audio lessons and illustrated breakdowns of the research behind common parenting advice.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Cut through the noise",
+      "title": "Start The Science of Parenting course",
+      "body": "Audio lessons and illustrated breakdowns of what the research actually says — so you can stop second-guessing every decision.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-parenting-science",
     "type": "freebie",
     "name": "The Research Decoder Card",
     "what_it_is": "A printable guide for reading parenting studies without getting tricked by headlines.",
-    "button_text": "Send me the card",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Read studies like a pro",
+      "title": "Get The Research Decoder Card",
+      "body": "A printable guide for reading parenting studies without getting tricked by misleading headlines or cherry-picked data.",
+      "buttonText": "Send me the card"
+    }
   },
   {
     "id": "course-potty-training",
@@ -491,18 +591,28 @@
     "name": "Potty Training",
     "url": "/course/potty-training/",
     "what_it_is": "Audio lessons and illustrated day-by-day guides for stress-free potty training on your child's timeline.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Ready when they are",
+      "title": "Start the Potty Training course",
+      "body": "Audio lessons and illustrated day-by-day guides for stress-free potty training that follows your child's readiness, not someone else's deadline.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-potty-training",
     "type": "freebie",
     "name": "The Potty Training Readiness Checklist",
     "what_it_is": "A one-page printable with readiness signs to watch for and a first-week starter plan.",
-    "button_text": "Send me the checklist",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Before you start",
+      "title": "Get The Potty Training Readiness Checklist",
+      "body": "A one-page printable with the readiness signs to watch for and a simple first-week plan so you start when your child is actually ready.",
+      "buttonText": "Send me the checklist"
+    }
   },
   {
     "id": "course-screens",
@@ -510,18 +620,28 @@
     "name": "Screen Sanity",
     "url": "/course/screen-sanity/",
     "what_it_is": "Audio lessons and illustrated guides for managing screens without constant fights or guilt.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Screens without the fights",
+      "title": "Start the Screen Sanity course",
+      "body": "Audio lessons and illustrated guides for managing screen time in a way that works for your family — without constant battles or guilt.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-screens",
     "type": "freebie",
     "name": "The Family Screen Agreement",
     "what_it_is": "A printable fill-in-the-blank screen time agreement the whole family signs together.",
-    "button_text": "Send me the agreement",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Rules the whole family owns",
+      "title": "Get The Family Screen Agreement",
+      "body": "A printable fill-in-the-blank screen time agreement the whole family signs together — so the rules belong to everyone, not just you.",
+      "buttonText": "Send me the agreement"
+    }
   },
   {
     "id": "course-siblings",
@@ -529,18 +649,28 @@
     "name": "Sibling Harmony",
     "url": "/course/sibling-harmony/",
     "what_it_is": "Audio lessons and illustrated guides for reducing sibling conflict and building genuine connection between your kids.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "They keep fighting",
+      "title": "Start the Sibling Harmony course",
+      "body": "Audio lessons and illustrated guides for reducing sibling conflict and helping your kids build a relationship that lasts beyond childhood.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-siblings",
     "type": "freebie",
     "name": "The Sibling Conflict Script Card",
     "what_it_is": "A printable card with exact phrases for when they're fighting, and when to step in versus stay out.",
-    "button_text": "Send me the card",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "When they start fighting",
+      "title": "Get The Sibling Conflict Script Card",
+      "body": "A printable card with the exact phrases for when they're at each other — and guidance on when to step in versus when to stay out.",
+      "buttonText": "Send me the card"
+    }
   },
   {
     "id": "course-sleep",
@@ -548,18 +678,28 @@
     "name": "Sleep Solutions",
     "url": "/course/sleep-solutions/",
     "what_it_is": "Audio lessons and illustrated guides for building sleep routines that stick, without cry-it-out or co-sleeping guilt.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Everyone needs more sleep",
+      "title": "Start the Sleep Solutions course",
+      "body": "Audio lessons and illustrated guides for building sleep routines that actually stick — without cry-it-out or co-sleeping guilt.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-sleep",
     "type": "freebie",
     "name": "Bedtime Routine Cards by Age",
     "what_it_is": "Printable visual step-by-step routine cards for toddlers, preschoolers, and school-age kids.",
-    "button_text": "Send me the cards",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Routine they can follow",
+      "title": "Get the Bedtime Routine Cards by Age",
+      "body": "Printable visual step-by-step routine cards for toddlers, preschoolers, and school-age kids — so bedtime runs itself.",
+      "buttonText": "Send me the cards"
+    }
   },
   {
     "id": "course-social-skills",
@@ -567,18 +707,28 @@
     "name": "Social Skills",
     "url": "/course/social-skills/",
     "what_it_is": "Audio lessons and illustrated guides for building your child's social confidence and friendship skills.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Friendship doesn't come easy",
+      "title": "Start the Social Skills course",
+      "body": "Audio lessons and illustrated guides for building your child's social confidence so they can navigate friendships and conflict on their own.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-social-skills",
     "type": "freebie",
     "name": "The Playdate Prep Card",
     "what_it_is": "A printable card with what to practice before playdates and scripts for common social conflicts.",
-    "button_text": "Send me the card",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Before the next playdate",
+      "title": "Get The Playdate Prep Card",
+      "body": "A printable card with what to practice before playdates and scripts for the social conflicts that always come up.",
+      "buttonText": "Send me the card"
+    }
   },
   {
     "id": "course-spirited-kids",
@@ -586,18 +736,28 @@
     "name": "Spirited Kids",
     "url": "/course/spirited-kids/",
     "what_it_is": "Audio lessons and illustrated guides for parenting high-intensity children without breaking either of you.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "High intensity, every day",
+      "title": "Start the Spirited Kids course",
+      "body": "Audio lessons and illustrated guides for parenting a high-intensity child in a way that honors who they are without breaking either of you.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-spirited-kids",
     "type": "freebie",
     "name": "The Spirited Child Temperament Map",
     "what_it_is": "A printable worksheet for mapping your child's intensity patterns and finding what calms them.",
-    "button_text": "Send me the map",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Understand their intensity",
+      "title": "Get The Spirited Child Temperament Map",
+      "body": "A printable worksheet for mapping your child's intensity patterns and discovering what actually calms them down when nothing seems to work.",
+      "buttonText": "Send me the map"
+    }
   },
   {
     "id": "course-staying-calm",
@@ -605,18 +765,28 @@
     "name": "The Calm Parent",
     "url": "/course/calm-parent/",
     "what_it_is": "Audio lessons and guided exercises for staying regulated when your kids push every button you have.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "You keep losing it",
+      "title": "Start The Calm Parent course",
+      "body": "Audio lessons and guided exercises for staying regulated when your kids push every button — so you can respond instead of react.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-staying-calm",
     "type": "freebie",
     "name": "The Parent Calm-Down Card",
     "what_it_is": "A printable pocket card with your personal regulation steps for when you're about to lose it.",
-    "button_text": "Send me the card",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "About to lose it",
+      "title": "Get The Parent Calm-Down Card",
+      "body": "A printable pocket card with your personal regulation steps — so you have a plan before the moment you need one.",
+      "buttonText": "Send me the card"
+    }
   },
   {
     "id": "course-tantrums",
@@ -624,18 +794,28 @@
     "name": "The Tantrum Toolkit",
     "url": "/course/tantrum-toolkit/",
     "what_it_is": "Step-by-step audio lessons and illustrated guides for every tantrum scenario, from grocery store meltdowns to bedtime battles.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Meltdowns are exhausting",
+      "title": "Start The Tantrum Toolkit course",
+      "body": "Audio lessons and illustrated guides for every tantrum scenario — from grocery store meltdowns to bedtime battles and everything in between.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-tantrums",
     "type": "freebie",
     "name": "The 3-Step Tantrum Script Cheat Sheet",
     "what_it_is": "A one-page printable with the exact phrases for validate, boundary, and redirect.",
-    "button_text": "Send me the cheat sheet",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Three steps, every time",
+      "title": "Get The 3-Step Tantrum Script Cheat Sheet",
+      "body": "A one-page printable with the exact phrases for validate, set the boundary, and redirect — so you always know what to say mid-meltdown.",
+      "buttonText": "Send me the cheat sheet"
+    }
   },
   {
     "id": "course-teens",
@@ -643,18 +823,28 @@
     "name": "Parenting Teens",
     "url": "/course/parenting-teens/",
     "what_it_is": "Audio lessons and illustrated guides for staying connected through adolescence without becoming the enemy.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "They're pulling away",
+      "title": "Start the Parenting Teens course",
+      "body": "Audio lessons and illustrated guides for staying connected through adolescence — even when they act like they want nothing to do with you.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-teens",
     "type": "freebie",
     "name": "Teen Conversation Starters",
     "what_it_is": "A printable list of ten non-interrogation questions that actually get teenagers talking.",
-    "button_text": "Send me the starters",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Get them talking again",
+      "title": "Get the Teen Conversation Starters",
+      "body": "A printable list of ten questions that actually get teenagers talking — no interrogation, no one-word answers.",
+      "buttonText": "Send me the starters"
+    }
   },
   {
     "id": "course-transitions",
@@ -662,17 +852,27 @@
     "name": "Life Transitions",
     "url": "/course/life-transitions/",
     "what_it_is": "Audio lessons and illustrated guides for helping kids through major life changes with less anxiety.",
-    "button_text": "Start the course",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Change is coming",
+      "title": "Start the Life Transitions course",
+      "body": "Audio lessons and illustrated guides for helping your child through moves, new schools, new siblings, and other big life changes with less anxiety.",
+      "buttonText": "Start the course"
+    }
   },
   {
     "id": "freebie-transitions",
     "type": "freebie",
     "name": "The Transition Prep Checklist",
     "what_it_is": "A printable step-by-step checklist for preparing your child for any big change.",
-    "button_text": "Send me the checklist",
     "can_promise": [],
-    "cant_promise": []
+    "cant_promise": [],
+    "cta_copy": {
+      "eyebrow": "Prepare them for what's next",
+      "title": "Get The Transition Prep Checklist",
+      "body": "A printable step-by-step checklist for preparing your child for any big change — so they walk in feeling ready instead of blindsided.",
+      "buttonText": "Send me the checklist"
+    }
   }
 ]

@@ -15,7 +15,6 @@ export const CtaDefinitionSchema = z.object({
   name: z.string().min(1),
   url: z.string().optional(),
   what_it_is: z.string().min(1).optional(),
-  button_text: z.string().min(1).optional(),
   founder_presence: z.string().optional(),
   cta_copy: CtaCopySchema.optional(),
   can_promise: z.array(z.string()),
