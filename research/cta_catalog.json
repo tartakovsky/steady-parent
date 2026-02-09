@@ -16,6 +16,186 @@
     ]
   },
   {
+    "id": "community-aggression",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents figuring out how to handle hitting, biting, and aggression \u2014 sharing what's actually working at home.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-anxiety",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents raising anxious kids, sharing what's helping with worry, avoidance, and the fears that won't quit.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-big-feelings",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents navigating meltdowns, rage, and big emotions together \u2014 real conversations about what's working and what's not.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-body-safety",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents having the awkward, important body safety conversations and figuring out what to say at every age.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-breaking-the-cycle",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents working to parent differently than they were raised, sharing the messy middle of breaking old patterns.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-discipline",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents setting real limits without punishment or yelling \u2014 sharing what holds and what falls apart.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-eating",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents done with mealtime battles, sharing what's actually getting their picky eaters to the table.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-new-parent",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents in the thick of the first year, sharing the unfiltered reality and what's keeping them sane.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-parenting-approach",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents building their own approach instead of following one guru \u2014 honest conversations about what fits your actual family.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-parenting-science",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents who want to know what the research actually says, not just what's trending on social media.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-potty-training",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents in the middle of potty training, sharing day-by-day updates and what's actually moving the needle.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-screens",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents managing screens without the guilt spiral \u2014 real conversations about limits that work in real life.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-siblings",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents tired of refereeing sibling fights, sharing what's actually building connection between their kids.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-sleep",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of exhausted parents figuring out sleep without cry-it-out guilt \u2014 sharing routines and regressions in real time.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-social-skills",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents helping kids who struggle socially \u2014 sharing what's building real confidence and friendships.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-spirited-kids",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents raising intense, strong-willed kids \u2014 the one place where people actually get what your days look like.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-staying-calm",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents working on their own reactions \u2014 sharing what helps them stay regulated when everything escalates.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-tantrums",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents deep in tantrum season, sharing what's working for grocery store meltdowns, bedtime battles, and everything between.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-teens",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents navigating adolescence together \u2014 sharing what's keeping the connection alive when your teen pulls away.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "community-transitions",
+    "type": "community",
+    "name": "Steady Parent Community",
+    "url": "https://www.skool.com/steady-parent",
+    "what_it_is": "A private group of parents guiding kids through big changes \u2014 new schools, new siblings, moves \u2014 sharing what's easing the anxiety.",
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
     "id": "course-aggression",
     "type": "course",
     "name": "Beyond Hitting",
