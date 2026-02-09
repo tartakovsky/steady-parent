@@ -145,21 +145,21 @@ function countFaqQuestions(text: string): number {
 }
 
 function wordCount(text: string): number {
-  let clean = text.replace(/```[\s\S]*?```/g, ""); // code blocks
+  let clean = text;
+  // Remove structural elements first (before stripping markdown chars)
+  clean = clean.replace(/export\s+const\s+metadata\s*=\s*\{[\s\S]*?\};/g, "");
+  clean = clean.replace(/\{\/\*[\s\S]*?\*\/\}/g, ""); // MDX comments
+  clean = clean.replace(/<\w+[^>]*\/>/g, ""); // JSX self-closing
+  clean = clean.replace(/<\w+[^>]*>[\s\S]*?<\/\w+>/g, ""); // JSX with children
+  clean = clean.replace(/```[\s\S]*?```/g, ""); // code blocks
   clean = clean.replace(/`[^`]+`/g, ""); // inline code
   clean = clean.replace(/!\[[^\]]*\]\([^)]*\)/g, ""); // images
   clean = clean.replace(
     /\[[^\]]*\]\([^)]*\)/g,
     (m) => m.split("]")[0]?.slice(1) ?? "", // link text only
   );
-  clean = clean.replace(/[#*_>\\-|]/g, " ");
-  // Remove metadata export block
-  clean = clean.replace(/export\s+const\s+metadata\s*=\s*\{[\s\S]*?\};/g, "");
-  // Remove MDX comments
-  clean = clean.replace(/\{\/\*[\s\S]*?\*\/\}/g, "");
-  // Remove JSX components
-  clean = clean.replace(/<\w+[^>]*\/>/g, "");
-  clean = clean.replace(/<\w+[^>]*>[\s\S]*?<\/\w+>/g, "");
+  // Strip markdown formatting chars (hyphen at end to avoid range)
+  clean = clean.replace(/[#*_>\\|-]/g, " ");
   return clean.split(/\s+/).filter((w) => w.length > 0).length;
 }
 

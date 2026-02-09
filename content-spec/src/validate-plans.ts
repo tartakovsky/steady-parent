@@ -27,8 +27,8 @@ interface FileResult {
   file: string;
   schema: string;
   ok: boolean;
-  entryCount?: number;
-  errors?: string[];
+  entryCount?: number | undefined;
+  errors?: string[] | undefined;
 }
 
 async function validateFile(
