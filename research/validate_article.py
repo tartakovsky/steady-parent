@@ -21,7 +21,7 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 LINK_PLAN_PATH = REPO_ROOT / "research" / "article_link_plan.json"
-CATEGORY_CTAS_PATH = REPO_ROOT / "research" / "category_ctas.json"
+CTA_CATALOG_PATH = REPO_ROOT / "research" / "cta_catalog.json"
 
 
 # ---------------------------------------------------------------------------
@@ -52,8 +52,48 @@ _JSX_HREF_RE = re.compile(r'<(?:CourseCTA|CommunityCTA|FreebieCTA|a)\s[^>]*href=
 _HTML_COMMENT_RE = re.compile(r"<!--[\s\S]*?-->")
 _MDX_IMAGE_RE = re.compile(r"\{/\*\s*IMAGE:\s*(.*?)\s*\*/\}", re.DOTALL)
 _CTA_COMPONENT_RE = re.compile(r"<(CourseCTA|CommunityCTA|FreebieCTA)\s")
+_CTA_FULL_RE = re.compile(
+    r"<(CourseCTA|CommunityCTA|FreebieCTA)\s(.*?)\s*/>", re.DOTALL
+)
+_CTA_PROP_RE = re.compile(r'(\w+)="((?:[^"\\]|\\.)*)"')
 _EM_DASH_RE = re.compile(r"\u2014")
 _GENDERED_RE = re.compile(r"\b(?:mama|mommy|mommies|girl|girly|girlies)\b", re.IGNORECASE)
+
+
+def _extract_cta_components(text: str) -> list[dict[str, str]]:
+    """Extract all CTA components with their props from MDX text.
+
+    Returns list of dicts like:
+    {"component": "CourseCTA", "href": "...", "eyebrow": "...", "title": "...", "body": "...", "buttonText": "..."}
+    """
+    results = []
+    for m in _CTA_FULL_RE.finditer(text):
+        component = m.group(1)
+        props_str = m.group(2)
+        props = {"component": component}
+        for pm in _CTA_PROP_RE.finditer(props_str):
+            props[pm.group(1)] = pm.group(2).replace('\\"', '"')
+        results.append(props)
+    return results
+
+
+def _build_cta_lookup(catalog: list[dict]) -> dict[str, dict[str, dict]]:
+    """Build category_slug -> {course, freebie, community} -> cta_copy lookup."""
+    lookup: dict[str, dict[str, dict]] = {}
+    for entry in catalog:
+        eid = entry["id"]
+        etype = entry["type"]
+        if etype == "community" and eid == "community":
+            continue
+        prefix = etype + "-"
+        if eid.startswith(prefix):
+            slug = eid[len(prefix):]
+        else:
+            continue
+        cta_copy = entry.get("cta_copy")
+        if cta_copy:
+            lookup.setdefault(slug, {})[etype] = cta_copy
+    return lookup
 
 
 def _extract_md_links(text: str) -> list[tuple[str, str]]:
@@ -385,35 +425,42 @@ def validate_article(filepath: Path, link_plan: list[dict[str, Any]], url_regist
     elif len(cta_components) > 3:
         result.warn(f"Too many CTA components: {len(cta_components)} (target exactly 3)")
 
-    # ----- CTA title consistency (canonical names) -----
-    if CATEGORY_CTAS_PATH.exists():
-        category_ctas = json.loads(CATEGORY_CTAS_PATH.read_text(encoding="utf-8"))
-        # Extract category slug from plan URL
+    # ----- CTA prop validation (exact match against catalog) -----
+    if CTA_CATALOG_PATH.exists():
+        cta_catalog = json.loads(CTA_CATALOG_PATH.read_text(encoding="utf-8"))
+        cta_lookup = _build_cta_lookup(cta_catalog)
         plan_parts = plan["url"].strip("/").split("/")
         cat_slug = plan_parts[1] if plan_parts[0] == "blog" and len(plan_parts) > 1 else plan_parts[0]
-        cat_cta = category_ctas.get(cat_slug)
-        if cat_cta:
-            # Check CourseCTA titles
-            course_title_re = re.compile(r'<CourseCTA\s[^>]*title="([^"]*)"')
-            for m in course_title_re.finditer(text):
-                found_title = m.group(1)
-                canonical = cat_cta["course_name"]
-                if canonical.lower() not in found_title.lower():
-                    result.error(f"CourseCTA title \"{found_title}\" doesn't match canonical \"{canonical}\"")
-            # Check FreebieCTA titles
-            freebie_title_re = re.compile(r'<FreebieCTA\s[^>]*title="([^"]*)"')
-            for m in freebie_title_re.finditer(text):
-                found_title = m.group(1)
-                canonical = cat_cta["freebie_name"]
-                if canonical.lower() not in found_title.lower():
-                    result.error(f"FreebieCTA title \"{found_title}\" doesn't match canonical \"{canonical}\"")
+        cat_entries = cta_lookup.get(cat_slug, {})
+
+        cta_components = _extract_cta_components(text)
+        component_to_type = {"CourseCTA": "course", "CommunityCTA": "community", "FreebieCTA": "freebie"}
+        check_props = ("eyebrow", "title", "body", "buttonText")
+
+        for comp in cta_components:
+            comp_name = comp["component"]
+            cta_type = component_to_type.get(comp_name)
+            if not cta_type:
+                continue
+            expected = cat_entries.get(cta_type)
+            if not expected:
+                result.warn(f"{comp_name}: no catalog cta_copy for {cta_type}-{cat_slug}")
+                continue
+            for prop in check_props:
+                actual = comp.get(prop, "")
+                want = expected.get(prop, "")
+                if actual != want:
+                    result.error(
+                        f'{comp_name} {prop} mismatch:\n'
+                        f'  got:  "{actual[:80]}{"..." if len(actual) > 80 else ""}"\n'
+                        f'  want: "{want[:80]}{"..." if len(want) > 80 else ""}"'
+                    )
 
     # ----- Video promise in CTA body -----
-    cta_body_re = re.compile(r'<(?:CourseCTA|CommunityCTA|FreebieCTA)\s[^>]*body="([^"]*)"', re.DOTALL)
-    for m in cta_body_re.finditer(text):
-        body_text = m.group(1).lower()
+    for comp in _extract_cta_components(text):
+        body_text = comp.get("body", "").lower()
         if "video" in body_text:
-            result.error(f"CTA body promises video: \"{m.group(1)[:80]}...\" (courses are text + audio + illustrations only)")
+            result.error(f"CTA body promises video: \"{comp.get('body', '')[:80]}...\" (courses are text + audio + illustrations only)")
 
     # ----- Image placeholder checks -----
     image_placeholders = list(_MDX_IMAGE_RE.finditer(text))
@@ -474,30 +521,13 @@ def validate_article(filepath: Path, link_plan: list[dict[str, Any]], url_regist
 
     # ----- Artifact report -----
     # Extract CTAs and image suggestions so we know what assets to produce
-    freebie_re = re.compile(
-        r'<FreebieCTA\s[^>]*?title="([^"]*)"[^>]*?body="([^"]*)"',
-        re.DOTALL,
-    )
-    freebie_re2 = re.compile(
-        r'<FreebieCTA\s[^>]*?body="([^"]*)"[^>]*?title="([^"]*)"',
-        re.DOTALL,
-    )
-    course_re = re.compile(
-        r'<CourseCTA\s[^>]*?title="([^"]*)"[^>]*?body="([^"]*)"',
-        re.DOTALL,
-    )
-    artifacts: list[str] = []
-    for m in freebie_re.finditer(text):
-        artifacts.append(f"FREEBIE: \"{m.group(1)}\" - {m.group(2)}")
-    for m in freebie_re2.finditer(text):
-        artifacts.append(f"FREEBIE: \"{m.group(2)}\" - {m.group(1)}")
-    for m in course_re.finditer(text):
-        artifacts.append(f"COURSE: \"{m.group(1)}\" - {m.group(2)}")
-    seen_artifacts: set[str] = set()
-    for a in artifacts:
-        if a not in seen_artifacts:
-            seen_artifacts.add(a)
-            result.add_info(f"Artifact promised: {a}")
+    all_cta_comps = _extract_cta_components(text)
+    for comp in all_cta_comps:
+        comp_name = comp["component"]
+        title = comp.get("title", "")
+        body = comp.get("body", "")
+        label = comp_name.replace("CTA", "").upper()
+        result.add_info(f"Artifact promised: {label}: \"{title}\" - {body}")
 
     # Extract image suggestions
     for i, img_match in enumerate(image_placeholders, 1):

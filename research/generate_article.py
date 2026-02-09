@@ -24,7 +24,7 @@ PROMPT_TEMPLATE_PATH = REPO_ROOT / "research" / "writer_prompt.md"
 LINK_PLAN_PATH = REPO_ROOT / "research" / "article_link_plan.json"
 ASSIGNMENTS_PATH = REPO_ROOT / "research" / "source_to_article_assignment.json"
 EXTRACTS_INDEX_PATH = REPO_ROOT / "content" / "blog" / "extracts" / "index.json"
-CATEGORY_CTAS_PATH = REPO_ROOT / "research" / "category_ctas.json"
+CTA_CATALOG_PATH = REPO_ROOT / "research" / "cta_catalog.json"
 OUTPUT_DIR = REPO_ROOT / "landing" / "src" / "content" / "blog" / "posts"
 
 
@@ -108,53 +108,55 @@ def _format_nav_links(links: list[dict]) -> str:
     return "\n".join(lines) if lines else "(none)"
 
 
-def _format_ctas(ctas: list[dict]) -> str:
-    """Format CTA component instructions."""
+def _build_cta_lookup(catalog: list[dict]) -> dict[str, dict[str, dict]]:
+    """Build category_slug -> {course, freebie, community} lookup from cta_catalog.json."""
+    lookup: dict[str, dict[str, dict]] = {}
+    for entry in catalog:
+        eid = entry["id"]
+        etype = entry["type"]
+        if etype == "community" and eid == "community":
+            continue  # skip global community entry
+        # Derive category slug from id: "course-tantrums" -> "tantrums"
+        prefix = etype + "-"
+        if eid.startswith(prefix):
+            slug = eid[len(prefix):]
+        else:
+            continue
+        lookup.setdefault(slug, {})[etype] = entry
+    return lookup
+
+
+def _format_ctas(ctas: list[dict], cta_lookup: dict[str, dict], category_slug: str) -> str:
+    """Format CTA components with exact prop values from catalog."""
+    cat_entries = cta_lookup.get(category_slug, {})
     lines = []
     for cta in ctas:
         url = cta.get("url")
         ctype = cta["type"]
-        if ctype == "course":
-            component = "CourseCTA"
-            href_prop = f'href="{url}" ' if url else ""
-            lines.append(
-                f'`<{component} {href_prop}eyebrow="YOUR EYEBROW" '
-                f'title="YOUR TITLE" body="YOUR BODY" buttonText="YOUR BUTTON TEXT" />`'
-                f" - {cta['intent']}"
-            )
-        elif ctype == "community":
-            component = "CommunityCTA"
-            href_prop = f'href="{url}" ' if url else ""
-            lines.append(
-                f'`<{component} {href_prop}eyebrow="YOUR EYEBROW" '
-                f'title="YOUR TITLE" body="YOUR BODY" buttonText="YOUR BUTTON TEXT" />`'
-                f" - {cta['intent']}"
-            )
-        elif ctype == "freebie":
-            component = "FreebieCTA"
-            lines.append(
-                f'`<{component} eyebrow="YOUR EYEBROW" '
-                f'title="YOUR TITLE" body="YOUR BODY" buttonText="YOUR BUTTON TEXT" />`'
-                f" - {cta['intent']} (no href needed)"
-            )
+        catalog_entry = cat_entries.get(ctype)
+
+        if not catalog_entry or not catalog_entry.get("cta_copy"):
+            # Fallback: placeholder if catalog entry missing
+            component = {"course": "CourseCTA", "community": "CommunityCTA", "freebie": "FreebieCTA"}.get(ctype, "CTA")
+            lines.append(f"<!-- WARNING: no cta_copy in catalog for {ctype}-{category_slug} -->")
+            continue
+
+        copy = catalog_entry["cta_copy"]
+        component = {"course": "CourseCTA", "community": "CommunityCTA", "freebie": "FreebieCTA"}[ctype]
+        href_prop = f'href="{url}" ' if url else ""
+
+        jsx = (
+            f'<{component} {href_prop}'
+            f'eyebrow="{copy["eyebrow"]}" '
+            f'title="{copy["title"]}" '
+            f'body="{copy["body"]}" '
+            f'buttonText="{copy["buttonText"]}" />'
+        )
+        lines.append(f"`{jsx}`")
+        lines.append(f"  Placement: {cta['intent']}")
+        lines.append("")
+
     return "\n".join(lines) if lines else "(none)"
-
-
-def _format_canonical_ctas(category_slug: str, category_ctas: dict) -> str:
-    """Format canonical CTA definitions for the prompt."""
-    cat_cta = category_ctas.get(category_slug)
-    if not cat_cta:
-        return "(no canonical CTA definitions for this category)"
-    lines = [
-        f"**Course:** \"{cat_cta['course_name']}\"",
-        f"  Promise: {cat_cta['course_promise']}",
-        f"",
-        f"**Freebie:** \"{cat_cta['freebie_name']}\"",
-        f"  Promise: {cat_cta['freebie_promise']}",
-        f"",
-        f"**Community:** \"Steady Parent Community\" (same for all categories)",
-    ]
-    return "\n".join(lines)
 
 
 def _determine_article_type(plan: dict) -> str:
@@ -181,7 +183,8 @@ def assemble_prompt(article_title: str) -> tuple[str, str, dict]:
     link_plan = _read_json(LINK_PLAN_PATH)
     assignments = _read_json(ASSIGNMENTS_PATH)
     extracts_index = _read_json(EXTRACTS_INDEX_PATH)
-    category_ctas = _read_json(CATEGORY_CTAS_PATH)
+    cta_catalog = _read_json(CTA_CATALOG_PATH)
+    cta_lookup = _build_cta_lookup(cta_catalog)
     template = _read_text(PROMPT_TEMPLATE_PATH)
 
     plan = _find_link_plan(link_plan, article_title)
@@ -219,8 +222,7 @@ def assemble_prompt(article_title: str) -> tuple[str, str, dict]:
     prompt = prompt.replace("{{DATE}}", today)
     prompt = prompt.replace("{{BODY_LINKS}}", _format_body_links(plan.get("links", [])))
     prompt = prompt.replace("{{NAV_LINKS}}", _format_nav_links(plan.get("links", [])))
-    prompt = prompt.replace("{{CTA_COMPONENTS}}", _format_ctas(plan.get("ctas", [])))
-    prompt = prompt.replace("{{CTA_CANONICAL}}", _format_canonical_ctas(category_slug, category_ctas))
+    prompt = prompt.replace("{{CTA_COMPONENTS}}", _format_ctas(plan.get("ctas", []), cta_lookup, category_slug))
     prompt = prompt.replace("{{SOURCE_COUNT}}", str(len(sources)))
     prompt = prompt.replace("{{SOURCE_MATERIAL}}", source_material)
 

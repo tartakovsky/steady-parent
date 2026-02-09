@@ -53,26 +53,24 @@ Anchor text rules:
 
 Place exactly 3 CTA components spread through the article. Never cluster them together. Suggested positions: after intro section, mid-article, before FAQ.
 
-**Course format constraint:** Courses contain text lessons, audio, and illustrations. NEVER promise video, video walkthroughs, or video demonstrations. Use words like "guides," "lessons," "walkthroughs," "illustrated breakdowns."
+**Course format constraint:** Courses contain text lessons, audio, and illustrations. NEVER promise video, video walkthroughs, or video demonstrations in the article body either.
 
-### Canonical CTA definitions (use these exact names)
+### Pre-written CTA components — use VERBATIM
 
-{{CTA_CANONICAL}}
-
-**Rules:**
-- CourseCTA `title` MUST use the canonical course name exactly as shown above.
-- FreebieCTA `title` MUST use the canonical freebie name exactly as shown above.
-- CommunityCTA must sell the community. Here is EXACTLY what it is — do not add, invent, or embellish:
-  - A private group of parents going through the same things, active, supportive, discussing how it really works
-  - Founders present daily, answering what comes up
-  - Regular content: bite-sized scripts, long-form explanations, supplementary materials
-  - NEVER promise: weekly Q&As, live coaching, video, 1-on-1 access, guaranteed response times
-- CTA `body` text must be consistent with the canonical promise. You may rephrase for the article context, but do NOT change what the product delivers.
-- Write custom `eyebrow` and `buttonText` that flow from the surrounding article content.
-
-### CTA component templates
+The CTA components below have exact prop values. Copy each one VERBATIM into your article at the position indicated by its placement hint. Do NOT modify eyebrow, title, body, or buttonText.
 
 {{CTA_COMPONENTS}}
+
+**Do NOT:**
+- Change any prop value (eyebrow, title, body, buttonText)
+- Add extra props
+- Wrap CTA components in any container
+- Reword or "improve" the CTA copy — it is pre-approved
+
+**Community CTA context** (for article body text around the CTA, NOT for the component props):
+- A private group of parents going through the same things, active, supportive
+- Founders present daily
+- NEVER promise in body text: weekly Q&As, live coaching, video, 1-on-1 access, guaranteed response times
 
 ## IMAGE PLACEHOLDERS
 
