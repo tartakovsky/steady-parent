@@ -66,6 +66,15 @@ interface QuizPageType {
   constraints: Record<string, unknown>;
 }
 
+interface CrossLinkStats {
+  articleCount: number;
+  totalLinks: number;
+  linksByType: Record<string, number>;
+  totalCtas: number;
+  ctasByType: Record<string, number>;
+  quizConnections: { slug: string; title: string; url: string; categories: string[] }[];
+}
+
 interface MailingTag {
   id: string;
   name: string;
@@ -85,9 +94,11 @@ interface SpecData {
   ctaCatalog: CtaDefinition[] | null;
   mailingTags: MailingTag[] | null;
   ctaValidation: ValidationResult | null;
+  crossLinkStats: CrossLinkStats | null;
+  crossLinkValidation: ValidationResult | null;
 }
 
-type Tab = "taxonomy" | "pageTypes" | "ctas" | "mailing";
+type Tab = "taxonomy" | "pageTypes" | "crossLinks" | "ctas" | "mailing";
 
 // ---------------------------------------------------------------------------
 // Component
@@ -114,6 +125,7 @@ export default function SpecPage() {
   const tabs: { key: Tab; label: string }[] = [
     { key: "taxonomy", label: "Taxonomy" },
     { key: "pageTypes", label: "Page Types" },
+    { key: "crossLinks", label: "Cross-Linking" },
     { key: "ctas", label: "CTAs" },
     { key: "mailing", label: "Mailing Tags" },
   ];
@@ -153,6 +165,12 @@ export default function SpecPage() {
       {tab === "pageTypes" && (
         <PageTypesTab data={data.pageTypes} quizData={data.quizPageTypes} />
       )}
+      {tab === "crossLinks" && (
+        <CrossLinksTab
+          stats={data.crossLinkStats}
+          validation={data.crossLinkValidation}
+        />
+      )}
       {tab === "ctas" && (
         <CtasTab data={data.ctaCatalog} validation={data.ctaValidation} />
       )}
@@ -191,16 +209,6 @@ function TaxonomyTab({
     entriesByCategory.set(cat, list);
   }
 
-  // Map quizzes by connected categories
-  const quizzesByCategory = new Map<string, QuizEntry[]>();
-  for (const quiz of quizzes) {
-    for (const slug of quiz.connectsTo) {
-      const list = quizzesByCategory.get(slug) ?? [];
-      list.push(quiz);
-      quizzesByCategory.set(slug, list);
-    }
-  }
-
   function toggle(slug: string) {
     setExpanded((prev) => {
       const next = new Set(prev);
@@ -224,7 +232,6 @@ function TaxonomyTab({
           <div className="space-y-2">
             {categories.map((cat) => {
               const articles = entriesByCategory.get(cat.slug) ?? [];
-              const catQuizzes = quizzesByCategory.get(cat.slug) ?? [];
               const isOpen = expanded.has(cat.slug);
               const pillar = articles.find((a) => a.type === "pillar");
               return (
@@ -242,11 +249,6 @@ function TaxonomyTab({
                     <span className="text-xs text-muted-foreground">
                       {articles.length} articles
                     </span>
-                    {catQuizzes.length > 0 && (
-                      <span className="text-xs text-violet-600 dark:text-violet-400">
-                        {catQuizzes.length} quiz{catQuizzes.length > 1 ? "zes" : ""}
-                      </span>
-                    )}
                   </button>
                   {isOpen && (
                     <div className="border-t px-4 py-2">
@@ -287,19 +289,6 @@ function TaxonomyTab({
                                 </td>
                               </tr>
                             ))}
-                          {catQuizzes.map((q) => (
-                            <tr key={q.slug} className="border-t border-dashed">
-                              <td className="py-1 pr-2">
-                                <span className="rounded bg-violet-100 px-1.5 py-0.5 text-xs text-violet-700 dark:bg-violet-900/30 dark:text-violet-400">
-                                  quiz
-                                </span>
-                              </td>
-                              <td className="py-1 pr-2">{q.title}</td>
-                              <td className="py-1 font-mono text-xs text-muted-foreground">
-                                {q.url}
-                              </td>
-                            </tr>
-                          ))}
                         </tbody>
                       </table>
                       {pillar && (
@@ -329,9 +318,6 @@ function TaxonomyTab({
                 <tr className="border-b bg-muted/50">
                   <th className="px-3 py-2 text-left font-medium">Title</th>
                   <th className="px-3 py-2 text-left font-medium">URL</th>
-                  <th className="px-3 py-2 text-left font-medium">
-                    Connects To
-                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -340,18 +326,6 @@ function TaxonomyTab({
                     <td className="px-3 py-2">{q.title}</td>
                     <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
                       {q.url}
-                    </td>
-                    <td className="px-3 py-2">
-                      <div className="flex flex-wrap gap-1">
-                        {q.connectsTo.map((slug) => (
-                          <span
-                            key={slug}
-                            className="rounded bg-muted px-1.5 py-0.5 text-xs text-muted-foreground"
-                          >
-                            {slug}
-                          </span>
-                        ))}
-                      </div>
                     </td>
                   </tr>
                 ))}
@@ -452,6 +426,178 @@ function Row({ label, value }: { label: string; value: string }) {
     <div className="flex justify-between">
       <dt className="text-muted-foreground">{label}</dt>
       <dd className="font-medium">{value}</dd>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Cross-Linking tab
+// ---------------------------------------------------------------------------
+
+const LINK_TYPE_ORDER = ["cross", "sibling", "quiz", "series_preview", "pillar", "prev", "next"];
+
+function CrossLinksTab({
+  stats,
+  validation,
+}: {
+  stats: CrossLinkStats | null;
+  validation: ValidationResult | null;
+}) {
+  if (!stats)
+    return <p className="text-muted-foreground">No cross-linking data.</p>;
+
+  const sortedLinkTypes = Object.entries(stats.linksByType).sort(
+    ([a], [b]) => (LINK_TYPE_ORDER.indexOf(a) === -1 ? 99 : LINK_TYPE_ORDER.indexOf(a)) -
+                  (LINK_TYPE_ORDER.indexOf(b) === -1 ? 99 : LINK_TYPE_ORDER.indexOf(b)),
+  );
+
+  return (
+    <div className="space-y-6">
+      {/* Validation */}
+      {validation && (validation.errors.length > 0 || validation.warnings.length > 0) && (
+        <div className="rounded-lg border bg-red-50 p-4 dark:bg-red-950/20">
+          <h3 className="text-sm font-semibold text-red-700 dark:text-red-400">
+            Cross-Link Validation ({validation.errors.length} errors, {validation.warnings.length} warnings)
+          </h3>
+          {validation.errors.length > 0 && (
+            <ul className="mt-2 list-inside list-disc text-xs text-red-600 dark:text-red-400">
+              {validation.errors.map((e, i) => (
+                <li key={i}>{e}</li>
+              ))}
+            </ul>
+          )}
+          {validation.warnings.length > 0 && (
+            <ul className="mt-2 list-inside list-disc text-xs text-amber-600 dark:text-amber-400">
+              {validation.warnings.map((w, i) => (
+                <li key={i}>{w}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
+      {validation && validation.errors.length === 0 && validation.warnings.length === 0 && (
+        <div className="rounded-lg border bg-emerald-50 p-3 dark:bg-emerald-950/20">
+          <p className="text-sm text-emerald-700 dark:text-emerald-400">
+            All cross-link validation checks passed
+          </p>
+        </div>
+      )}
+
+      {/* Summary stats */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold">Link Plan Summary</h3>
+        <div className="grid gap-4 sm:grid-cols-3">
+          <div className="rounded-lg border p-4 text-center">
+            <div className="text-2xl font-bold">{stats.articleCount}</div>
+            <div className="text-xs text-muted-foreground">articles with link plans</div>
+          </div>
+          <div className="rounded-lg border p-4 text-center">
+            <div className="text-2xl font-bold">{stats.totalLinks}</div>
+            <div className="text-xs text-muted-foreground">total links</div>
+          </div>
+          <div className="rounded-lg border p-4 text-center">
+            <div className="text-2xl font-bold">{stats.totalCtas}</div>
+            <div className="text-xs text-muted-foreground">total CTAs</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Link type distribution */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold">Links by Type</h3>
+        <div className="rounded-md border">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b bg-muted/50">
+                <th className="px-3 py-2 text-left font-medium">Type</th>
+                <th className="px-3 py-2 text-right font-medium">Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedLinkTypes.map(([type, count]) => (
+                <tr key={type} className="border-b hover:bg-muted/30">
+                  <td className="px-3 py-2">
+                    <span className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">
+                      {type}
+                    </span>
+                  </td>
+                  <td className="px-3 py-2 text-right font-medium">{count}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* CTA type distribution */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold">CTAs by Type</h3>
+        <div className="rounded-md border">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b bg-muted/50">
+                <th className="px-3 py-2 text-left font-medium">Type</th>
+                <th className="px-3 py-2 text-right font-medium">Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.entries(stats.ctasByType).map(([type, count]) => (
+                <tr key={type} className="border-b hover:bg-muted/30">
+                  <td className="px-3 py-2">
+                    <span className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">
+                      {type}
+                    </span>
+                  </td>
+                  <td className="px-3 py-2 text-right font-medium">{count}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Quiz connections */}
+      {stats.quizConnections.length > 0 && (
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Quiz Connections</h3>
+          <p className="text-sm text-muted-foreground">
+            Which article categories each quiz connects to
+          </p>
+          <div className="rounded-md border">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b bg-muted/50">
+                  <th className="px-3 py-2 text-left font-medium">Quiz</th>
+                  <th className="px-3 py-2 text-left font-medium">URL</th>
+                  <th className="px-3 py-2 text-left font-medium">Categories</th>
+                </tr>
+              </thead>
+              <tbody>
+                {stats.quizConnections.map((q) => (
+                  <tr key={q.slug} className="border-b hover:bg-muted/30">
+                    <td className="px-3 py-2">{q.title}</td>
+                    <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
+                      {q.url}
+                    </td>
+                    <td className="px-3 py-2">
+                      <div className="flex flex-wrap gap-1">
+                        {q.categories.map((slug) => (
+                          <span
+                            key={slug}
+                            className="rounded bg-muted px-1.5 py-0.5 text-xs text-muted-foreground"
+                          >
+                            {slug}
+                          </span>
+                        ))}
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

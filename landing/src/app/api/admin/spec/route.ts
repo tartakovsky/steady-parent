@@ -9,7 +9,10 @@ import {
   PageTypesSchema,
   QuizTaxonomySchema,
   QuizPageTypesSchema,
+  LinkPlanSchema,
   validateCtaCatalog,
+  computeCrossLinkStats,
+  validateCrossLinks,
 } from "@steady-parent/content-spec";
 
 function getResearchPath(filename: string): string {
@@ -32,13 +35,14 @@ async function loadAndValidate<T>(
 }
 
 export async function GET() {
-  const [taxonomy, quizTaxonomy, pageTypes, quizPageTypes, ctaCatalog, mailingTags] = await Promise.all([
+  const [taxonomy, quizTaxonomy, pageTypes, quizPageTypes, ctaCatalog, mailingTags, linkPlan] = await Promise.all([
     loadAndValidate("article_taxonomy.json", ArticleTaxonomySchema),
     loadAndValidate("quiz_taxonomy.json", QuizTaxonomySchema),
     loadAndValidate("page_types.json", PageTypesSchema),
     loadAndValidate("quiz_page_types.json", QuizPageTypesSchema),
     loadAndValidate("cta_catalog.json", CtaCatalogSchema),
     loadAndValidate("mailing_tags.json", MailingTagTaxonomySchema),
+    loadAndValidate("article_link_plan.json", LinkPlanSchema),
   ]);
 
   // Run CTA business-rule validation
@@ -46,6 +50,16 @@ export async function GET() {
   if (ctaCatalog && taxonomy) {
     const categorySlugs = taxonomy.categories.map((c) => c.slug);
     ctaValidation = validateCtaCatalog(ctaCatalog, categorySlugs);
+  }
+
+  // Compute cross-linking stats and validation
+  let crossLinkStats = null;
+  let crossLinkValidation: { errors: string[]; warnings: string[] } | null = null;
+  if (linkPlan && quizTaxonomy) {
+    crossLinkStats = computeCrossLinkStats(linkPlan, quizTaxonomy);
+  }
+  if (linkPlan && taxonomy && quizTaxonomy) {
+    crossLinkValidation = validateCrossLinks(linkPlan, taxonomy, quizTaxonomy);
   }
 
   return NextResponse.json({
@@ -56,5 +70,7 @@ export async function GET() {
     ctaCatalog,
     mailingTags,
     ctaValidation,
+    crossLinkStats,
+    crossLinkValidation,
   });
 }

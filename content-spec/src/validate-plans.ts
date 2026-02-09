@@ -21,6 +21,7 @@ import {
 } from "./schemas/index";
 import { validateFormTagRefs } from "./schemas/mailing";
 import { validateCtaCatalog } from "./validator/cta";
+import { validateCrossLinks } from "./validator/cross-links";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const researchDir = path.join(__dirname, "..", "..", "research");
@@ -146,6 +147,32 @@ async function main() {
     ctaErrors = ["Could not run CTA validation (parse errors above)"];
   }
 
+  // Cross-file validation: cross-links (quiz connectsTo, link plan URLs)
+  let crossLinkErrors: string[] = [];
+  let crossLinkWarnings: string[] = [];
+  try {
+    const taxRaw2 = await fs.readFile(
+      path.join(researchDir, "article_taxonomy.json"),
+      "utf-8",
+    );
+    const quizRaw = await fs.readFile(
+      path.join(researchDir, "quiz_taxonomy.json"),
+      "utf-8",
+    );
+    const lpRaw = await fs.readFile(
+      path.join(researchDir, "article_link_plan.json"),
+      "utf-8",
+    );
+    const taxonomy2 = ArticleTaxonomySchema.parse(JSON.parse(taxRaw2));
+    const quizTax = QuizTaxonomySchema.parse(JSON.parse(quizRaw));
+    const lp = LinkPlanSchema.parse(JSON.parse(lpRaw));
+    const clResult = validateCrossLinks(lp, taxonomy2, quizTax);
+    crossLinkErrors = clResult.errors;
+    crossLinkWarnings = clResult.warnings;
+  } catch {
+    crossLinkErrors = ["Could not run cross-link validation (parse errors above)"];
+  }
+
   // Print results
   let allPassed = true;
   for (const r of results) {
@@ -193,6 +220,25 @@ async function main() {
   }
   if (ctaWarnings.length > 0) {
     for (const w of ctaWarnings) {
+      console.log(`       \x1b[33mWARN\x1b[0m ${w}`);
+    }
+  }
+
+  // Cross-link validation results
+  if (crossLinkErrors.length > 0) {
+    console.log(`\n\x1b[31mFAIL\x1b[0m  Cross-file: cross-links (quiz→categories, link plan→taxonomy)`);
+    for (const e of crossLinkErrors.slice(0, 20)) {
+      console.log(`       ${e}`);
+    }
+    if (crossLinkErrors.length > 20) {
+      console.log(`       ... and ${crossLinkErrors.length - 20} more`);
+    }
+    allPassed = false;
+  } else {
+    console.log(`\n\x1b[32mPASS\x1b[0m  Cross-file: cross-links (quiz→categories, link plan→taxonomy)`);
+  }
+  if (crossLinkWarnings.length > 0) {
+    for (const w of crossLinkWarnings) {
       console.log(`       \x1b[33mWARN\x1b[0m ${w}`);
     }
   }
