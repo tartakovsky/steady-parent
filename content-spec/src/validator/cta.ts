@@ -14,7 +14,7 @@
 
 import type { CtaCatalog } from "../types";
 
-const FORBIDDEN_TERMS = [
+export const FORBIDDEN_TERMS = [
   "weekly expert q&as",
   "live coaching calls",
   "video content",
@@ -22,8 +22,9 @@ const FORBIDDEN_TERMS = [
   "guaranteed response times",
 ];
 
-const COMMUNITY_BUTTON_TEXT = "Join the community";
-const COMMUNITY_FOUNDER_LINE = "We are there with you daily too";
+export const COMMUNITY_BUTTON_TEXT = "Join the community";
+export const COMMUNITY_FOUNDER_LINE = "We are there with you daily too";
+export const PREVIEW_BUTTON_TEXT = "Send my results";
 
 function wordCount(s: string): number {
   return s.split(/\s+/).filter(Boolean).length;

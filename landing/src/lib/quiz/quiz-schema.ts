@@ -42,13 +42,13 @@ export const QuizMetaSchema = z.object({
     .describe("CTA text shown to visitors who receive shared results, e.g. 'Curious about your own parenting battery?'. Defaults to 'Curious? Take the quiz yourself' if omitted."),
   levelLabels: z.object({
     high: z.string().min(1).max(20)
-      .describe("Badge label for high-scoring domains, e.g. 'Strong', 'Healthy', 'Solid'"),
+      .describe("Badge for BEST outcome (high score), e.g. 'Strong', 'Ready', 'Charged', 'Solid'"),
     medium: z.string().min(1).max(20)
-      .describe("Badge label for medium-scoring domains, e.g. 'Developing', 'Moderate', 'Mixed'"),
+      .describe("Badge for MIDDLE outcome (medium score), e.g. 'Developing', 'Getting There', 'Moderate'. NEVER use 'Emerging' here — that implies low."),
     low: z.string().min(1).max(20)
-      .describe("Badge label for low-scoring domains, e.g. 'Emerging', 'Low', 'Depleted'"),
+      .describe("Badge for WORST/LOWEST outcome (low score), e.g. 'Emerging', 'Not Yet', 'Depleted', 'Low'"),
   }).optional()
-    .describe("Badge labels for domain score levels. Must make semantic sense with every domain name in this quiz (e.g. 'Energy: Moderate' not 'Energy: Developing'). Defaults to Strong/Developing/Emerging."),
+    .describe("Badge labels for domain score levels. Ordering: high=best > medium=middle > low=worst. Must make semantic sense with every domain name in this quiz. Defaults to Strong/Developing/Emerging."),
   sectionLabels: z.object({
     strengths: z.string().max(60).optional()
       .describe("Heading for the strengths section, e.g. 'Where Your Child Shines' or 'Where You're Doing Well'. Defaults to 'What's Going Well'."),
@@ -71,8 +71,8 @@ export const QuizMetaSchema = z.object({
       .describe("Main CTA headline, e.g. 'Get your child's complete readiness profile'"),
     body: z.string().min(1).max(300)
       .describe("1-2 sentences describing what the full results contain — must match what this quiz type actually renders"),
-    buttonText: z.string().min(1).max(40)
-      .describe("Button label, e.g. 'Send my results'"),
+    buttonText: z.literal("Send my results")
+      .describe("Always 'Send my results'"),
   }).describe("Email gate CTA shown on the preview page before full results are unlocked"),
   previewPromises: z.array(z.string().min(1).max(120)).min(3).max(5)
     .describe("Bullet points listing what full results include — must accurately reflect what the result display renders"),
@@ -82,10 +82,13 @@ export const QuizMetaSchema = z.object({
     title: z.string().min(1).max(80)
       .describe("One line: why THIS parent should join the community for THIS topic"),
     body: z.string().min(1).max(160)
-      .describe("One sentence. What they'll get in the community that helps with this quiz's topic. Name a concrete thing: scripts, routines, peer support, expert Q&A."),
+      .describe("One sentence. What they'll get in the community. Must end with '. We are there with you daily too.'"),
     buttonText: z.literal("Join the community")
       .describe("Always 'Join the community'"),
-  }).describe("Community upsell shown on full results page — sells the community, not the quiz"),
+  }).refine(
+    (cta) => cta.body.includes("We are there with you daily too"),
+    { message: "communityCta.body must contain 'We are there with you daily too'" },
+  ).describe("Community upsell shown on full results page — sells the community, not the quiz"),
 });
 
 // ═════════════════════════════════════════════════════════════════════

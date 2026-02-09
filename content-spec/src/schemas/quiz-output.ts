@@ -15,14 +15,14 @@ const PreviewCtaSchema = z.object({
   eyebrow: z.string().min(1),
   title: z.string().min(1),
   body: z.string().min(1),
-  buttonText: z.string().min(1),
+  buttonText: z.literal("Send my results"),
 });
 
 const CommunityCtaSchema = z.object({
   eyebrow: z.string().min(1),
   title: z.string().min(1),
   body: z.string().min(1),
-  buttonText: z.string().min(1),
+  buttonText: z.literal("Join the community"),
 });
 
 export const QuizMetaSchema = z.object({
@@ -60,9 +60,9 @@ export const QuizMetaSchema = z.object({
   resultDisplay: z
     .enum(["readiness", "profile", "recommendation", "classification"])
     .optional(),
-  previewCta: PreviewCtaSchema.optional(),
-  previewPromises: z.array(z.string()).optional(),
-  communityCta: CommunityCtaSchema.optional(),
+  previewCta: PreviewCtaSchema,
+  previewPromises: z.array(z.string().min(1)).min(3).max(5),
+  communityCta: CommunityCtaSchema,
   sources: z.array(z.string()).min(1),
 });
 

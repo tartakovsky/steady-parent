@@ -29,4 +29,10 @@ export type {
   ResolvedCta,
 } from "./validator/cross-links";
 export { validateQuiz } from "./validator/quiz";
-export { validateCtaCatalog } from "./validator/cta";
+export {
+  validateCtaCatalog,
+  COMMUNITY_BUTTON_TEXT,
+  COMMUNITY_FOUNDER_LINE,
+  PREVIEW_BUTTON_TEXT,
+  FORBIDDEN_TERMS,
+} from "./validator/cta";

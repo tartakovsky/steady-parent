@@ -781,6 +781,45 @@ function CtasTab({
         </div>
       )}
 
+      {/* Quiz CTA rules */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold">Quiz CTA Rules</h3>
+        <p className="text-sm text-muted-foreground">
+          Every quiz must include these CTA blocks in its meta. The validator checks all rules below.
+        </p>
+        <div className="grid gap-4 sm:grid-cols-3">
+          <div className="rounded-lg border p-4">
+            <h4 className="mb-2 text-sm font-semibold">Community CTA</h4>
+            <dl className="space-y-1.5 text-xs">
+              <Row label="buttonText" value='"Join the community"' />
+              <Row label="Required in body" value='"We are there with you daily too"' />
+              <Row label="Eyebrow" value="2-5 words" />
+              <Row label="Title" value="3-12 words" />
+              <Row label="Body" value="8-35 words" />
+            </dl>
+            <div className="mt-2 text-[10px] text-red-600 dark:text-red-400">
+              No exclamation marks. No forbidden terms.
+            </div>
+          </div>
+          <div className="rounded-lg border p-4">
+            <h4 className="mb-2 text-sm font-semibold">Preview CTA</h4>
+            <dl className="space-y-1.5 text-xs">
+              <Row label="buttonText" value='"Send my results"' />
+              <Row label="eyebrow" value="required" />
+              <Row label="title" value="required" />
+              <Row label="body" value="required" />
+            </dl>
+          </div>
+          <div className="rounded-lg border p-4">
+            <h4 className="mb-2 text-sm font-semibold">Preview Promises</h4>
+            <dl className="space-y-1.5 text-xs">
+              <Row label="Count" value="3-5 items" />
+              <Row label="Content" value="Must match what the result page renders" />
+            </dl>
+          </div>
+        </div>
+      </div>
+
       {/* Per-category table: Community + Course + Freebie */}
       <div className="rounded-md border">
         <table className="w-full text-sm">

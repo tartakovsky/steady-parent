@@ -12,6 +12,12 @@ import {
   AssessmentQuizOutputSchema,
 } from "../schemas/quiz-output";
 import type { QuizPageType } from "../types";
+import {
+  COMMUNITY_BUTTON_TEXT,
+  COMMUNITY_FOUNDER_LINE,
+  PREVIEW_BUTTON_TEXT,
+  FORBIDDEN_TERMS,
+} from "./cta";
 
 interface QuizValidationResult {
   errors: string[];
@@ -42,6 +48,99 @@ function inRange(
   return null;
 }
 
+function wordCount(s: string): number {
+  return s.split(/\s+/).filter(Boolean).length;
+}
+
+/**
+ * Validate CTA fields shared across all quiz types.
+ * Called after schema validation succeeds.
+ */
+function validateQuizCtas(
+  meta: Record<string, unknown>,
+): { errors: string[]; warnings: string[] } {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  // --- Community CTA ---
+  const community = meta["communityCta"] as
+    | { eyebrow: string; title: string; body: string; buttonText: string }
+    | undefined;
+
+  if (!community) {
+    errors.push("Missing communityCta in meta");
+  } else {
+    if (community.buttonText !== COMMUNITY_BUTTON_TEXT) {
+      errors.push(
+        `communityCta.buttonText must be "${COMMUNITY_BUTTON_TEXT}", got "${community.buttonText}"`,
+      );
+    }
+    if (!community.body.includes(COMMUNITY_FOUNDER_LINE)) {
+      errors.push(
+        `communityCta.body must contain "${COMMUNITY_FOUNDER_LINE}"`,
+      );
+    }
+
+    // Word count warnings
+    const eyebrowWc = wordCount(community.eyebrow);
+    if (eyebrowWc < 2 || eyebrowWc > 5) {
+      warnings.push(`communityCta.eyebrow is ${eyebrowWc} words (expected 2-5)`);
+    }
+    const titleWc = wordCount(community.title);
+    if (titleWc < 3 || titleWc > 12) {
+      warnings.push(`communityCta.title is ${titleWc} words (expected 3-12)`);
+    }
+    const bodyWc = wordCount(community.body);
+    if (bodyWc < 8 || bodyWc > 35) {
+      warnings.push(`communityCta.body is ${bodyWc} words (expected 8-35)`);
+    }
+
+    // No exclamation marks
+    const allCommunityText = [
+      community.eyebrow,
+      community.title,
+      community.body,
+      community.buttonText,
+    ].join(" ");
+    if (allCommunityText.includes("!")) {
+      errors.push("communityCta contains exclamation mark");
+    }
+
+    // Forbidden terms
+    const lowerText = allCommunityText.toLowerCase();
+    for (const term of FORBIDDEN_TERMS) {
+      if (lowerText.includes(term)) {
+        errors.push(`communityCta contains forbidden term "${term}"`);
+      }
+    }
+  }
+
+  // --- Preview CTA ---
+  const preview = meta["previewCta"] as
+    | { eyebrow: string; title: string; body: string; buttonText: string }
+    | undefined;
+
+  if (!preview) {
+    errors.push("Missing previewCta in meta");
+  } else {
+    if (preview.buttonText !== PREVIEW_BUTTON_TEXT) {
+      errors.push(
+        `previewCta.buttonText must be "${PREVIEW_BUTTON_TEXT}", got "${preview.buttonText}"`,
+      );
+    }
+  }
+
+  // --- Preview Promises ---
+  const promises = meta["previewPromises"] as string[] | undefined;
+  if (!promises || promises.length < 3) {
+    errors.push(
+      `previewPromises must have 3-5 items, got ${promises?.length ?? 0}`,
+    );
+  }
+
+  return { errors, warnings };
+}
+
 function validateLikert(
   data: Record<string, unknown>,
   constraints: QuizPageType["constraints"] | undefined,
@@ -58,6 +157,11 @@ function validateLikert(
   }
 
   const quiz = result.data;
+
+  // CTA checks
+  const ctaResult = validateQuizCtas(quiz.meta as unknown as Record<string, unknown>);
+  errors.push(...ctaResult.errors);
+  warnings.push(...ctaResult.warnings);
 
   // Structural checks
   const stmtCount = quiz.statements.length;
@@ -121,6 +225,12 @@ function validateIdentity(
   }
 
   const quiz = result.data;
+
+  // CTA checks
+  const ctaResult = validateQuizCtas(quiz.meta as unknown as Record<string, unknown>);
+  errors.push(...ctaResult.errors);
+  warnings.push(...ctaResult.warnings);
+
   const qCount = quiz.questions.length;
   const typeCount = Object.keys(quiz.types).length;
   const typeIds = new Set(Object.keys(quiz.types));
@@ -181,6 +291,12 @@ function validateAssessment(
   }
 
   const quiz = result.data;
+
+  // CTA checks
+  const ctaResult = validateQuizCtas(quiz.meta as unknown as Record<string, unknown>);
+  errors.push(...ctaResult.errors);
+  warnings.push(...ctaResult.warnings);
+
   const qCount = quiz.questions.length;
   const domainCount = Object.keys(quiz.domains).length;
   const domainIds = new Set(Object.keys(quiz.domains));

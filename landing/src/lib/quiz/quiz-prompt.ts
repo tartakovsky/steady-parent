@@ -57,7 +57,7 @@ INSTEAD write:
 - scoreLabel: what appears under the percentage ring (e.g. "Readiness", "Score")
 - subject: who the quiz is about (e.g. "your child", "you", "your family")
 - shareCta: CTA text for visitors who see shared results
-- levelLabels: badge text for domain score levels — must make semantic sense with EVERY domain name in this quiz
+- levelLabels: badge text for domain score levels. high = BEST outcome (e.g. "Strong", "Ready", "Charged"), medium = MIDDLE (e.g. "Developing", "Getting There", "Draining"), low = WORST/LOWEST (e.g. "Emerging", "Not Yet", "Depleted"). The ordering is high > medium > low. "Emerging" is ALWAYS a low label, never medium. Must make semantic sense with EVERY domain name in this quiz.
 - sectionLabels.strengths: heading for the strengths section
 - sectionLabels.concerns: heading for the growth areas section (default: "Room to Grow")
 
@@ -69,7 +69,7 @@ The user completed the quiz and sees a preview with their score and a taste of t
 - eyebrow: short hook, e.g. "Want the full breakdown?"
 - title: what they'll get, specific to THIS quiz, e.g. "Get your child's complete readiness profile"
 - body: 1-2 sentences describing what the full results contain — must match what THIS quiz type actually shows (readiness quizzes have action plans and domain insights; classification quizzes have type descriptions and blend percentages)
-- buttonText: action label, e.g. "Send my results" or "Send my profile"
+- buttonText: ALWAYS exactly "Send my results"
 
 ### previewPromises (bullet list on preview page)
 3-5 short bullet points listing what full results include. Must accurately reflect what the result page actually renders. Examples:
@@ -87,7 +87,7 @@ NEVER promise: weekly Q&As, live coaching, video, 1-on-1 access, guaranteed resp
 Fields:
 - eyebrow: 3-6 words (max 50 chars)
 - title: One line selling the community for THIS topic (max 80 chars)
-- body: One sentence. Draw ONLY from the community description above. (max 160 chars)
+- body: One sentence. Draw ONLY from the community description above. MUST end with the exact phrase ". We are there with you daily too." (max 160 chars)
 - buttonText: ALWAYS exactly "Join the community"
 
 ## Scoring rules
@@ -155,7 +155,7 @@ Return ONLY valid JSON matching this exact shape (no markdown, no code fences):
     "communityCta": {
       "eyebrow": "Want help with this?",
       "title": "Get scripts and routines from parents who've been here",
-      "body": "Weekly Q&As, real scripts for real meltdowns, and a group that gets it.",
+      "body": "Bite-sized scripts, real routines from parents in the thick of it, and founders who get it. We are there with you daily too.",
       "buttonText": "Join the community"
     }
   },
@@ -227,7 +227,9 @@ export function buildUserPrompt(def: QuizDef): string {
     "- previewCta, previewPromises, and communityCta are all present in meta",
     "- previewPromises accurately reflect what readiness result pages show (domain insights, action plan, encouragement)",
     "- communityCta.buttonText is exactly 'Join the community'",
-    "- communityCta sells the COMMUNITY (scripts, routines, peer support, Q&As) — not the quiz topic"
+    "- communityCta.body MUST end with '. We are there with you daily too.'",
+    "- communityCta sells the COMMUNITY (scripts, routines, daily founder support) — not the quiz topic",
+    "- previewCta.buttonText is exactly 'Send my results'"
   );
 
   return parts.join("\n");
@@ -278,7 +280,7 @@ The user completed the quiz and sees a preview with their primary type name and 
 - eyebrow: short hook, e.g. "Want the full breakdown?"
 - title: what they'll get, e.g. "Get your complete parenting style profile"
 - body: 1-2 sentences describing what full results contain — identity quizzes show type description, strengths, growth edge, blend percentages. Do NOT promise action plans or next steps (identity quizzes don't have those).
-- buttonText: e.g. "Send my profile"
+- buttonText: ALWAYS exactly "Send my results"
 
 ### previewPromises (bullet list on preview page)
 3-5 short bullets listing what full results include. For identity quizzes:
@@ -298,7 +300,7 @@ NEVER promise: weekly Q&As, live coaching, video, 1-on-1 access, guaranteed resp
 Fields:
 - eyebrow: 3-6 words (max 50 chars)
 - title: One line selling the community for THIS topic (max 80 chars)
-- body: One sentence. Draw ONLY from the community description above. (max 160 chars)
+- body: One sentence. Draw ONLY from the community description above. MUST end with the exact phrase ". We are there with you daily too." (max 160 chars)
 - buttonText: ALWAYS exactly "Join the community"
 
 ## Scoring rules — IDENTITY QUIZZES
@@ -350,7 +352,7 @@ Return ONLY valid JSON matching this exact shape (no markdown, no code fences):
       "eyebrow": "Want the full breakdown?",
       "title": "Get your complete type profile",
       "body": "Your primary type, strengths, growth edge, and how you compare across all types.",
-      "buttonText": "Send my profile"
+      "buttonText": "Send my results"
     },
     "previewPromises": [
       "Detailed description of your primary type",
@@ -361,7 +363,7 @@ Return ONLY valid JSON matching this exact shape (no markdown, no code fences):
     "communityCta": {
       "eyebrow": "Now what?",
       "title": "Get strategies matched to your style from parents who get it",
-      "body": "Real scripts, weekly Q&As, and a group figuring out the same stuff you are.",
+      "body": "Real scripts, daily support from parents figuring out the same stuff you are. We are there with you daily too.",
       "buttonText": "Join the community"
     }
   },
@@ -444,7 +446,7 @@ Shown before full results. Asks for email to unlock.
 - eyebrow: short hook, e.g. "Want the full breakdown?"
 - title: what they'll get, e.g. "Get your complete parenting style profile"
 - body: 1-2 sentences. Likert results show dimension profiles, strengths, growth edges, blend comparison. Do NOT promise action plans (Likert quizzes don't have those).
-- buttonText: e.g. "Send my profile"
+- buttonText: ALWAYS exactly "Send my results"
 
 ### previewPromises (bullet list on preview page)
 3-5 short bullets listing what full results include. For Likert quizzes:
@@ -464,7 +466,7 @@ NEVER promise: weekly Q&As, live coaching, video, 1-on-1 access, guaranteed resp
 Fields:
 - eyebrow: 3-6 words (max 50 chars)
 - title: One line selling the community for THIS topic (max 80 chars)
-- body: One sentence. Draw ONLY from the community description above. (max 160 chars)
+- body: One sentence. Draw ONLY from the community description above. MUST end with the exact phrase ". We are there with you daily too." (max 160 chars)
 - buttonText: ALWAYS exactly "Join the community"
 
 ## Statement writing rules
@@ -507,7 +509,7 @@ Return ONLY valid JSON matching this exact shape (no markdown, no code fences):
       "eyebrow": "Want the full breakdown?",
       "title": "Get your complete profile",
       "body": "Description of what full results contain.",
-      "buttonText": "Send my profile"
+      "buttonText": "Send my results"
     },
     "previewPromises": [
       "Detailed breakdown for each dimension",
@@ -518,7 +520,7 @@ Return ONLY valid JSON matching this exact shape (no markdown, no code fences):
     "communityCta": {
       "eyebrow": "Now what?",
       "title": "Get strategies matched to your style from parents who get it",
-      "body": "Real scripts, weekly Q&As, and a group figuring out the same stuff you are.",
+      "body": "Real scripts, daily support from parents figuring out the same stuff you are. We are there with you daily too.",
       "buttonText": "Join the community"
     }
   },
@@ -581,7 +583,9 @@ export function buildLikertUserPrompt(def: LikertQuizDef): string {
     "- previewCta, previewPromises, and communityCta are all present in meta",
     "- previewPromises reflect Likert results (dimension profiles, strengths, growth edge) — do NOT promise action plans",
     "- communityCta.buttonText is exactly 'Join the community'",
-    "- communityCta sells the COMMUNITY (scripts, routines, peer support, Q&As) — not the quiz topic"
+    "- communityCta.body MUST end with '. We are there with you daily too.'",
+    "- communityCta sells the COMMUNITY (scripts, routines, daily founder support) — not the quiz topic",
+    "- previewCta.buttonText is exactly 'Send my results'"
   );
 
   return parts.join("\n");
@@ -621,7 +625,9 @@ export function buildIdentityUserPrompt(def: IdentityQuizDef): string {
     "- previewCta, previewPromises, and communityCta are all present in meta",
     "- previewPromises reflect what identity result pages show (type description, strengths, growth edge, blend) — do NOT promise action plans or next steps",
     "- communityCta.buttonText is exactly 'Join the community'",
-    "- communityCta sells the COMMUNITY (scripts, routines, peer support, Q&As) — not the quiz topic"
+    "- communityCta.body MUST end with '. We are there with you daily too.'",
+    "- communityCta sells the COMMUNITY (scripts, routines, daily founder support) — not the quiz topic",
+    "- previewCta.buttonText is exactly 'Send my results'"
   );
 
   return parts.join("\n");
