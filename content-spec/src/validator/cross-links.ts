@@ -30,10 +30,17 @@ export interface ResolvedLink {
   valid: boolean;
 }
 
+export interface ResolvedCta {
+  url: string | null;
+  type: string;
+  intent: string;
+}
+
 export interface CrossLinkArticle {
   title: string;
   url: string;
   links: ResolvedLink[];
+  ctas: ResolvedCta[];
 }
 
 export interface CrossLinkCategory {
@@ -42,18 +49,10 @@ export interface CrossLinkCategory {
   articles: CrossLinkArticle[];
 }
 
-export interface CrossLinkQuiz {
-  slug: string;
-  title: string;
-  url: string;
-  categories: string[];
-}
-
 export interface CrossLinkDetail {
   stats: CrossLinkStats;
   categories: CrossLinkCategory[];
   orphanedArticles: string[]; // taxonomy articles with no link plan entry
-  quizConnections: CrossLinkQuiz[];
   validation: ValidationResult;
 }
 
@@ -193,10 +192,16 @@ export function buildCrossLinkDetail(
       targetTitle: urlToTitle.get(norm(l.url)) ?? null,
       valid: allKnownUrls.has(norm(l.url)),
     }));
+    const ctas: ResolvedCta[] = entry.ctas.map((c) => ({
+      url: c.url,
+      type: c.type,
+      intent: c.intent,
+    }));
     const article: CrossLinkArticle = {
       title: entry.article,
       url: entry.url,
       links,
+      ctas,
     };
     const list = catArticlesMap.get(catSlug) ?? [];
     list.push(article);
@@ -218,19 +223,10 @@ export function buildCrossLinkDetail(
     .filter((a) => !linkPlanUrls.has(norm(a.url)))
     .map((a) => a.title);
 
-  // Quiz connections
-  const quizConnections: CrossLinkQuiz[] = quizTaxonomy.entries.map((q) => ({
-    slug: q.slug,
-    title: q.title,
-    url: q.url,
-    categories: q.connectsTo,
-  }));
-
   return {
     stats: computeCrossLinkStats(linkPlan),
     categories,
     orphanedArticles,
-    quizConnections,
     validation: validateCrossLinks(linkPlan, articleTaxonomy, quizTaxonomy),
   };
 }

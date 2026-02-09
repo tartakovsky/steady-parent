@@ -15,6 +15,6 @@ export type {
   CrossLinkDetail,
   CrossLinkCategory,
   CrossLinkArticle,
-  CrossLinkQuiz,
   ResolvedLink,
+  ResolvedCta,
 } from "./cross-links";

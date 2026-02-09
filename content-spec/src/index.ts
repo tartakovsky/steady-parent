@@ -25,8 +25,8 @@ export type {
   CrossLinkDetail,
   CrossLinkCategory,
   CrossLinkArticle,
-  CrossLinkQuiz,
   ResolvedLink,
+  ResolvedCta,
 } from "./validator/cross-links";
 export { validateQuiz } from "./validator/quiz";
 export { validateCtaCatalog } from "./validator/cta";

@@ -74,23 +74,23 @@ interface ResolvedLink {
   valid: boolean;
 }
 
+interface ResolvedCta {
+  url: string | null;
+  type: string;
+  intent: string;
+}
+
 interface CrossLinkArticle {
   title: string;
   url: string;
   links: ResolvedLink[];
+  ctas: ResolvedCta[];
 }
 
 interface CrossLinkCategory {
   slug: string;
   name: string;
   articles: CrossLinkArticle[];
-}
-
-interface CrossLinkQuiz {
-  slug: string;
-  title: string;
-  url: string;
-  categories: string[];
 }
 
 interface CrossLinkDetail {
@@ -103,7 +103,6 @@ interface CrossLinkDetail {
   };
   categories: CrossLinkCategory[];
   orphanedArticles: string[];
-  quizConnections: CrossLinkQuiz[];
   validation: ValidationResult;
 }
 
@@ -470,6 +469,9 @@ const LINK_TYPE_COLORS: Record<string, string> = {
   pillar: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400",
   prev: "bg-muted text-muted-foreground",
   next: "bg-muted text-muted-foreground",
+  course: "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400",
+  community: "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400",
+  freebie: "bg-teal-100 text-teal-700 dark:bg-teal-900/30 dark:text-teal-400",
 };
 
 function CrossLinksTab({ data }: { data: CrossLinkDetail | null }) {
@@ -479,7 +481,7 @@ function CrossLinksTab({ data }: { data: CrossLinkDetail | null }) {
   if (!data)
     return <p className="text-muted-foreground">No cross-linking data.</p>;
 
-  const { stats, categories, orphanedArticles, quizConnections, validation } = data;
+  const { stats, categories, orphanedArticles, validation } = data;
 
   function toggleCat(slug: string) {
     setExpandedCats((prev) => {
@@ -552,7 +554,7 @@ function CrossLinksTab({ data }: { data: CrossLinkDetail | null }) {
         <div className="space-y-2">
           {categories.map((cat) => {
             const catOpen = expandedCats.has(cat.slug);
-            const totalCatLinks = cat.articles.reduce((n, a) => n + a.links.length, 0);
+            const totalCatLinks = cat.articles.reduce((n, a) => n + a.links.length + a.ctas.length, 0);
             const invalidCount = cat.articles.reduce(
               (n, a) => n + a.links.filter((l) => !l.valid).length,
               0,
@@ -599,7 +601,7 @@ function CrossLinksTab({ data }: { data: CrossLinkDetail | null }) {
                               {article.url}
                             </span>
                             <span className="shrink-0 text-xs text-muted-foreground">
-                              {article.links.length} links
+                              {article.links.length} links, {article.ctas.length} CTAs
                             </span>
                             {artInvalid > 0 ? (
                               <span className="shrink-0 text-xs text-red-600">
@@ -622,7 +624,7 @@ function CrossLinksTab({ data }: { data: CrossLinkDetail | null }) {
                                 </thead>
                                 <tbody>
                                   {article.links.map((link, i) => (
-                                    <tr key={i} className="border-t border-dashed">
+                                    <tr key={`link-${i}`} className="border-t border-dashed">
                                       <td className="py-1 pr-2">
                                         {link.valid ? (
                                           <span className="text-emerald-600">✓</span>
@@ -649,6 +651,28 @@ function CrossLinksTab({ data }: { data: CrossLinkDetail | null }) {
                                       </td>
                                     </tr>
                                   ))}
+                                  {article.ctas.map((cta, i) => (
+                                    <tr key={`cta-${i}`} className="border-t border-dashed">
+                                      <td className="py-1 pr-2">
+                                        <span className="text-emerald-600">✓</span>
+                                      </td>
+                                      <td className="py-1 pr-2">
+                                        <span
+                                          className={`rounded px-1.5 py-0.5 text-[10px] ${
+                                            LINK_TYPE_COLORS[cta.type] ?? "bg-muted text-muted-foreground"
+                                          }`}
+                                        >
+                                          {cta.type}
+                                        </span>
+                                      </td>
+                                      <td className="py-1 pr-2 text-muted-foreground">
+                                        {cta.intent}
+                                      </td>
+                                      <td className="py-1 font-mono text-muted-foreground">
+                                        {cta.url ?? "—"}
+                                      </td>
+                                    </tr>
+                                  ))}
                                 </tbody>
                               </table>
                             </div>
@@ -662,57 +686,6 @@ function CrossLinksTab({ data }: { data: CrossLinkDetail | null }) {
             );
           })}
         </div>
-      </div>
-
-      {/* Quizzes (source pages — currently shows connectsTo) */}
-      {quizConnections.length > 0 && (
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Quizzes</h3>
-          <p className="text-sm text-muted-foreground">
-            Quiz pages and which article categories they connect to
-          </p>
-          <div className="rounded-md border">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b bg-muted/50">
-                  <th className="px-3 py-2 text-left font-medium">Quiz</th>
-                  <th className="px-3 py-2 text-left font-medium">URL</th>
-                  <th className="px-3 py-2 text-left font-medium">Categories</th>
-                </tr>
-              </thead>
-              <tbody>
-                {quizConnections.map((q) => (
-                  <tr key={q.slug} className="border-b hover:bg-muted/30">
-                    <td className="px-3 py-2">{q.title}</td>
-                    <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
-                      {q.url}
-                    </td>
-                    <td className="px-3 py-2">
-                      <div className="flex flex-wrap gap-1">
-                        {q.categories.map((slug) => (
-                          <span
-                            key={slug}
-                            className="rounded bg-muted px-1.5 py-0.5 text-xs text-muted-foreground"
-                          >
-                            {slug}
-                          </span>
-                        ))}
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
-
-      {/* Courses (placeholder — no course pages yet) */}
-      <div className="space-y-4">
-        <h3 className="text-lg font-semibold">Courses</h3>
-        <p className="text-sm text-muted-foreground">
-          No course pages defined yet. Course pages will need cross-links when created.
-        </p>
       </div>
 
       {/* Orphaned articles */}
