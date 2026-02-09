@@ -20,6 +20,7 @@ import {
   FormTagMappingsSchema,
 } from "./schemas/index";
 import { validateFormTagRefs } from "./schemas/mailing";
+import { validateCtaCatalog } from "./validator/cta";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const researchDir = path.join(__dirname, "..", "..", "research");
@@ -123,6 +124,28 @@ async function main() {
     crossFileErrors = ["Could not run cross-file validation (parse errors above)"];
   }
 
+  // Cross-file validation: CTA catalog business rules
+  let ctaErrors: string[] = [];
+  let ctaWarnings: string[] = [];
+  try {
+    const ctaRaw = await fs.readFile(
+      path.join(researchDir, "cta_catalog.json"),
+      "utf-8",
+    );
+    const taxRaw = await fs.readFile(
+      path.join(researchDir, "article_taxonomy.json"),
+      "utf-8",
+    );
+    const catalog = CtaCatalogSchema.parse(JSON.parse(ctaRaw));
+    const taxonomy = ArticleTaxonomySchema.parse(JSON.parse(taxRaw));
+    const categorySlugs = taxonomy.categories.map((c) => c.slug);
+    const result = validateCtaCatalog(catalog, categorySlugs);
+    ctaErrors = result.errors;
+    ctaWarnings = result.warnings;
+  } catch {
+    ctaErrors = ["Could not run CTA validation (parse errors above)"];
+  }
+
   // Print results
   let allPassed = true;
   for (const r of results) {
@@ -153,6 +176,25 @@ async function main() {
     console.log(
       `\n\x1b[32mPASS\x1b[0m  Cross-file: form_tag_mappings → mailing_tags`,
     );
+  }
+
+  // CTA catalog validation results
+  if (ctaErrors.length > 0) {
+    console.log(`\n\x1b[31mFAIL\x1b[0m  Cross-file: cta_catalog business rules`);
+    for (const e of ctaErrors.slice(0, 20)) {
+      console.log(`       ${e}`);
+    }
+    if (ctaErrors.length > 20) {
+      console.log(`       ... and ${ctaErrors.length - 20} more`);
+    }
+    allPassed = false;
+  } else {
+    console.log(`\n\x1b[32mPASS\x1b[0m  Cross-file: cta_catalog business rules`);
+  }
+  if (ctaWarnings.length > 0) {
+    for (const w of ctaWarnings) {
+      console.log(`       \x1b[33mWARN\x1b[0m ${w}`);
+    }
   }
 
   console.log(

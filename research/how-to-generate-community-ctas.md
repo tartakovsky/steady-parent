@@ -1,14 +1,17 @@
-# How to Generate Per-Category Community CTA Pitches
+# How to Generate Per-Category Community CTA Blocks
 
 ## What this produces
 
-20 per-category community CTA entries for `research/cta_catalog.json`. Each has a unique `what_it_is` pitch tailored to the category topic while promoting the same Skool community.
+20 per-category community CTA entries for `research/cta_catalog.json`. Each has:
+- A unique `what_it_is` pitch tailored to the category topic
+- Full `cta_copy` block (eyebrow, title, body, buttonText) for the CommunityCTA component
+- Founder presence mentioned in the body copy
 
 ## Steps
 
 ### 1. Assemble the prompt
 
-Read these two files:
+Read these files:
 - `research/community_cta_prompt.md` — the prompt template (has one placeholder: `{{CATEGORIES_WITH_COURSES}}`)
 - `research/cta_catalog.json` — the CTA catalog (need course entries for context)
 - `research/article_taxonomy.json` — the category list (need slugs + names)
@@ -25,7 +28,7 @@ The course entries in `cta_catalog.json` have `id: "course-{slug}"` — match by
 
 ### 2. Run a background agent
 
-Launch a Task agent (subagent_type: `general-purpose`) with the assembled prompt. The agent returns raw JSON — an array of 20 `CtaDefinition` objects.
+Launch a Task agent (subagent_type: `general-purpose`) with the assembled prompt. The agent returns raw JSON — an array of 20 `CtaDefinition` objects, each with a `cta_copy` block.
 
 ### 3. Validate the output
 
@@ -34,9 +37,12 @@ Parse the JSON response. Validate each entry:
 - `type` is `"community"`
 - `name` is `"Steady Parent Community"`
 - `url` is `"https://www.skool.com/steady-parent"`
-- `what_it_is` is a non-empty string
+- `what_it_is` is a non-empty string, 15-30 words
+- `cta_copy` exists with all 4 fields: `eyebrow`, `title`, `body`, `buttonText`
+- `cta_copy.body` mentions founders being active/present
 - `can_promise` and `cant_promise` are both empty arrays
 - No entry mentions: weekly expert Q&As, live coaching calls, video content, 1-on-1 access, guaranteed response times
+- No exclamation marks anywhere
 
 You can also validate programmatically:
 ```bash
@@ -50,12 +56,10 @@ npx tsx -e "
 
 ### 4. Merge into cta_catalog.json
 
-Insert the 20 entries into `research/cta_catalog.json` immediately after the global community entry (id: `"community"`), before the first course entry. Sort by `id` alphabetically.
-
-The catalog order should be:
-1. Global community entry (`id: "community"`)
-2. Per-category community entries (`id: "community-aggression"` through `id: "community-transitions"`)
-3. Course + freebie pairs (`id: "course-aggression"`, `id: "freebie-aggression"`, ...)
+Replace the existing 20 per-category community entries in `research/cta_catalog.json`. Keep:
+1. Global community entry (`id: "community"`) — unchanged
+2. Per-category community entries (`id: "community-aggression"` through `id: "community-transitions"`) — replaced with new entries
+3. Course + freebie pairs (`id: "course-aggression"`, `id: "freebie-aggression"`, ...) — unchanged
 
 ### 5. Verify
 
@@ -64,7 +68,7 @@ Run the plan validation to confirm the merged catalog passes the schema:
 npx tsx content-spec/src/validate-plans.ts
 ```
 
-Check the admin at `/admin/spec` → CTAs tab — the "Community Pitch" column should now show pitches for all 20 categories.
+Check the admin at `/admin/spec` → CTAs tab — the Community Pitch column should now show eyebrow, title, body, and button text for all 20 categories.
 
 ## File references
 

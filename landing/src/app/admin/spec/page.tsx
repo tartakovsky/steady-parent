@@ -35,6 +35,13 @@ interface PageType {
   };
 }
 
+interface CtaCopy {
+  eyebrow: string;
+  title: string;
+  body: string;
+  buttonText: string;
+}
+
 interface CtaDefinition {
   id: string;
   type: string;
@@ -42,6 +49,7 @@ interface CtaDefinition {
   url?: string | undefined;
   what_it_is: string;
   founder_presence?: string | undefined;
+  cta_copy?: CtaCopy | undefined;
   can_promise: string[];
   cant_promise: string[];
 }
@@ -52,11 +60,17 @@ interface MailingTag {
   kitTagId?: number | undefined;
 }
 
+interface ValidationResult {
+  errors: string[];
+  warnings: string[];
+}
+
 interface SpecData {
   taxonomy: { categories: Category[]; entries: ArticleEntry[] } | null;
   pageTypes: PageType[] | null;
   ctaCatalog: CtaDefinition[] | null;
   mailingTags: MailingTag[] | null;
+  ctaValidation: ValidationResult | null;
 }
 
 type Tab = "taxonomy" | "pageTypes" | "ctas" | "mailing";
@@ -118,7 +132,9 @@ export default function SpecPage() {
 
       {tab === "taxonomy" && <TaxonomyTab data={data.taxonomy} />}
       {tab === "pageTypes" && <PageTypesTab data={data.pageTypes} />}
-      {tab === "ctas" && <CtasTab data={data.ctaCatalog} />}
+      {tab === "ctas" && (
+        <CtasTab data={data.ctaCatalog} validation={data.ctaValidation} />
+      )}
       {tab === "mailing" && <MailingTab data={data.mailingTags} />}
     </div>
   );
@@ -283,7 +299,13 @@ function Row({ label, value }: { label: string; value: string }) {
 // CTAs tab
 // ---------------------------------------------------------------------------
 
-function CtasTab({ data }: { data: CtaDefinition[] | null }) {
+function CtasTab({
+  data,
+  validation,
+}: {
+  data: CtaDefinition[] | null;
+  validation: ValidationResult | null;
+}) {
   if (!data) return <p className="text-muted-foreground">No CTA data.</p>;
 
   const globalCommunity = data.find(
@@ -338,6 +360,36 @@ function CtasTab({ data }: { data: CtaDefinition[] | null }) {
         </div>
       )}
 
+      {/* Validation results */}
+      {validation && (validation.errors.length > 0 || validation.warnings.length > 0) && (
+        <div className="rounded-lg border bg-red-50 p-4 dark:bg-red-950/20">
+          <h3 className="text-sm font-semibold text-red-700 dark:text-red-400">
+            CTA Validation ({validation.errors.length} errors, {validation.warnings.length} warnings)
+          </h3>
+          {validation.errors.length > 0 && (
+            <ul className="mt-2 list-inside list-disc text-xs text-red-600 dark:text-red-400">
+              {validation.errors.map((e, i) => (
+                <li key={i}>{e}</li>
+              ))}
+            </ul>
+          )}
+          {validation.warnings.length > 0 && (
+            <ul className="mt-2 list-inside list-disc text-xs text-amber-600 dark:text-amber-400">
+              {validation.warnings.map((w, i) => (
+                <li key={i}>{w}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
+      {validation && validation.errors.length === 0 && validation.warnings.length === 0 && (
+        <div className="rounded-lg border bg-emerald-50 p-3 dark:bg-emerald-950/20">
+          <p className="text-sm text-emerald-700 dark:text-emerald-400">
+            All CTA validation checks passed
+          </p>
+        </div>
+      )}
+
       {/* Per-category table: Community + Course + Freebie */}
       <div className="rounded-md border">
         <table className="w-full text-sm">
@@ -367,8 +419,30 @@ function CtasTab({ data }: { data: CtaDefinition[] | null }) {
                   </td>
                   <td className="px-3 py-2">
                     {community ? (
-                      <div className="text-xs text-muted-foreground">
-                        {community.what_it_is}
+                      <div className="space-y-1">
+                        <div className="text-xs text-muted-foreground">
+                          {community.what_it_is}
+                        </div>
+                        {community.cta_copy && (
+                          <div className="rounded border border-dashed border-border p-2 text-xs">
+                            <div className="text-muted-foreground">
+                              <span className="font-medium text-foreground">Eyebrow:</span>{" "}
+                              {community.cta_copy.eyebrow}
+                            </div>
+                            <div className="text-muted-foreground">
+                              <span className="font-medium text-foreground">Title:</span>{" "}
+                              {community.cta_copy.title}
+                            </div>
+                            <div className="text-muted-foreground">
+                              <span className="font-medium text-foreground">Body:</span>{" "}
+                              {community.cta_copy.body}
+                            </div>
+                            <div className="text-muted-foreground">
+                              <span className="font-medium text-foreground">Button:</span>{" "}
+                              {community.cta_copy.buttonText}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     ) : (
                       <span className="text-xs text-amber-600 dark:text-amber-400">

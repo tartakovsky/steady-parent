@@ -7,6 +7,7 @@ import {
   CtaCatalogSchema,
   MailingTagTaxonomySchema,
   PageTypesSchema,
+  validateCtaCatalog,
 } from "@steady-parent/content-spec";
 
 function getResearchPath(filename: string): string {
@@ -36,5 +37,18 @@ export async function GET() {
     loadAndValidate("mailing_tags.json", MailingTagTaxonomySchema),
   ]);
 
-  return NextResponse.json({ taxonomy, pageTypes, ctaCatalog, mailingTags });
+  // Run CTA business-rule validation
+  let ctaValidation: { errors: string[]; warnings: string[] } | null = null;
+  if (ctaCatalog && taxonomy) {
+    const categorySlugs = taxonomy.categories.map((c) => c.slug);
+    ctaValidation = validateCtaCatalog(ctaCatalog, categorySlugs);
+  }
+
+  return NextResponse.json({
+    taxonomy,
+    pageTypes,
+    ctaCatalog,
+    mailingTags,
+    ctaValidation,
+  });
 }

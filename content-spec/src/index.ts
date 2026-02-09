@@ -16,3 +16,4 @@ export {
 export { analyzeCoverage } from "./validator/coverage";
 export type { CoverageReport } from "./validator/coverage";
 export { validateQuiz } from "./validator/quiz";
+export { validateCtaCatalog } from "./validator/cta";

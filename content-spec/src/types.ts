@@ -5,6 +5,7 @@ import type {
   ArticleTaxonomySchema,
   QuizEntrySchema,
   QuizTaxonomySchema,
+  CtaCopySchema,
   CtaDefinitionSchema,
   CtaCatalogSchema,
   MailingTagSchema,
@@ -46,6 +47,7 @@ export type ArticleEntry = z.infer<typeof ArticleEntrySchema>;
 export type ArticleTaxonomy = z.infer<typeof ArticleTaxonomySchema>;
 export type QuizEntry = z.infer<typeof QuizEntrySchema>;
 export type QuizTaxonomy = z.infer<typeof QuizTaxonomySchema>;
+export type CtaCopy = z.infer<typeof CtaCopySchema>;
 export type CtaDefinition = z.infer<typeof CtaDefinitionSchema>;
 export type CtaCatalog = z.infer<typeof CtaCatalogSchema>;
 export type MailingTag = z.infer<typeof MailingTagSchema>;

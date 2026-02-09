@@ -20,7 +20,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents figuring out how to handle hitting, biting, and aggression \u2014 sharing what's actually working at home.",
+    "what_it_is": "Connect with parents who've been through the hitting and biting phases and found responses that actually de-escalate.",
+    "cta_copy": {
+      "eyebrow": "No judgment here",
+      "title": "Other parents have stood where you're standing",
+      "body": "A private group where parents share what works when kids get physical — founders are in there daily, responding and sharing.",
+      "buttonText": "Come talk to us"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -29,7 +35,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents raising anxious kids, sharing what's helping with worry, avoidance, and the fears that won't quit.",
+    "what_it_is": "See how other parents are navigating worry and avoidance — and what's actually helping their kids feel braver.",
+    "cta_copy": {
+      "eyebrow": "You're not alone",
+      "title": "Other parents get the anxiety spiral too",
+      "body": "A private space where parents share what's working for anxious kids — founders are in there daily, sharing and responding.",
+      "buttonText": "Join the conversation"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -38,7 +50,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents navigating meltdowns, rage, and big emotions together \u2014 real conversations about what's working and what's not.",
+    "what_it_is": "Talk to parents who are learning to sit with their child's big emotions instead of trying to fix or stop them.",
+    "cta_copy": {
+      "eyebrow": "They get it",
+      "title": "When the meltdown passes and you need to talk",
+      "body": "A private parent group for the hard emotional moments — founders are active daily, sharing what they've learned too.",
+      "buttonText": "Find your people"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -47,7 +65,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents having the awkward, important body safety conversations and figuring out what to say at every age.",
+    "what_it_is": "Ask the awkward questions about body safety conversations in a private space where other parents are figuring it out too.",
+    "cta_copy": {
+      "eyebrow": "Safe space to ask",
+      "title": "These conversations are hard to have alone",
+      "body": "A private group where parents navigate body safety talks together — founders are present daily, sharing and answering.",
+      "buttonText": "Ask other parents"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -56,7 +80,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents working to parent differently than they were raised, sharing the messy middle of breaking old patterns.",
+    "what_it_is": "Connect with parents who are actively working to parent differently than they were parented — without pretending it's easy.",
+    "cta_copy": {
+      "eyebrow": "You're already changing",
+      "title": "Breaking patterns is lonely without people who understand",
+      "body": "A private group of parents rewriting their family story — founders share their own cycle-breaking journey daily.",
+      "buttonText": "Join the group"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -65,7 +95,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents setting real limits without punishment or yelling \u2014 sharing what holds and what falls apart.",
+    "what_it_is": "See how other parents hold firm limits without punishment or yelling — and what they do when it falls apart.",
+    "cta_copy": {
+      "eyebrow": "Real parents, real limits",
+      "title": "Discipline without punishment is possible but not easy",
+      "body": "A private group where parents figure out boundaries together — founders are in there daily with their own stories.",
+      "buttonText": "Come figure it out"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -74,7 +110,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents done with mealtime battles, sharing what's actually getting their picky eaters to the table.",
+    "what_it_is": "Talk to parents who have stopped fighting over food and learned to trust the process — even when their kid eats nothing.",
+    "cta_copy": {
+      "eyebrow": "Beyond mealtime battles",
+      "title": "Other parents survived the food battles too",
+      "body": "A private group where parents share mealtime wins and disasters honestly — founders are active daily, responding to every post.",
+      "buttonText": "Pull up a chair"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -83,7 +125,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents in the thick of the first year, sharing the unfiltered reality and what's keeping them sane.",
+    "what_it_is": "Connect with parents in the thick of the first year who will tell you the truth about what's normal and what's not.",
+    "cta_copy": {
+      "eyebrow": "The first year",
+      "title": "You don't have to figure this out alone",
+      "body": "A private group of parents who remember the newborn fog — founders are present daily, sharing and supporting.",
+      "buttonText": "Meet other new parents"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -92,7 +140,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents building their own approach instead of following one guru \u2014 honest conversations about what fits your actual family.",
+    "what_it_is": "Talk to parents who are building their own approach instead of following a single method — and hear what's working for them.",
+    "cta_copy": {
+      "eyebrow": "No one-size-fits-all",
+      "title": "Your family doesn't fit in a parenting box",
+      "body": "A private group where parents build approaches that fit real life — founders share their own evolving philosophy daily.",
+      "buttonText": "Join the discussion"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -101,7 +155,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents who want to know what the research actually says, not just what's trending on social media.",
+    "what_it_is": "Discuss the research behind parenting advice with parents who want evidence, not just opinions or trends.",
+    "cta_copy": {
+      "eyebrow": "Evidence over opinions",
+      "title": "Parents who actually read the research",
+      "body": "A private group where parents dig into what the science says — founders are active daily, breaking down studies and sharing.",
+      "buttonText": "Talk evidence with us"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -110,7 +170,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents in the middle of potty training, sharing day-by-day updates and what's actually moving the needle.",
+    "what_it_is": "Get real-time support from parents who are in the middle of potty training or just survived it.",
+    "cta_copy": {
+      "eyebrow": "Day three is worst",
+      "title": "Potty training is easier when someone's been through it",
+      "body": "A private group where parents share the messy truth about potty training — founders are in there daily, cheering you on.",
+      "buttonText": "Get the support"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -119,7 +185,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents managing screens without the guilt spiral \u2014 real conversations about limits that work in real life.",
+    "what_it_is": "Hear how other families manage screen time without constant power struggles or parental guilt spirals.",
+    "cta_copy": {
+      "eyebrow": "Drop the guilt",
+      "title": "Screen time doesn't have to be a daily fight",
+      "body": "A private group where parents share real screen boundaries that work — founders are present daily with honest perspectives.",
+      "buttonText": "See what works"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -128,7 +200,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents tired of refereeing sibling fights, sharing what's actually building connection between their kids.",
+    "what_it_is": "Connect with parents navigating sibling rivalry, jealousy, and the constant refereeing — and finding what actually builds connection.",
+    "cta_copy": {
+      "eyebrow": "Tired of refereeing",
+      "title": "Other parents are done playing sibling referee too",
+      "body": "A private group where parents share what reduces the fighting for real — founders are active daily with their own sibling stories.",
+      "buttonText": "Stop refereeing alone"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -137,7 +215,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of exhausted parents figuring out sleep without cry-it-out guilt \u2014 sharing routines and regressions in real time.",
+    "what_it_is": "Talk to parents who built sleep routines that stick — without cry-it-out dogma or co-sleeping shame.",
+    "cta_copy": {
+      "eyebrow": "No sleep shaming",
+      "title": "Sleep help without the judgment",
+      "body": "A private group where exhausted parents share what actually worked at bedtime — founders are present daily, no method wars.",
+      "buttonText": "Join the tired parents"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -146,7 +230,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents helping kids who struggle socially \u2014 sharing what's building real confidence and friendships.",
+    "what_it_is": "Hear from parents helping shy, bold, or struggling kids build real friendships and navigate social situations.",
+    "cta_copy": {
+      "eyebrow": "Every kid is different",
+      "title": "Helping your child find their people starts here",
+      "body": "A private group where parents share social wins and setbacks honestly — founders are active daily with real encouragement.",
+      "buttonText": "Talk to other parents"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -155,7 +245,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents raising intense, strong-willed kids \u2014 the one place where people actually get what your days look like.",
+    "what_it_is": "Connect with parents raising intense, persistent, sensitive kids who don't fit the mold — and who wouldn't change them.",
+    "cta_copy": {
+      "eyebrow": "Your kid isn't too much",
+      "title": "Parents who get the intensity and wouldn't trade it",
+      "body": "A private group where spirited-kid parents share strategies and solidarity — founders are present daily, raising intense kids themselves.",
+      "buttonText": "Find your people"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -164,7 +260,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents working on their own reactions \u2014 sharing what helps them stay regulated when everything escalates.",
+    "what_it_is": "Talk to parents who are learning to stay regulated when everything in them wants to yell — and who slip up too.",
+    "cta_copy": {
+      "eyebrow": "We all lose it",
+      "title": "Staying calm is a practice, not a personality trait",
+      "body": "A private group where parents work on their own regulation together — founders share their own hard moments daily.",
+      "buttonText": "Practice with us"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -173,7 +275,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents deep in tantrum season, sharing what's working for grocery store meltdowns, bedtime battles, and everything between.",
+    "what_it_is": "Get support from parents who've weathered public meltdowns, bedtime explosions, and the kind of tantrums nobody warns you about.",
+    "cta_copy": {
+      "eyebrow": "Been there, survived that",
+      "title": "The tantrum just happened and you need to talk",
+      "body": "A private group where parents debrief the hard moments together — founders are active daily with real experience and support.",
+      "buttonText": "Come debrief with us"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -182,7 +290,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents navigating adolescence together \u2014 sharing what's keeping the connection alive when your teen pulls away.",
+    "what_it_is": "Talk to parents navigating the eye rolls, closed doors, and silent treatments — while trying to stay connected.",
+    "cta_copy": {
+      "eyebrow": "The door is open",
+      "title": "Raising a teen without losing the relationship",
+      "body": "A private group where parents of teens share what keeps connection alive — founders are present daily with honest perspective.",
+      "buttonText": "Connect with teen parents"
+    },
     "can_promise": [],
     "cant_promise": []
   },
@@ -191,7 +305,13 @@
     "type": "community",
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
-    "what_it_is": "A private group of parents guiding kids through big changes \u2014 new schools, new siblings, moves \u2014 sharing what's easing the anxiety.",
+    "what_it_is": "Hear from parents who've helped kids through moves, new schools, new siblings, and divorce — and what made it easier.",
+    "cta_copy": {
+      "eyebrow": "Change is hard",
+      "title": "Other families have navigated this change before you",
+      "body": "A private group where parents share transition strategies that actually helped — founders are active daily with their own experience.",
+      "buttonText": "Get transition support"
+    },
     "can_promise": [],
     "cant_promise": []
   },

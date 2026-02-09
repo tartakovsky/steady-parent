@@ -10,6 +10,7 @@ export {
 
 export {
   CtaTypeEnum,
+  CtaCopySchema,
   CtaDefinitionSchema,
   CtaCatalogSchema,
 } from "./cta-catalog";
