@@ -6,6 +6,8 @@ interface StatsCardProps {
   subtitle?: string;
   icon: LucideIcon;
   variant?: "default" | "success" | "warning" | "error";
+  onClick?: (() => void) | undefined;
+  active?: boolean | undefined;
 }
 
 const variantStyles = {
@@ -28,10 +30,25 @@ export function StatsCard({
   subtitle,
   icon: Icon,
   variant = "default",
+  onClick,
+  active,
 }: StatsCardProps) {
+  const clickable = !!onClick;
   return (
     <div
-      className={`rounded-lg border p-4 ${variantStyles[variant]}`}
+      role={clickable ? "button" : undefined}
+      tabIndex={clickable ? 0 : undefined}
+      onClick={onClick}
+      onKeyDown={
+        clickable
+          ? (e) => {
+              if (e.key === "Enter" || e.key === " ") onClick?.();
+            }
+          : undefined
+      }
+      className={`rounded-lg border p-4 ${variantStyles[variant]} ${
+        clickable ? "cursor-pointer transition-shadow hover:shadow-md" : ""
+      } ${active ? "ring-2 ring-foreground/20" : ""}`}
     >
       <div className="flex items-center justify-between">
         <p className="text-sm text-muted-foreground">{title}</p>
