@@ -8,6 +8,13 @@ import {
   validateQuiz,
 } from "@steady-parent/content-spec";
 
+interface QuizDefinition {
+  slug: string;
+  dataModel: string;
+  resultDisplay: string;
+  [key: string]: unknown;
+}
+
 function getResearchPath(filename: string): string {
   if (process.env["NODE_ENV"] === "production") {
     return path.join(process.cwd(), "mdx-sources", filename);
@@ -27,13 +34,21 @@ interface QuizValidationResult {
 
 export async function GET() {
   try {
-    const [taxonomyRaw, pageTypesRaw] = await Promise.all([
+    const [taxonomyRaw, pageTypesRaw, definitionsRaw] = await Promise.all([
       fs.readFile(getResearchPath("quiz_taxonomy.json"), "utf-8"),
       fs.readFile(getResearchPath("quiz_page_types.json"), "utf-8"),
+      fs.readFile(
+        getResearchPath(path.join("quizzes", "quiz-definitions.json")),
+        "utf-8",
+      ),
     ]);
 
     const taxonomy = QuizTaxonomySchema.parse(JSON.parse(taxonomyRaw));
     const quizPageTypes = QuizPageTypesSchema.parse(JSON.parse(pageTypesRaw));
+
+    // Build slug → definition lookup for dataModel/resultDisplay
+    const definitions = JSON.parse(definitionsRaw) as QuizDefinition[];
+    const defBySlug = new Map(definitions.map((d) => [d.slug, d]));
 
     // Discover deployed quiz JSON files
     const quizDir = getQuizJsonDir();
@@ -74,8 +89,13 @@ export async function GET() {
     const entries = taxonomy.entries.map((q) => {
       const isDeployed = deployedSlugs.has(q.slug);
       const validation = validationResults.get(q.slug);
+      const def = defBySlug.get(q.slug);
       return {
-        ...q,
+        slug: q.slug,
+        title: q.title,
+        url: q.url,
+        dataModel: def?.dataModel ?? null,
+        resultDisplay: def?.resultDisplay ?? null,
         isDeployed,
         validation: validation ?? null,
       };

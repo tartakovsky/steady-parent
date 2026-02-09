@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
 import {
   Check,
@@ -21,7 +21,8 @@ interface QuizRow {
   slug: string;
   title: string;
   url: string;
-  connectsTo: string[];
+  dataModel: string | null;
+  resultDisplay: string | null;
   isDeployed: boolean;
   validation: QuizValidation | null;
 }
@@ -79,6 +80,25 @@ export default function QuizzesPage() {
     });
   }
 
+  const modelColors: Record<string, string> = {
+    likert: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300",
+    identity:
+      "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300",
+    assessment:
+      "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300",
+  };
+
+  const displayColors: Record<string, string> = {
+    profile:
+      "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300",
+    classification:
+      "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300",
+    readiness:
+      "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300",
+    recommendation:
+      "bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300",
+  };
+
   return (
     <div className="space-y-6">
       <div>
@@ -126,9 +146,9 @@ export default function QuizzesPage() {
                 Status
               </th>
               <th className="px-3 py-2 text-left font-medium">Title</th>
-              <th className="px-3 py-2 text-left font-medium">Type</th>
+              <th className="px-3 py-2 text-left font-medium">Data Model</th>
               <th className="px-3 py-2 text-left font-medium">
-                Connected Categories
+                Result Display
               </th>
               <th className="w-10 px-3 py-2 text-center font-medium">
                 Validation
@@ -148,9 +168,8 @@ export default function QuizzesPage() {
                 v && (v.errors.length > 0 || v.warnings.length > 0);
 
               return (
-                <>
+                <Fragment key={quiz.slug}>
                   <tr
-                    key={quiz.slug}
                     className={`border-b hover:bg-muted/30 ${hasDetail ? "cursor-pointer" : ""}`}
                     onClick={() => hasDetail && toggle(quiz.slug)}
                   >
@@ -177,25 +196,26 @@ export default function QuizzesPage() {
                       )}
                     </td>
                     <td className="px-3 py-1.5">
-                      {v ? (
-                        <span className="rounded bg-muted px-1.5 py-0.5 text-xs">
-                          {v.detectedType}
+                      {quiz.dataModel ? (
+                        <span
+                          className={`rounded px-1.5 py-0.5 text-xs font-medium ${modelColors[quiz.dataModel] ?? "bg-muted"}`}
+                        >
+                          {quiz.dataModel}
                         </span>
                       ) : (
                         <span className="text-xs text-muted-foreground">—</span>
                       )}
                     </td>
                     <td className="px-3 py-1.5">
-                      <div className="flex flex-wrap gap-1">
-                        {quiz.connectsTo.map((cat) => (
-                          <span
-                            key={cat}
-                            className="rounded bg-muted px-1.5 py-0.5 text-xs"
-                          >
-                            {cat}
-                          </span>
-                        ))}
-                      </div>
+                      {quiz.resultDisplay ? (
+                        <span
+                          className={`rounded px-1.5 py-0.5 text-xs font-medium ${displayColors[quiz.resultDisplay] ?? "bg-muted"}`}
+                        >
+                          {quiz.resultDisplay}
+                        </span>
+                      ) : (
+                        <span className="text-xs text-muted-foreground">—</span>
+                      )}
                     </td>
                     <td className="px-3 py-1.5 text-center">
                       {!quiz.isDeployed ? (
@@ -230,7 +250,7 @@ export default function QuizzesPage() {
                     </td>
                   </tr>
                   {isOpen && hasDetail && (
-                    <tr key={`${quiz.slug}-detail`} className="border-b">
+                    <tr className="border-b">
                       <td colSpan={5} className="bg-muted/20 px-6 py-3">
                         {v.errors.length > 0 && (
                           <div className="mb-2">
@@ -259,7 +279,7 @@ export default function QuizzesPage() {
                       </td>
                     </tr>
                   )}
-                </>
+                </Fragment>
               );
             })}
           </tbody>

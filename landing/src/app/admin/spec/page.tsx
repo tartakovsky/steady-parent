@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ChevronDown, ChevronRight } from "lucide-react";
 
@@ -136,6 +136,14 @@ type Tab = "taxonomy" | "pageTypes" | "crossLinks" | "ctas" | "mailing";
 // ---------------------------------------------------------------------------
 
 export default function SpecPage() {
+  return (
+    <Suspense fallback={<p className="text-muted-foreground">Loading...</p>}>
+      <SpecPageInner />
+    </Suspense>
+  );
+}
+
+function SpecPageInner() {
   const [data, setData] = useState<SpecData | null>(null);
   const [loading, setLoading] = useState(true);
   const searchParams = useSearchParams();

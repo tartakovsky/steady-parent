@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Check, Minus } from "lucide-react";
+import Link from "next/link";
+import { Check, Minus, ChevronDown, ChevronRight } from "lucide-react";
 
-interface PlanRow {
+interface PlanArticle {
   id: number;
   articleTitle: string;
   url: string;
@@ -12,146 +13,285 @@ interface PlanRow {
   deployedSlug: string | null;
 }
 
+interface PlanQuiz {
+  slug: string;
+  title: string;
+  url: string;
+  isDeployed: boolean;
+}
+
+interface PlanData {
+  articles: PlanArticle[];
+  quizzes: PlanQuiz[];
+}
+
+interface CategoryGroup {
+  slug: string;
+  articles: PlanArticle[];
+  deployed: number;
+  total: number;
+}
+
+function groupByCategory(articles: PlanArticle[]): CategoryGroup[] {
+  const map = new Map<string, PlanArticle[]>();
+  for (const a of articles) {
+    const cat = a.categorySlug || "uncategorized";
+    const list = map.get(cat) ?? [];
+    list.push(a);
+    map.set(cat, list);
+  }
+  return [...map.entries()]
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([slug, articles]) => ({
+      slug,
+      articles,
+      deployed: articles.filter((a) => a.isDeployed).length,
+      total: articles.length,
+    }));
+}
+
 export default function PlanPage() {
-  const [entries, setEntries] = useState<PlanRow[]>([]);
+  const [data, setData] = useState<PlanData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [filter, setFilter] = useState<"all" | "deployed" | "pending">("all");
+  const [expandedCats, setExpandedCats] = useState<Set<string>>(new Set());
+  const [showArticles, setShowArticles] = useState(true);
+  const [showQuizzes, setShowQuizzes] = useState(true);
 
   useEffect(() => {
     fetch("/api/admin/plan")
-      .then((r) => r.json() as Promise<PlanRow[]>)
-      .then((rows) => {
-        setEntries(rows);
+      .then((r) => r.json() as Promise<PlanData>)
+      .then((d) => {
+        setData(d);
         setLoading(false);
       })
       .catch(() => setLoading(false));
   }, []);
 
   if (loading) return <p className="text-muted-foreground">Loading...</p>;
+  if (!data) return <p className="text-muted-foreground">Failed to load.</p>;
 
-  const deployed = entries.filter((e) => e.isDeployed);
-  const pending = entries.filter((e) => !e.isDeployed);
+  const { articles, quizzes } = data;
+  const articleGroups = groupByCategory(articles);
+  const deployedArticles = articles.filter((a) => a.isDeployed).length;
+  const deployedQuizzes = quizzes.filter((q) => q.isDeployed).length;
 
-  // Group by category
-  const categories = new Map<string, { total: number; deployed: number }>();
-  for (const entry of entries) {
-    const cat = categories.get(entry.categorySlug) ?? { total: 0, deployed: 0 };
-    cat.total++;
-    if (entry.isDeployed) cat.deployed++;
-    categories.set(entry.categorySlug, cat);
+  function toggleCat(slug: string) {
+    setExpandedCats((prev) => {
+      const next = new Set(prev);
+      if (next.has(slug)) next.delete(slug);
+      else next.add(slug);
+      return next;
+    });
   }
 
-  const filtered =
-    filter === "all"
-      ? entries
-      : filter === "deployed"
-        ? deployed
-        : pending;
+  function expandAllCats() {
+    setExpandedCats(new Set(articleGroups.map((g) => g.slug)));
+  }
+
+  function collapseAllCats() {
+    setExpandedCats(new Set());
+  }
 
   return (
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold">Plan vs Reality</h1>
         <p className="text-sm text-muted-foreground">
-          {deployed.length} / {entries.length} articles deployed (
-          {entries.length > 0
-            ? Math.round((deployed.length / entries.length) * 100)
+          Articles: {deployedArticles}/{articles.length} deployed (
+          {articles.length > 0
+            ? Math.round((deployedArticles / articles.length) * 100)
+            : 0}
+          %) — Quizzes: {deployedQuizzes}/{quizzes.length} deployed (
+          {quizzes.length > 0
+            ? Math.round((deployedQuizzes / quizzes.length) * 100)
             : 0}
           %)
         </p>
       </div>
 
-      {/* Category summary */}
-      <div className="grid gap-2 sm:grid-cols-4 lg:grid-cols-5">
-        {[...categories.entries()]
-          .sort((a, b) => a[0].localeCompare(b[0]))
-          .map(([cat, counts]) => (
-            <div
-              key={cat}
-              className={`rounded border p-2 text-center text-sm ${
-                counts.deployed === counts.total
-                  ? "border-emerald-200 bg-emerald-50 dark:border-emerald-800 dark:bg-emerald-950/20"
-                  : ""
-              }`}
-            >
-              <div className="font-medium">{cat}</div>
-              <div className="text-xs text-muted-foreground">
-                {counts.deployed}/{counts.total}
-              </div>
-            </div>
-          ))}
-      </div>
-
-      {/* Filter tabs */}
-      <div className="flex gap-2">
-        {(["all", "deployed", "pending"] as const).map((f) => (
-          <button
-            key={f}
-            onClick={() => setFilter(f)}
-            className={`rounded-md px-3 py-1 text-sm transition-colors ${
-              filter === f
-                ? "bg-primary text-primary-foreground"
-                : "bg-muted text-muted-foreground hover:bg-muted/80"
-            }`}
-          >
-            {f === "all"
-              ? `All (${entries.length})`
-              : f === "deployed"
-                ? `Deployed (${deployed.length})`
-                : `Pending (${pending.length})`}
-          </button>
-        ))}
-      </div>
-
-      {/* Table */}
+      {/* Articles section */}
       <div className="rounded-md border">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b bg-muted/50">
-              <th className="w-10 px-3 py-2 text-center font-medium">
-                Status
-              </th>
-              <th className="px-3 py-2 text-left font-medium">Title</th>
-              <th className="px-3 py-2 text-left font-medium">Category</th>
-              <th className="px-3 py-2 text-left font-medium">URL</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filtered.map((entry) => (
-              <tr key={entry.id} className="border-b hover:bg-muted/30">
-                <td className="px-3 py-1.5 text-center">
-                  {entry.isDeployed ? (
-                    <Check className="mx-auto h-4 w-4 text-emerald-600" />
-                  ) : (
-                    <Minus className="mx-auto h-4 w-4 text-muted-foreground" />
-                  )}
-                </td>
-                <td className="px-3 py-1.5">
-                  {entry.isDeployed && entry.deployedSlug ? (
-                    <a
-                      href={`/admin/articles/${entry.deployedSlug}`}
-                      className="text-primary hover:underline"
+        <button
+          onClick={() => setShowArticles((v) => !v)}
+          className="flex w-full items-center gap-2 px-4 py-3 text-left hover:bg-muted/30"
+        >
+          {showArticles ? (
+            <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground" />
+          ) : (
+            <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+          )}
+          <span className="text-lg font-semibold">Articles</span>
+          <span className="text-sm text-muted-foreground">
+            {deployedArticles}/{articles.length}
+          </span>
+          {deployedArticles === articles.length && articles.length > 0 && (
+            <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-xs text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
+              complete
+            </span>
+          )}
+        </button>
+
+        {showArticles && (
+          <div className="border-t px-4 py-2">
+            <div className="mb-2 flex gap-2">
+              <button
+                onClick={expandAllCats}
+                className="rounded-md px-2 py-1 text-xs text-muted-foreground hover:bg-muted"
+              >
+                Expand all
+              </button>
+              <button
+                onClick={collapseAllCats}
+                className="rounded-md px-2 py-1 text-xs text-muted-foreground hover:bg-muted"
+              >
+                Collapse all
+              </button>
+            </div>
+            <div className="space-y-1">
+              {articleGroups.map((group) => {
+                const isOpen = expandedCats.has(group.slug);
+                const allDone = group.deployed === group.total;
+                return (
+                  <div
+                    key={group.slug}
+                    className="rounded border"
+                  >
+                    <button
+                      onClick={() => toggleCat(group.slug)}
+                      className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm hover:bg-muted/30"
                     >
-                      {entry.articleTitle}
-                    </a>
-                  ) : (
-                    <span className="text-muted-foreground">
-                      {entry.articleTitle}
-                    </span>
-                  )}
-                </td>
-                <td className="px-3 py-1.5">
-                  <span className="rounded bg-muted px-1.5 py-0.5 text-xs">
-                    {entry.categorySlug}
-                  </span>
-                </td>
-                <td className="px-3 py-1.5 font-mono text-xs text-muted-foreground">
-                  {entry.url}
-                </td>
+                      {isOpen ? (
+                        <ChevronDown className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
+                      ) : (
+                        <ChevronRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
+                      )}
+                      <span className="font-medium">{group.slug}</span>
+                      <span
+                        className={`text-xs ${allDone ? "text-emerald-600" : "text-muted-foreground"}`}
+                      >
+                        {group.deployed}/{group.total}
+                      </span>
+                      {allDone && (
+                        <Check className="h-3.5 w-3.5 text-emerald-600" />
+                      )}
+                    </button>
+                    {isOpen && (
+                      <table className="w-full text-sm">
+                        <tbody>
+                          {group.articles.map((entry) => (
+                            <tr
+                              key={entry.id}
+                              className="border-t hover:bg-muted/30"
+                            >
+                              <td className="w-10 px-3 py-1 text-center">
+                                {entry.isDeployed ? (
+                                  <Check className="mx-auto h-3.5 w-3.5 text-emerald-600" />
+                                ) : (
+                                  <Minus className="mx-auto h-3.5 w-3.5 text-muted-foreground" />
+                                )}
+                              </td>
+                              <td className="px-3 py-1">
+                                {entry.isDeployed && entry.deployedSlug ? (
+                                  <Link
+                                    href={`/admin/articles/${entry.deployedSlug}`}
+                                    className="text-primary hover:underline"
+                                  >
+                                    {entry.articleTitle}
+                                  </Link>
+                                ) : (
+                                  <span className="text-muted-foreground">
+                                    {entry.articleTitle}
+                                  </span>
+                                )}
+                              </td>
+                              <td className="px-3 py-1 text-right font-mono text-xs text-muted-foreground">
+                                {entry.url}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Quizzes section */}
+      <div className="rounded-md border">
+        <button
+          onClick={() => setShowQuizzes((v) => !v)}
+          className="flex w-full items-center gap-2 px-4 py-3 text-left hover:bg-muted/30"
+        >
+          {showQuizzes ? (
+            <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground" />
+          ) : (
+            <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+          )}
+          <span className="text-lg font-semibold">Quizzes</span>
+          <span className="text-sm text-muted-foreground">
+            {deployedQuizzes}/{quizzes.length}
+          </span>
+          {deployedQuizzes === quizzes.length && quizzes.length > 0 && (
+            <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-xs text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
+              complete
+            </span>
+          )}
+        </button>
+
+        {showQuizzes && (
+          <table className="w-full border-t text-sm">
+            <thead>
+              <tr className="bg-muted/50">
+                <th className="w-10 px-3 py-1.5 text-center font-medium text-muted-foreground">
+                  Status
+                </th>
+                <th className="px-3 py-1.5 text-left font-medium text-muted-foreground">
+                  Title
+                </th>
+                <th className="px-3 py-1.5 text-left font-medium text-muted-foreground">
+                  URL
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {quizzes.map((quiz) => (
+                <tr
+                  key={quiz.slug}
+                  className="border-t hover:bg-muted/30"
+                >
+                  <td className="px-3 py-1.5 text-center">
+                    {quiz.isDeployed ? (
+                      <Check className="mx-auto h-3.5 w-3.5 text-emerald-600" />
+                    ) : (
+                      <Minus className="mx-auto h-3.5 w-3.5 text-muted-foreground" />
+                    )}
+                  </td>
+                  <td className="px-3 py-1.5">
+                    {quiz.isDeployed ? (
+                      <Link
+                        href={quiz.url}
+                        className="text-primary hover:underline"
+                      >
+                        {quiz.title}
+                      </Link>
+                    ) : (
+                      <span className="text-muted-foreground">
+                        {quiz.title}
+                      </span>
+                    )}
+                  </td>
+                  <td className="px-3 py-1.5 font-mono text-xs text-muted-foreground">
+                    {quiz.url}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );

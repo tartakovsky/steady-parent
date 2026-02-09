@@ -13,6 +13,9 @@ export type AnyQuizData = QuizData | IdentityQuizData | LikertQuizData;
 import parentingStyleData from './parenting-style.json';
 import emotionalIntelligenceData from './emotional-intelligence.json';
 import calmDownToolkitData from './calm-down-toolkit.json';
+import pottyTrainingData from './potty-training-readiness.json';
+import parentingBatteryData from './parenting-battery.json';
+import bedtimeBattleData from './bedtime-battle-style.json';
 
 /** Hydrate a raw Likert JSON into a full LikertQuizData with computed questions array */
 function hydrateLikert(raw: Record<string, unknown>): LikertQuizData {
@@ -27,6 +30,9 @@ export const quizzes: Record<string, AnyQuizData> = {
   'parenting-style': hydrateLikert(parentingStyleData as unknown as Record<string, unknown>),
   'emotional-intelligence': hydrateLikert(emotionalIntelligenceData as unknown as Record<string, unknown>),
   'calm-down-toolkit': calmDownToolkitData as unknown as QuizData,
+  'potty-training-readiness': pottyTrainingData as unknown as QuizData,
+  'parenting-battery': parentingBatteryData as unknown as QuizData,
+  'bedtime-battle-style': bedtimeBattleData as unknown as IdentityQuizData,
 };
 
 export function getQuizBySlug(slug: string): AnyQuizData | undefined {
