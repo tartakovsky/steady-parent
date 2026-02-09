@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { ChevronDown, ChevronRight } from "lucide-react";
 
 // ---------------------------------------------------------------------------
@@ -137,7 +138,8 @@ type Tab = "taxonomy" | "pageTypes" | "crossLinks" | "ctas" | "mailing";
 export default function SpecPage() {
   const [data, setData] = useState<SpecData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [tab, setTab] = useState<Tab>("taxonomy");
+  const searchParams = useSearchParams();
+  const tab = (searchParams.get("tab") as Tab) ?? "taxonomy";
 
   useEffect(() => {
     fetch("/api/admin/spec")
@@ -152,40 +154,8 @@ export default function SpecPage() {
   if (loading) return <p className="text-muted-foreground">Loading...</p>;
   if (!data) return <p className="text-muted-foreground">Failed to load spec data.</p>;
 
-  const tabs: { key: Tab; label: string }[] = [
-    { key: "taxonomy", label: "Taxonomy" },
-    { key: "pageTypes", label: "Page Types" },
-    { key: "crossLinks", label: "Cross-Linking" },
-    { key: "ctas", label: "CTAs" },
-    { key: "mailing", label: "Mailing Tags" },
-  ];
-
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold">Content Spec</h1>
-        <p className="text-sm text-muted-foreground">
-          Plan data files that define what the site should contain
-        </p>
-      </div>
-
-      {/* Tab bar */}
-      <div className="flex gap-2">
-        {tabs.map((t) => (
-          <button
-            key={t.key}
-            onClick={() => setTab(t.key)}
-            className={`rounded-md px-3 py-1 text-sm transition-colors ${
-              tab === t.key
-                ? "bg-primary text-primary-foreground"
-                : "bg-muted text-muted-foreground hover:bg-muted/80"
-            }`}
-          >
-            {t.label}
-          </button>
-        ))}
-      </div>
-
       {tab === "taxonomy" && (
         <TaxonomyTab
           data={data.taxonomy}
