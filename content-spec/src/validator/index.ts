@@ -8,5 +8,13 @@ export type { CoverageReport } from "./coverage";
 export {
   computeCrossLinkStats,
   validateCrossLinks,
+  buildCrossLinkDetail,
 } from "./cross-links";
-export type { CrossLinkStats } from "./cross-links";
+export type {
+  CrossLinkStats,
+  CrossLinkDetail,
+  CrossLinkCategory,
+  CrossLinkArticle,
+  CrossLinkQuiz,
+  ResolvedLink,
+} from "./cross-links";

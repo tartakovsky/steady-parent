@@ -66,13 +66,45 @@ interface QuizPageType {
   constraints: Record<string, unknown>;
 }
 
-interface CrossLinkStats {
-  articleCount: number;
-  totalLinks: number;
-  linksByType: Record<string, number>;
-  totalCtas: number;
-  ctasByType: Record<string, number>;
-  quizConnections: { slug: string; title: string; url: string; categories: string[] }[];
+interface ResolvedLink {
+  url: string;
+  type: string;
+  intent: string;
+  targetTitle: string | null;
+  valid: boolean;
+}
+
+interface CrossLinkArticle {
+  title: string;
+  url: string;
+  links: ResolvedLink[];
+}
+
+interface CrossLinkCategory {
+  slug: string;
+  name: string;
+  articles: CrossLinkArticle[];
+}
+
+interface CrossLinkQuiz {
+  slug: string;
+  title: string;
+  url: string;
+  categories: string[];
+}
+
+interface CrossLinkDetail {
+  stats: {
+    articleCount: number;
+    totalLinks: number;
+    linksByType: Record<string, number>;
+    totalCtas: number;
+    ctasByType: Record<string, number>;
+  };
+  categories: CrossLinkCategory[];
+  orphanedArticles: string[];
+  quizConnections: CrossLinkQuiz[];
+  validation: ValidationResult;
 }
 
 interface MailingTag {
@@ -94,8 +126,7 @@ interface SpecData {
   ctaCatalog: CtaDefinition[] | null;
   mailingTags: MailingTag[] | null;
   ctaValidation: ValidationResult | null;
-  crossLinkStats: CrossLinkStats | null;
-  crossLinkValidation: ValidationResult | null;
+  crossLinkDetail: CrossLinkDetail | null;
 }
 
 type Tab = "taxonomy" | "pageTypes" | "crossLinks" | "ctas" | "mailing";
@@ -166,10 +197,7 @@ export default function SpecPage() {
         <PageTypesTab data={data.pageTypes} quizData={data.quizPageTypes} />
       )}
       {tab === "crossLinks" && (
-        <CrossLinksTab
-          stats={data.crossLinkStats}
-          validation={data.crossLinkValidation}
-        />
+        <CrossLinksTab data={data.crossLinkDetail} />
       )}
       {tab === "ctas" && (
         <CtasTab data={data.ctaCatalog} validation={data.ctaValidation} />
@@ -434,30 +462,50 @@ function Row({ label, value }: { label: string; value: string }) {
 // Cross-Linking tab
 // ---------------------------------------------------------------------------
 
-const LINK_TYPE_ORDER = ["cross", "sibling", "quiz", "series_preview", "pillar", "prev", "next"];
+const LINK_TYPE_COLORS: Record<string, string> = {
+  cross: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
+  sibling: "bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400",
+  quiz: "bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400",
+  series_preview: "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",
+  pillar: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400",
+  prev: "bg-muted text-muted-foreground",
+  next: "bg-muted text-muted-foreground",
+};
 
-function CrossLinksTab({
-  stats,
-  validation,
-}: {
-  stats: CrossLinkStats | null;
-  validation: ValidationResult | null;
-}) {
-  if (!stats)
+function CrossLinksTab({ data }: { data: CrossLinkDetail | null }) {
+  const [expandedCats, setExpandedCats] = useState<Set<string>>(new Set());
+  const [expandedArticles, setExpandedArticles] = useState<Set<string>>(new Set());
+
+  if (!data)
     return <p className="text-muted-foreground">No cross-linking data.</p>;
 
-  const sortedLinkTypes = Object.entries(stats.linksByType).sort(
-    ([a], [b]) => (LINK_TYPE_ORDER.indexOf(a) === -1 ? 99 : LINK_TYPE_ORDER.indexOf(a)) -
-                  (LINK_TYPE_ORDER.indexOf(b) === -1 ? 99 : LINK_TYPE_ORDER.indexOf(b)),
-  );
+  const { stats, categories, orphanedArticles, quizConnections, validation } = data;
+
+  function toggleCat(slug: string) {
+    setExpandedCats((prev) => {
+      const next = new Set(prev);
+      if (next.has(slug)) next.delete(slug);
+      else next.add(slug);
+      return next;
+    });
+  }
+
+  function toggleArticle(url: string) {
+    setExpandedArticles((prev) => {
+      const next = new Set(prev);
+      if (next.has(url)) next.delete(url);
+      else next.add(url);
+      return next;
+    });
+  }
 
   return (
     <div className="space-y-6">
       {/* Validation */}
-      {validation && (validation.errors.length > 0 || validation.warnings.length > 0) && (
+      {validation.errors.length > 0 || validation.warnings.length > 0 ? (
         <div className="rounded-lg border bg-red-50 p-4 dark:bg-red-950/20">
           <h3 className="text-sm font-semibold text-red-700 dark:text-red-400">
-            Cross-Link Validation ({validation.errors.length} errors, {validation.warnings.length} warnings)
+            Validation ({validation.errors.length} errors, {validation.warnings.length} warnings)
           </h3>
           {validation.errors.length > 0 && (
             <ul className="mt-2 list-inside list-disc text-xs text-red-600 dark:text-red-400">
@@ -474,8 +522,7 @@ function CrossLinksTab({
             </ul>
           )}
         </div>
-      )}
-      {validation && validation.errors.length === 0 && validation.warnings.length === 0 && (
+      ) : (
         <div className="rounded-lg border bg-emerald-50 p-3 dark:bg-emerald-950/20">
           <p className="text-sm text-emerald-700 dark:text-emerald-400">
             All cross-link validation checks passed
@@ -484,84 +531,145 @@ function CrossLinksTab({
       )}
 
       {/* Summary stats */}
-      <div className="space-y-4">
-        <h3 className="text-lg font-semibold">Link Plan Summary</h3>
-        <div className="grid gap-4 sm:grid-cols-3">
-          <div className="rounded-lg border p-4 text-center">
-            <div className="text-2xl font-bold">{stats.articleCount}</div>
-            <div className="text-xs text-muted-foreground">articles with link plans</div>
-          </div>
-          <div className="rounded-lg border p-4 text-center">
-            <div className="text-2xl font-bold">{stats.totalLinks}</div>
-            <div className="text-xs text-muted-foreground">total links</div>
-          </div>
-          <div className="rounded-lg border p-4 text-center">
-            <div className="text-2xl font-bold">{stats.totalCtas}</div>
-            <div className="text-xs text-muted-foreground">total CTAs</div>
-          </div>
+      <div className="grid gap-4 sm:grid-cols-3">
+        <div className="rounded-lg border p-4 text-center">
+          <div className="text-2xl font-bold">{stats.articleCount}</div>
+          <div className="text-xs text-muted-foreground">articles with link plans</div>
+        </div>
+        <div className="rounded-lg border p-4 text-center">
+          <div className="text-2xl font-bold">{stats.totalLinks}</div>
+          <div className="text-xs text-muted-foreground">total links</div>
+        </div>
+        <div className="rounded-lg border p-4 text-center">
+          <div className="text-2xl font-bold">{stats.totalCtas}</div>
+          <div className="text-xs text-muted-foreground">total CTAs</div>
         </div>
       </div>
 
-      {/* Link type distribution */}
+      {/* Articles (nested: category → article → outgoing links) */}
       <div className="space-y-4">
-        <h3 className="text-lg font-semibold">Links by Type</h3>
-        <div className="rounded-md border">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b bg-muted/50">
-                <th className="px-3 py-2 text-left font-medium">Type</th>
-                <th className="px-3 py-2 text-right font-medium">Count</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sortedLinkTypes.map(([type, count]) => (
-                <tr key={type} className="border-b hover:bg-muted/30">
-                  <td className="px-3 py-2">
-                    <span className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">
-                      {type}
+        <h3 className="text-lg font-semibold">Articles</h3>
+        <div className="space-y-2">
+          {categories.map((cat) => {
+            const catOpen = expandedCats.has(cat.slug);
+            const totalCatLinks = cat.articles.reduce((n, a) => n + a.links.length, 0);
+            const invalidCount = cat.articles.reduce(
+              (n, a) => n + a.links.filter((l) => !l.valid).length,
+              0,
+            );
+            return (
+              <div key={cat.slug} className="rounded-lg border">
+                <button
+                  onClick={() => toggleCat(cat.slug)}
+                  className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm hover:bg-muted/30"
+                >
+                  {catOpen ? (
+                    <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground" />
+                  ) : (
+                    <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                  )}
+                  <span className="font-medium">{cat.name}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {cat.articles.length} articles, {totalCatLinks} links
+                  </span>
+                  {invalidCount > 0 && (
+                    <span className="text-xs text-red-600 dark:text-red-400">
+                      {invalidCount} invalid
                     </span>
-                  </td>
-                  <td className="px-3 py-2 text-right font-medium">{count}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                  )}
+                </button>
+                {catOpen && (
+                  <div className="border-t">
+                    {cat.articles.map((article) => {
+                      const artOpen = expandedArticles.has(article.url);
+                      const artInvalid = article.links.filter((l) => !l.valid).length;
+                      return (
+                        <div key={article.url} className="border-b last:border-b-0">
+                          <button
+                            onClick={() => toggleArticle(article.url)}
+                            className="flex w-full items-center gap-2 px-6 py-2 text-left text-sm hover:bg-muted/20"
+                          >
+                            {artOpen ? (
+                              <ChevronDown className="h-3 w-3 shrink-0 text-muted-foreground" />
+                            ) : (
+                              <ChevronRight className="h-3 w-3 shrink-0 text-muted-foreground" />
+                            )}
+                            <span className="truncate">{article.title}</span>
+                            <span className="shrink-0 font-mono text-xs text-muted-foreground">
+                              {article.url}
+                            </span>
+                            <span className="shrink-0 text-xs text-muted-foreground">
+                              {article.links.length} links
+                            </span>
+                            {artInvalid > 0 ? (
+                              <span className="shrink-0 text-xs text-red-600">
+                                {artInvalid} invalid
+                              </span>
+                            ) : (
+                              <span className="shrink-0 text-xs text-emerald-600">✓</span>
+                            )}
+                          </button>
+                          {artOpen && (
+                            <div className="bg-muted/10 px-8 py-2">
+                              <table className="w-full text-xs">
+                                <thead>
+                                  <tr className="text-left text-muted-foreground">
+                                    <th className="pb-1 pr-2 font-medium">Status</th>
+                                    <th className="pb-1 pr-2 font-medium">Type</th>
+                                    <th className="pb-1 pr-2 font-medium">Target</th>
+                                    <th className="pb-1 font-medium">URL</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {article.links.map((link, i) => (
+                                    <tr key={i} className="border-t border-dashed">
+                                      <td className="py-1 pr-2">
+                                        {link.valid ? (
+                                          <span className="text-emerald-600">✓</span>
+                                        ) : (
+                                          <span className="text-red-600">✗</span>
+                                        )}
+                                      </td>
+                                      <td className="py-1 pr-2">
+                                        <span
+                                          className={`rounded px-1.5 py-0.5 text-[10px] ${
+                                            LINK_TYPE_COLORS[link.type] ?? "bg-muted text-muted-foreground"
+                                          }`}
+                                        >
+                                          {link.type}
+                                        </span>
+                                      </td>
+                                      <td className="py-1 pr-2">
+                                        {link.targetTitle ?? (
+                                          <span className="text-red-600">Unknown</span>
+                                        )}
+                                      </td>
+                                      <td className="py-1 font-mono text-muted-foreground">
+                                        {link.url}
+                                      </td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* CTA type distribution */}
-      <div className="space-y-4">
-        <h3 className="text-lg font-semibold">CTAs by Type</h3>
-        <div className="rounded-md border">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b bg-muted/50">
-                <th className="px-3 py-2 text-left font-medium">Type</th>
-                <th className="px-3 py-2 text-right font-medium">Count</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Object.entries(stats.ctasByType).map(([type, count]) => (
-                <tr key={type} className="border-b hover:bg-muted/30">
-                  <td className="px-3 py-2">
-                    <span className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">
-                      {type}
-                    </span>
-                  </td>
-                  <td className="px-3 py-2 text-right font-medium">{count}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* Quiz connections */}
-      {stats.quizConnections.length > 0 && (
+      {/* Quizzes (source pages — currently shows connectsTo) */}
+      {quizConnections.length > 0 && (
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold">Quiz Connections</h3>
+          <h3 className="text-lg font-semibold">Quizzes</h3>
           <p className="text-sm text-muted-foreground">
-            Which article categories each quiz connects to
+            Quiz pages and which article categories they connect to
           </p>
           <div className="rounded-md border">
             <table className="w-full text-sm">
@@ -573,7 +681,7 @@ function CrossLinksTab({
                 </tr>
               </thead>
               <tbody>
-                {stats.quizConnections.map((q) => (
+                {quizConnections.map((q) => (
                   <tr key={q.slug} className="border-b hover:bg-muted/30">
                     <td className="px-3 py-2">{q.title}</td>
                     <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
@@ -596,6 +704,31 @@ function CrossLinksTab({
               </tbody>
             </table>
           </div>
+        </div>
+      )}
+
+      {/* Courses (placeholder — no course pages yet) */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold">Courses</h3>
+        <p className="text-sm text-muted-foreground">
+          No course pages defined yet. Course pages will need cross-links when created.
+        </p>
+      </div>
+
+      {/* Orphaned articles */}
+      {orphanedArticles.length > 0 && (
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-amber-700 dark:text-amber-400">
+            Orphaned Articles ({orphanedArticles.length})
+          </h3>
+          <p className="text-sm text-muted-foreground">
+            Articles in taxonomy with no link plan entry
+          </p>
+          <ul className="list-inside list-disc text-sm text-amber-600 dark:text-amber-400">
+            {orphanedArticles.map((title) => (
+              <li key={title}>{title}</li>
+            ))}
+          </ul>
         </div>
       )}
     </div>

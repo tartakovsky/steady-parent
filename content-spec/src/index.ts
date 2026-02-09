@@ -18,7 +18,15 @@ export type { CoverageReport } from "./validator/coverage";
 export {
   computeCrossLinkStats,
   validateCrossLinks,
+  buildCrossLinkDetail,
 } from "./validator/cross-links";
-export type { CrossLinkStats } from "./validator/cross-links";
+export type {
+  CrossLinkStats,
+  CrossLinkDetail,
+  CrossLinkCategory,
+  CrossLinkArticle,
+  CrossLinkQuiz,
+  ResolvedLink,
+} from "./validator/cross-links";
 export { validateQuiz } from "./validator/quiz";
 export { validateCtaCatalog } from "./validator/cta";

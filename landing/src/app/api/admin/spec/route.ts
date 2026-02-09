@@ -11,8 +11,7 @@ import {
   QuizPageTypesSchema,
   LinkPlanSchema,
   validateCtaCatalog,
-  computeCrossLinkStats,
-  validateCrossLinks,
+  buildCrossLinkDetail,
 } from "@steady-parent/content-spec";
 
 function getResearchPath(filename: string): string {
@@ -52,14 +51,10 @@ export async function GET() {
     ctaValidation = validateCtaCatalog(ctaCatalog, categorySlugs);
   }
 
-  // Compute cross-linking stats and validation
-  let crossLinkStats = null;
-  let crossLinkValidation: { errors: string[]; warnings: string[] } | null = null;
-  if (linkPlan && quizTaxonomy) {
-    crossLinkStats = computeCrossLinkStats(linkPlan, quizTaxonomy);
-  }
+  // Build cross-link detail (stats + per-article links + validation)
+  let crossLinkDetail = null;
   if (linkPlan && taxonomy && quizTaxonomy) {
-    crossLinkValidation = validateCrossLinks(linkPlan, taxonomy, quizTaxonomy);
+    crossLinkDetail = buildCrossLinkDetail(linkPlan, taxonomy, quizTaxonomy);
   }
 
   return NextResponse.json({
@@ -70,7 +65,6 @@ export async function GET() {
     ctaCatalog,
     mailingTags,
     ctaValidation,
-    crossLinkStats,
-    crossLinkValidation,
+    crossLinkDetail,
   });
 }
