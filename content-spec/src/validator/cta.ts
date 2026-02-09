@@ -3,9 +3,11 @@
  *
  * Validates:
  * - Per-category community entries have cta_copy with correct field lengths
- * - cta_copy.body mentions founder presence
+ * - buttonText is always "Join the community"
+ * - body ends with fixed founder line
  * - No exclamation marks or forbidden terms
  * - Category coverage (every taxonomy category has community + course + freebie)
+ * - Courses and freebies have what_it_is
  *
  * Returns { errors, warnings } — same pattern as quiz and article validators.
  */
@@ -19,6 +21,9 @@ const FORBIDDEN_TERMS = [
   "1-on-1 access",
   "guaranteed response times",
 ];
+
+const COMMUNITY_BUTTON_TEXT = "Join the community";
+const COMMUNITY_FOUNDER_LINE = "We are there with you daily too";
 
 function wordCount(s: string): number {
   return s.split(/\s+/).filter(Boolean).length;
@@ -75,6 +80,16 @@ export function validateCtaCatalog(
 
     const { eyebrow, title, body, buttonText } = entry.cta_copy;
 
+    // buttonText must be exactly "Join the community"
+    if (buttonText !== COMMUNITY_BUTTON_TEXT) {
+      errors.push(`${prefix}: buttonText must be "${COMMUNITY_BUTTON_TEXT}", got "${buttonText}"`);
+    }
+
+    // body must end with founder line
+    if (!body.includes(COMMUNITY_FOUNDER_LINE)) {
+      errors.push(`${prefix}: body must contain "${COMMUNITY_FOUNDER_LINE}"`);
+    }
+
     // Word count checks
     const eyebrowWc = wordCount(eyebrow);
     if (eyebrowWc < 2 || eyebrowWc > 5) {
@@ -87,28 +102,12 @@ export function validateCtaCatalog(
     }
 
     const bodyWc = wordCount(body);
-    if (bodyWc < 15 || bodyWc > 30) {
-      errors.push(`${prefix}: body is ${bodyWc} words (must be 15-30)`);
-    }
-
-    const btnWc = wordCount(buttonText);
-    if (btnWc < 2 || btnWc > 5) {
-      errors.push(`${prefix}: buttonText "${buttonText}" is ${btnWc} words (must be 2-5)`);
-    }
-
-    // what_it_is word count
-    const witWc = wordCount(entry.what_it_is);
-    if (witWc < 15 || witWc > 30) {
-      errors.push(`${prefix}: what_it_is is ${witWc} words (must be 15-30)`);
-    }
-
-    // Founder mention in body
-    if (!/founder/i.test(body)) {
-      errors.push(`${prefix}: cta_copy.body must mention founders`);
+    if (bodyWc < 12 || bodyWc > 35) {
+      errors.push(`${prefix}: body is ${bodyWc} words (must be 12-35)`);
     }
 
     // No exclamation marks
-    const allText = [entry.what_it_is, eyebrow, title, body, buttonText].join(" ");
+    const allText = [eyebrow, title, body, buttonText].join(" ");
     if (allText.includes("!")) {
       errors.push(`${prefix}: contains exclamation mark`);
     }
@@ -127,6 +126,16 @@ export function validateCtaCatalog(
     }
     if (entry.cant_promise.length > 0) {
       warnings.push(`${prefix}: cant_promise should be empty for per-category entries`);
+    }
+  }
+
+  // --- Course and freebie checks ---
+  for (const entry of [...courses, ...freebies]) {
+    if (!entry.what_it_is) {
+      errors.push(`${entry.id}: missing what_it_is`);
+    }
+    if (!entry.button_text) {
+      errors.push(`${entry.id}: missing button_text`);
     }
   }
 

@@ -36,5 +36,5 @@ export async function getFreebieForCategory(
     (c) => c.type === "freebie" && c.id === `freebie-${categorySlug}`,
   );
   if (!freebie) return null;
-  return { name: freebie.name, description: freebie.what_it_is };
+  return { name: freebie.name, description: freebie.what_it_is ?? "" };
 }

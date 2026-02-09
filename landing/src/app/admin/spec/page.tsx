@@ -48,6 +48,7 @@ interface CtaDefinition {
   name: string;
   url?: string | undefined;
   what_it_is: string;
+  button_text?: string | undefined;
   founder_presence?: string | undefined;
   cta_copy?: CtaCopy | undefined;
   can_promise: string[];
@@ -418,31 +419,22 @@ function CtasTab({
                     </span>
                   </td>
                   <td className="px-3 py-2">
-                    {community ? (
-                      <div className="space-y-1">
-                        <div className="text-xs text-muted-foreground">
-                          {community.what_it_is}
+                    {community?.cta_copy ? (
+                      <div className="text-xs">
+                        <div className="text-muted-foreground">
+                          {community.cta_copy.eyebrow}
                         </div>
-                        {community.cta_copy && (
-                          <div className="rounded border border-dashed border-border p-2 text-xs">
-                            <div className="text-muted-foreground">
-                              <span className="font-medium text-foreground">Eyebrow:</span>{" "}
-                              {community.cta_copy.eyebrow}
-                            </div>
-                            <div className="text-muted-foreground">
-                              <span className="font-medium text-foreground">Title:</span>{" "}
-                              {community.cta_copy.title}
-                            </div>
-                            <div className="text-muted-foreground">
-                              <span className="font-medium text-foreground">Body:</span>{" "}
-                              {community.cta_copy.body}
-                            </div>
-                            <div className="text-muted-foreground">
-                              <span className="font-medium text-foreground">Button:</span>{" "}
-                              {community.cta_copy.buttonText}
-                            </div>
-                          </div>
-                        )}
+                        <div className="font-medium">
+                          {community.cta_copy.title}
+                        </div>
+                        <div className="text-muted-foreground">
+                          {community.cta_copy.body}
+                        </div>
+                        <div className="mt-1">
+                          <span className="inline-block rounded-full bg-stone-800 px-2.5 py-0.5 text-[10px] font-medium text-white dark:bg-stone-200 dark:text-stone-900">
+                            {community.cta_copy.buttonText}
+                          </span>
+                        </div>
                       </div>
                     ) : (
                       <span className="text-xs text-amber-600 dark:text-amber-400">
@@ -460,6 +452,13 @@ function CtasTab({
                         {course.url}
                       </div>
                     )}
+                    {course.button_text && (
+                      <div className="mt-1">
+                        <span className="inline-block rounded-full bg-stone-800 px-2.5 py-0.5 text-[10px] font-medium text-white dark:bg-stone-200 dark:text-stone-900">
+                          {course.button_text}
+                        </span>
+                      </div>
+                    )}
                   </td>
                   <td className="px-3 py-2">
                     {freebie ? (
@@ -468,6 +467,13 @@ function CtasTab({
                         <div className="text-xs text-muted-foreground">
                           {freebie.what_it_is}
                         </div>
+                        {freebie.button_text && (
+                          <div className="mt-1">
+                            <span className="inline-block rounded-full bg-stone-800 px-2.5 py-0.5 text-[10px] font-medium text-white dark:bg-stone-200 dark:text-stone-900">
+                              {freebie.button_text}
+                            </span>
+                          </div>
+                        )}
                       </>
                     ) : (
                       <span className="text-xs text-muted-foreground">

@@ -6,26 +6,25 @@ The community is the SAME for every category — one private parent group at `ht
 
 ## Community facts
 
-- **Founders are active and present daily** — they respond to posts and share their own experience
+- The founders are active and present daily
 - It's a private, supportive group of parents going through the same stuff
 - Do NOT promise any of the following: weekly expert Q&As, live coaching calls, video content, 1-on-1 access, guaranteed response times
 
 ## What you're writing
 
-For each of the 20 categories, produce a complete CTA block with these fields:
+For each of the 20 categories, produce a CTA block with these fields:
 
-- **`what_it_is`**: A category-specific one-sentence description (15–30 words) of what a parent will find in this community when they're reading about this topic
-- **`cta_copy.eyebrow`**: A short label (2–5 words) — like "Talk to real parents" or "You're not alone in this"
+- **`cta_copy.eyebrow`**: A short label (2–5 words) — a soft hook
 - **`cta_copy.title`**: A headline (5–12 words) — direct, warm, speaks to this category's pain point
-- **`cta_copy.body`**: One sentence (15–30 words) — what they'll get by joining, specific to this topic. Mention that founders are active and present.
-- **`cta_copy.buttonText`**: Button label (2–5 words) — like "Join the community" or "Come talk to us"
+- **`cta_copy.body`**: A category-specific sentence (8–25 words) FOLLOWED BY ". We are there with you daily too." — that last sentence is fixed and mandatory, always appended
+
+The buttonText is always "Join the community" — do not change it.
 
 ## Tone
 
 - Warm, direct, peer-to-peer — not salesy
 - No exclamation marks
-- The eyebrow is a soft hook; the title carries the emotional weight; the body delivers the specifics
-- Vary the buttonText across categories — don't use the same button label for all 20
+- The eyebrow is a soft hook; the title carries the emotional weight; the body delivers the specifics + the fixed founder line
 
 ## Categories
 
@@ -35,22 +34,21 @@ Each category has a course — use the course description to understand the topi
 
 ## Output schema
 
-Each entry must conform to this TypeScript type (validated with Zod at `content-spec/src/schemas/cta-catalog.ts`):
+Each entry must conform to this TypeScript type:
 
 ```typescript
 interface CtaCopy {
-  eyebrow: string;   // 2-5 words
-  title: string;     // 5-12 words
-  body: string;      // 15-30 words, mention founder presence
-  buttonText: string; // 2-5 words
+  eyebrow: string;     // 2-5 words
+  title: string;       // 5-12 words
+  body: string;        // category sentence + ". We are there with you daily too."
+  buttonText: "Join the community";  // FIXED — always this exact string
 }
 
 interface CtaDefinition {
-  id: string;       // pattern: "community-{category_slug}" (lowercase, hyphens only)
+  id: string;          // pattern: "community-{category_slug}" (lowercase, hyphens only)
   type: "community";
   name: "Steady Parent Community";
   url: "https://www.skool.com/steady-parent";
-  what_it_is: string;  // one sentence, 15-30 words
   cta_copy: CtaCopy;
   can_promise: [];     // always empty for per-category community entries
   cant_promise: [];    // always empty for per-category community entries
@@ -69,12 +67,11 @@ Example of ONE entry (do not copy this pitch):
   "type": "community",
   "name": "Steady Parent Community",
   "url": "https://www.skool.com/steady-parent",
-  "what_it_is": "See how other parents are navigating worry and avoidance — and what's actually helping their kids feel braver.",
   "cta_copy": {
-    "eyebrow": "You're not alone in this",
+    "eyebrow": "You're not alone",
     "title": "Other parents get the anxiety spiral too",
-    "body": "A private space where parents share what's working for anxious kids — founders are in there daily, sharing and responding.",
-    "buttonText": "Join the conversation"
+    "body": "A private space where parents share what's working for anxious kids. We are there with you daily too.",
+    "buttonText": "Join the community"
   },
   "can_promise": [],
   "cant_promise": []
