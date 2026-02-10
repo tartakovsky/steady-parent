@@ -25,6 +25,7 @@ export const FORBIDDEN_TERMS = [
 export const COMMUNITY_BUTTON_TEXT = "Join the community";
 export const COMMUNITY_FOUNDER_LINE = "We are there with you daily too";
 export const PREVIEW_BUTTON_TEXT = "Send my results";
+export const WAITLIST_BUTTON_TEXT = "Reserve your spot";
 
 function wordCount(s: string): number {
   return s.split(/\s+/).filter(Boolean).length;
@@ -171,6 +172,35 @@ export function validateCtaCatalog(
     }
   }
 
+  // --- Waitlist entry checks ---
+  const waitlists = catalog.filter((c) => c.type === "waitlist");
+  for (const entry of waitlists) {
+    const prefix = entry.id;
+
+    if (!entry.what_it_is) {
+      errors.push(`${prefix}: missing what_it_is`);
+    }
+
+    if (!entry.url) {
+      errors.push(`${prefix}: missing url`);
+    } else if (!entry.url.startsWith("/course/")) {
+      errors.push(`${prefix}: url must start with "/course/", got "${entry.url}"`);
+    }
+
+    if (!entry.cta_copy) {
+      errors.push(`${prefix}: missing cta_copy`);
+      continue;
+    }
+
+    const { eyebrow, title, body, buttonText } = entry.cta_copy;
+
+    if (buttonText !== WAITLIST_BUTTON_TEXT) {
+      errors.push(`${prefix}: buttonText must be "${WAITLIST_BUTTON_TEXT}", got "${buttonText}"`);
+    }
+
+    errors.push(...validateCtaCopy(prefix, eyebrow, title, body, buttonText));
+  }
+
   // --- Coverage checks (if category slugs provided) ---
   if (categorySlugs) {
     const communitySlugSet = new Set(
@@ -182,6 +212,9 @@ export function validateCtaCatalog(
     const freebieSlugSet = new Set(
       freebies.map((c) => c.id.replace(/^freebie-/, "")),
     );
+    const waitlistSlugSet = new Set(
+      waitlists.map((c) => c.id.replace(/^waitlist-/, "")),
+    );
 
     for (const slug of categorySlugs) {
       if (!communitySlugSet.has(slug)) {
@@ -192,6 +225,9 @@ export function validateCtaCatalog(
       }
       if (!freebieSlugSet.has(slug)) {
         errors.push(`Missing freebie entry for "${slug}"`);
+      }
+      if (!waitlistSlugSet.has(slug)) {
+        warnings.push(`Missing waitlist entry for "${slug}"`);
       }
     }
 
@@ -205,6 +241,11 @@ export function validateCtaCatalog(
     for (const slug of courseSlugSet) {
       if (!slugSet.has(slug)) {
         warnings.push(`Course entry "course-${slug}" doesn't match any taxonomy category`);
+      }
+    }
+    for (const slug of waitlistSlugSet) {
+      if (!slugSet.has(slug)) {
+        warnings.push(`Waitlist entry "waitlist-${slug}" doesn't match any taxonomy category`);
       }
     }
   }

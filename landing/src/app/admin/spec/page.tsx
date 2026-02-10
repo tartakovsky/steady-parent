@@ -707,12 +707,16 @@ function CtasTab({
   );
   const courses = data.filter((c) => c.type === "course");
   const freebies = data.filter((c) => c.type === "freebie");
+  const waitlists = data.filter((c) => c.type === "waitlist");
 
   const categorySlug = (id: string) =>
-    id.replace(/^(course|freebie|community)-/, "");
+    id.replace(/^(course|freebie|community|waitlist)-/, "");
 
   const communityBySlug = new Map(
     perCatCommunities.map((c) => [categorySlug(c.id), c]),
+  );
+  const waitlistBySlug = new Map(
+    waitlists.map((c) => [categorySlug(c.id), c]),
   );
 
   return (
@@ -820,7 +824,38 @@ function CtasTab({
         </div>
       </div>
 
-      {/* Per-category table: Community + Course + Freebie */}
+      {/* Waitlist CTA rules */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold">Waitlist CTA Rules</h3>
+        <p className="text-sm text-muted-foreground">
+          Each course has a waitlist CTA for the course landing page. Shown while the course is not yet available.
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-lg border p-4">
+            <h4 className="mb-2 text-sm font-semibold">Copy Rules</h4>
+            <dl className="space-y-1.5 text-xs">
+              <Row label="buttonText" value='"Reserve your spot"' />
+              <Row label="Eyebrow" value="2-5 words" />
+              <Row label="Title" value="3-12 words" />
+              <Row label="Body" value="8-35 words" />
+            </dl>
+            <div className="mt-2 text-[10px] text-red-600 dark:text-red-400">
+              No exclamation marks. No forbidden terms. No video promises.
+            </div>
+          </div>
+          <div className="rounded-lg border p-4">
+            <h4 className="mb-2 text-sm font-semibold">Data Rules</h4>
+            <dl className="space-y-1.5 text-xs">
+              <Row label="url" value='must start with "/course/"' />
+              <Row label="what_it_is" value="required (course description)" />
+              <Row label="name" value="must match course entry" />
+              <Row label="Coverage" value="1 per category (20 total)" />
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      {/* Per-category table: Community + Course + Freebie + Waitlist */}
       <div className="rounded-md border">
         <table className="w-full text-sm">
           <thead>
@@ -831,6 +866,7 @@ function CtasTab({
               </th>
               <th className="px-3 py-2 text-left font-medium">Course</th>
               <th className="px-3 py-2 text-left font-medium">Freebie</th>
+              <th className="px-3 py-2 text-left font-medium">Waitlist</th>
             </tr>
           </thead>
           <tbody>
@@ -840,6 +876,7 @@ function CtasTab({
                 (f) => categorySlug(f.id) === slug,
               );
               const community = communityBySlug.get(slug);
+              const waitlist = waitlistBySlug.get(slug);
               return (
                 <tr key={course.id} className="border-b hover:bg-muted/30">
                   <td className="px-3 py-2">
@@ -931,6 +968,30 @@ function CtasTab({
                     ) : (
                       <span className="text-xs text-muted-foreground">
                         —
+                      </span>
+                    )}
+                  </td>
+                  <td className="px-3 py-2">
+                    {waitlist?.cta_copy ? (
+                      <div className="text-xs">
+                        <div className="text-muted-foreground">
+                          {waitlist.cta_copy.eyebrow}
+                        </div>
+                        <div className="font-medium">
+                          {waitlist.cta_copy.title}
+                        </div>
+                        <div className="text-muted-foreground">
+                          {waitlist.cta_copy.body}
+                        </div>
+                        <div className="mt-1">
+                          <span className="inline-block rounded-full bg-stone-800 px-2.5 py-0.5 text-[10px] font-medium text-white dark:bg-stone-200 dark:text-stone-900">
+                            {waitlist.cta_copy.buttonText}
+                          </span>
+                        </div>
+                      </div>
+                    ) : (
+                      <span className="text-xs text-amber-600 dark:text-amber-400">
+                        Not generated
                       </span>
                     )}
                   </td>
