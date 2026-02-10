@@ -24,7 +24,7 @@ import { validateCtaCatalog } from "./validator/cta";
 import { validateCrossLinks } from "./validator/cross-links";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const dataDir = path.join(__dirname, "..", "..", "data");
+const contentPlanDir = path.join(__dirname, "..", "..", "content-plan");
 
 interface FileResult {
   file: string;
@@ -39,7 +39,7 @@ async function validateFile(
   schemaName: string,
   schema: { parse: (data: unknown) => unknown },
 ): Promise<FileResult> {
-  const filePath = path.join(dataDir, filename);
+  const filePath = path.join(contentPlanDir, filename);
   try {
     const raw = await fs.readFile(filePath, "utf-8");
     const data = JSON.parse(raw) as unknown;
@@ -111,11 +111,11 @@ async function main() {
   let crossFileErrors: string[] = [];
   try {
     const tagsRaw = await fs.readFile(
-      path.join(dataDir, "mailing_tags.json"),
+      path.join(contentPlanDir, "mailing_tags.json"),
       "utf-8",
     );
     const mappingsRaw = await fs.readFile(
-      path.join(dataDir, "form_tag_mappings.json"),
+      path.join(contentPlanDir, "form_tag_mappings.json"),
       "utf-8",
     );
     const tags = MailingTagTaxonomySchema.parse(JSON.parse(tagsRaw));
@@ -130,11 +130,11 @@ async function main() {
   let ctaWarnings: string[] = [];
   try {
     const ctaRaw = await fs.readFile(
-      path.join(dataDir, "cta_catalog.json"),
+      path.join(contentPlanDir, "cta_catalog.json"),
       "utf-8",
     );
     const taxRaw = await fs.readFile(
-      path.join(dataDir, "article_taxonomy.json"),
+      path.join(contentPlanDir, "article_taxonomy.json"),
       "utf-8",
     );
     const catalog = CtaCatalogSchema.parse(JSON.parse(ctaRaw));
@@ -152,15 +152,15 @@ async function main() {
   let crossLinkWarnings: string[] = [];
   try {
     const taxRaw2 = await fs.readFile(
-      path.join(dataDir, "article_taxonomy.json"),
+      path.join(contentPlanDir, "article_taxonomy.json"),
       "utf-8",
     );
     const quizRaw = await fs.readFile(
-      path.join(dataDir, "quiz_taxonomy.json"),
+      path.join(contentPlanDir, "quiz_taxonomy.json"),
       "utf-8",
     );
     const lpRaw = await fs.readFile(
-      path.join(dataDir, "article_link_plan.json"),
+      path.join(contentPlanDir, "article_link_plan.json"),
       "utf-8",
     );
     const taxonomy2 = ArticleTaxonomySchema.parse(JSON.parse(taxRaw2));

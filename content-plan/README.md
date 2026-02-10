@@ -1,6 +1,6 @@
-# data/
+# content-plan/
 
-Active data files consumed by the build system, admin API routes, validation CLI, and article generation scripts. Everything here is **live** — referenced by code at build or runtime.
+The content plan: structured definitions that drive the entire content pipeline. Every file here is **live** — consumed by the build system, admin API routes, validation CLI, or article generation scripts.
 
 Historical research, competitor analyses, and one-time prompt templates live in `research/`.
 
@@ -39,11 +39,11 @@ Historical research, competitor analyses, and one-time prompt templates live in 
 
 ## How files are used
 
-**Dev mode:** TypeScript reads from `../data/{filename}` relative to `landing/` working directory.
+**Dev mode:** TypeScript reads from `../content-plan/{filename}` relative to `landing/` working directory.
 
 **Production build:** `landing/package.json` build script copies JSON files to `.next/standalone/mdx-sources/`. The admin API routes check `NODE_ENV` and resolve to `mdx-sources/` in production.
 
-**Python scripts:** Resolve paths via `REPO_ROOT / "data" / filename` where `REPO_ROOT` is the monorepo root.
+**Python scripts:** Resolve paths via `REPO_ROOT / "content-plan" / filename` where `REPO_ROOT` is the monorepo root.
 
 **Validation CLI:** `npx tsx content-spec/src/validate-plans.ts` reads all JSON files and runs schema + business rule validation.
 

@@ -14,11 +14,11 @@ import {
   buildCrossLinkDetail,
 } from "@steady-parent/content-spec";
 
-function getDataPath(filename: string): string {
+function getContentPlanPath(filename: string): string {
   if (process.env["NODE_ENV"] === "production") {
     return path.join(process.cwd(), "mdx-sources", filename);
   }
-  return path.join(process.cwd(), "..", "data", filename);
+  return path.join(process.cwd(), "..", "content-plan", filename);
 }
 
 async function loadAndValidate<T>(
@@ -26,7 +26,7 @@ async function loadAndValidate<T>(
   schema: { parse: (data: unknown) => T },
 ): Promise<T | null> {
   try {
-    const raw = await fs.readFile(getDataPath(filename), "utf-8");
+    const raw = await fs.readFile(getContentPlanPath(filename), "utf-8");
     return schema.parse(JSON.parse(raw));
   } catch {
     return null;

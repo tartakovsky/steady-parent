@@ -15,11 +15,11 @@ interface QuizDefinition {
   [key: string]: unknown;
 }
 
-function getDataPath(filename: string): string {
+function getContentPlanPath(filename: string): string {
   if (process.env["NODE_ENV"] === "production") {
     return path.join(process.cwd(), "mdx-sources", filename);
   }
-  return path.join(process.cwd(), "..", "data", filename);
+  return path.join(process.cwd(), "..", "content-plan", filename);
 }
 
 function getQuizJsonDir(): string {
@@ -35,10 +35,10 @@ interface QuizValidationResult {
 export async function GET() {
   try {
     const [taxonomyRaw, pageTypesRaw, definitionsRaw] = await Promise.all([
-      fs.readFile(getDataPath("quiz_taxonomy.json"), "utf-8"),
-      fs.readFile(getDataPath("quiz_page_types.json"), "utf-8"),
+      fs.readFile(getContentPlanPath("quiz_taxonomy.json"), "utf-8"),
+      fs.readFile(getContentPlanPath("quiz_page_types.json"), "utf-8"),
       fs.readFile(
-        getDataPath(path.join("quizzes", "quiz-definitions.json")),
+        getContentPlanPath(path.join("quizzes", "quiz-definitions.json")),
         "utf-8",
       ),
     ]);

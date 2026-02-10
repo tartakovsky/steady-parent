@@ -19,7 +19,7 @@ This is a monorepo using NPM workspaces.
 │   ├── public/           # Static assets (Hero, testimonials, etc.)
 │   └── next.config.ts    # Standalone build configuration
 ├── content-spec/         # Shared package: schemas, parser, validator, types
-├── data/                 # Active data files (JSON schemas, prompts) — see data/README.md
+├── content-plan/         # Content plan definitions (taxonomy, CTAs, link plans) — see content-plan/README.md
 ├── research/             # Historical research, competitor analysis, generation scripts
 ├── content/              # Shared content assets (source extracts)
 │   └── blogs/            # Raw and processed blog extracts

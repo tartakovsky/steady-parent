@@ -20,8 +20,8 @@ from pathlib import Path
 from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-LINK_PLAN_PATH = REPO_ROOT / "data" / "article_link_plan.json"
-CTA_CATALOG_PATH = REPO_ROOT / "data" / "cta_catalog.json"
+LINK_PLAN_PATH = REPO_ROOT / "content-plan" / "article_link_plan.json"
+CTA_CATALOG_PATH = REPO_ROOT / "content-plan" / "cta_catalog.json"
 
 
 # ---------------------------------------------------------------------------
