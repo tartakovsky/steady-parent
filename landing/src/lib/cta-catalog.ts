@@ -8,24 +8,40 @@ import path from "path";
 
 import type { CtaDefinition } from "@steady-parent/content-spec";
 
-function getCtaCatalogPath(): string {
-  if (process.env["NODE_ENV"] === "production") {
-    return path.join(process.cwd(), "mdx-sources", "cta_catalog.json");
-  }
-  return path.join(process.cwd(), "..", "research", "cta_catalog.json");
-}
+const CATALOG_PATHS = [
+  path.join(process.cwd(), "mdx-sources", "cta_catalog.json"),
+  path.join(process.cwd(), "..", "content-plan", "cta_catalog.json"),
+];
 
 let catalogCache: CtaDefinition[] | null = null;
 
 async function loadCatalog(): Promise<CtaDefinition[]> {
   if (catalogCache) return catalogCache;
-  try {
-    const raw = await fs.readFile(getCtaCatalogPath(), "utf-8");
-    catalogCache = JSON.parse(raw) as CtaDefinition[];
-    return catalogCache;
-  } catch {
-    return [];
+  for (const p of CATALOG_PATHS) {
+    try {
+      const raw = await fs.readFile(p, "utf-8");
+      catalogCache = JSON.parse(raw) as CtaDefinition[];
+      return catalogCache;
+    } catch {
+      continue;
+    }
   }
+  return [];
+}
+
+export async function getAllWaitlists(): Promise<CtaDefinition[]> {
+  const catalog = await loadCatalog();
+  return catalog.filter((c) => c.type === "waitlist");
+}
+
+export async function getWaitlistBySlug(
+  slug: string,
+): Promise<CtaDefinition | null> {
+  const catalog = await loadCatalog();
+  const waitlist = catalog.find(
+    (c) => c.type === "waitlist" && c.url === `/course/${slug}/`,
+  );
+  return waitlist ?? null;
 }
 
 export async function getFreebieForCategory(

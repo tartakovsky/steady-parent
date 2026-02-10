@@ -63,7 +63,7 @@ export function FreebieCTA({
                 placeholder={inputPlaceholder}
                 type="email"
                 required
-                className="h-14 flex-1 text-lg"
+                className="min-h-14 flex-1 text-lg"
               />
               <Button
                 type="submit"
@@ -109,7 +109,7 @@ export function FreebieCTA({
             placeholder={inputPlaceholder}
             type="email"
             required
-            className="h-12 flex-1 text-base"
+            className="min-h-12 flex-1 text-base"
           />
           <Button
             type="submit"

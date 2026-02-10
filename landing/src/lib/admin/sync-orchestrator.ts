@@ -99,21 +99,21 @@ function getLinkPlanPath(): string {
   if (process.env["NODE_ENV"] === "production") {
     return path.join(process.cwd(), "mdx-sources", "article_link_plan.json");
   }
-  return path.join(process.cwd(), "..", "research", "article_link_plan.json");
+  return path.join(process.cwd(), "..", "content-plan", "article_link_plan.json");
 }
 
 function getCtaCatalogPath(): string {
   if (process.env["NODE_ENV"] === "production") {
     return path.join(process.cwd(), "mdx-sources", "cta_catalog.json");
   }
-  return path.join(process.cwd(), "..", "research", "cta_catalog.json");
+  return path.join(process.cwd(), "..", "content-plan", "cta_catalog.json");
 }
 
 function getPageTypesPath(): string {
   if (process.env["NODE_ENV"] === "production") {
     return path.join(process.cwd(), "mdx-sources", "page_types.json");
   }
-  return path.join(process.cwd(), "..", "research", "page_types.json");
+  return path.join(process.cwd(), "..", "content-plan", "page_types.json");
 }
 
 // ---------------------------------------------------------------------------

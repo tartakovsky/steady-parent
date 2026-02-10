@@ -874,5 +874,305 @@
       "body": "A printable step-by-step checklist for preparing your child for any big change — so they walk in feeling ready instead of blindsided.",
       "buttonText": "Send me the checklist"
     }
+  },
+  {
+    "id": "waitlist-aggression",
+    "type": "waitlist",
+    "name": "Beyond Hitting",
+    "url": "/course/beyond-hitting/",
+    "what_it_is": "Audio lessons and illustrated guides for responding to hitting, biting, and physical aggression at every age.",
+    "cta_copy": {
+      "eyebrow": "When they lash out",
+      "title": "Join the Beyond Hitting waitlist",
+      "body": "Audio lessons and illustrated guides for responding to hitting, biting, and physical aggression — so you know exactly what to do next time.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-anxiety",
+    "type": "waitlist",
+    "name": "Childhood Anxiety",
+    "url": "/course/childhood-anxiety/",
+    "what_it_is": "Audio lessons and illustrated guides for helping your child manage worry, fear, and avoidance behaviors.",
+    "cta_copy": {
+      "eyebrow": "Worry is taking over",
+      "title": "Join the Childhood Anxiety waitlist",
+      "body": "Audio lessons and illustrated guides that help your child face worry and fear instead of being ruled by them.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-big-feelings",
+    "type": "waitlist",
+    "name": "Big Feelings",
+    "url": "/course/big-feelings/",
+    "what_it_is": "Audio lessons and illustrated guides for helping kids experience and process intense emotions safely.",
+    "cta_copy": {
+      "eyebrow": "Emotions are overwhelming",
+      "title": "Join the Big Feelings waitlist",
+      "body": "Audio lessons and illustrated guides for helping kids experience intense emotions safely — without shutting them down or letting chaos take over.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-body-safety",
+    "type": "waitlist",
+    "name": "Body Safety Conversations",
+    "url": "/course/body-safety/",
+    "what_it_is": "Audio lessons and illustrated guides for age-appropriate body safety and consent conversations.",
+    "cta_copy": {
+      "eyebrow": "These talks matter early",
+      "title": "Join the Body Safety Conversations waitlist",
+      "body": "Audio lessons and illustrated guides for having age-appropriate body safety and consent conversations you actually feel prepared for.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-breaking-the-cycle",
+    "type": "waitlist",
+    "name": "Breaking the Cycle",
+    "url": "/course/breaking-the-cycle/",
+    "what_it_is": "Audio lessons and guided exercises for identifying and changing inherited parenting patterns.",
+    "cta_copy": {
+      "eyebrow": "You can parent differently",
+      "title": "Join the Breaking the Cycle waitlist",
+      "body": "Audio lessons and guided exercises for identifying the patterns you inherited and building the ones you actually want to pass on.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-discipline",
+    "type": "waitlist",
+    "name": "Discipline Without Punishment",
+    "url": "/course/discipline-without-punishment/",
+    "what_it_is": "Audio lessons and illustrated guides for setting firm limits without punishment, threats, or yelling.",
+    "cta_copy": {
+      "eyebrow": "Limits without the guilt",
+      "title": "Join the Discipline Without Punishment waitlist",
+      "body": "Audio lessons and illustrated guides for setting firm, clear boundaries without resorting to punishment, threats, or yelling.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-eating",
+    "type": "waitlist",
+    "name": "Peaceful Mealtimes",
+    "url": "/course/peaceful-mealtimes/",
+    "what_it_is": "Audio lessons and illustrated guides for ending mealtime battles using the division of responsibility approach.",
+    "cta_copy": {
+      "eyebrow": "Mealtimes are a battle",
+      "title": "Join the Peaceful Mealtimes waitlist",
+      "body": "Audio lessons and illustrated guides for ending food fights using the division of responsibility — so everyone can actually enjoy dinner.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-new-parent",
+    "type": "waitlist",
+    "name": "New Parent Survival",
+    "url": "/course/new-parent/",
+    "what_it_is": "Audio lessons and illustrated guides for surviving and enjoying the first year without losing yourself.",
+    "cta_copy": {
+      "eyebrow": "The first year",
+      "title": "Join the New Parent Survival waitlist",
+      "body": "Audio lessons and illustrated guides for surviving and genuinely enjoying the first year without losing yourself in the process.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-parenting-approach",
+    "type": "waitlist",
+    "name": "Intentional Parenting",
+    "url": "/course/intentional-parenting/",
+    "what_it_is": "Audio lessons and illustrated guides for building a parenting approach that fits your actual family.",
+    "cta_copy": {
+      "eyebrow": "Find what fits your family",
+      "title": "Join the Intentional Parenting waitlist",
+      "body": "Audio lessons and illustrated guides for building a parenting approach grounded in your real values, your real kids, and your real life.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-parenting-science",
+    "type": "waitlist",
+    "name": "The Science of Parenting",
+    "url": "/course/parenting-science/",
+    "what_it_is": "Audio lessons and illustrated breakdowns of the research behind common parenting advice.",
+    "cta_copy": {
+      "eyebrow": "Cut through the noise",
+      "title": "Join the The Science of Parenting waitlist",
+      "body": "Audio lessons and illustrated breakdowns of what the research actually says — so you can stop second-guessing every decision.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-potty-training",
+    "type": "waitlist",
+    "name": "Potty Training",
+    "url": "/course/potty-training/",
+    "what_it_is": "Audio lessons and illustrated day-by-day guides for stress-free potty training on your child's timeline.",
+    "cta_copy": {
+      "eyebrow": "Ready when they are",
+      "title": "Join the Potty Training waitlist",
+      "body": "Audio lessons and illustrated day-by-day guides for stress-free potty training that follows your child's readiness, not someone else's deadline.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-screens",
+    "type": "waitlist",
+    "name": "Screen Sanity",
+    "url": "/course/screen-sanity/",
+    "what_it_is": "Audio lessons and illustrated guides for managing screens without constant fights or guilt.",
+    "cta_copy": {
+      "eyebrow": "Screens without the fights",
+      "title": "Join the Screen Sanity waitlist",
+      "body": "Audio lessons and illustrated guides for managing screen time in a way that works for your family — without constant battles or guilt.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-siblings",
+    "type": "waitlist",
+    "name": "Sibling Harmony",
+    "url": "/course/sibling-harmony/",
+    "what_it_is": "Audio lessons and illustrated guides for reducing sibling conflict and building genuine connection between your kids.",
+    "cta_copy": {
+      "eyebrow": "They keep fighting",
+      "title": "Join the Sibling Harmony waitlist",
+      "body": "Audio lessons and illustrated guides for reducing sibling conflict and helping your kids build a relationship that lasts beyond childhood.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-sleep",
+    "type": "waitlist",
+    "name": "Sleep Solutions",
+    "url": "/course/sleep-solutions/",
+    "what_it_is": "Audio lessons and illustrated guides for building sleep routines that stick, without cry-it-out or co-sleeping guilt.",
+    "cta_copy": {
+      "eyebrow": "Everyone needs more sleep",
+      "title": "Join the Sleep Solutions waitlist",
+      "body": "Audio lessons and illustrated guides for building sleep routines that actually stick — without cry-it-out or co-sleeping guilt.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-social-skills",
+    "type": "waitlist",
+    "name": "Social Skills",
+    "url": "/course/social-skills/",
+    "what_it_is": "Audio lessons and illustrated guides for building your child's social confidence and friendship skills.",
+    "cta_copy": {
+      "eyebrow": "Friendship doesn't come easy",
+      "title": "Join the Social Skills waitlist",
+      "body": "Audio lessons and illustrated guides for building your child's social confidence so they can navigate friendships and conflict on their own.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-spirited-kids",
+    "type": "waitlist",
+    "name": "Spirited Kids",
+    "url": "/course/spirited-kids/",
+    "what_it_is": "Audio lessons and illustrated guides for parenting high-intensity children without breaking either of you.",
+    "cta_copy": {
+      "eyebrow": "High intensity, every day",
+      "title": "Join the Spirited Kids waitlist",
+      "body": "Audio lessons and illustrated guides for parenting a high-intensity child in a way that honors who they are without breaking either of you.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-staying-calm",
+    "type": "waitlist",
+    "name": "The Calm Parent",
+    "url": "/course/calm-parent/",
+    "what_it_is": "Audio lessons and guided exercises for staying regulated when your kids push every button you have.",
+    "cta_copy": {
+      "eyebrow": "You keep losing it",
+      "title": "Join the The Calm Parent waitlist",
+      "body": "Audio lessons and guided exercises for staying regulated when your kids push every button — so you can respond instead of react.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-tantrums",
+    "type": "waitlist",
+    "name": "The Tantrum Toolkit",
+    "url": "/course/tantrum-toolkit/",
+    "what_it_is": "Step-by-step audio lessons and illustrated guides for every tantrum scenario, from grocery store meltdowns to bedtime battles.",
+    "cta_copy": {
+      "eyebrow": "Meltdowns are exhausting",
+      "title": "Join the The Tantrum Toolkit waitlist",
+      "body": "Audio lessons and illustrated guides for every tantrum scenario — from grocery store meltdowns to bedtime battles and everything in between.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-teens",
+    "type": "waitlist",
+    "name": "Parenting Teens",
+    "url": "/course/parenting-teens/",
+    "what_it_is": "Audio lessons and illustrated guides for staying connected through adolescence without becoming the enemy.",
+    "cta_copy": {
+      "eyebrow": "They're pulling away",
+      "title": "Join the Parenting Teens waitlist",
+      "body": "Audio lessons and illustrated guides for staying connected through adolescence — even when they act like they want nothing to do with you.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
+  },
+  {
+    "id": "waitlist-transitions",
+    "type": "waitlist",
+    "name": "Life Transitions",
+    "url": "/course/life-transitions/",
+    "what_it_is": "Audio lessons and illustrated guides for helping kids through major life changes with less anxiety.",
+    "cta_copy": {
+      "eyebrow": "Change is coming",
+      "title": "Join the Life Transitions waitlist",
+      "body": "Audio lessons and illustrated guides for helping your child through moves, new schools, new siblings, and other big life changes with less anxiety.",
+      "buttonText": "Reserve your spot"
+    },
+    "can_promise": [],
+    "cant_promise": []
   }
 ]
