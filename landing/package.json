@@ -5,8 +5,8 @@
   "packageManager": "npm@11.7.0",
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build --webpack && cp -r .next/static .next/standalone/.next/static && cp -r public .next/standalone/public && mkdir -p .next/standalone/mdx-sources/quizzes && cp src/content/blog/posts/*.mdx .next/standalone/mdx-sources/ 2>/dev/null; cp ../research/article_link_plan.json .next/standalone/mdx-sources/ 2>/dev/null; cp ../research/cta_catalog.json .next/standalone/mdx-sources/ 2>/dev/null; cp ../research/page_types.json .next/standalone/mdx-sources/ 2>/dev/null; cp ../research/quiz_taxonomy.json .next/standalone/mdx-sources/ 2>/dev/null; cp ../research/quiz_page_types.json .next/standalone/mdx-sources/ 2>/dev/null; cp ../research/quizzes/quiz-definitions.json .next/standalone/mdx-sources/quizzes/ 2>/dev/null; true",
-    "start": "node .next/standalone/server.js",
+    "build": "next build --webpack && cp -r .next/static .next/standalone/landing/.next/static && cp -r public .next/standalone/landing/public && mkdir -p .next/standalone/mdx-sources/quizzes && cp src/content/blog/posts/*.mdx .next/standalone/mdx-sources/ 2>/dev/null; cp ../research/article_link_plan.json .next/standalone/mdx-sources/ 2>/dev/null; cp ../research/cta_catalog.json .next/standalone/mdx-sources/ 2>/dev/null; cp ../research/page_types.json .next/standalone/mdx-sources/ 2>/dev/null; cp ../research/quiz_taxonomy.json .next/standalone/mdx-sources/ 2>/dev/null; cp ../research/quiz_page_types.json .next/standalone/mdx-sources/ 2>/dev/null; cp ../research/quizzes/quiz-definitions.json .next/standalone/mdx-sources/quizzes/ 2>/dev/null; true",
+    "start": "node .next/standalone/landing/server.js",
     "start:local": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
