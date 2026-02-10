@@ -61,15 +61,18 @@ export function Navbar(): React.JSX.Element {
     const isHome = pathname === "/";
     const isAbout = pathname === "/about";
     const isBlog = pathname === "/blog" || pathname.startsWith("/blog/");
+    const isQuiz = pathname === "/quiz" || pathname.startsWith("/quiz/");
 
-    if (isHome) return [{ label: "About us", href: "/about" }, { label: "Blog", href: "/blog" }];
-    if (isAbout) return [{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }];
-    if (isBlog) return [{ label: "Home", href: "/" }, { label: "About us", href: "/about" }];
+    if (isHome) return [{ label: "About us", href: "/about" }, { label: "Blog", href: "/blog" }, { label: "Quizzes", href: "/quiz" }];
+    if (isAbout) return [{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Quizzes", href: "/quiz" }];
+    if (isBlog) return [{ label: "Home", href: "/" }, { label: "About us", href: "/about" }, { label: "Quizzes", href: "/quiz" }];
+    if (isQuiz) return [{ label: "Home", href: "/" }, { label: "About us", href: "/about" }, { label: "Blog", href: "/blog" }];
 
     return [
       { label: "Home", href: "/" },
       { label: "About us", href: "/about" },
       { label: "Blog", href: "/blog" },
+      { label: "Quizzes", href: "/quiz" },
     ];
   }, [pathname]);
 
