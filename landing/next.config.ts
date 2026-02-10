@@ -1,3 +1,4 @@
+import path from "node:path";
 import type { NextConfig } from "next";
 
 import createMDX from "@next/mdx";
@@ -20,8 +21,8 @@ const nextConfig: NextConfig = {
   // Transpile workspace packages (TypeScript source)
   transpilePackages: ["@steady-parent/content-spec"],
 
-  // Silence "workspace root" warnings when multiple lockfiles exist elsewhere.
-  outputFileTracingRoot: __dirname,
+  // Include monorepo root so hoisted node_modules are traced into standalone output.
+  outputFileTracingRoot: path.join(__dirname, ".."),
 
   // postgres.js must not be bundled by webpack
   serverExternalPackages: ["postgres"],
