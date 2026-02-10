@@ -27,9 +27,9 @@ from typing import Any, Iterable
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
-ASSIGNMENTS_PATH = REPO_ROOT / "research" / "source_to_article_assignment.json"
+ASSIGNMENTS_PATH = REPO_ROOT / "data" / "source_to_article_assignment.json"
 EXTRACTS_INDEX_PATH = REPO_ROOT / "content" / "blog" / "extracts" / "index.json"
-LINK_PLAN_PATH = REPO_ROOT / "research" / "article_link_plan.json"
+LINK_PLAN_PATH = REPO_ROOT / "data" / "article_link_plan.json"
 ARTICLE_STRUCTURE_PATH = REPO_ROOT / "research" / "seo" / "article-structure.md"
 WRITING_STYLE_PATH = REPO_ROOT / "research" / "seo" / "writing-style.md"
 

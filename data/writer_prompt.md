@@ -77,14 +77,24 @@ The CTA components below have exact prop values. Copy each one VERBATIM into you
 Include exactly 3 image placeholders using MDX comment syntax (NOT HTML comments):
 
 ```
-{/* IMAGE: [specific scene description] alt="[alt text]" */}
+{/* IMAGE: [scene description] alt="[alt text]" */}
 ```
 
 - 1 cover image: placed first, before any body content
 - 2 inline images: break up text roughly every 300-500 words
-- Style: minimalist line art, horizontal format, one continuous scene (no collages)
-- Scenes must be specific and memorable, not generic stock-art ("parent kneeling beside screaming toddler in cereal aisle" not "parent with child")
-- Can include environments, facial expressions, body language
+
+Each scene description must specify:
+
+1. **Characters** — name each by role: father, mother, toddler (boy/girl), daughter, son, baby, older sibling, etc. State approximate age (e.g., "~2", "~7") and race (white, Asian, Mexican, or Black) for every character. Vary race across the 3 images — do not make all images the same race.
+2. **Poses & actions** — what each character is physically doing: kneeling, sitting cross-legged, standing rigid, arms crossed, reaching out, etc.
+3. **Facial expressions** — specific emotions visible on each face: calm with soft eyes, screaming with mouth wide open, frowning with furrowed brows, looking up with tearful eyes, etc.
+4. **Gaze direction** — where each character is looking: at each other, at the floor, off into the distance, at an object.
+5. **Object interactions** — any objects characters hold, touch, or relate to: clutching a stuffed bear, cereal scattered on floor, hand resting on a counter.
+6. **Spatial relationship** — how characters are positioned relative to each other: kneeling at child's eye level, sitting side by side, standing three feet apart.
+
+Do NOT include art style, medium, format, or rendering instructions. No "drawn in...", "minimalist", "line art", "horizontal", "watercolor", etc.
+
+Scenes must be specific and emotionally clear — a snapshot a photographer could stage. "Mother kneeling at eye level beside screaming toddler boy in a kitchen, one hand resting on the counter, cereal scattered on the tile floor, her face calm with soft eyes, his mouth wide open and fists clenched" — not "parent with upset child."
 
 ## STRUCTURE RULES
 

@@ -18,10 +18,10 @@ This is a monorepo using NPM workspaces.
 │   ├── src/              # App router, components, and local lib
 │   ├── public/           # Static assets (Hero, testimonials, etc.)
 │   └── next.config.ts    # Standalone build configuration
-├── research/             # Competitor analysis and raw data
-│   ├── competitors/      # Research on Big Little Feelings, Good Inside, etc.
-│   └── skool/            # Lesson drafts and community seed content
-├── content/              # Shared content assets
+├── content-spec/         # Shared package: schemas, parser, validator, types
+├── data/                 # Active data files (JSON schemas, prompts) — see data/README.md
+├── research/             # Historical research, competitor analysis, generation scripts
+├── content/              # Shared content assets (source extracts)
 │   └── blogs/            # Raw and processed blog extracts
 ├── eslint.config.mjs     # Shared Linting config
 ├── tsconfig.base.json    # Shared TypeScript base configuration

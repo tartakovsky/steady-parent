@@ -20,11 +20,11 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
-PROMPT_TEMPLATE_PATH = REPO_ROOT / "research" / "writer_prompt.md"
-LINK_PLAN_PATH = REPO_ROOT / "research" / "article_link_plan.json"
-ASSIGNMENTS_PATH = REPO_ROOT / "research" / "source_to_article_assignment.json"
+PROMPT_TEMPLATE_PATH = REPO_ROOT / "data" / "writer_prompt.md"
+LINK_PLAN_PATH = REPO_ROOT / "data" / "article_link_plan.json"
+ASSIGNMENTS_PATH = REPO_ROOT / "data" / "source_to_article_assignment.json"
 EXTRACTS_INDEX_PATH = REPO_ROOT / "content" / "blog" / "extracts" / "index.json"
-CTA_CATALOG_PATH = REPO_ROOT / "research" / "cta_catalog.json"
+CTA_CATALOG_PATH = REPO_ROOT / "data" / "cta_catalog.json"
 OUTPUT_DIR = REPO_ROOT / "landing" / "src" / "content" / "blog" / "posts"
 
 

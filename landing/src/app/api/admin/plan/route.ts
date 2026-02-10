@@ -6,11 +6,11 @@ import { db } from "@/lib/db";
 import { linkPlanEntries } from "@/lib/db/schema";
 import { QuizTaxonomySchema } from "@steady-parent/content-spec";
 
-function getResearchPath(filename: string): string {
+function getDataPath(filename: string): string {
   if (process.env["NODE_ENV"] === "production") {
     return path.join(process.cwd(), "mdx-sources", filename);
   }
-  return path.join(process.cwd(), "..", "research", filename);
+  return path.join(process.cwd(), "..", "data", filename);
 }
 
 function getQuizJsonDir(): string {
@@ -31,7 +31,7 @@ export async function GET() {
 
   try {
     const taxonomyRaw = await fs.readFile(
-      getResearchPath("quiz_taxonomy.json"),
+      getDataPath("quiz_taxonomy.json"),
       "utf-8",
     );
     const taxonomy = QuizTaxonomySchema.parse(JSON.parse(taxonomyRaw));
