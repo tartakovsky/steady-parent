@@ -1,0 +1,470 @@
+{
+  "quizType": "identity",
+  "meta": {
+    "id": "parenting-love-language",
+    "slug": "parenting-love-language",
+    "title": "What's Your Parenting Love Language?",
+    "shortTitle": "Parenting Love Language Quiz",
+    "description": "Discover how you naturally show love to your kids. Are you a Quality Timer, Cheerleader, Fixer, or Bear Hugger? Take this 2-minute quiz to find your parenting love language and learn how to connect with your child on their level.",
+    "intro": "You already love your kid — that's not in question. But how you show it? That's where things get interesting. This quiz reveals your default mode for expressing affection and connection.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 8,
+    "subject": "you",
+    "shareCta": "Curious about your own parenting love language? Take the quiz.",
+    "sources": [
+      "Attachment theory research",
+      "Chapman's Five Love Languages framework",
+      "Parental warmth and responsiveness studies"
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your complete parenting love language profile",
+      "body": "Your primary type, strengths, growth edge, and how you compare across all types.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "Detailed description of your primary type",
+      "Your unique strengths as a parent",
+      "Your growth edge — one shift that changes the most",
+      "How you compare across all parenting love languages"
+    ],
+    "communityCta": {
+      "eyebrow": "Want to level up?",
+      "title": "Get connection scripts from parents who speak all the languages",
+      "body": "Real strategies for showing up the way your kid needs, from parents figuring it out daily. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "types": {
+    "quality-timer": {
+      "id": "quality-timer",
+      "name": "The Quality Timer",
+      "tagline": "You show love through presence — the phone goes down, the world gets quiet, and it's just you two.",
+      "themeColor": "#3b82f6",
+      "description": "For you, love is measured in uninterrupted minutes. You're the parent who turns off notifications during bedtime, who sits on the floor for the full tea party instead of half-listening from the couch. You don't need grand gestures — just eye contact and your full attention.",
+      "strengths": [
+        "Your kid knows when they have you, they really have you — no divided attention",
+        "You create moments your child will remember, not because they're fancy but because you were fully there",
+        "You model what it means to be present, a rare skill in a distracted world"
+      ],
+      "growthEdge": "Quality time is gold, but it's also your comfort zone. Try expanding your toolkit — sometimes a quick hug or a sticky note on their lunch says 'I love you' when schedules are tight.",
+      "encouragement": "Keep showing up the way you do. The world tells parents to do more, but you're doing something harder and better: being more. Your kid feels seen, and that's everything.",
+      "comparativeContext": "Research shows that just 15 minutes of focused attention per day builds secure attachment as effectively as hours of distracted co-presence."
+    },
+    "cheerleader": {
+      "id": "cheerleader",
+      "name": "The Cheerleader",
+      "tagline": "You show love through words — you're the parent who narrates their wins out loud so they hear how amazing they are.",
+      "themeColor": "#10b981",
+      "description": "You're fluent in encouragement. When your kid builds a block tower, you don't just notice — you say exactly what you saw and why it mattered. You verbalize pride, effort, progress. Your kid doesn't have to guess if you're proud; they hear it in real time.",
+      "strengths": [
+        "Your child has a running soundtrack of affirmation — they internalize your words and carry them forward",
+        "You're quick to repair after hard moments because you know how to name feelings and rebuild connection",
+        "You teach your kid how to speak kindly to themselves by modeling kind self-talk out loud"
+      ],
+      "growthEdge": "Words are powerful, but they're not the only way in. Some kids need a hand on their shoulder or shared silence. Watch for when your kid pulls away from praise.",
+      "encouragement": "Your words are building your child's inner voice. That's not small. Keep naming what you see, especially the effort and character stuff that nobody else notices.",
+      "comparativeContext": "Studies show that specific verbal affirmation correlates strongly with self-esteem in middle childhood and adolescence."
+    },
+    "fixer": {
+      "id": "fixer",
+      "name": "The Fixer",
+      "tagline": "You show love through action — you pack the lunch, find the lost shoe, and solve the problem before they ask.",
+      "themeColor": "#f59e0b",
+      "description": "You're the parent who anticipates needs. Hungry after practice? Snack is already in the car. Forgot their project supplies? You've got a backup plan. Love, for you, is doing the invisible work that makes their life smoother.",
+      "strengths": [
+        "You create a stable, predictable environment where your kid can relax because they trust you've got it handled",
+        "You teach responsibility through modeling — they see what it looks like to show up and follow through",
+        "Your kid feels cared for in concrete, tangible ways that are hard to miss"
+      ],
+      "growthEdge": "Doing for them works until it doesn't. Sometimes the greatest act of service is stepping back. Try narrating your care out loud so they know it's love, not logistics.",
+      "encouragement": "The world undervalues care work, but you know better. You're teaching your kid that love is a verb. Just make sure they see the verb, not just the results.",
+      "comparativeContext": "Parents who perform high levels of instrumental support report strong relationships, but research also shows kids benefit when they see the care as intentional rather than automatic."
+    },
+    "bear-hugger": {
+      "id": "bear-hugger",
+      "name": "The Bear Hugger",
+      "tagline": "You show love through touch — a squeeze, a ruffle, a hand on their back. Your affection is physical and immediate.",
+      "themeColor": "#ec4899",
+      "description": "You're tactile by default. You reach for your kid when they're sad, excited, or just walking by. A hug is your punctuation mark, your comma, your exclamation point. Physical closeness is how you say 'I'm here' without saying anything at all.",
+      "strengths": [
+        "Your child gets a steady dose of oxytocin and nervous system regulation from your touch",
+        "You offer comfort that doesn't require words — especially helpful when emotions are too big to name",
+        "You create a baseline of safety and warmth that follows your kid into the world"
+      ],
+      "growthEdge": "Not every kid wants to be touched all the time, and that can feel like rejection. Pay attention to their cues and translate your love into other forms when they need space.",
+      "encouragement": "Physical affection is one of the most direct ways to communicate safety. You're wiring your kid's nervous system for connection. That's not nothing.",
+      "comparativeContext": "Research consistently links appropriate parental physical affection with lower cortisol levels, better emotional regulation, and higher self-worth in children."
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Your kid comes home from school buzzing about acing a test they studied hard for. What's your first move?",
+      "options": [
+        {
+          "id": "q1a",
+          "text": "Drop everything and ask them to tell you all about it — you want the full play-by-play",
+          "points": {
+            "quality-timer": 5,
+            "cheerleader": 2,
+            "fixer": 0,
+            "bear-hugger": 1
+          }
+        },
+        {
+          "id": "q1b",
+          "text": "Tell them exactly what you're proud of — 'You worked so hard and it paid off. That's character.'",
+          "points": {
+            "quality-timer": 1,
+            "cheerleader": 5,
+            "fixer": 0,
+            "bear-hugger": 0
+          }
+        },
+        {
+          "id": "q1c",
+          "text": "Celebrate with their favorite treat or plan something special to mark the win",
+          "points": {
+            "quality-timer": 0,
+            "cheerleader": 0,
+            "fixer": 5,
+            "bear-hugger": 1
+          }
+        },
+        {
+          "id": "q1d",
+          "text": "Give them a huge hug or high-five — your body says it before your words do",
+          "points": {
+            "quality-timer": 1,
+            "cheerleader": 1,
+            "fixer": 0,
+            "bear-hugger": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "Your child had a rough day — they're withdrawn, quiet, maybe teary. How do you reach them?",
+      "options": [
+        {
+          "id": "q2a",
+          "text": "Sit with them in silence or do something side-by-side until they're ready to talk",
+          "points": {
+            "quality-timer": 5,
+            "cheerleader": 1,
+            "fixer": 0,
+            "bear-hugger": 2
+          }
+        },
+        {
+          "id": "q2b",
+          "text": "Name what you see — 'You seem really sad. I'm here whenever you want to talk about it.'",
+          "points": {
+            "quality-timer": 1,
+            "cheerleader": 5,
+            "fixer": 1,
+            "bear-hugger": 0
+          }
+        },
+        {
+          "id": "q2c",
+          "text": "Try to solve it — ask what happened and offer ideas or next steps",
+          "points": {
+            "quality-timer": 0,
+            "cheerleader": 1,
+            "fixer": 5,
+            "bear-hugger": 0
+          }
+        },
+        {
+          "id": "q2d",
+          "text": "Pull them close, rub their back, or let them curl up next to you",
+          "points": {
+            "quality-timer": 2,
+            "cheerleader": 0,
+            "fixer": 0,
+            "bear-hugger": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "It's a regular Tuesday morning. What's the small thing you do that says 'I love you'?",
+      "options": [
+        {
+          "id": "q3a",
+          "text": "Make time for a few minutes of connection — breakfast together, a chat in the car, something just you two",
+          "points": {
+            "quality-timer": 5,
+            "cheerleader": 1,
+            "fixer": 1,
+            "bear-hugger": 0
+          }
+        },
+        {
+          "id": "q3b",
+          "text": "Leave a note in their lunchbox or say something specific and kind before they head out",
+          "points": {
+            "quality-timer": 0,
+            "cheerleader": 5,
+            "fixer": 1,
+            "bear-hugger": 0
+          }
+        },
+        {
+          "id": "q3c",
+          "text": "Make sure they have what they need — lunch packed, backpack ready, shoes by the door",
+          "points": {
+            "quality-timer": 0,
+            "cheerleader": 0,
+            "fixer": 5,
+            "bear-hugger": 1
+          }
+        },
+        {
+          "id": "q3d",
+          "text": "Hug them goodbye or ruffle their hair as they leave — some kind of physical send-off",
+          "points": {
+            "quality-timer": 1,
+            "cheerleader": 0,
+            "fixer": 1,
+            "bear-hugger": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "Your kid built something, drew something, or made something they're excited about. How do you respond?",
+      "options": [
+        {
+          "id": "q4a",
+          "text": "Stop what you're doing, sit down, and ask them to explain how they made it",
+          "points": {
+            "quality-timer": 5,
+            "cheerleader": 2,
+            "fixer": 0,
+            "bear-hugger": 0
+          }
+        },
+        {
+          "id": "q4b",
+          "text": "Point out specific details you love and tell them why it's cool or impressive",
+          "points": {
+            "quality-timer": 1,
+            "cheerleader": 5,
+            "fixer": 0,
+            "bear-hugger": 0
+          }
+        },
+        {
+          "id": "q4c",
+          "text": "Help them finish it, find supplies for the next version, or figure out how to display it",
+          "points": {
+            "quality-timer": 0,
+            "cheerleader": 0,
+            "fixer": 5,
+            "bear-hugger": 1
+          }
+        },
+        {
+          "id": "q4d",
+          "text": "Give them a squeeze or pat on the shoulder while you admire it together",
+          "points": {
+            "quality-timer": 1,
+            "cheerleader": 1,
+            "fixer": 0,
+            "bear-hugger": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "You've had a long day and you're running on fumes. How do you still show up for your kid?",
+      "options": [
+        {
+          "id": "q5a",
+          "text": "Carve out 10 minutes of focused time — even if it's just sitting together — because that's what matters most",
+          "points": {
+            "quality-timer": 5,
+            "cheerleader": 0,
+            "fixer": 1,
+            "bear-hugger": 1
+          }
+        },
+        {
+          "id": "q5b",
+          "text": "Tell them you're tired but you love them and you'll have more energy tomorrow",
+          "points": {
+            "quality-timer": 0,
+            "cheerleader": 5,
+            "fixer": 1,
+            "bear-hugger": 1
+          }
+        },
+        {
+          "id": "q5c",
+          "text": "Make sure the essentials are handled — dinner, bath, bedtime — even if it's bare-bones",
+          "points": {
+            "quality-timer": 1,
+            "cheerleader": 0,
+            "fixer": 5,
+            "bear-hugger": 0
+          }
+        },
+        {
+          "id": "q5d",
+          "text": "Curl up on the couch together or hold them close during bedtime routine",
+          "points": {
+            "quality-timer": 2,
+            "cheerleader": 0,
+            "fixer": 0,
+            "bear-hugger": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "Your kid is nervous before a big event — recital, game, first day, whatever. How do you help?",
+      "options": [
+        {
+          "id": "q6a",
+          "text": "Spend extra time with them beforehand — talk it through, just be there, give them your presence",
+          "points": {
+            "quality-timer": 5,
+            "cheerleader": 1,
+            "fixer": 1,
+            "bear-hugger": 1
+          }
+        },
+        {
+          "id": "q6b",
+          "text": "Remind them of past wins and tell them you believe in them — give them the words to carry",
+          "points": {
+            "quality-timer": 1,
+            "cheerleader": 5,
+            "fixer": 0,
+            "bear-hugger": 0
+          }
+        },
+        {
+          "id": "q6c",
+          "text": "Prep everything they might need — practice together, pack their bag, eliminate logistical stress",
+          "points": {
+            "quality-timer": 0,
+            "cheerleader": 0,
+            "fixer": 5,
+            "bear-hugger": 1
+          }
+        },
+        {
+          "id": "q6d",
+          "text": "Hug them tight, hold their hand, or give them a physical reassurance that you're with them",
+          "points": {
+            "quality-timer": 1,
+            "cheerleader": 0,
+            "fixer": 1,
+            "bear-hugger": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "When you think about your best parenting moments, what stands out?",
+      "options": [
+        {
+          "id": "q7a",
+          "text": "The times you stopped everything else and just existed together — no agenda, just connection",
+          "points": {
+            "quality-timer": 5,
+            "cheerleader": 0,
+            "fixer": 0,
+            "bear-hugger": 2
+          }
+        },
+        {
+          "id": "q7b",
+          "text": "The times you said exactly the right thing — they needed to hear it and you delivered",
+          "points": {
+            "quality-timer": 0,
+            "cheerleader": 5,
+            "fixer": 0,
+            "bear-hugger": 0
+          }
+        },
+        {
+          "id": "q7c",
+          "text": "The times you handled the hard stuff so they didn't have to — you carried the load and made it work",
+          "points": {
+            "quality-timer": 0,
+            "cheerleader": 0,
+            "fixer": 5,
+            "bear-hugger": 1
+          }
+        },
+        {
+          "id": "q7d",
+          "text": "The times you held them through a meltdown, cuddled after a nightmare, or just wrapped them up",
+          "points": {
+            "quality-timer": 1,
+            "cheerleader": 0,
+            "fixer": 0,
+            "bear-hugger": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "text": "If your kid were describing you to someone else, what would they probably say?",
+      "options": [
+        {
+          "id": "q8a",
+          "text": "'My parent always makes time for me, even when they're busy.'",
+          "points": {
+            "quality-timer": 5,
+            "cheerleader": 1,
+            "fixer": 1,
+            "bear-hugger": 0
+          }
+        },
+        {
+          "id": "q8b",
+          "text": "'My parent always knows what to say to make me feel better.'",
+          "points": {
+            "quality-timer": 0,
+            "cheerleader": 5,
+            "fixer": 0,
+            "bear-hugger": 1
+          }
+        },
+        {
+          "id": "q8c",
+          "text": "'My parent always takes care of everything — I never have to worry.'",
+          "points": {
+            "quality-timer": 1,
+            "cheerleader": 0,
+            "fixer": 5,
+            "bear-hugger": 0
+          }
+        },
+        {
+          "id": "q8d",
+          "text": "'My parent gives the best hugs and always wants to be close.'",
+          "points": {
+            "quality-timer": 0,
+            "cheerleader": 0,
+            "fixer": 1,
+            "bear-hugger": 5
+          }
+        }
+      ]
+    }
+  ]
+}

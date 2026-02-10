@@ -1,0 +1,344 @@
+{
+  "quizType": "readiness",
+  "meta": {
+    "id": "solid-foods-readiness",
+    "slug": "solid-foods-readiness",
+    "title": "Is Your Baby Ready for Solid Foods?",
+    "shortTitle": "Solid Foods Readiness Quiz",
+    "description": "Assess whether your baby shows the physical, oral motor, interest, and digestive signs of solid foods readiness. Based on WHO feeding guidelines and developmental research.",
+    "intro": "Most pediatricians say six months, but readiness has more to do with observable developmental milestones than the calendar. This quiz looks at four dimensions that predict whether starting solids will go smoothly or turn into a choking hazard and food-on-the-floor nightmare.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 10,
+    "scoreLabel": "Readiness",
+    "subject": "your baby",
+    "levelLabels": {
+      "high": "Ready",
+      "medium": "Getting Close",
+      "low": "Not Yet"
+    },
+    "ageRange": {
+      "min": 4,
+      "max": 8,
+      "unit": "months"
+    },
+    "sources": [
+      "AAP infant feeding guidelines",
+      "WHO complementary feeding recommendations",
+      "CDC infant developmental milestones"
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full picture?",
+      "title": "Get your baby's complete solid foods readiness profile",
+      "body": "See exactly where your baby stands across physical, oral motor, interest, and digestive readiness, plus a concrete action plan for what to do next, whether that means starting now or waiting.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "Domain-by-domain readiness breakdown with specific strengths and gaps",
+      "Personalized next steps based on your baby's actual readiness pattern",
+      "Honest assessment of what to watch out for when starting solids",
+      "Context on how your baby's readiness compares to typical timelines"
+    ],
+    "communityCta": {
+      "eyebrow": "Starting solids questions?",
+      "title": "Get real answers from parents navigating the same feeding phase",
+      "body": "A private group of parents sharing recipes, troubleshooting gagging, and keeping each other sane through the mess. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "domains": {
+    "physical": {
+      "id": "physical",
+      "name": "Physical Readiness",
+      "maxPoints": 8,
+      "thresholds": {
+        "high": 6,
+        "medium": 3
+      }
+    },
+    "oral-motor": {
+      "id": "oral-motor",
+      "name": "Oral Motor Development",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    },
+    "interest": {
+      "id": "interest",
+      "name": "Interest & Engagement",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    },
+    "digestive": {
+      "id": "digestive",
+      "name": "Digestive Readiness",
+      "maxPoints": 7,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "physical",
+      "text": "Can your baby sit upright with minimal or no support?",
+      "subtext": "In a high chair or on the floor. Head wobble is fine, but torso should be steady.",
+      "options": [
+        { "id": "q1a", "text": "Yes, sits upright with no support for several minutes", "points": 3 },
+        { "id": "q1b", "text": "Sits upright with a cushion or minimal back support", "points": 2 },
+        { "id": "q1c", "text": "Cannot sit upright without full support or slumps over", "points": 0 }
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "physical",
+      "text": "Does your baby have good head and neck control?",
+      "subtext": "Can hold head steady when pulled to sitting or when upright.",
+      "options": [
+        { "id": "q2a", "text": "Yes, head is steady and controlled in all positions", "points": 3 },
+        { "id": "q2b", "text": "Mostly steady but still some wobbling when tired", "points": 1 },
+        { "id": "q2c", "text": "Head still flops or lags when pulled to sitting", "points": 0 }
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "physical",
+      "text": "Can your baby bring objects to their mouth with their hands?",
+      "subtext": "Toys, teethers, your fingers. Intentional hand-to-mouth coordination.",
+      "options": [
+        { "id": "q3a", "text": "Yes, regularly grabs and brings things to mouth", "points": 2 },
+        { "id": "q3b", "text": "Sometimes manages it but not consistent", "points": 1 },
+        { "id": "q3c", "text": "Hands do not reliably reach mouth yet", "points": 0 }
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "oral-motor",
+      "text": "Has your baby's tongue thrust reflex started to fade?",
+      "subtext": "The reflex where the tongue automatically pushes things out of the mouth. Offer a spoon and see if they can close lips around it instead of pushing it out.",
+      "options": [
+        { "id": "q4a", "text": "Tongue thrust is gone or minimal. Accepts spoon without pushing it out.", "points": 3 },
+        { "id": "q4b", "text": "Still some tongue thrusting but less than before", "points": 1 },
+        { "id": "q4c", "text": "Strong tongue thrust. Everything gets pushed right back out.", "points": 0 }
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "oral-motor",
+      "text": "Does your baby make chewing motions when watching others eat?",
+      "subtext": "Mimics jaw movements, even without food. Not just sucking motions.",
+      "options": [
+        { "id": "q5a", "text": "Yes, clearly mimics chewing or opens and closes mouth", "points": 3 },
+        { "id": "q5b", "text": "Occasional jaw movement but not consistent mimicking", "points": 1 },
+        { "id": "q5c", "text": "No chewing motions yet", "points": 0 }
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "interest",
+      "text": "Does your baby watch you intently while you eat?",
+      "subtext": "Tracks the spoon from plate to mouth. Leans forward. Stares.",
+      "options": [
+        { "id": "q6a", "text": "Yes, intensely interested in every bite I take", "points": 3 },
+        { "id": "q6b", "text": "Glances occasionally but not fixated", "points": 1 },
+        { "id": "q6c", "text": "Not particularly interested in what I am eating", "points": 0 }
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "interest",
+      "text": "Does your baby reach for your food?",
+      "subtext": "Grabs at your plate, tries to intercept the spoon, swipes at food.",
+      "options": [
+        { "id": "q7a", "text": "Yes, actively tries to grab food off my plate", "points": 3 },
+        { "id": "q7b", "text": "Occasionally reaches but not persistent", "points": 1 },
+        { "id": "q7c", "text": "No reaching for food yet", "points": 0 }
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "digestive",
+      "text": "Does your baby seem hungrier than usual even after a full milk feeding?",
+      "subtext": "Still rooting, fussing, or acting unsatisfied after draining a bottle or nursing session.",
+      "options": [
+        { "id": "q8a", "text": "Yes, seems hungry even after full feedings", "points": 2 },
+        { "id": "q8b", "text": "Occasionally seems to want more but not consistent", "points": 1 },
+        { "id": "q8c", "text": "Satisfied with milk alone, no extra hunger cues", "points": 0 }
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "digestive",
+      "text": "How old is your baby?",
+      "subtext": "Digestive enzymes and gut maturity develop on a timeline. Age is not the only signal, but it matters.",
+      "options": [
+        { "id": "q9a", "text": "Six months or older", "points": 3 },
+        { "id": "q9b", "text": "Five months", "points": 1 },
+        { "id": "q9c", "text": "Four months or younger", "points": 0 }
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "digestive",
+      "text": "Is your baby's growth steady and on track according to your pediatrician?",
+      "subtext": "Not about percentiles. Just that weight and length are progressing as expected.",
+      "options": [
+        { "id": "q10a", "text": "Yes, steady growth with no concerns flagged", "points": 2 },
+        { "id": "q10b", "text": "Some minor concerns but nothing major", "points": 1 },
+        { "id": "q10c", "text": "Growth is being monitored or flagged as slow", "points": 0 }
+      ]
+    }
+  ],
+  "domainContent": {
+    "physical": {
+      "high": {
+        "level": "high",
+        "headline": "Body is ready for this",
+        "detail": "Your baby has the trunk stability, head control, and hand coordination that safe eating requires. Sitting upright and bringing things to the mouth are the physical prerequisites, and they have them.",
+        "strength": "Strong physical foundation. Your baby's body can handle the mechanics of eating solids safely."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Physical control is developing",
+        "detail": "Some signs of trunk strength and coordination are showing up, but not rock solid yet. This often improves quickly over a few weeks, so a short wait might make a big difference.",
+        "concern": "Physical stability is still inconsistent. Starting now could increase choking risk and mealtime frustration."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Body needs more time",
+        "detail": "Sitting stability and head control are still maturing. This is developmental, not effort-based. No amount of propping with pillows replaces trunk strength.",
+        "concern": "Physical readiness is essential for safe eating. Sitting upright without support reduces choking risk significantly."
+      }
+    },
+    "oral-motor": {
+      "high": {
+        "level": "high",
+        "headline": "Mouth is ready for texture",
+        "detail": "Your baby's tongue thrust is fading and chewing motions are appearing. These oral motor shifts are what make the transition from liquid to texture physically possible.",
+        "strength": "Strong oral motor development. Your baby's mouth can move food around instead of just pushing it out."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Oral skills are emerging",
+        "detail": "The tongue thrust is starting to fade, but chewing is still in early stages. Offering tastes without pressure helps refine these skills without frustration.",
+        "concern": "Oral motor coordination is partial. Expect more gagging and food-spitting as the tongue learns what to do."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Tongue thrust still strong",
+        "detail": "Your baby's mouth is still wired to push things out, which is exactly what it should do at this stage. The tongue thrust reflex fades on its own between four and six months.",
+        "concern": "Starting solids before the tongue thrust fades usually means most of the food ends up on the bib, not in the baby."
+      }
+    },
+    "interest": {
+      "high": {
+        "level": "high",
+        "headline": "Motivated from the inside",
+        "detail": "Your baby is watching you eat, reaching for food, and opening their mouth when offered a spoon. Internal curiosity is the single biggest predictor of a smooth transition to solids.",
+        "strength": "Strong internal interest. When a baby wants food, the whole process goes faster and with less resistance."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Some curiosity, not urgency",
+        "detail": "There are flickers of interest but no strong drive yet. Eating together as a family and letting your baby watch you eat can tip the balance without pressure.",
+        "concern": "Interest is flickering but not consistent. Starting solids without internal curiosity often turns into a refusal battle."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Not feeling it yet",
+        "detail": "Your baby is content with milk and not particularly interested in what you are eating. Pushing food now is likely to create aversion rather than enthusiasm.",
+        "concern": "Without internal interest, feeding becomes something done to the baby rather than with them. Curiosity often appears suddenly."
+      }
+    },
+    "digestive": {
+      "high": {
+        "level": "high",
+        "headline": "Gut is developmentally ready",
+        "detail": "Your baby's digestive system has matured enough to handle food beyond milk. Gut enzymes, immune function, and nutrient absorption all develop on a timeline, and your baby is in the window.",
+        "strength": "Strong digestive readiness. Your baby's gut can process solids without undue stress or allergy risk."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Digestive system is maturing",
+        "detail": "Your baby is approaching the developmental window for solids but not quite there yet. A few more weeks allows the gut lining and enzyme production to catch up.",
+        "concern": "Digestive maturity is still developing. Starting too early can increase the risk of allergies and digestive upset."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Gut needs more time",
+        "detail": "Your baby's digestive system is still designed for milk only. The enzymes and gut lining that handle solids typically develop closer to six months, not before.",
+        "concern": "Starting solids before four months is associated with higher allergy risk and digestive issues. The gut lining is not yet ready."
+      }
+    }
+  },
+  "results": {
+    "ready": {
+      "id": "ready",
+      "themeColor": "#16a34a",
+      "scoreRange": {
+        "min": 20,
+        "max": 27
+      },
+      "headline": "Green Light",
+      "subheadline": "Your baby has the physical, oral motor, and motivational pieces in place. The window is open.",
+      "explanation": "When a baby shows readiness across all four dimensions, starting solids tends to be messier than frustrating. You are not guaranteed a neat eater, but you are working with biology instead of against it. Pick a calm day, keep expectations low, and let your baby's curiosity do the heavy lifting.",
+      "nextSteps": [
+        "Start with one meal a day at a time when your baby is alert but not starving",
+        "Offer soft, mashable foods or baby-led weaning options like steamed broccoli or avocado slices",
+        "Keep the tone curious and low-pressure. Gagging is normal and different from choking.",
+        "Introduce common allergens early and one at a time, watching for reactions"
+      ],
+      "watchOutFor": "Even ready babies refuse food during teething, illness, or developmental leaps. A week of food-throwing after two weeks of enthusiasm is normal, not a sign that solids failed.",
+      "encouragement": "You waited for the right moment, which is the hardest part. Trust what you are seeing and let your baby set the pace. Most families who start at this readiness level have a baby eating family meals within a few months.",
+      "comparativeContext": "Babies who begin solids at high readiness typically transition smoothly with fewer refusals and less gagging along the way."
+    },
+    "getting-close": {
+      "id": "getting-close",
+      "themeColor": "#e8c840",
+      "scoreRange": {
+        "min": 11,
+        "max": 19
+      },
+      "headline": "Almost There",
+      "subheadline": "Some strong readiness signs are present, but a few pieces are still falling into place.",
+      "explanation": "Your baby is showing genuine progress toward readiness, but one or two domains need more time. Starting now is possible with extra patience, but waiting two to four weeks often converts a chaotic process into a smooth one. Check the domain breakdown below to see exactly what is lagging and whether it is something that improves with time or with gentle exposure.",
+      "nextSteps": [
+        "Let your baby sit in the high chair during family meals without food. Just watch and explore.",
+        "Offer tastes without expectation. A lick of mashed banana or a spoon to chew on is exposure, not a meal.",
+        "Focus on the lagging domain. If it is physical, just wait. If it is interest, model eating without pushing.",
+        "Retake this quiz in three to four weeks to check whether the gaps have closed"
+      ],
+      "watchOutFor": "The temptation to just start anyway is real, especially when pediatricians say six months like it is a hard deadline. But partial readiness plus pressure usually equals food refusal and mealtime battles.",
+      "encouragement": "Your baby is closer than it might feel. The signs that are already present are real progress, and the ones that are missing tend to show up quickly once they are developmentally ready. A few more weeks of patience now can save months of frustration later.",
+      "comparativeContext": "Most babies in this range develop full readiness within one to two months. Parents who wait for that shift report smoother introductions and less food aversion.",
+      "retakeAdvice": "Retake in 3-4 weeks to check progress"
+    },
+    "not-yet": {
+      "id": "not-yet",
+      "themeColor": "#d05597",
+      "scoreRange": {
+        "min": 0,
+        "max": 10
+      },
+      "headline": "Give It Time",
+      "subheadline": "Your baby's body and brain are still building the foundation. Milk is enough for now.",
+      "explanation": "Readiness signs are not consistently showing up yet, and that is completely normal at this stage. Research is clear that babies who start solids before they are ready have more choking incidents, more food refusals, and slower transitions than babies who start later when the signs are present. This is not a reflection of your baby's development or your parenting. It is just biology doing its thing.",
+      "nextSteps": [
+        "Zero pressure. Avoid making solids a topic of expectation or worry.",
+        "Keep offering breast milk or formula without any shame. Your baby is getting what they need.",
+        "Casually introduce the concept by sitting your baby in the high chair during family meals, no food required",
+        "Watch for readiness signs to emerge over the next month or two"
+      ],
+      "watchOutFor": "Pediatricians and baby food companies will try to convince you that six months is a hard start date. It is not. The research on early feeding is unambiguous: readiness signs matter more than the calendar.",
+      "encouragement": "The average age for starting solids is between five and seven months, and the range of normal is wide. You are not behind. You are making the evidence-based choice to wait for readiness, which is the approach most likely to succeed.",
+      "comparativeContext": "Most babies develop consistent readiness signs between five and seven months. Waiting for those signs is associated with easier transitions and fewer feeding issues.",
+      "retakeAdvice": "Retake in 4-6 weeks"
+    }
+  }
+}

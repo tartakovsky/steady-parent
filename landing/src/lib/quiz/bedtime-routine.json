@@ -1,0 +1,460 @@
+{
+  "quizType": "readiness",
+  "meta": {
+    "id": "bedtime-routine",
+    "slug": "bedtime-routine",
+    "title": "Build Your Child's Bedtime Routine",
+    "shortTitle": "Bedtime Routine Builder",
+    "description": "Discover which wind-down strategies, environment tweaks, and connection rituals actually help your child transition to sleep by mapping their natural bedtime regulation style.",
+    "intro": "Not every kid needs the same bedtime approach. Some need to bounce before bed, others need deep pressure and low lights, some need to talk through the whole day first. This quiz maps your child's bedtime needs so you stop fighting and start matching.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 10,
+    "scoreLabel": "Routine",
+    "subject": "your child",
+    "resultDisplay": "recommendation",
+    "levelLabels": {
+      "high": "Dialed In",
+      "medium": "Taking Shape",
+      "low": "Needs Work"
+    },
+    "sectionLabels": {
+      "strengths": "What's Working"
+    },
+    "ageRange": {
+      "min": 2,
+      "max": 8,
+      "unit": "years"
+    },
+    "sources": [
+      "AAP healthy sleep habits guidelines",
+      "National Sleep Foundation pediatric sleep recommendations",
+      "Zones of Regulation bedtime protocols"
+    ],
+    "previewCta": {
+      "eyebrow": "What actually works for your kid's bedtime?",
+      "title": "Get your child's personalized bedtime routine blueprint",
+      "body": "Your full results show which bedtime strategies are working, which areas need attention, and specific tweaks matched to your child's regulation style for smoother transitions to sleep.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "Which bedtime domains are working vs. still rough for your child",
+      "Specific strategies matched to their strongest areas",
+      "Where to focus your energy to make bedtime less of a battle",
+      "Approaches worth trying that you might not have considered"
+    ],
+    "communityCta": {
+      "eyebrow": "Beyond the routine",
+      "title": "Scripts and strategies for when bedtime falls apart",
+      "body": "Bite-sized bedtime scripts for the moments when nothing is working, plus real routines from parents who cracked the code. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "domains": {
+    "wind-down": {
+      "id": "wind-down",
+      "name": "Wind-Down Activities",
+      "maxPoints": 9,
+      "thresholds": {
+        "high": 7,
+        "medium": 4
+      }
+    },
+    "environment": {
+      "id": "environment",
+      "name": "Environment Setup",
+      "maxPoints": 9,
+      "thresholds": {
+        "high": 7,
+        "medium": 4
+      }
+    },
+    "connection": {
+      "id": "connection",
+      "name": "Connection Ritual",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    },
+    "sleep-transition": {
+      "id": "sleep-transition",
+      "name": "Sleep Transition",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "wind-down",
+      "text": "What happens when you try calming activities before bed — reading, quiet play, gentle stretching?",
+      "subtext": "Think about whether they help your child's body shift down a gear.",
+      "options": [
+        {
+          "id": "q1a",
+          "text": "They settle right into it and visibly calm within minutes",
+          "points": 3
+        },
+        {
+          "id": "q1b",
+          "text": "They cooperate but it doesn't seem to change their energy level much",
+          "points": 1
+        },
+        {
+          "id": "q1c",
+          "text": "They resist or it seems to wind them up more than down",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "wind-down",
+      "text": "Does your child need movement before bed — running around, jumping, roughhousing — or does it make sleep harder?",
+      "subtext": "Some kids need to burn energy before they can settle; others get too revved up.",
+      "options": [
+        {
+          "id": "q2a",
+          "text": "They need big movement earlier in the evening but not right before bed",
+          "points": 3
+        },
+        {
+          "id": "q2b",
+          "text": "It varies — sometimes it helps, sometimes it backfires",
+          "points": 1
+        },
+        {
+          "id": "q2c",
+          "text": "Movement before bed makes falling asleep noticeably harder",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "wind-down",
+      "text": "How does your child respond to sensory wind-down activities like warm baths, lotion massage, or soft music?",
+      "options": [
+        {
+          "id": "q3a",
+          "text": "They actively seek them out and they visibly soften their energy",
+          "points": 3
+        },
+        {
+          "id": "q3b",
+          "text": "They tolerate them but don't seem particularly calmed by them",
+          "points": 2
+        },
+        {
+          "id": "q3c",
+          "text": "They resist or these activities don't fit into our routine",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "environment",
+      "text": "Is your child's sleep space optimized — dark, cool, quiet, comfortable, free of stimulating toys?",
+      "options": [
+        {
+          "id": "q4a",
+          "text": "Yes, we've dialed in the room and it makes a visible difference",
+          "points": 3
+        },
+        {
+          "id": "q4b",
+          "text": "Mostly, but there are still some distractions or comfort issues",
+          "points": 1
+        },
+        {
+          "id": "q4c",
+          "text": "The room is chaotic or we share space so control is limited",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "environment",
+      "text": "How much control does your child have over their sleep environment — light level, blanket weight, comfort objects, white noise?",
+      "subtext": "Some kids need agency over their sensory inputs to feel safe enough to sleep.",
+      "options": [
+        {
+          "id": "q5a",
+          "text": "They can adjust things themselves and it helps them settle",
+          "points": 3
+        },
+        {
+          "id": "q5b",
+          "text": "They have some preferences but don't manage them independently",
+          "points": 1
+        },
+        {
+          "id": "q5c",
+          "text": "We control the environment entirely or they don't seem to care",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "environment",
+      "text": "Does changing the bedtime environment — traveling, sleeping at someone else's house — completely derail your child's sleep?",
+      "options": [
+        {
+          "id": "q6a",
+          "text": "They adapt pretty well with a few key comfort items",
+          "points": 3
+        },
+        {
+          "id": "q6b",
+          "text": "It's rougher but they manage after the first night",
+          "points": 2
+        },
+        {
+          "id": "q6c",
+          "text": "Environmental changes completely unravel their sleep",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "connection",
+      "text": "What happens when you skip the bedtime connection ritual — reading together, talking about the day, singing, cuddles?",
+      "options": [
+        {
+          "id": "q7a",
+          "text": "They explicitly request it or visibly struggle to settle without it",
+          "points": 3
+        },
+        {
+          "id": "q7b",
+          "text": "They notice but can manage without it occasionally",
+          "points": 2
+        },
+        {
+          "id": "q7c",
+          "text": "It doesn't seem to make a difference to their settling",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "connection",
+      "text": "Does your child need to talk through the day's events, worries, or plans for tomorrow before they can relax into sleep?",
+      "options": [
+        {
+          "id": "q8a",
+          "text": "Absolutely — processing the day is a non-negotiable part of their wind-down",
+          "points": 3
+        },
+        {
+          "id": "q8b",
+          "text": "Sometimes they need it, but not every night",
+          "points": 1
+        },
+        {
+          "id": "q8c",
+          "text": "They shut down verbally at bedtime or talking revs them up",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "sleep-transition",
+      "text": "How does your child actually fall asleep once the routine is done?",
+      "options": [
+        {
+          "id": "q9a",
+          "text": "They settle independently — we say goodnight and they fall asleep on their own",
+          "points": 3
+        },
+        {
+          "id": "q9b",
+          "text": "They need us nearby but not actively engaging — presence but not intervention",
+          "points": 2
+        },
+        {
+          "id": "q9c",
+          "text": "They need active help — rocking, patting, lying with them until they're out",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "sleep-transition",
+      "text": "If your child wakes up in the middle of the night, can they get back to sleep without your help?",
+      "options": [
+        {
+          "id": "q10a",
+          "text": "Usually yes — they might call out but can self-soothe back down",
+          "points": 3
+        },
+        {
+          "id": "q10b",
+          "text": "Sometimes, depending on what woke them and how alert they are",
+          "points": 1
+        },
+        {
+          "id": "q10c",
+          "text": "No — night waking means we're fully involved until they're back asleep",
+          "points": 0
+        }
+      ]
+    }
+  ],
+  "domainContent": {
+    "wind-down": {
+      "high": {
+        "level": "high",
+        "headline": "Wind-down activities are working",
+        "detail": "Your child responds well to the transition activities you've built into the pre-bed routine. Their nervous system knows how to shift down a gear when you offer the right inputs. This is the foundation everything else builds on.",
+        "strength": "Keep the wind-down sequence consistent. Try: dim lights 30 minutes before bed, calm sensory activities like warm baths or gentle stretching, quiet play or reading as the final step before teeth brushing."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Wind-down is inconsistent",
+        "detail": "Your child sometimes responds to calming pre-bed activities but it's not reliable. They might need a longer transition window, different sensory inputs, or more consistency in timing and order. The pathway is there, it just needs strengthening.",
+        "concern": "Try extending the window to 45-60 minutes instead of 20. Add heavy work early (pushing a laundry basket, wall push-ups) before quiet activities. Keep the sequence identical every night for three weeks to build the neural pathway."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Wind-down activities aren't landing",
+        "detail": "The standard calm-down activities before bed either don't work for your child or you haven't found the right sequence yet. Some kids need movement first, others need deep pressure, some need total sensory deprivation. The mismatch is the problem, not the kid.",
+        "concern": "Try opposite strategies. If quiet activities fail, try big movement 60-90 minutes before bed. If sensory calming doesn't work, try verbal processing. Match the strategy to their regulation style from other domains."
+      }
+    },
+    "environment": {
+      "high": {
+        "level": "high",
+        "headline": "Sleep environment is dialed in",
+        "detail": "Your child's sleep space supports rather than sabotages sleep. The room conditions — darkness, temperature, comfort, predictability — match their sensory needs. This is huge. Environment is the easiest domain to control and the most impactful when you get it right.",
+        "strength": "Keep protecting what's working. Build a travel kit with portable versions: blackout curtain clips, their pillow, white noise machine app, favorite blanket. Use the same setup at grandparents' houses and hotels to maintain consistency."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Environment is mostly right",
+        "detail": "The room setup is functional but not optimized. There are probably a few sensory elements your child is still fighting — too much light leaking in, temperature slightly off, mattress not quite comfortable. Small tweaks can make a big difference here.",
+        "concern": "Ask your child what bothers them. Try: blackout curtains if any light intrudes, a fan for white noise and temperature, weighted blanket for deep pressure, removing all toys from line of sight."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Environment is working against you",
+        "detail": "The sleep space itself is undermining your efforts. Maybe the room is too stimulating, too bright, too noisy, shared with a sibling, or missing key comfort elements. Environment is the easiest domain to fix once you know what needs changing.",
+        "concern": "Start with the basics: make it darker, cooler, quieter. Remove stimulating toys and screens from the room entirely. Add one comfort element your child can control — a nightlight they can turn on, a sound machine with options."
+      }
+    },
+    "connection": {
+      "high": {
+        "level": "high",
+        "headline": "Connection ritual is solid",
+        "detail": "Your child needs — and gets — meaningful parent-child bonding at bedtime. Reading together, talking about the day, singing, cuddling — whatever your ritual is, it's meeting a real attachment need. This isn't stalling; it's regulation through relationship.",
+        "strength": "Honor the ritual even when you're tired. Keep it predictable but not rigid. Try: two books always, or ten minutes of talking, or three songs. The time limit matters as much as the connection itself."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Connection ritual is taking shape",
+        "detail": "Your child sometimes needs the bedtime connection piece but it's not consistent or fully developed. They might need more one-on-one time, or a clearer ritual structure, or simply permission to verbally process the day before sleep.",
+        "concern": "Build a predictable connection window. Try: 'two things about today' sharing, reading one chapter together, or five minutes of back scratches. The ritual itself matters less than the reliability of your presence."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Connection ritual isn't clicking",
+        "detail": "Either you haven't built a bedtime connection ritual yet, or your child doesn't seem to need it for settling. Some kids are fine with a quick goodnight. Others need connection but are getting it earlier in the evening, not at bedtime itself.",
+        "concern": "Try five minutes of undivided attention right before bed — not reading or talking, just sitting together. Offer back scratches, hand-holding, or quiet co-presence. Test whether they need connection earlier in the evening instead."
+      }
+    },
+    "sleep-transition": {
+      "high": {
+        "level": "high",
+        "headline": "Sleep transition is independent",
+        "detail": "Your child can fall asleep without active parental intervention. They've developed the neurological capacity to move from awake to asleep on their own. This is the ultimate goal of bedtime routines — and you've built it.",
+        "strength": "Protect the skill. When traveling or sick, give extra support without recreating dependence. Try: sit nearby without touching, leave before they're fully asleep, remind them they know how to do this."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Sleep transition needs scaffolding",
+        "detail": "Your child can fall asleep but still needs your presence or minimal help to make the final transition. They're partway to independence — they don't need rocking or constant touch, but they need to know you're there. This is progress, not failure.",
+        "concern": "Gradually fade your involvement. Try: sitting farther from the bed each week, leaving before they're fully asleep, using a gradual check-in schedule instead of staying the whole time."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Sleep transition requires full support",
+        "detail": "Your child cannot yet fall asleep independently. They need active help — rocking, patting, lying with them, feeding to sleep. This is developmentally normal for toddlers but gets exhausting as they age. The pathway to independence exists; you just haven't built it yet.",
+        "concern": "Start with the other domains first. Kids can't learn to self-soothe to sleep if the wind-down, environment, and connection aren't working. Once those are solid, try the gradual fading approach: less movement, less touch, more distance."
+      }
+    }
+  },
+  "results": {
+    "dialed-in": {
+      "id": "dialed-in",
+      "themeColor": "#16a34a",
+      "scoreRange": {
+        "min": 21,
+        "max": 30
+      },
+      "headline": "Routine is Working",
+      "subheadline": "Your child's bedtime routine matches their actual needs across multiple domains — and it shows in how they settle.",
+      "explanation": "Your child has a solid bedtime routine that hits the key regulation channels. The wind-down works, the environment supports sleep, the connection is meaningful, and the transition to sleep is manageable. This doesn't mean bedtime is perfect every night — nothing with kids is — but the structure is sound and your child's nervous system knows what to expect.",
+      "nextSteps": [
+        "Protect the routine's consistency — same sequence, same timing, even on weekends when possible",
+        "Build portable versions of the key elements for travel — blackout clips, their pillow, a condensed ritual",
+        "When bedtime falls apart, return to the routine rather than inventing new strategies",
+        "Start fading your involvement in the sleep transition if that's still hands-on — your child has the foundation to build more independence"
+      ],
+      "watchOutFor": "Strong routines can become rigid. If your child panics when something changes, gently introduce small variations during calm periods so they learn the principle matters more than the exact sequence.",
+      "encouragement": "You built this by paying attention to what actually works for your kid instead of forcing a one-size-fits-all bedtime script. That responsiveness is the skill. The routine is just the result.",
+      "comparativeContext": "Children with consistent, well-matched bedtime routines fall asleep faster and sleep more soundly than kids without routines, and the benefits compound over time."
+    },
+    "taking-shape": {
+      "id": "taking-shape",
+      "themeColor": "#ca8a04",
+      "scoreRange": {
+        "min": 11,
+        "max": 20
+      },
+      "headline": "Routine is Emerging",
+      "subheadline": "You've got pieces of a bedtime routine working, but gaps in other areas are keeping it from fully clicking.",
+      "explanation": "Your child's bedtime routine has some strengths but also clear gaps. Maybe the wind-down activities work but the environment is chaotic, or the connection is solid but they can't transition to sleep without you. The domain breakdown shows where to focus. Bedtime routines become reliable when all four domains work together — right now you're partway there.",
+      "nextSteps": [
+        "Look at your lowest-scoring domain and commit to two weeks of focused work there",
+        "Keep the parts that are working exactly the same — don't change what's already helping",
+        "Track what works: quick notes after bedtime about what went smoothly and what didn't",
+        "Try the specific strategies listed in your lowest domain above and notice even small improvements"
+      ],
+      "watchOutFor": "Don't blow up the whole routine to fix one piece. If the wind-down is working, keep it. Just add the missing element — environment tweaks, connection time, or transition scaffolding — on top of what's already solid.",
+      "encouragement": "You're in the messy middle where some nights are smooth and some are disasters. That's not failure — it means you've identified what works and what doesn't. The domain breakdown is your map for what to fix next.",
+      "comparativeContext": "Most parents of toddlers and preschoolers score in this range. Bedtime routines typically solidify within 3-4 weeks of consistent practice in the weakest domain."
+    },
+    "needs-work": {
+      "id": "needs-work",
+      "themeColor": "#dc2626",
+      "scoreRange": {
+        "min": 0,
+        "max": 10
+      },
+      "headline": "Routine Isn't Built Yet",
+      "subheadline": "Bedtime is still a struggle because the routine doesn't match your child's regulation needs — or there isn't a consistent routine at all.",
+      "explanation": "Your child doesn't have a functional bedtime routine yet. Either the structure isn't there, or what you're doing doesn't match their nervous system. Low scores across multiple domains mean bedtime is probably chaotic, exhausting, and unpredictable. This is fixable, but it requires building the routine from scratch rather than tweaking what's already there.",
+      "nextSteps": [
+        "Start with environment — make the sleep space darker, cooler, quieter, and less stimulating. This is the easiest domain to control.",
+        "Add one wind-down activity and do it at the exact same time every night for two weeks. Try: warm bath at 7:15, then books, then bed.",
+        "Build in five minutes of connection — talking, reading, singing, cuddling — right before you leave the room.",
+        "Accept that the sleep transition will require your full support for now. You can't teach independence until the other pieces are in place.",
+        "If nothing improves after 4-6 weeks of consistent routine, talk to your pediatrician about whether sleep issues or sensory processing differences need assessment."
+      ],
+      "watchOutFor": "Low scores don't mean your child is broken or that you're failing. Some kids have sensory profiles or developmental stages that make standard bedtime advice useless. The routine has to match the kid, not the other way around.",
+      "encouragement": "Bedtime is a disaster right now, which means you have nowhere to go but up. The domain breakdown shows you exactly where to start. Pick one domain — probably environment or wind-down — and build it deliberately. Small wins compound.",
+      "comparativeContext": "About one in four parents report that bedtime is a consistent struggle. In most cases, the issue is routine mismatch rather than a child who 'won't sleep' — the right structure just hasn't been built yet."
+    }
+  }
+}

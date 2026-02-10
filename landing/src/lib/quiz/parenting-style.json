@@ -5,35 +5,35 @@
     "slug": "parenting-style",
     "title": "What's Your Parenting Style?",
     "shortTitle": "Parenting Style Quiz",
-    "description": "Discover your dominant parenting style based on validated parenting research. Rate 18 everyday behaviors to see your unique blend of Steady Guide, Firm Protector, and Free Spirit.",
-    "intro": "Rate how often you do each of these 18 parenting behaviors. Your results show which style drives most of your decisions — and where you might be overcompensating.",
+    "description": "Discover your primary parenting approach based on validated parenting style research. Rate how often each behavior applies to you across four dimensions to see your unique blend.",
+    "intro": "Rate how often you do each of these 20 parenting behaviors. No right answers — just an honest look at which style drives most of your decisions.",
     "estimatedTime": "3 minutes",
-    "questionCount": 18,
+    "questionCount": 20,
     "scoreLabel": "Style",
     "subject": "you",
     "shareCta": "Curious what your parenting style is? Find out in 3 minutes.",
     "sources": [
       "Baumrind parenting typology",
-      "Maccoby & Martin framework",
+      "Maccoby & Martin four-style framework",
       "PSDQ (Parenting Styles and Dimensions Questionnaire)"
     ],
     "previewCta": {
       "eyebrow": "Want the full breakdown?",
-      "title": "Get your complete parenting style profile",
-      "body": "See your primary style, detailed dimension descriptions, your unique strengths, growth edges, and how all three styles compare in your profile.",
-      "buttonText": "Send my profile"
+      "title": "Get your complete parenting style profile across all four dimensions",
+      "body": "See which dimension leads your profile, how all four styles compare in your blend, your specific strengths, and the growth edge that would shift the most for you.",
+      "buttonText": "Send my results"
     },
     "previewPromises": [
-      "Your primary parenting style and what it looks like in daily life",
-      "How all three dimensions compare in your profile",
-      "Strengths specific to your dominant style",
+      "Your primary parenting style and what it looks like day-to-day",
+      "How all four dimensions compare in your profile",
+      "Concrete strengths specific to your dominant style",
       "Your growth edge — the one shift that changes the most",
       "How your blend compares to other parents"
     ],
     "communityCta": {
-      "eyebrow": "Now what?",
-      "title": "Get strategies matched to your style",
-      "body": "Bite-sized scripts, real-talk explanations, and a private group of parents figuring out the same stuff you are.",
+      "eyebrow": "Beyond the profile",
+      "title": "Get parenting scripts matched to your style",
+      "body": "A private group with bite-sized scripts and long-form explanations from parents figuring it out. We are there with you daily too.",
       "buttonText": "Join the community"
     }
   },
@@ -44,48 +44,63 @@
   "dimensions": {
     "steady-guide": {
       "id": "steady-guide",
-      "name": "The Steady Guide",
+      "name": "Steady Guide",
       "themeColor": "#00b86b",
       "tagline": "You explain the why, hold the line, and somehow keep your voice level at bedtime.",
-      "description": "You parent like someone who actually read the manual and then rewrote the parts that didn't make sense. You set clear expectations but you also listen — genuinely listen, not the performative nodding kind. Your kids know the rules AND the reasoning behind them, which means they argue with you using your own logic.",
+      "description": "You parent with a blend of warmth and structure that researchers call authoritative but you call Tuesday. You set clear expectations and then actually explain the reasoning. Your kids know the rules and the logic behind them, which means they argue using your own words back at you.",
       "strengths": [
-        "You give reasons for your rules, which builds critical thinking even when it's exhausting",
-        "You adjust your approach when something isn't working instead of doubling down",
-        "You validate feelings without caving on boundaries — the parenting tightrope walk"
+        "You give reasons for your rules, building critical thinking even when it is exhausting",
+        "You adjust your approach when something clearly is not working instead of doubling down",
+        "You validate feelings without caving on boundaries — the hardest tightrope in parenting"
       ],
-      "growthEdge": "You can over-explain. Sometimes a kid needs a firm \"because I said so\" more than a TED Talk on natural consequences. Not every moment requires a teaching opportunity.",
-      "encouragement": "Research consistently links this style to kids who are self-regulated, socially competent, and academically resilient. That doesn't mean your house isn't chaos — it means the chaos has a foundation. Keep trusting the process even on days when it looks like it's not working.",
-      "comparativeContext": "Studies find that roughly 35-40% of parents in Western cultures lean primarily toward this balanced, reasoning-based approach."
+      "growthEdge": "You can over-explain. Sometimes a kid needs a firm no more than a ten-minute seminar on natural consequences. Not every moment needs to be a teaching opportunity.",
+      "encouragement": "Research consistently links this approach to children who are self-regulated, socially competent, and academically resilient. That does not mean your house is calm — it means the chaos has a foundation. Keep trusting the process on the days it looks like nothing is working.",
+      "comparativeContext": "Studies find roughly 35-40% of parents in Western cultures lean primarily toward this balanced, reasoning-based approach."
     },
     "firm-protector": {
       "id": "firm-protector",
-      "name": "The Firm Protector",
+      "name": "Firm Protector",
       "themeColor": "#e07937",
       "tagline": "Your house has rules, your kids know them, and bedtime is not a negotiation.",
-      "description": "You believe structure IS love, and frankly, you're not wrong. Your kids don't wonder what's expected of them because you've made it crystal clear. You're the parent who follows through on consequences even when it would be easier to let it slide — because you know that consistency now saves everyone grief later.",
+      "description": "You believe structure is love, and you are not wrong. Your kids never wonder what is expected because you have made it unmistakably clear. You follow through on consequences even when it would be easier to let it slide, because you know that consistency now saves everyone grief later.",
       "strengths": [
         "You follow through on consequences consistently, which builds genuine security",
-        "You set clear expectations so your kids aren't guessing at the rules",
+        "You set clear expectations so your kids are never guessing at the rules",
         "You provide predictable routines that help anxious or spirited kids feel safe"
       ],
-      "growthEdge": "Consistency is your superpower, but rigidity is its shadow. When your kid pushes back, check whether they need compliance or to be heard. One conversation won't unravel your authority.",
-      "encouragement": "Your kids have structure, and structure is genuinely protective. The research is clear that children with consistent boundaries feel safer and develop better self-regulation. The next level for you isn't less firmness — it's adding more warmth to the firmness you already have.",
-      "comparativeContext": "About 25-30% of parents primarily use a structure-first approach, and it's especially common in families that value respect and responsibility."
+      "growthEdge": "Consistency is your superpower, but rigidity is its shadow. When your kid pushes back, check whether they need compliance or to feel heard. One conversation will not unravel your authority.",
+      "encouragement": "Your kids have structure, and structure is genuinely protective. Children with consistent boundaries feel safer and develop better self-regulation. The next step for you is not less firmness — it is adding more warmth alongside the firmness you already have.",
+      "comparativeContext": "About 25-30% of parents primarily use a structure-first approach, especially common in families that value respect and responsibility."
     },
-    "free-spirit": {
-      "id": "free-spirit",
-      "name": "The Free Spirit",
+    "gentle-connector": {
+      "id": "gentle-connector",
+      "name": "Gentle Connector",
       "themeColor": "#9c83f2",
-      "tagline": "You'd rather say yes than no, and your kids have opinions about everything.",
-      "description": "You prioritize your child's experience, autonomy, and emotional world — sometimes at the expense of your own sanity. You're the parent who lets them wear the costume to the grocery store, who negotiates bedtime like it's a peace treaty, and who genuinely believes kids deserve a voice. Your home is warm, creative, and occasionally a little lawless.",
+      "tagline": "You would rather say yes than no, and your kids feel safe telling you anything.",
+      "description": "You prioritize your child's emotional world, autonomy, and sense of being heard — sometimes at the expense of your own sanity. You negotiate bedtime like a peace treaty and genuinely believe kids deserve a voice in decisions that affect them. Your home is warm, expressive, and occasionally a little lawless.",
       "strengths": [
-        "You create an environment where your kids feel safe to express anything",
-        "You prioritize emotional connection, which builds secure attachment",
-        "You encourage independence and creative thinking by defaulting to yes"
+        "You create an environment where your kids feel safe to express anything without judgment",
+        "You prioritize emotional connection, which builds secure attachment from the ground up",
+        "You encourage independence and creative thinking by defaulting to yes when possible"
       ],
-      "growthEdge": "Saying yes to everything means your kid doesn't know where the edges are. They need guardrails — not to limit them, but so they have something solid to push against when the world gets overwhelming.",
-      "encouragement": "Your kids know they're loved and that their feelings matter. That's not small. Research shows warm, responsive parenting predicts secure attachment and emotional intelligence. The growth isn't becoming stricter — it's getting comfortable with the discomfort of holding a boundary when your kid is upset about it.",
-      "comparativeContext": "Roughly 20-25% of parents lean primarily toward a freedom-first, connection-driven style."
+      "growthEdge": "Saying yes to everything means your kid does not know where the edges are. They need guardrails — not to limit them, but so they have something solid to push against when the world gets overwhelming.",
+      "encouragement": "Your kids know they are loved and that their feelings matter. That is not small. Warm, responsive parenting predicts secure attachment and emotional intelligence. The growth is not becoming stricter — it is getting comfortable with the discomfort of holding a boundary when your child is upset about it.",
+      "comparativeContext": "Roughly 20-25% of parents lean primarily toward a connection-driven, flexibility-first style."
+    },
+    "free-range-navigator": {
+      "id": "free-range-navigator",
+      "name": "Free-Range Navigator",
+      "themeColor": "#3b82f6",
+      "tagline": "You trust your kid to figure things out, and they are more capable than most people expect.",
+      "description": "You give your child significant autonomy because you genuinely believe kids learn best through their own experience — scraped knees, bad choices, and all. You are not absent; you are strategically hands-off. You step in for safety, but you resist the urge to micromanage every social interaction and homework assignment.",
+      "strengths": [
+        "You foster genuine independence by resisting the urge to hover and fix everything",
+        "You trust your child's ability to solve their own problems, which builds real confidence",
+        "You model calm under pressure by not treating every childhood setback as an emergency"
+      ],
+      "growthEdge": "There is a line between healthy independence and a kid who stops asking for help. Check in more often than you think you need to — not to control, but to connect.",
+      "encouragement": "Your kids are building problem-solving skills and resilience that helicopter-parented children often lack. Independence is a genuine gift. The calibration is making sure your child knows the door is always open, even if they rarely knock on it.",
+      "comparativeContext": "About 15-20% of parents lean primarily toward an autonomy-first approach, though it is more common among parents of older children and teens."
     }
   },
   "statements": [
@@ -101,8 +116,8 @@
     },
     {
       "id": "s3",
-      "text": "I let my child choose how to spend their free time without much direction.",
-      "dimension": "free-spirit"
+      "text": "I let my child work through a conflict with another kid before stepping in.",
+      "dimension": "free-range-navigator"
     },
     {
       "id": "s4",
@@ -112,49 +127,49 @@
     },
     {
       "id": "s5",
-      "text": "I adjust my parenting approach when I can see it's not working.",
-      "dimension": "steady-guide"
+      "text": "I drop what I am doing to comfort my child even when they are overreacting.",
+      "dimension": "gentle-connector"
     },
     {
       "id": "s6",
+      "text": "I adjust my parenting approach when I can see it is not working.",
+      "dimension": "steady-guide"
+    },
+    {
+      "id": "s7",
+      "text": "I let my child handle disappointments on their own without rushing to fix things.",
+      "dimension": "free-range-navigator"
+    },
+    {
+      "id": "s8",
       "text": "I stick to the same bedtime routine regardless of what my child wants.",
       "dimension": "firm-protector"
     },
     {
-      "id": "s7",
-      "text": "I let my child eat what they want rather than battle over food.",
-      "dimension": "free-spirit"
+      "id": "s9",
+      "text": "I negotiate rules with my child instead of just setting them.",
+      "dimension": "gentle-connector"
     },
     {
-      "id": "s8",
+      "id": "s10",
       "text": "I acknowledge my child's feelings before redirecting their behavior.",
       "dimension": "steady-guide"
     },
     {
-      "id": "s9",
-      "text": "I follow through on what I said would happen, even when it's inconvenient.",
-      "dimension": "firm-protector"
-    },
-    {
-      "id": "s10",
-      "text": "I negotiate rules with my child instead of just setting them.",
-      "dimension": "free-spirit"
-    },
-    {
       "id": "s11",
-      "text": "I lose my temper and yell to get my child to listen.",
+      "text": "I raise my voice to get my child to listen.",
       "dimension": "steady-guide",
       "reversed": true
     },
     {
       "id": "s12",
-      "text": "I let my child stay up late if they're having a good time.",
-      "dimension": "free-spirit"
+      "text": "I let my child decide how to spend their weekend without much input from me.",
+      "dimension": "free-range-navigator"
     },
     {
       "id": "s13",
-      "text": "I involve my child in making family decisions that affect them.",
-      "dimension": "steady-guide"
+      "text": "I let my child stay up late if they are having a good time.",
+      "dimension": "gentle-connector"
     },
     {
       "id": "s14",
@@ -163,13 +178,13 @@
     },
     {
       "id": "s15",
-      "text": "I drop everything to comfort my child even when they're overreacting.",
-      "dimension": "free-spirit"
+      "text": "I involve my child in making family decisions that affect them.",
+      "dimension": "steady-guide"
     },
     {
       "id": "s16",
-      "text": "I listen to my child's side of things before deciding on a consequence.",
-      "dimension": "steady-guide"
+      "text": "I let my child eat whatever they want rather than battle over food.",
+      "dimension": "gentle-connector"
     },
     {
       "id": "s17",
@@ -178,8 +193,19 @@
     },
     {
       "id": "s18",
-      "text": "I threaten consequences I know I won't follow through on.",
-      "dimension": "free-spirit",
+      "text": "I hover over my child during playdates to make sure nothing goes wrong.",
+      "dimension": "free-range-navigator",
+      "reversed": true
+    },
+    {
+      "id": "s19",
+      "text": "I let my child walk to a nearby friend's house without an adult.",
+      "dimension": "free-range-navigator"
+    },
+    {
+      "id": "s20",
+      "text": "I threaten consequences I know I will not follow through on.",
+      "dimension": "gentle-connector",
       "reversed": true
     }
   ]

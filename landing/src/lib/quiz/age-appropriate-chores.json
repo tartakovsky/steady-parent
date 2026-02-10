@@ -1,0 +1,459 @@
+{
+  "quizType": "readiness",
+  "meta": {
+    "id": "age-appropriate-chores",
+    "slug": "age-appropriate-chores",
+    "title": "What Chores Can Your Child Handle?",
+    "shortTitle": "Chore Readiness Quiz",
+    "description": "Find out which household tasks your child is actually ready to take on across self-care, kitchen help, household tasks, and organization skills. Stop guessing and start matching chores to capability.",
+    "intro": "Not every kid can handle the same tasks at the same age. This quiz maps your child's capability across four areas so you know which chores will build competence and which will just trigger power struggles.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 10,
+    "scoreLabel": "Capability",
+    "subject": "your child",
+    "resultDisplay": "recommendation",
+    "levelLabels": {
+      "high": "Independent",
+      "medium": "With Help",
+      "low": "Not Ready"
+    },
+    "sectionLabels": {
+      "strengths": "Ready to Take On"
+    },
+    "ageRange": {
+      "min": 3,
+      "max": 12,
+      "unit": "years"
+    },
+    "sources": [
+      "Montessori practical life curriculum",
+      "AAP developmental milestones for independence",
+      "CDC self-care skill benchmarks"
+    ],
+    "previewCta": {
+      "eyebrow": "Which chores match your kid's ability?",
+      "title": "Get your child's personalized chore recommendations",
+      "body": "Your full results show which household tasks your child can handle independently, which need scaffolding, and which to skip for now. Plus specific chore suggestions matched to each capability area.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "Which capability areas your child is ready to take on independently",
+      "Specific chore recommendations matched to their current skills",
+      "Tasks that need parental support versus ones they can own",
+      "Areas to build up gradually over the next 6-12 months"
+    ],
+    "communityCta": {
+      "eyebrow": "Need the actual systems?",
+      "title": "Get chore routines and scripts from parents who made it work",
+      "body": "Real chore charts, resistance scripts, and explanations of how to build capability without battles. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "domains": {
+    "self-care": {
+      "id": "self-care",
+      "name": "Self-Care Tasks",
+      "maxPoints": 9,
+      "thresholds": {
+        "high": 7,
+        "medium": 4
+      }
+    },
+    "kitchen": {
+      "id": "kitchen",
+      "name": "Kitchen Help",
+      "maxPoints": 9,
+      "thresholds": {
+        "high": 7,
+        "medium": 4
+      }
+    },
+    "household": {
+      "id": "household",
+      "name": "Household Contribution",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    },
+    "organization": {
+      "id": "organization",
+      "name": "Organization Skills",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "self-care",
+      "text": "Can your child get completely dressed in weather-appropriate clothing without your help or prompting?",
+      "subtext": "This includes choosing clothes, managing buttons/zippers, and putting shoes on the correct feet",
+      "options": [
+        {
+          "id": "q1a",
+          "text": "Yes, they can handle it start to finish on their own",
+          "points": 3
+        },
+        {
+          "id": "q1b",
+          "text": "They can dress themselves but need help choosing or with fasteners",
+          "points": 1
+        },
+        {
+          "id": "q1c",
+          "text": "They need hands-on help with most or all of it",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "self-care",
+      "text": "How does your child handle their own basic hygiene tasks — brushing teeth, washing hands and face, using the toilet independently?",
+      "options": [
+        {
+          "id": "q2a",
+          "text": "They do all of these without reminders and do them properly",
+          "points": 3
+        },
+        {
+          "id": "q2b",
+          "text": "They can do the motions but need reminders or supervision to do them thoroughly",
+          "points": 2
+        },
+        {
+          "id": "q2c",
+          "text": "They need step-by-step help or still require direct assistance",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "self-care",
+      "text": "Can your child make their bed and pack their own bag for school or activities with all necessary items?",
+      "subtext": "Making the bed means pulling up covers and straightening pillows, not perfect hospital corners",
+      "options": [
+        {
+          "id": "q3a",
+          "text": "Yes, they do both without needing to be told what to include",
+          "points": 3
+        },
+        {
+          "id": "q3b",
+          "text": "They can make the bed but need a checklist or reminders for packing",
+          "points": 1
+        },
+        {
+          "id": "q3c",
+          "text": "Both tasks require direct parental involvement",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "kitchen",
+      "text": "Can your child set the table with plates, utensils, and napkins in the right places for the number of people eating?",
+      "options": [
+        {
+          "id": "q4a",
+          "text": "Yes, they know the setup and can do it independently",
+          "points": 3
+        },
+        {
+          "id": "q4b",
+          "text": "They can do it with verbal reminders about what goes where",
+          "points": 1
+        },
+        {
+          "id": "q4c",
+          "text": "They need hands-on guidance or can't manage it yet",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "kitchen",
+      "text": "How does your child do with simple food prep tasks — spreading butter, pouring cereal and milk, making a sandwich, peeling a banana?",
+      "options": [
+        {
+          "id": "q5a",
+          "text": "They can handle all of these safely and competently",
+          "points": 3
+        },
+        {
+          "id": "q5b",
+          "text": "They can do some but need help with precision tasks or safety supervision",
+          "points": 2
+        },
+        {
+          "id": "q5c",
+          "text": "They aren't ready for independent food prep yet",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "kitchen",
+      "text": "Can your child load dishes into the dishwasher or wash simple items at the sink without breaking things or needing constant instruction?",
+      "options": [
+        {
+          "id": "q6a",
+          "text": "Yes, they do it carefully and know where things go",
+          "points": 3
+        },
+        {
+          "id": "q6b",
+          "text": "They try but need reminders to be gentle or where to place items",
+          "points": 1
+        },
+        {
+          "id": "q6c",
+          "text": "Too risky or they show no interest in helping",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "household",
+      "text": "Can your child clean up their toys, books, and belongings when asked, putting things back where they belong?",
+      "options": [
+        {
+          "id": "q7a",
+          "text": "Yes, they know where things go and do it without step-by-step direction",
+          "points": 3
+        },
+        {
+          "id": "q7b",
+          "text": "They'll do it but need reminders or help sorting what goes where",
+          "points": 2
+        },
+        {
+          "id": "q7c",
+          "text": "Cleanup is a battle or they can't manage it without constant supervision",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "household",
+      "text": "Can your child help with basic household tasks like wiping surfaces, sweeping small areas, or sorting laundry by color?",
+      "options": [
+        {
+          "id": "q8a",
+          "text": "Yes, they can do these tasks well enough to actually help",
+          "points": 3
+        },
+        {
+          "id": "q8b",
+          "text": "They try but the execution needs work or frequent redirection",
+          "points": 1
+        },
+        {
+          "id": "q8c",
+          "text": "These tasks are still beyond their motor skills or attention span",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "organization",
+      "text": "Does your child keep track of their own belongings — shoes, jacket, backpack, water bottle — without you constantly hunting for lost items?",
+      "options": [
+        {
+          "id": "q9a",
+          "text": "Yes, they know where their stuff is and can find it when needed",
+          "points": 3
+        },
+        {
+          "id": "q9b",
+          "text": "Sometimes, but I still spend time locating things they've misplaced",
+          "points": 2
+        },
+        {
+          "id": "q9c",
+          "text": "I'm basically their personal item tracker",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "organization",
+      "text": "Can your child follow a multi-step routine or cleanup sequence without you narrating every single step?",
+      "subtext": "For example: put dirty clothes in hamper, hang up towel, put toys in bins",
+      "options": [
+        {
+          "id": "q10a",
+          "text": "Yes, they can execute a routine with 3+ steps independently",
+          "points": 3
+        },
+        {
+          "id": "q10b",
+          "text": "They can do it but need verbal reminders for each step",
+          "points": 1
+        },
+        {
+          "id": "q10c",
+          "text": "Multi-step tasks fall apart without constant parental oversight",
+          "points": 0
+        }
+      ]
+    }
+  ],
+  "domainContent": {
+    "self-care": {
+      "high": {
+        "level": "high",
+        "headline": "Independent with self-care",
+        "detail": "Your child can handle their own body tasks without you standing over them. This is executive function in action: they can sequence tasks, maintain quality, and self-monitor. These skills transfer directly to other domains.",
+        "strength": "Independent dressing and hygiene routines, making their bed, packing their own bag for school, choosing weather-appropriate clothing, managing personal items like glasses or retainers."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Self-care with scaffolding",
+        "detail": "Your child can execute the motions but needs external structure to do them consistently or thoroughly. They have the motor skills but haven't internalized the routine yet. This is normal and fixable with practice.",
+        "concern": "Dressing with a visual checklist, hygiene tasks with timers or songs, making the bed with simplified bedding setup, packing with a printed list of what to include."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Self-care still developing",
+        "detail": "These tasks require hands-on help or close supervision. Your child may lack the motor coordination, sequencing ability, or self-monitoring skills to do them independently yet. This is age-appropriate for younger kids in this range.",
+        "concern": "Focus on one self-care task at a time. Start with getting dressed: lay out clothes the night before, practice on weekends when you're not rushed, celebrate small wins like putting on their own socks."
+      }
+    },
+    "kitchen": {
+      "high": {
+        "level": "high",
+        "headline": "Competent kitchen helper",
+        "detail": "Your child can contribute meaningfully to meal prep and cleanup. They understand kitchen safety, can follow multi-step food tasks, and work carefully with breakables. This builds responsibility and practical life skills.",
+        "strength": "Setting and clearing the table, loading/unloading dishwasher, making simple snacks and breakfasts, pouring drinks without spilling, spreading and assembling, stirring and measuring with supervision."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Kitchen tasks with support",
+        "detail": "Your child can help in the kitchen but needs reminders about safety, technique, or next steps. They're building competence but aren't fully autonomous yet. Supervised practice is the bridge from here to independent.",
+        "concern": "Setting the table with a placemat template showing where things go, simple food prep with you nearby, rinsing dishes before loading with reminders to be gentle, pouring from smaller containers."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Kitchen help not ready yet",
+        "detail": "Kitchen tasks are either too risky or too frustrating given your child's current motor skills and impulse control. This doesn't mean exclude them from the kitchen — it means adjust expectations and start smaller.",
+        "concern": "Start with no-risk tasks: tearing lettuce for salad, pressing the blender button while you hold it, stirring cold ingredients, arranging items on a plate. Build competence before adding complexity or breakables."
+      }
+    },
+    "household": {
+      "high": {
+        "level": "high",
+        "headline": "Capable household contributor",
+        "detail": "Your child can take on real household tasks and actually lighten your load. They understand what 'clean' looks like, can work independently for short periods, and follow through on assigned tasks. This is genuine capability, not performative helping.",
+        "strength": "Tidying their own spaces independently, sorting laundry by color, wiping tables and counters, sweeping or vacuuming small areas, taking out bathroom trash, feeding pets, putting away groceries in designated spots."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Household tasks with guidance",
+        "detail": "Your child will help when asked but needs oversight to do tasks thoroughly or correctly. They have the physical ability but lack the quality control or initiative. Practice builds both.",
+        "concern": "Toy cleanup with bin labels and a timer, table wiping with a demo of how clean is clean enough, laundry sorting with color cards as reference, pet care with a checklist."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Household tasks beyond reach",
+        "detail": "Most household chores are too complex or require sustained attention your child doesn't have yet. Forcing these tasks creates power struggles without building competence. Match tasks to actual ability.",
+        "concern": "Start with one-step contributions in the same room as you: putting books on the shelf, throwing trash in the bin, putting dirty clothes in the hamper. Build duration and complexity gradually."
+      }
+    },
+    "organization": {
+      "high": {
+        "level": "high",
+        "headline": "Emerging executive function",
+        "detail": "Your child can keep track of belongings, follow routines, and manage multi-step tasks without constant parental narration. This is executive function maturing: working memory, task initiation, and self-monitoring are all coming online.",
+        "strength": "Following morning and bedtime routines with minimal prompts, keeping track of personal items, executing multi-step cleanup sequences, using a visual schedule or checklist independently, managing time for simple tasks."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Organization with external support",
+        "detail": "Your child can organize and execute when you provide the structure — checklists, timers, designated spots, verbal prompts. They need the scaffolding but can use it effectively. This is the stage where external systems become internal habits.",
+        "concern": "Routines with visual checklists, labeled bins and hooks for belongings, a launch pad by the door for school items, timers for transitions, one-step-at-a-time instructions during cleanup."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Executive function still building",
+        "detail": "Multi-step tasks, object permanence for belongings, and routine execution are all still developing. Your child needs step-by-step direction and can't yet hold a sequence in working memory. This is neurologically normal for younger kids.",
+        "concern": "Simplify everything. One hook for their jacket at their eye level. One bin for toys. One-step instructions: 'Put your shoes in the basket.' Repeat the same sequence daily until it's muscle memory."
+      }
+    }
+  },
+  "results": {
+    "capable": {
+      "id": "capable",
+      "themeColor": "#16a34a",
+      "scoreRange": {
+        "min": 21,
+        "max": 30
+      },
+      "headline": "Ready for Real Responsibility",
+      "subheadline": "Your child has the skills to take on meaningful household tasks — the kind that actually contribute, not just keep them busy.",
+      "explanation": "Your child scores high across multiple capability areas, which means they're ready for genuine responsibility. The chores you assign can be real contributions to the household, not just token tasks. Kids at this level benefit from ownership over specific domains rather than random one-off requests. The domain breakdown shows where they're strongest.",
+      "nextSteps": [
+        "Assign specific daily tasks tied to their strongest domains — morning routine, table setting, their own laundry, pet care",
+        "Stop reminding and start using natural consequences — if they don't pack their bag, they experience the result at school",
+        "Increase complexity in their strong areas: move from 'clear your plate' to 'load the dishwasher after dinner'",
+        "Introduce time-based responsibility: tasks that need doing by a certain time without parental prompting"
+      ],
+      "watchOutFor": "Kids with high capability often get assigned more work without corresponding autonomy or recognition. Make sure responsibility comes with privileges and genuine acknowledgment, not just more chores.",
+      "encouragement": "You've built real competence. Now the work is resisting the urge to micromanage or jump in when they don't do it your way. Capability grows when kids own the outcome, mess-ups included.",
+      "comparativeContext": "Children who take on household responsibility at this level develop stronger executive function, time management, and work ethic. They also report higher self-efficacy because they can see their tangible contribution."
+    },
+    "developing": {
+      "id": "developing",
+      "themeColor": "#ca8a04",
+      "scoreRange": {
+        "min": 11,
+        "max": 20
+      },
+      "headline": "Building Toward Independence",
+      "subheadline": "Your child can handle some tasks but still needs scaffolding — which is exactly where most kids this age land.",
+      "explanation": "Your child has capability in some areas but isn't fully independent yet. This is the sweet spot for skill-building: they can execute with support, which means the neural pathways are forming. The domain breakdown shows which areas are ready for practice and which need more time. Focus beats breadth here.",
+      "nextSteps": [
+        "Pick their highest-scoring domain and assign one daily task from it — make it non-negotiable and consistent",
+        "Use visual supports: checklists, routine charts, labeled bins, timers — external structure becomes internal habit",
+        "Resist the urge to jump in and fix it when they do it slowly or imperfectly — competence requires repetition with feedback",
+        "Pair tasks with natural timing cues: 'After breakfast, make your bed' links the task to an existing habit"
+      ],
+      "watchOutFor": "The biggest trap here is inconsistency. Assigning chores when you remember or when you're annoyed teaches nothing except that chores are punishment. Daily repetition in one area beats sporadic demands across many.",
+      "encouragement": "Your kid is at the stage where they can do it but won't without structure. That's not defiance — it's executive function in progress. The systems you build now become the self-directed habits later.",
+      "comparativeContext": "Most children ages 5-9 score in this range. With consistent practice in their strongest domain, families typically see meaningful independence within 6-8 weeks."
+    },
+    "early-stage": {
+      "id": "early-stage",
+      "themeColor": "#dc2626",
+      "scoreRange": {
+        "min": 0,
+        "max": 10
+      },
+      "headline": "Foundations First",
+      "subheadline": "Your child isn't ready for most household tasks yet — which means expectations need adjusting, not your kid.",
+      "explanation": "Your child scores low across most domains, meaning household chores as you picture them aren't developmentally appropriate yet. This doesn't mean they can't contribute — it means the tasks need to match their actual ability. Kids at this stage need one-step tasks, physical co-presence, and lots of repetition before anything sticks.",
+      "nextSteps": [
+        "Start with one single task in their highest-scoring domain and do it with them daily for two weeks before expecting independence",
+        "Simplify the environment: one hook, one bin, one drawer — organization systems need to be brain-dead obvious",
+        "Break multi-step tasks into single actions: not 'clean up your toys,' but 'put the blocks in this bin'",
+        "Focus on self-care tasks first — dressing, hygiene, managing their own body — before household contributions"
+      ],
+      "watchOutFor": "Assigning chores your child can't do and then punishing non-compliance doesn't build responsibility. It builds shame and power struggles. Match the task to the capability, then scaffold up.",
+      "encouragement": "Low scores here are information, not failure. Some kids develop these skills later. Some need more explicit teaching. Some have executive function or motor coordination differences that require different approaches. Start where they are.",
+      "comparativeContext": "About 20% of children in the 3-6 age range score in this tier. Most catch up to independent task execution by ages 7-9 with consistent practice and appropriate scaffolding."
+    }
+  }
+}

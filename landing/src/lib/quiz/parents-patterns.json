@@ -1,0 +1,471 @@
+{
+  "quizType": "identity",
+  "meta": {
+    "id": "parents-patterns",
+    "slug": "parents-patterns",
+    "title": "Are You Repeating Your Parents' Patterns?",
+    "shortTitle": "Parents' Patterns Quiz",
+    "description": "Discover which patterns from your own upbringing show up in your parenting. Whether you replay childhood memories, rebel against them, or chart your own course — recognize the blueprint you're following and decide what to keep.",
+    "intro": "Your parenting doesn't emerge from a vacuum. This quiz reveals how your own childhood shapes the way you discipline, respond to big feelings, and set boundaries.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 8,
+    "subject": "you",
+    "shareCta": "Curious which parenting patterns you're repeating?",
+    "sources": [
+      "Intergenerational transmission of parenting research",
+      "Attachment theory frameworks",
+      "Breaking the cycle literature"
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your complete parenting pattern profile",
+      "body": "Your primary type, strengths, growth edge, and how you compare across all patterns.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "Detailed description of your primary pattern",
+      "Your unique strengths",
+      "Your growth edge — one shift that changes the most",
+      "How you compare across all patterns"
+    ],
+    "communityCta": {
+      "eyebrow": "Want to shift the pattern?",
+      "title": "Get scripts from parents doing the same work",
+      "body": "Real strategies, daily support from parents breaking cycles and building new ones. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "types": {
+    "mirror": {
+      "id": "mirror",
+      "name": "The Mirror",
+      "tagline": "You replay the parenting patterns you grew up with — for better and worse.",
+      "themeColor": "#3b82f6",
+      "description": "You default to the scripts you heard as a kid. When your child melts down, your parent's voice comes out of your mouth. The bedtime routine, the discipline language, the way you handle conflict — it all sounds eerily familiar because it is. You're not consciously choosing to repeat the past, but muscle memory runs deep.",
+      "strengths": [
+        "You know what worked because you lived it",
+        "You don't overthink every parenting decision — some things just feel automatic",
+        "You have a clear internal reference point when things get chaotic"
+      ],
+      "growthEdge": "Not everything that worked for your parents works for your kid or fits who you want to be. The autopilot that feels like instinct might just be repetition.",
+      "encouragement": "Noticing the pattern is the first move. You can keep what served you and drop what didn't — but only if you see it clearly first. The fact that something feels natural doesn't mean it's inevitable.",
+      "comparativeContext": "Most parents unconsciously replay at least some of their childhood patterns, especially under stress."
+    },
+    "rebel": {
+      "id": "rebel",
+      "name": "The Rebel",
+      "tagline": "You're deliberately doing the opposite of how you were raised.",
+      "themeColor": "#e8c840",
+      "description": "Your parenting strategy is organized around not repeating what hurt. If your parents were harsh, you're gentle. If they were permissive, you hold firm boundaries. You've made a vow — conscious or not — to do it differently, and every parenting choice is measured against that standard.",
+      "strengths": [
+        "You've thought hard about what you don't want to repeat",
+        "You're intentional about breaking cycles that caused harm",
+        "You're willing to question what you inherited instead of accepting it as default"
+      ],
+      "growthEdge": "Defining yourself by opposition can leave you reactive instead of grounded. Sometimes the opposite of a mistake is still a mistake.",
+      "encouragement": "Rejecting the blueprint is brave, but at some point you need your own foundation — not just the inverse of theirs. The goal isn't to prove them wrong. It's to figure out what's right for your kid.",
+      "comparativeContext": "Parents who consciously reject their own upbringing often swing too far in the other direction before finding balance."
+    },
+    "curator": {
+      "id": "curator",
+      "name": "The Curator",
+      "tagline": "You keep what worked from your childhood and discard what didn't.",
+      "themeColor": "#16a34a",
+      "description": "You're selective. Some parts of how you were raised felt right, so you kept them. Other parts didn't, so you ditched them. You don't operate on autopilot, but you also don't throw out the whole playbook. You're building your own version — informed by the past but not ruled by it.",
+      "strengths": [
+        "You recognize that your parents got some things right and some things wrong",
+        "You make conscious choices instead of defaulting or rebelling",
+        "You can adapt your approach without being reactive"
+      ],
+      "growthEdge": "Even the best curation requires regular audits. What worked at age three might not work at age seven, and what felt right in your memory might land differently now.",
+      "encouragement": "You've already done the hardest work — separating what you inherited from what you choose. Keep evaluating, keep adjusting. Nothing about parenting stays static.",
+      "comparativeContext": "Parents who actively curate their approach tend to report higher confidence in their parenting decisions."
+    },
+    "improviser": {
+      "id": "improviser",
+      "name": "The Improviser",
+      "tagline": "You're charting your own course, regardless of how you were raised.",
+      "themeColor": "#d05597",
+      "description": "Your childhood doesn't hold much weight in your parenting decisions. You're making it up as you go, pulling from books, friends, trial and error — anything but automatic replay. Whether your upbringing was great or terrible, you've decided it's not the roadmap. You trust your judgment more than inherited patterns.",
+      "strengths": [
+        "You're not constrained by what came before — you're open to new strategies",
+        "You respond to what your kid actually needs instead of what the script says",
+        "You're comfortable with uncertainty and willing to experiment"
+      ],
+      "growthEdge": "Reinventing everything from scratch is exhausting. Some of what worked for your parents might actually work for you — you don't have to reject it just because it's familiar.",
+      "encouragement": "Freedom from the past is powerful, but don't ignore useful data just because it comes from your childhood. The goal is informed choice, not disconnection.",
+      "comparativeContext": "Parents who build their own approach from scratch often feel more creative but also more isolated in their decision-making."
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Your kid throws a tantrum in the grocery store. What's your immediate internal reaction?",
+      "subtext": "Not what you do — what you feel in that first moment.",
+      "options": [
+        {
+          "id": "q1a",
+          "text": "Embarrassment and the urge to shut it down fast — exactly how your parents would have felt.",
+          "points": {
+            "mirror": 5,
+            "rebel": 0,
+            "curator": 1,
+            "improviser": 0
+          }
+        },
+        {
+          "id": "q1b",
+          "text": "Panic that you're repeating your parents' mistakes by reacting harshly — so you overcompensate with softness.",
+          "points": {
+            "mirror": 0,
+            "rebel": 5,
+            "curator": 1,
+            "improviser": 0
+          }
+        },
+        {
+          "id": "q1c",
+          "text": "A quick assessment: is this hunger, overstimulation, or limit-testing? Then you pick a strategy that fits.",
+          "points": {
+            "mirror": 1,
+            "rebel": 0,
+            "curator": 5,
+            "improviser": 2
+          }
+        },
+        {
+          "id": "q1d",
+          "text": "A scan of your mental toolkit — what have you read about public meltdowns? What worked last time?",
+          "points": {
+            "mirror": 0,
+            "rebel": 1,
+            "curator": 2,
+            "improviser": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "Your child refuses to apologize after hitting their sibling. How do you handle it?",
+      "options": [
+        {
+          "id": "q2a",
+          "text": "You insist on the apology because that's what was expected of you as a kid — no negotiation.",
+          "points": {
+            "mirror": 5,
+            "rebel": 0,
+            "curator": 2,
+            "improviser": 0
+          }
+        },
+        {
+          "id": "q2b",
+          "text": "You refuse to force it — forced apologies felt awful when you were little, so you explain feelings instead.",
+          "points": {
+            "mirror": 0,
+            "rebel": 5,
+            "curator": 1,
+            "improviser": 1
+          }
+        },
+        {
+          "id": "q2c",
+          "text": "You acknowledge the harm done, help repair the relationship, and let the apology come when it's genuine — because that's what you wish had happened.",
+          "points": {
+            "mirror": 1,
+            "rebel": 2,
+            "curator": 5,
+            "improviser": 2
+          }
+        },
+        {
+          "id": "q2d",
+          "text": "You try a technique from a parenting book you just read about repairing conflict without demanding performative remorse.",
+          "points": {
+            "mirror": 0,
+            "rebel": 1,
+            "curator": 2,
+            "improviser": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "Your kid says 'I hate you!' during a meltdown. What goes through your head?",
+      "options": [
+        {
+          "id": "q3a",
+          "text": "Instant anger — that language wasn't tolerated in your house growing up, and it won't be tolerated now.",
+          "points": {
+            "mirror": 5,
+            "rebel": 0,
+            "curator": 1,
+            "improviser": 0
+          }
+        },
+        {
+          "id": "q3b",
+          "text": "Relief that your kid feels safe expressing anger — you never could, so you won't shut them down.",
+          "points": {
+            "mirror": 0,
+            "rebel": 5,
+            "curator": 2,
+            "improviser": 1
+          }
+        },
+        {
+          "id": "q3c",
+          "text": "Recognition that they're dysregulated. You hold the boundary on respect but also make space for the feeling.",
+          "points": {
+            "mirror": 1,
+            "rebel": 2,
+            "curator": 5,
+            "improviser": 2
+          }
+        },
+        {
+          "id": "q3d",
+          "text": "Curiosity about what's underneath — you mentally run through the regulation strategies you've been learning.",
+          "points": {
+            "mirror": 0,
+            "rebel": 1,
+            "curator": 2,
+            "improviser": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "You're setting a limit your kid is furious about. What's your anchor?",
+      "options": [
+        {
+          "id": "q4a",
+          "text": "This is how limits were set in your house — firm, clear, non-negotiable. It worked then, it works now.",
+          "points": {
+            "mirror": 5,
+            "rebel": 0,
+            "curator": 2,
+            "improviser": 0
+          }
+        },
+        {
+          "id": "q4b",
+          "text": "You soften the limit or offer extra explanation because you remember how rigid rules felt as a kid.",
+          "points": {
+            "mirror": 0,
+            "rebel": 5,
+            "curator": 1,
+            "improviser": 1
+          }
+        },
+        {
+          "id": "q4c",
+          "text": "You hold the boundary but validate the feeling — your parents were either too rigid or too loose, so you're threading the middle.",
+          "points": {
+            "mirror": 1,
+            "rebel": 2,
+            "curator": 5,
+            "improviser": 2
+          }
+        },
+        {
+          "id": "q4d",
+          "text": "You reference your mental framework — what does respectful authority look like? What have you seen work?",
+          "points": {
+            "mirror": 0,
+            "rebel": 1,
+            "curator": 2,
+            "improviser": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "Your child is scared at bedtime and wants you to stay. What's your instinct?",
+      "options": [
+        {
+          "id": "q5a",
+          "text": "You stay briefly but reinforce independence — same way your parents handled it, and you turned out fine.",
+          "points": {
+            "mirror": 5,
+            "rebel": 0,
+            "curator": 2,
+            "improviser": 1
+          }
+        },
+        {
+          "id": "q5b",
+          "text": "You stay as long as they need — you remember being left alone with your fear, and you won't do that to them.",
+          "points": {
+            "mirror": 0,
+            "rebel": 5,
+            "curator": 1,
+            "improviser": 0
+          }
+        },
+        {
+          "id": "q5c",
+          "text": "You stay long enough to co-regulate, then offer a bridge object or routine — balancing comfort and autonomy.",
+          "points": {
+            "mirror": 2,
+            "rebel": 1,
+            "curator": 5,
+            "improviser": 2
+          }
+        },
+        {
+          "id": "q5d",
+          "text": "You try whatever sleep approach you're currently testing — gradual retreat, storytelling, breathing exercises.",
+          "points": {
+            "mirror": 0,
+            "rebel": 1,
+            "curator": 2,
+            "improviser": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "You catch yourself yelling at your kid. What's the first thought afterward?",
+      "options": [
+        {
+          "id": "q6a",
+          "text": "Guilt, but also justification — your parents yelled sometimes, and it didn't break you.",
+          "points": {
+            "mirror": 5,
+            "rebel": 0,
+            "curator": 1,
+            "improviser": 0
+          }
+        },
+        {
+          "id": "q6b",
+          "text": "Shame and panic — you swore you'd never raise your voice like your parents did, and here you are.",
+          "points": {
+            "mirror": 0,
+            "rebel": 5,
+            "curator": 1,
+            "improviser": 1
+          }
+        },
+        {
+          "id": "q6c",
+          "text": "Regret, but also recognition that you're human. You repair and commit to doing better next time.",
+          "points": {
+            "mirror": 1,
+            "rebel": 2,
+            "curator": 5,
+            "improviser": 2
+          }
+        },
+        {
+          "id": "q6d",
+          "text": "Immediate mental replay — what triggered that? What would the experts say to do instead?",
+          "points": {
+            "mirror": 0,
+            "rebel": 1,
+            "curator": 2,
+            "improviser": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "Your kid asks why they have to do something. How do you respond?",
+      "options": [
+        {
+          "id": "q7a",
+          "text": "'Because I said so' — it was good enough when you were a kid, and constant explaining feels exhausting.",
+          "points": {
+            "mirror": 5,
+            "rebel": 0,
+            "curator": 1,
+            "improviser": 0
+          }
+        },
+        {
+          "id": "q7b",
+          "text": "You always explain your reasoning — you hated 'because I said so' as a kid, so you give them the why.",
+          "points": {
+            "mirror": 0,
+            "rebel": 5,
+            "curator": 2,
+            "improviser": 1
+          }
+        },
+        {
+          "id": "q7c",
+          "text": "You offer a brief reason when it makes sense, but you don't justify every boundary — balancing respect and authority.",
+          "points": {
+            "mirror": 1,
+            "rebel": 2,
+            "curator": 5,
+            "improviser": 2
+          }
+        },
+        {
+          "id": "q7d",
+          "text": "You experiment — sometimes explanations, sometimes boundaries without justification, depending on what the moment needs.",
+          "points": {
+            "mirror": 0,
+            "rebel": 1,
+            "curator": 2,
+            "improviser": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "text": "When you're struggling with a parenting decision, where do you look first?",
+      "options": [
+        {
+          "id": "q8a",
+          "text": "What would your parents have done? It's your default reference point.",
+          "points": {
+            "mirror": 5,
+            "rebel": 0,
+            "curator": 2,
+            "improviser": 0
+          }
+        },
+        {
+          "id": "q8b",
+          "text": "What would your parents have done — and then you do the opposite.",
+          "points": {
+            "mirror": 0,
+            "rebel": 5,
+            "curator": 1,
+            "improviser": 0
+          }
+        },
+        {
+          "id": "q8c",
+          "text": "You weigh what your parents did well, what they didn't, and what makes sense for your kid now.",
+          "points": {
+            "mirror": 2,
+            "rebel": 1,
+            "curator": 5,
+            "improviser": 2
+          }
+        },
+        {
+          "id": "q8d",
+          "text": "Books, podcasts, friends, trial and error — your childhood rarely enters the equation.",
+          "points": {
+            "mirror": 0,
+            "rebel": 1,
+            "curator": 2,
+            "improviser": 5
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,478 @@
+{
+  "quizType": "identity",
+  "meta": {
+    "id": "co-parent-team",
+    "slug": "co-parent-team",
+    "title": "What Kind of Co-Parent Team Are You?",
+    "shortTitle": "Co-Parent Team Quiz",
+    "description": "Discover how you and your co-parent actually work together — from seamless handoffs to parallel universes. Find out your team style, what it gives you, and where one small shift makes the biggest difference.",
+    "intro": "Two people raising the same humans means twice the love and twice the chance you'll contradict each other in front of a toddler. Find out what kind of co-parenting team you're running.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 8,
+    "subject": "you",
+    "shareCta": "Wonder what kind of co-parent team they are?",
+    "sources": [
+      "Collaborative co-parenting research",
+      "Family systems theory",
+      "Parenting coordination frameworks"
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your complete co-parenting team profile",
+      "body": "Your primary team style, unique strengths, growth edge, and how you compare across all styles.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "Detailed description of your team style",
+      "Your unique strengths as a co-parenting duo",
+      "Your growth edge — one shift that changes the most",
+      "How you compare across all team types"
+    ],
+    "communityCta": {
+      "eyebrow": "Need co-parenting scripts?",
+      "title": "Get strategies from parents navigating two-household dynamics",
+      "body": "Real scripts for disagreements, handoff routines, and how to get on the same page. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "types": {
+    "tag-team": {
+      "id": "tag-team",
+      "name": "The Tag Team",
+      "tagline": "You finish each other's discipline sentences and hand off mid-crisis like you rehearsed it.",
+      "themeColor": "#16a34a",
+      "description": "You've got a unified front so consistent the kids can't find daylight between you. When one parent starts a consequence, the other backs it up without a word. Handoffs are seamless because you've talked it through enough.",
+      "strengths": [
+        "Kids get the same message from both parents, which builds security and clear boundaries",
+        "Handoffs are smooth because you actually communicate what happened during your shift",
+        "Neither parent is the 'bad cop' — you share the hard stuff equally"
+      ],
+      "growthEdge": "Sometimes the unified front tips into rigidity. If one of you sees something the other missed, you might dismiss it to stay consistent instead of adjusting the plan.",
+      "encouragement": "The consistency you've built is rare and valuable — kids thrive on it. Just remember that being on the same team doesn't mean you can't call an audible mid-play. The strongest partnerships adapt together.",
+      "comparativeContext": "Research shows kids in highly coordinated co-parenting households show better emotional regulation and fewer behavioral issues than those with inconsistent parenting."
+    },
+    "specialists": {
+      "id": "specialists",
+      "name": "The Specialists",
+      "tagline": "One of you owns bedtime, the other handles homework — you've divided and conquered by domain.",
+      "themeColor": "#3b82f6",
+      "description": "You've carved up parenting by expertise. One of you owns bedtime, the other handles meltdowns or screen time. It works because you trust each other's lanes and don't second-guess mid-routine. The kids know who to go to for what.",
+      "strengths": [
+        "Each parent gets to be the expert in their zone, which builds confidence and competence",
+        "Less negotiation in the moment — you've pre-decided who handles what",
+        "Kids benefit from different strengths without the whiplash of conflicting rules"
+      ],
+      "growthEdge": "When your specialist isn't around, the other parent might flounder or just skip that routine entirely. And kids sometimes play the game of 'I'll ask the one who says yes.'",
+      "encouragement": "Specialization is efficient, and it lets you both play to your strengths. Just make sure the backup plan exists — trade notes occasionally so neither of you is the only one who can execute bedtime or handle a tantrum.",
+      "comparativeContext": "Most co-parents naturally drift toward some specialization, but balanced backup coverage predicts better outcomes when one parent is unavailable."
+    },
+    "debaters": {
+      "id": "debaters",
+      "name": "The Debaters",
+      "tagline": "You hash it out behind closed doors — and sometimes in front of the kids when you forget to wait.",
+      "themeColor": "#e8c840",
+      "description": "You've got different approaches and you're not shy about defending them. Sometimes you hash it out before the kid sees it. Sometimes the kid watches you negotiate in real time. You both believe in your methods, and the friction shows.",
+      "strengths": [
+        "You're both engaged and care enough to fight for what you think is right",
+        "Kids see that disagreement doesn't mean the end of a relationship — conflict is normal",
+        "When you do reach consensus, it's genuine, not one person caving"
+      ],
+      "growthEdge": "Debating in front of the kids — even 'respectfully' — undermines both of you. They learn to wait you out or play you against each other, and nobody wins that game.",
+      "encouragement": "Your passion for getting it right is not the problem. The problem is location and timing. Get better at the pause — 'your mom and I need to talk about this' buys you the room to work it out without an audience.",
+      "comparativeContext": "Parental conflict in front of children increases anxiety and behavior problems, but private resolution with a unified message doesn't carry the same risk."
+    },
+    "parallel-players": {
+      "id": "parallel-players",
+      "name": "The Parallel Players",
+      "tagline": "You're both parenting the same kids, but in your own separate universes.",
+      "themeColor": "#d05597",
+      "description": "You've got your rules, your co-parent has theirs, and the kids code-switch between houses like they're crossing a border. You don't coordinate much. Handoffs are transactional. What happened at the other house stays there.",
+      "strengths": [
+        "Low conflict because you're not trying to agree on everything",
+        "Each parent gets to be authentic without compromise",
+        "Kids learn adaptability — different contexts, different expectations"
+      ],
+      "growthEdge": "Kids don't just adapt — they also get confused, anxious, and sometimes manipulative. The lack of coordination makes discipline harder and gives them a playbook for playing you against each other.",
+      "encouragement": "Parallel parenting works when cooperation isn't possible, but if it is, even minimal alignment helps. You don't have to parent identically. You just need to share the basics — bedtime, screen time, consequences — so the kids aren't living in two different rule books.",
+      "comparativeContext": "High parental coordination predicts better child outcomes even in separated households, but parallel parenting with low conflict outperforms high-conflict co-parenting."
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Your kid asks for screen time. One parent already said no, but the kid tries the other parent.",
+      "subtext": "What actually happens?",
+      "options": [
+        {
+          "id": "q1a",
+          "text": "The second parent says 'Did you already ask? What did they say?' and backs the first answer.",
+          "points": {
+            "tag-team": 5,
+            "specialists": 2,
+            "debaters": 1,
+            "parallel-players": 0
+          }
+        },
+        {
+          "id": "q1b",
+          "text": "The second parent handles it their way — they might say yes, might say no, depends on their rules.",
+          "points": {
+            "tag-team": 0,
+            "specialists": 1,
+            "debaters": 1,
+            "parallel-players": 5
+          }
+        },
+        {
+          "id": "q1c",
+          "text": "The second parent checks in with the first parent real quick, then gives a united answer.",
+          "points": {
+            "tag-team": 4,
+            "specialists": 3,
+            "debaters": 2,
+            "parallel-players": 0
+          }
+        },
+        {
+          "id": "q1d",
+          "text": "The second parent has a different take and says so — then you argue about it in front of the kid.",
+          "points": {
+            "tag-team": 0,
+            "specialists": 1,
+            "debaters": 5,
+            "parallel-players": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "Bedtime is a disaster. One parent is ready to let the kid cry it out, the other thinks that's cruel.",
+      "subtext": "How do you handle it?",
+      "options": [
+        {
+          "id": "q2a",
+          "text": "One of you owns bedtime, so the other stays out of it and trusts their call.",
+          "points": {
+            "tag-team": 1,
+            "specialists": 5,
+            "debaters": 0,
+            "parallel-players": 3
+          }
+        },
+        {
+          "id": "q2b",
+          "text": "You hash it out after bedtime and agree on one approach you'll both use tomorrow.",
+          "points": {
+            "tag-team": 5,
+            "specialists": 2,
+            "debaters": 3,
+            "parallel-players": 0
+          }
+        },
+        {
+          "id": "q2c",
+          "text": "You debate it in real time, sometimes loudly, and eventually one of you takes over.",
+          "points": {
+            "tag-team": 0,
+            "specialists": 1,
+            "debaters": 5,
+            "parallel-players": 1
+          }
+        },
+        {
+          "id": "q2d",
+          "text": "Each of you does bedtime your own way on your nights. The kid gets two different experiences.",
+          "points": {
+            "tag-team": 0,
+            "specialists": 2,
+            "debaters": 1,
+            "parallel-players": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "Your kid has a public meltdown at the grocery store. Both parents are there.",
+      "subtext": "What happens?",
+      "options": [
+        {
+          "id": "q3a",
+          "text": "One of you handles it while the other backs off — you've got an unspoken system for who takes the lead.",
+          "points": {
+            "tag-team": 4,
+            "specialists": 3,
+            "debaters": 1,
+            "parallel-players": 2
+          }
+        },
+        {
+          "id": "q3b",
+          "text": "You tag-team it — one stays calm, one removes the kid, you regroup without negotiating mid-crisis.",
+          "points": {
+            "tag-team": 5,
+            "specialists": 2,
+            "debaters": 0,
+            "parallel-players": 0
+          }
+        },
+        {
+          "id": "q3c",
+          "text": "You both try to handle it and end up contradicting each other in the cereal aisle.",
+          "points": {
+            "tag-team": 0,
+            "specialists": 1,
+            "debaters": 5,
+            "parallel-players": 3
+          }
+        },
+        {
+          "id": "q3d",
+          "text": "Whoever's closer steps in. The other one might agree, might not, but doesn't interfere in the moment.",
+          "points": {
+            "tag-team": 2,
+            "specialists": 4,
+            "debaters": 2,
+            "parallel-players": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "One parent just gave a consequence. The kid runs to the other parent crying.",
+      "subtext": "What does the second parent do?",
+      "options": [
+        {
+          "id": "q4a",
+          "text": "Backs the consequence immediately, no negotiation, even if they wouldn't have chosen it themselves.",
+          "points": {
+            "tag-team": 5,
+            "specialists": 2,
+            "debaters": 1,
+            "parallel-players": 0
+          }
+        },
+        {
+          "id": "q4b",
+          "text": "Listens to the kid, then privately checks with the other parent to see what happened.",
+          "points": {
+            "tag-team": 3,
+            "specialists": 4,
+            "debaters": 3,
+            "parallel-players": 1
+          }
+        },
+        {
+          "id": "q4c",
+          "text": "Questions the consequence out loud and offers comfort, which sometimes overrides the first parent.",
+          "points": {
+            "tag-team": 0,
+            "specialists": 1,
+            "debaters": 5,
+            "parallel-players": 3
+          }
+        },
+        {
+          "id": "q4d",
+          "text": "Says 'That's between you and your other parent' and redirects the kid back.",
+          "points": {
+            "tag-team": 2,
+            "specialists": 3,
+            "debaters": 0,
+            "parallel-players": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "You're handing off the kid between houses or shifts. How much detail do you share about what just happened?",
+      "subtext": "Handoff communication style",
+      "options": [
+        {
+          "id": "q5a",
+          "text": "Full debrief — what they ate, how they slept, any meltdowns, what consequences are ongoing.",
+          "points": {
+            "tag-team": 5,
+            "specialists": 3,
+            "debaters": 2,
+            "parallel-players": 0
+          }
+        },
+        {
+          "id": "q5b",
+          "text": "Just the essentials for your specific zones — 'bedtime was rough' or 'homework is done.'",
+          "points": {
+            "tag-team": 2,
+            "specialists": 5,
+            "debaters": 1,
+            "parallel-players": 1
+          }
+        },
+        {
+          "id": "q5c",
+          "text": "You share what happened, but it sometimes turns into a debate about who handled it wrong.",
+          "points": {
+            "tag-team": 1,
+            "specialists": 2,
+            "debaters": 5,
+            "parallel-players": 0
+          }
+        },
+        {
+          "id": "q5d",
+          "text": "Minimal — 'they're fine' is about it. What happened on your shift stays on your shift.",
+          "points": {
+            "tag-team": 0,
+            "specialists": 1,
+            "debaters": 1,
+            "parallel-players": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "Your kid says 'Dad lets me do this' when Mom says no (or vice versa).",
+      "subtext": "How does this play out?",
+      "options": [
+        {
+          "id": "q6a",
+          "text": "The kid is lying — your rules are the same and they know it.",
+          "points": {
+            "tag-team": 5,
+            "specialists": 1,
+            "debaters": 2,
+            "parallel-players": 0
+          }
+        },
+        {
+          "id": "q6b",
+          "text": "It's true, but only because that's the other parent's domain and you don't overlap there.",
+          "points": {
+            "tag-team": 1,
+            "specialists": 5,
+            "debaters": 1,
+            "parallel-players": 2
+          }
+        },
+        {
+          "id": "q6c",
+          "text": "It might be true, and now you're annoyed because you thought you'd agreed on this.",
+          "points": {
+            "tag-team": 2,
+            "specialists": 2,
+            "debaters": 5,
+            "parallel-players": 1
+          }
+        },
+        {
+          "id": "q6d",
+          "text": "It's probably true — you have different rules and the kid knows how to work the system.",
+          "points": {
+            "tag-team": 0,
+            "specialists": 1,
+            "debaters": 2,
+            "parallel-players": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "A new parenting challenge comes up — potty training, screen time limits, whatever. How do you figure out the plan?",
+      "subtext": "Decision-making process",
+      "options": [
+        {
+          "id": "q7a",
+          "text": "You sit down together, talk it through, and commit to the same approach before you start.",
+          "points": {
+            "tag-team": 5,
+            "specialists": 2,
+            "debaters": 3,
+            "parallel-players": 0
+          }
+        },
+        {
+          "id": "q7b",
+          "text": "Whoever owns that domain decides, and the other one follows their lead.",
+          "points": {
+            "tag-team": 2,
+            "specialists": 5,
+            "debaters": 0,
+            "parallel-players": 1
+          }
+        },
+        {
+          "id": "q7c",
+          "text": "You start with different ideas, argue about it for a while, and eventually land on something.",
+          "points": {
+            "tag-team": 1,
+            "specialists": 1,
+            "debaters": 5,
+            "parallel-players": 0
+          }
+        },
+        {
+          "id": "q7d",
+          "text": "You each do your own thing and see what works. Not much coordination happening.",
+          "points": {
+            "tag-team": 0,
+            "specialists": 2,
+            "debaters": 1,
+            "parallel-players": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "text": "One parent is having a rough day and losing patience. What does the other parent do?",
+      "subtext": "Support under stress",
+      "options": [
+        {
+          "id": "q8a",
+          "text": "Steps in seamlessly and takes over without being asked — you can read each other.",
+          "points": {
+            "tag-team": 5,
+            "specialists": 2,
+            "debaters": 1,
+            "parallel-players": 0
+          }
+        },
+        {
+          "id": "q8b",
+          "text": "Steps in if it's their area of strength, otherwise stays back and lets the other push through.",
+          "points": {
+            "tag-team": 2,
+            "specialists": 5,
+            "debaters": 1,
+            "parallel-players": 2
+          }
+        },
+        {
+          "id": "q8c",
+          "text": "Might criticize how the other is handling it, which doesn't help and sometimes makes it worse.",
+          "points": {
+            "tag-team": 0,
+            "specialists": 1,
+            "debaters": 5,
+            "parallel-players": 1
+          }
+        },
+        {
+          "id": "q8d",
+          "text": "Doesn't really notice or doesn't get involved — you parent in your own bubbles.",
+          "points": {
+            "tag-team": 0,
+            "specialists": 2,
+            "debaters": 0,
+            "parallel-players": 5
+          }
+        }
+      ]
+    }
+  ]
+}

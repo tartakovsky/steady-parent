@@ -1,0 +1,471 @@
+{
+  "quizType": "identity",
+  "meta": {
+    "id": "parent-at-2am",
+    "slug": "parent-at-2am",
+    "title": "What Kind of Parent Are You at 2 AM?",
+    "shortTitle": "2 AM Parenting Quiz",
+    "description": "Discover your middle-of-the-night parenting style. Are you the Negotiator, the Zombie, the Detective, or the Snuggler? Find out how you handle nighttime parenting when your executive function is offline.",
+    "intro": "Your 2 AM parenting style reveals how you operate when logic is offline and the survival brain takes over. This quiz maps your default nighttime responses when exhaustion runs the show.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 8,
+    "subject": "you",
+    "shareCta": "Curious what kind of night parent you are?",
+    "sources": [
+      "Sleep Foundation parental nighttime response patterns",
+      "Pediatric sleep disorder management research",
+      "Attachment theory and nighttime parenting"
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your complete nighttime parenting profile",
+      "body": "Your primary type, unique strengths, growth edge, and how you compare across all types.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "Detailed description of your primary type",
+      "Your unique strengths when half-asleep",
+      "Your growth edge — one shift that changes the most",
+      "How you compare across all types"
+    ],
+    "communityCta": {
+      "eyebrow": "Need better nights?",
+      "title": "Get sleep scripts from parents who've survived the night shift",
+      "body": "Real routines, scripts for midnight chaos, and daily support from parents in the trenches. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "types": {
+    "negotiator": {
+      "id": "negotiator",
+      "name": "The Negotiator",
+      "tagline": "You bargain your way through the night, one deal at a time.",
+      "themeColor": "#3b82f6",
+      "description": "You're constantly striking deals at 2 AM. Just one more song, one more sip of water, one more story and then sleep. You believe reason still works in the middle of the night, even when all evidence suggests otherwise. Your negotiations get increasingly creative as exhaustion deepens.",
+      "strengths": [
+        "You stay calm and use words instead of shutting down",
+        "Your kid learns to communicate needs instead of just screaming",
+        "You're flexible and willing to adapt to what they need in the moment"
+      ],
+      "growthEdge": "Sometimes a boundary is more helpful than another round of bargaining. Not everything is negotiable at 2 AM, and your kid will sleep better with clear, consistent limits.",
+      "encouragement": "Your patience and verbal problem-solving are real strengths. You're teaching communication skills even in the middle of the night. Just make sure the endless deals aren't stretching bedtime into sunrise.",
+      "comparativeContext": "About 30% of parents default to verbal negotiation during nighttime wake-ups, especially with verbal toddlers and preschoolers."
+    },
+    "zombie": {
+      "id": "zombie",
+      "name": "The Zombie",
+      "tagline": "You run on pure autopilot, muscle memory carrying you through the night.",
+      "themeColor": "#8b5cf6",
+      "description": "You operate entirely on muscle memory at 2 AM. You've done this so many times your body just takes over—diaper change, bottle, back rub, all while barely conscious. You have no memory of the night and sometimes wake up confused about whether it even happened.",
+      "strengths": [
+        "You don't get emotionally activated or frustrated at night",
+        "You can function effectively without fully waking up",
+        "Your calm autopilot soothes your kid faster than conscious intervention would"
+      ],
+      "growthEdge": "If your kid's sleep issues are changing, autopilot might not catch it. Sometimes you need to wake up enough to assess whether the old routine still works.",
+      "encouragement": "Your ability to stay calm and function without activating your whole nervous system is a genuine skill. You're optimized for minimal disruption, which helps everyone get back to sleep faster.",
+      "comparativeContext": "Parents who can stay partially asleep during nighttime routines typically get 40 more minutes of total sleep per night than those who fully wake."
+    },
+    "detective": {
+      "id": "detective",
+      "name": "The Detective",
+      "tagline": "You need to figure out WHY they woke up before you can do anything about it.",
+      "themeColor": "#10b981",
+      "description": "You can't just respond—you need to diagnose first. Is it hunger, nightmare, temperature, teething, or something else entirely? You mentally scroll through every possible cause before taking action. Your brain won't rest until you've identified the root issue.",
+      "strengths": [
+        "You notice patterns and can identify real problems early",
+        "Your kid learns that their needs matter and will be understood",
+        "You're thoughtful and intentional, not reactive"
+      ],
+      "growthEdge": "Sometimes your kid just needs comfort, not a diagnosis. Over-analyzing at 2 AM can delay the thing they actually need, which is usually you.",
+      "encouragement": "Your attentiveness and analytical mind are strengths—you catch things other parents miss. Just remember that sometimes the fastest path to sleep is comfort first, investigation in the morning.",
+      "comparativeContext": "Around 25% of parents report needing to understand the cause before they can respond effectively to nighttime wake-ups."
+    },
+    "snuggler": {
+      "id": "snuggler",
+      "name": "The Snuggler",
+      "tagline": "You give in, bring them to bed, and everyone sleeps.",
+      "themeColor": "#d05597",
+      "description": "When your kid wakes up, the path of least resistance is clear: bring them into your bed and everyone goes back to sleep. You're not interested in midnight problem-solving—you're interested in horizontal time. Safety and sleep trump all other considerations.",
+      "strengths": [
+        "You're pragmatic and prioritize what actually works over what 'should' work",
+        "Your kid feels secure and learns that comfort is always available",
+        "You get more total sleep than parents who battle through the night"
+      ],
+      "growthEdge": "If bedsharing isn't your long-term plan, the habit gets harder to break as kids get older. At some point you might need a plan that doesn't involve surrendering your mattress.",
+      "encouragement": "You've figured out what many parents resist: sleep is more important than perfection. If everyone's sleeping safely and you're okay with it, you're solving the actual problem.",
+      "comparativeContext": "Roughly 60% of parents bring their child into bed at least occasionally during nighttime wake-ups, even if they don't plan to."
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Your toddler appears at your bedside at 2 AM saying they can't sleep. What happens next?",
+      "options": [
+        {
+          "id": "q1a",
+          "text": "I walk them back to their room and offer one song, one back rub, then lights out",
+          "points": {
+            "negotiator": 4,
+            "zombie": 1,
+            "detective": 2,
+            "snuggler": 0
+          }
+        },
+        {
+          "id": "q1b",
+          "text": "I lift the blanket and they climb in. We're both asleep in 90 seconds.",
+          "points": {
+            "negotiator": 0,
+            "zombie": 1,
+            "detective": 0,
+            "snuggler": 5
+          }
+        },
+        {
+          "id": "q1c",
+          "text": "I walk them back on autopilot, tuck them in, and have zero memory of it in the morning",
+          "points": {
+            "negotiator": 0,
+            "zombie": 5,
+            "detective": 0,
+            "snuggler": 2
+          }
+        },
+        {
+          "id": "q1d",
+          "text": "I ask what's wrong—bad dream? Too hot? Need water? Scared? I need data first.",
+          "points": {
+            "negotiator": 1,
+            "zombie": 0,
+            "detective": 5,
+            "snuggler": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "Your kid wakes up crying. You go in and they immediately ask for a snack. What do you do?",
+      "options": [
+        {
+          "id": "q2a",
+          "text": "I get the snack. Whatever ends this fastest.",
+          "points": {
+            "negotiator": 1,
+            "zombie": 2,
+            "detective": 0,
+            "snuggler": 4
+          }
+        },
+        {
+          "id": "q2b",
+          "text": "I say no snack, but offer water and one book, then back to bed",
+          "points": {
+            "negotiator": 5,
+            "zombie": 0,
+            "detective": 2,
+            "snuggler": 0
+          }
+        },
+        {
+          "id": "q2c",
+          "text": "I check the clock. If it's close to morning I get the snack. If not, we skip it.",
+          "points": {
+            "negotiator": 2,
+            "zombie": 0,
+            "detective": 4,
+            "snuggler": 1
+          }
+        },
+        {
+          "id": "q2d",
+          "text": "I hand them water and a stuffed animal without saying much and leave",
+          "points": {
+            "negotiator": 0,
+            "zombie": 4,
+            "detective": 0,
+            "snuggler": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "It's 3 AM and your kid is standing in their crib yelling. You walk in and they say 'I want Mama' (but you're the other parent). You are Mama. Now what?",
+      "subtext": "Or vice versa — the point is they're asking for the parent who isn't you",
+      "options": [
+        {
+          "id": "q3a",
+          "text": "I say 'Mama's sleeping, I'm here,' then start the usual routine",
+          "points": {
+            "negotiator": 3,
+            "zombie": 3,
+            "detective": 1,
+            "snuggler": 2
+          }
+        },
+        {
+          "id": "q3b",
+          "text": "I pick them up, bring them to our bed, and let them find Mama themselves",
+          "points": {
+            "negotiator": 0,
+            "zombie": 1,
+            "detective": 0,
+            "snuggler": 5
+          }
+        },
+        {
+          "id": "q3c",
+          "text": "I wake my partner. If they're asking for them, they should handle it.",
+          "points": {
+            "negotiator": 2,
+            "zombie": 0,
+            "detective": 4,
+            "snuggler": 1
+          }
+        },
+        {
+          "id": "q3d",
+          "text": "I don't engage with the request, just start soothing—rocking, patting, humming",
+          "points": {
+            "negotiator": 0,
+            "zombie": 5,
+            "detective": 1,
+            "snuggler": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "You hear your kid coughing in their room at 1 AM. What's your move?",
+      "options": [
+        {
+          "id": "q4a",
+          "text": "I go check. I need to see if it's a wet cough, dry cough, or something stuck.",
+          "points": {
+            "negotiator": 1,
+            "zombie": 0,
+            "detective": 5,
+            "snuggler": 0
+          }
+        },
+        {
+          "id": "q4b",
+          "text": "I listen. If they're not crying, I assume they're fine and go back to sleep.",
+          "points": {
+            "negotiator": 2,
+            "zombie": 4,
+            "detective": 1,
+            "snuggler": 3
+          }
+        },
+        {
+          "id": "q4c",
+          "text": "I bring them water and see if they want to talk about it or just go back to sleep",
+          "points": {
+            "negotiator": 5,
+            "zombie": 0,
+            "detective": 2,
+            "snuggler": 1
+          }
+        },
+        {
+          "id": "q4d",
+          "text": "If it continues I bring them into my bed where I can monitor them while half-asleep",
+          "points": {
+            "negotiator": 0,
+            "zombie": 2,
+            "detective": 1,
+            "snuggler": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "Your kid had a nightmare and is inconsolable at 2:30 AM. What happens?",
+      "options": [
+        {
+          "id": "q5a",
+          "text": "I hold them, rub their back, and quietly soothe until they calm down—minimal words",
+          "points": {
+            "negotiator": 1,
+            "zombie": 4,
+            "detective": 0,
+            "snuggler": 3
+          }
+        },
+        {
+          "id": "q5b",
+          "text": "I ask them to tell me about the dream so we can talk through it together",
+          "points": {
+            "negotiator": 3,
+            "zombie": 0,
+            "detective": 4,
+            "snuggler": 0
+          }
+        },
+        {
+          "id": "q5c",
+          "text": "I comfort them briefly, then offer a deal: 'I'll stay until you're calm, then I'm going back to bed'",
+          "points": {
+            "negotiator": 5,
+            "zombie": 0,
+            "detective": 2,
+            "snuggler": 1
+          }
+        },
+        {
+          "id": "q5d",
+          "text": "I scoop them up and bring them to my bed where we both feel safer",
+          "points": {
+            "negotiator": 0,
+            "zombie": 2,
+            "detective": 0,
+            "snuggler": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "Your kid wet the bed at 4 AM. You need to change sheets and pajamas. How does this go?",
+      "options": [
+        {
+          "id": "q6a",
+          "text": "I do it all silently and efficiently—new sheets, new PJs, back to bed. I'm a machine.",
+          "points": {
+            "negotiator": 0,
+            "zombie": 5,
+            "detective": 0,
+            "snuggler": 1
+          }
+        },
+        {
+          "id": "q6b",
+          "text": "I change them, then bring them to my bed while their mattress airs out. Problem solved.",
+          "points": {
+            "negotiator": 0,
+            "zombie": 2,
+            "detective": 0,
+            "snuggler": 5
+          }
+        },
+        {
+          "id": "q6c",
+          "text": "I reassure them it's okay, change them, then offer a story to help them settle back down",
+          "points": {
+            "negotiator": 4,
+            "zombie": 1,
+            "detective": 1,
+            "snuggler": 2
+          }
+        },
+        {
+          "id": "q6d",
+          "text": "I check if they drank too much before bed or need a bathroom schedule change",
+          "points": {
+            "negotiator": 2,
+            "zombie": 0,
+            "detective": 5,
+            "snuggler": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "It's 5:30 AM and your kid is wide awake, talking loudly, and wants breakfast. You consider this nighttime. What do you do?",
+      "options": [
+        {
+          "id": "q7a",
+          "text": "I tell them it's still sleepy time and offer quiet books in bed until 6:30",
+          "points": {
+            "negotiator": 5,
+            "zombie": 0,
+            "detective": 2,
+            "snuggler": 0
+          }
+        },
+        {
+          "id": "q7b",
+          "text": "I give them a tablet or book and pray they stay quiet while I get 20 more minutes",
+          "points": {
+            "negotiator": 2,
+            "zombie": 3,
+            "detective": 1,
+            "snuggler": 3
+          }
+        },
+        {
+          "id": "q7c",
+          "text": "I check the clock and assess. If it's trending earlier I need to figure out why.",
+          "points": {
+            "negotiator": 1,
+            "zombie": 0,
+            "detective": 5,
+            "snuggler": 1
+          }
+        },
+        {
+          "id": "q7d",
+          "text": "I pull them into bed with me. If they snuggle quietly we all win.",
+          "points": {
+            "negotiator": 0,
+            "zombie": 2,
+            "detective": 0,
+            "snuggler": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "text": "Your kid has been up three times tonight. It's now 3 AM and they're crying again. What's your internal monologue?",
+      "options": [
+        {
+          "id": "q8a",
+          "text": "'Okay, something is actually wrong. Time to figure out what's different tonight.'",
+          "points": {
+            "negotiator": 1,
+            "zombie": 0,
+            "detective": 5,
+            "snuggler": 1
+          }
+        },
+        {
+          "id": "q8b",
+          "text": "'Forget it, they're sleeping with me. I'm done.'",
+          "points": {
+            "negotiator": 0,
+            "zombie": 1,
+            "detective": 0,
+            "snuggler": 5
+          }
+        },
+        {
+          "id": "q8c",
+          "text": "'One more round. If I can get them down this time, maybe we all sleep till morning.'",
+          "points": {
+            "negotiator": 5,
+            "zombie": 1,
+            "detective": 2,
+            "snuggler": 0
+          }
+        },
+        {
+          "id": "q8d",
+          "text": "[no internal monologue, already walking to their room, brain fully offline]",
+          "points": {
+            "negotiator": 0,
+            "zombie": 5,
+            "detective": 0,
+            "snuggler": 2
+          }
+        }
+      ]
+    }
+  ]
+}

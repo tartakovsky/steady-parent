@@ -1,0 +1,341 @@
+{
+  "quizType": "readiness",
+  "meta": {
+    "id": "second-child-readiness",
+    "slug": "second-child-readiness",
+    "title": "Is Your Family Ready for a Second Child?",
+    "shortTitle": "Second Child Readiness Quiz",
+    "description": "Assess whether your relationship, emotional capacity, practical setup, and first child's development support adding a second child. Based on family systems research and developmental timing evidence.",
+    "intro": "There is no perfect time, but there are better and worse starting points. This quiz looks at four dimensions that predict whether a second child will feel like an expansion or an implosion.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 10,
+    "scoreLabel": "Readiness",
+    "subject": "your family",
+    "shareCta": "Wondering if your family is ready for number two?",
+    "levelLabels": {
+      "high": "Ready",
+      "medium": "Getting There",
+      "low": "Not Yet"
+    },
+    "sources": [
+      "American Academy of Pediatrics spacing guidelines",
+      "Family systems research on sibling transitions",
+      "Attachment research on second-child timing"
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your family's complete readiness profile",
+      "body": "See exactly where your family stands across relationship stability, emotional capacity, practical infrastructure, and your first child's development, plus a prioritized action plan for what to strengthen before trying.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "What each readiness domain means for your family right now",
+      "Your family's strongest areas to build on",
+      "Targeted next steps for developing areas",
+      "A prioritized action plan you can start today"
+    ],
+    "communityCta": {
+      "eyebrow": "Thinking about number two?",
+      "title": "Get real talk from parents navigating the second-child transition",
+      "body": "A private group where parents share what actually worked, what blew up, and how to keep your sanity intact. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "domains": {
+    "relationship": {
+      "id": "relationship",
+      "name": "Relationship Stability",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    },
+    "emotional": {
+      "id": "emotional",
+      "name": "Emotional Capacity",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    },
+    "practical": {
+      "id": "practical",
+      "name": "Practical Infrastructure",
+      "maxPoints": 7,
+      "thresholds": {
+        "high": 6,
+        "medium": 3
+      }
+    },
+    "first-child": {
+      "id": "first-child",
+      "name": "First Child Development",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "relationship",
+      "text": "How aligned are you and your partner on the decision to have a second child?",
+      "subtext": "Enthusiastically agreed, or one convincing the other?",
+      "options": [
+        { "id": "q1a", "text": "Both actively want this and have discussed timing", "points": 3 },
+        { "id": "q1b", "text": "Both agree in theory but haven't seriously planned", "points": 1 },
+        { "id": "q1c", "text": "One of us is hesitant or trying to convince the other", "points": 0 }
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "relationship",
+      "text": "How do you and your partner handle conflict right now?",
+      "subtext": "Think about the last few disagreements.",
+      "options": [
+        { "id": "q2a", "text": "We talk it out and usually repair quickly", "points": 3 },
+        { "id": "q2b", "text": "We fight but eventually figure it out", "points": 1 },
+        { "id": "q2c", "text": "Unresolved tension hangs around for days or weeks", "points": 0 }
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "emotional",
+      "text": "How are you feeling about the baby phase of your first child?",
+      "subtext": "Has your nervous system recovered?",
+      "options": [
+        { "id": "q3a", "text": "Fully recovered and even missing it a little", "points": 3 },
+        { "id": "q3b", "text": "Mostly recovered but still catching my breath", "points": 1 },
+        { "id": "q3c", "text": "Still in survival mode from the first one", "points": 0 }
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "emotional",
+      "text": "How is your patience with your first child on a typical day?",
+      "subtext": "Not your best day. A regular Tuesday.",
+      "options": [
+        { "id": "q4a", "text": "Usually calm and present even when things are chaotic", "points": 3 },
+        { "id": "q4b", "text": "Hit or miss depending on sleep and stress", "points": 1 },
+        { "id": "q4c", "text": "Running on fumes most days", "points": 0 }
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "practical",
+      "text": "How does your current housing situation feel for adding another child?",
+      "subtext": "Space, noise tolerance, bedroom logistics.",
+      "options": [
+        { "id": "q5a", "text": "We have space and a plan for where baby would sleep", "points": 2 },
+        { "id": "q5b", "text": "Tight but manageable with some creative rearranging", "points": 1 },
+        { "id": "q5c", "text": "Already cramped or would require a move", "points": 0 }
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "practical",
+      "text": "How stable are your finances and work situation right now?",
+      "subtext": "Can you absorb another maternity leave, daycare cost, or medical bill?",
+      "options": [
+        { "id": "q6a", "text": "Financially stable with room for the added costs", "points": 3 },
+        { "id": "q6b", "text": "Stable but would need to adjust the budget", "points": 1 },
+        { "id": "q6c", "text": "Tight or uncertain right now", "points": 0 }
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "practical",
+      "text": "Who will help with childcare when baby arrives?",
+      "subtext": "Family nearby, daycare plan, partner availability, paid help?",
+      "options": [
+        { "id": "q7a", "text": "Clear plan and reliable support already in place", "points": 2 },
+        { "id": "q7b", "text": "Some options but still figuring it out", "points": 1 },
+        { "id": "q7c", "text": "Would be almost entirely on my own", "points": 0 }
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "first-child",
+      "text": "How old is your first child?",
+      "subtext": "Research suggests 18-36 months spacing has trade-offs.",
+      "options": [
+        { "id": "q8a", "text": "Over 2.5 years old", "points": 3 },
+        { "id": "q8b", "text": "Between 18 months and 2.5 years", "points": 1 },
+        { "id": "q8c", "text": "Under 18 months", "points": 0 }
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "first-child",
+      "text": "How independent is your first child in daily routines?",
+      "subtext": "Eating, dressing, entertaining themselves for short stretches.",
+      "options": [
+        { "id": "q9a", "text": "Can do some self-care and play independently for 15+ minutes", "points": 2 },
+        { "id": "q9b", "text": "Beginning to do some things alone but still very hands-on", "points": 1 },
+        { "id": "q9c", "text": "Needs constant supervision and full support for everything", "points": 0 }
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "first-child",
+      "text": "How is your first child's attachment security right now?",
+      "subtext": "Can they separate from you without falling apart?",
+      "options": [
+        { "id": "q10a", "text": "Handles separations well and feels secure", "points": 1 },
+        { "id": "q10b", "text": "Clingy phase or needing extra reassurance lately", "points": 0 }
+      ]
+    }
+  ],
+  "domainContent": {
+    "relationship": {
+      "high": {
+        "level": "high",
+        "headline": "Partnership is solid",
+        "detail": "You and your partner are aligned on the decision and able to navigate conflict without leaving wreckage. That shared foundation is what carries you through the chaos of two under X.",
+        "strength": "Strong partnership stability. When both parents are on the same page and able to repair quickly, the transition is smoother."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Partnership needs tuning",
+        "detail": "You are mostly aligned but conflict resolution or communication could use some work. A second child will expose every weak point in your partnership. Shoring this up now pays dividends.",
+        "concern": "Partnership alignment is wobbly. Strengthening repair skills before adding a baby reduces the chance of post-baby resentment."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Partnership needs work first",
+        "detail": "One of you is hesitant, or you are fighting more than you are connecting. A second baby will not fix this. It will magnify it. Get to solid ground first.",
+        "concern": "A shaky partnership under the stress of two kids tends to crack further, not heal. Address this before proceeding."
+      }
+    },
+    "emotional": {
+      "high": {
+        "level": "high",
+        "headline": "You have bandwidth",
+        "detail": "Your nervous system has recovered from the first baby phase, and you have patience to spare most days. That emotional reservoir is what you will draw on when both kids need you at once.",
+        "strength": "Strong emotional capacity. You are starting from a recharged place, which is the best predictor of handling two kids without melting down."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Running a little lean",
+        "detail": "You are mostly recovered but still fragile on hard days. Another baby will reset your recovery timeline. Consider what would help you build reserves now, whether that is sleep, therapy, or offloading some load.",
+        "concern": "Emotional reserves are thin. Starting from depletion means you will hit empty faster when baby arrives."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Tank is empty",
+        "detail": "You are still in survival mode from the first child. Adding a second baby before you have recovered is a recipe for burnout, resentment, and regret. Recovery is not optional.",
+        "concern": "You cannot pour from an empty cup. Prioritize your own recovery before planning another baby."
+      }
+    },
+    "practical": {
+      "high": {
+        "level": "high",
+        "headline": "Logistics are handled",
+        "detail": "You have space, financial cushion, and a childcare plan. The practical pieces are not the hard part for you. That frees you up to focus on the emotional and relational work.",
+        "strength": "Strong practical foundation. Having logistics sorted means fewer logistical crises when baby arrives."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Practical gaps to address",
+        "detail": "Some logistics are solid but others need sorting. Waiting to start trying until the gaps are closed reduces stress during pregnancy and postpartum.",
+        "concern": "Practical logistics are shaky. Unresolved housing, finances, or childcare issues will become urgent crises once baby is here."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Practical setup not there yet",
+        "detail": "Housing, finances, or childcare are uncertain. Those uncertainties do not go away when you are pregnant. They become harder to solve. Get these pieces stable first.",
+        "concern": "Unstable practical infrastructure makes the transition to two kids exponentially harder. Solve these first."
+      }
+    },
+    "first-child": {
+      "high": {
+        "level": "high",
+        "headline": "First child is ready",
+        "detail": "Your first child is old enough to have some independence and secure enough to handle the disruption of a sibling. That developmental sweet spot makes the transition easier on everyone.",
+        "strength": "Strong first-child readiness. An older, more independent first child can handle the sibling transition better."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "First child is in transition",
+        "detail": "Your first child is in the middle of developmental leaps or still needing a lot of hands-on care. Waiting a few more months often shifts this from hard to manageable.",
+        "concern": "First child still needs intensive support. Adding a baby while they are in a high-need phase splits your capacity thin."
+      },
+      "low": {
+        "level": "low",
+        "headline": "First child needs more time",
+        "detail": "Your first child is very young or in a clingy, high-need phase. Research is clear that spacing closer than 18 months increases parental stress and decreases attention available for each child.",
+        "concern": "Very close spacing is associated with higher maternal stress, lower sibling relationship quality, and more behavioral issues in the older child."
+      }
+    }
+  },
+  "results": {
+    "ready": {
+      "id": "ready",
+      "themeColor": "#16a34a",
+      "scoreRange": {
+        "min": 19,
+        "max": 25
+      },
+      "headline": "Strong foundation",
+      "subheadline": "Your relationship, emotional reserves, practical setup, and first child's development are all in good shape.",
+      "explanation": "You have done the hard work of building a stable base. Two kids will still be chaotic, but you are starting from solid ground. That matters more than any timeline or comparison to other families. Trust what you have built and know that the things you have in place, like partnership alignment and emotional reserves, are the things that carry you through.",
+      "nextSteps": [
+        "Talk through the logistics of pregnancy, maternity leave, and infant care with your partner",
+        "Start preparing your first child gently if they are old enough to understand",
+        "Build in support now so it is in place when you need it later",
+        "Let go of perfect timing. There is no such thing."
+      ],
+      "watchOutFor": "Even with high readiness, the first few months with two kids are brutal. Your relationship will be tested. Your patience will run out. Plan for it instead of being blindsided.",
+      "encouragement": "You are not guaranteed an easy transition, but you have stacked the deck in your favor. That is all you can do. The rest is just showing up and doing the next right thing.",
+      "comparativeContext": "Families with high readiness across these domains report lower stress and faster adjustment to two children."
+    },
+    "getting-there": {
+      "id": "getting-there",
+      "themeColor": "#e8c840",
+      "scoreRange": {
+        "min": 10,
+        "max": 18
+      },
+      "headline": "Some gaps to close",
+      "subheadline": "A few pieces are solid but one or two domains need work before you are on firm footing.",
+      "explanation": "You are not in crisis, but you are also not ready to add the stress of a second baby. The good news is that most of what is lagging is addressable. Check the domain breakdown to see exactly what needs attention. A few months of focused work now can shift this picture significantly.",
+      "nextSteps": [
+        "Identify which domain is lowest and tackle that first",
+        "If it is relationship, get into therapy or have hard conversations now",
+        "If it is emotional, prioritize your own recovery and build reserves",
+        "If it is practical, solve the logistics before you start trying",
+        "Retake this quiz in two to three months to see where you have shifted"
+      ],
+      "watchOutFor": "The temptation to just start trying anyway because you are tired of waiting. But starting from shaky ground does not save time. It extends the misery.",
+      "encouragement": "Waiting feels hard when you want another baby, but starting before you are ready feels harder. A few months of intentional work now can mean the difference between thriving and surviving.",
+      "comparativeContext": "Families who wait to address gaps in readiness report smoother transitions and less postpartum strain.",
+      "retakeAdvice": "Retake in 2-3 months"
+    },
+    "not-yet": {
+      "id": "not-yet",
+      "themeColor": "#d05597",
+      "scoreRange": {
+        "min": 0,
+        "max": 9
+      },
+      "headline": "Not the time",
+      "subheadline": "Your partnership, emotional state, practical setup, or first child's needs are not in a place to absorb another baby yet.",
+      "explanation": "This is not a judgment. It is just data. Multiple domains are flagging serious gaps, and trying to add a second child right now would be building on sand. Research consistently shows that families who start from instability experience higher stress, more relationship conflict, and worse outcomes for both kids. You are not behind. You are making the wise choice to wait.",
+      "nextSteps": [
+        "Do not start trying until the major gaps are addressed",
+        "Focus on one domain at a time instead of trying to fix everything at once",
+        "If your partnership is struggling, get professional help now",
+        "If you are emotionally depleted, make recovery the priority",
+        "Retake this quiz in six months after you have done some repair work"
+      ],
+      "watchOutFor": "External pressure from family, social media timelines, or biological clock anxiety. None of those factors override the reality that starting from chaos produces more chaos.",
+      "encouragement": "Waiting is not passive. It is the active choice to build a foundation that will hold. There is no prize for having kids fast. The only thing that matters is whether you can show up for them, and right now you are being honest that you cannot show up for two.",
+      "comparativeContext": "Families who wait to address major readiness gaps report significantly lower stress and better sibling relationships long-term.",
+      "retakeAdvice": "Retake in 6 months"
+    }
+  }
+}

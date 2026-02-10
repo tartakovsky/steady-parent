@@ -1,0 +1,313 @@
+{
+  "quizType": "identity",
+  "meta": {
+    "id": "kid-describe-you",
+    "slug": "kid-describe-you",
+    "title": "How Would Your Kid Describe You?",
+    "shortTitle": "How Your Kid Sees You",
+    "description": "Find out how your child actually experiences you — not the parent you think you are, but the one they see in the morning chaos, after-school meltdowns, and weekend adventures. Four types, all honest, none of them Instagram-ready.",
+    "intro": "Answer based on what your kid would say you do, not what you think you should do. This is about the parent they actually experience when the day goes sideways.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 8,
+    "subject": "you",
+    "shareCta": "Curious how your kid would describe you?",
+    "sources": [
+      "Attachment research on parental attunement",
+      "Child perspective-taking studies",
+      "Parenting behavior observation frameworks"
+    ],
+    "previewCta": {
+      "eyebrow": "Want to see the full picture?",
+      "title": "Get your complete profile from your kid's perspective",
+      "body": "See your primary type, what your kid experiences as your strengths, your growth edge, and how all four types blend in your parenting.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "Detailed description of how your kid actually experiences you",
+      "The specific strengths your kid would list if asked",
+      "Your growth edge — the shift that would change the most for your child",
+      "How you blend across all four parent types from a kid's-eye view"
+    ],
+    "communityCta": {
+      "eyebrow": "Want to shift the pattern?",
+      "title": "Get scripts from parents working on the same stuff",
+      "body": "A private group with bite-sized scripts and real strategies from parents figuring it out. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "types": {
+    "fun-one": {
+      "id": "fun-one",
+      "name": "The Fun One",
+      "tagline": "You're the parent who says yes to weird ideas, messy projects, and spontaneous plans.",
+      "themeColor": "#f59e0b",
+      "description": "You're the parent your kid runs to when they want to build a fort or turn dinner into a picnic. You say yes to messes and adventures that make other parents nervous. Your kid thinks you're unpredictable in the best way.",
+      "strengths": [
+        "Your kid feels like childhood is something to enjoy, not just survive",
+        "You model flexibility and creativity when things don't go according to plan",
+        "Your willingness to play at their level builds connection that lasts through the hard years"
+      ],
+      "growthEdge": "When everything is an adventure, nothing feels stable. Your kid needs boring Tuesday routines as much as Saturday spontaneity — the scaffolding that makes fun sustainable.",
+      "encouragement": "Your child will remember you as the parent who made childhood feel alive. That playfulness is a gift, and research links it to secure attachment and creative problem-solving. The calibration is making sure fun doesn't become the only mode you have when your kid needs you to be steady instead.",
+      "comparativeContext": "Children of playful parents score higher on measures of emotional resilience and creativity, though they benefit most when playfulness is paired with consistent structure."
+    },
+    "safe-one": {
+      "id": "safe-one",
+      "name": "The Safe One",
+      "tagline": "Your kid knows what to expect. You're the anchor, the routine, the one who shows up the same way.",
+      "themeColor": "#3b82f6",
+      "description": "You're the parent your kid can predict down to the minute. When the world feels chaotic, you're the part that stays solid. Your kid might not think you're the most exciting parent, but they know you're the most reliable one.",
+      "strengths": [
+        "Your predictability gives your kid genuine security — they never have to guess what version of you they'll get",
+        "You follow through on what you say, which teaches your kid that words mean something",
+        "Your steady presence means your kid can take risks in other areas because home base feels safe"
+      ],
+      "growthEdge": "Predictability is your superpower until it becomes rigidity. When your kid needs you to bend, check whether the routine is serving them or protecting you.",
+      "encouragement": "Consistency is underrated and undersupported in parenting culture. Your child knows they can count on you, and that foundation matters more than the flashy moments. The next step is learning when to hold the line and when to hold your kid instead.",
+      "comparativeContext": "Research on attachment shows that children with highly consistent caregivers develop stronger emotional regulation and lower baseline anxiety, especially in early childhood."
+    },
+    "wise-one": {
+      "id": "wise-one",
+      "name": "The Wise One",
+      "tagline": "Every moment is a teaching moment. Your kid can recite the reasons behind your rules.",
+      "themeColor": "#8b5cf6",
+      "description": "You're the parent who explains everything. Why we don't hit, why sleep matters, why fairness is complicated. Your kid asks a question and you give them the full breakdown. They've learned that you turn simple requests into seminars.",
+      "strengths": [
+        "Your kid develops critical thinking skills because you teach them the why behind everything",
+        "You treat your child like a person capable of understanding complexity, which builds their confidence",
+        "Your explanations give your kid language for their feelings and logic for their choices"
+      ],
+      "growthEdge": "Sometimes your kid needs a hug more than a lesson. Over-explaining can feel like a lecture when they just want you to get it without making them work for it.",
+      "encouragement": "Your instinct to teach is rooted in respect — you believe your kid can handle real information, and you're right. The trick is reading when they're ready to learn and when they just need you to be present without turning it into an educational opportunity.",
+      "comparativeContext": "Kids whose parents explain reasoning show stronger moral development and compliance, though the benefit plateaus when explanations replace connection."
+    },
+    "silly-one": {
+      "id": "silly-one",
+      "name": "The Silly One",
+      "tagline": "You defuse tension with jokes, turn discipline into comedy, and refuse to take it too seriously.",
+      "themeColor": "#ec4899",
+      "description": "You make fart noises during tantrums and respond to defiance with exaggerated gasps. Your kid knows that no matter how heavy the moment feels, you'll find the absurdity. They've learned laughter cuts through anything.",
+      "strengths": [
+        "Your humor teaches your kid that hard moments don't have to stay heavy forever",
+        "You model emotional regulation by showing that shifting the tone can shift the spiral",
+        "Your refusal to catastrophize gives your kid permission to mess up without it becoming a crisis"
+      ],
+      "growthEdge": "When you joke your way out of every hard moment, your kid may wonder if you can handle the serious stuff. Sometimes they need you to sit in the feeling instead of deflecting.",
+      "encouragement": "Humor is a genuinely effective coping mechanism, and teaching your kid to find levity is a life skill. The balance is knowing when to crack the joke and when to hold space for the hard feeling without trying to fix it with a punchline.",
+      "comparativeContext": "Parents who use humor in discipline report lower stress and stronger relationships, though effectiveness depends on kids perceiving it as connective, not dismissive."
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "text": "It's a Tuesday morning and your kid announces they want to wear their Halloween costume to school.",
+      "subtext": "Not a special day. Just a regular Tuesday.",
+      "options": [
+        {
+          "id": "q1a",
+          "text": "Say yes because honestly, why not. Let the kid be a pirate on a Tuesday.",
+          "points": { "fun-one": 5, "safe-one": 0, "wise-one": 1, "silly-one": 2 }
+        },
+        {
+          "id": "q1b",
+          "text": "Remind them we wear regular clothes to school and the costume stays home",
+          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 1, "silly-one": 0 }
+        },
+        {
+          "id": "q1c",
+          "text": "Launch into an explanation about appropriate contexts for costumes and how social norms work",
+          "points": { "fun-one": 0, "safe-one": 1, "wise-one": 5, "silly-one": 1 }
+        },
+        {
+          "id": "q1d",
+          "text": "Offer to wear your own ridiculous hat to drop-off if they wear regular clothes",
+          "points": { "fun-one": 2, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "Your kid comes home from school visibly upset about something that happened with a friend.",
+      "options": [
+        {
+          "id": "q2a",
+          "text": "Drop everything and suggest doing something they love to get their mind off it",
+          "points": { "fun-one": 5, "safe-one": 1, "wise-one": 0, "silly-one": 1 }
+        },
+        {
+          "id": "q2b",
+          "text": "Give them the same after-school snack and routine as always — predictability helps when things feel chaotic",
+          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 1, "silly-one": 0 }
+        },
+        {
+          "id": "q2c",
+          "text": "Sit down and walk through what happened step by step to help them process and problem-solve",
+          "points": { "fun-one": 1, "safe-one": 1, "wise-one": 5, "silly-one": 0 }
+        },
+        {
+          "id": "q2d",
+          "text": "Make an exaggerated sad face and say something absurd to see if you can get a smile first",
+          "points": { "fun-one": 1, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "It's Saturday morning. Your kid wants to know what the plan is for the day.",
+      "options": [
+        {
+          "id": "q3a",
+          "text": "Ask what they want to do and genuinely consider building the day around their idea",
+          "points": { "fun-one": 5, "safe-one": 0, "wise-one": 1, "silly-one": 1 }
+        },
+        {
+          "id": "q3b",
+          "text": "Walk them through the schedule you already have planned — errands, lunch, park, home by 3",
+          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 1, "silly-one": 0 }
+        },
+        {
+          "id": "q3c",
+          "text": "Lay out a few options and talk through the pros and cons of each together",
+          "points": { "fun-one": 1, "safe-one": 1, "wise-one": 5, "silly-one": 0 }
+        },
+        {
+          "id": "q3d",
+          "text": "Announce you're all going on a mystery adventure and refuse to reveal the destination",
+          "points": { "fun-one": 2, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "Your kid refuses to get in the car because they want to bring a toy that's definitely going to cause a fight later.",
+      "subtext": "You're already running late.",
+      "options": [
+        {
+          "id": "q4a",
+          "text": "Let them bring it. You'll deal with the consequences when they happen.",
+          "points": { "fun-one": 5, "safe-one": 0, "wise-one": 0, "silly-one": 2 }
+        },
+        {
+          "id": "q4b",
+          "text": "Hold the boundary you already set — the toy stays home, end of discussion",
+          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 1, "silly-one": 0 }
+        },
+        {
+          "id": "q4c",
+          "text": "Explain exactly why the toy will cause a problem and help them understand the choice they're making",
+          "points": { "fun-one": 0, "safe-one": 1, "wise-one": 5, "silly-one": 0 }
+        },
+        {
+          "id": "q4d",
+          "text": "Pretend the toy is speaking to you and have it tell your kid it would rather stay home and nap",
+          "points": { "fun-one": 1, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "Dinnertime turns into a complaint session about the food. Your kid hates everything on the plate.",
+      "options": [
+        {
+          "id": "q5a",
+          "text": "Offer to make it more fun — turn it into a game, rearrange it into a face, whatever works",
+          "points": { "fun-one": 5, "safe-one": 0, "wise-one": 1, "silly-one": 2 }
+        },
+        {
+          "id": "q5b",
+          "text": "This is dinner. You don't have to eat it, but this is what's being served.",
+          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 1, "silly-one": 0 }
+        },
+        {
+          "id": "q5c",
+          "text": "Talk through why their body needs different foods and what each thing on the plate does for them",
+          "points": { "fun-one": 1, "safe-one": 1, "wise-one": 5, "silly-one": 0 }
+        },
+        {
+          "id": "q5d",
+          "text": "Start eating dramatically and making exaggerated yum noises to see if you can get them to laugh and try a bite",
+          "points": { "fun-one": 1, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "Your kid asks if they can have a sleepover at a friend's house tonight. You had other plans.",
+      "options": [
+        {
+          "id": "q6a",
+          "text": "Rearrange your evening to make it happen because they're genuinely excited",
+          "points": { "fun-one": 5, "safe-one": 0, "wise-one": 0, "silly-one": 1 }
+        },
+        {
+          "id": "q6b",
+          "text": "Explain that sleepovers need advance notice and tonight doesn't work",
+          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 2, "silly-one": 0 }
+        },
+        {
+          "id": "q6c",
+          "text": "Walk them through why last-minute plans are hard and talk about how to plan better next time",
+          "points": { "fun-one": 0, "safe-one": 2, "wise-one": 5, "silly-one": 0 }
+        },
+        {
+          "id": "q6d",
+          "text": "Counter-offer a living room campout at home with blanket forts and flashlights",
+          "points": { "fun-one": 2, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "Your kid is melting down over something small — a broken cracker, a sock that feels weird, a marker that's the wrong shade of blue.",
+      "options": [
+        {
+          "id": "q7a",
+          "text": "Find a way to fix it or offer a fun distraction to shift the energy",
+          "points": { "fun-one": 5, "safe-one": 1, "wise-one": 0, "silly-one": 1 }
+        },
+        {
+          "id": "q7b",
+          "text": "Stay calm and neutral. This is how meltdowns go. It will pass.",
+          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 1, "silly-one": 0 }
+        },
+        {
+          "id": "q7c",
+          "text": "Name the feeling and explain what's happening in their body and why small things feel big sometimes",
+          "points": { "fun-one": 0, "safe-one": 1, "wise-one": 5, "silly-one": 0 }
+        },
+        {
+          "id": "q7d",
+          "text": "Match their energy with mock outrage — 'A BROKEN CRACKER?! This is the worst day in cracker history!'",
+          "points": { "fun-one": 1, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "text": "Bedtime is in ten minutes and your kid wants to start a new elaborate game involving every stuffed animal they own.",
+      "subtext": "You can see the appeal. You can also see that this will derail the entire night.",
+      "options": [
+        {
+          "id": "q8a",
+          "text": "Give them fifteen minutes to play and then shift bedtime back a bit",
+          "points": { "fun-one": 5, "safe-one": 0, "wise-one": 0, "silly-one": 2 }
+        },
+        {
+          "id": "q8b",
+          "text": "Bedtime is bedtime. We can play tomorrow, but tonight we stick to the routine.",
+          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 1, "silly-one": 0 }
+        },
+        {
+          "id": "q8c",
+          "text": "Explain why starting something big right before bed makes it hard to wind down and offer a smaller alternative",
+          "points": { "fun-one": 1, "safe-one": 1, "wise-one": 5, "silly-one": 0 }
+        },
+        {
+          "id": "q8d",
+          "text": "Announce that all the stuffed animals are actually very tired and need to go to bed immediately, complete with yawning sound effects",
+          "points": { "fun-one": 1, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+        }
+      ]
+    }
+  ]
+}

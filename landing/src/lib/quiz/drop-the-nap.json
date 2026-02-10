@@ -1,0 +1,348 @@
+{
+  "quizType": "readiness",
+  "meta": {
+    "id": "drop-the-nap",
+    "slug": "drop-the-nap",
+    "title": "Is Your Child Ready to Drop the Nap?",
+    "shortTitle": "Drop the Nap Readiness Quiz",
+    "description": "Assess whether your child is ready to transition away from daytime naps. Based on sleep research and developmental norms for children ages 2-5.",
+    "intro": "Most kids drop the nap between ages 3 and 5, but the signs vary. This quiz looks at sleep patterns, daytime energy, nighttime sleep quality, and temperament to help you figure out whether to keep the nap, ditch it, or land somewhere in between.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 10,
+    "scoreLabel": "Readiness",
+    "subject": "your child",
+    "levelLabels": {
+      "high": "Ready",
+      "medium": "Transitioning",
+      "low": "Keep It"
+    },
+    "sectionLabels": {
+      "strengths": "Signs It's Time",
+      "concerns": "Reasons to Wait"
+    },
+    "ageRange": {
+      "min": 2,
+      "max": 5,
+      "unit": "years"
+    },
+    "sources": [
+      "AAP sleep guidelines for preschoolers",
+      "National Sleep Foundation age-based recommendations",
+      "Sleep research on nap transitions"
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your child's complete nap readiness profile",
+      "body": "See exactly where your child stands across sleep patterns, energy levels, nighttime sleep, and temperament, plus a concrete action plan for whether to keep the nap, drop it, or try quiet time.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "What each domain score means for your child",
+      "Your child's strongest areas to celebrate",
+      "Targeted next steps for developing areas",
+      "A prioritized action plan you can start today"
+    ],
+    "communityCta": {
+      "eyebrow": "Sleep questions?",
+      "title": "Get real routines from parents navigating the nap transition",
+      "body": "A private group sharing what worked, what didn't, and how to handle the 5 PM meltdown. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "domains": {
+    "sleep-patterns": {
+      "id": "sleep-patterns",
+      "name": "Sleep Pattern Changes",
+      "maxPoints": 8,
+      "thresholds": {
+        "high": 7,
+        "medium": 4
+      }
+    },
+    "daytime-energy": {
+      "id": "daytime-energy",
+      "name": "Daytime Energy",
+      "maxPoints": 5,
+      "thresholds": {
+        "high": 4,
+        "medium": 2
+      }
+    },
+    "nighttime-sleep": {
+      "id": "nighttime-sleep",
+      "name": "Nighttime Sleep Quality",
+      "maxPoints": 7,
+      "thresholds": {
+        "high": 6,
+        "medium": 3
+      }
+    },
+    "temperament-coping": {
+      "id": "temperament-coping",
+      "name": "Temperament & Coping",
+      "maxPoints": 5,
+      "thresholds": {
+        "high": 4,
+        "medium": 2
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "sleep-patterns",
+      "text": "How long does it take your child to fall asleep at naptime?",
+      "subtext": "Once they're in bed or the designated nap spot, how long until they're actually asleep?",
+      "options": [
+        { "id": "q1a", "text": "Over 30 minutes of rolling around, or they don't fall asleep at all", "points": 3 },
+        { "id": "q1b", "text": "15-30 minutes", "points": 1 },
+        { "id": "q1c", "text": "Under 10 minutes, out cold", "points": 0 }
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "sleep-patterns",
+      "text": "When you skip the nap, how does your child's bedtime go?",
+      "subtext": "On days when the nap doesn't happen, either by choice or circumstance.",
+      "options": [
+        { "id": "q2a", "text": "Falls asleep faster and easier than usual", "points": 3 },
+        { "id": "q2b", "text": "About the same as nap days", "points": 1 },
+        { "id": "q2c", "text": "Melts down hard, becomes overtired and wired", "points": 0 }
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "sleep-patterns",
+      "text": "Does your child resist naptime most days?",
+      "subtext": "Protests, stalls, asks to skip it, or says they're not tired.",
+      "options": [
+        { "id": "q3a", "text": "Yes, fighting it is the norm now", "points": 2 },
+        { "id": "q3b", "text": "Sometimes resists, sometimes goes willingly", "points": 1 },
+        { "id": "q3c", "text": "Goes down for naps without much fuss", "points": 0 }
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "daytime-energy",
+      "text": "How is your child's energy level in the late afternoon?",
+      "subtext": "Between 3 PM and dinnertime, when the day is winding down.",
+      "options": [
+        { "id": "q4a", "text": "Still going strong, engaged and playful", "points": 3 },
+        { "id": "q4b", "text": "Slowing down but manageable with a snack or calm activity", "points": 1 },
+        { "id": "q4c", "text": "Complete disaster zone. Whining, crying, or zoning out.", "points": 0 }
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "daytime-energy",
+      "text": "On days without a nap, can your child make it through dinner without falling apart?",
+      "subtext": "Behavior during the meal and the hour after, not bedtime.",
+      "options": [
+        { "id": "q5a", "text": "Yes, holds it together through dinner and beyond", "points": 2 },
+        { "id": "q5b", "text": "Barely makes it, needs extra help and patience", "points": 1 },
+        { "id": "q5c", "text": "No chance. Melts down before food hits the table.", "points": 0 }
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "nighttime-sleep",
+      "text": "What time does your child fall asleep at night after a nap day?",
+      "subtext": "The actual time they're asleep, not the time you put them to bed.",
+      "options": [
+        { "id": "q6a", "text": "9 PM or later, way past a reasonable bedtime", "points": 3 },
+        { "id": "q6b", "text": "Around 8-8:30 PM", "points": 1 },
+        { "id": "q6c", "text": "7-7:30 PM or earlier", "points": 0 }
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "nighttime-sleep",
+      "text": "Does your child wake during the night after nap days?",
+      "subtext": "Night wakings, early morning wake-ups, or restless sleep.",
+      "options": [
+        { "id": "q7a", "text": "Yes, more wakings or earlier mornings on nap days", "points": 2 },
+        { "id": "q7b", "text": "Inconsistent, no clear pattern", "points": 1 },
+        { "id": "q7c", "text": "Sleeps straight through regardless", "points": 0 }
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "nighttime-sleep",
+      "text": "How much total nighttime sleep does your child get after a nap day?",
+      "subtext": "From bedtime to wake-up, not counting the nap itself.",
+      "options": [
+        { "id": "q8a", "text": "Under 10 hours because bedtime is so late", "points": 2 },
+        { "id": "q8b", "text": "10-11 hours", "points": 1 },
+        { "id": "q8c", "text": "11+ hours", "points": 0 }
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "temperament-coping",
+      "text": "How does your child handle feeling tired in the late afternoon?",
+      "subtext": "When they're clearly running low on energy but it's not bedtime yet.",
+      "options": [
+        { "id": "q9a", "text": "Slows down, gets quiet, can still function with support", "points": 3 },
+        { "id": "q9b", "text": "Gets a little cranky but recovers with a distraction", "points": 1 },
+        { "id": "q9c", "text": "Complete emotional breakdown. No reasoning, just tears.", "points": 0 }
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "temperament-coping",
+      "text": "Can your child do quiet time in their room if they don't sleep during naptime?",
+      "subtext": "Books, puzzles, calm play for 30-60 minutes without needing you.",
+      "options": [
+        { "id": "q10a", "text": "Yes, can entertain themselves quietly", "points": 2 },
+        { "id": "q10b", "text": "For a short stretch, maybe 15-20 minutes", "points": 1 },
+        { "id": "q10c", "text": "No way. Calls for you immediately or leaves the room.", "points": 0 }
+      ]
+    }
+  ],
+  "domainContent": {
+    "sleep-patterns": {
+      "high": {
+        "level": "high",
+        "headline": "Naptime is a battle",
+        "detail": "Your child takes forever to fall asleep or doesn't sleep at all during nap windows. They're resisting it physically, which is the clearest biological signal that their body doesn't need it anymore.",
+        "strength": "Clear signal that nap pressure is higher than nap need. Your child's sleep drive at naptime has dropped below the threshold."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Naps are hit or miss",
+        "detail": "Some days your child falls asleep, other days they fight it. This inconsistency is a classic transition phase. They might need the nap after very active mornings but not on calmer days.",
+        "concern": "Sleep patterns are variable. Full nap elimination might leave them overtired, but keeping a daily nap could start interfering with nighttime sleep."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Still needs the nap",
+        "detail": "Your child falls asleep quickly at naptime and doesn't resist it. Their body is still using that midday sleep to regulate energy and mood for the rest of the day.",
+        "concern": "Dropping the nap now would likely lead to late-afternoon meltdowns and overtired bedtimes. The body isn't ready yet."
+      }
+    },
+    "daytime-energy": {
+      "high": {
+        "level": "high",
+        "headline": "Sustains energy all day",
+        "detail": "Your child can make it through the afternoon and evening without crashing, even on no-nap days. That endurance is what makes nap-free days actually workable.",
+        "strength": "Strong daytime stamina. Your child has the energy reserves to handle a full day without a sleep reset."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Energy fades but doesn't collapse",
+        "detail": "Your child slows down in the afternoon but doesn't completely fall apart. Quiet activities, snacks, and lowered expectations can bridge the gap on most days.",
+        "concern": "Afternoon energy dips are noticeable. You'll need backup strategies like earlier bedtimes or occasional naps to avoid total meltdowns."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Crashes hard without a nap",
+        "detail": "Your child cannot function in the late afternoon without sleep. The exhaustion shows up as emotional dysregulation, not just tiredness. That's the body saying it still needs the break.",
+        "concern": "Without a nap, your child's nervous system can't regulate through the full day yet. Forcing it creates behavioral chaos."
+      }
+    },
+    "nighttime-sleep": {
+      "high": {
+        "level": "high",
+        "headline": "Naps wreck nighttime sleep",
+        "detail": "After napping, your child goes to bed late, wakes during the night, or loses total sleep hours. The daytime sleep is directly interfering with the longer, more restorative nighttime sleep.",
+        "strength": "Clear trade-off between nap and nighttime sleep. Dropping the nap should consolidate sleep into one solid nighttime block."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Nighttime sleep is okay either way",
+        "detail": "Bedtime might shift a bit depending on whether they napped, but the overall sleep quality is similar. This suggests the nap isn't hurting nighttime sleep yet.",
+        "concern": "No strong nighttime pressure to drop the nap. If you eliminate it, do it for daytime reasons, not sleep optimization."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Naps support nighttime sleep",
+        "detail": "When your child skips the nap, they become overtired, which makes falling asleep harder and nighttime sleep more fragmented. The nap is currently helping nighttime sleep, not hurting it.",
+        "concern": "Overtiredness is the enemy of good sleep. Keeping the nap protects nighttime sleep quality for now."
+      }
+    },
+    "temperament-coping": {
+      "high": {
+        "level": "high",
+        "headline": "Handles tiredness maturely",
+        "detail": "Your child can self-regulate when they're tired. They slow down, get quiet, or entertain themselves during rest time. That emotional resilience is what makes no-nap days sustainable.",
+        "strength": "Strong coping skills. Your child can manage low energy without falling apart, which is key to making the nap transition work."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Coping is developing",
+        "detail": "Your child can handle some tiredness with support, but it's not effortless. You'll need to lower expectations and provide more scaffolding on no-nap days.",
+        "concern": "Emotional regulation under fatigue is still a work in progress. No-nap days will require more patience and backup plans."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Can't cope with being tired yet",
+        "detail": "When your child is tired, everything falls apart. They can't self-soothe, can't do quiet time, and can't pull it together for basic tasks. That's a developmental limitation, not a parenting problem.",
+        "concern": "Emotional regulation during fatigue isn't there yet. Dropping the nap will create daily meltdowns until this skill develops."
+      }
+    }
+  },
+  "results": {
+    "ready": {
+      "id": "ready",
+      "themeColor": "#16a34a",
+      "scoreRange": {
+        "min": 19,
+        "max": 25
+      },
+      "headline": "Time to Let It Go",
+      "subheadline": "Your child is showing clear signs that the nap is doing more harm than good. The transition window is open.",
+      "explanation": "When naptime becomes a fight, nighttime sleep gets disrupted, and your child has the stamina to make it through the day, you're looking at readiness. The nap served its purpose, and now it's getting in the way. Most kids in this range do better without it, though the first week might feel rocky while everyone adjusts.",
+      "nextSteps": [
+        "Pick a calm week without travel or big changes to make the switch",
+        "Institute mandatory quiet time in their room for 60-90 minutes at the old naptime",
+        "Move bedtime earlier by 30-60 minutes for the first few weeks",
+        "Accept that some days they'll fall asleep during quiet time, and that's fine"
+      ],
+      "watchOutFor": "Growth spurts, illness, and very active days can temporarily bring back the need for a nap. One nap a week during transitions is normal and doesn't mean you failed.",
+      "encouragement": "You waited for the right signals, which is the hardest part. Trust the pattern you're seeing. Most families who eliminate the nap at this readiness level find nighttime sleep improves within two weeks.",
+      "comparativeContext": "Most children drop the nap between ages 3 and 5. Those who transition when nighttime sleep is affected tend to consolidate into longer, deeper nighttime sleep within a few weeks."
+    },
+    "transitioning": {
+      "id": "transitioning",
+      "themeColor": "#e8c840",
+      "scoreRange": {
+        "min": 10,
+        "max": 18
+      },
+      "headline": "In the Middle",
+      "subheadline": "Some signs point toward dropping the nap, others suggest your child still benefits from it. You're in the messy transition zone.",
+      "explanation": "This is the hardest phase because there's no clean answer. Your child might need the nap after busy mornings but not on quieter days. Or they can skip it a few days a week but not every day. The goal here is flexibility, not a rigid schedule. Most kids stay in this phase for a few months before fully dropping the nap.",
+      "nextSteps": [
+        "Offer quiet time every day at the old naptime, but let sleep happen organically",
+        "Watch for patterns. Does your child nap after gymnastics but not after preschool? Use that data.",
+        "Keep bedtime flexible. Earlier on no-nap days, normal time on nap days.",
+        "Retake this quiz in 4-6 weeks to see if readiness has shifted"
+      ],
+      "watchOutFor": "The urge to pick one path and force consistency is strong, but fighting biology creates more problems than inconsistency does. Let your child's body lead.",
+      "encouragement": "The in-between phase feels chaotic, but it's normal and temporary. Your child is building the stamina to go nap-free, and that doesn't happen overnight. Most kids who score in this range fully drop the nap within two to four months.",
+      "comparativeContext": "Transition periods where naps are inconsistent typically last 1-3 months. Flexibility during this phase predicts smoother outcomes than rigid enforcement.",
+      "retakeAdvice": "Retake in 4-6 weeks to check progress"
+    },
+    "keep-it": {
+      "id": "keep-it",
+      "themeColor": "#d05597",
+      "scoreRange": {
+        "min": 0,
+        "max": 9
+      },
+      "headline": "Keep the Nap",
+      "subheadline": "Your child still relies on that midday sleep to regulate energy and mood. Eliminating it now would create more problems than it solves.",
+      "explanation": "Your child is showing clear signs that the nap is still serving a biological purpose. They fall asleep quickly, crash without it, and nighttime sleep isn't being disrupted. Pushing to drop the nap before the body is ready leads to overtired meltdowns, bedtime battles, and fragmented nighttime sleep. This is not about being behind. It's about honoring where your child's nervous system is right now.",
+      "nextSteps": [
+        "Protect the nap. Keep the timing consistent and the environment conducive to sleep.",
+        "Stop worrying about what other kids the same age are doing. Sleep needs vary wildly.",
+        "If naptime resistance appears, revisit the schedule, but don't force wakefulness.",
+        "Plan to reassess in 2-3 months as stamina and sleep patterns naturally evolve"
+      ],
+      "watchOutFor": "Pressure from preschool schedules, older siblings, or parenting advice will tell you to drop the nap earlier. Ignore it. Research shows that children who nap longer have better emotional regulation and cognitive performance.",
+      "encouragement": "Your child needs this sleep, and you're making the right call by protecting it. Most kids who still nap at ages 3-4 are getting better total sleep and showing fewer behavioral issues than peers who dropped it early.",
+      "comparativeContext": "Around 50% of 3-year-olds still nap regularly, and 25% of 4-year-olds do. Longer napping is associated with better mood regulation and nighttime sleep quality.",
+      "retakeAdvice": "Retake in 8-12 weeks"
+    }
+  }
+}

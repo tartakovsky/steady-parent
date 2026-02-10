@@ -1,0 +1,348 @@
+{
+  "quizType": "readiness",
+  "meta": {
+    "id": "kindergarten-readiness",
+    "slug": "kindergarten-readiness",
+    "title": "Is Your Child Ready for Kindergarten?",
+    "shortTitle": "Kindergarten Readiness Quiz",
+    "description": "Assess whether your 4-6 year old has the academic, social, emotional, and self-care skills that predict kindergarten success. Based on developmental research and early childhood education standards.",
+    "intro": "Kindergarten readiness is not about reading or writing yet. It is about the whole child: can they manage their body, regulate emotions, play with peers, and separate from you without falling apart.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 10,
+    "scoreLabel": "Readiness",
+    "subject": "your child",
+    "levelLabels": {
+      "high": "Strong",
+      "medium": "Developing",
+      "low": "Emerging"
+    },
+    "sectionLabels": {
+      "strengths": "Where Your Child Shines",
+      "concerns": "Room to Grow"
+    },
+    "ageRange": {
+      "min": 4,
+      "max": 6,
+      "unit": "years"
+    },
+    "sources": [
+      "NAEYC kindergarten readiness framework",
+      "CDC developmental milestones for 4-6 year olds",
+      "Early childhood education readiness research"
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your child's complete kindergarten readiness profile",
+      "body": "See exactly where your child stands across academic foundations, social skills, emotional regulation, and self-care independence, plus a prioritized action plan for what to practice between now and the first day.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "What each domain score means for your child",
+      "Your child's strongest areas to celebrate",
+      "Targeted practice ideas for developing areas",
+      "A prioritized action plan you can start today"
+    ],
+    "communityCta": {
+      "eyebrow": "Kindergarten questions?",
+      "title": "Get routines and scripts from parents navigating this transition",
+      "body": "Real routines, bite-sized scripts, and founders who answer the stuff that keeps you up at night. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "domains": {
+    "academic": {
+      "id": "academic",
+      "name": "Academic Foundations",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    },
+    "social": {
+      "id": "social",
+      "name": "Social Skills",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    },
+    "emotional": {
+      "id": "emotional",
+      "name": "Emotional Regulation",
+      "maxPoints": 7,
+      "thresholds": {
+        "high": 6,
+        "medium": 4
+      }
+    },
+    "self-care": {
+      "id": "self-care",
+      "name": "Self-Care Independence",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "academic",
+      "text": "Can your child recognize and name most letters of the alphabet?",
+      "subtext": "Not writing them, just identifying. Most of the uppercase letters at minimum.",
+      "options": [
+        { "id": "q1a", "text": "Yes, knows most or all uppercase letters", "points": 3 },
+        { "id": "q1b", "text": "Recognizes about half", "points": 1 },
+        { "id": "q1c", "text": "Knows just a few letters", "points": 0 }
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "academic",
+      "text": "Can your child count to ten and recognize basic numbers?",
+      "subtext": "Counts objects accurately and can point to written numbers 1-10.",
+      "options": [
+        { "id": "q2a", "text": "Yes, counts to ten and identifies written numbers", "points": 3 },
+        { "id": "q2b", "text": "Can count but doesn't recognize written numbers yet", "points": 1 },
+        { "id": "q2c", "text": "Counting is still inconsistent", "points": 0 }
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "social",
+      "text": "Can your child play cooperatively with other children for 10-15 minutes?",
+      "subtext": "Building something together, playing house, taking turns. Not parallel play.",
+      "options": [
+        { "id": "q3a", "text": "Yes, engages in cooperative play regularly", "points": 3 },
+        { "id": "q3b", "text": "Sometimes, but often reverts to solo or parallel play", "points": 1 },
+        { "id": "q3c", "text": "Prefers to play alone or alongside others, not with them", "points": 0 }
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "social",
+      "text": "Does your child share toys and take turns without constant adult prompting?",
+      "subtext": "Not perfectly, but can manage basic sharing with occasional reminders.",
+      "options": [
+        { "id": "q4a", "text": "Yes, shares and takes turns with minimal reminders", "points": 3 },
+        { "id": "q4b", "text": "Needs frequent prompting but will comply", "points": 1 },
+        { "id": "q4c", "text": "Sharing is still a major struggle", "points": 0 }
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "emotional",
+      "text": "Can your child handle frustration without a complete meltdown?",
+      "subtext": "When a block tower falls or a game doesn't go their way, can they recover without major escalation.",
+      "options": [
+        { "id": "q5a", "text": "Yes, gets upset but recovers without melting down", "points": 3 },
+        { "id": "q5b", "text": "About half the time manages frustration, half the time falls apart", "points": 1 },
+        { "id": "q5c", "text": "Minor frustrations regularly trigger big meltdowns", "points": 0 }
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "emotional",
+      "text": "Can your child separate from you at preschool, playdates, or activities without prolonged distress?",
+      "subtext": "Brief upset at drop-off is fine. Looking for: can they transition and engage after you leave.",
+      "options": [
+        { "id": "q6a", "text": "Yes, separates easily or with minimal fuss", "points": 2 },
+        { "id": "q6b", "text": "Protests at first but settles within 5-10 minutes", "points": 1 },
+        { "id": "q6c", "text": "Prolonged distress or refuses to separate", "points": 0 }
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "emotional",
+      "text": "Can your child transition between activities without major resistance?",
+      "subtext": "Moving from playtime to lunch, from outside to inside, from one activity to the next. Not seamlessly, but without a battle.",
+      "options": [
+        { "id": "q7a", "text": "Yes, transitions with minimal resistance", "points": 2 },
+        { "id": "q7b", "text": "Needs warnings and coaxing but eventually cooperates", "points": 1 },
+        { "id": "q7c", "text": "Transitions are almost always a fight", "points": 0 }
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "self-care",
+      "text": "Can your child use the bathroom independently?",
+      "subtext": "Goes when they need to, wipes (mostly), washes hands. Does not need adult supervision for the whole process.",
+      "options": [
+        { "id": "q8a", "text": "Yes, handles the whole routine independently", "points": 3 },
+        { "id": "q8b", "text": "Mostly independent but needs help with wiping or remembering to wash hands", "points": 1 },
+        { "id": "q8c", "text": "Still needs adult assistance for most of it", "points": 0 }
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "self-care",
+      "text": "Can your child dress themselves, including shoes?",
+      "subtext": "Shirts, pants, socks, shoes. Velcro and slip-ons count. Laces do not.",
+      "options": [
+        { "id": "q9a", "text": "Yes, dresses independently including shoes", "points": 2 },
+        { "id": "q9b", "text": "Can do most of it but needs help with shirts or shoes", "points": 1 },
+        { "id": "q9c", "text": "Still needs significant help getting dressed", "points": 0 }
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "self-care",
+      "text": "Can your child eat lunch independently without constant help?",
+      "subtext": "Opens containers, uses utensils, drinks from a regular cup without spilling most of it.",
+      "options": [
+        { "id": "q10a", "text": "Yes, manages lunch independently", "points": 1 },
+        { "id": "q10b", "text": "Eats independently but struggles with containers or utensils", "points": 0 },
+        { "id": "q10c", "text": "Still needs adult help with most meals", "points": 0 }
+      ]
+    }
+  ],
+  "domainContent": {
+    "academic": {
+      "high": {
+        "level": "high",
+        "headline": "Academic foundations are solid",
+        "detail": "Your child knows letters and numbers, which are the basic building blocks kindergarten teachers expect. They are ready to start learning letter sounds, simple math concepts, and early reading patterns.",
+        "strength": "Strong academic foundation. Your child has the pre-literacy and pre-math skills kindergarten builds on."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Academic skills are emerging",
+        "detail": "Your child is building letter and number recognition but is not fully there yet. Most kindergartens expect these skills to be developing, not mastered, so this is still on track.",
+        "concern": "Academic foundation is developing. Practice letter games, count everything, and read together daily to close the gap."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Academic readiness needs focus",
+        "detail": "Letter and number recognition are still early. This does not mean your child is behind, but targeted practice over the next few months will make the kindergarten transition smoother.",
+        "concern": "Academic skills are emerging. Daily practice with letters, numbers, and books will build confidence before school starts."
+      }
+    },
+    "social": {
+      "high": {
+        "level": "high",
+        "headline": "Socially ready to engage",
+        "detail": "Your child can play cooperatively, share, and take turns. These social skills are what make kindergarten classrooms work. Teachers notice and appreciate children who can do this.",
+        "strength": "Strong social skills. Your child can cooperate, share, and play with peers, which is the foundation of classroom success."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Social skills are developing",
+        "detail": "Your child is learning to share and cooperate but needs frequent reminders. This is normal, and kindergarten teachers expect to continue building these skills throughout the year.",
+        "concern": "Social skills are emerging. Playdates, group activities, and coaching through sharing moments will strengthen cooperation."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Social skills need practice",
+        "detail": "Sharing, taking turns, and cooperative play are still challenging. This is not unusual for younger or less socially experienced children, but extra practice now will ease the transition.",
+        "concern": "Social readiness is emerging. Regular playdates and structured group activities will build the skills kindergarten demands."
+      }
+    },
+    "emotional": {
+      "high": {
+        "level": "high",
+        "headline": "Emotionally ready for the demands",
+        "detail": "Your child can handle frustration, separate from you, and transition between activities without major distress. These emotional regulation skills are what make a long school day manageable.",
+        "strength": "Strong emotional regulation. Your child can separate, handle frustration, and transition, which predicts a smoother kindergarten adjustment."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Emotional regulation is developing",
+        "detail": "Your child can manage some emotional challenges but still struggles with frustration, transitions, or separation at times. Kindergarten will continue building these skills, but extra support now helps.",
+        "concern": "Emotional regulation is developing. Practice transitions at home, validate big feelings, and build confidence in separation situations."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Emotional regulation needs support",
+        "detail": "Frustration, transitions, and separation are still major challenges. This is not a sign your child is not ready for kindergarten, but it means they will need more emotional coaching and support during the adjustment period.",
+        "concern": "Emotional readiness is emerging. Practice transitions, build separation confidence gradually, and teach simple calm-down strategies."
+      }
+    },
+    "self-care": {
+      "high": {
+        "level": "high",
+        "headline": "Self-care is handled",
+        "detail": "Your child can use the bathroom, dress themselves, and eat lunch independently. These self-care skills free up their attention for learning instead of logistics.",
+        "strength": "Strong self-care independence. Your child can manage bathroom, dressing, and eating, which makes the school day less overwhelming."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Self-care is mostly there",
+        "detail": "Your child can handle most self-care tasks but still needs help with a few things like wiping, shoes, or containers. Kindergarten teachers expect to help with some of this, so it is not a red flag.",
+        "concern": "Self-care is developing. Practice bathroom independence, dressing, and lunch routines to build confidence before school starts."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Self-care needs practice",
+        "detail": "Your child still needs significant help with bathroom, dressing, and eating. This is not uncommon, but practicing these skills daily over the next few months will make kindergarten less overwhelming.",
+        "concern": "Self-care independence is emerging. Daily practice with bathroom, dressing, and eating routines will build skills and confidence."
+      }
+    }
+  },
+  "results": {
+    "strong": {
+      "id": "strong",
+      "themeColor": "#16a34a",
+      "scoreRange": {
+        "min": 19,
+        "max": 25
+      },
+      "headline": "Ready to Go",
+      "subheadline": "Your child has the academic, social, emotional, and self-care skills that predict a smooth kindergarten transition.",
+      "explanation": "When a child enters kindergarten with strong readiness across all four domains, teachers notice. They engage faster, adjust to routines more easily, and spend less time overwhelmed. This does not mean kindergarten will be perfect, but it means your child has the tools to handle what comes. The transition will still be tiring and emotionally big, but the foundation is there.",
+      "nextSteps": [
+        "Talk about what kindergarten will be like: longer days, new routines, different rules. Keep it matter-of-fact, not scary.",
+        "Practice the morning routine a few times before school starts so it feels familiar.",
+        "Read books about starting school together and let your child ask questions without pressure to feel excited.",
+        "Expect some big feelings in the first few weeks even with strong readiness. Adjustment takes time."
+      ],
+      "watchOutFor": "Even ready children can have rough first weeks. Fatigue, new social dynamics, and the sheer length of the school day can trigger meltdowns at home. This is normal adjustment, not a sign that something is wrong.",
+      "encouragement": "Your child is ready. The skills they have now are the ones that matter most: they can manage their body, play with peers, handle frustration, and separate from you. Kindergarten will build on this foundation, not create it from scratch.",
+      "comparativeContext": "Children who enter kindergarten with strong readiness across academic, social, emotional, and self-care domains typically adjust within the first few weeks and engage more confidently in classroom activities."
+    },
+    "developing": {
+      "id": "developing",
+      "themeColor": "#e8c840",
+      "scoreRange": {
+        "min": 10,
+        "max": 18
+      },
+      "headline": "Mostly Ready",
+      "subheadline": "Your child has strong skills in some areas and is still building in others. Kindergarten will meet them where they are.",
+      "explanation": "Most children enter kindergarten with a mix of strong and developing skills. Teachers expect this and build routines that help children practice what they are still learning. The domain breakdown below shows you where to focus practice between now and the first day. A few targeted weeks of practice can shift developing skills into strong ones.",
+      "nextSteps": [
+        "Check the domain breakdown below to see exactly which skills are lagging and whether they can be practiced or just need more time.",
+        "If social or self-care skills are the gap, set up regular playdates and practice bathroom, dressing, and lunch routines daily.",
+        "If emotional regulation is the challenge, practice transitions at home, validate feelings, and teach simple calm-down strategies.",
+        "If academic skills are behind, play letter and number games daily. Make it casual, not drills."
+      ],
+      "watchOutFor": "The temptation to cram skills in the last few weeks before school starts is real, but pressure backfires. Practice should feel like play, not a test. Focus on one or two areas instead of trying to fix everything at once.",
+      "encouragement": "Your child is closer than it might feel. The skills that are already strong will carry them through, and the developing ones will catch up quickly once they are in the routine. Focus practice on the areas that need it most.",
+      "comparativeContext": "Most children enter kindergarten with a mix of strong and developing skills. Teachers design the first months to continue building social, emotional, and self-care skills alongside academic learning.",
+      "retakeAdvice": "Retake in 4-6 weeks to track progress"
+    },
+    "emerging": {
+      "id": "emerging",
+      "themeColor": "#d05597",
+      "scoreRange": {
+        "min": 0,
+        "max": 9
+      },
+      "headline": "Needs More Time",
+      "subheadline": "Your child is still building the foundation kindergarten expects. Waiting a year or targeted practice now can make a big difference.",
+      "explanation": "If your child is on the younger side of the kindergarten cutoff and readiness is low across multiple domains, delaying a year is worth considering. Research consistently shows that older kindergarteners have better academic and social outcomes, not because they are smarter but because they are developmentally further along. If starting now is required, expect the first few months to be emotionally hard and plan for extra support at home.",
+      "nextSteps": [
+        "If your child has a late birthday and delaying is an option, seriously consider it. The long-term benefits of entering kindergarten ready outweigh the short-term awkwardness of waiting.",
+        "If starting now is required, focus practice on the domains that scored lowest. Social and self-care skills can improve quickly with daily practice.",
+        "Talk to the kindergarten teacher early about what skills your child is still building so they can provide extra support.",
+        "Expect fatigue, meltdowns at home, and slow adjustment in the first few months. This is your child working harder than their peers to manage the same day."
+      ],
+      "watchOutFor": "Family and social pressure to start kindergarten on time is real, but developmental readiness matters more than calendar age. Children who start kindergarten significantly less ready than peers often struggle socially and emotionally for years, even if they eventually catch up academically.",
+      "encouragement": "If delaying is possible, you are making the evidence-based choice. If not, your child can succeed with extra practice and support, but it will require more patience. Focus on emotional regulation, social cooperation, and self-care. Academic skills will come.",
+      "comparativeContext": "Research consistently shows that children who enter kindergarten at the older end of the age range have better academic and social outcomes. Delaying entry for a less-ready child is associated with long-term benefits, not long-term harm.",
+      "retakeAdvice": "Retake in 8-12 weeks to reassess readiness"
+    }
+  }
+}

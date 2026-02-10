@@ -1,0 +1,333 @@
+{
+  "quizType": "readiness",
+  "meta": {
+    "id": "communication-safety",
+    "slug": "communication-safety",
+    "title": "How Safe Does Your Child Feel Talking to You?",
+    "shortTitle": "Communication Safety Quiz",
+    "description": "Assess whether your child feels emotionally safe sharing feelings, problems, and hard questions with you. Not about how much they talk — about whether they feel safe doing it when it matters.",
+    "intro": "This quiz isn't about chatter volume. It's about whether your child feels safe bringing you the hard stuff — feelings, mistakes, scary questions. Connection depends on safety, not conversation frequency.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 10,
+    "scoreLabel": "Safety",
+    "subject": "your child",
+    "resultDisplay": "profile",
+    "shareCta": "Curious how safe your child feels talking to you?",
+    "levelLabels": {
+      "high": "Open",
+      "medium": "Cautious",
+      "low": "Guarded"
+    },
+    "sectionLabels": {
+      "strengths": "Where Trust Is Strong"
+    },
+    "sources": [
+      "Attachment research on parent-child communication",
+      "Trust and disclosure in child development",
+      "Parental responsiveness frameworks",
+      "Emotional safety and parent-child relationships"
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your child's complete communication safety profile",
+      "body": "See how emotionally safe your child feels across all four dimensions — emotional disclosure, trust in your response, repair after conflict, and their willingness to initiate hard conversations. Plus domain insights and a prioritized action plan.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "What each domain score means for your child",
+      "Your child's strongest areas to celebrate",
+      "Targeted next steps for developing areas",
+      "A prioritized action plan you can start today"
+    ],
+    "communityCta": {
+      "eyebrow": "Want help with this?",
+      "title": "Get scripts for hard conversations from parents who've been here",
+      "body": "Real scripts for building safety, bite-sized routines from parents rebuilding trust, and founders who get it. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "domains": {
+    "emotional-disclosure": {
+      "id": "emotional-disclosure",
+      "name": "Emotional Disclosure",
+      "maxPoints": 9,
+      "thresholds": {
+        "high": 7,
+        "medium": 4
+      }
+    },
+    "trust-in-response": {
+      "id": "trust-in-response",
+      "name": "Trust in Response",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    },
+    "repair-after-conflict": {
+      "id": "repair-after-conflict",
+      "name": "Repair After Conflict",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    },
+    "initiative": {
+      "id": "initiative",
+      "name": "Initiative",
+      "maxPoints": 9,
+      "thresholds": {
+        "high": 7,
+        "medium": 4
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "emotional-disclosure",
+      "text": "When your child is upset, how often do they come to you without being prompted?",
+      "subtext": "Not tantrums — sadness, fear, disappointment. The internal stuff.",
+      "options": [
+        { "id": "q1a", "text": "Usually brings it to me voluntarily, even if they don't have words yet", "points": 3 },
+        { "id": "q1b", "text": "Sometimes comes to me, sometimes processes alone or with someone else", "points": 1 },
+        { "id": "q1c", "text": "Rarely comes to me unless I notice and ask directly", "points": 0 }
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "emotional-disclosure",
+      "text": "Your child did something they knew was wrong. How likely are they to tell you about it?",
+      "subtext": "The broken rule, the sneak, the lie. When they know they messed up.",
+      "options": [
+        { "id": "q2a", "text": "They'll usually confess or tell me without too much delay, even when scared", "points": 3 },
+        { "id": "q2b", "text": "Sometimes they tell me, but often I find out another way", "points": 1 },
+        { "id": "q2c", "text": "They hide it — I rarely hear about mistakes unless I catch them", "points": 0 }
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "trust-in-response",
+      "text": "When your child shares a feeling, what's your most common first response?",
+      "subtext": "Not what you wish you did. What you actually do most of the time.",
+      "options": [
+        { "id": "q3a", "text": "I listen and reflect the feeling without trying to fix or minimize it", "points": 3 },
+        { "id": "q3b", "text": "I listen but often jump to reassurance or solutions too quickly", "points": 1 },
+        { "id": "q3c", "text": "I unintentionally dismiss, correct, or redirect because I'm uncomfortable or rushed", "points": 0 }
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "trust-in-response",
+      "text": "When your child tells you something hard (a fear, a mistake, a big feeling), how do they seem afterward?",
+      "subtext": "Not how you feel. How they look — relieved, shut down, neutral.",
+      "options": [
+        { "id": "q4a", "text": "They seem lighter, calmer, or visibly relieved", "points": 3 },
+        { "id": "q4b", "text": "Hard to tell — sometimes better, sometimes neutral, sometimes withdrawn", "points": 1 },
+        { "id": "q4c", "text": "Often seem to regret telling me or shut down after", "points": 0 }
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "repair-after-conflict",
+      "text": "After a big argument or a moment where you lost your patience, what usually happens?",
+      "subtext": "The aftermath. Reconnection, silence, avoidance, or business as usual.",
+      "options": [
+        { "id": "q5a", "text": "We reconnect — either I repair or they come back to me and we talk it through", "points": 3 },
+        { "id": "q5b", "text": "We move on but the reconnection feels incomplete or awkward", "points": 1 },
+        { "id": "q5c", "text": "We just resume normal routines without addressing what happened", "points": 0 }
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "repair-after-conflict",
+      "text": "When you apologize to your child, how do they respond?",
+      "subtext": "Not whether you apologize. How they react when you do.",
+      "options": [
+        { "id": "q6a", "text": "They accept it easily and seem genuinely reassured", "points": 3 },
+        { "id": "q6b", "text": "They accept it but seem wary or like they're still processing", "points": 1 },
+        { "id": "q6c", "text": "They shrug it off, avoid it, or don't seem to trust it", "points": 0 }
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "initiative",
+      "text": "How often does your child ask you difficult questions about feelings, the world, or relationships?",
+      "subtext": "Why are you mad? Why don't I have friends? What happens when you die? The risky ones.",
+      "options": [
+        { "id": "q7a", "text": "Regularly — they bring me the hard questions without much hesitation", "points": 3 },
+        { "id": "q7b", "text": "Occasionally — they ask some things but I can tell they hold back", "points": 1 },
+        { "id": "q7c", "text": "Rarely or never — they don't bring me those questions", "points": 0 }
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "emotional-disclosure",
+      "text": "Does your child share small daily frustrations (a friend was mean, school was boring, someone took their toy)?",
+      "subtext": "Not meltdowns. Low-stakes venting about life's minor injustices.",
+      "options": [
+        { "id": "q8a", "text": "Yes, frequently — I hear about the small stuff without prompting", "points": 3 },
+        { "id": "q8b", "text": "Sometimes — they'll share if I ask or if it's big enough", "points": 1 },
+        { "id": "q8c", "text": "Rarely — I only hear about it if there's a blowup or someone else tells me", "points": 0 }
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "initiative",
+      "text": "When your child wants to talk about something that matters to them, do they seek you out?",
+      "subtext": "Not logistics. The stuff they care about — ideas, worries, excited discoveries.",
+      "options": [
+        { "id": "q9a", "text": "Yes, they come find me or wait for a moment to tell me", "points": 3 },
+        { "id": "q9b", "text": "Sometimes, but often it feels like they've given up or forgotten by the time they could tell me", "points": 1 },
+        { "id": "q9c", "text": "Not really — I'm usually not the first person they go to", "points": 0 }
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "initiative",
+      "text": "If your child is struggling with something (friendship trouble, schoolwork, anxiety), do they ask you for help?",
+      "subtext": "Not whether you notice and offer. Whether they initiate.",
+      "options": [
+        { "id": "q10a", "text": "Yes, they'll ask directly or drop clear hints that they need support", "points": 3 },
+        { "id": "q10b", "text": "Sometimes, but I often have to pull it out of them or notice on my own", "points": 1 },
+        { "id": "q10c", "text": "Rarely — they struggle alone or I find out too late", "points": 0 }
+      ]
+    }
+  ],
+  "domainContent": {
+    "emotional-disclosure": {
+      "high": {
+        "level": "high",
+        "headline": "They share voluntarily",
+        "detail": "Your child brings you their feelings — the good, the bad, the embarrassing — without you having to interrogate them. That's not random luck. It's trust built over time.",
+        "strength": "Your child feels safe enough to show you the internal stuff without prompting. They don't hide feelings or mistakes because they've learned that bringing them to you usually helps."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Selective sharing",
+        "detail": "Your child shares some things but holds back others. They're testing whether it's safe — sometimes it is, sometimes it isn't. The pattern is inconsistent enough that they're cautious.",
+        "concern": "Inconsistent safety leads to selective disclosure. Your child shares when conditions feel right but doesn't trust it across the board. Notice when they shut down — that's the data."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Guarded",
+        "detail": "Your child doesn't bring you much of their internal world. Feelings stay inside, mistakes stay hidden, and you're often the last to know what's actually happening with them emotionally.",
+        "concern": "When disclosure is this low, it's because sharing hasn't felt safe enough often enough. They've learned to manage feelings alone. Rebuilding this starts with listening without fixing, judging, or minimizing."
+      }
+    },
+    "trust-in-response": {
+      "high": {
+        "level": "high",
+        "headline": "Your response builds trust",
+        "detail": "When your child shares something hard, they feel heard rather than judged, fixed, or dismissed. That's why they keep coming back. Trust in your response is the foundation of emotional safety.",
+        "strength": "Your child has learned that bringing feelings to you usually makes things better, not worse. That's the core of secure attachment — they trust your response."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Mixed signals",
+        "detail": "Sometimes your response feels safe, sometimes it doesn't. Your child is learning to gauge your mood or availability before deciding whether to share. That hesitation is the data.",
+        "concern": "Inconsistent responses teach caution. Your child can't predict whether they'll be met with empathy or correction, so they're careful. Notice your patterns — when do you shut down vs. open up?"
+      },
+      "low": {
+        "level": "low",
+        "headline": "They regret telling you",
+        "detail": "When your child shares something vulnerable, they often seem worse afterward — shut down, defensive, or like they wished they hadn't said it. That's a signal that your response isn't landing as safe.",
+        "concern": "If kids consistently regret sharing with you, they stop. The fix isn't trying harder to respond perfectly — it's noticing your default reactions (dismissing, fixing, lecturing) and replacing one at a time with reflection."
+      }
+    },
+    "repair-after-conflict": {
+      "high": {
+        "level": "high",
+        "headline": "Repair happens",
+        "detail": "After conflict or rupture, you reconnect. Either you initiate repair or your child feels safe enough to come back. That ability to mend the connection is what prevents accumulated distance.",
+        "strength": "Your child knows that fights or hard moments don't mean the relationship is broken. Repair restores safety and teaches them that conflict doesn't equal abandonment."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Incomplete repair",
+        "detail": "You move on after conflict, but the reconnection feels hollow. The tension clears, routines resume, but the emotional reset doesn't fully happen. It's functional but not restorative.",
+        "concern": "Unrepaired ruptures accumulate. Moving on without explicit reconnection teaches kids to bury feelings rather than resolve them. Repair doesn't require a big conversation — sometimes it's just naming what happened and saying you're sorry."
+      },
+      "low": {
+        "level": "low",
+        "headline": "No repair pattern",
+        "detail": "After conflict, you just resume normal life. No apology, no reconnection, no acknowledgment of what happened. The routine continues, but the emotional rupture doesn't get addressed.",
+        "concern": "When repair never happens, kids learn that anger or disconnection is permanent until it fades. They stop trusting that you'll come back. One explicit repair this week — even for something small — starts changing the pattern."
+      }
+    },
+    "initiative": {
+      "high": {
+        "level": "high",
+        "headline": "They come to you",
+        "detail": "Your child actively seeks you out for the hard questions, the worries, the stuff they're trying to figure out. They've learned you're a safe person to bring the big stuff to, so they do.",
+        "strength": "Your child doesn't wait to be asked — they come to you. That level of initiative means they trust that bringing you in will help, not make things worse."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Hesitant to initiate",
+        "detail": "Your child sometimes comes to you, but there's a hesitation — like they're testing whether this is a good time or whether you'll actually listen. The initiative exists but it's tentative.",
+        "concern": "Kids who hesitate to initiate are reading the room before they speak. Consistent availability in one predictable window per day fixes this faster than trying to be available all the time."
+      },
+      "low": {
+        "level": "low",
+        "headline": "They don't bring you in",
+        "detail": "Your child doesn't seek you out for help, questions, or hard feelings. They either manage alone, go to someone else, or just never bring it up. You're not their first call when things matter.",
+        "concern": "When kids stop initiating, it's because initiating hasn't worked enough times. Rebuilding this means being actively curious without interrogating — ask one open question per day and actually wait for the answer."
+      }
+    }
+  },
+  "results": {
+    "open-channel": {
+      "id": "open-channel",
+      "themeColor": "#16a34a",
+      "scoreRange": { "min": 22, "max": 30 },
+      "headline": "Open Channel",
+      "subheadline": "Your child feels safe bringing you the hard stuff — feelings, mistakes, questions, and worries. That's not luck. That's trust you've built one interaction at a time.",
+      "explanation": "An open communication channel doesn't mean your child tells you everything or that every conversation goes smoothly. It means they feel safe enough to try. They've learned that bringing feelings to you usually helps rather than making things worse. This is the foundation of secure attachment — not perfection, but consistent enough safety that they keep coming back.",
+      "nextSteps": [
+        "Protect what's working — notice the moments where your child opens up and keep doing whatever you're doing there",
+        "Stay curious about small disclosures (complaints about school, minor frustrations) — they're testing whether you're safe for the big stuff",
+        "Keep repairing ruptures explicitly — apologies and reconnection after conflict maintain the trust you've built"
+      ],
+      "watchOutFor": "High trust can make you complacent. Kids keep sharing when the response stays consistent. One pattern shift (dismissing feelings when you're stressed, lecturing instead of listening) can quietly erode the safety you've built.",
+      "encouragement": "Your child trusts you with the hard stuff. That didn't happen by accident. Keep showing up the way you have been.",
+      "comparativeContext": "Research on parent-child communication shows that children who feel emotionally safe at home are significantly more likely to seek parental guidance during adolescence, even when peer influence is strong."
+    },
+    "cautious-sharer": {
+      "id": "cautious-sharer",
+      "themeColor": "#e8c840",
+      "scoreRange": { "min": 11, "max": 21 },
+      "headline": "Cautious Sharer",
+      "subheadline": "Your child shares some things but holds back others. They're testing safety case-by-case rather than trusting it across the board. This is fixable with targeted consistency.",
+      "explanation": "Your child is in the middle zone — sometimes they come to you, sometimes they don't. They share when conditions feel right but pull back when they don't. That inconsistency means they're reading signals (your mood, your availability, past responses) before deciding whether it's safe to open up. The good news: you're not starting from scratch. The pattern just needs more predictability.",
+      "nextSteps": [
+        "Look at your domain breakdown and identify the lowest-scoring area — that's where safety is breaking down most",
+        "Pick one concrete response pattern to change: if you lecture, try reflecting feelings first. If you dismiss, try naming the emotion you see.",
+        "Create one predictable daily window (bedtime, car rides, dinner) where you're fully available and curious without an agenda",
+        "After conflict, name it and repair explicitly — even small apologies rebuild trust faster than ignoring ruptures"
+      ],
+      "watchOutFor": "The middle zone feels functional enough to ignore. But cautious sharers often shut down entirely during adolescence if the pattern doesn't improve. Small, consistent changes now prevent big disconnection later.",
+      "encouragement": "Your child wants to trust you with the hard stuff — they're just not sure it's safe yet. Consistency in one area builds trust faster than trying to fix everything at once.",
+      "comparativeContext": "Studies show that children in this range increase disclosure significantly when parents make one reliable response change (listening without fixing, repairing after conflict) and sustain it for 2-3 weeks."
+    },
+    "closed-loop": {
+      "id": "closed-loop",
+      "themeColor": "#d05597",
+      "scoreRange": { "min": 0, "max": 10 },
+      "headline": "Closed Loop",
+      "subheadline": "Your child doesn't bring you much of their internal world. Feelings, mistakes, and worries stay inside. This isn't about their personality — it's about safety.",
+      "explanation": "When kids don't share, it's because sharing hasn't felt safe enough often enough. Maybe they've been lectured, dismissed, or punished for honesty. Maybe your response is unpredictable — sometimes empathetic, sometimes harsh. Either way, they've learned to manage feelings alone. The instinct is to push harder for connection, but interrogation makes guarded kids shut down further. What changes this is predictable, non-judgmental availability over time.",
+      "nextSteps": [
+        "Stop asking probing questions — guarded kids read that as interrogation. Start with low-stakes curiosity about neutral topics (what they're watching, what's funny at school).",
+        "When they do share something (even tiny), respond with pure reflection: 'That sounds frustrating' or 'You seem excited about that.' No advice, no questions, no fixing.",
+        "Repair one past rupture explicitly — pick a recent conflict and say 'I was too harsh when X happened. I'm sorry.' Don't expect a big response. Plant the seed.",
+        "Create a daily 5-minute window of completely undivided attention with no agenda — not teaching, not correcting, just being there."
+      ],
+      "watchOutFor": "Closed loops don't open overnight. The temptation is to try a week of listening and then give up when nothing changes. Trust rebuilds slowly. Small, consistent safety over months beats one big conversation.",
+      "encouragement": "This pattern didn't form overnight and it won't reverse overnight. But it can change. Start with one interaction this week where you listen without fixing, judging, or redirecting. Just that.",
+      "comparativeContext": "Research on trust repair in parent-child relationships shows that consistent non-judgmental responses over 4-6 weeks can shift disclosure patterns even in highly guarded children. It's slow, but it works."
+    }
+  }
+}

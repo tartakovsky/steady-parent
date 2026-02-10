@@ -1,0 +1,471 @@
+{
+  "quizType": "identity",
+  "meta": {
+    "id": "worried-parent",
+    "slug": "worried-parent",
+    "title": "What Kind of Worried Parent Are You?",
+    "shortTitle": "Worried Parent Quiz",
+    "description": "Discover your parental anxiety style — how you process worry and what triggers your protective instincts. Not all worry looks the same: some research, some scan, some catastrophize, some hide it completely.",
+    "intro": "Parental anxiety shows up differently for everyone. This quiz identifies your specific worry pattern — how you process fear, what triggers it, and what helps you move through it.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 8,
+    "subject": "you",
+    "shareCta": "Want to understand your own worry pattern?",
+    "sources": [
+      "Anxiety and Depression Association of America parenting resources",
+      "Meta-worry and intolerance of uncertainty research",
+      "Parental anxiety typology frameworks"
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your complete worry profile",
+      "body": "Your primary type, specific strengths in how you manage worry, your growth edge, and how you compare across all worry styles.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "Detailed description of your primary worry type",
+      "Your unique strengths in managing parental anxiety",
+      "Your growth edge — one shift that changes the most",
+      "How you compare across all worry styles"
+    ],
+    "communityCta": {
+      "eyebrow": "Want help with this?",
+      "title": "Get scripts for anxious moments from parents who've been there",
+      "body": "Real routines for managing worry, daily support from parents navigating the same fears. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "types": {
+    "researcher": {
+      "id": "researcher",
+      "name": "The Researcher",
+      "tagline": "You drown anxiety in information — if you can study it, you can manage it.",
+      "themeColor": "#3b82f6",
+      "description": "When worry strikes, you open fourteen browser tabs. You're the parent who's read every developmental milestone chart, memorized safe sleep guidelines, and can cite statistics about playground injuries. Information is your security blanket — if you understand all the variables, you can control the outcome.",
+      "strengths": [
+        "You're exceptionally prepared for the predictable risks — your diaper bag has supplies for scenarios other parents haven't imagined",
+        "You catch developmental delays early because you actually know what normal looks like at each age",
+        "Your kids benefit from evidence-based choices — you don't fall for parenting trends without checking the research"
+      ],
+      "growthEdge": "The research never ends, and no amount of information eliminates uncertainty. Learning to sit with 'I don't know' without immediately Googling it would free up significant mental space.",
+      "encouragement": "Your impulse to understand is valuable — it's led to genuinely better parenting decisions. The shift is recognizing when more research becomes avoidance rather than problem-solving. Trust that you've studied enough.",
+      "comparativeContext": "Parents with this pattern often have backgrounds in academic or analytical fields where expertise equals safety."
+    },
+    "sentinel": {
+      "id": "sentinel",
+      "name": "The Sentinel",
+      "tagline": "You scan every environment for danger — hypervigilance is your default mode.",
+      "themeColor": "#10b981",
+      "description": "You're the parent mentally mapping exits at birthday parties, watching toddlers near stairs like a hawk, triple-checking car seat installations. Your nervous system is always on — scanning for the sharp corner, the wobbly table, the kid who plays too rough. Rest feels impossible because danger never takes a break.",
+      "strengths": [
+        "You've prevented genuine accidents because you spotted the hazard before it became a problem",
+        "Your kids are safer in objectively dangerous situations — you don't miss the uncovered outlet or the unlocked pool gate",
+        "You're the parent other parents want around in emergencies because you're already three steps ahead"
+      ],
+      "growthEdge": "Not every moment requires threat assessment, and your body can't sustain this level of vigilance indefinitely. Learning which risks actually warrant attention would let you relax occasionally.",
+      "encouragement": "Your protectiveness has kept your kids safe in real ways. The work is recalibrating your threat detector so it doesn't fire at shadows — trusting that most moments are actually fine.",
+      "comparativeContext": "This pattern often intensifies after a previous parenting scare or personal trauma history."
+    },
+    "fortune-teller": {
+      "id": "fortune-teller",
+      "name": "The Fortune Teller",
+      "tagline": "You catastrophize the future — your brain fast-forwards to worst-case scenarios.",
+      "themeColor": "#f59e0b",
+      "description": "A fever becomes meningitis, a playground conflict becomes lifelong social isolation, a toddler's speech delay becomes academic failure. Your brain doesn't stop at the immediate worry — it builds entire disaster narratives, complete with worst-case outcomes and your imagined regret for not preventing them.",
+      "strengths": [
+        "You're excellent at contingency planning because you've already imagined seventeen ways things could go wrong",
+        "You take precautionary health measures seriously — you don't dismiss symptoms that warrant actual attention",
+        "Your ability to anticipate problems means you're rarely caught completely off-guard"
+      ],
+      "growthEdge": "Almost none of your catastrophic predictions come true, yet you invest enormous energy in them. Learning to spot when worry becomes catastrophic fantasy would reduce unnecessary suffering.",
+      "encouragement": "The ability to think ahead is useful — it's what makes you plan for real contingencies. The shift is noticing when you've crossed from planning into storytelling about disasters that haven't happened and likely won't.",
+      "comparativeContext": "Research shows catastrophizing correlates strongly with generalized anxiety, not actual risk prediction accuracy."
+    },
+    "cool-cucumber": {
+      "id": "cool-cucumber",
+      "name": "The Cool Cucumber",
+      "tagline": "You worry internally but appear calm — nobody sees the anxiety except you.",
+      "themeColor": "#8b5cf6",
+      "description": "On the surface, you're the chill parent. You don't hover at the playground, you don't visibly panic, you make jokes when other parents are freaking out. But internally, you're running the same disaster simulations — you've just learned to hide it. The gap between your inner turmoil and outer composure is exhausting.",
+      "strengths": [
+        "Your kids don't absorb your anxiety the way they would if you were visibly spiraling — they get a calmer model",
+        "You're functional under stress because you've practiced appearing fine when you're not",
+        "Other parents see you as a steady presence, which often becomes true through repetition"
+      ],
+      "growthEdge": "Suppressing anxiety isn't the same as managing it, and the performance eventually takes a toll. Learning to acknowledge your worry to safe people would reduce the isolation of carrying it alone.",
+      "encouragement": "Your composure serves your kids well — they benefit from not having to manage your visible anxiety. But you don't have to white-knuckle it in silence. Finding one or two people who get to see the real worry would ease the load.",
+      "comparativeContext": "This pattern is common among parents who grew up with the message that visible anxiety was weakness or burden."
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Your toddler trips at the playground and cries. How do you respond?",
+      "subtext": "Think about your immediate internal reaction, not just what you do outwardly",
+      "options": [
+        {
+          "id": "q1a",
+          "text": "Rush over while mentally cataloging injuries you've read about from falls",
+          "points": {
+            "researcher": 4,
+            "sentinel": 2,
+            "fortune-teller": 1,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q1b",
+          "text": "Scan the area to see what caused the fall and assess other hazards nearby",
+          "points": {
+            "researcher": 1,
+            "sentinel": 5,
+            "fortune-teller": 0,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q1c",
+          "text": "Imagine the concussion, the ER visit, the long-term consequences of head trauma",
+          "points": {
+            "researcher": 0,
+            "sentinel": 1,
+            "fortune-teller": 5,
+            "cool-cucumber": 1
+          }
+        },
+        {
+          "id": "q1d",
+          "text": "Walk over calmly while your stomach drops and your mind races",
+          "points": {
+            "researcher": 0,
+            "sentinel": 1,
+            "fortune-teller": 1,
+            "cool-cucumber": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "It's the night before your child starts kindergarten. What keeps you up?",
+      "options": [
+        {
+          "id": "q2a",
+          "text": "Re-reading school policies and researching social-emotional readiness benchmarks",
+          "points": {
+            "researcher": 5,
+            "sentinel": 0,
+            "fortune-teller": 1,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q2b",
+          "text": "Mentally mapping the school layout and rehearsing pickup logistics",
+          "points": {
+            "researcher": 1,
+            "sentinel": 4,
+            "fortune-teller": 0,
+            "cool-cucumber": 1
+          }
+        },
+        {
+          "id": "q2c",
+          "text": "Building entire narratives about bullying, academic failure, and social rejection",
+          "points": {
+            "researcher": 0,
+            "sentinel": 0,
+            "fortune-teller": 5,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q2d",
+          "text": "Nothing visible — you act relaxed but your chest is tight and your mind won't stop",
+          "points": {
+            "researcher": 0,
+            "sentinel": 1,
+            "fortune-teller": 1,
+            "cool-cucumber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "Your preschooler has a fever of 101. What's your immediate move?",
+      "options": [
+        {
+          "id": "q3a",
+          "text": "Google symptom combinations and cross-reference pediatric fever protocols",
+          "points": {
+            "researcher": 5,
+            "sentinel": 1,
+            "fortune-teller": 1,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q3b",
+          "text": "Check temperature every twenty minutes and monitor for any change in behavior",
+          "points": {
+            "researcher": 1,
+            "sentinel": 5,
+            "fortune-teller": 0,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q3c",
+          "text": "Immediately imagine meningitis, sepsis, or the rare thing you read about last month",
+          "points": {
+            "researcher": 1,
+            "sentinel": 0,
+            "fortune-teller": 5,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q3d",
+          "text": "Give medicine calmly while silently spiraling about everything it could be",
+          "points": {
+            "researcher": 0,
+            "sentinel": 0,
+            "fortune-teller": 2,
+            "cool-cucumber": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "You're letting your child try something new (bike without training wheels, sleepover at a friend's house). How does it feel?",
+      "options": [
+        {
+          "id": "q4a",
+          "text": "You've already researched injury statistics and age-appropriate milestones for this exact activity",
+          "points": {
+            "researcher": 5,
+            "sentinel": 1,
+            "fortune-teller": 0,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q4b",
+          "text": "You're hyper-focused on every potential hazard — watching for cars, uneven pavement, anything risky",
+          "points": {
+            "researcher": 0,
+            "sentinel": 5,
+            "fortune-teller": 1,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q4c",
+          "text": "Your mind fast-forwards to the accident, the regret, the 'I should have known better'",
+          "points": {
+            "researcher": 0,
+            "sentinel": 1,
+            "fortune-teller": 5,
+            "cool-cucumber": 1
+          }
+        },
+        {
+          "id": "q4d",
+          "text": "You smile encouragingly while your heart pounds and your hands are clammy",
+          "points": {
+            "researcher": 0,
+            "sentinel": 0,
+            "fortune-teller": 1,
+            "cool-cucumber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "Your child's teacher mentions they're 'a little behind' in reading. What happens next?",
+      "options": [
+        {
+          "id": "q5a",
+          "text": "You spend the evening reading about dyslexia, vision problems, and literacy interventions",
+          "points": {
+            "researcher": 5,
+            "sentinel": 0,
+            "fortune-teller": 2,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q5b",
+          "text": "You immediately start monitoring their homework and scanning for other academic red flags",
+          "points": {
+            "researcher": 1,
+            "sentinel": 4,
+            "fortune-teller": 0,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q5c",
+          "text": "You picture them struggling through school, falling further behind, never catching up",
+          "points": {
+            "researcher": 1,
+            "sentinel": 0,
+            "fortune-teller": 5,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q5d",
+          "text": "You nod calmly and say you'll work on it at home while panic floods your chest",
+          "points": {
+            "researcher": 0,
+            "sentinel": 0,
+            "fortune-teller": 1,
+            "cool-cucumber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "You're at a crowded indoor play space. Where's your attention?",
+      "options": [
+        {
+          "id": "q6a",
+          "text": "Reviewing what you know about germs on play structures and crowd-related injury risks",
+          "points": {
+            "researcher": 4,
+            "sentinel": 2,
+            "fortune-teller": 0,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q6b",
+          "text": "Constantly tracking your child's location and watching for bigger kids playing rough",
+          "points": {
+            "researcher": 0,
+            "sentinel": 5,
+            "fortune-teller": 0,
+            "cool-cucumber": 1
+          }
+        },
+        {
+          "id": "q6c",
+          "text": "Imagining them getting trampled, breaking a bone, or catching something serious",
+          "points": {
+            "researcher": 0,
+            "sentinel": 1,
+            "fortune-teller": 5,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q6d",
+          "text": "Chatting with other parents like you're relaxed while internally on high alert",
+          "points": {
+            "researcher": 0,
+            "sentinel": 1,
+            "fortune-teller": 0,
+            "cool-cucumber": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "Your child complains of a stomachache before school. Your first thought?",
+      "options": [
+        {
+          "id": "q7a",
+          "text": "Is this anxiety, a virus, food poisoning, or something I read about in that parenting article?",
+          "points": {
+            "researcher": 5,
+            "sentinel": 0,
+            "fortune-teller": 1,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q7b",
+          "text": "Check their forehead, assess their color, watch for vomiting or other symptoms",
+          "points": {
+            "researcher": 1,
+            "sentinel": 5,
+            "fortune-teller": 0,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q7c",
+          "text": "They're being bullied, or they're developing social anxiety, or something terrible is happening at school",
+          "points": {
+            "researcher": 0,
+            "sentinel": 0,
+            "fortune-teller": 5,
+            "cool-cucumber": 1
+          }
+        },
+        {
+          "id": "q7d",
+          "text": "You ask gentle questions while your mind races through every possibility",
+          "points": {
+            "researcher": 1,
+            "sentinel": 1,
+            "fortune-teller": 1,
+            "cool-cucumber": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "text": "Another parent casually mentions their kid hit a milestone yours hasn't. How do you handle it?",
+      "options": [
+        {
+          "id": "q8a",
+          "text": "Pull up milestone charts and research normal developmental ranges as soon as you're alone",
+          "points": {
+            "researcher": 5,
+            "sentinel": 0,
+            "fortune-teller": 1,
+            "cool-cucumber": 1
+          }
+        },
+        {
+          "id": "q8b",
+          "text": "Start watching your child more closely for any signs of delay or struggle",
+          "points": {
+            "researcher": 1,
+            "sentinel": 5,
+            "fortune-teller": 0,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q8c",
+          "text": "Spiral into fears about delays, diagnoses, and your child falling permanently behind",
+          "points": {
+            "researcher": 0,
+            "sentinel": 0,
+            "fortune-teller": 5,
+            "cool-cucumber": 0
+          }
+        },
+        {
+          "id": "q8d",
+          "text": "Smile and say something breezy while mentally filing it away to worry about later",
+          "points": {
+            "researcher": 1,
+            "sentinel": 0,
+            "fortune-teller": 1,
+            "cool-cucumber": 5
+          }
+        }
+      ]
+    }
+  ]
+}

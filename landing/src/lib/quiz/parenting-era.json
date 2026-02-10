@@ -1,0 +1,469 @@
+{
+  "quizType": "identity",
+  "meta": {
+    "id": "parenting-era",
+    "slug": "parenting-era",
+    "title": "What's Your Parenting Era?",
+    "shortTitle": "Parenting Era Quiz",
+    "description": "Discover which phase of your parenting journey you're in — from survival mode to letting go. Find out if you're building foundations, finding your voice, dialed-in, or learning to step back.",
+    "intro": "Where you are on the parenting arc changes what works. This quiz tells you which era you're in — and what to lean into right now.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 8,
+    "subject": "you",
+    "shareCta": "Curious what era you're in? Take the quiz yourself",
+    "sources": [
+      "Parenting developmental phases research",
+      "Parent self-efficacy and confidence frameworks"
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your complete parenting era profile",
+      "body": "Your primary era, strengths, growth edge, and how you compare across all eras.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "Detailed description of your primary era",
+      "Your unique strengths",
+      "Your growth edge — one shift that changes the most",
+      "How you compare across all eras"
+    ],
+    "communityCta": {
+      "eyebrow": "Ready for what's next?",
+      "title": "Get scripts and support matched to your era from real parents",
+      "body": "Real scripts, daily support from parents in all phases figuring out what works. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "types": {
+    "survival": {
+      "id": "survival",
+      "name": "The Survival Era",
+      "tagline": "You're getting through each day — consistency can wait until everyone sleeps three hours straight.",
+      "themeColor": "#d05597",
+      "description": "You're in triage mode. The question isn't 'what's optimal' — it's 'what gets us to bedtime without casualties.' You know what good parenting looks like in theory. Right now theory lives in a drawer you'll open when you sleep more than four hours.",
+      "strengths": [
+        "You've mastered picking your battles — not philosophically, out of necessity",
+        "You don't waste energy on performance parenting or keeping up appearances",
+        "You know how to get a kid fed, dressed, and out the door with terrifying efficiency"
+      ],
+      "growthEdge": "The shortcuts that worked when you were drowning calcify into patterns you don't love. One tiny routine — same time, same steps, two weeks — gives you surprising breathing room.",
+      "encouragement": "Survival mode isn't a moral failure. It's what happens when the demands outpace your capacity — which is most of early parenting. The goal right now isn't to optimize, it's to not burn out before they turn four. You're doing the hardest part.",
+      "comparativeContext": "Most parents cycle through survival mode during major transitions — new baby, illness, job changes, or just particularly feral developmental phases."
+    },
+    "finding-voice": {
+      "id": "finding-voice",
+      "name": "The Finding My Voice Era",
+      "tagline": "You're trying approaches, discarding what doesn't fit, and figuring out what kind of parent you are.",
+      "themeColor": "#e8c840",
+      "description": "You're past just surviving but not on autopilot. You're testing the scripts and discovering which ones feel like you and which ones feel like community theater. You're building your parenting identity in real time.",
+      "strengths": [
+        "You're open to trying new approaches instead of white-knuckling what isn't working",
+        "You're developing real opinions about what matters to you versus what's just noise",
+        "You notice when something works and double down instead of moving to the next shiny thing"
+      ],
+      "growthEdge": "Trying everything means committing to nothing long enough to see if it works. Pick one thing — just one — and run it for a full month before deciding if it's you. Consistency beats novelty every time.",
+      "encouragement": "This is the era where you stop performing someone else's parenting philosophy and start building your own. It's supposed to feel uncertain — you're not following the map anymore, you're drawing it. The parents who skip this phase never figure out what actually works for them.",
+      "comparativeContext": "Parents typically hit this phase after the fog of early survival lifts but before routines harden — often when kids are 2-5 years old."
+    },
+    "dialed-in": {
+      "id": "dialed-in",
+      "name": "The Dialed-In Era",
+      "tagline": "You've got routines that work, you know your kid, and you're not googling at 2 a.m. anymore.",
+      "themeColor": "#16a34a",
+      "description": "You've built a system that keeps the wheels on most days. You know which battles to fight and which to let slide. You can predict meltdowns and head off half of them. You're not looking for the next framework because you know what works.",
+      "strengths": [
+        "You trust your read on your kid more than you trust parenting influencers",
+        "Your routines run on muscle memory, which frees up bandwidth for actual parenting",
+        "You course-correct small problems before they become big ones"
+      ],
+      "growthEdge": "The system that worked at age three can cage you at age six. When something stops working, you resist tweaking it. Stay dialed-in to your kid, not just your routines.",
+      "encouragement": "This is the sweet spot most parents are chasing. You've earned the confidence that comes with reps — you've done this enough times to know what you're doing. The trick is staying flexible enough to evolve when your kid does, without dismantling what's working.",
+      "comparativeContext": "Parents in this era often have school-age kids and a few years of parenting under their belt — enough experience to trust their instincts."
+    },
+    "letting-go": {
+      "id": "letting-go",
+      "name": "The Letting Go Era",
+      "tagline": "You're learning to step back, trust their competence, and resist swooping in unnecessarily.",
+      "themeColor": "#3b82f6",
+      "description": "You've built the foundation and taught the skills. Now the work is getting out of the way. Your kid is capable of more than you reflexively give them credit for. The hardest part is watching them struggle without intervening.",
+      "strengths": [
+        "You can tolerate watching them fail at something when you know they'll learn from it",
+        "You've stopped doing things for them that they can do for themselves",
+        "You give advice when asked and shut up when you're not — most of the time"
+      ],
+      "growthEdge": "The line between supportive and hovering shifts constantly. You're sometimes still parenting the kid they were instead of who they are now. Check in about what help they actually want.",
+      "encouragement": "Letting go doesn't mean checking out. It means trusting that the work you already did will hold. The parents who can't do this raise kids who either rebel hard or never launch. You're giving them the gift of their own competence.",
+      "comparativeContext": "This phase starts earlier than most parents expect — often around age 7-9 for daily skills, and intensifies through the teen years."
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "text": "It's 7:45 a.m. You need to leave in 10 minutes. Your kid announces they want the blue shirt, which is in the laundry. You:",
+      "options": [
+        {
+          "id": "q1a",
+          "text": "Pull the wrinkled blue shirt from the hamper and let them wear it — we're leaving in 10 minutes, not 20",
+          "points": {
+            "survival": 5,
+            "finding-voice": 2,
+            "dialed-in": 0,
+            "letting-go": 1
+          }
+        },
+        {
+          "id": "q1b",
+          "text": "Offer two clean shirts and explain we choose from what's clean, mentally noting to try that 'laundry ownership' thing you read about",
+          "points": {
+            "survival": 1,
+            "finding-voice": 5,
+            "dialed-in": 2,
+            "letting-go": 0
+          }
+        },
+        {
+          "id": "q1c",
+          "text": "Say 'clothes we wear come from the dresser' because this hasn't been an issue in months and you're not re-litigating laundry at 7:45",
+          "points": {
+            "survival": 0,
+            "finding-voice": 1,
+            "dialed-in": 5,
+            "letting-go": 2
+          }
+        },
+        {
+          "id": "q1d",
+          "text": "Ask if they want to grab something from their dresser or rewear yesterday's shirt — they're old enough to solve this themselves",
+          "points": {
+            "survival": 0,
+            "finding-voice": 0,
+            "dialed-in": 2,
+            "letting-go": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "Your kid is melting down over something small. Your internal monologue is:",
+      "options": [
+        {
+          "id": "q2a",
+          "text": "'Please just stop so I can finish making lunch and we can get through this day'",
+          "points": {
+            "survival": 5,
+            "finding-voice": 1,
+            "dialed-in": 0,
+            "letting-go": 0
+          }
+        },
+        {
+          "id": "q2b",
+          "text": "'Is this a connection moment or a boundary moment? Let me try that script about naming feelings'",
+          "points": {
+            "survival": 0,
+            "finding-voice": 5,
+            "dialed-in": 1,
+            "letting-go": 0
+          }
+        },
+        {
+          "id": "q2c",
+          "text": "'Ah, they're tired and hungry — snack first, then we'll talk'",
+          "points": {
+            "survival": 1,
+            "finding-voice": 2,
+            "dialed-in": 5,
+            "letting-go": 1
+          }
+        },
+        {
+          "id": "q2d",
+          "text": "'They'll work through it — I'll check in if it escalates but they don't need me to fix every hard feeling'",
+          "points": {
+            "survival": 0,
+            "finding-voice": 0,
+            "dialed-in": 2,
+            "letting-go": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "You notice your kid is capable of getting themselves dressed now. You:",
+      "options": [
+        {
+          "id": "q3a",
+          "text": "Keep dressing them because mornings are already chaos and this is one less fight",
+          "points": {
+            "survival": 5,
+            "finding-voice": 1,
+            "dialed-in": 0,
+            "letting-go": 0
+          }
+        },
+        {
+          "id": "q3b",
+          "text": "Try a 'you pick the shirt, I'll do the pants' compromise and see if that builds momentum",
+          "points": {
+            "survival": 1,
+            "finding-voice": 5,
+            "dialed-in": 2,
+            "letting-go": 1
+          }
+        },
+        {
+          "id": "q3c",
+          "text": "Add it to the morning routine card and enforce it — they're doing this now",
+          "points": {
+            "survival": 0,
+            "finding-voice": 2,
+            "dialed-in": 5,
+            "letting-go": 2
+          }
+        },
+        {
+          "id": "q3d",
+          "text": "Stop laying out clothes and let them handle it — they'll figure it out or ask for help",
+          "points": {
+            "survival": 0,
+            "finding-voice": 0,
+            "dialed-in": 1,
+            "letting-go": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "Another parent casually mentions their toddler is fully potty trained and sleeping through the night. You think:",
+      "options": [
+        {
+          "id": "q4a",
+          "text": "'Cool, mine still wakes up twice and pees in a diaper — we're just trying to survive over here'",
+          "points": {
+            "survival": 5,
+            "finding-voice": 2,
+            "dialed-in": 1,
+            "letting-go": 0
+          }
+        },
+        {
+          "id": "q4b",
+          "text": "'Should I be doing that? Let me look up that potty training method everyone talks about'",
+          "points": {
+            "survival": 2,
+            "finding-voice": 5,
+            "dialed-in": 0,
+            "letting-go": 0
+          }
+        },
+        {
+          "id": "q4c",
+          "text": "'Good for them — we'll tackle that when our kid shows the signs, not when Instagram says it's time'",
+          "points": {
+            "survival": 0,
+            "finding-voice": 1,
+            "dialed-in": 5,
+            "letting-go": 1
+          }
+        },
+        {
+          "id": "q4d",
+          "text": "'Every kid's timeline is different — comparisons are useless'",
+          "points": {
+            "survival": 0,
+            "finding-voice": 0,
+            "dialed-in": 2,
+            "letting-go": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "You're trying a new discipline approach. Three days in, it's not working yet. You:",
+      "options": [
+        {
+          "id": "q5a",
+          "text": "Abandon it and go back to whatever gets compliance fastest — you don't have bandwidth for experiments right now",
+          "points": {
+            "survival": 5,
+            "finding-voice": 1,
+            "dialed-in": 0,
+            "letting-go": 0
+          }
+        },
+        {
+          "id": "q5b",
+          "text": "Google 'why isn't [method] working' and try the troubleshooting tweaks people suggest",
+          "points": {
+            "survival": 1,
+            "finding-voice": 5,
+            "dialed-in": 1,
+            "letting-go": 0
+          }
+        },
+        {
+          "id": "q5c",
+          "text": "Stick with it for two weeks minimum — you know behavior change takes consistency, and three days proves nothing",
+          "points": {
+            "survival": 0,
+            "finding-voice": 2,
+            "dialed-in": 5,
+            "letting-go": 1
+          }
+        },
+        {
+          "id": "q5d",
+          "text": "Check if the approach makes sense for your kid's age and temperament — tools aren't one-size-fits-all",
+          "points": {
+            "survival": 0,
+            "finding-voice": 1,
+            "dialed-in": 2,
+            "letting-go": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "A friend offers to watch your kid so you can have two hours to yourself. You:",
+      "options": [
+        {
+          "id": "q6a",
+          "text": "Say yes immediately and maybe tear up a little because you haven't had two kid-free hours in six months",
+          "points": {
+            "survival": 5,
+            "finding-voice": 2,
+            "dialed-in": 1,
+            "letting-go": 0
+          }
+        },
+        {
+          "id": "q6b",
+          "text": "Say yes but spend the whole time wondering if you should be using this time 'better' — working out? Grocery shopping? Therapy?",
+          "points": {
+            "survival": 2,
+            "finding-voice": 5,
+            "dialed-in": 1,
+            "letting-go": 0
+          }
+        },
+        {
+          "id": "q6c",
+          "text": "Say yes because you build regular breaks into your week and this friend is trusted backup",
+          "points": {
+            "survival": 0,
+            "finding-voice": 1,
+            "dialed-in": 5,
+            "letting-go": 2
+          }
+        },
+        {
+          "id": "q6d",
+          "text": "Say yes and don't spend the two hours thinking about your kid because they're fine and you trust yourself to have picked good people",
+          "points": {
+            "survival": 0,
+            "finding-voice": 0,
+            "dialed-in": 2,
+            "letting-go": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "Your kid asks for help with something you're pretty sure they can do themselves. You:",
+      "options": [
+        {
+          "id": "q7a",
+          "text": "Just do it for them because it's faster and you have 17 other things to finish",
+          "points": {
+            "survival": 5,
+            "finding-voice": 1,
+            "dialed-in": 0,
+            "letting-go": 0
+          }
+        },
+        {
+          "id": "q7b",
+          "text": "Say 'let's try together' because you read that scaffolding independence takes time and repetition",
+          "points": {
+            "survival": 1,
+            "finding-voice": 5,
+            "dialed-in": 2,
+            "letting-go": 1
+          }
+        },
+        {
+          "id": "q7c",
+          "text": "Walk them through it step by step like you've done before — this is a skill they're learning and you're consistent about it",
+          "points": {
+            "survival": 0,
+            "finding-voice": 2,
+            "dialed-in": 5,
+            "letting-go": 1
+          }
+        },
+        {
+          "id": "q7d",
+          "text": "Ask 'what have you tried?' and see if they actually need help or just want you to do it",
+          "points": {
+            "survival": 0,
+            "finding-voice": 0,
+            "dialed-in": 2,
+            "letting-go": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "text": "Bedtime is in 10 minutes. Your kid hasn't brushed teeth, picked up toys, or put on pajamas. You:",
+      "options": [
+        {
+          "id": "q8a",
+          "text": "Let them sleep in their clothes and skip the teeth tonight — everyone's fried and tomorrow is another day",
+          "points": {
+            "survival": 5,
+            "finding-voice": 1,
+            "dialed-in": 0,
+            "letting-go": 0
+          }
+        },
+        {
+          "id": "q8b",
+          "text": "Try that timer trick you saw on Instagram and see if racing the clock makes it happen",
+          "points": {
+            "survival": 1,
+            "finding-voice": 5,
+            "dialed-in": 1,
+            "letting-go": 0
+          }
+        },
+        {
+          "id": "q8c",
+          "text": "Run the bedtime checklist you've used for months — it takes 10 minutes when you stay on track",
+          "points": {
+            "survival": 0,
+            "finding-voice": 1,
+            "dialed-in": 5,
+            "letting-go": 1
+          }
+        },
+        {
+          "id": "q8d",
+          "text": "Say 'bedtime's in 10 minutes' and let them manage their own checklist — they know what needs to happen",
+          "points": {
+            "survival": 0,
+            "finding-voice": 0,
+            "dialed-in": 2,
+            "letting-go": 5
+          }
+        }
+      ]
+    }
+  ]
+}

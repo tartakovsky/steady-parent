@@ -1,0 +1,470 @@
+{
+  "quizType": "identity",
+  "meta": {
+    "id": "parenting-superpower",
+    "slug": "parenting-superpower",
+    "title": "What's Your Parenting Superpower?",
+    "shortTitle": "Parenting Superpower Quiz",
+    "description": "Discover your natural parenting strength. Are you The Translator who reads between the lines? The Reset Button who bounces back? The Connector who builds deep bonds? Or The Architect who creates structure that works?",
+    "intro": "Every parent has a natural edge—something they're genuinely good at, even on bad days. This quiz identifies your parenting superpower and shows you how to lean into it.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 8,
+    "subject": "you",
+    "shareCta": "Curious about your parenting superpower?",
+    "sources": [
+      "Attachment theory research",
+      "Parenting self-efficacy studies",
+      "Emotion regulation frameworks"
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your complete parenting superpower profile",
+      "body": "Your primary type, strengths, growth edge, and how you compare across all four superpowers.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "Detailed description of your primary superpower",
+      "Your unique strengths as a parent",
+      "Your growth edge — one shift that changes the most",
+      "How you compare across all four superpowers"
+    ],
+    "communityCta": {
+      "eyebrow": "Ready to level up?",
+      "title": "Get strategies matched to your superpower from parents who get it",
+      "body": "Real scripts, daily support from parents figuring out the same stuff you are. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "types": {
+    "translator": {
+      "id": "translator",
+      "name": "The Translator",
+      "tagline": "You read between the lines of kid behavior and decode what tantrums actually mean.",
+      "themeColor": "#3b82f6",
+      "description": "You're the parent who sees past the surface chaos to what's actually happening. When your kid melts down over the wrong color cup, you know it's not about the cup. You spot hunger masquerading as whining, exhaustion dressed up as defiance, and overwhelm hiding behind aggression. Other parents see bad behavior; you see unmet needs.",
+      "strengths": [
+        "You decode behavior patterns other parents miss—connecting dots between sleep, hunger, and meltdowns",
+        "You stay curious during tantrums instead of taking them personally",
+        "You can explain your child's behavior to teachers, caregivers, and partners in ways that get everyone on the same page"
+      ],
+      "growthEdge": "You can get stuck in analysis mode, trying to decode every whimper when sometimes kids just need a snack and a nap. Not everything is a message.",
+      "encouragement": "Your ability to understand what's driving behavior is a genuine gift. The parents who struggle most are the ones who can't see past the surface. You already have the hard part down. Now just trust your reads and act on them faster.",
+      "comparativeContext": "Most parents react to behavior at face value; you're already several steps ahead."
+    },
+    "reset-button": {
+      "id": "reset-button",
+      "name": "The Reset Button",
+      "tagline": "You stay calm under pressure and recover fast from chaos.",
+      "themeColor": "#10b981",
+      "description": "You're the parent who doesn't lose it when the morning goes sideways. Spilled milk, forgotten backpack, toddler refusing pants—you absorb it without spiraling. And when you do snap (because everyone does), you recover quickly. You don't hold grudges or stew in guilt. You reset and move on.",
+      "strengths": [
+        "You regulate yourself in real-time during tantrums and defiance without needing a recovery day",
+        "You apologize and repair without shame spirals or defensive justifications",
+        "You model emotional recovery for your kids—they see you mess up and come back steady"
+      ],
+      "growthEdge": "You might reset so quickly that you skip reflection. Sometimes the pattern is worth examining, not just bouncing back from.",
+      "encouragement": "Your emotional steadiness is the foundation everything else is built on. Parents who can't regulate themselves can't teach regulation. You're already doing the hardest part of parenting—staying sane when everything's on fire.",
+      "comparativeContext": "Research shows parental emotional regulation is the single strongest predictor of child emotional health."
+    },
+    "connector": {
+      "id": "connector",
+      "name": "The Connector",
+      "tagline": "You build deep emotional bonds—kids open up to you.",
+      "themeColor": "#f59e0b",
+      "description": "You're the parent kids confide in. Not just your own kids—other kids too. You create safety without trying. Kids tell you things they don't tell anyone else because you listen without judgment, without fixing, without making it about you. You make space for the hard feelings.",
+      "strengths": [
+        "You hold space for big emotions without trying to fix, distract, or dismiss them",
+        "You ask questions that help kids articulate feelings they didn't know they had",
+        "You build trust that lasts—kids remember feeling safe with you years later"
+      ],
+      "growthEdge": "You can absorb so much emotional labor that you forget to enforce limits. Connection doesn't require saying yes to everything.",
+      "encouragement": "The attachment research is unambiguous: kids who feel deeply seen and heard develop better emotional regulation, stronger peer relationships, and more resilience. You're giving your kids the foundation that matters most.",
+      "comparativeContext": "Secure attachment predicts better outcomes than IQ, household income, or parenting style."
+    },
+    "architect": {
+      "id": "architect",
+      "name": "The Architect",
+      "tagline": "You create structure, routines, and systems that actually work.",
+      "themeColor": "#8b5cf6",
+      "description": "You're the parent who builds scaffolding that holds. Bedtime routines that stick, morning systems that prevent meltdowns, chore charts that actually get used. You see the pattern in the chaos and design around it. Other parents wing it; you engineer solutions.",
+      "strengths": [
+        "You design routines that prevent problems instead of just reacting to them",
+        "You iterate on systems that don't work instead of blaming your kid for not following them",
+        "You give your kids predictability, which is one of the most underrated gifts in parenting"
+      ],
+      "growthEdge": "You can over-structure to the point where there's no room for spontaneity or emotional flexibility. Sometimes the routine needs to break.",
+      "encouragement": "The parents who struggle most are the ones living in constant reactivity, lurching from crisis to crisis. You've built systems that create breathing room. That's not rigidity—that's intelligence.",
+      "comparativeContext": "Children with predictable routines show lower cortisol levels and better self-regulation across the board."
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Your toddler has a full meltdown in the grocery store because you won't buy candy. What's your instinct?",
+      "options": [
+        {
+          "id": "q1a",
+          "text": "I think through what might be driving it—are they hungry? Overstimulated? Testing me?",
+          "points": {
+            "translator": 5,
+            "reset-button": 1,
+            "connector": 2,
+            "architect": 0
+          }
+        },
+        {
+          "id": "q1b",
+          "text": "I stay calm, get us out of the store, and don't take it personally.",
+          "points": {
+            "translator": 1,
+            "reset-button": 5,
+            "connector": 2,
+            "architect": 1
+          }
+        },
+        {
+          "id": "q1c",
+          "text": "I get down at their level and acknowledge how badly they wanted it.",
+          "points": {
+            "translator": 2,
+            "reset-button": 1,
+            "connector": 5,
+            "architect": 0
+          }
+        },
+        {
+          "id": "q1d",
+          "text": "I realize we should've brought a snack and adjust the routine for next time.",
+          "points": {
+            "translator": 0,
+            "reset-button": 1,
+            "connector": 1,
+            "architect": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "Bedtime has become a 90-minute ordeal every night. Your kid keeps coming out of their room.",
+      "options": [
+        {
+          "id": "q2a",
+          "text": "I try to figure out what's actually going on—are they anxious? Undertired? Avoiding something?",
+          "points": {
+            "translator": 5,
+            "reset-button": 1,
+            "connector": 2,
+            "architect": 1
+          }
+        },
+        {
+          "id": "q2b",
+          "text": "I calmly walk them back every time without getting pulled into arguments or negotiations.",
+          "points": {
+            "translator": 0,
+            "reset-button": 5,
+            "connector": 1,
+            "architect": 2
+          }
+        },
+        {
+          "id": "q2c",
+          "text": "I sit with them and talk about what's making it hard to settle tonight.",
+          "points": {
+            "translator": 1,
+            "reset-button": 0,
+            "connector": 5,
+            "architect": 1
+          }
+        },
+        {
+          "id": "q2d",
+          "text": "I redesign the routine—add a wind-down step, move dinner earlier, test different timing.",
+          "points": {
+            "translator": 1,
+            "reset-button": 1,
+            "connector": 0,
+            "architect": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "Your six-year-old tells you they have no friends at school and no one likes them.",
+      "options": [
+        {
+          "id": "q3a",
+          "text": "I ask specific questions to figure out what actually happened and whether this is about one incident or a pattern.",
+          "points": {
+            "translator": 5,
+            "reset-button": 0,
+            "connector": 3,
+            "architect": 1
+          }
+        },
+        {
+          "id": "q3b",
+          "text": "I listen without panicking or catastrophizing, then we problem-solve together.",
+          "points": {
+            "translator": 1,
+            "reset-button": 5,
+            "connector": 2,
+            "architect": 2
+          }
+        },
+        {
+          "id": "q3c",
+          "text": "I make space for them to cry, vent, or feel it fully without rushing to fix it.",
+          "points": {
+            "translator": 2,
+            "reset-button": 1,
+            "connector": 5,
+            "architect": 0
+          }
+        },
+        {
+          "id": "q3d",
+          "text": "I set up playdates, talk to the teacher, and create more social opportunities outside of school.",
+          "points": {
+            "translator": 0,
+            "reset-button": 1,
+            "connector": 1,
+            "architect": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "text": "You've had a terrible day—work disaster, fight with your partner—and now your kid is demanding attention.",
+      "options": [
+        {
+          "id": "q4a",
+          "text": "I notice my kid is picking up on my stress and acting out because of it.",
+          "points": {
+            "translator": 5,
+            "reset-button": 2,
+            "connector": 1,
+            "architect": 0
+          }
+        },
+        {
+          "id": "q4b",
+          "text": "I pause, take a breath, and reset myself before engaging so I don't snap at them.",
+          "points": {
+            "translator": 1,
+            "reset-button": 5,
+            "connector": 1,
+            "architect": 2
+          }
+        },
+        {
+          "id": "q4c",
+          "text": "I tell them I'm having a hard day and we snuggle on the couch for a bit.",
+          "points": {
+            "translator": 0,
+            "reset-button": 1,
+            "connector": 5,
+            "architect": 1
+          }
+        },
+        {
+          "id": "q4d",
+          "text": "I put on a show, set them up with a snack, and give myself 15 minutes to decompress.",
+          "points": {
+            "translator": 0,
+            "reset-button": 2,
+            "connector": 0,
+            "architect": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "text": "Morning transitions are a nightmare. Your kid refuses to get dressed, brushes teeth at glacial speed, and you're always late.",
+      "options": [
+        {
+          "id": "q5a",
+          "text": "I try to identify the bottleneck—is it transitions? Sensory issues? Too many steps?",
+          "points": {
+            "translator": 5,
+            "reset-button": 0,
+            "connector": 1,
+            "architect": 3
+          }
+        },
+        {
+          "id": "q5b",
+          "text": "I keep my cool and don't let their slowness derail my morning.",
+          "points": {
+            "translator": 0,
+            "reset-button": 5,
+            "connector": 0,
+            "architect": 2
+          }
+        },
+        {
+          "id": "q5c",
+          "text": "I sit with them while they get ready and turn it into connection time instead of a power struggle.",
+          "points": {
+            "translator": 1,
+            "reset-button": 1,
+            "connector": 5,
+            "architect": 1
+          }
+        },
+        {
+          "id": "q5d",
+          "text": "I build a visual checklist, prep clothes the night before, and wake up 10 minutes earlier.",
+          "points": {
+            "translator": 1,
+            "reset-button": 1,
+            "connector": 0,
+            "architect": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "text": "Your kids are fighting over a toy for the third time today. You're exhausted.",
+      "options": [
+        {
+          "id": "q6a",
+          "text": "I notice the pattern—they fight more when they're bored or when one feels left out.",
+          "points": {
+            "translator": 5,
+            "reset-button": 1,
+            "connector": 2,
+            "architect": 2
+          }
+        },
+        {
+          "id": "q6b",
+          "text": "I intervene calmly, separate them if needed, and don't get emotionally hijacked by it.",
+          "points": {
+            "translator": 0,
+            "reset-button": 5,
+            "connector": 1,
+            "architect": 1
+          }
+        },
+        {
+          "id": "q6c",
+          "text": "I coach them through it—help them name feelings, take turns talking, find a solution together.",
+          "points": {
+            "translator": 1,
+            "reset-button": 1,
+            "connector": 5,
+            "architect": 0
+          }
+        },
+        {
+          "id": "q6d",
+          "text": "I set up a system—timer for turn-taking, duplicate toys, or separate play spaces.",
+          "points": {
+            "translator": 0,
+            "reset-button": 0,
+            "connector": 1,
+            "architect": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "text": "Your kid comes home from school acting withdrawn and won't talk about their day.",
+      "options": [
+        {
+          "id": "q7a",
+          "text": "I watch for clues—did they eat their lunch? Check their backpack? Mention any names?",
+          "points": {
+            "translator": 5,
+            "reset-button": 1,
+            "connector": 2,
+            "architect": 0
+          }
+        },
+        {
+          "id": "q7b",
+          "text": "I don't push. I stay present and let them come to me when they're ready.",
+          "points": {
+            "translator": 1,
+            "reset-button": 5,
+            "connector": 3,
+            "architect": 1
+          }
+        },
+        {
+          "id": "q7c",
+          "text": "I create space for them to open up—side-by-side activity, no pressure, just availability.",
+          "points": {
+            "translator": 1,
+            "reset-button": 2,
+            "connector": 5,
+            "architect": 0
+          }
+        },
+        {
+          "id": "q7d",
+          "text": "I build in decompression time after school—snack, downtime, no demands for 20 minutes.",
+          "points": {
+            "translator": 0,
+            "reset-button": 1,
+            "connector": 1,
+            "architect": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "text": "You lose your temper and yell at your kid over something small. What happens next?",
+      "options": [
+        {
+          "id": "q8a",
+          "text": "I recognize the real trigger—I was overwhelmed, touched out, or reacting to my own childhood.",
+          "points": {
+            "translator": 5,
+            "reset-button": 2,
+            "connector": 1,
+            "architect": 0
+          }
+        },
+        {
+          "id": "q8b",
+          "text": "I apologize quickly, repair, and move on without spiraling into guilt.",
+          "points": {
+            "translator": 1,
+            "reset-button": 5,
+            "connector": 2,
+            "architect": 1
+          }
+        },
+        {
+          "id": "q8c",
+          "text": "I talk to them about what happened, validate their feelings, and reconnect.",
+          "points": {
+            "translator": 0,
+            "reset-button": 2,
+            "connector": 5,
+            "architect": 0
+          }
+        },
+        {
+          "id": "q8d",
+          "text": "I figure out what system broke down—did I skip lunch? Stay up too late? Need a break routine?",
+          "points": {
+            "translator": 1,
+            "reset-button": 1,
+            "connector": 0,
+            "architect": 5
+          }
+        }
+      ]
+    }
+  ]
+}

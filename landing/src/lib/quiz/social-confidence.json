@@ -1,0 +1,339 @@
+{
+  "quizType": "readiness",
+  "meta": {
+    "id": "social-confidence",
+    "slug": "social-confidence",
+    "title": "How Strong Is Your Child's Social Confidence?",
+    "shortTitle": "Social Confidence Quiz",
+    "description": "A quick assessment of your child's peer interaction, conflict navigation, independence in social settings, and communication skills. See where they shine and where they're still building confidence.",
+    "intro": "This quiz measures how your child handles the mechanics of social life — joining groups, navigating conflict, operating without you hovering, communicating needs. Not popularity, but functional competence.",
+    "estimatedTime": "2 minutes",
+    "questionCount": 10,
+    "scoreLabel": "Confidence",
+    "subject": "your child",
+    "resultDisplay": "profile",
+    "shareCta": "Curious about your own child's social confidence?",
+    "levelLabels": {
+      "high": "Strong",
+      "medium": "Building",
+      "low": "Emerging"
+    },
+    "sectionLabels": {
+      "strengths": "Where They Shine"
+    },
+    "ageRange": {
+      "min": 3,
+      "max": 10,
+      "unit": "years"
+    },
+    "sources": [
+      "Social Competence Preschool Behavior Scale",
+      "Penn Interactive Peer Play Scale",
+      "CDC social-emotional developmental milestones",
+      "Peer Relations Assessment framework"
+    ],
+    "previewCta": {
+      "eyebrow": "Want the full breakdown?",
+      "title": "Get your child's complete social confidence profile",
+      "body": "See how they're doing across all four social domains — peer interaction, conflict navigation, independence, and communication. Get domain-by-domain insights and a prioritized action plan.",
+      "buttonText": "Send my results"
+    },
+    "previewPromises": [
+      "What each domain score means for your child's social development",
+      "Your child's strongest social areas to celebrate",
+      "Targeted next steps for building areas",
+      "A prioritized action plan you can start today"
+    ],
+    "communityCta": {
+      "eyebrow": "Want help with this?",
+      "title": "Get scripts for social challenges from parents in the thick of it",
+      "body": "Real strategies for peer conflicts, shy kids, and social struggles from parents who've navigated it. We are there with you daily too.",
+      "buttonText": "Join the community"
+    }
+  },
+  "domains": {
+    "peer-interaction": {
+      "id": "peer-interaction",
+      "name": "Peer Interaction",
+      "maxPoints": 9,
+      "thresholds": {
+        "high": 7,
+        "medium": 4
+      }
+    },
+    "conflict-navigation": {
+      "id": "conflict-navigation",
+      "name": "Conflict Navigation",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    },
+    "independence": {
+      "id": "independence",
+      "name": "Independence",
+      "maxPoints": 6,
+      "thresholds": {
+        "high": 5,
+        "medium": 3
+      }
+    },
+    "communication": {
+      "id": "communication",
+      "name": "Communication Skills",
+      "maxPoints": 9,
+      "thresholds": {
+        "high": 7,
+        "medium": 4
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "peer-interaction",
+      "text": "When you're at a playground or park with other kids, how does your child approach playing with unfamiliar children?",
+      "subtext": "Not their best friend. Kids they've never met.",
+      "options": [
+        { "id": "q1a", "text": "Joins in independently, no prompting needed — might watch for a minute but then jumps in", "points": 3 },
+        { "id": "q1b", "text": "Will join if invited or if I give them a gentle nudge", "points": 1 },
+        { "id": "q1c", "text": "Watches from the sidelines or stays with me unless I actively facilitate", "points": 0 }
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "peer-interaction",
+      "text": "How does your child do with joining an existing group game that's already in progress?",
+      "subtext": "The three kids who've already started building the fort or playing tag.",
+      "options": [
+        { "id": "q2a", "text": "Can walk up and ask to join or just start playing alongside them", "points": 3 },
+        { "id": "q2b", "text": "Hovers nearby hoping to be invited in, sometimes succeeds", "points": 1 },
+        { "id": "q2c", "text": "Struggles to enter ongoing play — either waits indefinitely or disrupts the game", "points": 0 }
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "peer-interaction",
+      "text": "Does your child have at least one reciprocal friendship where both kids seek each other out?",
+      "subtext": "Not a kid they tolerate. Someone they actually want to play with and who wants to play with them.",
+      "options": [
+        { "id": "q3a", "text": "Yes — they have one or more friends who genuinely choose each other", "points": 3 },
+        { "id": "q3b", "text": "Sort of — they have playmates but the connection feels one-sided or inconsistent", "points": 1 },
+        { "id": "q3c", "text": "Not yet — they don't have a consistent peer they seek out or who seeks them out", "points": 0 }
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "conflict-navigation",
+      "text": "When another child takes your child's toy or cuts in line, what happens?",
+      "subtext": "The everyday micro-injustices of kid life.",
+      "options": [
+        { "id": "q4a", "text": "They speak up for themselves — might say \"I was using that\" or \"I was here first\" without melting down", "points": 3 },
+        { "id": "q4b", "text": "Sometimes speaks up, sometimes just accepts it — depends on the day or the kid", "points": 1 },
+        { "id": "q4c", "text": "Either shuts down and lets it go or escalates to hitting/screaming immediately", "points": 0 }
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "conflict-navigation",
+      "text": "How does your child handle disagreements with peers during play (different game rules, who goes first, etc.)?",
+      "subtext": "The daily negotiations that come with playing with other humans.",
+      "options": [
+        { "id": "q5a", "text": "Can negotiate, compromise, or walk away from a conflict without total breakdown", "points": 3 },
+        { "id": "q5b", "text": "Sometimes works it out, sometimes needs adult intervention to avoid a meltdown", "points": 1 },
+        { "id": "q5c", "text": "Disagreements consistently end in tears, aggression, or giving up entirely", "points": 0 }
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "independence",
+      "text": "If you drop your child off at a birthday party or playdate with familiar kids, how do they handle the separation?",
+      "subtext": "Not a stranger's house. A setting where they know at least one kid reasonably well.",
+      "options": [
+        { "id": "q6a", "text": "Separates easily and engages with the group without needing me there", "points": 3 },
+        { "id": "q6b", "text": "Hesitant at drop-off but settles in once I leave", "points": 1 },
+        { "id": "q6c", "text": "Struggles significantly with separation or refuses to stay without me", "points": 0 }
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "independence",
+      "text": "In a new social setting (new class, camp, activity), how long does it take your child to participate without clinging?",
+      "subtext": "Not talking to everyone. Just functioning without being glued to your leg.",
+      "options": [
+        { "id": "q7a", "text": "Within the first session, they're engaging and participating independently", "points": 3 },
+        { "id": "q7b", "text": "Takes a few sessions to warm up but eventually gets there", "points": 1 },
+        { "id": "q7c", "text": "Requires weeks of slow acclimation or just doesn't adjust without significant support", "points": 0 }
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "communication",
+      "text": "Can your child make eye contact and respond when an adult asks them a direct question (teacher, friend's parent, etc.)?",
+      "subtext": "\"What's your name?\" or \"Do you want a snack?\" — not a dissertation, just basic responsiveness.",
+      "options": [
+        { "id": "q8a", "text": "Usually answers clearly enough and makes some eye contact", "points": 3 },
+        { "id": "q8b", "text": "Answers sometimes but often mumbles, hides, or looks at me to answer for them", "points": 1 },
+        { "id": "q8c", "text": "Rarely responds directly — either freezes, ignores, or I have to translate", "points": 0 }
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "communication",
+      "text": "When your child needs something from another kid (a turn, a specific toy, help with something), can they ask for it?",
+      "subtext": "Not elaborate negotiation. Just \"can I have a turn?\" level communication.",
+      "options": [
+        { "id": "q9a", "text": "Usually asks directly without prompting from me", "points": 3 },
+        { "id": "q9b", "text": "Asks if I remind them or coach them through it", "points": 1 },
+        { "id": "q9c", "text": "Doesn't ask — either grabs, gives up, or comes to me to do it for them", "points": 0 }
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "communication",
+      "text": "Can your child hold a basic back-and-forth conversation with a peer (not just parallel talking)?",
+      "subtext": "Talking about the game, asking questions, responding to what the other kid says — actual dialogue.",
+      "options": [
+        { "id": "q10a", "text": "Yes — they can go back and forth at least a few exchanges", "points": 3 },
+        { "id": "q10b", "text": "Sometimes, but often just talks at the other kid or goes silent", "points": 1 },
+        { "id": "q10c", "text": "Rarely sustains conversation — mostly monologues or doesn't engage verbally much", "points": 0 }
+      ]
+    }
+  ],
+  "domainContent": {
+    "peer-interaction": {
+      "high": {
+        "level": "high",
+        "headline": "Joins in confidently",
+        "detail": "Your child can enter social situations without you running interference. They know how to join a game, make a friend, and navigate the social choreography of kid groups. That's not innate — it's a real skill, and they're using it.",
+        "strength": "They have the confidence to approach peers and the toolkit to actually connect. This isn't about being the most popular kid — it's about having the ability to engage when they want to."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Building their approach",
+        "detail": "Your child is in the apprentice stage — they can manage peer interaction with a nudge or in the right conditions, but it's not automatic yet. They're learning the rhythm of group play, but they need practice and sometimes coaching.",
+        "concern": "They're capable but hesitant. Low-stakes practice with familiar kids builds the muscle memory so joining in becomes less effortful over time."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Watching from the sidelines",
+        "detail": "Your child is still on the outside looking in. They're observing but not yet engaging independently. This isn't shyness as a personality trait — it's a lack of tools or confidence to navigate the social machinery.",
+        "concern": "Start with one-on-one playdates where the social choreography is simpler. Group dynamics are advanced-level. Master the basics first."
+      }
+    },
+    "conflict-navigation": {
+      "high": {
+        "level": "high",
+        "headline": "Holds their ground",
+        "detail": "Your child can advocate for themselves when another kid oversteps. They're not steamrolling others, but they're also not getting steamrolled. That balance is genuinely hard — most adults struggle with it.",
+        "strength": "They've learned that standing up for themselves doesn't require aggression. They can use words, hold a boundary, and recover when conflicts happen without total meltdown."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Hit or miss on conflicts",
+        "detail": "Sometimes they speak up, sometimes they fold. Conflict navigation is inconsistent right now — it depends on how big the kid is, how confident your child feels that day, or whether you're nearby. The skill exists but isn't reliable yet.",
+        "concern": "Give them language for low-stakes conflicts at home. \"I was using that\" or \"I don't like that\" practiced in safe contexts transfers to the playground."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Conflict shuts them down",
+        "detail": "When another kid pushes back or takes something, your child either freezes or escalates immediately. The middle path — using words, negotiating, holding a boundary calmly — isn't in their toolkit yet.",
+        "concern": "This isn't about being tough. It's about having scripts. Literally practice one phrase: \"I was using that.\" Start there. Don't wait for the real situation to teach it."
+      }
+    },
+    "independence": {
+      "high": {
+        "level": "high",
+        "headline": "Operates solo",
+        "detail": "Your child can function in social settings without you managing every interaction. They can separate, engage, and recover from small setbacks without needing you as a safety net. That's real independence.",
+        "strength": "They've internalized enough security to take social risks without you standing by. That confidence transfers to other areas over time — it's foundational."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Warming up slowly",
+        "detail": "Your child needs time to acclimate before they can function independently in new social situations. They get there, but it's not immediate. This is temperament plus skill — both are in play.",
+        "concern": "Slow warm-up is normal for some kids, but if it's limiting their participation, practice brief separations in low-stakes settings to build the muscle."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Stuck to your side",
+        "detail": "Your child struggles to operate in social settings without you nearby. Separation anxiety or lack of social confidence keeps them tethered. This isn't manipulation — it's genuine discomfort.",
+        "concern": "Start with 5-minute separations in familiar settings with one trusted adult. Build the tolerance gradually, not by forcing them to white-knuckle through a birthday party."
+      }
+    },
+    "communication": {
+      "high": {
+        "level": "high",
+        "headline": "Uses their words",
+        "detail": "Your child can communicate their needs, respond to adults, and hold basic conversations with peers. They're not giving TED talks, but they have the functional language to navigate social life. That matters more than vocabulary size.",
+        "strength": "They can ask for what they need, answer when spoken to, and engage in back-and-forth dialogue. These aren't soft skills — they're the infrastructure of every social interaction they'll ever have."
+      },
+      "medium": {
+        "level": "medium",
+        "headline": "Communicates inconsistently",
+        "detail": "Your child can communicate when prompted or in comfortable settings, but it's not automatic. They know the words but don't always use them — either freezing up, letting you do the talking, or relying on grabbing instead of asking.",
+        "concern": "Practice asking for things at home in low-pressure moments. \"Can you ask Dad for the milk?\" — verbal reps in safe contexts build the reflex for real situations."
+      },
+      "low": {
+        "level": "low",
+        "headline": "Words aren't coming yet",
+        "detail": "Your child rarely uses language to navigate social situations. They might communicate at home but go silent around peers or unfamiliar adults. Or they skip words entirely and just grab, push, or withdraw.",
+        "concern": "This could be developmental, temperament, or a skills gap. Start with one script: \"Can I have a turn?\" Model it, practice it, prompt it. Don't wait for fluency — get one phrase working first."
+      }
+    }
+  },
+  "results": {
+    "strong-confidence": {
+      "id": "strong-confidence",
+      "themeColor": "#16a34a",
+      "scoreRange": { "min": 22, "max": 30 },
+      "headline": "Strong Foundation",
+      "subheadline": "Your child has the core social tools — joining in, speaking up, operating independently, communicating needs. These skills make social life navigable, not just survivable.",
+      "explanation": "A high score doesn't mean they're the life of the party or that every playdate is smooth. It means they have functional competence across the major domains of social life. They can approach peers, handle disagreements without total collapse, separate from you when needed, and use their words. That's real confidence — not performance confidence, but capacity confidence. They have tools, and they're using them.",
+      "nextSteps": [
+        "Let them practice these skills in progressively harder contexts — bigger groups, less familiar kids, longer separations",
+        "Don't over-manage their social interactions — your job is shifting from director to consultant",
+        "Notice the specific moments they successfully navigate conflict or join a group, and name what they did (\"You asked to join, and that worked\")"
+      ],
+      "watchOutFor": "High social confidence can mask underlying anxiety or people-pleasing tendencies. Check in periodically: are they navigating social situations because they want to, or because they think they should?",
+      "encouragement": "Your child is building the muscle memory for social life. Keep giving them opportunities to use these skills, and resist the urge to smooth every rough edge. Some friction is how they learn.",
+      "comparativeContext": "Research shows that children who demonstrate these core social competencies by age 5-6 are significantly more likely to form stable friendships and report higher social satisfaction throughout elementary school."
+    },
+    "building-skills": {
+      "id": "building-skills",
+      "themeColor": "#e8c840",
+      "scoreRange": { "min": 11, "max": 21 },
+      "headline": "Skills in Progress",
+      "subheadline": "Your child is developing social confidence, but it's uneven — some areas are solid while others need more practice, coaching, or time. This is the apprentice stage, not a deficit.",
+      "explanation": "Most kids in this range have pockets of competence and pockets of struggle. They might be great at joining in but fall apart when conflict hits. Or they communicate beautifully at home but freeze around unfamiliar adults. The skills are emerging but not yet automatic. The good news: targeted practice in the lowest-scoring domain makes a measurable difference quickly.",
+      "nextSteps": [
+        "Check your domain breakdown and focus on the lowest-scoring area — that's your highest-leverage target",
+        "Create low-stakes practice opportunities: one-on-one playdates before group settings, role-playing conflicts at home, practicing one social script repeatedly",
+        "Narrate what you see them do successfully (\"You asked for a turn and he gave it to you\") — kids don't always know what worked",
+        "Don't force social situations as exposure therapy — build skills first, then increase difficulty gradually"
+      ],
+      "watchOutFor": "The middle zone can feel like \"they'll grow out of it,\" which is true for some kids and not for others. If the gaps are widening rather than closing after 6 months, targeted support (social skills coaching, OT consult) is worth considering.",
+      "encouragement": "Social skills are learnable. This isn't about fixing your child's personality — it's about giving them tools they don't have yet. Small, consistent practice beats grand interventions every time.",
+      "comparativeContext": "Developmental research shows that social competence develops unevenly in early childhood. Children who receive targeted scaffolding in their weakest areas typically show measurable gains within 8-12 weeks."
+    },
+    "early-stages": {
+      "id": "early-stages",
+      "themeColor": "#d05597",
+      "scoreRange": { "min": 0, "max": 10 },
+      "headline": "Just Starting Out",
+      "subheadline": "Your child is building foundational social skills. They're watching more than participating, struggling with conflicts, or relying heavily on you in social settings.",
+      "explanation": "A low score means your child doesn't yet have the tools to operate independently in social contexts. This could be developmental (they're young or late-blooming socially), temperamental (slow-to-warm-up is real), or a skills gap (they've had limited peer experience). Whatever the cause, the path forward is the same: start small, build one skill at a time, and don't force situations they're not ready for. Social confidence isn't built by throwing kids into the deep end — it's built through hundreds of small successful interactions.",
+      "nextSteps": [
+        "Start with one-on-one playdates in your home with one familiar peer — group settings are advanced mode",
+        "Pick one communication script and practice it relentlessly: \"Can I have a turn?\" or \"I don't like that.\" One phrase, 100 reps.",
+        "Narrate social situations as they happen: \"She asked to join, and they said yes. That's how you do it.\" Kids learn by watching and naming.",
+        "If separation is the blocker, practice brief departures in safe settings — 5 minutes with a trusted caregiver, building up slowly",
+        "If this pattern persists past age 5-6 or is worsening, consult a pediatrician or child psychologist about social communication screening"
+      ],
+      "watchOutFor": "Don't confuse introversion with low social confidence. Introverted kids can have strong social skills — they just use them selectively. If your child wants to engage but can't, that's a skills issue. If they don't want to engage and are content, that might just be temperament.",
+      "encouragement": "Building social confidence from scratch is slow, repetitive work. You're not behind — you're starting from where your child actually is, which is the only place you can start. Pick one domain, one skill, one script. Make it smaller than feels meaningful. Then do it 50 times.",
+      "comparativeContext": "Studies on social competence development show that children who struggle with peer interaction at age 3-4 often catch up by age 6-7 when given consistent, low-pressure practice opportunities and explicit skill coaching."
+    }
+  }
+}
