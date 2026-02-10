@@ -177,6 +177,8 @@ export interface LikertDimension {
   growthEdge: string;
   encouragement: string;
   comparativeContext: string;
+  /** Population norm for this dimension — enables percentile-based scoring */
+  populationNorm?: { mean: number; sd: number };
 }
 
 export interface LikertStatement {
@@ -556,8 +558,9 @@ export function scoreIdentityQuiz(
     }
   }
 
-  // Build sorted type results — percentages are independent match strength (score/max),
-  // NOT proportional blend. "50% Lighthouse" = "you exhibit half of Lighthouse traits."
+  // Build sorted type results — percentages are proportional blend (score/total).
+  // "40% Lighthouse" = "40% of your parenting blend is Lighthouse."
+  const totalScore = typeIds.reduce((sum, id) => sum + (scores[id] || 0), 0) || 1;
   const allTypes: IdentityTypeResult[] = typeIds
     .map(id => {
       const type = quiz.types[id]!;
@@ -575,7 +578,7 @@ export function scoreIdentityQuiz(
         comparativeContext: type.comparativeContext,
         score,
         maxScore: max,
-        percentage: Math.round((score / max) * 100),
+        percentage: Math.round((score / totalScore) * 100),
       };
     })
     .sort((a, b) => b.percentage - a.percentage);
@@ -583,9 +586,10 @@ export function scoreIdentityQuiz(
   const primary = allTypes[0]!;
   const secondary = allTypes[1];
 
+  const article = primary.name.startsWith("The ") ? "" : "a ";
   const shareableSummary = secondary
-    ? `I'm a ${primary.name} with ${secondary.name} tendencies`
-    : `I'm a ${primary.name}`;
+    ? `I'm ${article}${primary.name} with ${secondary.name} tendencies`
+    : `I'm ${article}${primary.name}`;
 
   return {
     quizId: quiz.meta.id,
@@ -593,6 +597,30 @@ export function scoreIdentityQuiz(
     allTypes,
     shareableSummary,
   };
+}
+
+// ============================================================================
+// NORMAL CDF (for percentile-based scoring)
+// ============================================================================
+
+/**
+ * Approximate the cumulative distribution function of the standard normal.
+ * Abramowitz & Stegun approximation — max error 7.5×10⁻⁸.
+ */
+function normalCDF(z: number): number {
+  const a1 = 0.254829592;
+  const a2 = -0.284496736;
+  const a3 = 1.421413741;
+  const a4 = -1.453152027;
+  const a5 = 1.061405429;
+  const p = 0.3275911;
+
+  const sign = z < 0 ? -1 : 1;
+  const x = Math.abs(z) / Math.SQRT2;
+  const t = 1 / (1 + p * x);
+  const erf = 1 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+
+  return 0.5 * (1 + sign * erf);
 }
 
 // ============================================================================
@@ -656,17 +684,39 @@ export function scoreLikertQuiz(
     ratings[statement.dimension]?.push(rating);
   }
 
-  // Build dimension results
-  const allDimensions: LikertDimensionResult[] = dimensionIds.map(id => {
-    const dim = quiz.dimensions[id]!;
+  // Build dimension results — compute means first
+  const dimMeans: Record<string, number> = {};
+  for (const id of dimensionIds) {
     const dimRatings = ratings[id] || [];
-    const meanScore = dimRatings.length > 0
+    dimMeans[id] = dimRatings.length > 0
       ? dimRatings.reduce((sum, r) => sum + r, 0) / dimRatings.length
       : 0;
+  }
 
-    // Percentage: (mean - min) / (max - min) * 100
-    const range = scaleMax - scaleMin;
-    const percentage = range > 0 ? Math.round(((meanScore - scaleMin) / range) * 100) : 0;
+  // Check if all dimensions have population norms → use percentile-based blend
+  const hasNorms = dimensionIds.every(id => quiz.dimensions[id]?.populationNorm);
+
+  let dimPercentiles: Record<string, number> | null = null;
+  if (hasNorms) {
+    // Compute percentile per dimension (how unusual is this score vs population)
+    dimPercentiles = {};
+    for (const id of dimensionIds) {
+      const norm = quiz.dimensions[id]!.populationNorm!;
+      const z = (dimMeans[id]! - norm.mean) / norm.sd;
+      // Floor at 1 to avoid 0% slices in the donut
+      dimPercentiles[id] = Math.max(1, Math.round(normalCDF(z) * 100));
+    }
+  }
+
+  // Percentages: normalized percentiles if norms exist, else normalized raw means
+  const blendValues = dimPercentiles
+    ? dimPercentiles
+    : Object.fromEntries(dimensionIds.map(id => [id, dimMeans[id]!]));
+  const blendTotal = Object.values(blendValues).reduce((s, v) => s + v, 0) || 1;
+
+  const allDimensions: LikertDimensionResult[] = dimensionIds.map(id => {
+    const dim = quiz.dimensions[id]!;
+    const meanScore = dimMeans[id]!;
 
     return {
       id,
@@ -680,7 +730,7 @@ export function scoreLikertQuiz(
       comparativeContext: dim.comparativeContext,
       meanScore: Math.round(meanScore * 10) / 10, // 1 decimal place
       maxScore: scaleMax,
-      percentage,
+      percentage: Math.round((blendValues[id]! / blendTotal) * 100),
     };
   }).sort((a, b) => b.meanScore - a.meanScore);
 

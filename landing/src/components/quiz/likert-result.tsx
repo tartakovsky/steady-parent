@@ -45,31 +45,70 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
   );
 }
 
-function ProfileBar({ dim, maxScore }: { dim: LikertDimensionResult; maxScore: number }) {
-  const widthPct = maxScore > 0 ? (dim.meanScore / maxScore) * 100 : 0;
+function BlendDonut({ dimensions }: { dimensions: LikertDimensionResult[] }) {
+  const size = 200;
+  const strokeWidth = 32;
+  const radius = (size - strokeWidth) / 2;
+  const circumference = 2 * Math.PI * radius;
+  const center = size / 2;
+
+  let cumulativePercent = 0;
+  const segments = dimensions.map((dim) => {
+    const start = cumulativePercent;
+    cumulativePercent += dim.percentage;
+    return { ...dim, startPercent: start };
+  });
 
   return (
-    <div className="flex items-center gap-3">
-      <span className="text-sm font-medium text-foreground w-28 sm:w-36 truncate">
-        {dim.name}
-      </span>
-      <div className="flex-1 h-3 rounded-full bg-foreground/[0.04] overflow-hidden">
-        <motion.div
-          className="h-full rounded-full"
-          style={{ backgroundColor: dim.themeColor, opacity: 0.80 }}
-          initial={{ width: 0 }}
-          animate={{ width: `${widthPct}%` }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        />
+    <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-center sm:justify-center sm:gap-10">
+      <div className="shrink-0">
+        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="block">
+          {segments.map((seg, i) => {
+            const dashLength = (seg.percentage / 100) * circumference;
+            const dashOffset = -((seg.startPercent / 100) * circumference);
+            return (
+              <motion.circle
+                key={seg.id}
+                cx={center}
+                cy={center}
+                r={radius}
+                fill="none"
+                stroke={seg.themeColor}
+                strokeWidth={strokeWidth}
+                strokeDasharray={`${dashLength} ${circumference - dashLength}`}
+                strokeDashoffset={dashOffset}
+                strokeLinecap="butt"
+                transform={`rotate(-90 ${center} ${center})`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+              />
+            );
+          })}
+        </svg>
       </div>
-      <span className="text-sm font-bold tabular-nums text-muted-foreground w-14 text-right">
-        {dim.meanScore}/{maxScore}
-      </span>
+      <div className="flex flex-col gap-2.5 min-w-0">
+        {dimensions.map((dim) => (
+          <div key={dim.id} className="flex items-center gap-2.5">
+            <div
+              className="w-3 h-3 rounded-full shrink-0"
+              style={{ backgroundColor: dim.themeColor }}
+            />
+            <span className="text-sm font-medium text-foreground truncate">
+              {dim.name}
+            </span>
+            <span className="text-sm font-bold tabular-nums text-muted-foreground ml-auto">
+              {dim.percentage}%
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
-function DimensionCard({ dim, isPrimary }: { dim: LikertDimensionResult; isPrimary: boolean }) {
+function DimensionCard({ dim, isPrimary, rank }: { dim: LikertDimensionResult; isPrimary: boolean; rank: number }) {
+  const rankLabel = rank === 1 ? "Strongest" : rank === 2 ? "Runner-up" : null;
   return (
     <div
       className={cn(
@@ -84,17 +123,14 @@ function DimensionCard({ dim, isPrimary }: { dim: LikertDimensionResult; isPrima
           style={{ backgroundColor: dim.themeColor }}
         />
         <h3 className="font-bold text-lg text-foreground">{dim.name}</h3>
-        {isPrimary && (
+        {rankLabel && (
           <span
             className="text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full"
             style={{ backgroundColor: `${dim.themeColor}18`, color: dim.themeColor }}
           >
-            Primary
+            {rankLabel}
           </span>
         )}
-        <span className="ml-auto text-sm font-semibold tabular-nums text-muted-foreground">
-          {dim.meanScore}/{dim.maxScore}
-        </span>
       </div>
 
       <p className="text-sm font-medium text-muted-foreground mb-1">{dim.tagline}</p>
@@ -278,14 +314,10 @@ export function LikertResult({
         </div>
       )}
 
-      {/* ── 5. Your Profile ────────────────────────────────────── */}
+      {/* ── 5. Your Blend ────────────────────────────────────────── */}
       <section className="space-y-5">
-        <SectionHeading>Your Profile</SectionHeading>
-        <div className="space-y-3">
-          {result.allDimensions.map(dim => (
-            <ProfileBar key={dim.id} dim={dim} maxScore={dim.maxScore} />
-          ))}
-        </div>
+        <SectionHeading>Your Blend</SectionHeading>
+        <BlendDonut dimensions={result.allDimensions} />
       </section>
 
       {/* ── Shared-view second CTA ───────────────────────────────── */}
@@ -307,13 +339,14 @@ export function LikertResult({
         <>
           {/* ── 6. Dimension Details ───────────────────────────────── */}
           <section className="space-y-5">
-            <SectionHeading>Your Dimensions</SectionHeading>
+            <SectionHeading>Your Parenting Styles</SectionHeading>
             <div className="grid gap-4">
-              {result.allDimensions.map(dim => (
+              {result.allDimensions.map((dim, i) => (
                 <DimensionCard
                   key={dim.id}
                   dim={dim}
                   isPrimary={dim.id === primary.id}
+                  rank={i + 1}
                 />
               ))}
             </div>

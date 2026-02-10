@@ -45,26 +45,68 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
   );
 }
 
-function BlendBar({ type, maxPercentage }: { type: IdentityTypeResult; maxPercentage: number }) {
-  const widthPct = maxPercentage > 0 ? (type.percentage / maxPercentage) * 100 : 0;
+function BlendDonut({ types }: { types: IdentityTypeResult[] }) {
+  const size = 200;
+  const strokeWidth = 32;
+  const radius = (size - strokeWidth) / 2;
+  const circumference = 2 * Math.PI * radius;
+  const center = size / 2;
+
+  // Build segments from percentage data
+  let cumulativePercent = 0;
+  const segments = types.map((type) => {
+    const start = cumulativePercent;
+    cumulativePercent += type.percentage;
+    return { ...type, startPercent: start };
+  });
 
   return (
-    <div className="flex items-center gap-3">
-      <span className="text-sm font-medium text-foreground w-28 sm:w-36 truncate">
-        {type.name}
-      </span>
-      <div className="flex-1 h-3 rounded-full bg-foreground/[0.04] overflow-hidden">
-        <motion.div
-          className="h-full rounded-full"
-          style={{ backgroundColor: type.themeColor }}
-          initial={{ width: 0 }}
-          animate={{ width: `${widthPct}%` }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        />
+    <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-center sm:justify-center sm:gap-10">
+      {/* Donut */}
+      <div className="shrink-0">
+        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="block">
+          {segments.map((seg, i) => {
+            const dashLength = (seg.percentage / 100) * circumference;
+            const dashOffset = -((seg.startPercent / 100) * circumference);
+            return (
+              <motion.circle
+                key={seg.id}
+                cx={center}
+                cy={center}
+                r={radius}
+                fill="none"
+                stroke={seg.themeColor}
+                strokeWidth={strokeWidth}
+                strokeDasharray={`${dashLength} ${circumference - dashLength}`}
+                strokeDashoffset={dashOffset}
+                strokeLinecap="butt"
+                transform={`rotate(-90 ${center} ${center})`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+              />
+            );
+          })}
+        </svg>
       </div>
-      <span className="text-sm font-bold tabular-nums text-muted-foreground w-10 text-right">
-        {type.percentage}%
-      </span>
+
+      {/* Legend */}
+      <div className="flex flex-col gap-2.5 min-w-0">
+        {types.map((type) => (
+          <div key={type.id} className="flex items-center gap-2.5">
+            <div
+              className="w-3 h-3 rounded-full shrink-0"
+              style={{ backgroundColor: type.themeColor }}
+            />
+            <span className="text-sm font-medium text-foreground truncate">
+              {type.name}
+            </span>
+            <span className="text-sm font-bold tabular-nums text-muted-foreground ml-auto">
+              {type.percentage}%
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -150,7 +192,6 @@ export function IdentityResult({
   }, [saving, quizMeta.shortTitle]);
 
   const primary = result.primaryType;
-  const maxPct = Math.max(...result.allTypes.map(t => t.percentage));
 
   return (
     <div
@@ -282,12 +323,8 @@ export function IdentityResult({
 
       {/* ── 5. Your Blend ────────────────────────────────────────── */}
       <section className="space-y-5">
-        <SectionHeading>Your Match Profile</SectionHeading>
-        <div className="space-y-3">
-          {result.allTypes.map(type => (
-            <BlendBar key={type.id} type={type} maxPercentage={maxPct} />
-          ))}
-        </div>
+        <SectionHeading>Your Blend</SectionHeading>
+        <BlendDonut types={result.allTypes} />
       </section>
 
       {/* ── Shared-view second CTA ───────────────────────────────── */}

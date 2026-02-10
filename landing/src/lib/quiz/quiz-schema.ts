@@ -577,6 +577,13 @@ export const LikertDimensionSchema = z.object({
     .describe("2-3 sentences. Direct closing — what scoring high here means. No platitudes."),
   comparativeContext: z.string().min(10).max(200)
     .describe("1 sentence. Plain statistic or normalizing context."),
+  populationNorm: z.object({
+    mean: z.number().min(0).max(10)
+      .describe("Expected population mean on the scale (e.g. 3.9 on a 1-5 scale)"),
+    sd: z.number().min(0.01).max(5)
+      .describe("Expected population standard deviation (e.g. 0.55)"),
+  }).optional()
+    .describe("Population norm for percentile-based scoring. Source: validated instrument research (e.g. PSDQ). When provided for ALL dimensions, the quiz uses z-score→percentile blend instead of raw-mean blend."),
 });
 
 export const LikertStatementSchema = z.object({

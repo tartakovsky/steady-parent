@@ -93,6 +93,9 @@ export function LikertQuiz({ quiz, onComplete }: LikertQuizProps) {
     const params = new URLSearchParams(window.location.search);
     const state = readStateFromUrl(params, quiz.questions);
 
+    setShared(params.get("s") === "1");
+    setPreview(params.get("p") === "1");
+
     if (!state) {
       setAnswers({});
       setResult(null);
@@ -119,12 +122,6 @@ export function LikertQuiz({ quiz, onComplete }: LikertQuizProps) {
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
   }, [restoreFromUrl]);
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    setShared(params.get("s") === "1");
-    setPreview(params.get("p") === "1");
-  }, []);
 
   useEffect(() => {
     if (result) {

@@ -93,109 +93,109 @@
     {
       "id": "q1",
       "domain": "movement",
-      "text": "When your child is wound up or frustrated, what happens if you suggest they run around outside or jump on something?",
+      "text": "Your child just got told 'no' to something they really wanted and they're spiraling. You suggest they go stomp around the yard or jump on the trampoline. What happens?",
       "options": [
         {
           "id": "q1a",
-          "text": "They light up and come back noticeably calmer within minutes",
+          "text": "They take off running and come back a different kid — visibly calmer within five minutes",
           "points": 3
         },
         {
           "id": "q1b",
-          "text": "It helps somewhat but they still need other strategies to fully settle",
+          "text": "They'll do it if I go with them, and it takes the edge off but doesn't fully reset them",
           "points": 1
         },
         {
           "id": "q1c",
-          "text": "They refuse or it doesn't seem to change their emotional state at all",
+          "text": "They refuse to move or the physical activity actually amps them up more",
           "points": 0
         }
       ]
     },
     {
       "id": "q2",
-      "domain": "movement",
-      "text": "After sitting still for a long stretch, how does your child typically act?",
+      "domain": "sensory",
+      "text": "Your child is melting down after a hard day. You wrap them in a heavy blanket, dim the lights, and put on quiet music. How do they respond?",
       "options": [
         {
           "id": "q2a",
-          "text": "They get visibly agitated and need to move before they can do anything else",
+          "text": "They burrow in like they've been waiting for it — their whole body softens",
           "points": 3
         },
         {
           "id": "q2b",
-          "text": "They get a bit restless but can manage with some fidgeting",
+          "text": "They tolerate it and it brings them down a notch, but they still need something else to fully settle",
           "points": 1
         },
         {
           "id": "q2c",
-          "text": "They're mostly fine with stillness and don't seem to need movement breaks",
+          "text": "They throw off the blanket and the environmental change makes zero difference",
           "points": 0
         }
       ]
     },
     {
       "id": "q3",
-      "domain": "movement",
-      "text": "When your child is on the verge of a meltdown, do physical activities like stomping, pushing against a wall, or dancing it out help them reset?",
+      "domain": "verbal",
+      "text": "After a big crying episode, your child is still sniffling. You say: 'That was really frustrating, huh? Tell me what happened.' What do they do?",
       "options": [
         {
           "id": "q3a",
-          "text": "Yes, heavy work or big movement is the most reliable reset button we have",
+          "text": "They launch into the full story and you can watch them relax as they narrate — the talking IS the calming",
           "points": 3
         },
         {
           "id": "q3b",
-          "text": "Sometimes, if I catch it early enough",
-          "points": 2
+          "text": "They give a short answer and it helps a little, but words alone don't get them all the way down",
+          "points": 1
         },
         {
           "id": "q3c",
-          "text": "No, physical strategies tend to escalate things rather than calm them",
+          "text": "They clam up, turn away, or get more upset — talking when they're emotional backfires",
           "points": 0
         }
       ]
     },
     {
       "id": "q4",
-      "domain": "sensory",
-      "text": "How does your child respond to tactile comfort when upset — a weighted blanket, a tight hug, squeezing a stress ball?",
+      "domain": "creative",
+      "text": "Your child is stuck in a bad mood loop — nothing is working. You put crayons and paper in front of them and say 'Draw how mad you are.' What happens?",
       "options": [
         {
           "id": "q4a",
-          "text": "They actively seek it out and it visibly brings them down",
+          "text": "They grab the crayons and go — scribbling or drawing the scene, and their body language shifts as they create",
           "points": 3
         },
         {
           "id": "q4b",
-          "text": "They accept it if offered and it helps a bit",
+          "text": "They might engage after a while, but it takes convincing and isn't their instinct",
           "points": 1
         },
         {
           "id": "q4c",
-          "text": "They pull away from touch or sensory input when they're upset",
+          "text": "They push it away — asking them to do a task when they're upset makes everything worse",
           "points": 0
         }
       ]
     },
     {
       "id": "q5",
-      "domain": "sensory",
-      "text": "Does your child seem to calm down in specific sensory environments — dim lighting, quiet spaces, warm baths, particular music?",
+      "domain": "movement",
+      "text": "Think about the last few times your child successfully calmed down from a big emotion. What did the recovery look like?",
       "options": [
         {
           "id": "q5a",
-          "text": "Absolutely, the right sensory environment is a game-changer for them",
+          "text": "It involved their body — running, climbing, wrestling, bouncing, or doing something physically intense",
           "points": 3
         },
         {
           "id": "q5b",
-          "text": "It can help, but it's not the main thing that works",
+          "text": "They were somewhat active but also needed comfort or conversation to finish settling",
           "points": 1
         },
         {
           "id": "q5c",
-          "text": "Environmental changes don't seem to make a noticeable difference",
+          "text": "Movement wasn't part of it — they calmed through stillness, talking, touch, or distraction",
           "points": 0
         }
       ]
@@ -203,21 +203,21 @@
     {
       "id": "q6",
       "domain": "sensory",
-      "text": "When your child is overwhelmed, do they gravitate toward repetitive sensory actions — rocking, humming, rubbing fabric, chewing on something?",
+      "text": "When your child is overwhelmed, do they instinctively reach for something to squeeze, chew, fidget with, or rub?",
       "options": [
         {
           "id": "q6a",
-          "text": "Yes, they have clear sensory self-soothing habits they use instinctively",
+          "text": "They have go-to sensory objects — a specific blanket, a chewy necklace, a squishy toy — and using them visibly settles their body",
           "points": 3
         },
         {
           "id": "q6b",
-          "text": "Occasionally, but they don't rely on it consistently",
-          "points": 2
+          "text": "They'll use something fidgety if I offer it, but they don't seek it on their own",
+          "points": 1
         },
         {
           "id": "q6c",
-          "text": "Not really, they don't seem drawn to sensory repetition",
+          "text": "They don't seem interested in tactile objects when upset — their regulation doesn't run through touch",
           "points": 0
         }
       ]
@@ -225,87 +225,87 @@
     {
       "id": "q7",
       "domain": "verbal",
-      "text": "After your child has a big emotional episode, do they want to talk about what happened?",
+      "text": "You label your child's emotion out loud: 'You seem really angry that your brother took that.' What's the typical reaction?",
       "options": [
         {
           "id": "q7a",
-          "text": "Yes, they need to narrate the whole thing before they can truly let it go",
+          "text": "Their shoulders drop and they nod — being accurately named is like releasing a pressure valve for them",
           "points": 3
         },
         {
           "id": "q7b",
-          "text": "They'll answer questions if I prompt them, but don't initiate it",
-          "points": 2
+          "text": "It helps a little, but they still need a physical or sensory strategy to actually calm down",
+          "points": 1
         },
         {
           "id": "q7c",
-          "text": "They shut down verbally when upset and talking makes it worse",
+          "text": "They ignore it or snap back — words feel like interference, not help, when they're activated",
           "points": 0
         }
       ]
     },
     {
       "id": "q8",
-      "domain": "verbal",
-      "text": "When you label your child's emotions for them — 'It sounds like you're really frustrated' — how do they respond?",
+      "domain": "creative",
+      "text": "Does your child ever work through difficult feelings by building something, acting out scenarios with toys, making up stories, or creating art — without being prompted?",
       "options": [
         {
           "id": "q8a",
-          "text": "They visibly relax, like being understood is itself the regulation tool",
+          "text": "Often — after something hard happens, they'll go build, draw, or play-act the situation on their own",
           "points": 3
         },
         {
           "id": "q8b",
-          "text": "It helps sometimes but isn't enough on its own to shift things",
+          "text": "Occasionally, if the materials are right there and the moment lines up",
           "points": 1
         },
         {
           "id": "q8c",
-          "text": "They ignore it or get more agitated — words aren't their entry point",
+          "text": "Never — creative play is something they do when happy, not when upset",
           "points": 0
         }
       ]
     },
     {
       "id": "q9",
-      "domain": "creative",
-      "text": "Does your child ever process difficult feelings through drawing, building, imaginative play, or making things?",
+      "domain": "movement",
+      "text": "Your child has been sitting in the car or at a table for too long and starts getting agitated and picking fights. What resolves it fastest?",
       "options": [
         {
           "id": "q9a",
-          "text": "Often — they'll draw their anger, build something to smash, or act out scenarios with toys",
+          "text": "Getting them somewhere they can run, climb, or physically burn it off — the agitation melts once they move",
           "points": 3
         },
         {
           "id": "q9b",
-          "text": "Sometimes, if I set up the materials and suggest it",
-          "points": 2
+          "text": "Some movement helps, but they also need a snack, a hug, or a conversation to fully come back",
+          "points": 1
         },
         {
           "id": "q9c",
-          "text": "Rarely — creative activities aren't where they go when they're upset",
+          "text": "Movement isn't the fix — they need a different kind of reset like a quiet break, a squeeze, or a game",
           "points": 0
         }
       ]
     },
     {
       "id": "q10",
-      "domain": "creative",
-      "text": "When your child is stuck in a negative emotional loop, does redirecting them to a creative task — coloring, playing with clay, making up a story — break the cycle?",
+      "domain": "sensory",
+      "text": "Picture your child in peak meltdown mode. Which of these would have the best shot at reaching them?",
       "options": [
         {
           "id": "q10a",
-          "text": "Yes, creative engagement absorbs their attention and shifts their state",
+          "text": "A tight bear hug, a warm bath, or wrapping them in something heavy — deep pressure is the reset button",
           "points": 3
         },
         {
           "id": "q10b",
-          "text": "It can work as a second step after they've calmed down a bit first",
+          "text": "Sensory input might help some, but the real breakthrough comes from a different channel entirely",
           "points": 1
         },
         {
           "id": "q10c",
-          "text": "No, they can't engage creatively when upset — it feels like a demand",
+          "text": "Touch and sensory input during a meltdown makes things worse — they need space, not sensation",
           "points": 0
         }
       ]
@@ -315,81 +315,81 @@
     "movement": {
       "high": {
         "level": "high",
-        "headline": "Movement is their primary regulation channel",
-        "detail": "Your child's nervous system resets through physical action. Running, jumping, pushing, and heavy work aren't just energy burns — they're how their body processes stress. This is neurologically sound: proprioceptive input directly regulates the autonomic nervous system.",
-        "strength": "Build movement into transitions and pre-meltdown routines. Try: trampoline breaks, wall push-ups, animal walks, obstacle courses, and structured rough play before high-demand situations."
+        "headline": "Their body has to move before their brain can calm",
+        "detail": "Your child's nervous system resets through physical action. Proprioceptive input — the kind from jumping, pushing, and heavy work — directly downregulates their stress response. This is neurology, not hyperactivity.",
+        "strength": "Start here: jumping jacks, stomping feet, pushing against a wall, running laps, animal walks, trampoline sessions, wheelbarrow walks, or carrying heavy objects. Build a 5-minute movement break into every transition."
       },
       "medium": {
         "level": "medium",
-        "headline": "Movement helps but isn't the whole story",
-        "detail": "Physical activity supports your child's regulation but isn't sufficient on its own. They benefit from movement but need additional strategies layered in. Think of movement as the warm-up act, not the headliner.",
-        "concern": "Try pairing movement with another channel. Run first, then talk. Jump first, then squeeze a stress ball. Movement may prime their system for other strategies to land."
+        "headline": "Movement helps but isn't enough alone",
+        "detail": "Physical activity takes the edge off but doesn't fully reset your child. Movement is the opening act — it primes their nervous system for a different strategy to finish the job.",
+        "concern": "Try pairing movement with their stronger channel: run first then talk, jump first then squeeze a stress ball, dance it out then draw. Movement lowers the volume so another tool can land."
       },
       "low": {
         "level": "low",
-        "headline": "Movement isn't their entry point right now",
-        "detail": "Suggesting your child 'go run it off' when they're upset probably doesn't land. Their regulation pathway runs through different channels. This doesn't mean movement is bad for them — it just means it's not their calming mechanism.",
-        "concern": "Skip movement-first strategies during meltdowns and lead with their stronger channels. Movement can still be valuable for general energy regulation outside of emotional crises."
+        "headline": "Movement isn't their calming channel",
+        "detail": "Telling your child to 'go run it off' when they're upset probably gets you an eye-roll or an escalation. Their regulation pathway runs through different wiring entirely.",
+        "concern": "Skip movement-first strategies during meltdowns. Lead with their stronger channels instead. Movement still matters for general health — just not as their emotional reset button."
       }
     },
     "sensory": {
       "high": {
         "level": "high",
-        "headline": "Sensory input is their primary regulation channel",
-        "detail": "Your child calms through what they feel, hear, and touch. Weighted blankets, specific textures, dim lighting, and repetitive sensory actions aren't preferences — they're regulation tools their nervous system actively seeks out.",
-        "strength": "Create a sensory toolkit: weighted lap pad, noise-canceling headphones, fidget tools, textured fabrics, chewable jewelry. Make these accessible so they can self-select when overwhelmed."
+        "headline": "Sensory input is their nervous system's off switch",
+        "detail": "Your child calms through what they feel against their skin, hear in the background, and experience as pressure. These are regulation tools their body actively hunts for when overwhelmed.",
+        "strength": "Build a sensory kit: weighted lap pad, noise-canceling headphones, chewable jewelry, textured fidgets, a mini trampoline cushion, warm rice sock. Keep it accessible so they grab what they need without asking."
       },
       "medium": {
         "level": "medium",
-        "headline": "Sensory input is a supporting channel",
-        "detail": "Your child responds to sensory strategies but doesn't rely on them as a first line of regulation. Sensory input works best as a complement to their primary channel — the background conditions that make other strategies more effective.",
-        "concern": "Optimize the sensory environment during emotional moments: lower lights, reduce noise, offer a comfort object. These conditions may help their primary regulation channel work faster."
+        "headline": "Sensory input is a supporting player",
+        "detail": "Your child responds to sensory strategies but doesn't rely on them as a primary regulation tool. Think of sensory input as the stage setting that makes their main calming channel more effective.",
+        "concern": "Optimize the environment during emotional moments: dim the lights, lower background noise, offer a comfort object. These adjustments help their primary channel work faster."
       },
       "low": {
         "level": "low",
-        "headline": "Sensory strategies aren't connecting right now",
-        "detail": "Your child either doesn't respond to sensory input when upset or actively avoids it. Some kids find touch, noise, or environmental changes overwhelming rather than calming — especially during heightened emotions.",
-        "concern": "Don't force sensory tools during meltdowns. Instead, offer sensory experiences during calm times to build positive associations. Their regulation pathway likely runs through verbal or creative channels."
+        "headline": "Sensory strategies aren't landing",
+        "detail": "Your child either ignores sensory input when upset or actively recoils from it. Some kids experience touch, noise, or texture changes as more input on an already overloaded system.",
+        "concern": "Don't push weighted blankets or bear hugs during meltdowns. Try sensory experiences during calm times instead — playdough, water play, sandbox — to build positive associations gradually."
       }
     },
     "verbal": {
       "high": {
         "level": "high",
-        "headline": "Verbal processing is their primary regulation channel",
-        "detail": "Your child regulates by putting feelings into words. Narrating the experience, being understood, and talking through what happened isn't stalling — it's genuine emotional processing. Their brain literally organizes the experience through language.",
-        "strength": "Lean into reflective listening and emotion labeling. Try: 'Tell me everything that happened,' 'That sounds like it was really unfair,' and open-ended prompts after they've had a few minutes to settle."
+        "headline": "Talking IS the regulation tool",
+        "detail": "Your child's brain literally organizes overwhelming experiences through language. Narrating what happened, being accurately understood, and putting words to feelings — that's not stalling. That's real-time emotional processing.",
+        "strength": "Lean hard into reflective listening and emotion labeling. Use these: 'Tell me everything that happened.' 'That sounds like it felt really unfair.' 'What was the worst part?' Let them narrate the whole episode without rushing to fix it."
       },
       "medium": {
         "level": "medium",
-        "headline": "Words help once the storm has passed",
-        "detail": "Your child can use verbal processing but not during peak distress. They need another channel to bring the intensity down first, then language becomes useful for making sense of the experience and preventing the next one.",
-        "concern": "Don't start with words during meltdowns. Help them calm through their primary channel first, then circle back with conversation. Prompts like 'Do you want to talk about it now?' respect their timing."
+        "headline": "Words help once the storm passes",
+        "detail": "Your child can use verbal processing effectively, but not during peak distress. They need another channel to bring the intensity down first, then language becomes the tool for making sense of it.",
+        "concern": "Don't lead with words during meltdowns. Calm through their primary channel first, then circle back: 'Now that you're feeling better, want to tell me about it?' Respect their timing."
       },
       "low": {
         "level": "low",
-        "headline": "Talking isn't their regulation tool",
-        "detail": "Your child either can't access language when upset or finds verbal demands overwhelming during emotional moments. This is common and developmentally normal — the language centers of the brain go offline during high stress.",
-        "concern": "Minimize verbal demands during meltdowns. Skip 'use your words' and 'tell me what happened.' Instead, use their body-based or creative channels first. Words can come later, when their thinking brain is back online."
+        "headline": "Talking makes it worse right now",
+        "detail": "Your child either loses access to language when upset or experiences verbal demands as overwhelming pressure. This is normal — the brain's language centers go offline during high stress in many kids.",
+        "concern": "Drop 'use your words' and 'tell me what happened' from the meltdown script entirely. Use their body-based or creative channels first. Words can come later when their thinking brain is back online."
       }
     },
     "creative": {
       "high": {
         "level": "high",
-        "headline": "Creative expression is their primary regulation channel",
-        "detail": "Your child processes emotions through making things — drawing, building, dramatic play, storytelling. This isn't distraction; it's externalization. They're literally putting their internal experience into a tangible form they can examine and control.",
-        "strength": "Keep creative materials always accessible: paper and markers, clay, building blocks, puppets, a feelings journal. When emotions are high, try: 'Do you want to draw how that felt?' or 'Show me with your toys what happened.'"
+        "headline": "Creating IS processing for them",
+        "detail": "Your child works through emotions by making things — drawing, building, dramatic play, storytelling. This is externalization: they put their internal chaos into a tangible form they can examine, control, and resolve.",
+        "strength": "Keep materials always accessible: paper and markers, clay or playdough, building blocks, puppets, a feelings journal. Try these prompts: 'Draw how that felt.' 'Show me with your toys what happened.' 'Build something and then smash it.'"
       },
       "medium": {
         "level": "medium",
-        "headline": "Creative expression is a supporting channel",
-        "detail": "Your child can use creative outlets for emotional processing, but usually needs help getting started or needs another strategy to bring the intensity down first. Creative expression works better as a bridge back to baseline than as a first response.",
-        "concern": "Try offering creative options after initial calming. Set up materials without pressure: 'These are here if you want them.' Some kids engage more readily when the invitation is casual rather than directive."
+        "headline": "Creative expression is a backup channel",
+        "detail": "Your child can use creative outlets but usually needs help getting started or needs another strategy to bring the intensity down first. Creative expression works better as a bridge back to baseline than a first response.",
+        "concern": "Offer creative options after initial calming. Set up materials without pressure: 'These are here if you want them.' Casual invitations land better than directives for this channel."
       },
       "low": {
         "level": "low",
-        "headline": "Creative tasks don't click when they're upset",
-        "detail": "Asking your child to draw their feelings or build something when they're dysregulated probably feels like adding a task to an already overloaded system. Creative expression may work for general emotional exploration during calm times, but it's not their go-to regulation tool.",
-        "concern": "Don't push creative processing during emotional peaks. Introduce it during calm moments — drawing emotion faces, building a feelings thermometer — so the skill is available if they ever want it."
+        "headline": "Creating feels like a demand when upset",
+        "detail": "Asking your child to draw their feelings when they're dysregulated is like assigning homework during a fire drill. Creative expression may work during calm emotional exploration, but it's not their in-the-moment regulation tool.",
+        "concern": "Don't push art or building during emotional peaks. Introduce creative processing during calm times — drawing emotion faces, building a feelings thermometer — so the skill bank exists if they ever want it."
       }
     }
   },
@@ -403,15 +403,15 @@
       },
       "headline": "Channels Identified",
       "subheadline": "Your child has clear regulation pathways you can lean into — and you probably already know what works when you pay attention.",
-      "explanation": "Your child shows strong responsiveness to multiple calming channels. This means you have real options when emotions run high, not just one strategy that might or might not land. The domain breakdown below shows which channels to prioritize and which to use as backup. Kids with multiple accessible channels tend to recover faster because you can match the strategy to the situation.",
+      "explanation": "Your child shows strong responsiveness to specific calming channels. This means you have real options when emotions run high, not just one strategy that might or might not land. The domain breakdown below shows which channels to prioritize and which to skip. Kids with strong channels recover faster because you can match the strategy to the situation.",
       "nextSteps": [
-        "Build a visual calm-down menu featuring strategies from their top channels — post it at eye level so they can self-select during calm moments",
-        "Practice their primary channel strategies when emotions are low so the neural pathways are strong when the storm hits",
-        "Create a portable mini-toolkit for school, car, and other people's houses based on their strongest channel",
-        "Teach them to name which channel they need: 'I need to move' or 'I need to squeeze something'"
+        "Build a visual calm-down menu featuring their top channel strategies — post it at their eye level so they can self-select",
+        "Practice primary channel strategies during calm moments so the neural pathways are strong when the storm hits",
+        "Create a portable mini-toolkit for school, car, and other people's houses based on their top channel",
+        "Teach them to name which channel they need: 'I need to move' or 'I need to squeeze something' or 'I need to tell you about it'"
       ],
-      "watchOutFor": "Strong channels can become rigid coping habits. If your child only uses one strategy and panics when it's unavailable, gently introduce their supporting channels as backup options during calm practice.",
-      "encouragement": "You've clearly been paying attention to what actually works for your kid instead of forcing strategies from a generic list. That responsiveness is the toolkit. The specific strategies are just details.",
+      "watchOutFor": "Strong channels can become rigid coping habits. If your child panics when their one strategy is unavailable, gently introduce their supporting channels as backup during calm practice.",
+      "encouragement": "You've been paying attention to what actually works for your kid instead of forcing strategies from a generic list. That responsiveness is the real toolkit. The specific strategies are just details.",
       "comparativeContext": "Children with identified regulation channels develop self-regulation skills faster because the adults around them can match support to the child's actual nervous system needs."
     },
     "emerging": {
@@ -423,15 +423,15 @@
       },
       "headline": "Channels Taking Shape",
       "subheadline": "Your child responds to some calming strategies more than others — the pattern is there, it just needs sharpening.",
-      "explanation": "Your child has some regulation capacity across multiple channels, but none are fully reliable yet. This is the most common pattern for kids in this age range. The domain breakdown shows which channels are most promising to invest in. Focused practice in their strongest area will create a reliable anchor, and then you can expand from there.",
+      "explanation": "Your child has some regulation capacity across channels but none are fully reliable yet. This is the most common pattern for kids ages 3-10. The domain breakdown shows which channels are most promising. Focused practice in their strongest area will create a reliable anchor, then you expand.",
       "nextSteps": [
         "Pick their highest-scoring channel and commit to it for two weeks — offer those strategies first in every emotional moment",
-        "Track what works: keep a quick note on your phone after each meltdown about what helped and what didn't",
+        "Track what works: keep a note on your phone after each meltdown about what helped and what didn't",
         "Reduce demands during peak emotions — their system can't learn new strategies while overwhelmed, so stick to what partially works",
-        "Try the specific strategies listed in their primary channel domain above and notice which ones get any traction at all"
+        "Try the specific strategies listed in their primary channel domain and notice which ones get any traction at all"
       ],
       "watchOutFor": "Resist the urge to try every strategy simultaneously. A child with emerging channels needs consistency more than variety. Pick one channel, build it up, then diversify.",
-      "encouragement": "You're in the messy middle where some things work sometimes and nothing works always. That's not failure — it's the stage where observation matters most. The domain breakdown below is your map for where to focus.",
+      "encouragement": "You're in the messy middle where some things work sometimes and nothing works always. That's not failure — it's the stage where observation matters most. The domain breakdown below is your map.",
       "comparativeContext": "Most parents of 3-10 year olds score in this range. Regulation channels become clearer with consistent practice, and most families see meaningful shifts within 4-6 weeks of focused strategy use."
     },
     "exploring": {
@@ -442,17 +442,17 @@
         "max": 10
       },
       "headline": "Still Searching",
-      "subheadline": "You haven't found what reliably calms your child yet — which means the standard advice probably isn't working.",
-      "explanation": "Your child doesn't show strong responsiveness to any single regulation channel right now. This is frustrating but informative: it means the strategies you've been trying may not match their nervous system. Some kids need very specific sensory profiles or haven't had enough calm-state practice to build the pathways. Others have underlying sensory processing differences that make standard calming tools ineffective.",
+      "subheadline": "You haven't found what reliably calms your child yet — which means the standard advice probably isn't matching their nervous system.",
+      "explanation": "Your child doesn't show strong responsiveness to any single regulation channel right now. This is frustrating but informative: the strategies you've been trying may not fit their wiring. Some kids need very specific sensory profiles, and others have underlying processing differences that make standard calming tools miss the mark entirely.",
       "nextSteps": [
-        "Start a structured experiment: pick one channel per week and try three different strategies within it, noting any flicker of response",
-        "Focus entirely on co-regulation first — your calm presence is the strategy while you figure out their channels",
+        "Run a structured experiment: pick one channel per week and try three different strategies within it, noting any flicker of response",
+        "Focus entirely on co-regulation first — your calm presence is the strategy while you figure out their specific channels",
         "Try strategies during calm moments, not crises — you can't discover what works when the nervous system is fully offline",
-        "If no channel shows any response after 4-6 weeks of experimentation, talk to your pediatrician about an occupational therapy screening for sensory processing",
+        "If no channel shows any response after 4-6 weeks of experimentation, talk to your pediatrician about an occupational therapy screening",
         "Read the domain descriptions below for specific strategies to test in each channel"
       ],
-      "watchOutFor": "Low scores here don't mean your child is broken or that you're failing. It often means they need more time at a specific developmental stage, or that their regulation profile is atypical enough to benefit from professional guidance.",
-      "encouragement": "The fact that nothing has clicked yet doesn't mean nothing will. It means you need a more systematic approach than 'try deep breathing.' The channel framework gives you that structure. Start with the domain that scored highest, even if it's low, and build from there.",
+      "watchOutFor": "Low scores don't mean your child is broken or that you're failing. It usually means their regulation profile is specific enough to benefit from more targeted exploration — or professional guidance.",
+      "encouragement": "The fact that nothing has clicked yet doesn't mean nothing will. It means you need a more systematic approach than 'try deep breathing.' The channel framework gives you that structure. Start with whichever domain scored highest, even if it's low.",
       "comparativeContext": "About one in five parents report that standard calming strategies don't work for their child. In most cases, the issue is fit rather than ability — the right channel just hasn't been identified yet."
     }
   }

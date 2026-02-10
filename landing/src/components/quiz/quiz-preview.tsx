@@ -218,6 +218,72 @@ interface PreviewData {
   scoreLabel?: string | undefined;
   bars: { name: string; percentage: number; color: string; label?: string | undefined }[];
   barsTitle: string;
+  /** If true, render a donut chart instead of horizontal bars */
+  useDonut?: boolean;
+}
+
+// ── Preview donut (matches the full result donut) ────────────────────
+
+function PreviewDonut({ segments }: { segments: { name: string; percentage: number; color: string }[] }) {
+  const size = 180;
+  const strokeWidth = 28;
+  const radius = (size - strokeWidth) / 2;
+  const circumference = 2 * Math.PI * radius;
+  const center = size / 2;
+
+  let cumulativePercent = 0;
+  const arcs = segments.map((seg) => {
+    const start = cumulativePercent;
+    cumulativePercent += seg.percentage;
+    return { ...seg, startPercent: start };
+  });
+
+  return (
+    <div className="flex flex-col items-center gap-5 sm:flex-row sm:items-center sm:justify-center sm:gap-8">
+      <div className="shrink-0">
+        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="block">
+          {arcs.map((seg, i) => {
+            const dashLength = (seg.percentage / 100) * circumference;
+            const dashOffset = -((seg.startPercent / 100) * circumference);
+            return (
+              <motion.circle
+                key={seg.name}
+                cx={center}
+                cy={center}
+                r={radius}
+                fill="none"
+                stroke={seg.color}
+                strokeWidth={strokeWidth}
+                strokeDasharray={`${dashLength} ${circumference - dashLength}`}
+                strokeDashoffset={dashOffset}
+                strokeLinecap="butt"
+                transform={`rotate(-90 ${center} ${center})`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
+              />
+            );
+          })}
+        </svg>
+      </div>
+      <div className="flex flex-col gap-2 min-w-0">
+        {segments.map((seg) => (
+          <div key={seg.name} className="flex items-center gap-2.5">
+            <div
+              className="w-3 h-3 rounded-full shrink-0"
+              style={{ backgroundColor: seg.color }}
+            />
+            <span className="text-sm font-medium text-foreground truncate">
+              {seg.name}
+            </span>
+            <span className="text-sm font-bold tabular-nums text-muted-foreground ml-auto">
+              {seg.percentage}%
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 const DOMAIN_COLORS = ["#00b86b", "#e07937", "#9c83f2", "#3b82f6", "#ef4444", "#f59e0b"];
@@ -225,16 +291,17 @@ const DOMAIN_COLORS = ["#00b86b", "#e07937", "#9c83f2", "#3b82f6", "#ef4444", "#
 function extractPreviewData(result: AnyResult, meta: QuizMeta): PreviewData {
   if (isIdentityResult(result)) {
     return {
-      headline: `You're a ${result.primaryType.name}`,
+      headline: result.primaryType.name.startsWith("The ") ? `You're ${result.primaryType.name}` : `You're a ${result.primaryType.name}`,
       subheadline: result.primaryType.tagline,
       themeColor: result.primaryType.themeColor,
       bars: result.allTypes.map((t) => ({
         name: t.name,
         percentage: t.percentage,
         color: t.themeColor,
-        label: `${t.percentage}% match`,
+        label: `${t.percentage}%`,
       })),
-      barsTitle: "Your Match Profile",
+      barsTitle: "Your Blend",
+      useDonut: true,
     };
   }
 
@@ -247,9 +314,10 @@ function extractPreviewData(result: AnyResult, meta: QuizMeta): PreviewData {
         name: d.name,
         percentage: d.percentage,
         color: d.themeColor,
-        label: `${d.meanScore} / ${d.maxScore}`,
+        label: `${d.percentage}%`,
       })),
-      barsTitle: "Your Dimensions",
+      barsTitle: "Your Blend",
+      useDonut: true,
     };
   }
 
@@ -338,7 +406,7 @@ export function QuizPreview({ result, quizMeta, onRetake }: QuizPreviewProps) {
         </div>
       </motion.section>
 
-      {/* ── Summary bars ── */}
+      {/* ── Summary: donut for blend types, bars for domain scores ── */}
       <motion.section
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -346,18 +414,22 @@ export function QuizPreview({ result, quizMeta, onRetake }: QuizPreviewProps) {
         className="rounded-2xl border border-border bg-card p-6 sm:p-8"
       >
         <h2 className="text-lg font-bold text-foreground mb-5">{data.barsTitle}</h2>
-        <div className="space-y-4">
-          {data.bars.map((bar, i) => (
-            <SummaryBar
-              key={bar.name}
-              name={bar.name}
-              percentage={bar.percentage}
-              color={bar.color}
-              label={bar.label}
-              delay={0.6 + i * 0.1}
-            />
-          ))}
-        </div>
+        {data.useDonut ? (
+          <PreviewDonut segments={data.bars} />
+        ) : (
+          <div className="space-y-4">
+            {data.bars.map((bar, i) => (
+              <SummaryBar
+                key={bar.name}
+                name={bar.name}
+                percentage={bar.percentage}
+                color={bar.color}
+                label={bar.label}
+                delay={0.6 + i * 0.1}
+              />
+            ))}
+          </div>
+        )}
       </motion.section>
 
       {/* ── Taste card: show actual result content, clipped with fade ── */}

@@ -85,6 +85,9 @@ export function QuizContainer({
     const params = new URLSearchParams(window.location.search);
     const state = readStateFromUrl(params, quiz.questions);
 
+    setShared(params.get("s") === "1");
+    setPreview(params.get("p") === "1");
+
     if (!state) {
       setAnswers({});
       setCurrentIndex(0);
@@ -164,13 +167,6 @@ export function QuizContainer({
     setResult(null);
     setShared(false);
     setPreview(false);
-  }, []);
-
-  // Detect shared/preview view from URL
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    setShared(params.get("s") === "1");
-    setPreview(params.get("p") === "1");
   }, []);
 
   // Scroll to top when results appear
