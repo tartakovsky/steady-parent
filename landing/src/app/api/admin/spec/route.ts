@@ -5,12 +5,14 @@ import path from "path";
 import {
   ArticleTaxonomySchema,
   CtaCatalogSchema,
+  MailingFormCatalogSchema,
   MailingTagTaxonomySchema,
+  FormTagMappingsSchema,
+  KitIntegrationSpecSchema,
   PageTypesSchema,
   QuizTaxonomySchema,
   QuizPageTypesSchema,
   LinkPlanSchema,
-  validateCtaCatalog,
   buildCrossLinkDetail,
 } from "@steady-parent/content-spec";
 
@@ -34,22 +36,18 @@ async function loadAndValidate<T>(
 }
 
 export async function GET() {
-  const [taxonomy, quizTaxonomy, pageTypes, quizPageTypes, ctaCatalog, mailingTags, linkPlan] = await Promise.all([
+  const [taxonomy, quizTaxonomy, pageTypes, quizPageTypes, ctaCatalog, mailingFormCatalog, mailingTags, linkPlan, formTagMappings, integrationSpec] = await Promise.all([
     loadAndValidate("article_taxonomy.json", ArticleTaxonomySchema),
     loadAndValidate("quiz_taxonomy.json", QuizTaxonomySchema),
     loadAndValidate("page_types.json", PageTypesSchema),
     loadAndValidate("quiz_page_types.json", QuizPageTypesSchema),
     loadAndValidate("cta_catalog.json", CtaCatalogSchema),
+    loadAndValidate("mailing_form_catalog.json", MailingFormCatalogSchema),
     loadAndValidate("mailing_tags.json", MailingTagTaxonomySchema),
     loadAndValidate("article_link_plan.json", LinkPlanSchema),
+    loadAndValidate("form_tag_mappings.json", FormTagMappingsSchema),
+    loadAndValidate("kit_integration.json", KitIntegrationSpecSchema),
   ]);
-
-  // Run CTA business-rule validation
-  let ctaValidation: { errors: string[]; warnings: string[] } | null = null;
-  if (ctaCatalog && taxonomy) {
-    const categorySlugs = taxonomy.categories.map((c) => c.slug);
-    ctaValidation = validateCtaCatalog(ctaCatalog, categorySlugs);
-  }
 
   // Build cross-link detail (stats + per-article links + validation)
   let crossLinkDetail = null;
@@ -63,8 +61,10 @@ export async function GET() {
     pageTypes,
     quizPageTypes,
     ctaCatalog,
+    mailingFormCatalog,
     mailingTags,
-    ctaValidation,
     crossLinkDetail,
+    formTagMappings,
+    integrationSpec,
   });
 }

@@ -1,5 +1,4 @@
 import { z } from "zod/v4";
-import { CtaTypeEnum } from "./cta-catalog";
 
 export const LinkTypeEnum = z.enum([
   "series_preview",
@@ -11,6 +10,11 @@ export const LinkTypeEnum = z.enum([
   "quiz",
 ]);
 
+// Link plan CTA types include freebie (appears on article pages) even though
+// freebie is a mailing form, not a CTA — the link plan tracks all page-level
+// call-to-action placements regardless of implementation type.
+export const PlannedCtaTypeEnum = z.enum(["course", "community", "freebie"]);
+
 export const PlannedLinkSchema = z.object({
   url: z.string().min(1),
   type: LinkTypeEnum,
@@ -19,7 +23,7 @@ export const PlannedLinkSchema = z.object({
 
 export const PlannedCtaSchema = z.object({
   url: z.string().nullable(),
-  type: CtaTypeEnum,
+  type: PlannedCtaTypeEnum,
   intent: z.string().min(1),
 });
 

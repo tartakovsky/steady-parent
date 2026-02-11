@@ -16,6 +16,12 @@ export {
 } from "./cta-catalog";
 
 export {
+  MailingFormTypeEnum,
+  MailingFormEntrySchema,
+  MailingFormCatalogSchema,
+} from "./mailing-form-catalog";
+
+export {
   MailingTagSchema,
   MailingTagTaxonomySchema,
   FormTagMappingSchema,
@@ -55,6 +61,13 @@ export {
   JsonLdRequirementSchema,
   JsonLdRequirementsSchema,
 } from "./json-ld";
+
+export {
+  FrontendCheckSchema,
+  QuizSubscribeFlowSchema,
+  BlogFreebieFlowSchema,
+  KitIntegrationSpecSchema,
+} from "./kit-integration";
 
 // Stage 2: Generation output schemas
 export {

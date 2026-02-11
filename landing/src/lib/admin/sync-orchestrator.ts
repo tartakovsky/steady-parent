@@ -13,6 +13,7 @@ import path from "path";
 import {
   buildUrlRegistry,
   CtaCatalogSchema,
+  MailingFormCatalogSchema,
   findPlanEntry,
   PageTypesSchema,
   parseMdxArticle,
@@ -20,6 +21,7 @@ import {
 } from "@steady-parent/content-spec";
 import type {
   CtaDefinition,
+  MailingFormEntry,
   LinkPlanEntry,
   PageType,
 } from "@steady-parent/content-spec";
@@ -107,6 +109,13 @@ function getCtaCatalogPath(): string {
     return path.join(process.cwd(), "mdx-sources", "cta_catalog.json");
   }
   return path.join(process.cwd(), "..", "content-plan", "cta_catalog.json");
+}
+
+function getMailingFormCatalogPath(): string {
+  if (process.env["NODE_ENV"] === "production") {
+    return path.join(process.cwd(), "mdx-sources", "mailing_form_catalog.json");
+  }
+  return path.join(process.cwd(), "..", "content-plan", "mailing_form_catalog.json");
 }
 
 function getPageTypesPath(): string {
@@ -237,6 +246,14 @@ export async function runFullSync(): Promise<SyncSummary> {
       // CTA catalog might not exist yet
     }
 
+    let mailingFormCatalog: MailingFormEntry[] | undefined;
+    try {
+      const mfRaw = await fs.readFile(getMailingFormCatalogPath(), "utf-8");
+      mailingFormCatalog = MailingFormCatalogSchema.parse(JSON.parse(mfRaw));
+    } catch {
+      // Mailing form catalog might not exist yet
+    }
+
     // 3b. Read page type configs (schema-validated)
     const pageTypeMap = new Map<string, PageType>();
     try {
@@ -284,6 +301,7 @@ export async function runFullSync(): Promise<SyncSummary> {
         urlRegistry,
         pageType,
         ctaCatalog,
+        mailingFormCatalog,
       );
 
       const isRegistered = registeredSlugs.has(slug);

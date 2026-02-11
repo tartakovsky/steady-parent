@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import type { BlogPostEntry } from "@/content/blog/posts";
 import { blogPosts } from "@/content/blog/posts";
 import { FreebieCTA } from "@/components/blog/freebie-cta";
-import { getFreebieForCategory } from "@/lib/cta-catalog";
+import { getFreebieForCategory } from "@/lib/mailing-form-catalog";
 
 export const dynamicParams = false;
 

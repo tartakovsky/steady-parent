@@ -13,15 +13,19 @@ import {
   ArticleTaxonomySchema,
   QuizTaxonomySchema,
   CtaCatalogSchema,
+  MailingFormCatalogSchema,
   LinkPlanSchema,
   PageTypesSchema,
   QuizPageTypesSchema,
   MailingTagTaxonomySchema,
   FormTagMappingsSchema,
+  KitIntegrationSpecSchema,
 } from "./schemas/index";
 import { validateFormTagRefs } from "./schemas/mailing";
 import { validateCtaCatalog } from "./validator/cta";
+import { validateMailingFormCatalog } from "./validator/mailing-form";
 import { validateCrossLinks } from "./validator/cross-links";
+import { validateKitIntegrationOffline } from "./validator/kit-integration";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const contentPlanDir = path.join(__dirname, "..", "..", "content-plan");
@@ -106,6 +110,12 @@ async function main() {
   results.push(
     await validateFile("form_tag_mappings.json", "FormTagMappingsSchema", FormTagMappingsSchema),
   );
+  results.push(
+    await validateFile("kit_integration.json", "KitIntegrationSpecSchema", KitIntegrationSpecSchema),
+  );
+  results.push(
+    await validateFile("mailing_form_catalog.json", "MailingFormCatalogSchema", MailingFormCatalogSchema),
+  );
 
   // Cross-file validation: form tag refs
   let crossFileErrors: string[] = [];
@@ -137,14 +147,48 @@ async function main() {
       path.join(contentPlanDir, "article_taxonomy.json"),
       "utf-8",
     );
+    const quizRawCta = await fs.readFile(
+      path.join(contentPlanDir, "quiz_taxonomy.json"),
+      "utf-8",
+    );
     const catalog = CtaCatalogSchema.parse(JSON.parse(ctaRaw));
     const taxonomy = ArticleTaxonomySchema.parse(JSON.parse(taxRaw));
+    const quizTaxCta = QuizTaxonomySchema.parse(JSON.parse(quizRawCta));
     const categorySlugs = taxonomy.categories.map((c) => c.slug);
-    const result = validateCtaCatalog(catalog, categorySlugs);
+    const quizSlugs = quizTaxCta.entries.map((q: { slug: string }) => q.slug);
+    const result = validateCtaCatalog(catalog, categorySlugs, quizSlugs);
     ctaErrors = result.errors;
     ctaWarnings = result.warnings;
   } catch {
     ctaErrors = ["Could not run CTA validation (parse errors above)"];
+  }
+
+  // Cross-file validation: mailing form catalog business rules
+  let mailingFormErrors: string[] = [];
+  let mailingFormWarnings: string[] = [];
+  try {
+    const mfRaw = await fs.readFile(
+      path.join(contentPlanDir, "mailing_form_catalog.json"),
+      "utf-8",
+    );
+    const taxRawMf = await fs.readFile(
+      path.join(contentPlanDir, "article_taxonomy.json"),
+      "utf-8",
+    );
+    const quizRawMf = await fs.readFile(
+      path.join(contentPlanDir, "quiz_taxonomy.json"),
+      "utf-8",
+    );
+    const mfCatalog = MailingFormCatalogSchema.parse(JSON.parse(mfRaw));
+    const taxonomyMf = ArticleTaxonomySchema.parse(JSON.parse(taxRawMf));
+    const quizTaxMf = QuizTaxonomySchema.parse(JSON.parse(quizRawMf));
+    const categorySlugs = taxonomyMf.categories.map((c) => c.slug);
+    const quizSlugs = quizTaxMf.entries.map((q: { slug: string }) => q.slug);
+    const mfResult = validateMailingFormCatalog(mfCatalog, categorySlugs, quizSlugs);
+    mailingFormErrors = mfResult.errors;
+    mailingFormWarnings = mfResult.warnings;
+  } catch {
+    mailingFormErrors = ["Could not run mailing form validation (parse errors above)"];
   }
 
   // Cross-file validation: cross-links (quiz connectsTo, link plan URLs)
@@ -171,6 +215,54 @@ async function main() {
     crossLinkWarnings = clResult.warnings;
   } catch {
     crossLinkErrors = ["Could not run cross-link validation (parse errors above)"];
+  }
+
+  // Cross-file validation: Kit integration (offline checks only)
+  let kitIntErrors: string[] = [];
+  let kitIntWarnings: string[] = [];
+  try {
+    const intRaw = await fs.readFile(
+      path.join(contentPlanDir, "kit_integration.json"),
+      "utf-8",
+    );
+    const tagsRaw3 = await fs.readFile(
+      path.join(contentPlanDir, "mailing_tags.json"),
+      "utf-8",
+    );
+    const mappingsRaw2 = await fs.readFile(
+      path.join(contentPlanDir, "form_tag_mappings.json"),
+      "utf-8",
+    );
+    const quizRaw2 = await fs.readFile(
+      path.join(contentPlanDir, "quiz_taxonomy.json"),
+      "utf-8",
+    );
+    const taxRaw3 = await fs.readFile(
+      path.join(contentPlanDir, "article_taxonomy.json"),
+      "utf-8",
+    );
+    const intSpec = KitIntegrationSpecSchema.parse(JSON.parse(intRaw));
+    const tags3 = MailingTagTaxonomySchema.parse(JSON.parse(tagsRaw3));
+    const mappings2 = FormTagMappingsSchema.parse(JSON.parse(mappingsRaw2));
+    const quizTax2 = QuizTaxonomySchema.parse(JSON.parse(quizRaw2));
+    const taxonomy3 = ArticleTaxonomySchema.parse(JSON.parse(taxRaw3));
+
+    // Build kitTagConfig from mailing_tags (CLI has no access to kit-config.ts)
+    const kitTagConfig: Record<string, number> = {};
+    for (const tag of tags3) {
+      if (tag.kitTagId != null) {
+        kitTagConfig[tag.id] = tag.kitTagId;
+      }
+    }
+
+    const categorySlugs = taxonomy3.categories.map((c) => c.slug);
+    const kitResult = validateKitIntegrationOffline(
+      intSpec, tags3, mappings2, quizTax2, kitTagConfig, categorySlugs,
+    );
+    kitIntErrors = kitResult.errors;
+    kitIntWarnings = kitResult.warnings;
+  } catch {
+    kitIntErrors = ["Could not run Kit integration validation (parse errors above)"];
   }
 
   // Print results
@@ -224,6 +316,25 @@ async function main() {
     }
   }
 
+  // Mailing form catalog validation results
+  if (mailingFormErrors.length > 0) {
+    console.log(`\n\x1b[31mFAIL\x1b[0m  Cross-file: mailing_form_catalog business rules`);
+    for (const e of mailingFormErrors.slice(0, 20)) {
+      console.log(`       ${e}`);
+    }
+    if (mailingFormErrors.length > 20) {
+      console.log(`       ... and ${mailingFormErrors.length - 20} more`);
+    }
+    allPassed = false;
+  } else {
+    console.log(`\n\x1b[32mPASS\x1b[0m  Cross-file: mailing_form_catalog business rules`);
+  }
+  if (mailingFormWarnings.length > 0) {
+    for (const w of mailingFormWarnings) {
+      console.log(`       \x1b[33mWARN\x1b[0m ${w}`);
+    }
+  }
+
   // Cross-link validation results
   if (crossLinkErrors.length > 0) {
     console.log(`\n\x1b[31mFAIL\x1b[0m  Cross-file: cross-links (quiz→categories, link plan→taxonomy)`);
@@ -239,6 +350,25 @@ async function main() {
   }
   if (crossLinkWarnings.length > 0) {
     for (const w of crossLinkWarnings) {
+      console.log(`       \x1b[33mWARN\x1b[0m ${w}`);
+    }
+  }
+
+  // Kit integration validation results
+  if (kitIntErrors.length > 0) {
+    console.log(`\n\x1b[31mFAIL\x1b[0m  Cross-file: Kit integration (offline)`);
+    for (const e of kitIntErrors.slice(0, 20)) {
+      console.log(`       ${e}`);
+    }
+    if (kitIntErrors.length > 20) {
+      console.log(`       ... and ${kitIntErrors.length - 20} more`);
+    }
+    allPassed = false;
+  } else {
+    console.log(`\n\x1b[32mPASS\x1b[0m  Cross-file: Kit integration (offline)`);
+  }
+  if (kitIntWarnings.length > 0) {
+    for (const w of kitIntWarnings) {
       console.log(`       \x1b[33mWARN\x1b[0m ${w}`);
     }
   }

@@ -15,7 +15,6 @@ import {
   FileText,
   Brain,
   Map,
-  Tag,
   Network,
 } from "lucide-react";
 
@@ -41,7 +40,7 @@ const nav: NavEntry[] = [
       { href: "/admin/spec?tab=pageTypes", label: "Page Types", icon: FileType },
       { href: "/admin/spec?tab=crossLinks", label: "Cross-Linking", icon: Link2 },
       { href: "/admin/spec?tab=ctas", label: "CTAs", icon: Megaphone },
-      { href: "/admin/spec?tab=mailing", label: "Mailing Tags", icon: Mail },
+      { href: "/admin/spec?tab=mailing", label: "Mailing Forms", icon: Mail },
     ],
   },
   {
@@ -51,7 +50,8 @@ const nav: NavEntry[] = [
       { href: "/admin/articles", label: "Articles", icon: FileText },
       { href: "/admin/quizzes", label: "Quizzes", icon: Brain },
       { href: "/admin/plan", label: "Plan vs Reality", icon: Map },
-      { href: "/admin/kit", label: "Kit Tags", icon: Tag },
+      { href: "/admin/ctas", label: "CTAs", icon: Megaphone },
+      { href: "/admin/mailing", label: "Mailing Forms", icon: Mail },
     ],
   },
   { href: "/admin/links", label: "Link Graph", icon: Network },

@@ -34,7 +34,7 @@ const components: MDXComponents = {
     <img
       src={typeof src === "string" ? src : undefined}
       alt={typeof alt === "string" ? alt : ""}
-      className="my-6 w-full rounded-xl border border-border object-cover"
+      className="my-6 aspect-3/2 w-full rounded-xl border border-border object-cover"
       loading="lazy"
     />
   ),

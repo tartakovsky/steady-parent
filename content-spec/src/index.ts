@@ -31,9 +31,22 @@ export type {
 export { validateQuiz } from "./validator/quiz";
 export {
   validateCtaCatalog,
+  validateCtaCopy,
   COMMUNITY_BUTTON_TEXT,
   COMMUNITY_FOUNDER_LINE,
   PREVIEW_BUTTON_TEXT,
   WAITLIST_BUTTON_TEXT,
   FORBIDDEN_TERMS,
 } from "./validator/cta";
+export type { CheckGroup, EntryValidation, EntryCheck } from "./validator/cta";
+export { validateMailingFormCatalog } from "./validator/mailing-form";
+export {
+  validateKitIntegration,
+  validateKitIntegrationOffline,
+} from "./validator/kit-integration";
+export type {
+  IntegrationCheck,
+  IntegrationValidationResult,
+  LiveKitState,
+  CodeChecks,
+} from "./validator/kit-integration";

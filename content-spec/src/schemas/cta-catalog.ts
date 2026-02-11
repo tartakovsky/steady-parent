@@ -1,6 +1,6 @@
 import { z } from "zod/v4";
 
-export const CtaTypeEnum = z.enum(["course", "community", "freebie", "guide", "waitlist"]);
+export const CtaTypeEnum = z.enum(["course", "community"]);
 
 export const CtaCopySchema = z.object({
   eyebrow: z.string().min(1),

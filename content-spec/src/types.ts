@@ -8,6 +8,8 @@ import type {
   CtaCopySchema,
   CtaDefinitionSchema,
   CtaCatalogSchema,
+  MailingFormEntrySchema,
+  MailingFormCatalogSchema,
   MailingTagSchema,
   MailingTagTaxonomySchema,
   FormTagMappingSchema,
@@ -50,6 +52,8 @@ export type QuizTaxonomy = z.infer<typeof QuizTaxonomySchema>;
 export type CtaCopy = z.infer<typeof CtaCopySchema>;
 export type CtaDefinition = z.infer<typeof CtaDefinitionSchema>;
 export type CtaCatalog = z.infer<typeof CtaCatalogSchema>;
+export type MailingFormEntry = z.infer<typeof MailingFormEntrySchema>;
+export type MailingFormCatalog = z.infer<typeof MailingFormCatalogSchema>;
 export type MailingTag = z.infer<typeof MailingTagSchema>;
 export type MailingTagTaxonomy = z.infer<typeof MailingTagTaxonomySchema>;
 export type FormTagMapping = z.infer<typeof FormTagMappingSchema>;
@@ -97,3 +101,6 @@ export interface ValidationResult {
   errors: string[];
   warnings: string[];
 }
+
+// Re-export CheckGroup, EntryValidation, EntryCheck from validator
+export type { CheckGroup, EntryValidation, EntryCheck } from "./validator/cta";

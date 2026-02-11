@@ -55,6 +55,17 @@ interface CtaDefinition {
   cant_promise: string[];
 }
 
+interface MailingFormEntry {
+  id: string;
+  type: string;
+  name: string;
+  what_it_is?: string | undefined;
+  pageUrlPattern: string;
+  endpoint: string;
+  tags: string[];
+  cta_copy?: CtaCopy | undefined;
+}
+
 interface QuizEntry {
   slug: string;
   title: string;
@@ -118,15 +129,47 @@ interface ValidationResult {
   warnings: string[];
 }
 
+interface FormTagMapping {
+  formId: string;
+  description: string;
+  tagIds: string[];
+}
+
+interface FrontendCheck {
+  file: string;
+  requiredProps?: string[];
+  requiredPatterns?: string[];
+}
+
+interface IntegrationSpec {
+  customFields: string[];
+  subscriberApiRoutes: Record<string, string>;
+  localStorageKey: string;
+  quizSubscribeFlow: {
+    description: string;
+    requiredTags: string[];
+    tagPrefix: string;
+    customFieldOnSubmit: string;
+  };
+  blogFreebieFlow: {
+    description: string;
+    requiredTags: string[];
+    tagPrefix: string;
+  };
+  frontendChecks: Record<string, FrontendCheck>;
+}
+
 interface SpecData {
   taxonomy: { categories: Category[]; entries: ArticleEntry[] } | null;
   quizTaxonomy: { entries: QuizEntry[] } | null;
   pageTypes: PageType[] | null;
   quizPageTypes: QuizPageType[] | null;
   ctaCatalog: CtaDefinition[] | null;
+  mailingFormCatalog: MailingFormEntry[] | null;
   mailingTags: MailingTag[] | null;
-  ctaValidation: ValidationResult | null;
   crossLinkDetail: CrossLinkDetail | null;
+  formTagMappings: FormTagMapping[] | null;
+  integrationSpec: IntegrationSpec | null;
 }
 
 type Tab = "taxonomy" | "pageTypes" | "crossLinks" | "ctas" | "mailing";
@@ -177,9 +220,17 @@ function SpecPageInner() {
         <CrossLinksTab data={data.crossLinkDetail} />
       )}
       {tab === "ctas" && (
-        <CtasTab data={data.ctaCatalog} validation={data.ctaValidation} />
+        <CtasTab data={data.ctaCatalog} quizTaxonomy={data.quizTaxonomy} />
       )}
-      {tab === "mailing" && <MailingTab data={data.mailingTags} />}
+      {tab === "mailing" && (
+        <MailingFormsTab
+          mailingTags={data.mailingTags}
+          formTagMappings={data.formTagMappings}
+          integrationSpec={data.integrationSpec}
+          mailingFormCatalog={data.mailingFormCatalog}
+          quizTaxonomy={data.quizTaxonomy}
+        />
+      )}
     </div>
   );
 }
@@ -428,9 +479,9 @@ function PageTypesTab({
 
 function Row({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex justify-between">
-      <dt className="text-muted-foreground">{label}</dt>
-      <dd className="font-medium">{value}</dd>
+    <div className="flex justify-between gap-4">
+      <dt className="shrink-0 text-muted-foreground">{label}</dt>
+      <dd className="font-medium text-right">{value}</dd>
     </div>
   );
 }
@@ -687,15 +738,40 @@ function CrossLinksTab({ data }: { data: CrossLinkDetail | null }) {
 }
 
 // ---------------------------------------------------------------------------
-// CTAs tab
+// Shared: CTA copy preview cell
+// ---------------------------------------------------------------------------
+
+function CtaCopyCell({ copy, url }: { copy?: CtaCopy | undefined; url?: string | undefined }) {
+  if (!copy) {
+    return <span className="text-xs text-amber-600 dark:text-amber-400">No copy</span>;
+  }
+  return (
+    <div className="text-xs">
+      <div className="text-muted-foreground">{copy.eyebrow}</div>
+      <div className="font-medium">{copy.title}</div>
+      <div className="text-muted-foreground">{copy.body}</div>
+      {url && (
+        <div className="mt-0.5 font-mono text-muted-foreground">{url}</div>
+      )}
+      <div className="mt-1">
+        <span className="inline-block rounded-full bg-stone-800 px-2.5 py-0.5 text-[10px] font-medium text-white dark:bg-stone-200 dark:text-stone-900">
+          {copy.buttonText}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// CTAs tab — community + course only, organized by page type
 // ---------------------------------------------------------------------------
 
 function CtasTab({
   data,
-  validation,
+  quizTaxonomy,
 }: {
   data: CtaDefinition[] | null;
-  validation: ValidationResult | null;
+  quizTaxonomy: { entries: QuizEntry[] } | null;
 }) {
   if (!data) return <p className="text-muted-foreground">No CTA data.</p>;
 
@@ -703,20 +779,21 @@ function CtasTab({
     (c) => c.type === "community" && c.id === "community",
   );
   const perCatCommunities = data.filter(
-    (c) => c.type === "community" && c.id !== "community",
+    (c) => c.type === "community" && c.id !== "community" && !c.id.startsWith("community-quiz-"),
+  );
+  const quizCommunities = data.filter(
+    (c) => c.type === "community" && c.id.startsWith("community-quiz-"),
   );
   const courses = data.filter((c) => c.type === "course");
-  const freebies = data.filter((c) => c.type === "freebie");
-  const waitlists = data.filter((c) => c.type === "waitlist");
 
   const categorySlug = (id: string) =>
-    id.replace(/^(course|freebie|community|waitlist)-/, "");
+    id.replace(/^(course|community)-/, "");
 
   const communityBySlug = new Map(
     perCatCommunities.map((c) => [categorySlug(c.id), c]),
   );
-  const waitlistBySlug = new Map(
-    waitlists.map((c) => [categorySlug(c.id), c]),
+  const quizCommunityBySlug = new Map(
+    quizCommunities.map((c) => [c.id.replace(/^community-quiz-/, ""), c]),
   );
 
   return (
@@ -755,56 +832,286 @@ function CtasTab({
         </div>
       )}
 
-      {/* Validation results */}
-      {validation && (validation.errors.length > 0 || validation.warnings.length > 0) && (
-        <div className="rounded-lg border bg-red-50 p-4 dark:bg-red-950/20">
-          <h3 className="text-sm font-semibold text-red-700 dark:text-red-400">
-            CTA Validation ({validation.errors.length} errors, {validation.warnings.length} warnings)
-          </h3>
-          {validation.errors.length > 0 && (
-            <ul className="mt-2 list-inside list-disc text-xs text-red-600 dark:text-red-400">
-              {validation.errors.map((e, i) => (
-                <li key={i}>{e}</li>
-              ))}
-            </ul>
-          )}
-          {validation.warnings.length > 0 && (
-            <ul className="mt-2 list-inside list-disc text-xs text-amber-600 dark:text-amber-400">
-              {validation.warnings.map((w, i) => (
-                <li key={i}>{w}</li>
-              ))}
-            </ul>
-          )}
-        </div>
-      )}
-      {validation && validation.errors.length === 0 && validation.warnings.length === 0 && (
-        <div className="rounded-lg border bg-emerald-50 p-3 dark:bg-emerald-950/20">
-          <p className="text-sm text-emerald-700 dark:text-emerald-400">
-            All CTA validation checks passed
-          </p>
-        </div>
-      )}
-
-      {/* Quiz CTA rules */}
-      <div className="space-y-4">
-        <h3 className="text-lg font-semibold">Quiz CTA Rules</h3>
+      {/* Blog Article CTAs */}
+      <div className="space-y-3">
+        <h3 className="text-lg font-semibold">Blog Article CTAs</h3>
         <p className="text-sm text-muted-foreground">
-          Every quiz must include these CTA blocks in its meta. The validator checks all rules below.
+          {courses.length} categories — each blog article shows a community CTA and a course CTA
         </p>
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="rounded-md border">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b bg-muted/50">
+                <th className="px-3 py-2 text-left font-medium">Category</th>
+                <th className="px-3 py-2 text-left font-medium">Page Location</th>
+                <th className="px-3 py-2 text-left font-medium">Community CTA</th>
+                <th className="px-3 py-2 text-left font-medium">Course CTA</th>
+              </tr>
+            </thead>
+            <tbody>
+              {courses.map((course) => {
+                const slug = categorySlug(course.id);
+                const community = communityBySlug.get(slug);
+                return (
+                  <tr key={course.id} className="border-b hover:bg-muted/30">
+                    <td className="px-3 py-2">
+                      <span className="rounded bg-muted px-1.5 py-0.5 text-xs">
+                        {slug}
+                      </span>
+                    </td>
+                    <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
+                      /blog/{slug}/*
+                    </td>
+                    <td className="px-3 py-2">
+                      <CtaCopyCell
+                        copy={community?.cta_copy}
+                        url={globalCommunity?.url}
+                      />
+                    </td>
+                    <td className="px-3 py-2">
+                      <CtaCopyCell
+                        copy={course.cta_copy}
+                        url={course.url}
+                      />
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Quiz Page CTAs */}
+      <div className="space-y-3">
+        <h3 className="text-lg font-semibold">Quiz Page CTAs</h3>
+        <p className="text-sm text-muted-foreground">
+          {quizCommunities.length} quiz community CTAs. The email gate (preview
+          CTA) is a mailing form — see the Mailing Forms tab.
+        </p>
+        {quizTaxonomy && quizTaxonomy.entries.length > 0 && (
+          <div className="rounded-md border">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b bg-muted/50">
+                  <th className="px-3 py-2 text-left font-medium">Quiz</th>
+                  <th className="px-3 py-2 text-left font-medium">Page URL</th>
+                  <th className="px-3 py-2 text-left font-medium">Community CTA</th>
+                </tr>
+              </thead>
+              <tbody>
+                {quizTaxonomy.entries.map((quiz) => {
+                  const community = quizCommunityBySlug.get(quiz.slug);
+                  return (
+                    <tr key={quiz.slug} className="border-b hover:bg-muted/30">
+                      <td className="px-3 py-2">
+                        <span className="rounded bg-muted px-1.5 py-0.5 text-xs">
+                          {quiz.slug}
+                        </span>
+                      </td>
+                      <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
+                        {quiz.url}
+                      </td>
+                      <td className="px-3 py-2">
+                        <CtaCopyCell
+                          copy={community?.cta_copy}
+                          url={globalCommunity?.url}
+                        />
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Mailing Forms tab — freebie + waitlist + quiz gates, organized by page type
+// ---------------------------------------------------------------------------
+
+function MailingFormsTab({
+  mailingTags,
+  formTagMappings,
+  integrationSpec,
+  mailingFormCatalog,
+  quizTaxonomy,
+}: {
+  mailingTags: MailingTag[] | null;
+  formTagMappings: FormTagMapping[] | null;
+  integrationSpec: IntegrationSpec | null;
+  mailingFormCatalog: MailingFormEntry[] | null;
+  quizTaxonomy: { entries: QuizEntry[] } | null;
+}) {
+  if (!mailingTags && !formTagMappings && !integrationSpec && !mailingFormCatalog)
+    return <p className="text-muted-foreground">No mailing form data.</p>;
+
+  const catalog = mailingFormCatalog ?? [];
+  const freebies = catalog.filter((m) => m.type === "freebie");
+  const waitlists = catalog.filter((m) => m.type === "waitlist");
+  const quizGates = catalog.filter((m) => m.type === "quiz-gate");
+
+  const quizBySlug = new Map(
+    (quizTaxonomy?.entries ?? []).map((q) => [q.slug, q]),
+  );
+
+  return (
+    <div className="space-y-8">
+      {/* 1. Blog Freebie Forms */}
+      <div className="space-y-3">
+        <h3 className="text-lg font-semibold">Blog Freebie Forms</h3>
+        <p className="text-sm text-muted-foreground">
+          {freebies.length} forms — one per category, each delivers a freebie PDF on blog articles
+        </p>
+        <div className="rounded-md border overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b bg-muted/50">
+                <th className="px-3 py-2 text-left font-medium">Category</th>
+                <th className="px-3 py-2 text-left font-medium">Page URL</th>
+                <th className="px-3 py-2 text-left font-medium">Freebie Name</th>
+                <th className="px-3 py-2 text-left font-medium">Copy</th>
+                <th className="px-3 py-2 text-left font-medium">Tags</th>
+                <th className="px-3 py-2 text-left font-medium">Endpoint</th>
+              </tr>
+            </thead>
+            <tbody>
+              {freebies.map((freebie) => {
+                const slug = freebie.id.replace(/^freebie-/, "");
+                return (
+                  <tr key={freebie.id} className="border-b hover:bg-muted/30">
+                    <td className="px-3 py-2">
+                      <span className="rounded bg-muted px-1.5 py-0.5 text-xs">
+                        {slug}
+                      </span>
+                    </td>
+                    <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
+                      {freebie.pageUrlPattern}
+                    </td>
+                    <td className="px-3 py-2 text-xs">
+                      {freebie.name}
+                    </td>
+                    <td className="px-3 py-2">
+                      <CtaCopyCell copy={freebie.cta_copy} />
+                    </td>
+                    <td className="px-3 py-2">
+                      <div className="flex flex-wrap gap-1">
+                        {freebie.tags.map((t) => (
+                          <span
+                            key={t}
+                            className="rounded bg-teal-100 px-1.5 py-0.5 text-[10px] text-teal-700 dark:bg-teal-900/30 dark:text-teal-400"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </td>
+                    <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
+                      {freebie.endpoint}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* 2. Course Waitlist Forms */}
+      <div className="space-y-3">
+        <h3 className="text-lg font-semibold">Course Waitlist Forms</h3>
+        <p className="text-sm text-muted-foreground">
+          {waitlists.length} forms — one per course page, shown while course is not yet available
+        </p>
+
+        {/* Waitlist form rules */}
+        <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-lg border p-4">
-            <h4 className="mb-2 text-sm font-semibold">Community CTA</h4>
+            <h4 className="mb-2 text-sm font-semibold">Copy Rules</h4>
             <dl className="space-y-1.5 text-xs">
-              <Row label="buttonText" value='"Join the community"' />
-              <Row label="Required in body" value='"We are there with you daily too"' />
+              <Row label="buttonText" value='"Reserve your spot"' />
               <Row label="Eyebrow" value="2-5 words" />
               <Row label="Title" value="3-12 words" />
               <Row label="Body" value="8-35 words" />
             </dl>
             <div className="mt-2 text-[10px] text-red-600 dark:text-red-400">
-              No exclamation marks. No forbidden terms.
+              No exclamation marks. No forbidden terms. No video promises.
             </div>
           </div>
+          <div className="rounded-lg border p-4">
+            <h4 className="mb-2 text-sm font-semibold">Data Rules</h4>
+            <dl className="space-y-1.5 text-xs">
+              <Row label="pageUrlPattern" value='must start with "/course/"' />
+              <Row label="what_it_is" value="required (course description)" />
+              <Row label="name" value="must match course entry" />
+              <Row label="Coverage" value="1 per category (20 total)" />
+            </dl>
+          </div>
+        </div>
+
+        <div className="rounded-md border overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b bg-muted/50">
+                <th className="px-3 py-2 text-left font-medium">Category</th>
+                <th className="px-3 py-2 text-left font-medium">Page URL</th>
+                <th className="px-3 py-2 text-left font-medium">Copy</th>
+                <th className="px-3 py-2 text-left font-medium">Tags</th>
+                <th className="px-3 py-2 text-left font-medium">Endpoint</th>
+              </tr>
+            </thead>
+            <tbody>
+              {waitlists.map((waitlist) => {
+                const slug = waitlist.id.replace(/^waitlist-/, "");
+                return (
+                  <tr key={waitlist.id} className="border-b hover:bg-muted/30">
+                    <td className="px-3 py-2">
+                      <span className="rounded bg-muted px-1.5 py-0.5 text-xs">
+                        {slug}
+                      </span>
+                    </td>
+                    <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
+                      {waitlist.pageUrlPattern}
+                    </td>
+                    <td className="px-3 py-2">
+                      <CtaCopyCell copy={waitlist.cta_copy} />
+                    </td>
+                    <td className="px-3 py-2">
+                      <div className="flex flex-wrap gap-1">
+                        {waitlist.tags.map((t) => (
+                          <span
+                            key={t}
+                            className="rounded bg-teal-100 px-1.5 py-0.5 text-[10px] text-teal-700 dark:bg-teal-900/30 dark:text-teal-400"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </td>
+                    <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
+                      {waitlist.endpoint}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* 3. Quiz Email Gates */}
+      <div className="space-y-3">
+        <h3 className="text-lg font-semibold">Quiz Email Gates</h3>
+        <p className="text-sm text-muted-foreground">
+          {quizGates.length} forms — email gate before quiz results, sets custom field
+        </p>
+
+        {/* Quiz email gate rules */}
+        <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-lg border p-4">
             <h4 className="mb-2 text-sm font-semibold">Preview CTA</h4>
             <dl className="space-y-1.5 text-xs">
@@ -822,223 +1129,146 @@ function CtasTab({
             </dl>
           </div>
         </div>
-      </div>
 
-      {/* Waitlist CTA rules */}
-      <div className="space-y-4">
-        <h3 className="text-lg font-semibold">Waitlist CTA Rules</h3>
-        <p className="text-sm text-muted-foreground">
-          Each course has a waitlist CTA for the course landing page. Shown while the course is not yet available.
-        </p>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-lg border p-4">
-            <h4 className="mb-2 text-sm font-semibold">Copy Rules</h4>
-            <dl className="space-y-1.5 text-xs">
-              <Row label="buttonText" value='"Reserve your spot"' />
-              <Row label="Eyebrow" value="2-5 words" />
-              <Row label="Title" value="3-12 words" />
-              <Row label="Body" value="8-35 words" />
-            </dl>
-            <div className="mt-2 text-[10px] text-red-600 dark:text-red-400">
-              No exclamation marks. No forbidden terms. No video promises.
-            </div>
-          </div>
-          <div className="rounded-lg border p-4">
-            <h4 className="mb-2 text-sm font-semibold">Data Rules</h4>
-            <dl className="space-y-1.5 text-xs">
-              <Row label="url" value='must start with "/course/"' />
-              <Row label="what_it_is" value="required (course description)" />
-              <Row label="name" value="must match course entry" />
-              <Row label="Coverage" value="1 per category (20 total)" />
-            </dl>
-          </div>
+        <div className="rounded-md border overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b bg-muted/50">
+                <th className="px-3 py-2 text-left font-medium">Quiz</th>
+                <th className="px-3 py-2 text-left font-medium">Page URL</th>
+                <th className="px-3 py-2 text-left font-medium">Tags</th>
+                <th className="px-3 py-2 text-left font-medium">Endpoint</th>
+              </tr>
+            </thead>
+            <tbody>
+              {quizGates.map((gate) => {
+                const quizSlug = gate.id.replace(/^quiz-gate-/, "");
+                const quiz = quizBySlug.get(quizSlug);
+                return (
+                  <tr key={gate.id} className="border-b hover:bg-muted/30">
+                    <td className="px-3 py-2">
+                      <div>
+                        <span className="rounded bg-violet-100 px-1.5 py-0.5 text-xs text-violet-700 dark:bg-violet-900/30 dark:text-violet-400">
+                          {quizSlug}
+                        </span>
+                        {quiz && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">
+                            {quiz.title}
+                          </div>
+                        )}
+                      </div>
+                    </td>
+                    <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
+                      {gate.pageUrlPattern}
+                    </td>
+                    <td className="px-3 py-2">
+                      <div className="flex flex-wrap gap-1">
+                        {gate.tags.map((t) => (
+                          <span
+                            key={t}
+                            className="rounded bg-teal-100 px-1.5 py-0.5 text-[10px] text-teal-700 dark:bg-teal-900/30 dark:text-teal-400"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </td>
+                    <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
+                      {gate.endpoint}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
       </div>
 
-      {/* Per-category table: Community + Course + Freebie + Waitlist */}
-      <div className="rounded-md border">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b bg-muted/50">
-              <th className="px-3 py-2 text-left font-medium">Category</th>
-              <th className="px-3 py-2 text-left font-medium">
-                Community Pitch
-              </th>
-              <th className="px-3 py-2 text-left font-medium">Course</th>
-              <th className="px-3 py-2 text-left font-medium">Freebie</th>
-              <th className="px-3 py-2 text-left font-medium">Waitlist</th>
-            </tr>
-          </thead>
-          <tbody>
-            {courses.map((course) => {
-              const slug = categorySlug(course.id);
-              const freebie = freebies.find(
-                (f) => categorySlug(f.id) === slug,
-              );
-              const community = communityBySlug.get(slug);
-              const waitlist = waitlistBySlug.get(slug);
-              return (
-                <tr key={course.id} className="border-b hover:bg-muted/30">
-                  <td className="px-3 py-2">
-                    <span className="rounded bg-muted px-1.5 py-0.5 text-xs">
-                      {slug}
-                    </span>
-                  </td>
-                  <td className="px-3 py-2">
-                    {community?.cta_copy ? (
-                      <div className="text-xs">
-                        <div className="text-muted-foreground">
-                          {community.cta_copy.eyebrow}
-                        </div>
-                        <div className="font-medium">
-                          {community.cta_copy.title}
-                        </div>
-                        <div className="text-muted-foreground">
-                          {community.cta_copy.body}
-                        </div>
-                        <div className="mt-1">
-                          <span className="inline-block rounded-full bg-stone-800 px-2.5 py-0.5 text-[10px] font-medium text-white dark:bg-stone-200 dark:text-stone-900">
-                            {community.cta_copy.buttonText}
-                          </span>
-                        </div>
-                      </div>
-                    ) : (
-                      <span className="text-xs text-amber-600 dark:text-amber-400">
-                        Not generated
-                      </span>
-                    )}
-                  </td>
-                  <td className="px-3 py-2">
-                    {course.cta_copy ? (
-                      <div className="text-xs">
-                        <div className="text-muted-foreground">
-                          {course.cta_copy.eyebrow}
-                        </div>
-                        <div className="font-medium">
-                          {course.cta_copy.title}
-                        </div>
-                        <div className="text-muted-foreground">
-                          {course.cta_copy.body}
-                        </div>
-                        {course.url && (
-                          <div className="mt-0.5 font-mono text-muted-foreground">
-                            {course.url}
-                          </div>
-                        )}
-                        <div className="mt-1">
-                          <span className="inline-block rounded-full bg-stone-800 px-2.5 py-0.5 text-[10px] font-medium text-white dark:bg-stone-200 dark:text-stone-900">
-                            {course.cta_copy.buttonText}
-                          </span>
-                        </div>
-                      </div>
-                    ) : (
-                      <div>
-                        <div className="font-medium">{course.name}</div>
-                        <div className="text-xs text-amber-600 dark:text-amber-400">
-                          No cta_copy
-                        </div>
-                      </div>
-                    )}
-                  </td>
-                  <td className="px-3 py-2">
-                    {freebie?.cta_copy ? (
-                      <div className="text-xs">
-                        <div className="text-muted-foreground">
-                          {freebie.cta_copy.eyebrow}
-                        </div>
-                        <div className="font-medium">
-                          {freebie.cta_copy.title}
-                        </div>
-                        <div className="text-muted-foreground">
-                          {freebie.cta_copy.body}
-                        </div>
-                        <div className="mt-1">
-                          <span className="inline-block rounded-full bg-stone-800 px-2.5 py-0.5 text-[10px] font-medium text-white dark:bg-stone-200 dark:text-stone-900">
-                            {freebie.cta_copy.buttonText}
-                          </span>
-                        </div>
-                      </div>
-                    ) : freebie ? (
-                      <div>
-                        <div className="font-medium">{freebie.name}</div>
-                        <div className="text-xs text-amber-600 dark:text-amber-400">
-                          No cta_copy
-                        </div>
-                      </div>
-                    ) : (
-                      <span className="text-xs text-muted-foreground">
-                        —
-                      </span>
-                    )}
-                  </td>
-                  <td className="px-3 py-2">
-                    {waitlist?.cta_copy ? (
-                      <div className="text-xs">
-                        <div className="text-muted-foreground">
-                          {waitlist.cta_copy.eyebrow}
-                        </div>
-                        <div className="font-medium">
-                          {waitlist.cta_copy.title}
-                        </div>
-                        <div className="text-muted-foreground">
-                          {waitlist.cta_copy.body}
-                        </div>
-                        <div className="mt-1">
-                          <span className="inline-block rounded-full bg-stone-800 px-2.5 py-0.5 text-[10px] font-medium text-white dark:bg-stone-200 dark:text-stone-900">
-                            {waitlist.cta_copy.buttonText}
-                          </span>
-                        </div>
-                      </div>
-                    ) : (
-                      <span className="text-xs text-amber-600 dark:text-amber-400">
-                        Not generated
-                      </span>
-                    )}
-                  </td>
+      {/* 4. Integration Requirements */}
+      {integrationSpec && (
+        <div className="space-y-3">
+          <h3 className="text-lg font-semibold">Integration Requirements</h3>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-lg border p-4">
+              <h4 className="mb-3 text-sm font-semibold">Blog Freebie Flow</h4>
+              <dl className="space-y-1.5 text-xs">
+                <Row label="Description" value={integrationSpec.blogFreebieFlow.description} />
+                <Row label="Required tags" value={integrationSpec.blogFreebieFlow.requiredTags.join(", ")} />
+                <Row label="Tag prefix" value={integrationSpec.blogFreebieFlow.tagPrefix} />
+                <Row label="API route" value={integrationSpec.subscriberApiRoutes["blogFreebie"] ?? "—"} />
+              </dl>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="mb-3 text-sm font-semibold">Quiz Subscribe Flow</h4>
+              <dl className="space-y-1.5 text-xs">
+                <Row label="Description" value={integrationSpec.quizSubscribeFlow.description} />
+                <Row label="Required tags" value={integrationSpec.quizSubscribeFlow.requiredTags.join(", ")} />
+                <Row label="Tag prefix" value={integrationSpec.quizSubscribeFlow.tagPrefix} />
+                <Row label="Custom field" value={integrationSpec.quizSubscribeFlow.customFieldOnSubmit} />
+                <Row label="API route" value={integrationSpec.subscriberApiRoutes["quiz"] ?? "—"} />
+              </dl>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="mb-3 text-sm font-semibold">Shared Config</h4>
+              <dl className="space-y-1.5 text-xs">
+                <Row label="localStorage key" value={integrationSpec.localStorageKey} />
+                <Row label="Custom fields" value={integrationSpec.customFields.join(", ")} />
+              </dl>
+            </div>
+            <div className="rounded-lg border p-4">
+              <h4 className="mb-3 text-sm font-semibold">Frontend Checks</h4>
+              <div className="space-y-2">
+                {Object.entries(integrationSpec.frontendChecks).map(
+                  ([key, check]) => (
+                    <div key={key} className="text-xs">
+                      <div className="font-medium">{key}</div>
+                      <div className="font-mono text-muted-foreground">{check.file}</div>
+                      {check.requiredProps && (
+                        <div className="text-muted-foreground">Props: {check.requiredProps.join(", ")}</div>
+                      )}
+                      {check.requiredPatterns && (
+                        <div className="text-muted-foreground">Patterns: {check.requiredPatterns.join(", ")}</div>
+                      )}
+                    </div>
+                  ),
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 5. Tag Registry */}
+      {mailingTags && mailingTags.length > 0 && (
+        <div className="space-y-3">
+          <h3 className="text-lg font-semibold">Tag Registry</h3>
+          <p className="text-sm text-muted-foreground">
+            {mailingTags.length} tags defined
+          </p>
+          <div className="rounded-md border">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b bg-muted/50">
+                  <th className="px-3 py-2 text-left font-medium">ID</th>
+                  <th className="px-3 py-2 text-left font-medium">Name</th>
+                  <th className="px-3 py-2 text-left font-medium">Kit Tag ID</th>
                 </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Mailing tab
-// ---------------------------------------------------------------------------
-
-function MailingTab({ data }: { data: MailingTag[] | null }) {
-  if (!data) return <p className="text-muted-foreground">No mailing tag data.</p>;
-
-  return (
-    <div className="space-y-4">
-      <p className="text-sm text-muted-foreground">
-        {data.length} tags defined
-      </p>
-      <div className="rounded-md border">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b bg-muted/50">
-              <th className="px-3 py-2 text-left font-medium">ID</th>
-              <th className="px-3 py-2 text-left font-medium">Name</th>
-              <th className="px-3 py-2 text-left font-medium">Kit Tag ID</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((tag) => (
-              <tr key={tag.id} className="border-b hover:bg-muted/30">
-                <td className="px-3 py-2 font-mono text-xs">{tag.id}</td>
-                <td className="px-3 py-2">{tag.name}</td>
-                <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
-                  {tag.kitTagId ?? "—"}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+              </thead>
+              <tbody>
+                {mailingTags.map((tag) => (
+                  <tr key={tag.id} className="border-b hover:bg-muted/30">
+                    <td className="px-3 py-2 font-mono text-xs">{tag.id}</td>
+                    <td className="px-3 py-2">{tag.name}</td>
+                    <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
+                      {tag.kitTagId ?? "—"}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

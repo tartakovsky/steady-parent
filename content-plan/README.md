@@ -19,7 +19,8 @@ Historical research, competitor analyses, and one-time prompt templates live in 
 
 | File | What it is | Consumed by |
 |------|-----------|-------------|
-| `cta_catalog.json` | 61+ CTA entries: global + per-category community/course/freebie/waitlist | Admin spec API, validate-plans, build script, generate_article.py, validate_article.py |
+| `cta_catalog.json` | 65 CTA entries: global + per-category community + per-quiz community + per-category course | Admin spec API, validate-plans, build script, generate_article.py |
+| `mailing_form_catalog.json` | 64 mailing form entries: per-category freebie + per-category waitlist + per-quiz quiz-gate | Admin spec/mailing APIs, validate-plans, build script, sync-orchestrator, article validator |
 
 ### Quiz System
 
@@ -34,8 +35,9 @@ Historical research, competitor analyses, and one-time prompt templates live in 
 | File | What it is | Consumed by |
 |------|-----------|-------------|
 | `page_types.json` | Page type definitions (article, pillar, quiz, course) | Admin spec API, validate-plans, build script |
-| `mailing_tags.json` | Kit (ConvertKit) tag taxonomy for email automation | Admin spec API, validate-plans |
-| `form_tag_mappings.json` | Maps forms/freebies to Kit tags | validate-plans |
+| `mailing_tags.json` | Kit (ConvertKit) tag taxonomy for email automation | Admin spec/mailing APIs, validate-plans |
+| `form_tag_mappings.json` | Maps forms/freebies to Kit tags | Admin spec/mailing APIs, validate-plans |
+| `kit_integration.json` | Kit email integration spec: API routes, custom fields, frontend checks for quiz + blog freebie flows | Admin mailing API, validate-plans |
 
 ## How files are used
 

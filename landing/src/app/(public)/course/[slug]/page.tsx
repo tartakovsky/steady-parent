@@ -2,7 +2,7 @@ import type React from "react";
 
 import { notFound } from "next/navigation";
 
-import { getAllWaitlists, getWaitlistBySlug } from "@/lib/cta-catalog";
+import { getAllWaitlists, getWaitlistBySlug } from "@/lib/mailing-form-catalog";
 import { CourseHero } from "@/components/course/course-hero";
 
 export const dynamicParams = false;
@@ -10,9 +10,9 @@ export const dynamicParams = false;
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const waitlists = await getAllWaitlists();
   return waitlists
-    .filter((c) => c.url?.startsWith("/course/"))
+    .filter((c) => c.pageUrlPattern.startsWith("/course/"))
     .map((c) => {
-      const slug = c.url!.replace("/course/", "").replace(/\/$/, "");
+      const slug = c.pageUrlPattern.replace("/course/", "").replace(/\/$/, "");
       return { slug };
     });
 }

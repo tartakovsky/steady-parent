@@ -1,0 +1,986 @@
+[
+  {
+    "id": "freebie-aggression",
+    "type": "freebie",
+    "name": "The Hitting Response Flowchart",
+    "what_it_is": "A printable decision tree for what to say and do when your child gets physical.",
+    "pageUrlPattern": "/blog/aggression/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-aggression"
+    ],
+    "cta_copy": {
+      "eyebrow": "Next time they hit",
+      "title": "Get The Hitting Response Flowchart",
+      "body": "A printable decision tree that tells you exactly what to say and do when your child gets physical — so you stop freezing in the moment.",
+      "buttonText": "Send me the flowchart"
+    }
+  },
+  {
+    "id": "freebie-anxiety",
+    "type": "freebie",
+    "name": "The Worry Time Toolkit",
+    "what_it_is": "A printable worry journal page and worry time rules card for kids.",
+    "pageUrlPattern": "/blog/anxiety/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-anxiety"
+    ],
+    "cta_copy": {
+      "eyebrow": "Give worry a place",
+      "title": "Get The Worry Time Toolkit",
+      "body": "A printable worry journal page and worry time rules card so your child can process anxious thoughts without them taking over the whole day.",
+      "buttonText": "Send me the toolkit"
+    }
+  },
+  {
+    "id": "freebie-big-feelings",
+    "type": "freebie",
+    "name": "The Feelings Vocabulary Poster",
+    "what_it_is": "A printable poster with age-appropriate feeling words kids can point to when they can't find the words.",
+    "pageUrlPattern": "/blog/big-feelings/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-big-feelings"
+    ],
+    "cta_copy": {
+      "eyebrow": "When words fail them",
+      "title": "Get The Feelings Vocabulary Poster",
+      "body": "A printable poster with age-appropriate feeling words your child can point to when they can't find the words themselves.",
+      "buttonText": "Send me the poster"
+    }
+  },
+  {
+    "id": "freebie-body-safety",
+    "type": "freebie",
+    "name": "Body Safety Conversation Starters",
+    "what_it_is": "A printable set of age-appropriate scripts for starting body safety conversations with your child.",
+    "pageUrlPattern": "/blog/body-safety/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-body-safety"
+    ],
+    "cta_copy": {
+      "eyebrow": "Start the conversation today",
+      "title": "Get the Body Safety Conversation Starters",
+      "body": "A printable set of age-appropriate scripts so you can start body safety conversations with confidence instead of dread.",
+      "buttonText": "Send me the scripts"
+    }
+  },
+  {
+    "id": "freebie-breaking-the-cycle",
+    "type": "freebie",
+    "name": "The Trigger Map Worksheet",
+    "what_it_is": "A printable worksheet for identifying your parenting triggers and planning alternative responses.",
+    "pageUrlPattern": "/blog/breaking-the-cycle/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-breaking-the-cycle"
+    ],
+    "cta_copy": {
+      "eyebrow": "Know your triggers first",
+      "title": "Get The Trigger Map Worksheet",
+      "body": "A printable worksheet for identifying the moments you get activated and planning how you actually want to respond instead.",
+      "buttonText": "Send me the worksheet"
+    }
+  },
+  {
+    "id": "freebie-discipline",
+    "type": "freebie",
+    "name": "The Boundary Scripts Cheat Sheet",
+    "what_it_is": "A one-page printable with exact phrases for setting limits in the ten most common situations.",
+    "pageUrlPattern": "/blog/discipline/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-discipline"
+    ],
+    "cta_copy": {
+      "eyebrow": "Words ready when needed",
+      "title": "Get The Boundary Scripts Cheat Sheet",
+      "body": "A one-page printable with exact phrases for setting limits in the ten situations where you're most likely to cave or yell.",
+      "buttonText": "Send me the cheat sheet"
+    }
+  },
+  {
+    "id": "freebie-eating",
+    "type": "freebie",
+    "name": "The No-Pressure Meal Planner",
+    "what_it_is": "A printable one-week meal planning template with division of responsibility reminders built in.",
+    "pageUrlPattern": "/blog/eating/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-eating"
+    ],
+    "cta_copy": {
+      "eyebrow": "Plan meals without stress",
+      "title": "Get The No-Pressure Meal Planner",
+      "body": "A printable one-week meal planning template with division of responsibility reminders built in — so dinner stops being a negotiation.",
+      "buttonText": "Send me the planner"
+    }
+  },
+  {
+    "id": "freebie-new-parent",
+    "type": "freebie",
+    "name": "The First 30 Days Survival Card",
+    "what_it_is": "A one-page printable with the feeding, sleep, and crying essentials for the first month.",
+    "pageUrlPattern": "/blog/new-parent/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-new-parent"
+    ],
+    "cta_copy": {
+      "eyebrow": "Keep this on your fridge",
+      "title": "Get The First 30 Days Survival Card",
+      "body": "A one-page printable with the feeding, sleep, and crying essentials you need for the first month — nothing extra, just what matters.",
+      "buttonText": "Send me the card"
+    }
+  },
+  {
+    "id": "freebie-parenting-approach",
+    "type": "freebie",
+    "name": "The Parenting Values Worksheet",
+    "what_it_is": "A printable worksheet for clarifying what matters most to your family and turning it into daily practice.",
+    "pageUrlPattern": "/blog/parenting-approach/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-parenting-approach"
+    ],
+    "cta_copy": {
+      "eyebrow": "Clarity changes everything",
+      "title": "Get The Parenting Values Worksheet",
+      "body": "A printable worksheet for getting clear on what matters most to your family and turning those values into daily decisions.",
+      "buttonText": "Send me the worksheet"
+    }
+  },
+  {
+    "id": "freebie-parenting-science",
+    "type": "freebie",
+    "name": "The Research Decoder Card",
+    "what_it_is": "A printable guide for reading parenting studies without getting tricked by headlines.",
+    "pageUrlPattern": "/blog/parenting-science/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-parenting-science"
+    ],
+    "cta_copy": {
+      "eyebrow": "Read studies like a pro",
+      "title": "Get The Research Decoder Card",
+      "body": "A printable guide for reading parenting studies without getting tricked by misleading headlines or cherry-picked data.",
+      "buttonText": "Send me the card"
+    }
+  },
+  {
+    "id": "freebie-potty-training",
+    "type": "freebie",
+    "name": "The Potty Training Readiness Checklist",
+    "what_it_is": "A one-page printable with readiness signs to watch for and a first-week starter plan.",
+    "pageUrlPattern": "/blog/potty-training/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-potty-training"
+    ],
+    "cta_copy": {
+      "eyebrow": "Before you start",
+      "title": "Get The Potty Training Readiness Checklist",
+      "body": "A one-page printable with the readiness signs to watch for and a simple first-week plan so you start when your child is actually ready.",
+      "buttonText": "Send me the checklist"
+    }
+  },
+  {
+    "id": "freebie-screens",
+    "type": "freebie",
+    "name": "The Family Screen Agreement",
+    "what_it_is": "A printable fill-in-the-blank screen time agreement the whole family signs together.",
+    "pageUrlPattern": "/blog/screens/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-screens"
+    ],
+    "cta_copy": {
+      "eyebrow": "Rules the whole family owns",
+      "title": "Get The Family Screen Agreement",
+      "body": "A printable fill-in-the-blank screen time agreement the whole family signs together — so the rules belong to everyone, not just you.",
+      "buttonText": "Send me the agreement"
+    }
+  },
+  {
+    "id": "freebie-siblings",
+    "type": "freebie",
+    "name": "The Sibling Conflict Script Card",
+    "what_it_is": "A printable card with exact phrases for when they're fighting, and when to step in versus stay out.",
+    "pageUrlPattern": "/blog/siblings/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-siblings"
+    ],
+    "cta_copy": {
+      "eyebrow": "When they start fighting",
+      "title": "Get The Sibling Conflict Script Card",
+      "body": "A printable card with the exact phrases for when they're at each other — and guidance on when to step in versus when to stay out.",
+      "buttonText": "Send me the card"
+    }
+  },
+  {
+    "id": "freebie-sleep",
+    "type": "freebie",
+    "name": "Bedtime Routine Cards by Age",
+    "what_it_is": "Printable visual step-by-step routine cards for toddlers, preschoolers, and school-age kids.",
+    "pageUrlPattern": "/blog/sleep/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-sleep"
+    ],
+    "cta_copy": {
+      "eyebrow": "Routine they can follow",
+      "title": "Get the Bedtime Routine Cards by Age",
+      "body": "Printable visual step-by-step routine cards for toddlers, preschoolers, and school-age kids — so bedtime runs itself.",
+      "buttonText": "Send me the cards"
+    }
+  },
+  {
+    "id": "freebie-social-skills",
+    "type": "freebie",
+    "name": "The Playdate Prep Card",
+    "what_it_is": "A printable card with what to practice before playdates and scripts for common social conflicts.",
+    "pageUrlPattern": "/blog/social-skills/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-social-skills"
+    ],
+    "cta_copy": {
+      "eyebrow": "Before the next playdate",
+      "title": "Get The Playdate Prep Card",
+      "body": "A printable card with what to practice before playdates and scripts for the social conflicts that always come up.",
+      "buttonText": "Send me the card"
+    }
+  },
+  {
+    "id": "freebie-spirited-kids",
+    "type": "freebie",
+    "name": "The Spirited Child Temperament Map",
+    "what_it_is": "A printable worksheet for mapping your child's intensity patterns and finding what calms them.",
+    "pageUrlPattern": "/blog/spirited-kids/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-spirited-kids"
+    ],
+    "cta_copy": {
+      "eyebrow": "Understand their intensity",
+      "title": "Get The Spirited Child Temperament Map",
+      "body": "A printable worksheet for mapping your child's intensity patterns and discovering what actually calms them down when nothing seems to work.",
+      "buttonText": "Send me the map"
+    }
+  },
+  {
+    "id": "freebie-staying-calm",
+    "type": "freebie",
+    "name": "The Parent Calm-Down Card",
+    "what_it_is": "A printable pocket card with your personal regulation steps for when you're about to lose it.",
+    "pageUrlPattern": "/blog/staying-calm/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-staying-calm"
+    ],
+    "cta_copy": {
+      "eyebrow": "About to lose it",
+      "title": "Get The Parent Calm-Down Card",
+      "body": "A printable pocket card with your personal regulation steps — so you have a plan before the moment you need one.",
+      "buttonText": "Send me the card"
+    }
+  },
+  {
+    "id": "freebie-tantrums",
+    "type": "freebie",
+    "name": "The 3-Step Tantrum Script Cheat Sheet",
+    "what_it_is": "A one-page printable with the exact phrases for validate, boundary, and redirect.",
+    "pageUrlPattern": "/blog/tantrums/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-tantrums"
+    ],
+    "cta_copy": {
+      "eyebrow": "Three steps, every time",
+      "title": "Get The 3-Step Tantrum Script Cheat Sheet",
+      "body": "A one-page printable with the exact phrases for validate, set the boundary, and redirect — so you always know what to say mid-meltdown.",
+      "buttonText": "Send me the cheat sheet"
+    }
+  },
+  {
+    "id": "freebie-teens",
+    "type": "freebie",
+    "name": "Teen Conversation Starters",
+    "what_it_is": "A printable list of ten non-interrogation questions that actually get teenagers talking.",
+    "pageUrlPattern": "/blog/teens/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-teens"
+    ],
+    "cta_copy": {
+      "eyebrow": "Get them talking again",
+      "title": "Get the Teen Conversation Starters",
+      "body": "A printable list of ten questions that actually get teenagers talking — no interrogation, no one-word answers.",
+      "buttonText": "Send me the starters"
+    }
+  },
+  {
+    "id": "freebie-transitions",
+    "type": "freebie",
+    "name": "The Transition Prep Checklist",
+    "what_it_is": "A printable step-by-step checklist for preparing your child for any big change.",
+    "pageUrlPattern": "/blog/transitions/*",
+    "endpoint": "/api/freebie-subscribe",
+    "tags": [
+      "lead",
+      "freebie-transitions"
+    ],
+    "cta_copy": {
+      "eyebrow": "Prepare them for what's next",
+      "title": "Get The Transition Prep Checklist",
+      "body": "A printable step-by-step checklist for preparing your child for any big change — so they walk in feeling ready instead of blindsided.",
+      "buttonText": "Send me the checklist"
+    }
+  },
+  {
+    "id": "waitlist-aggression",
+    "type": "waitlist",
+    "name": "Beyond Hitting",
+    "what_it_is": "Audio lessons and illustrated guides for responding to hitting, biting, and physical aggression at every age.",
+    "pageUrlPattern": "/course/beyond-hitting/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-aggression"
+    ],
+    "cta_copy": {
+      "eyebrow": "When they lash out",
+      "title": "Join the Beyond Hitting waitlist",
+      "body": "Audio lessons and illustrated guides for responding to hitting, biting, and physical aggression — so you know exactly what to do next time.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-anxiety",
+    "type": "waitlist",
+    "name": "Childhood Anxiety",
+    "what_it_is": "Audio lessons and illustrated guides for helping your child manage worry, fear, and avoidance behaviors.",
+    "pageUrlPattern": "/course/childhood-anxiety/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-anxiety"
+    ],
+    "cta_copy": {
+      "eyebrow": "Worry is taking over",
+      "title": "Join the Childhood Anxiety waitlist",
+      "body": "Audio lessons and illustrated guides that help your child face worry and fear instead of being ruled by them.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-big-feelings",
+    "type": "waitlist",
+    "name": "Big Feelings",
+    "what_it_is": "Audio lessons and illustrated guides for helping kids experience and process intense emotions safely.",
+    "pageUrlPattern": "/course/big-feelings/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-big-feelings"
+    ],
+    "cta_copy": {
+      "eyebrow": "Emotions are overwhelming",
+      "title": "Join the Big Feelings waitlist",
+      "body": "Audio lessons and illustrated guides for helping kids experience intense emotions safely — without shutting them down or letting chaos take over.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-body-safety",
+    "type": "waitlist",
+    "name": "Body Safety Conversations",
+    "what_it_is": "Audio lessons and illustrated guides for age-appropriate body safety and consent conversations.",
+    "pageUrlPattern": "/course/body-safety/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-body-safety"
+    ],
+    "cta_copy": {
+      "eyebrow": "These talks matter early",
+      "title": "Join the Body Safety Conversations waitlist",
+      "body": "Audio lessons and illustrated guides for having age-appropriate body safety and consent conversations you actually feel prepared for.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-breaking-the-cycle",
+    "type": "waitlist",
+    "name": "Breaking the Cycle",
+    "what_it_is": "Audio lessons and guided exercises for identifying and changing inherited parenting patterns.",
+    "pageUrlPattern": "/course/breaking-the-cycle/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-breaking-the-cycle"
+    ],
+    "cta_copy": {
+      "eyebrow": "You can parent differently",
+      "title": "Join the Breaking the Cycle waitlist",
+      "body": "Audio lessons and guided exercises for identifying the patterns you inherited and building the ones you actually want to pass on.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-discipline",
+    "type": "waitlist",
+    "name": "Discipline Without Punishment",
+    "what_it_is": "Audio lessons and illustrated guides for setting firm limits without punishment, threats, or yelling.",
+    "pageUrlPattern": "/course/discipline-without-punishment/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-discipline"
+    ],
+    "cta_copy": {
+      "eyebrow": "Limits without the guilt",
+      "title": "Join the Discipline Without Punishment waitlist",
+      "body": "Audio lessons and illustrated guides for setting firm, clear boundaries without resorting to punishment, threats, or yelling.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-eating",
+    "type": "waitlist",
+    "name": "Peaceful Mealtimes",
+    "what_it_is": "Audio lessons and illustrated guides for ending mealtime battles using the division of responsibility approach.",
+    "pageUrlPattern": "/course/peaceful-mealtimes/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-eating"
+    ],
+    "cta_copy": {
+      "eyebrow": "Mealtimes are a battle",
+      "title": "Join the Peaceful Mealtimes waitlist",
+      "body": "Audio lessons and illustrated guides for ending food fights using the division of responsibility — so everyone can actually enjoy dinner.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-new-parent",
+    "type": "waitlist",
+    "name": "New Parent Survival",
+    "what_it_is": "Audio lessons and illustrated guides for surviving and enjoying the first year without losing yourself.",
+    "pageUrlPattern": "/course/new-parent/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-new-parent"
+    ],
+    "cta_copy": {
+      "eyebrow": "The first year",
+      "title": "Join the New Parent Survival waitlist",
+      "body": "Audio lessons and illustrated guides for surviving and genuinely enjoying the first year without losing yourself in the process.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-parenting-approach",
+    "type": "waitlist",
+    "name": "Intentional Parenting",
+    "what_it_is": "Audio lessons and illustrated guides for building a parenting approach that fits your actual family.",
+    "pageUrlPattern": "/course/intentional-parenting/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-parenting-approach"
+    ],
+    "cta_copy": {
+      "eyebrow": "Find what fits your family",
+      "title": "Join the Intentional Parenting waitlist",
+      "body": "Audio lessons and illustrated guides for building a parenting approach grounded in your real values, your real kids, and your real life.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-parenting-science",
+    "type": "waitlist",
+    "name": "The Science of Parenting",
+    "what_it_is": "Audio lessons and illustrated breakdowns of the research behind common parenting advice.",
+    "pageUrlPattern": "/course/parenting-science/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-parenting-science"
+    ],
+    "cta_copy": {
+      "eyebrow": "Cut through the noise",
+      "title": "Join the The Science of Parenting waitlist",
+      "body": "Audio lessons and illustrated breakdowns of what the research actually says — so you can stop second-guessing every decision.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-potty-training",
+    "type": "waitlist",
+    "name": "Potty Training",
+    "what_it_is": "Audio lessons and illustrated day-by-day guides for stress-free potty training on your child's timeline.",
+    "pageUrlPattern": "/course/potty-training/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-potty-training"
+    ],
+    "cta_copy": {
+      "eyebrow": "Ready when they are",
+      "title": "Join the Potty Training waitlist",
+      "body": "Audio lessons and illustrated day-by-day guides for stress-free potty training that follows your child's readiness, not someone else's deadline.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-screens",
+    "type": "waitlist",
+    "name": "Screen Sanity",
+    "what_it_is": "Audio lessons and illustrated guides for managing screens without constant fights or guilt.",
+    "pageUrlPattern": "/course/screen-sanity/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-screens"
+    ],
+    "cta_copy": {
+      "eyebrow": "Screens without the fights",
+      "title": "Join the Screen Sanity waitlist",
+      "body": "Audio lessons and illustrated guides for managing screen time in a way that works for your family — without constant battles or guilt.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-siblings",
+    "type": "waitlist",
+    "name": "Sibling Harmony",
+    "what_it_is": "Audio lessons and illustrated guides for reducing sibling conflict and building genuine connection between your kids.",
+    "pageUrlPattern": "/course/sibling-harmony/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-siblings"
+    ],
+    "cta_copy": {
+      "eyebrow": "They keep fighting",
+      "title": "Join the Sibling Harmony waitlist",
+      "body": "Audio lessons and illustrated guides for reducing sibling conflict and helping your kids build a relationship that lasts beyond childhood.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-sleep",
+    "type": "waitlist",
+    "name": "Sleep Solutions",
+    "what_it_is": "Audio lessons and illustrated guides for building sleep routines that stick, without cry-it-out or co-sleeping guilt.",
+    "pageUrlPattern": "/course/sleep-solutions/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-sleep"
+    ],
+    "cta_copy": {
+      "eyebrow": "Everyone needs more sleep",
+      "title": "Join the Sleep Solutions waitlist",
+      "body": "Audio lessons and illustrated guides for building sleep routines that actually stick — without cry-it-out or co-sleeping guilt.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-social-skills",
+    "type": "waitlist",
+    "name": "Social Skills",
+    "what_it_is": "Audio lessons and illustrated guides for building your child's social confidence and friendship skills.",
+    "pageUrlPattern": "/course/social-skills/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-social-skills"
+    ],
+    "cta_copy": {
+      "eyebrow": "Friendship doesn't come easy",
+      "title": "Join the Social Skills waitlist",
+      "body": "Audio lessons and illustrated guides for building your child's social confidence so they can navigate friendships and conflict on their own.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-spirited-kids",
+    "type": "waitlist",
+    "name": "Spirited Kids",
+    "what_it_is": "Audio lessons and illustrated guides for parenting high-intensity children without breaking either of you.",
+    "pageUrlPattern": "/course/spirited-kids/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-spirited-kids"
+    ],
+    "cta_copy": {
+      "eyebrow": "High intensity, every day",
+      "title": "Join the Spirited Kids waitlist",
+      "body": "Audio lessons and illustrated guides for parenting a high-intensity child in a way that honors who they are without breaking either of you.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-staying-calm",
+    "type": "waitlist",
+    "name": "The Calm Parent",
+    "what_it_is": "Audio lessons and guided exercises for staying regulated when your kids push every button you have.",
+    "pageUrlPattern": "/course/calm-parent/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-staying-calm"
+    ],
+    "cta_copy": {
+      "eyebrow": "You keep losing it",
+      "title": "Join the The Calm Parent waitlist",
+      "body": "Audio lessons and guided exercises for staying regulated when your kids push every button — so you can respond instead of react.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-tantrums",
+    "type": "waitlist",
+    "name": "The Tantrum Toolkit",
+    "what_it_is": "Step-by-step audio lessons and illustrated guides for every tantrum scenario, from grocery store meltdowns to bedtime battles.",
+    "pageUrlPattern": "/course/tantrum-toolkit/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-tantrums"
+    ],
+    "cta_copy": {
+      "eyebrow": "Meltdowns are exhausting",
+      "title": "Join the The Tantrum Toolkit waitlist",
+      "body": "Audio lessons and illustrated guides for every tantrum scenario — from grocery store meltdowns to bedtime battles and everything in between.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-teens",
+    "type": "waitlist",
+    "name": "Parenting Teens",
+    "what_it_is": "Audio lessons and illustrated guides for staying connected through adolescence without becoming the enemy.",
+    "pageUrlPattern": "/course/parenting-teens/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-teens"
+    ],
+    "cta_copy": {
+      "eyebrow": "They're pulling away",
+      "title": "Join the Parenting Teens waitlist",
+      "body": "Audio lessons and illustrated guides for staying connected through adolescence — even when they act like they want nothing to do with you.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "waitlist-transitions",
+    "type": "waitlist",
+    "name": "Life Transitions",
+    "what_it_is": "Audio lessons and illustrated guides for helping kids through major life changes with less anxiety.",
+    "pageUrlPattern": "/course/life-transitions/",
+    "endpoint": "/api/waitlist-subscribe",
+    "tags": [
+      "lead",
+      "waitlist-transitions"
+    ],
+    "cta_copy": {
+      "eyebrow": "Change is coming",
+      "title": "Join the Life Transitions waitlist",
+      "body": "Audio lessons and illustrated guides for helping your child through moves, new schools, new siblings, and other big life changes with less anxiety.",
+      "buttonText": "Reserve your spot"
+    }
+  },
+  {
+    "id": "quiz-gate-age-appropriate-chores",
+    "type": "quiz-gate",
+    "name": "What Chores Can Your Child Handle?",
+    "pageUrlPattern": "/quiz/age-appropriate-chores",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-age-appropriate-chores"
+    ]
+  },
+  {
+    "id": "quiz-gate-bedtime-battle-style",
+    "type": "quiz-gate",
+    "name": "What's Your Bedtime Battle Style?",
+    "pageUrlPattern": "/quiz/bedtime-battle-style",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-bedtime-battle-style"
+    ]
+  },
+  {
+    "id": "quiz-gate-bedtime-routine",
+    "type": "quiz-gate",
+    "name": "Build Your Child's Bedtime Routine",
+    "pageUrlPattern": "/quiz/bedtime-routine",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-bedtime-routine"
+    ]
+  },
+  {
+    "id": "quiz-gate-calm-down-toolkit",
+    "type": "quiz-gate",
+    "name": "Build Your Child's Calm-Down Toolkit",
+    "pageUrlPattern": "/quiz/calm-down-toolkit",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-calm-down-toolkit"
+    ]
+  },
+  {
+    "id": "quiz-gate-co-parent-team",
+    "type": "quiz-gate",
+    "name": "What Kind of Co-Parent Team Are You?",
+    "pageUrlPattern": "/quiz/co-parent-team",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-co-parent-team"
+    ]
+  },
+  {
+    "id": "quiz-gate-communication-safety",
+    "type": "quiz-gate",
+    "name": "How Safe Does Your Child Feel Talking to You?",
+    "pageUrlPattern": "/quiz/communication-safety",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-communication-safety"
+    ]
+  },
+  {
+    "id": "quiz-gate-drop-the-nap",
+    "type": "quiz-gate",
+    "name": "Is Your Child Ready to Drop the Nap?",
+    "pageUrlPattern": "/quiz/drop-the-nap",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-drop-the-nap"
+    ]
+  },
+  {
+    "id": "quiz-gate-emotional-intelligence",
+    "type": "quiz-gate",
+    "name": "How Emotionally Intelligent Is Your Child?",
+    "pageUrlPattern": "/quiz/emotional-intelligence",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-emotional-intelligence"
+    ]
+  },
+  {
+    "id": "quiz-gate-kid-describe-you",
+    "type": "quiz-gate",
+    "name": "How Would Your Kid Describe You?",
+    "pageUrlPattern": "/quiz/kid-describe-you",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-kid-describe-you"
+    ]
+  },
+  {
+    "id": "quiz-gate-kindergarten-readiness",
+    "type": "quiz-gate",
+    "name": "Is Your Child Ready for Kindergarten?",
+    "pageUrlPattern": "/quiz/kindergarten-readiness",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-kindergarten-readiness"
+    ]
+  },
+  {
+    "id": "quiz-gate-parent-at-2am",
+    "type": "quiz-gate",
+    "name": "What Kind of Parent Are You at 2 AM?",
+    "pageUrlPattern": "/quiz/parent-at-2am",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-parent-at-2am"
+    ]
+  },
+  {
+    "id": "quiz-gate-parenting-battery",
+    "type": "quiz-gate",
+    "name": "How's Your Parenting Battery Right Now?",
+    "pageUrlPattern": "/quiz/parenting-battery",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-parenting-battery"
+    ]
+  },
+  {
+    "id": "quiz-gate-parenting-era",
+    "type": "quiz-gate",
+    "name": "What's Your Parenting Era?",
+    "pageUrlPattern": "/quiz/parenting-era",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-parenting-era"
+    ]
+  },
+  {
+    "id": "quiz-gate-parenting-love-language",
+    "type": "quiz-gate",
+    "name": "What's Your Parenting Love Language?",
+    "pageUrlPattern": "/quiz/parenting-love-language",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-parenting-love-language"
+    ]
+  },
+  {
+    "id": "quiz-gate-parenting-style",
+    "type": "quiz-gate",
+    "name": "What's Your Parenting Style?",
+    "pageUrlPattern": "/quiz/parenting-style",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-parenting-style"
+    ]
+  },
+  {
+    "id": "quiz-gate-parenting-superpower",
+    "type": "quiz-gate",
+    "name": "What's Your Parenting Superpower?",
+    "pageUrlPattern": "/quiz/parenting-superpower",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-parenting-superpower"
+    ]
+  },
+  {
+    "id": "quiz-gate-parents-patterns",
+    "type": "quiz-gate",
+    "name": "Are You Repeating Your Parents' Patterns?",
+    "pageUrlPattern": "/quiz/parents-patterns",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-parents-patterns"
+    ]
+  },
+  {
+    "id": "quiz-gate-potty-training-readiness",
+    "type": "quiz-gate",
+    "name": "Is Your Toddler Ready for Potty Training?",
+    "pageUrlPattern": "/quiz/potty-training-readiness",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-potty-training-readiness"
+    ]
+  },
+  {
+    "id": "quiz-gate-screen-dependence",
+    "type": "quiz-gate",
+    "name": "How Screen-Dependent Is Your Family?",
+    "pageUrlPattern": "/quiz/screen-dependence",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-screen-dependence"
+    ]
+  },
+  {
+    "id": "quiz-gate-second-child-readiness",
+    "type": "quiz-gate",
+    "name": "Is Your Family Ready for a Second Child?",
+    "pageUrlPattern": "/quiz/second-child-readiness",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-second-child-readiness"
+    ]
+  },
+  {
+    "id": "quiz-gate-sleepover-readiness",
+    "type": "quiz-gate",
+    "name": "Is Your Child Ready for a Sleepover?",
+    "pageUrlPattern": "/quiz/sleepover-readiness",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-sleepover-readiness"
+    ]
+  },
+  {
+    "id": "quiz-gate-social-confidence",
+    "type": "quiz-gate",
+    "name": "How Strong Is Your Child's Social Confidence?",
+    "pageUrlPattern": "/quiz/social-confidence",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-social-confidence"
+    ]
+  },
+  {
+    "id": "quiz-gate-solid-foods-readiness",
+    "type": "quiz-gate",
+    "name": "Is Your Baby Ready for Solid Foods?",
+    "pageUrlPattern": "/quiz/solid-foods-readiness",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-solid-foods-readiness"
+    ]
+  },
+  {
+    "id": "quiz-gate-worried-parent",
+    "type": "quiz-gate",
+    "name": "What Kind of Worried Parent Are You?",
+    "pageUrlPattern": "/quiz/worried-parent",
+    "endpoint": "/api/quiz-subscribe",
+    "tags": [
+      "lead",
+      "quiz-worried-parent"
+    ]
+  }
+]

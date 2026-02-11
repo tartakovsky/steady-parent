@@ -11,6 +11,7 @@ import type {
   LinkPlanEntry,
   PageType,
   CtaDefinition,
+  MailingFormEntry,
   ValidationResult,
 } from "../types";
 
@@ -82,6 +83,7 @@ export function validateArticle(
   urlRegistry: Set<string>,
   pageType: PageType,
   ctaCatalog?: CtaDefinition[],
+  mailingFormCatalog?: MailingFormEntry[],
 ): ValidationResult {
   const errors: string[] = [];
   const warnings: string[] = [];
@@ -172,8 +174,8 @@ export function validateArticle(
           );
         }
       }
-      if (comp.type === "FreebieCTA") {
-        const freebies = ctaCatalog.filter((d) => d.type === "freebie");
+      if (comp.type === "FreebieCTA" && mailingFormCatalog) {
+        const freebies = mailingFormCatalog.filter((d) => d.type === "freebie");
         const matched = freebies.some((d) =>
           compTitleLower.includes(d.name.toLowerCase()),
         );

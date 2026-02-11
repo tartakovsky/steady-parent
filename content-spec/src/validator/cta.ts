@@ -1,15 +1,10 @@
 /**
- * CTA catalog validator — checks business rules beyond what the Zod schema catches.
+ * CTA catalog validator — checks business rules for link-out CTAs.
  *
- * Validates:
- * - All per-category entries (community, course, freebie) have cta_copy
- * - Community: buttonText = "Join the community", body includes founder line
- * - Course/freebie: title contains the product name
- * - Word count constraints on eyebrow, title, body
- * - No exclamation marks or forbidden terms
- * - Category coverage (every taxonomy category has community + course + freebie)
- *
- * Returns { errors, warnings } — same pattern as quiz and article validators.
+ * Returns { errors, warnings, groups, byEntry }:
+ * - errors/warnings: flat lists for CLI / backward compat
+ * - groups: structured per-section summaries
+ * - byEntry: per entry-ID errors/warnings so the UI can render them inline
  */
 
 import type { CtaCatalog } from "../types";
@@ -31,224 +26,393 @@ function wordCount(s: string): number {
   return s.split(/\s+/).filter(Boolean).length;
 }
 
-interface CtaValidationResult {
+export interface CheckGroup {
+  name: string;
+  description: string;
+  itemCount: number;
   errors: string[];
   warnings: string[];
 }
 
+export interface EntryCheck {
+  ok: boolean;
+  detail?: string | undefined;  // e.g. "3w", or error reason when !ok
+}
+
+export interface EntryValidation {
+  errors: string[];
+  warnings: string[];
+  checks: Record<string, EntryCheck>;
+}
+
+interface CtaValidationResult {
+  errors: string[];
+  warnings: string[];
+  groups: CheckGroup[];
+  byEntry: Record<string, EntryValidation>;
+}
+
 /**
  * Validate cta_copy fields shared by all entry types.
- * Returns errors for the given prefix.
+ * Returns { errors, checks } — errors for flat lists, checks for per-column UI.
+ * Exported for reuse by mailing form validator.
  */
-function validateCtaCopy(
+export function validateCtaCopy(
   prefix: string,
   eyebrow: string,
   title: string,
   body: string,
   _buttonText: string,
-): string[] {
+): { errors: string[]; checks: Record<string, EntryCheck> } {
   const errs: string[] = [];
+  const checks: Record<string, EntryCheck> = {};
 
-  // Eyebrow: 2-5 words
   const eyebrowWc = wordCount(eyebrow);
-  if (eyebrowWc < 2 || eyebrowWc > 5) {
+  const eyebrowOk = eyebrowWc >= 2 && eyebrowWc <= 5;
+  checks["eyebrow"] = { ok: eyebrowOk, detail: `${eyebrowWc}w` + (eyebrowOk ? "" : " (2-5)") };
+  if (!eyebrowOk) {
     errs.push(`${prefix}: eyebrow "${eyebrow}" is ${eyebrowWc} words (must be 2-5)`);
   }
 
-  // Title: 3-12 words
   const titleWc = wordCount(title);
-  if (titleWc < 3 || titleWc > 12) {
+  const titleOk = titleWc >= 3 && titleWc <= 12;
+  checks["title"] = { ok: titleOk, detail: `${titleWc}w` + (titleOk ? "" : " (3-12)") };
+  if (!titleOk) {
     errs.push(`${prefix}: title is ${titleWc} words (must be 3-12)`);
   }
 
-  // Body: 8-35 words
   const bodyWc = wordCount(body);
-  if (bodyWc < 8 || bodyWc > 35) {
+  const bodyOk = bodyWc >= 8 && bodyWc <= 35;
+  checks["body"] = { ok: bodyOk, detail: `${bodyWc}w` + (bodyOk ? "" : " (8-35)") };
+  if (!bodyOk) {
     errs.push(`${prefix}: body is ${bodyWc} words (must be 8-35)`);
   }
 
-  // No exclamation marks
   const allText = [eyebrow, title, body, _buttonText].join(" ");
-  if (allText.includes("!")) {
+  const hasExcl = allText.includes("!");
+  const lowerText = allText.toLowerCase();
+  const foundForbidden = FORBIDDEN_TERMS.filter((t) => lowerText.includes(t));
+  const cleanOk = !hasExcl && foundForbidden.length === 0;
+  checks["clean"] = {
+    ok: cleanOk,
+    detail: !cleanOk
+      ? [hasExcl ? "has !" : "", ...foundForbidden.map((t) => `"${t}"`)].filter(Boolean).join(", ")
+      : undefined,
+  };
+  if (hasExcl) {
     errs.push(`${prefix}: contains exclamation mark`);
   }
-
-  // No forbidden terms
-  const lowerText = allText.toLowerCase();
-  for (const term of FORBIDDEN_TERMS) {
-    if (lowerText.includes(term)) {
-      errs.push(`${prefix}: contains forbidden term "${term}"`);
-    }
+  for (const term of foundForbidden) {
+    errs.push(`${prefix}: contains forbidden term "${term}"`);
   }
 
-  return errs;
+  return { errors: errs, checks };
 }
 
-/**
- * Validate the full CTA catalog.
- * @param catalog  Parsed CTA catalog (already Zod-valid)
- * @param categorySlugs  Optional list of category slugs for coverage checks
- */
+// Helper: get or create an entry in the byEntry map
+function getEntry(
+  byEntry: Record<string, EntryValidation>,
+  id: string,
+): EntryValidation {
+  let e = byEntry[id];
+  if (!e) {
+    e = { errors: [], warnings: [], checks: {} };
+    byEntry[id] = e;
+  }
+  return e;
+}
+
 export function validateCtaCatalog(
   catalog: CtaCatalog,
   categorySlugs?: string[],
+  quizSlugs?: string[],
 ): CtaValidationResult {
   const errors: string[] = [];
   const warnings: string[] = [];
+  const groups: CheckGroup[] = [];
+  const byEntry: Record<string, EntryValidation> = {};
 
   const globalCommunity = catalog.find(
     (c) => c.type === "community" && c.id === "community",
   );
   const perCatCommunities = catalog.filter(
-    (c) => c.type === "community" && c.id !== "community",
+    (c) => c.type === "community" && c.id !== "community" && !c.id.startsWith("community-quiz-"),
+  );
+  const quizCommunities = catalog.filter(
+    (c) => c.type === "community" && c.id.startsWith("community-quiz-"),
   );
   const courses = catalog.filter((c) => c.type === "course");
-  const freebies = catalog.filter((c) => c.type === "freebie");
 
-  // --- Global community checks ---
-  if (!globalCommunity) {
-    errors.push("Missing global community entry (id: \"community\")");
-  } else {
-    if (!globalCommunity.founder_presence) {
-      warnings.push("Global community entry missing founder_presence");
+  // --- Group 1: Global community ---
+  {
+    const g: CheckGroup = {
+      name: "Global Community",
+      description: "Entry exists, founder_presence, cant_promise list",
+      itemCount: 1,
+      errors: [],
+      warnings: [],
+    };
+    const e = getEntry(byEntry, "community");
+
+    if (!globalCommunity) {
+      const msg = "Missing global community entry (id: \"community\")";
+      g.errors.push(msg);
+      e.errors.push(msg);
+      e.checks["exists"] = { ok: false };
+    } else {
+      e.checks["exists"] = { ok: true };
+      const hasFP = !!globalCommunity.founder_presence;
+      e.checks["founder_presence"] = { ok: hasFP, detail: hasFP ? undefined : "missing" };
+      if (!hasFP) {
+        const msg = "Missing founder_presence";
+        g.warnings.push(msg);
+        e.warnings.push(msg);
+      }
+      const cpLen = globalCommunity.cant_promise.length;
+      e.checks["cant_promise"] = { ok: cpLen > 0, detail: `${cpLen} items` };
+      if (cpLen === 0) {
+        const msg = "Empty cant_promise list";
+        g.warnings.push(msg);
+        e.warnings.push(msg);
+      }
     }
-    if (globalCommunity.cant_promise.length === 0) {
-      warnings.push("Global community entry has empty cant_promise list");
+
+    errors.push(...g.errors);
+    warnings.push(...g.warnings);
+    groups.push(g);
+  }
+
+  // Helper: validate a community entry (per-category or quiz)
+  function validateCommunityEntry(
+    entry: CtaCatalog[number],
+    e: EntryValidation,
+    g: CheckGroup,
+    checkPromises: boolean,
+  ) {
+    const hasCopy = !!entry.cta_copy;
+    e.checks["cta_copy"] = { ok: hasCopy, detail: hasCopy ? undefined : "missing" };
+    if (!hasCopy) {
+      const msg = "Missing cta_copy";
+      g.errors.push(`${entry.id}: ${msg}`);
+      e.errors.push(msg);
+      return;
+    }
+
+    const { eyebrow, title, body, buttonText } = entry.cta_copy!;
+
+    const btnOk = buttonText === COMMUNITY_BUTTON_TEXT;
+    e.checks["buttonText"] = { ok: btnOk, detail: btnOk ? undefined : `"${buttonText}"` };
+    if (!btnOk) {
+      const msg = `buttonText must be "${COMMUNITY_BUTTON_TEXT}", got "${buttonText}"`;
+      g.errors.push(`${entry.id}: ${msg}`);
+      e.errors.push(msg);
+    }
+
+    const founderOk = body.includes(COMMUNITY_FOUNDER_LINE);
+    e.checks["founderLine"] = { ok: founderOk, detail: founderOk ? undefined : "missing" };
+    if (!founderOk) {
+      const msg = `Body must contain "${COMMUNITY_FOUNDER_LINE}"`;
+      g.errors.push(`${entry.id}: ${msg}`);
+      e.errors.push(msg);
+    }
+
+    const copyResult = validateCtaCopy(entry.id, eyebrow, title, body, buttonText);
+    Object.assign(e.checks, copyResult.checks);
+    for (const copyErr of copyResult.errors) {
+      const msg = copyErr.replace(`${entry.id}: `, "");
+      g.errors.push(copyErr);
+      e.errors.push(msg);
+    }
+
+    if (checkPromises) {
+      if (entry.can_promise.length > 0) {
+        const msg = "can_promise should be empty for per-category entries";
+        g.warnings.push(`${entry.id}: ${msg}`);
+        e.warnings.push(msg);
+      }
+      if (entry.cant_promise.length > 0) {
+        const msg = "cant_promise should be empty for per-category entries";
+        g.warnings.push(`${entry.id}: ${msg}`);
+        e.warnings.push(msg);
+      }
     }
   }
 
-  // --- Per-category community entry checks ---
-  for (const entry of perCatCommunities) {
-    const slug = entry.id.replace(/^community-/, "");
-    const prefix = `community-${slug}`;
+  // --- Group 2: Per-category community ---
+  {
+    const g: CheckGroup = {
+      name: "Per-Category Community CTAs",
+      description: "cta_copy, buttonText, founder line, word counts, forbidden terms",
+      itemCount: perCatCommunities.length,
+      errors: [],
+      warnings: [],
+    };
 
-    if (!entry.cta_copy) {
-      errors.push(`${prefix}: missing cta_copy`);
-      continue;
+    for (const entry of perCatCommunities) {
+      const e = getEntry(byEntry, entry.id);
+      validateCommunityEntry(entry, e, g, true);
     }
 
-    const { eyebrow, title, body, buttonText } = entry.cta_copy;
-
-    // Community-specific: fixed buttonText
-    if (buttonText !== COMMUNITY_BUTTON_TEXT) {
-      errors.push(`${prefix}: buttonText must be "${COMMUNITY_BUTTON_TEXT}", got "${buttonText}"`);
-    }
-
-    // Community-specific: founder line in body
-    if (!body.includes(COMMUNITY_FOUNDER_LINE)) {
-      errors.push(`${prefix}: body must contain "${COMMUNITY_FOUNDER_LINE}"`);
-    }
-
-    errors.push(...validateCtaCopy(prefix, eyebrow, title, body, buttonText));
-
-    // can_promise and cant_promise should be empty
-    if (entry.can_promise.length > 0) {
-      warnings.push(`${prefix}: can_promise should be empty for per-category entries`);
-    }
-    if (entry.cant_promise.length > 0) {
-      warnings.push(`${prefix}: cant_promise should be empty for per-category entries`);
-    }
+    errors.push(...g.errors);
+    warnings.push(...g.warnings);
+    groups.push(g);
   }
 
-  // --- Course and freebie checks ---
-  for (const entry of [...courses, ...freebies]) {
-    const prefix = entry.id;
+  // --- Group 3: Quiz community ---
+  {
+    const g: CheckGroup = {
+      name: "Quiz Community CTAs",
+      description: "cta_copy, buttonText, founder line, word counts, forbidden terms",
+      itemCount: quizCommunities.length,
+      errors: [],
+      warnings: [],
+    };
 
-    if (!entry.what_it_is) {
-      errors.push(`${prefix}: missing what_it_is`);
+    for (const entry of quizCommunities) {
+      const e = getEntry(byEntry, entry.id);
+      validateCommunityEntry(entry, e, g, false);
     }
 
-    if (!entry.cta_copy) {
-      errors.push(`${prefix}: missing cta_copy`);
-      continue;
-    }
-
-    const { eyebrow, title, body, buttonText } = entry.cta_copy;
-    errors.push(...validateCtaCopy(prefix, eyebrow, title, body, buttonText));
-
-    // Title should reference the product name
-    if (!title.toLowerCase().includes(entry.name.toLowerCase())) {
-      warnings.push(`${prefix}: title "${title}" does not contain product name "${entry.name}"`);
-    }
+    errors.push(...g.errors);
+    warnings.push(...g.warnings);
+    groups.push(g);
   }
 
-  // --- Waitlist entry checks ---
-  const waitlists = catalog.filter((c) => c.type === "waitlist");
-  for (const entry of waitlists) {
-    const prefix = entry.id;
+  // --- Group 4: Course ---
+  {
+    const g: CheckGroup = {
+      name: "Course CTAs",
+      description: "what_it_is, cta_copy, word counts, title references product name",
+      itemCount: courses.length,
+      errors: [],
+      warnings: [],
+    };
 
-    if (!entry.what_it_is) {
-      errors.push(`${prefix}: missing what_it_is`);
+    for (const entry of courses) {
+      const e = getEntry(byEntry, entry.id);
+
+      const hasWii = !!entry.what_it_is;
+      e.checks["what_it_is"] = { ok: hasWii, detail: hasWii ? undefined : "missing" };
+      if (!hasWii) {
+        const msg = "Missing what_it_is";
+        g.errors.push(`${entry.id}: ${msg}`);
+        e.errors.push(msg);
+      }
+
+      const hasCopy = !!entry.cta_copy;
+      e.checks["cta_copy"] = { ok: hasCopy, detail: hasCopy ? undefined : "missing" };
+      if (!hasCopy) {
+        const msg = "Missing cta_copy";
+        g.errors.push(`${entry.id}: ${msg}`);
+        e.errors.push(msg);
+        continue;
+      }
+
+      const { eyebrow, title, body, buttonText } = entry.cta_copy!;
+      const copyResult = validateCtaCopy(entry.id, eyebrow, title, body, buttonText);
+      Object.assign(e.checks, copyResult.checks);
+      for (const copyErr of copyResult.errors) {
+        const msg = copyErr.replace(`${entry.id}: `, "");
+        g.errors.push(copyErr);
+        e.errors.push(msg);
+      }
+
+      const nameInTitle = title.toLowerCase().includes(entry.name.toLowerCase());
+      e.checks["nameInTitle"] = { ok: nameInTitle, detail: nameInTitle ? undefined : `"${entry.name}" not in title` };
+      if (!nameInTitle) {
+        const msg = `Title "${title}" does not contain product name "${entry.name}"`;
+        g.warnings.push(`${entry.id}: ${msg}`);
+        e.warnings.push(msg);
+      }
     }
 
-    if (!entry.url) {
-      errors.push(`${prefix}: missing url`);
-    } else if (!entry.url.startsWith("/course/")) {
-      errors.push(`${prefix}: url must start with "/course/", got "${entry.url}"`);
-    }
-
-    if (!entry.cta_copy) {
-      errors.push(`${prefix}: missing cta_copy`);
-      continue;
-    }
-
-    const { eyebrow, title, body, buttonText } = entry.cta_copy;
-
-    if (buttonText !== WAITLIST_BUTTON_TEXT) {
-      errors.push(`${prefix}: buttonText must be "${WAITLIST_BUTTON_TEXT}", got "${buttonText}"`);
-    }
-
-    errors.push(...validateCtaCopy(prefix, eyebrow, title, body, buttonText));
+    errors.push(...g.errors);
+    warnings.push(...g.warnings);
+    groups.push(g);
   }
 
-  // --- Coverage checks (if category slugs provided) ---
+  // --- Group 5: Category coverage ---
   if (categorySlugs) {
+    const g: CheckGroup = {
+      name: "Category Coverage",
+      description: "community + course entry per category, orphan detection",
+      itemCount: categorySlugs.length,
+      errors: [],
+      warnings: [],
+    };
+
     const communitySlugSet = new Set(
       perCatCommunities.map((c) => c.id.replace(/^community-/, "")),
     );
     const courseSlugSet = new Set(
       courses.map((c) => c.id.replace(/^course-/, "")),
     );
-    const freebieSlugSet = new Set(
-      freebies.map((c) => c.id.replace(/^freebie-/, "")),
-    );
-    const waitlistSlugSet = new Set(
-      waitlists.map((c) => c.id.replace(/^waitlist-/, "")),
-    );
 
     for (const slug of categorySlugs) {
       if (!communitySlugSet.has(slug)) {
-        errors.push(`Missing per-category community entry for "${slug}"`);
+        const id = `community-${slug}`;
+        const msg = "Missing entry";
+        g.errors.push(`Missing per-category community entry for "${slug}"`);
+        getEntry(byEntry, id).errors.push(msg);
       }
       if (!courseSlugSet.has(slug)) {
-        errors.push(`Missing course entry for "${slug}"`);
-      }
-      if (!freebieSlugSet.has(slug)) {
-        errors.push(`Missing freebie entry for "${slug}"`);
-      }
-      if (!waitlistSlugSet.has(slug)) {
-        warnings.push(`Missing waitlist entry for "${slug}"`);
+        const id = `course-${slug}`;
+        const msg = "Missing entry";
+        g.errors.push(`Missing course entry for "${slug}"`);
+        getEntry(byEntry, id).errors.push(msg);
       }
     }
 
-    // Check for orphan entries (slugs not in taxonomy)
     const slugSet = new Set(categorySlugs);
     for (const slug of communitySlugSet) {
       if (!slugSet.has(slug)) {
-        warnings.push(`Community entry "community-${slug}" doesn't match any taxonomy category`);
+        const id = `community-${slug}`;
+        const msg = "Doesn't match any taxonomy category";
+        g.warnings.push(`Community entry "${id}" doesn't match any taxonomy category`);
+        getEntry(byEntry, id).warnings.push(msg);
       }
     }
     for (const slug of courseSlugSet) {
       if (!slugSet.has(slug)) {
-        warnings.push(`Course entry "course-${slug}" doesn't match any taxonomy category`);
+        const id = `course-${slug}`;
+        const msg = "Doesn't match any taxonomy category";
+        g.warnings.push(`Course entry "${id}" doesn't match any taxonomy category`);
+        getEntry(byEntry, id).warnings.push(msg);
       }
     }
-    for (const slug of waitlistSlugSet) {
-      if (!slugSet.has(slug)) {
-        warnings.push(`Waitlist entry "waitlist-${slug}" doesn't match any taxonomy category`);
-      }
-    }
+
+    errors.push(...g.errors);
+    warnings.push(...g.warnings);
+    groups.push(g);
   }
 
-  return { errors, warnings };
+  // --- Group 6: Quiz community coverage ---
+  if (quizSlugs) {
+    const g: CheckGroup = {
+      name: "Quiz Community Coverage",
+      description: "community-quiz-{slug} entry per quiz",
+      itemCount: quizSlugs.length,
+      errors: [],
+      warnings: [],
+    };
+
+    const quizCommunitySlugSet = new Set(
+      quizCommunities.map((c) => c.id.replace(/^community-quiz-/, "")),
+    );
+
+    for (const slug of quizSlugs) {
+      if (!quizCommunitySlugSet.has(slug)) {
+        const id = `community-quiz-${slug}`;
+        const msg = "Missing entry";
+        g.errors.push(`Missing quiz community entry for "${slug}" (expected "${id}")`);
+        getEntry(byEntry, id).errors.push(msg);
+      }
+    }
+
+    errors.push(...g.errors);
+    warnings.push(...g.warnings);
+    groups.push(g);
+  }
+
+  return { errors, warnings, groups, byEntry };
 }

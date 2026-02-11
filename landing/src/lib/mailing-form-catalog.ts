@@ -1,26 +1,26 @@
 /**
- * CTA catalog lookup — reads cta_catalog.json and provides
- * category-specific freebie/course data for page rendering.
+ * Mailing form catalog lookup — reads mailing_form_catalog.json and provides
+ * category-specific freebie/waitlist data for page rendering.
  */
 
 import fs from "fs/promises";
 import path from "path";
 
-import type { CtaDefinition } from "@steady-parent/content-spec";
+import type { MailingFormEntry } from "@steady-parent/content-spec";
 
 const CATALOG_PATHS = [
-  path.join(process.cwd(), "mdx-sources", "cta_catalog.json"),
-  path.join(process.cwd(), "..", "content-plan", "cta_catalog.json"),
+  path.join(process.cwd(), "mdx-sources", "mailing_form_catalog.json"),
+  path.join(process.cwd(), "..", "content-plan", "mailing_form_catalog.json"),
 ];
 
-let catalogCache: CtaDefinition[] | null = null;
+let catalogCache: MailingFormEntry[] | null = null;
 
-async function loadCatalog(): Promise<CtaDefinition[]> {
+async function loadCatalog(): Promise<MailingFormEntry[]> {
   if (catalogCache) return catalogCache;
   for (const p of CATALOG_PATHS) {
     try {
       const raw = await fs.readFile(p, "utf-8");
-      catalogCache = JSON.parse(raw) as CtaDefinition[];
+      catalogCache = JSON.parse(raw) as MailingFormEntry[];
       return catalogCache;
     } catch {
       continue;
@@ -29,17 +29,17 @@ async function loadCatalog(): Promise<CtaDefinition[]> {
   return [];
 }
 
-export async function getAllWaitlists(): Promise<CtaDefinition[]> {
+export async function getAllWaitlists(): Promise<MailingFormEntry[]> {
   const catalog = await loadCatalog();
   return catalog.filter((c) => c.type === "waitlist");
 }
 
 export async function getWaitlistBySlug(
   slug: string,
-): Promise<CtaDefinition | null> {
+): Promise<MailingFormEntry | null> {
   const catalog = await loadCatalog();
   const waitlist = catalog.find(
-    (c) => c.type === "waitlist" && c.url === `/course/${slug}/`,
+    (c) => c.type === "waitlist" && c.pageUrlPattern === `/course/${slug}/`,
   );
   return waitlist ?? null;
 }

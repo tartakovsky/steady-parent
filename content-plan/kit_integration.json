@@ -1,0 +1,33 @@
+{
+  "customFields": ["quiz_result_url"],
+  "subscriberApiRoutes": {
+    "quiz": "/api/quiz-subscribe",
+    "blogFreebie": "/api/freebie-subscribe"
+  },
+  "localStorageKey": "sp_subscriber_email",
+  "quizSubscribeFlow": {
+    "description": "Each quiz email gate submits to /api/quiz-subscribe, which creates/updates Kit subscriber, sets quiz_result_url field, adds quiz tag + lead tag",
+    "requiredTags": ["lead"],
+    "tagPrefix": "quiz-",
+    "customFieldOnSubmit": "quiz_result_url"
+  },
+  "blogFreebieFlow": {
+    "description": "Blog freebie form submits to /api/freebie-subscribe, creates/updates Kit subscriber, adds freebie tag + lead tag",
+    "requiredTags": ["lead"],
+    "tagPrefix": "freebie-"
+  },
+  "frontendChecks": {
+    "freebieCta": {
+      "file": "src/components/blog/freebie-cta.tsx",
+      "requiredProps": ["onSubmit"]
+    },
+    "quizContainer": {
+      "file": "src/components/quiz/quiz-container.tsx",
+      "requiredPatterns": ["sp_subscriber_email", "subscribeForQuizResults"]
+    },
+    "likertQuiz": {
+      "file": "src/components/quiz/likert-quiz.tsx",
+      "requiredPatterns": ["sp_subscriber_email", "subscribeForQuizResults"]
+    }
+  }
+}
