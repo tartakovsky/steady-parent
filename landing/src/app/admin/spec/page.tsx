@@ -170,6 +170,7 @@ interface SpecData {
   crossLinkDetail: CrossLinkDetail | null;
   formTagMappings: FormTagMapping[] | null;
   integrationSpec: IntegrationSpec | null;
+  quizPreviewCtas: Record<string, CtaCopy> | null;
 }
 
 type Tab = "taxonomy" | "pageTypes" | "crossLinks" | "ctas" | "mailing";
@@ -229,6 +230,7 @@ function SpecPageInner() {
           integrationSpec={data.integrationSpec}
           mailingFormCatalog={data.mailingFormCatalog}
           quizTaxonomy={data.quizTaxonomy}
+          quizPreviewCtas={data.quizPreviewCtas}
         />
       )}
     </div>
@@ -940,12 +942,14 @@ function MailingFormsTab({
   integrationSpec,
   mailingFormCatalog,
   quizTaxonomy,
+  quizPreviewCtas,
 }: {
   mailingTags: MailingTag[] | null;
   formTagMappings: FormTagMapping[] | null;
   integrationSpec: IntegrationSpec | null;
   mailingFormCatalog: MailingFormEntry[] | null;
   quizTaxonomy: { entries: QuizEntry[] } | null;
+  quizPreviewCtas: Record<string, CtaCopy> | null;
 }) {
   if (!mailingTags && !formTagMappings && !integrationSpec && !mailingFormCatalog)
     return <p className="text-muted-foreground">No mailing form data.</p>;
@@ -1136,6 +1140,7 @@ function MailingFormsTab({
               <tr className="border-b bg-muted/50">
                 <th className="px-3 py-2 text-left font-medium">Quiz</th>
                 <th className="px-3 py-2 text-left font-medium">Page URL</th>
+                <th className="px-3 py-2 text-left font-medium">Copy</th>
                 <th className="px-3 py-2 text-left font-medium">Tags</th>
                 <th className="px-3 py-2 text-left font-medium">Endpoint</th>
               </tr>
@@ -1144,6 +1149,7 @@ function MailingFormsTab({
               {quizGates.map((gate) => {
                 const quizSlug = gate.id.replace(/^quiz-gate-/, "");
                 const quiz = quizBySlug.get(quizSlug);
+                const previewCopy = quizPreviewCtas?.[quizSlug];
                 return (
                   <tr key={gate.id} className="border-b hover:bg-muted/30">
                     <td className="px-3 py-2">
@@ -1160,6 +1166,9 @@ function MailingFormsTab({
                     </td>
                     <td className="px-3 py-2 font-mono text-xs text-muted-foreground">
                       {gate.pageUrlPattern}
+                    </td>
+                    <td className="px-3 py-2">
+                      <CtaCopyCell copy={previewCopy} />
                     </td>
                     <td className="px-3 py-2">
                       <div className="flex flex-wrap gap-1">

@@ -11,8 +11,11 @@ import {
   MailingFormCatalogSchema,
   validateKitIntegration,
   validateMailingFormCatalog,
+  validateCtaCopy,
+  PREVIEW_BUTTON_TEXT,
 } from "@steady-parent/content-spec";
 import type { IntegrationValidationResult, EntryValidation } from "@steady-parent/content-spec";
+import { quizzes } from "@/lib/quiz";
 
 import { db } from "@/lib/db";
 import { kitTags as kitTagsTable } from "@/lib/db/schema";
@@ -158,6 +161,38 @@ export async function GET() {
     // Run mailing form validation for per-entry inline results
     const mfValidation = validateMailingFormCatalog(mailingFormCatalog, categorySlugs, quizSlugs);
     mailingByEntry = mfValidation.byEntry;
+
+    // Patch quiz-gate entries with previewCta from quiz JSON files
+    for (const slug of quizSlugs) {
+      const quiz = quizzes[slug];
+      const previewCta = quiz?.meta?.previewCta;
+      if (!previewCta) continue;
+
+      const entryId = `quiz-gate-${slug}`;
+      const ev = mailingByEntry[entryId];
+      if (!ev) continue;
+
+      const { eyebrow, title, body, buttonText } = previewCta;
+
+      // Replace "missing cta_copy" error with actual validation
+      ev.errors = ev.errors.filter((e) => e !== "missing cta_copy");
+      ev.checks["cta_copy"] = { ok: true, detail: "from quiz JSON" };
+
+      // Validate buttonText
+      const btnOk = buttonText === PREVIEW_BUTTON_TEXT;
+      ev.checks["buttonText"] = { ok: btnOk, detail: btnOk ? undefined : `"${buttonText}"` };
+      if (!btnOk) {
+        ev.errors.push(`buttonText must be "${PREVIEW_BUTTON_TEXT}"`);
+      }
+
+      // Run standard copy validation (word counts, forbidden terms)
+      const copyResult = validateCtaCopy(entryId, eyebrow, title, body, buttonText);
+      Object.assign(ev.checks, copyResult.checks);
+      for (const copyErr of copyResult.errors) {
+        const msg = copyErr.replace(`${entryId}: `, "");
+        ev.errors.push(msg);
+      }
+    }
 
     // Live Kit state
     const customFields = await fetchKitCustomFields();

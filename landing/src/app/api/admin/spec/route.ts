@@ -15,6 +15,7 @@ import {
   LinkPlanSchema,
   buildCrossLinkDetail,
 } from "@steady-parent/content-spec";
+import { quizzes } from "@/lib/quiz";
 
 function getContentPlanPath(filename: string): string {
   if (process.env["NODE_ENV"] === "production") {
@@ -55,6 +56,14 @@ export async function GET() {
     crossLinkDetail = buildCrossLinkDetail(linkPlan, taxonomy, quizTaxonomy);
   }
 
+  // Extract previewCta from quiz JSON files for spec display
+  const quizPreviewCtas: Record<string, { eyebrow: string; title: string; body: string; buttonText: string }> = {};
+  for (const [slug, quiz] of Object.entries(quizzes)) {
+    if (quiz?.meta?.previewCta) {
+      quizPreviewCtas[slug] = quiz.meta.previewCta;
+    }
+  }
+
   return NextResponse.json({
     taxonomy,
     quizTaxonomy,
@@ -66,5 +75,6 @@ export async function GET() {
     crossLinkDetail,
     formTagMappings,
     integrationSpec,
+    quizPreviewCtas,
   });
 }
