@@ -140,7 +140,7 @@ export function validateMailingFormCatalog(
       ev.errors.push(`buttonText must be "${WAITLIST_BUTTON_TEXT}"`);
     }
 
-    const copyResult = validateCtaCopy(prefix, eyebrow, title, body, buttonText);
+    const copyResult = validateCtaCopy(prefix, eyebrow, title, body, buttonText, { titleMin: 5, titleMax: 12, bodyMin: 20, bodyMax: 30 });
     Object.assign(ev.checks, copyResult.checks);
     for (const copyErr of copyResult.errors) {
       const msg = copyErr.replace(`${prefix}: `, "");

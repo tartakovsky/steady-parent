@@ -63,12 +63,14 @@ export function validateCtaCopy(
   title: string,
   body: string,
   _buttonText: string,
-  options?: { titleMin?: number; titleMax?: number },
+  options?: { titleMin?: number; titleMax?: number; bodyMin?: number; bodyMax?: number },
 ): { errors: string[]; checks: Record<string, EntryCheck> } {
   const errs: string[] = [];
   const checks: Record<string, EntryCheck> = {};
   const titleMin = options?.titleMin ?? 3;
   const titleMax = options?.titleMax ?? 8;
+  const bodyMin = options?.bodyMin ?? 8;
+  const bodyMax = options?.bodyMax ?? 24;
 
   const eyebrowWc = wordCount(eyebrow);
   const eyebrowOk = eyebrowWc >= 2 && eyebrowWc <= 5;
@@ -85,10 +87,10 @@ export function validateCtaCopy(
   }
 
   const bodyWc = wordCount(body);
-  const bodyOk = bodyWc >= 8 && bodyWc <= 24;
-  checks["body"] = { ok: bodyOk, detail: `${bodyWc}w` + (bodyOk ? "" : " (8-24)") };
+  const bodyOk = bodyWc >= bodyMin && bodyWc <= bodyMax;
+  checks["body"] = { ok: bodyOk, detail: `${bodyWc}w` + (bodyOk ? "" : ` (${bodyMin}-${bodyMax})`) };
   if (!bodyOk) {
-    errs.push(`${prefix}: body is ${bodyWc} words (must be 8-24)`);
+    errs.push(`${prefix}: body is ${bodyWc} words (must be ${bodyMin}-${bodyMax})`);
   }
 
   const allText = [eyebrow, title, body, _buttonText].join(" ");
