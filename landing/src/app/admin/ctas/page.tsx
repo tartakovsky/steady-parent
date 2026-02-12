@@ -315,9 +315,12 @@ function GlobalCommunityRow({ entry }: { entry?: EntryValidation | undefined }) 
 const ARTICLE_CHECK_COLUMNS = [
   { key: "cta", label: "CTA" },
   { key: "href", label: "Href" },
+  { key: "match", label: "Match" },
   { key: "eyebrow", label: "Eyebrow" },
   { key: "title", label: "Title" },
   { key: "body", label: "Body" },
+  { key: "clean", label: "Clean" },
+  { key: "founder", label: "Founder" },
   { key: "buttonText", label: "Button" },
 ];
 

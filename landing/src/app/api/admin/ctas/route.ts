@@ -8,7 +8,10 @@ import {
   MailingFormCatalogSchema,
   QuizTaxonomySchema,
   validateCtaCatalog,
+  validateCtaCopy,
   extractCTAsFromMdx,
+  COMMUNITY_BUTTON_TEXT,
+  COMMUNITY_FOUNDER_LINE,
 } from "@steady-parent/content-spec";
 import type { ExtractedCTA, EntryCheck } from "@steady-parent/content-spec";
 import { blogPosts } from "@/content/blog/posts";
@@ -53,43 +56,51 @@ function buildArticleCTAChecks(
   if (!present) return checks;
 
   const cta = matching[0]!;
-  if (!catalogEntry) {
-    checks["href"] = { ok: false, detail: "no catalog entry" };
-    return checks;
-  }
 
-  // Href check
-  const expectedHref = catalogEntry.url;
+  // Href check — compare against catalog URL
+  const expectedHref = catalogEntry?.url;
   const actualHref = cta.props["href"];
-  const hrefOk = !!actualHref && actualHref === expectedHref;
+  const hrefOk = !!actualHref && !!expectedHref && actualHref === expectedHref;
   checks["href"] = {
     ok: hrefOk,
     detail: !actualHref
       ? "missing"
-      : hrefOk
-        ? undefined
-        : `got ${actualHref}`,
+      : !expectedHref
+        ? "no catalog url"
+        : hrefOk
+          ? undefined
+          : `got ${actualHref}`,
   };
 
-  // Copy checks
-  if (catalogEntry.cta_copy) {
+  // Copy match — does deployed copy match catalog?
+  if (catalogEntry?.cta_copy) {
     const { eyebrow, title, body, buttonText } = catalogEntry.cta_copy;
-    checks["eyebrow"] = {
-      ok: cta.props["eyebrow"] === eyebrow,
-      detail: cta.props["eyebrow"] !== eyebrow ? "mismatch" : undefined,
-    };
-    checks["title"] = {
-      ok: cta.props["title"] === title,
-      detail: cta.props["title"] !== title ? "mismatch" : undefined,
-    };
-    checks["body"] = {
-      ok: cta.props["body"] === body,
-      detail: cta.props["body"] !== body ? "mismatch" : undefined,
-    };
-    checks["buttonText"] = {
-      ok: cta.props["buttonText"] === buttonText,
-      detail: cta.props["buttonText"] !== buttonText ? "mismatch" : undefined,
-    };
+    const allMatch =
+      cta.props["eyebrow"] === eyebrow &&
+      cta.props["title"] === title &&
+      cta.props["body"] === body &&
+      cta.props["buttonText"] === buttonText;
+    checks["match"] = { ok: allMatch, detail: allMatch ? undefined : "differs from catalog" };
+  }
+
+  // Full copy validation on deployed props — word counts, forbidden terms, etc.
+  const eyebrow = cta.props["eyebrow"] ?? "";
+  const title = cta.props["title"] ?? "";
+  const body = cta.props["body"] ?? "";
+  const buttonText = cta.props["buttonText"] ?? "";
+
+  if (eyebrow && title && body) {
+    const copyResult = validateCtaCopy("_", eyebrow, title, body, buttonText);
+    Object.assign(checks, copyResult.checks);
+  }
+
+  // Community-specific: founder line + button text
+  if (component === "CommunityCTA") {
+    const founderOk = body.includes(COMMUNITY_FOUNDER_LINE);
+    checks["founder"] = { ok: founderOk, detail: founderOk ? undefined : "missing" };
+
+    const btnOk = buttonText === COMMUNITY_BUTTON_TEXT;
+    checks["buttonText"] = { ok: btnOk, detail: btnOk ? buttonText : `"${buttonText}"` };
   }
 
   return checks;
