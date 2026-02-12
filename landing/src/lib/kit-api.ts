@@ -29,32 +29,56 @@ interface KitSubscriber {
 }
 
 /**
- * Create or retrieve a Kit subscriber by email.
- * Kit's POST /subscribers is idempotent — returns existing subscriber if email matches.
- * Pass `fields` to set custom fields (e.g., { quiz_result_url: "...", timezone: "..." }).
+ * Create or retrieve a Kit subscriber by email, then update custom fields.
+ *
+ * Kit v4's POST /subscribers is idempotent — returns existing subscriber if
+ * email matches, but does NOT update custom fields on existing subscribers.
+ * So we always follow up with PUT /subscribers/{id} when fields are provided.
  */
 export async function createOrUpdateSubscriber(
   email: string,
   fields?: Record<string, string>,
 ): Promise<KitSubscriber> {
-  const body: Record<string, unknown> = { email_address: email };
-  if (fields && Object.keys(fields).length > 0) {
-    body["fields"] = fields;
-  }
-
-  const res = await fetch(`${KIT_API_BASE}/subscribers`, {
+  // Step 1: Create or retrieve subscriber
+  const createRes = await fetch(`${KIT_API_BASE}/subscribers`, {
     method: "POST",
     headers: kitHeaders(),
-    body: JSON.stringify(body),
+    body: JSON.stringify({ email_address: email }),
   });
 
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Kit create subscriber failed: ${res.status} ${text}`);
+  if (!createRes.ok) {
+    const text = await createRes.text();
+    throw new Error(`Kit create subscriber failed: ${createRes.status} ${text}`);
   }
 
-  const data = (await res.json()) as { subscriber: KitSubscriber };
-  return data.subscriber;
+  const createData = (await createRes.json()) as { subscriber: KitSubscriber };
+  const subscriber = createData.subscriber;
+
+  // Step 2: Update custom fields via PUT (POST doesn't update existing subscribers)
+  if (fields && Object.keys(fields).length > 0) {
+    const updateRes = await fetch(
+      `${KIT_API_BASE}/subscribers/${subscriber.id}`,
+      {
+        method: "PUT",
+        headers: kitHeaders(),
+        body: JSON.stringify({ fields }),
+      },
+    );
+
+    if (!updateRes.ok) {
+      const text = await updateRes.text();
+      throw new Error(
+        `Kit update subscriber fields failed: ${updateRes.status} ${text}`,
+      );
+    }
+
+    const updateData = (await updateRes.json()) as {
+      subscriber: KitSubscriber;
+    };
+    return updateData.subscriber;
+  }
+
+  return subscriber;
 }
 
 /**
@@ -79,6 +103,7 @@ export async function addTagToSubscriber(
 
 /**
  * Remove a tag from a subscriber by subscriber ID.
+ * Kit v4 endpoint: DELETE /v4/tags/{tag_id}/subscribers/{subscriber_id}
  * Used for quiz-completed remove+re-add trick to force automation re-trigger.
  * Silently succeeds if the tag wasn't present (404 is OK).
  */
@@ -87,7 +112,7 @@ export async function removeTagFromSubscriber(
   tagId: number,
 ): Promise<void> {
   const res = await fetch(
-    `${KIT_API_BASE}/subscribers/${subscriberId}/tags/${tagId}`,
+    `${KIT_API_BASE}/tags/${tagId}/subscribers/${subscriberId}`,
     { method: "DELETE", headers: kitHeaders() },
   );
   // 204 = removed, 404 = wasn't there — both are fine
