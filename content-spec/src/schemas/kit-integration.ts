@@ -28,6 +28,7 @@ export const KitIntegrationSpecSchema = z.object({
   customFields: z.array(z.string().min(1)),
   subscriberApiRoutes: z.record(z.string(), z.string().min(1)),
   localStorageKey: z.string().min(1),
+  requiredSequences: z.record(z.string(), z.string().min(1)).optional(),
   quizSubscribeFlow: QuizSubscribeFlowSchema,
   blogFreebieFlow: BlogFreebieFlowSchema,
   frontendChecks: z.record(z.string(), FrontendCheckSchema),

@@ -32,6 +32,9 @@
     "requiredTags": ["lead"],
     "tagPrefix": "waitlist-"
   },
+  "requiredSequences": {
+    "quizResults": "Quiz Results Email"
+  },
   "frontendChecks": {
     "freebieCta": {
       "file": "src/components/blog/freebie-cta.tsx",

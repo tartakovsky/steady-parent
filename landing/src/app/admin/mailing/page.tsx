@@ -71,6 +71,7 @@ interface Infrastructure {
   kitQuizTagsReady: boolean;
   freebieTagCount: number;
   quizTagCount: number;
+  quizResultsSequenceReady: boolean;
 }
 
 interface MailingResponse {
@@ -143,11 +144,12 @@ export default function MailingFormsValidationPage() {
         infrastructure.kitCustomFieldReady,
         infrastructure.kitFreebieTagsReady,
         infrastructure.kitQuizTagsReady,
+        infrastructure.quizResultsSequenceReady,
       ].filter((v) => !v).length
     : 0;
   const totalErrors = catalogErrors + deploymentIssues + infraFailures;
   const totalWarnings = catalogWarnings;
-  const totalScope = Object.keys(byEntry).length + totalArticles + (infrastructure ? 9 : 0);
+  const totalScope = Object.keys(byEntry).length + totalArticles + (infrastructure ? 10 : 0);
 
   // Coverage sets for Kit form mapping column
   const blogMappingSet = new Set(coverage?.blogMappings ?? []);
@@ -227,6 +229,7 @@ export default function MailingFormsValidationPage() {
     { key: "frontend", label: "Frontend" },
     { key: "kit_field", label: "Kit Field" },
     { key: "kit_tag", label: "Kit Tag" },
+    { key: "kit_seq", label: "Kit Seq" },
   ];
 
   return (
@@ -257,6 +260,7 @@ export default function MailingFormsValidationPage() {
               <div>Kit custom field: <BoolStat ok={infrastructure.kitCustomFieldReady} label="quiz_result_url" /></div>
               <div>Kit freebie tags: <BoolStat ok={infrastructure.kitFreebieTagsReady} label={`${infrastructure.freebieTagCount} tags in Kit`} /></div>
               <div>Kit quiz tags: <BoolStat ok={infrastructure.kitQuizTagsReady} label={`${infrastructure.quizTagCount} tags in Kit`} /></div>
+              <div>Quiz results sequence: <BoolStat ok={infrastructure.quizResultsSequenceReady} label="Kit email sequence" /></div>
             </>
           )}
         </div>

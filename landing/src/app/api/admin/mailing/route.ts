@@ -38,19 +38,23 @@ function getSrcPath(relativePath: string): string {
 }
 
 // ---------------------------------------------------------------------------
-// Kit API: fetch custom fields
+// Kit API: fetch custom fields + sequences
 // ---------------------------------------------------------------------------
 
-async function fetchKitCustomFields(): Promise<string[]> {
+function kitApiHeaders(): HeadersInit {
   const apiKey = process.env["KIT_API_KEY"];
-  if (!apiKey) return [];
+  return {
+    ...(apiKey ? { "X-Kit-Api-Key": apiKey } : {}),
+    Accept: "application/json",
+  };
+}
+
+async function fetchKitCustomFields(): Promise<string[]> {
+  if (!process.env["KIT_API_KEY"]) return [];
 
   try {
     const res = await fetch("https://api.kit.com/v4/custom_fields", {
-      headers: {
-        "X-Kit-Api-Key": apiKey,
-        Accept: "application/json",
-      },
+      headers: kitApiHeaders(),
     });
     if (!res.ok) return [];
 
@@ -58,6 +62,24 @@ async function fetchKitCustomFields(): Promise<string[]> {
       custom_fields: { id: number; key: string; name: string }[];
     };
     return data.custom_fields.map((f) => f.key);
+  } catch {
+    return [];
+  }
+}
+
+async function fetchKitSequenceNames(): Promise<string[]> {
+  if (!process.env["KIT_API_KEY"]) return [];
+
+  try {
+    const res = await fetch("https://api.kit.com/v4/sequences", {
+      headers: kitApiHeaders(),
+    });
+    if (!res.ok) return [];
+
+    const data = (await res.json()) as {
+      sequences: { id: number; name: string }[];
+    };
+    return data.sequences.map((s) => s.name);
   } catch {
     return [];
   }
@@ -138,6 +160,7 @@ export async function GET() {
     kitQuizTagsReady: boolean;
     freebieTagCount: number;
     quizTagCount: number;
+    quizResultsSequenceReady: boolean;
   } | null = null;
 
   try {
@@ -275,7 +298,10 @@ export async function GET() {
     }
 
     // Live Kit state
-    const customFields = await fetchKitCustomFields();
+    const [customFields, sequenceNames] = await Promise.all([
+      fetchKitCustomFields(),
+      fetchKitSequenceNames(),
+    ]);
     const liveKitState = {
       customFields,
       forms: [] as { id: number; name: string }[],
@@ -354,6 +380,10 @@ export async function GET() {
         quizMailingTags.every((t) => t.kitTagId != null && kitTagIds.has(t.kitTagId)),
       freebieTagCount: freebieMailingTags.length,
       quizTagCount: quizMailingTags.length,
+      quizResultsSequenceReady:
+        intSpec.requiredSequences?.["quizResults"]
+          ? sequenceNames.includes(intSpec.requiredSequences["quizResults"])
+          : false,
     };
 
     // Patch per-article freebie checks with infrastructure columns
@@ -406,10 +436,14 @@ export async function GET() {
         ev.checks["kit_tag"] = tagInKit
           ? { ok: true, detail: `quiz-${slug}` }
           : { ok: false, detail: `quiz-${slug} not in Kit` };
+        ev.checks["kit_seq"] = infrastructure.quizResultsSequenceReady
+          ? { ok: true }
+          : { ok: false, detail: "no results email sequence" };
         if (!infrastructure.quizApiRoute) ev.errors.push("API route /api/quiz-subscribe missing");
         if (!infrastructure.quizFrontendReady) ev.errors.push("Frontend missing submit handler");
         if (!infrastructure.kitCustomFieldReady) ev.errors.push("Kit custom field quiz_result_url missing");
         if (!tagInKit) ev.errors.push(`Kit tag quiz-${slug} missing`);
+        if (!infrastructure.quizResultsSequenceReady) ev.errors.push("Kit sequence for quiz results email missing");
       }
     }
   } catch {
