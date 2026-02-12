@@ -366,7 +366,7 @@ export async function GET() {
               : { ok: false, detail: "no /api/freebie-subscribe" };
             a.checks["frontend"] = infrastructure.freebieFrontendReady
               ? { ok: true }
-              : { ok: false, detail: "missing onSubmit" };
+              : { ok: false, detail: "missing submit handler" };
           }
         }
       }
@@ -382,9 +382,9 @@ export async function GET() {
           : { ok: false, detail: "no /api/waitlist-subscribe" };
         ev.checks["frontend"] = infrastructure.waitlistFrontendReady
           ? { ok: true }
-          : { ok: false, detail: "CourseHero missing submit" };
+          : { ok: false, detail: "missing submit handler" };
         if (!infrastructure.waitlistApiRoute) ev.errors.push("API route /api/waitlist-subscribe missing");
-        if (!infrastructure.waitlistFrontendReady) ev.errors.push("CourseHero has no submit handler");
+        if (!infrastructure.waitlistFrontendReady) ev.errors.push("Frontend missing submit handler");
       }
 
       // Patch quiz-gate byEntry with infrastructure checks
@@ -396,7 +396,7 @@ export async function GET() {
           : { ok: false, detail: "no /api/quiz-subscribe" };
         ev.checks["frontend"] = infrastructure.quizFrontendReady
           ? { ok: true }
-          : { ok: false, detail: "quiz missing subscribe" };
+          : { ok: false, detail: "missing submit handler" };
         ev.checks["kit_field"] = infrastructure.kitCustomFieldReady
           ? { ok: true }
           : { ok: false, detail: "no quiz_result_url" };
@@ -407,7 +407,7 @@ export async function GET() {
           ? { ok: true, detail: `quiz-${slug}` }
           : { ok: false, detail: `quiz-${slug} not in Kit` };
         if (!infrastructure.quizApiRoute) ev.errors.push("API route /api/quiz-subscribe missing");
-        if (!infrastructure.quizFrontendReady) ev.errors.push("Quiz frontend missing subscribe logic");
+        if (!infrastructure.quizFrontendReady) ev.errors.push("Frontend missing submit handler");
         if (!infrastructure.kitCustomFieldReady) ev.errors.push("Kit custom field quiz_result_url missing");
         if (!tagInKit) ev.errors.push(`Kit tag quiz-${slug} missing`);
       }
