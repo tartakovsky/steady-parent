@@ -43,6 +43,9 @@ export const kitTags: Record<string, number> = {
   "freebie-parenting-approach": 15744951,
   "freebie-parenting-science":  15744952,
 
+  // Quiz automation trigger
+  "quiz-completed":                15875240,
+
   // Quiz freebies (24)
   "quiz-parenting-style":          15744953,
   "quiz-bedtime-battle-style":     15744954,

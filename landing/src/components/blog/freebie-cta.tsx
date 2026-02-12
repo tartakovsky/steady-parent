@@ -1,10 +1,12 @@
 "use client";
 
+import { useRef, useState } from "react";
 import type React from "react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
+import { Loader2, CheckCircle2 } from "lucide-react";
 
 interface FreebieCTAProps {
   eyebrow?: string;
@@ -14,6 +16,7 @@ interface FreebieCTAProps {
   buttonText?: string;
   fullWidth?: boolean;
   variant?: "primary" | "secondary";
+  onSubmit?: ((email: string) => Promise<void>) | undefined;
 }
 
 const defaults = {
@@ -32,8 +35,65 @@ export function FreebieCTA({
   buttonText = defaults.buttonText,
   fullWidth = false,
   variant = "primary",
+  onSubmit,
 }: FreebieCTAProps): React.JSX.Element {
   const isPrimary = variant === "primary";
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const email = inputRef.current?.value?.trim();
+    if (!email || !onSubmit) return;
+
+    setStatus("loading");
+    setErrorMsg("");
+    try {
+      await onSubmit(email);
+      setStatus("success");
+    } catch {
+      setStatus("error");
+      setErrorMsg("Something went wrong. Please try again.");
+    }
+  }
+
+  const isDisabled = status === "loading" || status === "success";
+
+  const formContent = (size: "lg" | "sm") => (
+    <>
+      <form
+        className="flex w-full flex-col gap-3 sm:flex-row"
+        onSubmit={handleSubmit}
+      >
+        <Input
+          ref={inputRef}
+          placeholder={inputPlaceholder}
+          type="email"
+          required
+          disabled={isDisabled}
+          className={size === "lg" ? "min-h-14 flex-1 text-lg" : "min-h-12 flex-1 text-base"}
+        />
+        <Button
+          type="submit"
+          variant={isPrimary ? "outline" : "default"}
+          size="lg"
+          disabled={isDisabled}
+          className={size === "lg" ? "h-14 px-10 text-lg" : "h-12 px-6 text-base"}
+        >
+          {status === "loading" && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          {status === "success" ? (
+            <><CheckCircle2 className="mr-2 h-4 w-4" /> Sent!</>
+          ) : (
+            buttonText
+          )}
+        </Button>
+      </form>
+      {status === "error" && (
+        <p className="text-sm text-red-600 mt-2">{errorMsg}</p>
+      )}
+    </>
+  );
 
   if (fullWidth) {
     return (
@@ -53,27 +113,7 @@ export function FreebieCTA({
               <h2 className="heading-lg text-foreground">{title}</h2>
               <p className="text-muted-foreground text-lg/8 text-pretty">{body}</p>
             </div>
-            <form
-              className="flex w-full flex-col gap-3 sm:flex-row"
-              onSubmit={(e) => {
-                e.preventDefault();
-              }}
-            >
-              <Input
-                placeholder={inputPlaceholder}
-                type="email"
-                required
-                className="min-h-14 flex-1 text-lg"
-              />
-              <Button
-                type="submit"
-                variant={isPrimary ? "outline" : "default"}
-                size="lg"
-                className="h-14 px-10 text-lg"
-              >
-                {buttonText}
-              </Button>
-            </form>
+            {formContent("lg")}
           </div>
         </div>
       </section>
@@ -98,28 +138,7 @@ export function FreebieCTA({
           </h3>
           <p className="text-muted-foreground text-base/7 text-pretty">{body}</p>
         </div>
-
-        <form
-          className="flex w-full flex-col gap-3 sm:flex-row"
-          onSubmit={(e) => {
-            e.preventDefault();
-          }}
-        >
-          <Input
-            placeholder={inputPlaceholder}
-            type="email"
-            required
-            className="min-h-12 flex-1 text-base"
-          />
-          <Button
-            type="submit"
-            variant={isPrimary ? "outline" : "default"}
-            size="lg"
-            className="h-12 px-6 text-base"
-          >
-            {buttonText}
-          </Button>
-        </form>
+        {formContent("sm")}
       </div>
     </section>
   );

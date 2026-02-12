@@ -1,20 +1,36 @@
 {
-  "customFields": ["quiz_result_url"],
+  "customFields": ["quiz_result_url", "timezone"],
   "subscriberApiRoutes": {
     "quiz": "/api/quiz-subscribe",
-    "blogFreebie": "/api/freebie-subscribe"
+    "blogFreebie": "/api/freebie-subscribe",
+    "waitlist": "/api/waitlist-subscribe"
   },
   "localStorageKey": "sp_subscriber_email",
+  "timezoneCapture": {
+    "description": "Every form submission includes the browser timezone via Intl.DateTimeFormat().resolvedOptions().timeZone (e.g. 'America/New_York'). All API routes pass it to Kit as the 'timezone' custom field. Kit does not natively detect timezone — this is the only reliable source. Updated on every submission so it stays current if subscriber moves.",
+    "frontendCode": "Intl.DateTimeFormat().resolvedOptions().timeZone",
+    "kitCustomField": "timezone"
+  },
   "quizSubscribeFlow": {
-    "description": "Each quiz email gate submits to /api/quiz-subscribe, which creates/updates Kit subscriber, sets quiz_result_url field, adds quiz tag + lead tag",
+    "description": "Quiz email gate submits to /api/quiz-subscribe with fromGate:true, which creates/updates Kit subscriber, sets quiz_result_url + timezone fields, adds quiz-specific tag + lead tag, and removes+re-adds quiz-completed tag to trigger Kit automation. When localStorage has email (returning user), quiz completion calls the same endpoint with fromGate:false — tags the subscriber and updates quiz_result_url + timezone but does NOT touch quiz-completed, so no email is sent.",
     "requiredTags": ["lead"],
     "tagPrefix": "quiz-",
-    "customFieldOnSubmit": "quiz_result_url"
+    "automationTriggerTag": "quiz-completed",
+    "customFieldOnSubmit": "quiz_result_url",
+    "fromGateFlag": {
+      "true": "User went through email gate → remove+re-add quiz-completed → Kit automation sends results email",
+      "false": "Silent background call (localStorage had email) → skip quiz-completed → no email"
+    }
   },
   "blogFreebieFlow": {
-    "description": "Blog freebie form submits to /api/freebie-subscribe, creates/updates Kit subscriber, adds freebie tag + lead tag",
+    "description": "Blog freebie form submits to /api/freebie-subscribe, creates/updates Kit subscriber with timezone, adds freebie tag + lead tag",
     "requiredTags": ["lead"],
     "tagPrefix": "freebie-"
+  },
+  "waitlistFlow": {
+    "description": "Course waitlist form submits to /api/waitlist-subscribe, creates/updates Kit subscriber with timezone, adds waitlist tag + lead tag",
+    "requiredTags": ["lead"],
+    "tagPrefix": "waitlist-"
   },
   "frontendChecks": {
     "freebieCta": {
@@ -28,6 +44,10 @@
     "likertQuiz": {
       "file": "src/components/quiz/likert-quiz.tsx",
       "requiredPatterns": ["sp_subscriber_email", "subscribeForQuizResults"]
+    },
+    "courseHero": {
+      "file": "src/components/course/course-hero.tsx",
+      "requiredPatterns": ["fetch", "/api/waitlist-subscribe"]
     }
   }
 }

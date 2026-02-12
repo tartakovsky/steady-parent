@@ -110,6 +110,11 @@
     "kitTagId": 15744952
   },
   {
+    "id": "quiz-completed",
+    "name": "Quiz Completed",
+    "kitTagId": 15875240
+  },
+  {
     "id": "quiz-parenting-style",
     "name": "Quiz Parenting Style",
     "kitTagId": 15744953

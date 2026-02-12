@@ -355,9 +355,10 @@ interface QuizPreviewProps {
   result: AnyResult;
   quizMeta: QuizMeta;
   onRetake: () => void;
+  onEmailSubmit?: (email: string) => Promise<void>;
 }
 
-export function QuizPreview({ result, quizMeta, onRetake }: QuizPreviewProps) {
+export function QuizPreview({ result, quizMeta, onRetake, onEmailSubmit }: QuizPreviewProps) {
   const data = extractPreviewData(result, quizMeta);
   const cta = quizMeta.previewCta;
   const promises = quizMeta.previewPromises;
@@ -492,6 +493,7 @@ export function QuizPreview({ result, quizMeta, onRetake }: QuizPreviewProps) {
             body={cta.body}
             buttonText={cta.buttonText}
             variant="secondary"
+            onSubmit={onEmailSubmit}
           />
         ) : (
           <FreebieCTA
@@ -500,6 +502,7 @@ export function QuizPreview({ result, quizMeta, onRetake }: QuizPreviewProps) {
             body="Your personalized breakdown, action steps, and expert-backed recommendations — all in one email."
             buttonText="Send my results"
             variant="secondary"
+            onSubmit={onEmailSubmit}
           />
         )}
 

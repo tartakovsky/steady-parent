@@ -15,6 +15,37 @@ import {
 } from "@/lib/quiz/quiz-url";
 import type { LikertQuizData, LikertQuizResult } from "@/lib/quiz/quiz-engine";
 
+const STORAGE_KEY = "sp_subscriber_email";
+
+function getBrowserTimezone(): string {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone;
+  } catch {
+    return "";
+  }
+}
+
+function buildResultUrl(): string {
+  const url = new URL(window.location.href);
+  url.searchParams.delete("p");
+  url.searchParams.delete("s");
+  return url.pathname + url.search;
+}
+
+function silentQuizSubscribe(email: string, quizSlug: string) {
+  fetch("/api/quiz-subscribe", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      email,
+      quizSlug,
+      resultUrl: buildResultUrl(),
+      fromGate: false,
+      timezone: getBrowserTimezone(),
+    }),
+  }).catch((err) => console.error("Silent quiz subscribe failed:", err));
+}
+
 interface LikertQuizProps {
   quiz: LikertQuizData;
   onComplete?: (result: LikertQuizResult) => void;
@@ -86,6 +117,49 @@ export function LikertQuiz({ quiz, onComplete }: LikertQuizProps) {
   const answered = Object.keys(answers).length;
   const allAnswered = answered === total;
   const progressPct = Math.round((answered / total) * 100);
+
+  // Check localStorage on mount — if subscriber email exists, skip preview gate
+  useEffect(() => {
+    const savedEmail = localStorage.getItem(STORAGE_KEY);
+    if (savedEmail) {
+      setPreview(false);
+    }
+  }, []);
+
+  // Gate submission handler — passed to QuizPreview → FreebieCTA
+  const subscribeForQuizResults = useCallback(async (email: string) => {
+    const res = await fetch("/api/quiz-subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+        quizSlug: quiz.meta.slug,
+        resultUrl: buildResultUrl(),
+        fromGate: true,
+        timezone: getBrowserTimezone(),
+      }),
+    });
+
+    if (!res.ok) {
+      throw new Error("Subscription failed");
+    }
+
+    localStorage.setItem(STORAGE_KEY, email);
+    setPreview(false);
+  }, [quiz.meta.slug]);
+
+  // When results are shown and gate was skipped (returning user),
+  // silently tag the subscriber for this quiz
+  const silentSubscribeFired = useRef(false);
+  useEffect(() => {
+    if (!preview && !shared && result && !silentSubscribeFired.current) {
+      const savedEmail = localStorage.getItem(STORAGE_KEY);
+      if (savedEmail) {
+        silentSubscribeFired.current = true;
+        silentQuizSubscribe(savedEmail, quiz.meta.slug);
+      }
+    }
+  }, [preview, shared, result, quiz.meta.slug]);
 
   // ── URL state management ──
 
@@ -177,6 +251,7 @@ export function LikertQuiz({ quiz, onComplete }: LikertQuizProps) {
           result={result}
           quizMeta={quiz.meta}
           onRetake={handleRetake}
+          onEmailSubmit={subscribeForQuizResults}
         />
       );
     }
