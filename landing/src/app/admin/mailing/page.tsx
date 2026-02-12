@@ -121,18 +121,24 @@ export default function MailingFormsValidationPage() {
   const totalWarnings = catalogWarnings;
   const totalScope = Object.keys(byEntry).length + totalArticles;
 
-  // Per-type passing counts from byEntry
-  const waitlistsPassing = coverage
-    ? coverage.categorySlugs.filter((s) => { const ev = byEntry[`waitlist-${s}`]; return ev && ev.errors.length === 0; }).length
-    : 0;
-  const quizGatesPassing = coverage
-    ? coverage.quizSlugs.filter((s) => { const ev = byEntry[`quiz-gate-${s}`]; return ev && ev.errors.length === 0; }).length
-    : 0;
-
   // Coverage sets for Kit form mapping column
   const blogMappingSet = new Set(coverage?.blogMappings ?? []);
   const waitlistMappingSet = new Set(coverage?.waitlistMappings ?? []);
   const quizMappingSet = new Set(coverage?.quizMappings ?? []);
+
+  // Per-type passing counts: catalog validation + Kit wiring
+  const waitlistsPassing = coverage
+    ? coverage.categorySlugs.filter((s) => {
+        const ev = byEntry[`waitlist-${s}`];
+        return ev && ev.errors.length === 0 && waitlistMappingSet.has(s);
+      }).length
+    : 0;
+  const quizGatesPassing = coverage
+    ? coverage.quizSlugs.filter((s) => {
+        const ev = byEntry[`quiz-gate-${s}`];
+        return ev && ev.errors.length === 0 && quizMappingSet.has(s);
+      }).length
+    : 0;
 
   // Tag mapping stats
   const mapped = tags.filter((t) => t.configName != null);
