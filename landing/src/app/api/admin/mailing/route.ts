@@ -129,8 +129,10 @@ export async function GET() {
   let infrastructure: {
     freebieApiRoute: boolean;
     quizApiRoute: boolean;
+    waitlistApiRoute: boolean;
     freebieFrontendReady: boolean;
     quizFrontendReady: boolean;
+    waitlistFrontendReady: boolean;
     kitCustomFieldReady: boolean;
     kitFreebieTagsReady: boolean;
     kitQuizTagsReady: boolean;
@@ -320,6 +322,15 @@ export async function GET() {
       categorySlugs,
     );
 
+    // Waitlist-specific code checks (not in kit_integration.json spec)
+    const waitlistApiRouteExists = await fileExists(
+      path.join(process.cwd(), "src", "app", "api", "waitlist-subscribe", "route.ts"),
+    );
+    const courseHeroCheck = await fileContainsPatterns(
+      getSrcPath("components/course/course-hero.tsx"),
+      ["fetch(", "/api/waitlist-subscribe"],
+    );
+
     // Infrastructure readiness flags
     const kitTagIds = new Set(rows.map((r) => r.kitId));
     const freebieMailingTags = mailingTags.filter((t) => t.id.startsWith("freebie-"));
@@ -328,10 +339,12 @@ export async function GET() {
     infrastructure = {
       freebieApiRoute: apiRouteResults["blogFreebie"] ?? false,
       quizApiRoute: apiRouteResults["quiz"] ?? false,
+      waitlistApiRoute: waitlistApiRouteExists,
       freebieFrontendReady: frontendResults["freebieCta"]?.hasPatterns ?? false,
       quizFrontendReady:
         (frontendResults["quizContainer"]?.hasPatterns ?? false) &&
         (frontendResults["likertQuiz"]?.hasPatterns ?? false),
+      waitlistFrontendReady: courseHeroCheck.hasPatterns,
       kitCustomFieldReady: customFields.includes("quiz_result_url"),
       kitFreebieTagsReady:
         rows.length > 0 &&
@@ -356,6 +369,47 @@ export async function GET() {
               : { ok: false, detail: "missing onSubmit" };
           }
         }
+      }
+    }
+
+    // Patch waitlist byEntry with infrastructure checks
+    if (mailingByEntry) {
+      for (const catSlug of categorySlugs) {
+        const ev = mailingByEntry[`waitlist-${catSlug}`];
+        if (!ev) continue;
+        ev.checks["api_route"] = infrastructure.waitlistApiRoute
+          ? { ok: true }
+          : { ok: false, detail: "no /api/waitlist-subscribe" };
+        ev.checks["frontend"] = infrastructure.waitlistFrontendReady
+          ? { ok: true }
+          : { ok: false, detail: "CourseHero missing submit" };
+        if (!infrastructure.waitlistApiRoute) ev.errors.push("API route /api/waitlist-subscribe missing");
+        if (!infrastructure.waitlistFrontendReady) ev.errors.push("CourseHero has no submit handler");
+      }
+
+      // Patch quiz-gate byEntry with infrastructure checks
+      for (const slug of quizSlugs) {
+        const ev = mailingByEntry[`quiz-gate-${slug}`];
+        if (!ev) continue;
+        ev.checks["api_route"] = infrastructure.quizApiRoute
+          ? { ok: true }
+          : { ok: false, detail: "no /api/quiz-subscribe" };
+        ev.checks["frontend"] = infrastructure.quizFrontendReady
+          ? { ok: true }
+          : { ok: false, detail: "quiz missing subscribe" };
+        ev.checks["kit_field"] = infrastructure.kitCustomFieldReady
+          ? { ok: true }
+          : { ok: false, detail: "no quiz_result_url" };
+        // Per-quiz Kit tag check
+        const tagEntry = mailingTags.find((t) => t.id === `quiz-${slug}`);
+        const tagInKit = tagEntry?.kitTagId != null && kitTagIds.has(tagEntry.kitTagId);
+        ev.checks["kit_tag"] = tagInKit
+          ? { ok: true, detail: `quiz-${slug}` }
+          : { ok: false, detail: `quiz-${slug} not in Kit` };
+        if (!infrastructure.quizApiRoute) ev.errors.push("API route /api/quiz-subscribe missing");
+        if (!infrastructure.quizFrontendReady) ev.errors.push("Quiz frontend missing subscribe logic");
+        if (!infrastructure.kitCustomFieldReady) ev.errors.push("Kit custom field quiz_result_url missing");
+        if (!tagInKit) ev.errors.push(`Kit tag quiz-${slug} missing`);
       }
     }
   } catch {

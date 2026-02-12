@@ -62,8 +62,10 @@ interface ArticleInfo {
 interface Infrastructure {
   freebieApiRoute: boolean;
   quizApiRoute: boolean;
+  waitlistApiRoute: boolean;
   freebieFrontendReady: boolean;
   quizFrontendReady: boolean;
+  waitlistFrontendReady: boolean;
   kitCustomFieldReady: boolean;
   kitFreebieTagsReady: boolean;
   kitQuizTagsReady: boolean;
@@ -134,8 +136,10 @@ export default function MailingFormsValidationPage() {
     ? [
         infrastructure.freebieApiRoute,
         infrastructure.quizApiRoute,
+        infrastructure.waitlistApiRoute,
         infrastructure.freebieFrontendReady,
         infrastructure.quizFrontendReady,
+        infrastructure.waitlistFrontendReady,
         infrastructure.kitCustomFieldReady,
         infrastructure.kitFreebieTagsReady,
         infrastructure.kitQuizTagsReady,
@@ -143,7 +147,7 @@ export default function MailingFormsValidationPage() {
     : 0;
   const totalErrors = catalogErrors + deploymentIssues + infraFailures;
   const totalWarnings = catalogWarnings;
-  const totalScope = Object.keys(byEntry).length + totalArticles + (infrastructure ? 7 : 0);
+  const totalScope = Object.keys(byEntry).length + totalArticles + (infrastructure ? 9 : 0);
 
   // Coverage sets for Kit form mapping column
   const blogMappingSet = new Set(coverage?.blogMappings ?? []);
@@ -157,15 +161,12 @@ export default function MailingFormsValidationPage() {
         return ev && ev.errors.length === 0 && waitlistMappingSet.has(s);
       }).length
     : 0;
-  const quizInfraReady =
-    (infrastructure?.quizApiRoute ?? false) &&
-    (infrastructure?.quizFrontendReady ?? false) &&
-    (infrastructure?.kitCustomFieldReady ?? false) &&
-    (infrastructure?.kitQuizTagsReady ?? false);
+  // Quiz-gate and waitlist byEntry now include infrastructure errors directly,
+  // so ev.errors.length === 0 already catches infrastructure failures
   const quizGatesPassing = coverage
     ? coverage.quizSlugs.filter((s) => {
         const ev = byEntry[`quiz-gate-${s}`];
-        return ev && ev.errors.length === 0 && quizMappingSet.has(s) && quizInfraReady;
+        return ev && ev.errors.length === 0 && quizMappingSet.has(s);
       }).length
     : 0;
 
@@ -209,6 +210,8 @@ export default function MailingFormsValidationPage() {
     { key: "title", label: "Title" },
     { key: "body", label: "Body" },
     { key: "clean", label: "No !/bans" },
+    { key: "api_route", label: "API" },
+    { key: "frontend", label: "Frontend" },
   ];
 
   const quizGateColumns = [
@@ -220,6 +223,10 @@ export default function MailingFormsValidationPage() {
     { key: "title", label: "Title" },
     { key: "body", label: "Body" },
     { key: "clean", label: "No !/bans" },
+    { key: "api_route", label: "API" },
+    { key: "frontend", label: "Frontend" },
+    { key: "kit_field", label: "Kit Field" },
+    { key: "kit_tag", label: "Kit Tag" },
   ];
 
   return (
@@ -243,8 +250,10 @@ export default function MailingFormsValidationPage() {
               <div className="border-t border-muted-foreground/20 mt-1.5 pt-1.5" />
               <div>Freebie API route: <BoolStat ok={infrastructure.freebieApiRoute} label="/api/freebie-subscribe" /></div>
               <div>Quiz API route: <BoolStat ok={infrastructure.quizApiRoute} label="/api/quiz-subscribe" /></div>
+              <div>Waitlist API route: <BoolStat ok={infrastructure.waitlistApiRoute} label="/api/waitlist-subscribe" /></div>
               <div>Freebie frontend: <BoolStat ok={infrastructure.freebieFrontendReady} label="FreebieCTA onSubmit handler" /></div>
               <div>Quiz frontend: <BoolStat ok={infrastructure.quizFrontendReady} label="quiz subscribe logic" /></div>
+              <div>Waitlist frontend: <BoolStat ok={infrastructure.waitlistFrontendReady} label="CourseHero submit handler" /></div>
               <div>Kit custom field: <BoolStat ok={infrastructure.kitCustomFieldReady} label="quiz_result_url" /></div>
               <div>Kit freebie tags: <BoolStat ok={infrastructure.kitFreebieTagsReady} label={`${infrastructure.freebieTagCount} tags in Kit`} /></div>
               <div>Kit quiz tags: <BoolStat ok={infrastructure.kitQuizTagsReady} label={`${infrastructure.quizTagCount} tags in Kit`} /></div>
