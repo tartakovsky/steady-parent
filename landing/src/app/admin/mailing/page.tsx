@@ -122,9 +122,6 @@ export default function MailingFormsValidationPage() {
   const totalScope = Object.keys(byEntry).length + totalArticles;
 
   // Per-type passing counts from byEntry
-  const freebiesPassing = coverage
-    ? coverage.categorySlugs.filter((s) => { const ev = byEntry[`freebie-${s}`]; return ev && ev.errors.length === 0; }).length
-    : 0;
   const waitlistsPassing = coverage
     ? coverage.categorySlugs.filter((s) => { const ev = byEntry[`waitlist-${s}`]; return ev && ev.errors.length === 0; }).length
     : 0;
@@ -198,7 +195,6 @@ export default function MailingFormsValidationPage() {
           {coverage ? (
             <>
               <div>Articles: <Fraction n={publishedArticles} total={totalArticles} /></div>
-              <div>Blog freebie forms: <Fraction n={freebiesPassing} total={coverage.categorySlugs.length} /></div>
               <div>In-article freebies: <Fraction n={articlesWithValidFreebies} total={totalArticles} /></div>
               <div>Course waitlist forms: <Fraction n={waitlistsPassing} total={coverage.categorySlugs.length} /></div>
               <div>Quiz gate forms: <Fraction n={quizGatesPassing} total={coverage.quizSlugs.length} /></div>
