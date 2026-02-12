@@ -131,6 +131,7 @@ export function validateCtaCatalog(
   catalog: CtaCatalog,
   categorySlugs?: string[],
   quizSlugs?: string[],
+  coursePageUrls?: Set<string>,
 ): CtaValidationResult {
   const errors: string[] = [];
   const warnings: string[] = [];
@@ -187,6 +188,9 @@ export function validateCtaCatalog(
     groups.push(g);
   }
 
+  const globalCommunityUrl = globalCommunity?.url;
+  const categorySlugSet = new Set(categorySlugs ?? []);
+
   // Helper: validate a community entry (per-category or quiz)
   function validateCommunityEntry(
     entry: CtaCatalog[number],
@@ -194,6 +198,35 @@ export function validateCtaCatalog(
     g: CheckGroup,
     checkPromises: boolean,
   ) {
+    // pageUrl check — derive from slug
+    const isQuiz = entry.id.startsWith("community-quiz-");
+    const slug = isQuiz
+      ? entry.id.replace(/^community-quiz-/, "")
+      : entry.id.replace(/^community-/, "");
+    const pagePattern = isQuiz ? `/quiz/${slug}` : `/blog/${slug}/*`;
+    const pageOk = isQuiz ? true : categorySlugSet.has(slug);
+    e.checks["pageUrl"] = { ok: pageOk, detail: pagePattern + (pageOk ? "" : " (no category)") };
+    if (!pageOk) {
+      const msg = `Page ${pagePattern} — category "${slug}" not in taxonomy`;
+      g.errors.push(`${entry.id}: ${msg}`);
+      e.errors.push(msg);
+    }
+
+    // url check — CTA destination
+    const hasUrl = !!entry.url;
+    const urlMatchesGlobal = hasUrl && entry.url === globalCommunityUrl;
+    const urlOk = hasUrl && urlMatchesGlobal;
+    e.checks["url"] = { ok: urlOk, detail: hasUrl ? entry.url : "missing" };
+    if (!hasUrl) {
+      const msg = "Missing url";
+      g.errors.push(`${entry.id}: ${msg}`);
+      e.errors.push(msg);
+    } else if (!urlMatchesGlobal) {
+      const msg = `url "${entry.url}" does not match global community url`;
+      g.warnings.push(`${entry.id}: ${msg}`);
+      e.warnings.push(msg);
+    }
+
     const hasCopy = !!entry.cta_copy;
     e.checks["cta_copy"] = { ok: hasCopy, detail: hasCopy ? undefined : "missing" };
     if (!hasCopy) {
@@ -295,6 +328,42 @@ export function validateCtaCatalog(
 
     for (const entry of courses) {
       const e = getEntry(byEntry, entry.id);
+      const slug = entry.id.replace(/^course-/, "");
+
+      // pageUrl check — where article CTAs reference this course
+      const pagePattern = `/blog/${slug}/*`;
+      const pageOk = categorySlugSet.has(slug);
+      e.checks["pageUrl"] = { ok: pageOk, detail: pagePattern + (pageOk ? "" : " (no category)") };
+      if (!pageOk) {
+        const msg = `Page ${pagePattern} — category "${slug}" not in taxonomy`;
+        g.errors.push(`${entry.id}: ${msg}`);
+        e.errors.push(msg);
+      }
+
+      // url check — CTA destination (course landing page)
+      const hasUrl = !!entry.url;
+      const urlStartsOk = hasUrl && entry.url!.startsWith("/course/");
+      const urlHasWaitlist = hasUrl && coursePageUrls ? coursePageUrls.has(entry.url!) : true;
+      const urlOk = hasUrl && urlStartsOk && urlHasWaitlist;
+      e.checks["url"] = {
+        ok: urlOk,
+        detail: hasUrl
+          ? entry.url + (!urlStartsOk ? " (need /course/)" : !urlHasWaitlist ? " (no waitlist)" : "")
+          : "missing",
+      };
+      if (!hasUrl) {
+        const msg = "Missing url";
+        g.errors.push(`${entry.id}: ${msg}`);
+        e.errors.push(msg);
+      } else if (!urlStartsOk) {
+        const msg = `url "${entry.url}" must start with "/course/"`;
+        g.errors.push(`${entry.id}: ${msg}`);
+        e.errors.push(msg);
+      } else if (!urlHasWaitlist) {
+        const msg = `url "${entry.url}" has no matching waitlist entry`;
+        g.warnings.push(`${entry.id}: ${msg}`);
+        e.warnings.push(msg);
+      }
 
       const hasWii = !!entry.what_it_is;
       e.checks["what_it_is"] = { ok: hasWii, detail: hasWii ? undefined : "missing" };

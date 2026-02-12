@@ -151,12 +151,20 @@ async function main() {
       path.join(contentPlanDir, "quiz_taxonomy.json"),
       "utf-8",
     );
+    const mfRawCta = await fs.readFile(
+      path.join(contentPlanDir, "mailing_form_catalog.json"),
+      "utf-8",
+    );
     const catalog = CtaCatalogSchema.parse(JSON.parse(ctaRaw));
     const taxonomy = ArticleTaxonomySchema.parse(JSON.parse(taxRaw));
     const quizTaxCta = QuizTaxonomySchema.parse(JSON.parse(quizRawCta));
+    const mfCatalog = MailingFormCatalogSchema.parse(JSON.parse(mfRawCta));
     const categorySlugs = taxonomy.categories.map((c) => c.slug);
     const quizSlugs = quizTaxCta.entries.map((q: { slug: string }) => q.slug);
-    const result = validateCtaCatalog(catalog, categorySlugs, quizSlugs);
+    const coursePageUrls = new Set(
+      mfCatalog.filter((e) => e.type === "waitlist").map((e) => e.pageUrlPattern),
+    );
+    const result = validateCtaCatalog(catalog, categorySlugs, quizSlugs, coursePageUrls);
     ctaErrors = result.errors;
     ctaWarnings = result.warnings;
   } catch {

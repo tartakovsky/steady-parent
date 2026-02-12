@@ -76,6 +76,8 @@ export default function CtaValidationPage() {
 
   // Community check columns
   const communityColumns = [
+    { key: "pageUrl", label: "Page" },
+    { key: "url", label: "Link" },
     { key: "cta_copy", label: "Copy" },
     { key: "buttonText", label: "Button" },
     { key: "founderLine", label: "Founder" },
@@ -87,6 +89,8 @@ export default function CtaValidationPage() {
 
   // Course check columns
   const courseColumns = [
+    { key: "pageUrl", label: "Page" },
+    { key: "url", label: "Link" },
     { key: "what_it_is", label: "Desc" },
     { key: "cta_copy", label: "Copy" },
     { key: "eyebrow", label: "Eyebrow" },
