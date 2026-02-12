@@ -126,6 +126,17 @@ export async function GET() {
     waitlistMappings: Set<string>;
     quizMappings: Set<string>;
   } | null = null;
+  let infrastructure: {
+    freebieApiRoute: boolean;
+    quizApiRoute: boolean;
+    freebieFrontendReady: boolean;
+    quizFrontendReady: boolean;
+    kitCustomFieldReady: boolean;
+    kitFreebieTagsReady: boolean;
+    kitQuizTagsReady: boolean;
+    freebieTagCount: number;
+    quizTagCount: number;
+  } | null = null;
 
   try {
     const [intRaw, tagsRaw, mappingsRaw, quizRaw, taxRaw, mfRaw] = await Promise.all([
@@ -308,6 +319,45 @@ export async function GET() {
       { apiRouteResults, frontendResults },
       categorySlugs,
     );
+
+    // Infrastructure readiness flags
+    const kitTagIds = new Set(rows.map((r) => r.kitId));
+    const freebieMailingTags = mailingTags.filter((t) => t.id.startsWith("freebie-"));
+    const quizMailingTags = mailingTags.filter((t) => t.id.startsWith("quiz-"));
+
+    infrastructure = {
+      freebieApiRoute: apiRouteResults["blogFreebie"] ?? false,
+      quizApiRoute: apiRouteResults["quiz"] ?? false,
+      freebieFrontendReady: frontendResults["freebieCta"]?.hasPatterns ?? false,
+      quizFrontendReady:
+        (frontendResults["quizContainer"]?.hasPatterns ?? false) &&
+        (frontendResults["likertQuiz"]?.hasPatterns ?? false),
+      kitCustomFieldReady: customFields.includes("quiz_result_url"),
+      kitFreebieTagsReady:
+        rows.length > 0 &&
+        freebieMailingTags.every((t) => t.kitTagId != null && kitTagIds.has(t.kitTagId)),
+      kitQuizTagsReady:
+        rows.length > 0 &&
+        quizMailingTags.every((t) => t.kitTagId != null && kitTagIds.has(t.kitTagId)),
+      freebieTagCount: freebieMailingTags.length,
+      quizTagCount: quizMailingTags.length,
+    };
+
+    // Patch per-article freebie checks with infrastructure columns
+    if (articlesByCategory) {
+      for (const articles of Object.values(articlesByCategory)) {
+        for (const a of articles) {
+          if (a.published && Object.keys(a.checks).length > 0) {
+            a.checks["api_route"] = infrastructure.freebieApiRoute
+              ? { ok: true }
+              : { ok: false, detail: "no /api/freebie-subscribe" };
+            a.checks["frontend"] = infrastructure.freebieFrontendReady
+              ? { ok: true }
+              : { ok: false, detail: "missing onSubmit" };
+          }
+        }
+      }
+    }
   } catch {
     // Integration validation is best-effort
   }
@@ -317,6 +367,7 @@ export async function GET() {
     integration,
     mailingByEntry,
     articlesByCategory,
+    infrastructure,
     coverage: coverage ? {
       categorySlugs: coverage.categorySlugs,
       quizSlugs: coverage.quizSlugs,

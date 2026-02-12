@@ -59,12 +59,25 @@ interface ArticleInfo {
   checks: Record<string, EntryCheck>;
 }
 
+interface Infrastructure {
+  freebieApiRoute: boolean;
+  quizApiRoute: boolean;
+  freebieFrontendReady: boolean;
+  quizFrontendReady: boolean;
+  kitCustomFieldReady: boolean;
+  kitFreebieTagsReady: boolean;
+  kitQuizTagsReady: boolean;
+  freebieTagCount: number;
+  quizTagCount: number;
+}
+
 interface MailingResponse {
   tags: KitTagRow[];
   integration: IntegrationResult | null;
   mailingByEntry: Record<string, EntryValidation> | null;
   articlesByCategory: Record<string, ArticleInfo[]> | null;
   coverage: CoverageData | null;
+  infrastructure: Infrastructure | null;
 }
 
 export default function MailingFormsValidationPage() {
@@ -84,7 +97,7 @@ export default function MailingFormsValidationPage() {
   if (loading) return <p className="text-muted-foreground">Loading...</p>;
   if (!data) return <p className="text-muted-foreground">Failed to load mailing data.</p>;
 
-  const { tags, integration, mailingByEntry, articlesByCategory, coverage } = data;
+  const { tags, integration, mailingByEntry, articlesByCategory, coverage, infrastructure } = data;
   const byEntry = mailingByEntry ?? {};
 
   // Count all errors/warnings from byEntry (catalog-level)
@@ -117,9 +130,20 @@ export default function MailingFormsValidationPage() {
       }
     }
   }
-  const totalErrors = catalogErrors + deploymentIssues;
+  const infraFailures = infrastructure
+    ? [
+        infrastructure.freebieApiRoute,
+        infrastructure.quizApiRoute,
+        infrastructure.freebieFrontendReady,
+        infrastructure.quizFrontendReady,
+        infrastructure.kitCustomFieldReady,
+        infrastructure.kitFreebieTagsReady,
+        infrastructure.kitQuizTagsReady,
+      ].filter((v) => !v).length
+    : 0;
+  const totalErrors = catalogErrors + deploymentIssues + infraFailures;
   const totalWarnings = catalogWarnings;
-  const totalScope = Object.keys(byEntry).length + totalArticles;
+  const totalScope = Object.keys(byEntry).length + totalArticles + (infrastructure ? 7 : 0);
 
   // Coverage sets for Kit form mapping column
   const blogMappingSet = new Set(coverage?.blogMappings ?? []);
@@ -133,10 +157,15 @@ export default function MailingFormsValidationPage() {
         return ev && ev.errors.length === 0 && waitlistMappingSet.has(s);
       }).length
     : 0;
+  const quizInfraReady =
+    (infrastructure?.quizApiRoute ?? false) &&
+    (infrastructure?.quizFrontendReady ?? false) &&
+    (infrastructure?.kitCustomFieldReady ?? false) &&
+    (infrastructure?.kitQuizTagsReady ?? false);
   const quizGatesPassing = coverage
     ? coverage.quizSlugs.filter((s) => {
         const ev = byEntry[`quiz-gate-${s}`];
-        return ev && ev.errors.length === 0 && quizMappingSet.has(s);
+        return ev && ev.errors.length === 0 && quizMappingSet.has(s) && quizInfraReady;
       }).length
     : 0;
 
@@ -209,6 +238,18 @@ export default function MailingFormsValidationPage() {
             <div>{Object.keys(byEntry).length} forms</div>
           )}
           <div>Kit tags: {mapped.length}/{tags.length} mapped{orphaned.length > 0 ? `, ${orphaned.length} orphaned` : ""}</div>
+          {infrastructure && (
+            <>
+              <div className="border-t border-muted-foreground/20 mt-1.5 pt-1.5" />
+              <div>Freebie API route: <BoolStat ok={infrastructure.freebieApiRoute} label="/api/freebie-subscribe" /></div>
+              <div>Quiz API route: <BoolStat ok={infrastructure.quizApiRoute} label="/api/quiz-subscribe" /></div>
+              <div>Freebie frontend: <BoolStat ok={infrastructure.freebieFrontendReady} label="FreebieCTA onSubmit handler" /></div>
+              <div>Quiz frontend: <BoolStat ok={infrastructure.quizFrontendReady} label="quiz subscribe logic" /></div>
+              <div>Kit custom field: <BoolStat ok={infrastructure.kitCustomFieldReady} label="quiz_result_url" /></div>
+              <div>Kit freebie tags: <BoolStat ok={infrastructure.kitFreebieTagsReady} label={`${infrastructure.freebieTagCount} tags in Kit`} /></div>
+              <div>Kit quiz tags: <BoolStat ok={infrastructure.kitQuizTagsReady} label={`${infrastructure.quizTagCount} tags in Kit`} /></div>
+            </>
+          )}
         </div>
       </div>
 
@@ -363,6 +404,14 @@ function Fraction({ n, total }: { n: number; total: number }) {
   return (
     <span className={ok ? "text-emerald-600" : "text-red-600"}>
       {n}/{total}
+    </span>
+  );
+}
+
+function BoolStat({ ok, label }: { ok: boolean; label: string }) {
+  return (
+    <span className={ok ? "text-emerald-600" : "text-red-600"}>
+      {ok ? "\u2713" : "\u2717"} {label}
     </span>
   );
 }
@@ -605,6 +654,8 @@ const FREEBIE_CHECK_COLUMNS = [
   { key: "body", label: "Body" },
   { key: "clean", label: "Clean" },
   { key: "kit_form", label: "Kit" },
+  { key: "api_route", label: "API" },
+  { key: "frontend", label: "Frontend" },
 ];
 
 function ArticleListSubTable({ articles }: { articles: ArticleInfo[] }) {
