@@ -200,6 +200,7 @@ export async function GET() {
 
         const copyResult = validateCtaCopy(
           `freebie-${catSlug}`, freebieEyebrow, freebieTitle, freebieBody, freebieButton,
+          { eyebrowMax: 7, titleMax: 10, bodyMax: 36 },
         );
         freebieChecks = copyResult.checks;
       } else {
@@ -252,7 +253,7 @@ export async function GET() {
       }
 
       // Run standard copy validation (word counts, forbidden terms)
-      const copyResult = validateCtaCopy(entryId, eyebrow, title, body, buttonText);
+      const copyResult = validateCtaCopy(entryId, eyebrow, title, body, buttonText, { eyebrowMax: 7, titleMax: 10, bodyMax: 36 });
       Object.assign(ev.checks, copyResult.checks);
       for (const copyErr of copyResult.errors) {
         const msg = copyErr.replace(`${entryId}: `, "");

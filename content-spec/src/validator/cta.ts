@@ -63,20 +63,22 @@ export function validateCtaCopy(
   title: string,
   body: string,
   _buttonText: string,
-  options?: { titleMin?: number; titleMax?: number; bodyMin?: number; bodyMax?: number },
+  options?: { eyebrowMin?: number; eyebrowMax?: number; titleMin?: number; titleMax?: number; bodyMin?: number; bodyMax?: number },
 ): { errors: string[]; checks: Record<string, EntryCheck> } {
   const errs: string[] = [];
   const checks: Record<string, EntryCheck> = {};
+  const eyebrowMin = options?.eyebrowMin ?? 2;
+  const eyebrowMax = options?.eyebrowMax ?? 5;
   const titleMin = options?.titleMin ?? 3;
   const titleMax = options?.titleMax ?? 8;
   const bodyMin = options?.bodyMin ?? 8;
   const bodyMax = options?.bodyMax ?? 24;
 
   const eyebrowWc = wordCount(eyebrow);
-  const eyebrowOk = eyebrowWc >= 2 && eyebrowWc <= 5;
-  checks["eyebrow"] = { ok: eyebrowOk, detail: `${eyebrowWc}w` + (eyebrowOk ? "" : " (2-5)") };
+  const eyebrowOk = eyebrowWc >= eyebrowMin && eyebrowWc <= eyebrowMax;
+  checks["eyebrow"] = { ok: eyebrowOk, detail: `${eyebrowWc}w` + (eyebrowOk ? "" : ` (${eyebrowMin}-${eyebrowMax})`) };
   if (!eyebrowOk) {
-    errs.push(`${prefix}: eyebrow "${eyebrow}" is ${eyebrowWc} words (must be 2-5)`);
+    errs.push(`${prefix}: eyebrow "${eyebrow}" is ${eyebrowWc} words (must be ${eyebrowMin}-${eyebrowMax})`);
   }
 
   const titleWc = wordCount(title);

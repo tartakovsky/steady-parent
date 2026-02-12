@@ -81,7 +81,7 @@ export function validateMailingFormCatalog(
     }
 
     const { eyebrow, title, body, buttonText } = entry.cta_copy!;
-    const copyResult = validateCtaCopy(prefix, eyebrow, title, body, buttonText);
+    const copyResult = validateCtaCopy(prefix, eyebrow, title, body, buttonText, { eyebrowMax: 7, titleMax: 10, bodyMax: 36 });
     Object.assign(ev.checks, copyResult.checks);
     for (const copyErr of copyResult.errors) {
       const msg = copyErr.replace(`${prefix}: `, "");
@@ -179,7 +179,7 @@ export function validateMailingFormCatalog(
         ev.errors.push(`buttonText must be "${PREVIEW_BUTTON_TEXT}"`);
       }
 
-      const copyResult = validateCtaCopy(prefix, eyebrow, title, body, buttonText);
+      const copyResult = validateCtaCopy(prefix, eyebrow, title, body, buttonText, { eyebrowMax: 7, titleMax: 10, bodyMax: 36 });
       Object.assign(ev.checks, copyResult.checks);
       for (const copyErr of copyResult.errors) {
         const msg = copyErr.replace(`${prefix}: `, "");
