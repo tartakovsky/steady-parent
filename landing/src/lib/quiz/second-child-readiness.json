@@ -35,9 +35,9 @@
       "A prioritized action plan you can start today"
     ],
     "communityCta": {
-      "eyebrow": "Thinking about number two?",
-      "title": "Get real talk from parents navigating the second-child transition",
-      "body": "A private group where parents share what actually worked, what blew up, and how to keep your sanity intact. We are there with you daily too.",
+      "eyebrow": "Now you see the picture",
+      "title": "Hear from parents who chose both ways",
+      "body": "Next time this keeps you up, you'll have parents who went for it and parents who waited. We are there with you daily too.",
       "buttonText": "Join the community"
     }
   },
@@ -86,9 +86,21 @@
       "text": "How aligned are you and your partner on the decision to have a second child?",
       "subtext": "Enthusiastically agreed, or one convincing the other?",
       "options": [
-        { "id": "q1a", "text": "Both actively want this and have discussed timing", "points": 3 },
-        { "id": "q1b", "text": "Both agree in theory but haven't seriously planned", "points": 1 },
-        { "id": "q1c", "text": "One of us is hesitant or trying to convince the other", "points": 0 }
+        {
+          "id": "q1a",
+          "text": "Both actively want this and have discussed timing",
+          "points": 3
+        },
+        {
+          "id": "q1b",
+          "text": "Both agree in theory but haven't seriously planned",
+          "points": 1
+        },
+        {
+          "id": "q1c",
+          "text": "One of us is hesitant or trying to convince the other",
+          "points": 0
+        }
       ]
     },
     {
@@ -97,9 +109,21 @@
       "text": "How do you and your partner handle conflict right now?",
       "subtext": "Think about the last few disagreements.",
       "options": [
-        { "id": "q2a", "text": "We talk it out and usually repair quickly", "points": 3 },
-        { "id": "q2b", "text": "We fight but eventually figure it out", "points": 1 },
-        { "id": "q2c", "text": "Unresolved tension hangs around for days or weeks", "points": 0 }
+        {
+          "id": "q2a",
+          "text": "We talk it out and usually repair quickly",
+          "points": 3
+        },
+        {
+          "id": "q2b",
+          "text": "We fight but eventually figure it out",
+          "points": 1
+        },
+        {
+          "id": "q2c",
+          "text": "Unresolved tension hangs around for days or weeks",
+          "points": 0
+        }
       ]
     },
     {
@@ -108,9 +132,21 @@
       "text": "How are you feeling about the baby phase of your first child?",
       "subtext": "Has your nervous system recovered?",
       "options": [
-        { "id": "q3a", "text": "Fully recovered and even missing it a little", "points": 3 },
-        { "id": "q3b", "text": "Mostly recovered but still catching my breath", "points": 1 },
-        { "id": "q3c", "text": "Still in survival mode from the first one", "points": 0 }
+        {
+          "id": "q3a",
+          "text": "Fully recovered and even missing it a little",
+          "points": 3
+        },
+        {
+          "id": "q3b",
+          "text": "Mostly recovered but still catching my breath",
+          "points": 1
+        },
+        {
+          "id": "q3c",
+          "text": "Still in survival mode from the first one",
+          "points": 0
+        }
       ]
     },
     {
@@ -119,9 +155,21 @@
       "text": "How is your patience with your first child on a typical day?",
       "subtext": "Not your best day. A regular Tuesday.",
       "options": [
-        { "id": "q4a", "text": "Usually calm and present even when things are chaotic", "points": 3 },
-        { "id": "q4b", "text": "Hit or miss depending on sleep and stress", "points": 1 },
-        { "id": "q4c", "text": "Running on fumes most days", "points": 0 }
+        {
+          "id": "q4a",
+          "text": "Usually calm and present even when things are chaotic",
+          "points": 3
+        },
+        {
+          "id": "q4b",
+          "text": "Hit or miss depending on sleep and stress",
+          "points": 1
+        },
+        {
+          "id": "q4c",
+          "text": "Running on fumes most days",
+          "points": 0
+        }
       ]
     },
     {
@@ -130,9 +178,21 @@
       "text": "How does your current housing situation feel for adding another child?",
       "subtext": "Space, noise tolerance, bedroom logistics.",
       "options": [
-        { "id": "q5a", "text": "We have space and a plan for where baby would sleep", "points": 2 },
-        { "id": "q5b", "text": "Tight but manageable with some creative rearranging", "points": 1 },
-        { "id": "q5c", "text": "Already cramped or would require a move", "points": 0 }
+        {
+          "id": "q5a",
+          "text": "We have space and a plan for where baby would sleep",
+          "points": 2
+        },
+        {
+          "id": "q5b",
+          "text": "Tight but manageable with some creative rearranging",
+          "points": 1
+        },
+        {
+          "id": "q5c",
+          "text": "Already cramped or would require a move",
+          "points": 0
+        }
       ]
     },
     {
@@ -141,9 +201,21 @@
       "text": "How stable are your finances and work situation right now?",
       "subtext": "Can you absorb another maternity leave, daycare cost, or medical bill?",
       "options": [
-        { "id": "q6a", "text": "Financially stable with room for the added costs", "points": 3 },
-        { "id": "q6b", "text": "Stable but would need to adjust the budget", "points": 1 },
-        { "id": "q6c", "text": "Tight or uncertain right now", "points": 0 }
+        {
+          "id": "q6a",
+          "text": "Financially stable with room for the added costs",
+          "points": 3
+        },
+        {
+          "id": "q6b",
+          "text": "Stable but would need to adjust the budget",
+          "points": 1
+        },
+        {
+          "id": "q6c",
+          "text": "Tight or uncertain right now",
+          "points": 0
+        }
       ]
     },
     {
@@ -152,9 +224,21 @@
       "text": "Who will help with childcare when baby arrives?",
       "subtext": "Family nearby, daycare plan, partner availability, paid help?",
       "options": [
-        { "id": "q7a", "text": "Clear plan and reliable support already in place", "points": 2 },
-        { "id": "q7b", "text": "Some options but still figuring it out", "points": 1 },
-        { "id": "q7c", "text": "Would be almost entirely on my own", "points": 0 }
+        {
+          "id": "q7a",
+          "text": "Clear plan and reliable support already in place",
+          "points": 2
+        },
+        {
+          "id": "q7b",
+          "text": "Some options but still figuring it out",
+          "points": 1
+        },
+        {
+          "id": "q7c",
+          "text": "Would be almost entirely on my own",
+          "points": 0
+        }
       ]
     },
     {
@@ -163,9 +247,21 @@
       "text": "How old is your first child?",
       "subtext": "Research suggests 18-36 months spacing has trade-offs.",
       "options": [
-        { "id": "q8a", "text": "Over 2.5 years old", "points": 3 },
-        { "id": "q8b", "text": "Between 18 months and 2.5 years", "points": 1 },
-        { "id": "q8c", "text": "Under 18 months", "points": 0 }
+        {
+          "id": "q8a",
+          "text": "Over 2.5 years old",
+          "points": 3
+        },
+        {
+          "id": "q8b",
+          "text": "Between 18 months and 2.5 years",
+          "points": 1
+        },
+        {
+          "id": "q8c",
+          "text": "Under 18 months",
+          "points": 0
+        }
       ]
     },
     {
@@ -174,9 +270,21 @@
       "text": "How independent is your first child in daily routines?",
       "subtext": "Eating, dressing, entertaining themselves for short stretches.",
       "options": [
-        { "id": "q9a", "text": "Can do some self-care and play independently for 15+ minutes", "points": 2 },
-        { "id": "q9b", "text": "Beginning to do some things alone but still very hands-on", "points": 1 },
-        { "id": "q9c", "text": "Needs constant supervision and full support for everything", "points": 0 }
+        {
+          "id": "q9a",
+          "text": "Can do some self-care and play independently for 15+ minutes",
+          "points": 2
+        },
+        {
+          "id": "q9b",
+          "text": "Beginning to do some things alone but still very hands-on",
+          "points": 1
+        },
+        {
+          "id": "q9c",
+          "text": "Needs constant supervision and full support for everything",
+          "points": 0
+        }
       ]
     },
     {
@@ -185,8 +293,16 @@
       "text": "How is your first child's attachment security right now?",
       "subtext": "Can they separate from you without falling apart?",
       "options": [
-        { "id": "q10a", "text": "Handles separations well and feels secure", "points": 1 },
-        { "id": "q10b", "text": "Clingy phase or needing extra reassurance lately", "points": 0 }
+        {
+          "id": "q10a",
+          "text": "Handles separations well and feels secure",
+          "points": 1
+        },
+        {
+          "id": "q10b",
+          "text": "Clingy phase or needing extra reassurance lately",
+          "points": 0
+        }
       ]
     }
   ],

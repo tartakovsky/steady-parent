@@ -43,9 +43,9 @@
       "A prioritized action plan you can start today"
     ],
     "communityCta": {
-      "eyebrow": "Sleep questions?",
-      "title": "Get real routines from parents navigating the nap transition",
-      "body": "A private group sharing what worked, what didn't, and how to handle the 5 PM meltdown. We are there with you daily too.",
+      "eyebrow": "Now you have your answer",
+      "title": "Compare notes with parents dropping the nap too",
+      "body": "Next 4 PM meltdown, you'll have parents who dropped the nap at the same age and survived. We are there with you daily too.",
       "buttonText": "Join the community"
     }
   },
@@ -94,9 +94,21 @@
       "text": "How long does it take your child to fall asleep at naptime?",
       "subtext": "Once they're in bed or the designated nap spot, how long until they're actually asleep?",
       "options": [
-        { "id": "q1a", "text": "Over 30 minutes of rolling around, or they don't fall asleep at all", "points": 3 },
-        { "id": "q1b", "text": "15-30 minutes", "points": 1 },
-        { "id": "q1c", "text": "Under 10 minutes, out cold", "points": 0 }
+        {
+          "id": "q1a",
+          "text": "Over 30 minutes of rolling around, or they don't fall asleep at all",
+          "points": 3
+        },
+        {
+          "id": "q1b",
+          "text": "15-30 minutes",
+          "points": 1
+        },
+        {
+          "id": "q1c",
+          "text": "Under 10 minutes, out cold",
+          "points": 0
+        }
       ]
     },
     {
@@ -105,9 +117,21 @@
       "text": "When you skip the nap, how does your child's bedtime go?",
       "subtext": "On days when the nap doesn't happen, either by choice or circumstance.",
       "options": [
-        { "id": "q2a", "text": "Falls asleep faster and easier than usual", "points": 3 },
-        { "id": "q2b", "text": "About the same as nap days", "points": 1 },
-        { "id": "q2c", "text": "Melts down hard, becomes overtired and wired", "points": 0 }
+        {
+          "id": "q2a",
+          "text": "Falls asleep faster and easier than usual",
+          "points": 3
+        },
+        {
+          "id": "q2b",
+          "text": "About the same as nap days",
+          "points": 1
+        },
+        {
+          "id": "q2c",
+          "text": "Melts down hard, becomes overtired and wired",
+          "points": 0
+        }
       ]
     },
     {
@@ -116,9 +140,21 @@
       "text": "Does your child resist naptime most days?",
       "subtext": "Protests, stalls, asks to skip it, or says they're not tired.",
       "options": [
-        { "id": "q3a", "text": "Yes, fighting it is the norm now", "points": 2 },
-        { "id": "q3b", "text": "Sometimes resists, sometimes goes willingly", "points": 1 },
-        { "id": "q3c", "text": "Goes down for naps without much fuss", "points": 0 }
+        {
+          "id": "q3a",
+          "text": "Yes, fighting it is the norm now",
+          "points": 2
+        },
+        {
+          "id": "q3b",
+          "text": "Sometimes resists, sometimes goes willingly",
+          "points": 1
+        },
+        {
+          "id": "q3c",
+          "text": "Goes down for naps without much fuss",
+          "points": 0
+        }
       ]
     },
     {
@@ -127,9 +163,21 @@
       "text": "How is your child's energy level in the late afternoon?",
       "subtext": "Between 3 PM and dinnertime, when the day is winding down.",
       "options": [
-        { "id": "q4a", "text": "Still going strong, engaged and playful", "points": 3 },
-        { "id": "q4b", "text": "Slowing down but manageable with a snack or calm activity", "points": 1 },
-        { "id": "q4c", "text": "Complete disaster zone. Whining, crying, or zoning out.", "points": 0 }
+        {
+          "id": "q4a",
+          "text": "Still going strong, engaged and playful",
+          "points": 3
+        },
+        {
+          "id": "q4b",
+          "text": "Slowing down but manageable with a snack or calm activity",
+          "points": 1
+        },
+        {
+          "id": "q4c",
+          "text": "Complete disaster zone. Whining, crying, or zoning out.",
+          "points": 0
+        }
       ]
     },
     {
@@ -138,9 +186,21 @@
       "text": "On days without a nap, can your child make it through dinner without falling apart?",
       "subtext": "Behavior during the meal and the hour after, not bedtime.",
       "options": [
-        { "id": "q5a", "text": "Yes, holds it together through dinner and beyond", "points": 2 },
-        { "id": "q5b", "text": "Barely makes it, needs extra help and patience", "points": 1 },
-        { "id": "q5c", "text": "No chance. Melts down before food hits the table.", "points": 0 }
+        {
+          "id": "q5a",
+          "text": "Yes, holds it together through dinner and beyond",
+          "points": 2
+        },
+        {
+          "id": "q5b",
+          "text": "Barely makes it, needs extra help and patience",
+          "points": 1
+        },
+        {
+          "id": "q5c",
+          "text": "No chance. Melts down before food hits the table.",
+          "points": 0
+        }
       ]
     },
     {
@@ -149,9 +209,21 @@
       "text": "What time does your child fall asleep at night after a nap day?",
       "subtext": "The actual time they're asleep, not the time you put them to bed.",
       "options": [
-        { "id": "q6a", "text": "9 PM or later, way past a reasonable bedtime", "points": 3 },
-        { "id": "q6b", "text": "Around 8-8:30 PM", "points": 1 },
-        { "id": "q6c", "text": "7-7:30 PM or earlier", "points": 0 }
+        {
+          "id": "q6a",
+          "text": "9 PM or later, way past a reasonable bedtime",
+          "points": 3
+        },
+        {
+          "id": "q6b",
+          "text": "Around 8-8:30 PM",
+          "points": 1
+        },
+        {
+          "id": "q6c",
+          "text": "7-7:30 PM or earlier",
+          "points": 0
+        }
       ]
     },
     {
@@ -160,9 +232,21 @@
       "text": "Does your child wake during the night after nap days?",
       "subtext": "Night wakings, early morning wake-ups, or restless sleep.",
       "options": [
-        { "id": "q7a", "text": "Yes, more wakings or earlier mornings on nap days", "points": 2 },
-        { "id": "q7b", "text": "Inconsistent, no clear pattern", "points": 1 },
-        { "id": "q7c", "text": "Sleeps straight through regardless", "points": 0 }
+        {
+          "id": "q7a",
+          "text": "Yes, more wakings or earlier mornings on nap days",
+          "points": 2
+        },
+        {
+          "id": "q7b",
+          "text": "Inconsistent, no clear pattern",
+          "points": 1
+        },
+        {
+          "id": "q7c",
+          "text": "Sleeps straight through regardless",
+          "points": 0
+        }
       ]
     },
     {
@@ -171,9 +255,21 @@
       "text": "How much total nighttime sleep does your child get after a nap day?",
       "subtext": "From bedtime to wake-up, not counting the nap itself.",
       "options": [
-        { "id": "q8a", "text": "Under 10 hours because bedtime is so late", "points": 2 },
-        { "id": "q8b", "text": "10-11 hours", "points": 1 },
-        { "id": "q8c", "text": "11+ hours", "points": 0 }
+        {
+          "id": "q8a",
+          "text": "Under 10 hours because bedtime is so late",
+          "points": 2
+        },
+        {
+          "id": "q8b",
+          "text": "10-11 hours",
+          "points": 1
+        },
+        {
+          "id": "q8c",
+          "text": "11+ hours",
+          "points": 0
+        }
       ]
     },
     {
@@ -182,9 +278,21 @@
       "text": "How does your child handle feeling tired in the late afternoon?",
       "subtext": "When they're clearly running low on energy but it's not bedtime yet.",
       "options": [
-        { "id": "q9a", "text": "Slows down, gets quiet, can still function with support", "points": 3 },
-        { "id": "q9b", "text": "Gets a little cranky but recovers with a distraction", "points": 1 },
-        { "id": "q9c", "text": "Complete emotional breakdown. No reasoning, just tears.", "points": 0 }
+        {
+          "id": "q9a",
+          "text": "Slows down, gets quiet, can still function with support",
+          "points": 3
+        },
+        {
+          "id": "q9b",
+          "text": "Gets a little cranky but recovers with a distraction",
+          "points": 1
+        },
+        {
+          "id": "q9c",
+          "text": "Complete emotional breakdown. No reasoning, just tears.",
+          "points": 0
+        }
       ]
     },
     {
@@ -193,9 +301,21 @@
       "text": "Can your child do quiet time in their room if they don't sleep during naptime?",
       "subtext": "Books, puzzles, calm play for 30-60 minutes without needing you.",
       "options": [
-        { "id": "q10a", "text": "Yes, can entertain themselves quietly", "points": 2 },
-        { "id": "q10b", "text": "For a short stretch, maybe 15-20 minutes", "points": 1 },
-        { "id": "q10c", "text": "No way. Calls for you immediately or leaves the room.", "points": 0 }
+        {
+          "id": "q10a",
+          "text": "Yes, can entertain themselves quietly",
+          "points": 2
+        },
+        {
+          "id": "q10b",
+          "text": "For a short stretch, maybe 15-20 minutes",
+          "points": 1
+        },
+        {
+          "id": "q10c",
+          "text": "No way. Calls for you immediately or leaves the room.",
+          "points": 0
+        }
       ]
     }
   ],

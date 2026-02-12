@@ -40,9 +40,9 @@
       "A prioritized action plan you can start today"
     ],
     "communityCta": {
-      "eyebrow": "Want help with this?",
-      "title": "Get scripts for hard conversations from parents who've been here",
-      "body": "Real scripts for building safety, bite-sized routines from parents rebuilding trust, and founders who get it. We are there with you daily too.",
+      "eyebrow": "Now you know the score",
+      "title": "Unpack it with parents rebuilding the same openness",
+      "body": "Next time your kid shuts down, you'll have parents who rebuilt that trust and know what shifted. We are there with you daily too.",
       "buttonText": "Join the community"
     }
   },
@@ -91,9 +91,21 @@
       "text": "When your child is upset, how often do they come to you without being prompted?",
       "subtext": "Not tantrums — sadness, fear, disappointment. The internal stuff.",
       "options": [
-        { "id": "q1a", "text": "Usually brings it to me voluntarily, even if they don't have words yet", "points": 3 },
-        { "id": "q1b", "text": "Sometimes comes to me, sometimes processes alone or with someone else", "points": 1 },
-        { "id": "q1c", "text": "Rarely comes to me unless I notice and ask directly", "points": 0 }
+        {
+          "id": "q1a",
+          "text": "Usually brings it to me voluntarily, even if they don't have words yet",
+          "points": 3
+        },
+        {
+          "id": "q1b",
+          "text": "Sometimes comes to me, sometimes processes alone or with someone else",
+          "points": 1
+        },
+        {
+          "id": "q1c",
+          "text": "Rarely comes to me unless I notice and ask directly",
+          "points": 0
+        }
       ]
     },
     {
@@ -102,9 +114,21 @@
       "text": "Your child did something they knew was wrong. How likely are they to tell you about it?",
       "subtext": "The broken rule, the sneak, the lie. When they know they messed up.",
       "options": [
-        { "id": "q2a", "text": "They'll usually confess or tell me without too much delay, even when scared", "points": 3 },
-        { "id": "q2b", "text": "Sometimes they tell me, but often I find out another way", "points": 1 },
-        { "id": "q2c", "text": "They hide it — I rarely hear about mistakes unless I catch them", "points": 0 }
+        {
+          "id": "q2a",
+          "text": "They'll usually confess or tell me without too much delay, even when scared",
+          "points": 3
+        },
+        {
+          "id": "q2b",
+          "text": "Sometimes they tell me, but often I find out another way",
+          "points": 1
+        },
+        {
+          "id": "q2c",
+          "text": "They hide it — I rarely hear about mistakes unless I catch them",
+          "points": 0
+        }
       ]
     },
     {
@@ -113,9 +137,21 @@
       "text": "When your child shares a feeling, what's your most common first response?",
       "subtext": "Not what you wish you did. What you actually do most of the time.",
       "options": [
-        { "id": "q3a", "text": "I listen and reflect the feeling without trying to fix or minimize it", "points": 3 },
-        { "id": "q3b", "text": "I listen but often jump to reassurance or solutions too quickly", "points": 1 },
-        { "id": "q3c", "text": "I unintentionally dismiss, correct, or redirect because I'm uncomfortable or rushed", "points": 0 }
+        {
+          "id": "q3a",
+          "text": "I listen and reflect the feeling without trying to fix or minimize it",
+          "points": 3
+        },
+        {
+          "id": "q3b",
+          "text": "I listen but often jump to reassurance or solutions too quickly",
+          "points": 1
+        },
+        {
+          "id": "q3c",
+          "text": "I unintentionally dismiss, correct, or redirect because I'm uncomfortable or rushed",
+          "points": 0
+        }
       ]
     },
     {
@@ -124,9 +160,21 @@
       "text": "When your child tells you something hard (a fear, a mistake, a big feeling), how do they seem afterward?",
       "subtext": "Not how you feel. How they look — relieved, shut down, neutral.",
       "options": [
-        { "id": "q4a", "text": "They seem lighter, calmer, or visibly relieved", "points": 3 },
-        { "id": "q4b", "text": "Hard to tell — sometimes better, sometimes neutral, sometimes withdrawn", "points": 1 },
-        { "id": "q4c", "text": "Often seem to regret telling me or shut down after", "points": 0 }
+        {
+          "id": "q4a",
+          "text": "They seem lighter, calmer, or visibly relieved",
+          "points": 3
+        },
+        {
+          "id": "q4b",
+          "text": "Hard to tell — sometimes better, sometimes neutral, sometimes withdrawn",
+          "points": 1
+        },
+        {
+          "id": "q4c",
+          "text": "Often seem to regret telling me or shut down after",
+          "points": 0
+        }
       ]
     },
     {
@@ -135,9 +183,21 @@
       "text": "After a big argument or a moment where you lost your patience, what usually happens?",
       "subtext": "The aftermath. Reconnection, silence, avoidance, or business as usual.",
       "options": [
-        { "id": "q5a", "text": "We reconnect — either I repair or they come back to me and we talk it through", "points": 3 },
-        { "id": "q5b", "text": "We move on but the reconnection feels incomplete or awkward", "points": 1 },
-        { "id": "q5c", "text": "We just resume normal routines without addressing what happened", "points": 0 }
+        {
+          "id": "q5a",
+          "text": "We reconnect — either I repair or they come back to me and we talk it through",
+          "points": 3
+        },
+        {
+          "id": "q5b",
+          "text": "We move on but the reconnection feels incomplete or awkward",
+          "points": 1
+        },
+        {
+          "id": "q5c",
+          "text": "We just resume normal routines without addressing what happened",
+          "points": 0
+        }
       ]
     },
     {
@@ -146,9 +206,21 @@
       "text": "When you apologize to your child, how do they respond?",
       "subtext": "Not whether you apologize. How they react when you do.",
       "options": [
-        { "id": "q6a", "text": "They accept it easily and seem genuinely reassured", "points": 3 },
-        { "id": "q6b", "text": "They accept it but seem wary or like they're still processing", "points": 1 },
-        { "id": "q6c", "text": "They shrug it off, avoid it, or don't seem to trust it", "points": 0 }
+        {
+          "id": "q6a",
+          "text": "They accept it easily and seem genuinely reassured",
+          "points": 3
+        },
+        {
+          "id": "q6b",
+          "text": "They accept it but seem wary or like they're still processing",
+          "points": 1
+        },
+        {
+          "id": "q6c",
+          "text": "They shrug it off, avoid it, or don't seem to trust it",
+          "points": 0
+        }
       ]
     },
     {
@@ -157,9 +229,21 @@
       "text": "How often does your child ask you difficult questions about feelings, the world, or relationships?",
       "subtext": "Why are you mad? Why don't I have friends? What happens when you die? The risky ones.",
       "options": [
-        { "id": "q7a", "text": "Regularly — they bring me the hard questions without much hesitation", "points": 3 },
-        { "id": "q7b", "text": "Occasionally — they ask some things but I can tell they hold back", "points": 1 },
-        { "id": "q7c", "text": "Rarely or never — they don't bring me those questions", "points": 0 }
+        {
+          "id": "q7a",
+          "text": "Regularly — they bring me the hard questions without much hesitation",
+          "points": 3
+        },
+        {
+          "id": "q7b",
+          "text": "Occasionally — they ask some things but I can tell they hold back",
+          "points": 1
+        },
+        {
+          "id": "q7c",
+          "text": "Rarely or never — they don't bring me those questions",
+          "points": 0
+        }
       ]
     },
     {
@@ -168,9 +252,21 @@
       "text": "Does your child share small daily frustrations (a friend was mean, school was boring, someone took their toy)?",
       "subtext": "Not meltdowns. Low-stakes venting about life's minor injustices.",
       "options": [
-        { "id": "q8a", "text": "Yes, frequently — I hear about the small stuff without prompting", "points": 3 },
-        { "id": "q8b", "text": "Sometimes — they'll share if I ask or if it's big enough", "points": 1 },
-        { "id": "q8c", "text": "Rarely — I only hear about it if there's a blowup or someone else tells me", "points": 0 }
+        {
+          "id": "q8a",
+          "text": "Yes, frequently — I hear about the small stuff without prompting",
+          "points": 3
+        },
+        {
+          "id": "q8b",
+          "text": "Sometimes — they'll share if I ask or if it's big enough",
+          "points": 1
+        },
+        {
+          "id": "q8c",
+          "text": "Rarely — I only hear about it if there's a blowup or someone else tells me",
+          "points": 0
+        }
       ]
     },
     {
@@ -179,9 +275,21 @@
       "text": "When your child wants to talk about something that matters to them, do they seek you out?",
       "subtext": "Not logistics. The stuff they care about — ideas, worries, excited discoveries.",
       "options": [
-        { "id": "q9a", "text": "Yes, they come find me or wait for a moment to tell me", "points": 3 },
-        { "id": "q9b", "text": "Sometimes, but often it feels like they've given up or forgotten by the time they could tell me", "points": 1 },
-        { "id": "q9c", "text": "Not really — I'm usually not the first person they go to", "points": 0 }
+        {
+          "id": "q9a",
+          "text": "Yes, they come find me or wait for a moment to tell me",
+          "points": 3
+        },
+        {
+          "id": "q9b",
+          "text": "Sometimes, but often it feels like they've given up or forgotten by the time they could tell me",
+          "points": 1
+        },
+        {
+          "id": "q9c",
+          "text": "Not really — I'm usually not the first person they go to",
+          "points": 0
+        }
       ]
     },
     {
@@ -190,9 +298,21 @@
       "text": "If your child is struggling with something (friendship trouble, schoolwork, anxiety), do they ask you for help?",
       "subtext": "Not whether you notice and offer. Whether they initiate.",
       "options": [
-        { "id": "q10a", "text": "Yes, they'll ask directly or drop clear hints that they need support", "points": 3 },
-        { "id": "q10b", "text": "Sometimes, but I often have to pull it out of them or notice on my own", "points": 1 },
-        { "id": "q10c", "text": "Rarely — they struggle alone or I find out too late", "points": 0 }
+        {
+          "id": "q10a",
+          "text": "Yes, they'll ask directly or drop clear hints that they need support",
+          "points": 3
+        },
+        {
+          "id": "q10b",
+          "text": "Sometimes, but I often have to pull it out of them or notice on my own",
+          "points": 1
+        },
+        {
+          "id": "q10c",
+          "text": "Rarely — they struggle alone or I find out too late",
+          "points": 0
+        }
       ]
     }
   ],
@@ -282,7 +402,10 @@
     "open-channel": {
       "id": "open-channel",
       "themeColor": "#16a34a",
-      "scoreRange": { "min": 22, "max": 30 },
+      "scoreRange": {
+        "min": 22,
+        "max": 30
+      },
       "headline": "Open Channel",
       "subheadline": "Your child feels safe bringing you the hard stuff — feelings, mistakes, questions, and worries. That's not luck. That's trust you've built one interaction at a time.",
       "explanation": "An open communication channel doesn't mean your child tells you everything or that every conversation goes smoothly. It means they feel safe enough to try. They've learned that bringing feelings to you usually helps rather than making things worse. This is the foundation of secure attachment — not perfection, but consistent enough safety that they keep coming back.",
@@ -298,7 +421,10 @@
     "cautious-sharer": {
       "id": "cautious-sharer",
       "themeColor": "#e8c840",
-      "scoreRange": { "min": 11, "max": 21 },
+      "scoreRange": {
+        "min": 11,
+        "max": 21
+      },
       "headline": "Cautious Sharer",
       "subheadline": "Your child shares some things but holds back others. They're testing safety case-by-case rather than trusting it across the board. This is fixable with targeted consistency.",
       "explanation": "Your child is in the middle zone — sometimes they come to you, sometimes they don't. They share when conditions feel right but pull back when they don't. That inconsistency means they're reading signals (your mood, your availability, past responses) before deciding whether it's safe to open up. The good news: you're not starting from scratch. The pattern just needs more predictability.",
@@ -315,7 +441,10 @@
     "closed-loop": {
       "id": "closed-loop",
       "themeColor": "#d05597",
-      "scoreRange": { "min": 0, "max": 10 },
+      "scoreRange": {
+        "min": 0,
+        "max": 10
+      },
       "headline": "Closed Loop",
       "subheadline": "Your child doesn't bring you much of their internal world. Feelings, mistakes, and worries stay inside. This isn't about their personality — it's about safety.",
       "explanation": "When kids don't share, it's because sharing hasn't felt safe enough often enough. Maybe they've been lectured, dismissed, or punished for honesty. Maybe your response is unpredictable — sometimes empathetic, sometimes harsh. Either way, they've learned to manage feelings alone. The instinct is to push harder for connection, but interrogation makes guarded kids shut down further. What changes this is predictable, non-judgmental availability over time.",

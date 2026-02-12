@@ -63,9 +63,12 @@ export function validateCtaCopy(
   title: string,
   body: string,
   _buttonText: string,
+  options?: { titleMin?: number; titleMax?: number },
 ): { errors: string[]; checks: Record<string, EntryCheck> } {
   const errs: string[] = [];
   const checks: Record<string, EntryCheck> = {};
+  const titleMin = options?.titleMin ?? 3;
+  const titleMax = options?.titleMax ?? 8;
 
   const eyebrowWc = wordCount(eyebrow);
   const eyebrowOk = eyebrowWc >= 2 && eyebrowWc <= 5;
@@ -75,17 +78,17 @@ export function validateCtaCopy(
   }
 
   const titleWc = wordCount(title);
-  const titleOk = titleWc >= 3 && titleWc <= 12;
-  checks["title"] = { ok: titleOk, detail: `${titleWc}w` + (titleOk ? "" : " (3-12)") };
+  const titleOk = titleWc >= titleMin && titleWc <= titleMax;
+  checks["title"] = { ok: titleOk, detail: `${titleWc}w` + (titleOk ? "" : ` (${titleMin}-${titleMax})`) };
   if (!titleOk) {
-    errs.push(`${prefix}: title is ${titleWc} words (must be 3-12)`);
+    errs.push(`${prefix}: title is ${titleWc} words (must be ${titleMin}-${titleMax})`);
   }
 
   const bodyWc = wordCount(body);
-  const bodyOk = bodyWc >= 8 && bodyWc <= 35;
-  checks["body"] = { ok: bodyOk, detail: `${bodyWc}w` + (bodyOk ? "" : " (8-35)") };
+  const bodyOk = bodyWc >= 8 && bodyWc <= 24;
+  checks["body"] = { ok: bodyOk, detail: `${bodyWc}w` + (bodyOk ? "" : " (8-24)") };
   if (!bodyOk) {
-    errs.push(`${prefix}: body is ${bodyWc} words (must be 8-35)`);
+    errs.push(`${prefix}: body is ${bodyWc} words (must be 8-24)`);
   }
 
   const allText = [eyebrow, title, body, _buttonText].join(" ");
@@ -309,7 +312,7 @@ export function validateCtaCatalog(
       }
 
       const { eyebrow, title, body, buttonText } = entry.cta_copy!;
-      const copyResult = validateCtaCopy(entry.id, eyebrow, title, body, buttonText);
+      const copyResult = validateCtaCopy(entry.id, eyebrow, title, body, buttonText, { titleMin: 5, titleMax: 12 });
       Object.assign(e.checks, copyResult.checks);
       for (const copyErr of copyResult.errors) {
         const msg = copyErr.replace(`${entry.id}: `, "");

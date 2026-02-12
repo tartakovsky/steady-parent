@@ -41,9 +41,9 @@
       "Specific next steps based on your battery profile"
     ],
     "communityCta": {
-      "eyebrow": "Running on empty?",
-      "title": "A group of parents who get the exhaustion",
-      "body": "Bite-sized scripts, real strategies for burnt-out parents, and founders in the group daily. We are there with you daily too.",
+      "eyebrow": "Now you see the number",
+      "title": "Recharge with parents running on the same level",
+      "body": "Next time you hit empty with hours of parenting left, you'll have parents who found what recharges. We are there with you daily too.",
       "buttonText": "Join the community"
     }
   },
@@ -92,9 +92,21 @@
       "text": "How does your body feel by the time the kids are in bed?",
       "subtext": "Not emotionally. Physically. Bones, muscles, eyelids.",
       "options": [
-        { "id": "q1a", "text": "I still have gas in the tank — could do a load of laundry or read a chapter without falling asleep", "points": 3 },
-        { "id": "q1b", "text": "Tired but functional — I can get one more thing done if I push through", "points": 1 },
-        { "id": "q1c", "text": "I am a husk. I collapse on the couch and stare at my phone because I have nothing left", "points": 0 }
+        {
+          "id": "q1a",
+          "text": "I still have gas in the tank — could do a load of laundry or read a chapter without falling asleep",
+          "points": 3
+        },
+        {
+          "id": "q1b",
+          "text": "Tired but functional — I can get one more thing done if I push through",
+          "points": 1
+        },
+        {
+          "id": "q1c",
+          "text": "I am a husk. I collapse on the couch and stare at my phone because I have nothing left",
+          "points": 0
+        }
       ]
     },
     {
@@ -103,9 +115,21 @@
       "text": "How well are you sleeping, realistically?",
       "subtext": "Not how many hours you're in bed. How rested you actually feel.",
       "options": [
-        { "id": "q2a", "text": "Getting enough sleep and waking up reasonably human", "points": 3 },
-        { "id": "q2b", "text": "Sleep is choppy or short, but I can mostly function", "points": 1 },
-        { "id": "q2c", "text": "I am running a permanent sleep deficit and everything suffers because of it", "points": 0 }
+        {
+          "id": "q2a",
+          "text": "Getting enough sleep and waking up reasonably human",
+          "points": 3
+        },
+        {
+          "id": "q2b",
+          "text": "Sleep is choppy or short, but I can mostly function",
+          "points": 1
+        },
+        {
+          "id": "q2c",
+          "text": "I am running a permanent sleep deficit and everything suffers because of it",
+          "points": 0
+        }
       ]
     },
     {
@@ -114,9 +138,21 @@
       "text": "When your child does something annoying for the fourth time today, what happens inside you?",
       "subtext": "The repeated shoe-throwing, the whining, the sibling poking. The fourth time.",
       "options": [
-        { "id": "q3a", "text": "I can still respond calmly — annoyed, sure, but I have bandwidth to handle it", "points": 3 },
-        { "id": "q3b", "text": "I feel my patience fraying but can usually keep my voice level", "points": 1 },
-        { "id": "q3c", "text": "I snap. Or I want to hide in the bathroom. Or both.", "points": 0 }
+        {
+          "id": "q3a",
+          "text": "I can still respond calmly — annoyed, sure, but I have bandwidth to handle it",
+          "points": 3
+        },
+        {
+          "id": "q3b",
+          "text": "I feel my patience fraying but can usually keep my voice level",
+          "points": 1
+        },
+        {
+          "id": "q3c",
+          "text": "I snap. Or I want to hide in the bathroom. Or both.",
+          "points": 0
+        }
       ]
     },
     {
@@ -125,9 +161,21 @@
       "text": "How often do you feel resentful about the amount of parenting labor you carry?",
       "subtext": "The invisible load — planning, tracking, anticipating, managing.",
       "options": [
-        { "id": "q4a", "text": "Rarely — the distribution feels manageable right now", "points": 3 },
-        { "id": "q4b", "text": "Sometimes — it flares up but doesn't dominate my thinking", "points": 1 },
-        { "id": "q4c", "text": "Constantly — the imbalance is a steady background hum of frustration", "points": 0 }
+        {
+          "id": "q4a",
+          "text": "Rarely — the distribution feels manageable right now",
+          "points": 3
+        },
+        {
+          "id": "q4b",
+          "text": "Sometimes — it flares up but doesn't dominate my thinking",
+          "points": 1
+        },
+        {
+          "id": "q4c",
+          "text": "Constantly — the imbalance is a steady background hum of frustration",
+          "points": 0
+        }
       ]
     },
     {
@@ -136,9 +184,21 @@
       "text": "In the last week, how many moments with your child actually felt good?",
       "subtext": "Not survived. Not tolerated. Actually enjoyed.",
       "options": [
-        { "id": "q5a", "text": "Multiple — we had real moments of genuine connection and fun", "points": 3 },
-        { "id": "q5b", "text": "A few — scattered between the logistics and the chaos", "points": 1 },
-        { "id": "q5c", "text": "Honestly struggling to name one that wasn't just getting through the day", "points": 0 }
+        {
+          "id": "q5a",
+          "text": "Multiple — we had real moments of genuine connection and fun",
+          "points": 3
+        },
+        {
+          "id": "q5b",
+          "text": "A few — scattered between the logistics and the chaos",
+          "points": 1
+        },
+        {
+          "id": "q5c",
+          "text": "Honestly struggling to name one that wasn't just getting through the day",
+          "points": 0
+        }
       ]
     },
     {
@@ -147,9 +207,21 @@
       "text": "When your child wants to show you something (a drawing, a bug, a 47th somersault), how do you feel?",
       "subtext": "The bids for attention that come twelve times an hour.",
       "options": [
-        { "id": "q6a", "text": "I can genuinely engage most of the time — even if briefly", "points": 3 },
-        { "id": "q6b", "text": "I fake interest sometimes but can still show up for the big moments", "points": 1 },
-        { "id": "q6c", "text": "I feel touched out and mentally elsewhere — responding is a performance", "points": 0 }
+        {
+          "id": "q6a",
+          "text": "I can genuinely engage most of the time — even if briefly",
+          "points": 3
+        },
+        {
+          "id": "q6b",
+          "text": "I fake interest sometimes but can still show up for the big moments",
+          "points": 1
+        },
+        {
+          "id": "q6c",
+          "text": "I feel touched out and mentally elsewhere — responding is a performance",
+          "points": 0
+        }
       ]
     },
     {
@@ -158,9 +230,21 @@
       "text": "If you had a truly terrible parenting day, who would you call?",
       "subtext": "Not for advice. Just to say \"today was awful\" and be heard.",
       "options": [
-        { "id": "q7a", "text": "I have at least one person who gets it and I'd actually reach out to them", "points": 3 },
-        { "id": "q7b", "text": "I have people in my life, but I probably wouldn't call — I'd just tough it out", "points": 1 },
-        { "id": "q7c", "text": "I don't have anyone who really understands, or I wouldn't burden them", "points": 0 }
+        {
+          "id": "q7a",
+          "text": "I have at least one person who gets it and I'd actually reach out to them",
+          "points": 3
+        },
+        {
+          "id": "q7b",
+          "text": "I have people in my life, but I probably wouldn't call — I'd just tough it out",
+          "points": 1
+        },
+        {
+          "id": "q7c",
+          "text": "I don't have anyone who really understands, or I wouldn't burden them",
+          "points": 0
+        }
       ]
     },
     {
@@ -169,9 +253,21 @@
       "text": "How often are you eating actual meals (not your kid's leftover crusts standing at the counter)?",
       "subtext": "Sitting down, food you chose, reasonably nourishing.",
       "options": [
-        { "id": "q8a", "text": "Most days I eat real meals and stay reasonably hydrated", "points": 3 },
-        { "id": "q8b", "text": "I eat, but it's often rushed, random, or whatever's left", "points": 1 },
-        { "id": "q8c", "text": "I regularly forget to eat or survive on coffee and scraps until dinner", "points": 0 }
+        {
+          "id": "q8a",
+          "text": "Most days I eat real meals and stay reasonably hydrated",
+          "points": 3
+        },
+        {
+          "id": "q8b",
+          "text": "I eat, but it's often rushed, random, or whatever's left",
+          "points": 1
+        },
+        {
+          "id": "q8c",
+          "text": "I regularly forget to eat or survive on coffee and scraps until dinner",
+          "points": 0
+        }
       ]
     },
     {
@@ -180,9 +276,21 @@
       "text": "In the last two weeks, have you done anything that was just for you?",
       "subtext": "Not errands. Not \"self-care\" that's actually household management. Something you wanted to do.",
       "options": [
-        { "id": "q9a", "text": "Yes — I made time for something I actually enjoy, even if it was small", "points": 3 },
-        { "id": "q9b", "text": "I can think of one thing, but it felt stolen rather than planned", "points": 1 },
-        { "id": "q9c", "text": "I genuinely cannot remember the last time I did something purely for myself", "points": 0 }
+        {
+          "id": "q9a",
+          "text": "Yes — I made time for something I actually enjoy, even if it was small",
+          "points": 3
+        },
+        {
+          "id": "q9b",
+          "text": "I can think of one thing, but it felt stolen rather than planned",
+          "points": 1
+        },
+        {
+          "id": "q9c",
+          "text": "I genuinely cannot remember the last time I did something purely for myself",
+          "points": 0
+        }
       ]
     },
     {
@@ -191,9 +299,21 @@
       "text": "How do you feel about asking for help with the kids?",
       "subtext": "From a partner, family member, friend, or paid help.",
       "options": [
-        { "id": "q10a", "text": "I ask when I need it and don't feel guilty about it", "points": 3 },
-        { "id": "q10b", "text": "I can ask, but there's always a side of guilt or feeling like I should handle it myself", "points": 1 },
-        { "id": "q10c", "text": "Asking for help feels impossible — either nobody's available or I can't bring myself to do it", "points": 0 }
+        {
+          "id": "q10a",
+          "text": "I ask when I need it and don't feel guilty about it",
+          "points": 3
+        },
+        {
+          "id": "q10b",
+          "text": "I can ask, but there's always a side of guilt or feeling like I should handle it myself",
+          "points": 1
+        },
+        {
+          "id": "q10c",
+          "text": "Asking for help feels impossible — either nobody's available or I can't bring myself to do it",
+          "points": 0
+        }
       ]
     }
   ],
@@ -283,7 +403,10 @@
     "fully-charged": {
       "id": "fully-charged",
       "themeColor": "#16a34a",
-      "scoreRange": { "min": 22, "max": 30 },
+      "scoreRange": {
+        "min": 22,
+        "max": 30
+      },
       "headline": "Fully Charged",
       "subheadline": "Your energy, emotional reserves, connection, and support systems are all holding up — which means you're parenting from a place of capacity rather than survival.",
       "explanation": "A high battery doesn't mean parenting is easy or that you never lose it. It means you have enough in the tank to recover when things go sideways. You're sleeping enough to think straight, eating something besides goldfish crackers, and you have at least one person who gets it. That infrastructure lets you show up as the parent you actually want to be — most days.",
@@ -299,7 +422,10 @@
     "half-charged": {
       "id": "half-charged",
       "themeColor": "#e8c840",
-      "scoreRange": { "min": 11, "max": 21 },
+      "scoreRange": {
+        "min": 11,
+        "max": 21
+      },
       "headline": "Running Low",
       "subheadline": "You're functional but stretched thin — some areas are holding up while others are quietly draining. This is the zone where small interventions prevent a bigger crash.",
       "explanation": "Most parents live here. You're getting through the days, the kids are fed and alive, but you can feel the margin getting thinner. Some domains are fine while others are running a deficit. The danger isn't today — it's the accumulation. Two months of \"fine but tired\" eventually becomes \"I can't do this anymore.\" The good news: you're not there yet, and targeted changes in your lowest domain can shift the whole picture.",
@@ -316,7 +442,10 @@
     "running-on-fumes": {
       "id": "running-on-fumes",
       "themeColor": "#dc2626",
-      "scoreRange": { "min": 0, "max": 10 },
+      "scoreRange": {
+        "min": 0,
+        "max": 10
+      },
       "headline": "Running on Fumes",
       "subheadline": "Your battery is critically low across multiple areas. You're surviving, not functioning — and that's not a personal failing, it's a resource problem.",
       "explanation": "When the battery is this low, everything feels harder than it should. Patience evaporates, connection feels like a performance, and self-care sounds like a cruel joke told by someone with a nanny. You're not broken — you're depleted. The instinct is to push harder, but that's like pressing the accelerator on an empty tank. Something has to change structurally, not just attitudinally.",

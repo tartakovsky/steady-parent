@@ -31,15 +31,27 @@
       "How your blend compares to other parents"
     ],
     "communityCta": {
-      "eyebrow": "Beyond the profile",
-      "title": "Get parenting scripts matched to your style",
-      "body": "A private group with bite-sized scripts and long-form explanations from parents figuring it out. We are there with you daily too.",
+      "eyebrow": "Now you know your style",
+      "title": "Compare notes with parents who got your result",
+      "body": "Next time someone questions your approach, you'll have parents who got your result to back you up. We are there with you daily too.",
       "buttonText": "Join the community"
     }
   },
   "scale": {
-    "labels": ["Never", "Rarely", "Sometimes", "Often", "Always"],
-    "points": [1, 2, 3, 4, 5]
+    "labels": [
+      "Never",
+      "Rarely",
+      "Sometimes",
+      "Often",
+      "Always"
+    ],
+    "points": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
   },
   "dimensions": {
     "steady-guide": {
@@ -56,7 +68,10 @@
       "growthEdge": "You can over-explain. Sometimes a kid needs a firm no more than a ten-minute seminar on natural consequences. Not every moment needs to be a teaching opportunity.",
       "encouragement": "Research consistently links this approach to children who are self-regulated, socially competent, and academically resilient. That does not mean your house is calm — it means the chaos has a foundation. Keep trusting the process on the days it looks like nothing is working.",
       "comparativeContext": "Studies find roughly 35-40% of parents in Western cultures lean primarily toward this balanced, reasoning-based approach.",
-      "populationNorm": { "mean": 3.9, "sd": 0.55 }
+      "populationNorm": {
+        "mean": 3.9,
+        "sd": 0.55
+      }
     },
     "firm-protector": {
       "id": "firm-protector",
@@ -72,7 +87,10 @@
       "growthEdge": "Consistency is your superpower, but rigidity is its shadow. When your kid pushes back, check whether they need compliance or to feel heard. One conversation will not unravel your authority.",
       "encouragement": "Your kids have structure, and structure is genuinely protective. Children with consistent boundaries feel safer and develop better self-regulation. The next step for you is not less firmness — it is adding more warmth alongside the firmness you already have.",
       "comparativeContext": "About 25-30% of parents primarily use a structure-first approach, especially common in families that value respect and responsibility.",
-      "populationNorm": { "mean": 3.4, "sd": 0.60 }
+      "populationNorm": {
+        "mean": 3.4,
+        "sd": 0.6
+      }
     },
     "gentle-connector": {
       "id": "gentle-connector",
@@ -88,7 +106,10 @@
       "growthEdge": "Saying yes to everything means your kid does not know where the edges are. They need guardrails — not to limit them, but so they have something solid to push against when the world gets overwhelming.",
       "encouragement": "Your kids know they are loved and that their feelings matter. That is not small. Warm, responsive parenting predicts secure attachment and emotional intelligence. The growth is not becoming stricter — it is getting comfortable with the discomfort of holding a boundary when your child is upset about it.",
       "comparativeContext": "Roughly 20-25% of parents lean primarily toward a connection-driven, flexibility-first style.",
-      "populationNorm": { "mean": 2.7, "sd": 0.65 }
+      "populationNorm": {
+        "mean": 2.7,
+        "sd": 0.65
+      }
     },
     "free-range-navigator": {
       "id": "free-range-navigator",
@@ -104,7 +125,10 @@
       "growthEdge": "There is a line between healthy independence and a kid who stops asking for help. Check in more often than you think you need to — not to control, but to connect.",
       "encouragement": "Your kids are building problem-solving skills and resilience that helicopter-parented children often lack. Independence is a genuine gift. The calibration is making sure your child knows the door is always open, even if they rarely knock on it.",
       "comparativeContext": "About 15-20% of parents lean primarily toward an autonomy-first approach, though it is more common among parents of older children and teens.",
-      "populationNorm": { "mean": 2.8, "sd": 0.70 }
+      "populationNorm": {
+        "mean": 2.8,
+        "sd": 0.7
+      }
     }
   },
   "statements": [

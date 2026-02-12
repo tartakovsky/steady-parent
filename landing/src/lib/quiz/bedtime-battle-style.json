@@ -29,9 +29,9 @@
       "How you blend across all four bedtime parent types"
     ],
     "communityCta": {
-      "eyebrow": "Bedtime still a mess?",
-      "title": "Get bedtime scripts from parents who get it",
-      "body": "A private group with bite-sized bedtime scripts and long-form strategies from founders who parent through it too. We are there with you daily too.",
+      "eyebrow": "So that's your move",
+      "title": "Swap tactics with parents running the same bedtime",
+      "body": "Tomorrow night when stalling starts, you'll know what worked for parents who handle bedtime your way. We are there with you daily too.",
       "buttonText": "Join the community"
     }
   },
@@ -106,22 +106,42 @@
         {
           "id": "q1a",
           "text": "Offer a deal: one small sip, then absolutely no more requests",
-          "points": { "negotiator": 5, "drill-sergeant": 0, "softie": 1, "creative-tactician": 2 }
+          "points": {
+            "negotiator": 5,
+            "drill-sergeant": 0,
+            "softie": 1,
+            "creative-tactician": 2
+          }
         },
         {
           "id": "q1b",
           "text": "Remind them they already had water and the kitchen is closed",
-          "points": { "negotiator": 1, "drill-sergeant": 5, "softie": 0, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 1,
+            "drill-sergeant": 5,
+            "softie": 0,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q1c",
           "text": "Bring the water because they might actually be thirsty and you'd feel terrible if they weren't",
-          "points": { "negotiator": 1, "drill-sergeant": 0, "softie": 5, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 1,
+            "drill-sergeant": 0,
+            "softie": 5,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q1d",
           "text": "Put a special bedtime water bottle on the nightstand and explain it's their sleep supply for the night",
-          "points": { "negotiator": 2, "drill-sergeant": 1, "softie": 0, "creative-tactician": 5 }
+          "points": {
+            "negotiator": 2,
+            "drill-sergeant": 1,
+            "softie": 0,
+            "creative-tactician": 5
+          }
         }
       ]
     },
@@ -132,22 +152,42 @@
         {
           "id": "q2a",
           "text": "Explain calmly that monsters aren't real, then agree to check the closet one time if they promise to stay in bed",
-          "points": { "negotiator": 5, "drill-sergeant": 1, "softie": 1, "creative-tactician": 2 }
+          "points": {
+            "negotiator": 5,
+            "drill-sergeant": 1,
+            "softie": 1,
+            "creative-tactician": 2
+          }
         },
         {
           "id": "q2b",
           "text": "Check the closet once, confirm it's empty, say goodnight, and leave — same as you did last night",
-          "points": { "negotiator": 1, "drill-sergeant": 5, "softie": 1, "creative-tactician": 0 }
+          "points": {
+            "negotiator": 1,
+            "drill-sergeant": 5,
+            "softie": 1,
+            "creative-tactician": 0
+          }
         },
         {
           "id": "q2c",
           "text": "Lie down with them for a while because they're genuinely scared and you can't just leave them like that",
-          "points": { "negotiator": 0, "drill-sergeant": 0, "softie": 5, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 0,
+            "drill-sergeant": 0,
+            "softie": 5,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q2d",
           "text": "Break out the monster-repelling spray you made from water and lavender, and do a thorough room sweep together",
-          "points": { "negotiator": 1, "drill-sergeant": 0, "softie": 2, "creative-tactician": 5 }
+          "points": {
+            "negotiator": 1,
+            "drill-sergeant": 0,
+            "softie": 2,
+            "creative-tactician": 5
+          }
         }
       ]
     },
@@ -159,22 +199,42 @@
         {
           "id": "q3a",
           "text": "Listen for two minutes, then propose continuing the conversation at breakfast",
-          "points": { "negotiator": 5, "drill-sergeant": 2, "softie": 1, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 5,
+            "drill-sergeant": 2,
+            "softie": 1,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q3b",
           "text": "Acknowledge it sounds important but it's bedtime, and you'll talk about it tomorrow",
-          "points": { "negotiator": 1, "drill-sergeant": 5, "softie": 0, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 1,
+            "drill-sergeant": 5,
+            "softie": 0,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q3c",
           "text": "Sit on the bed and let them talk it out, because what if this is the one time it actually matters",
-          "points": { "negotiator": 0, "drill-sergeant": 0, "softie": 5, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 0,
+            "drill-sergeant": 0,
+            "softie": 5,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q3d",
           "text": "Give them a journal or voice recorder to capture the thought, promising you'll review it together tomorrow",
-          "points": { "negotiator": 2, "drill-sergeant": 1, "softie": 1, "creative-tactician": 5 }
+          "points": {
+            "negotiator": 2,
+            "drill-sergeant": 1,
+            "softie": 1,
+            "creative-tactician": 5
+          }
         }
       ]
     },
@@ -185,22 +245,42 @@
         {
           "id": "q4a",
           "text": "Sit them down and establish an agreement: one more get-up-free pass, then it's done for real",
-          "points": { "negotiator": 5, "drill-sergeant": 1, "softie": 1, "creative-tactician": 2 }
+          "points": {
+            "negotiator": 5,
+            "drill-sergeant": 1,
+            "softie": 1,
+            "creative-tactician": 2
+          }
         },
         {
           "id": "q4b",
           "text": "Walk them back to bed silently. No conversation, no engagement. Just the return trip.",
-          "points": { "negotiator": 0, "drill-sergeant": 5, "softie": 0, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 0,
+            "drill-sergeant": 5,
+            "softie": 0,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q4c",
           "text": "Ask what's really going on, because four times means something is bothering them",
-          "points": { "negotiator": 2, "drill-sergeant": 0, "softie": 5, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 2,
+            "drill-sergeant": 0,
+            "softie": 5,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q4d",
           "text": "Introduce a bedtime pass system — two physical tickets they can trade for one get-up each night",
-          "points": { "negotiator": 2, "drill-sergeant": 1, "softie": 0, "creative-tactician": 5 }
+          "points": {
+            "negotiator": 2,
+            "drill-sergeant": 1,
+            "softie": 0,
+            "creative-tactician": 5
+          }
         }
       ]
     },
@@ -211,22 +291,42 @@
         {
           "id": "q5a",
           "text": "Propose a compromise: you'll lie there for five minutes, then you're leaving",
-          "points": { "negotiator": 5, "drill-sergeant": 1, "softie": 2, "creative-tactician": 0 }
+          "points": {
+            "negotiator": 5,
+            "drill-sergeant": 1,
+            "softie": 2,
+            "creative-tactician": 0
+          }
         },
         {
           "id": "q5b",
           "text": "Give them a hug, say goodnight, and close the door. They need to learn to fall asleep independently.",
-          "points": { "negotiator": 0, "drill-sergeant": 5, "softie": 0, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 0,
+            "drill-sergeant": 5,
+            "softie": 0,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q5c",
           "text": "Lie down next to them. The dishes can wait. The show can wait. This won't last forever.",
-          "points": { "negotiator": 0, "drill-sergeant": 0, "softie": 5, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 0,
+            "drill-sergeant": 0,
+            "softie": 5,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q5d",
           "text": "Set up a gradual system — lie next to the bed tonight, chair by the door tomorrow, hallway the next day",
-          "points": { "negotiator": 2, "drill-sergeant": 2, "softie": 1, "creative-tactician": 5 }
+          "points": {
+            "negotiator": 2,
+            "drill-sergeant": 2,
+            "softie": 1,
+            "creative-tactician": 5
+          }
         }
       ]
     },
@@ -238,22 +338,42 @@
         {
           "id": "q6a",
           "text": "Say they can go, but only if they agree to go straight back to bed with no more requests after",
-          "points": { "negotiator": 5, "drill-sergeant": 1, "softie": 1, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 5,
+            "drill-sergeant": 1,
+            "softie": 1,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q6b",
           "text": "Tell them they just went and they can hold it until morning",
-          "points": { "negotiator": 0, "drill-sergeant": 5, "softie": 0, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 0,
+            "drill-sergeant": 5,
+            "softie": 0,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q6c",
           "text": "Let them go because what if they actually do need to, and then you'd be the parent who said no to the bathroom",
-          "points": { "negotiator": 1, "drill-sergeant": 0, "softie": 5, "creative-tactician": 0 }
+          "points": {
+            "negotiator": 1,
+            "drill-sergeant": 0,
+            "softie": 5,
+            "creative-tactician": 0
+          }
         },
         {
           "id": "q6d",
           "text": "Add a built-in final bathroom trip to the routine, right before lights out, to preempt this exact move",
-          "points": { "negotiator": 1, "drill-sergeant": 2, "softie": 0, "creative-tactician": 5 }
+          "points": {
+            "negotiator": 1,
+            "drill-sergeant": 2,
+            "softie": 0,
+            "creative-tactician": 5
+          }
         }
       ]
     },
@@ -264,22 +384,42 @@
         {
           "id": "q7a",
           "text": "Offer a choice: this story tonight, their pick tomorrow — final offer",
-          "points": { "negotiator": 5, "drill-sergeant": 2, "softie": 0, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 5,
+            "drill-sergeant": 2,
+            "softie": 0,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q7b",
           "text": "This is the story we have. We're reading it or reading nothing. Decide.",
-          "points": { "negotiator": 0, "drill-sergeant": 5, "softie": 0, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 0,
+            "drill-sergeant": 5,
+            "softie": 0,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q7c",
           "text": "Go get the book from downstairs because the meltdown will last longer than the trip",
-          "points": { "negotiator": 1, "drill-sergeant": 0, "softie": 5, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 1,
+            "drill-sergeant": 0,
+            "softie": 5,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q7d",
           "text": "Make up an entirely new story on the spot, starring their favorite characters, to redirect the energy",
-          "points": { "negotiator": 1, "drill-sergeant": 0, "softie": 2, "creative-tactician": 5 }
+          "points": {
+            "negotiator": 1,
+            "drill-sergeant": 0,
+            "softie": 2,
+            "creative-tactician": 5
+          }
         }
       ]
     },
@@ -291,22 +431,42 @@
         {
           "id": "q8a",
           "text": "Make one final appeal to reason: explain that their body needs sleep and you've done everything they asked",
-          "points": { "negotiator": 5, "drill-sergeant": 1, "softie": 1, "creative-tactician": 0 }
+          "points": {
+            "negotiator": 5,
+            "drill-sergeant": 1,
+            "softie": 1,
+            "creative-tactician": 0
+          }
         },
         {
           "id": "q8b",
           "text": "Say goodnight, close the door, and accept that whatever happens next is between them and the ceiling",
-          "points": { "negotiator": 0, "drill-sergeant": 5, "softie": 0, "creative-tactician": 1 }
+          "points": {
+            "negotiator": 0,
+            "drill-sergeant": 5,
+            "softie": 0,
+            "creative-tactician": 1
+          }
         },
         {
           "id": "q8c",
           "text": "Crawl into their bed because at this point you're the one who needs the comfort",
-          "points": { "negotiator": 0, "drill-sergeant": 0, "softie": 5, "creative-tactician": 2 }
+          "points": {
+            "negotiator": 0,
+            "drill-sergeant": 0,
+            "softie": 5,
+            "creative-tactician": 2
+          }
         },
         {
           "id": "q8d",
           "text": "Switch tactics entirely — try a guided meditation, white noise machine, or counting game you haven't deployed yet",
-          "points": { "negotiator": 1, "drill-sergeant": 0, "softie": 1, "creative-tactician": 5 }
+          "points": {
+            "negotiator": 1,
+            "drill-sergeant": 0,
+            "softie": 1,
+            "creative-tactician": 5
+          }
         }
       ]
     }

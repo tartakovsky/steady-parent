@@ -29,9 +29,9 @@
       "How you blend across all four parent types from a kid's-eye view"
     ],
     "communityCta": {
-      "eyebrow": "Want to shift the pattern?",
-      "title": "Get scripts from parents working on the same stuff",
-      "body": "A private group with bite-sized scripts and real strategies from parents figuring it out. We are there with you daily too.",
+      "eyebrow": "That was uncomfortably honest",
+      "title": "Unpack your result with parents closing that gap",
+      "body": "Next time you wonder what your kid actually thinks, you'll have parents who closed that same gap. We are there with you daily too.",
       "buttonText": "Join the community"
     }
   },
@@ -106,22 +106,42 @@
         {
           "id": "q1a",
           "text": "Say yes because honestly, why not. Let the kid be a pirate on a Tuesday.",
-          "points": { "fun-one": 5, "safe-one": 0, "wise-one": 1, "silly-one": 2 }
+          "points": {
+            "fun-one": 5,
+            "safe-one": 0,
+            "wise-one": 1,
+            "silly-one": 2
+          }
         },
         {
           "id": "q1b",
           "text": "Remind them we wear regular clothes to school and the costume stays home",
-          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 1, "silly-one": 0 }
+          "points": {
+            "fun-one": 0,
+            "safe-one": 5,
+            "wise-one": 1,
+            "silly-one": 0
+          }
         },
         {
           "id": "q1c",
           "text": "Launch into an explanation about appropriate contexts for costumes and how social norms work",
-          "points": { "fun-one": 0, "safe-one": 1, "wise-one": 5, "silly-one": 1 }
+          "points": {
+            "fun-one": 0,
+            "safe-one": 1,
+            "wise-one": 5,
+            "silly-one": 1
+          }
         },
         {
           "id": "q1d",
           "text": "Offer to wear your own ridiculous hat to drop-off if they wear regular clothes",
-          "points": { "fun-one": 2, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+          "points": {
+            "fun-one": 2,
+            "safe-one": 0,
+            "wise-one": 0,
+            "silly-one": 5
+          }
         }
       ]
     },
@@ -132,22 +152,42 @@
         {
           "id": "q2a",
           "text": "Drop everything and suggest doing something they love to get their mind off it",
-          "points": { "fun-one": 5, "safe-one": 1, "wise-one": 0, "silly-one": 1 }
+          "points": {
+            "fun-one": 5,
+            "safe-one": 1,
+            "wise-one": 0,
+            "silly-one": 1
+          }
         },
         {
           "id": "q2b",
           "text": "Give them the same after-school snack and routine as always — predictability helps when things feel chaotic",
-          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 1, "silly-one": 0 }
+          "points": {
+            "fun-one": 0,
+            "safe-one": 5,
+            "wise-one": 1,
+            "silly-one": 0
+          }
         },
         {
           "id": "q2c",
           "text": "Sit down and walk through what happened step by step to help them process and problem-solve",
-          "points": { "fun-one": 1, "safe-one": 1, "wise-one": 5, "silly-one": 0 }
+          "points": {
+            "fun-one": 1,
+            "safe-one": 1,
+            "wise-one": 5,
+            "silly-one": 0
+          }
         },
         {
           "id": "q2d",
           "text": "Make an exaggerated sad face and say something absurd to see if you can get a smile first",
-          "points": { "fun-one": 1, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+          "points": {
+            "fun-one": 1,
+            "safe-one": 0,
+            "wise-one": 0,
+            "silly-one": 5
+          }
         }
       ]
     },
@@ -158,22 +198,42 @@
         {
           "id": "q3a",
           "text": "Ask what they want to do and genuinely consider building the day around their idea",
-          "points": { "fun-one": 5, "safe-one": 0, "wise-one": 1, "silly-one": 1 }
+          "points": {
+            "fun-one": 5,
+            "safe-one": 0,
+            "wise-one": 1,
+            "silly-one": 1
+          }
         },
         {
           "id": "q3b",
           "text": "Walk them through the schedule you already have planned — errands, lunch, park, home by 3",
-          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 1, "silly-one": 0 }
+          "points": {
+            "fun-one": 0,
+            "safe-one": 5,
+            "wise-one": 1,
+            "silly-one": 0
+          }
         },
         {
           "id": "q3c",
           "text": "Lay out a few options and talk through the pros and cons of each together",
-          "points": { "fun-one": 1, "safe-one": 1, "wise-one": 5, "silly-one": 0 }
+          "points": {
+            "fun-one": 1,
+            "safe-one": 1,
+            "wise-one": 5,
+            "silly-one": 0
+          }
         },
         {
           "id": "q3d",
           "text": "Announce you're all going on a mystery adventure and refuse to reveal the destination",
-          "points": { "fun-one": 2, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+          "points": {
+            "fun-one": 2,
+            "safe-one": 0,
+            "wise-one": 0,
+            "silly-one": 5
+          }
         }
       ]
     },
@@ -185,22 +245,42 @@
         {
           "id": "q4a",
           "text": "Let them bring it. You'll deal with the consequences when they happen.",
-          "points": { "fun-one": 5, "safe-one": 0, "wise-one": 0, "silly-one": 2 }
+          "points": {
+            "fun-one": 5,
+            "safe-one": 0,
+            "wise-one": 0,
+            "silly-one": 2
+          }
         },
         {
           "id": "q4b",
           "text": "Hold the boundary you already set — the toy stays home, end of discussion",
-          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 1, "silly-one": 0 }
+          "points": {
+            "fun-one": 0,
+            "safe-one": 5,
+            "wise-one": 1,
+            "silly-one": 0
+          }
         },
         {
           "id": "q4c",
           "text": "Explain exactly why the toy will cause a problem and help them understand the choice they're making",
-          "points": { "fun-one": 0, "safe-one": 1, "wise-one": 5, "silly-one": 0 }
+          "points": {
+            "fun-one": 0,
+            "safe-one": 1,
+            "wise-one": 5,
+            "silly-one": 0
+          }
         },
         {
           "id": "q4d",
           "text": "Pretend the toy is speaking to you and have it tell your kid it would rather stay home and nap",
-          "points": { "fun-one": 1, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+          "points": {
+            "fun-one": 1,
+            "safe-one": 0,
+            "wise-one": 0,
+            "silly-one": 5
+          }
         }
       ]
     },
@@ -211,22 +291,42 @@
         {
           "id": "q5a",
           "text": "Offer to make it more fun — turn it into a game, rearrange it into a face, whatever works",
-          "points": { "fun-one": 5, "safe-one": 0, "wise-one": 1, "silly-one": 2 }
+          "points": {
+            "fun-one": 5,
+            "safe-one": 0,
+            "wise-one": 1,
+            "silly-one": 2
+          }
         },
         {
           "id": "q5b",
           "text": "This is dinner. You don't have to eat it, but this is what's being served.",
-          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 1, "silly-one": 0 }
+          "points": {
+            "fun-one": 0,
+            "safe-one": 5,
+            "wise-one": 1,
+            "silly-one": 0
+          }
         },
         {
           "id": "q5c",
           "text": "Talk through why their body needs different foods and what each thing on the plate does for them",
-          "points": { "fun-one": 1, "safe-one": 1, "wise-one": 5, "silly-one": 0 }
+          "points": {
+            "fun-one": 1,
+            "safe-one": 1,
+            "wise-one": 5,
+            "silly-one": 0
+          }
         },
         {
           "id": "q5d",
           "text": "Start eating dramatically and making exaggerated yum noises to see if you can get them to laugh and try a bite",
-          "points": { "fun-one": 1, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+          "points": {
+            "fun-one": 1,
+            "safe-one": 0,
+            "wise-one": 0,
+            "silly-one": 5
+          }
         }
       ]
     },
@@ -237,22 +337,42 @@
         {
           "id": "q6a",
           "text": "Rearrange your evening to make it happen because they're genuinely excited",
-          "points": { "fun-one": 5, "safe-one": 0, "wise-one": 0, "silly-one": 1 }
+          "points": {
+            "fun-one": 5,
+            "safe-one": 0,
+            "wise-one": 0,
+            "silly-one": 1
+          }
         },
         {
           "id": "q6b",
           "text": "Explain that sleepovers need advance notice and tonight doesn't work",
-          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 2, "silly-one": 0 }
+          "points": {
+            "fun-one": 0,
+            "safe-one": 5,
+            "wise-one": 2,
+            "silly-one": 0
+          }
         },
         {
           "id": "q6c",
           "text": "Walk them through why last-minute plans are hard and talk about how to plan better next time",
-          "points": { "fun-one": 0, "safe-one": 2, "wise-one": 5, "silly-one": 0 }
+          "points": {
+            "fun-one": 0,
+            "safe-one": 2,
+            "wise-one": 5,
+            "silly-one": 0
+          }
         },
         {
           "id": "q6d",
           "text": "Counter-offer a living room campout at home with blanket forts and flashlights",
-          "points": { "fun-one": 2, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+          "points": {
+            "fun-one": 2,
+            "safe-one": 0,
+            "wise-one": 0,
+            "silly-one": 5
+          }
         }
       ]
     },
@@ -263,22 +383,42 @@
         {
           "id": "q7a",
           "text": "Find a way to fix it or offer a fun distraction to shift the energy",
-          "points": { "fun-one": 5, "safe-one": 1, "wise-one": 0, "silly-one": 1 }
+          "points": {
+            "fun-one": 5,
+            "safe-one": 1,
+            "wise-one": 0,
+            "silly-one": 1
+          }
         },
         {
           "id": "q7b",
           "text": "Stay calm and neutral. This is how meltdowns go. It will pass.",
-          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 1, "silly-one": 0 }
+          "points": {
+            "fun-one": 0,
+            "safe-one": 5,
+            "wise-one": 1,
+            "silly-one": 0
+          }
         },
         {
           "id": "q7c",
           "text": "Name the feeling and explain what's happening in their body and why small things feel big sometimes",
-          "points": { "fun-one": 0, "safe-one": 1, "wise-one": 5, "silly-one": 0 }
+          "points": {
+            "fun-one": 0,
+            "safe-one": 1,
+            "wise-one": 5,
+            "silly-one": 0
+          }
         },
         {
           "id": "q7d",
           "text": "Match their energy with mock outrage — 'A BROKEN CRACKER?! This is the worst day in cracker history!'",
-          "points": { "fun-one": 1, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+          "points": {
+            "fun-one": 1,
+            "safe-one": 0,
+            "wise-one": 0,
+            "silly-one": 5
+          }
         }
       ]
     },
@@ -290,22 +430,42 @@
         {
           "id": "q8a",
           "text": "Give them fifteen minutes to play and then shift bedtime back a bit",
-          "points": { "fun-one": 5, "safe-one": 0, "wise-one": 0, "silly-one": 2 }
+          "points": {
+            "fun-one": 5,
+            "safe-one": 0,
+            "wise-one": 0,
+            "silly-one": 2
+          }
         },
         {
           "id": "q8b",
           "text": "Bedtime is bedtime. We can play tomorrow, but tonight we stick to the routine.",
-          "points": { "fun-one": 0, "safe-one": 5, "wise-one": 1, "silly-one": 0 }
+          "points": {
+            "fun-one": 0,
+            "safe-one": 5,
+            "wise-one": 1,
+            "silly-one": 0
+          }
         },
         {
           "id": "q8c",
           "text": "Explain why starting something big right before bed makes it hard to wind down and offer a smaller alternative",
-          "points": { "fun-one": 1, "safe-one": 1, "wise-one": 5, "silly-one": 0 }
+          "points": {
+            "fun-one": 1,
+            "safe-one": 1,
+            "wise-one": 5,
+            "silly-one": 0
+          }
         },
         {
           "id": "q8d",
           "text": "Announce that all the stuffed animals are actually very tired and need to go to bed immediately, complete with yawning sound effects",
-          "points": { "fun-one": 1, "safe-one": 0, "wise-one": 0, "silly-one": 5 }
+          "points": {
+            "fun-one": 1,
+            "safe-one": 0,
+            "wise-one": 0,
+            "silly-one": 5
+          }
         }
       ]
     }

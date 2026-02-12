@@ -45,9 +45,9 @@
       "A prioritized action plan you can start today"
     ],
     "communityCta": {
-      "eyebrow": "Want help with this?",
-      "title": "Get scripts for social challenges from parents in the thick of it",
-      "body": "Real strategies for peer conflicts, shy kids, and social struggles from parents who've navigated it. We are there with you daily too.",
+      "eyebrow": "Now you see the score",
+      "title": "Compare notes with parents building the same confidence",
+      "body": "Next time your kid hangs back, you'll have parents whose child scored the same to ask. We are there with you daily too.",
       "buttonText": "Join the community"
     }
   },
@@ -96,9 +96,21 @@
       "text": "When you're at a playground or park with other kids, how does your child approach playing with unfamiliar children?",
       "subtext": "Not their best friend. Kids they've never met.",
       "options": [
-        { "id": "q1a", "text": "Joins in independently, no prompting needed — might watch for a minute but then jumps in", "points": 3 },
-        { "id": "q1b", "text": "Will join if invited or if I give them a gentle nudge", "points": 1 },
-        { "id": "q1c", "text": "Watches from the sidelines or stays with me unless I actively facilitate", "points": 0 }
+        {
+          "id": "q1a",
+          "text": "Joins in independently, no prompting needed — might watch for a minute but then jumps in",
+          "points": 3
+        },
+        {
+          "id": "q1b",
+          "text": "Will join if invited or if I give them a gentle nudge",
+          "points": 1
+        },
+        {
+          "id": "q1c",
+          "text": "Watches from the sidelines or stays with me unless I actively facilitate",
+          "points": 0
+        }
       ]
     },
     {
@@ -107,9 +119,21 @@
       "text": "How does your child do with joining an existing group game that's already in progress?",
       "subtext": "The three kids who've already started building the fort or playing tag.",
       "options": [
-        { "id": "q2a", "text": "Can walk up and ask to join or just start playing alongside them", "points": 3 },
-        { "id": "q2b", "text": "Hovers nearby hoping to be invited in, sometimes succeeds", "points": 1 },
-        { "id": "q2c", "text": "Struggles to enter ongoing play — either waits indefinitely or disrupts the game", "points": 0 }
+        {
+          "id": "q2a",
+          "text": "Can walk up and ask to join or just start playing alongside them",
+          "points": 3
+        },
+        {
+          "id": "q2b",
+          "text": "Hovers nearby hoping to be invited in, sometimes succeeds",
+          "points": 1
+        },
+        {
+          "id": "q2c",
+          "text": "Struggles to enter ongoing play — either waits indefinitely or disrupts the game",
+          "points": 0
+        }
       ]
     },
     {
@@ -118,9 +142,21 @@
       "text": "Does your child have at least one reciprocal friendship where both kids seek each other out?",
       "subtext": "Not a kid they tolerate. Someone they actually want to play with and who wants to play with them.",
       "options": [
-        { "id": "q3a", "text": "Yes — they have one or more friends who genuinely choose each other", "points": 3 },
-        { "id": "q3b", "text": "Sort of — they have playmates but the connection feels one-sided or inconsistent", "points": 1 },
-        { "id": "q3c", "text": "Not yet — they don't have a consistent peer they seek out or who seeks them out", "points": 0 }
+        {
+          "id": "q3a",
+          "text": "Yes — they have one or more friends who genuinely choose each other",
+          "points": 3
+        },
+        {
+          "id": "q3b",
+          "text": "Sort of — they have playmates but the connection feels one-sided or inconsistent",
+          "points": 1
+        },
+        {
+          "id": "q3c",
+          "text": "Not yet — they don't have a consistent peer they seek out or who seeks them out",
+          "points": 0
+        }
       ]
     },
     {
@@ -129,9 +165,21 @@
       "text": "When another child takes your child's toy or cuts in line, what happens?",
       "subtext": "The everyday micro-injustices of kid life.",
       "options": [
-        { "id": "q4a", "text": "They speak up for themselves — might say \"I was using that\" or \"I was here first\" without melting down", "points": 3 },
-        { "id": "q4b", "text": "Sometimes speaks up, sometimes just accepts it — depends on the day or the kid", "points": 1 },
-        { "id": "q4c", "text": "Either shuts down and lets it go or escalates to hitting/screaming immediately", "points": 0 }
+        {
+          "id": "q4a",
+          "text": "They speak up for themselves — might say \"I was using that\" or \"I was here first\" without melting down",
+          "points": 3
+        },
+        {
+          "id": "q4b",
+          "text": "Sometimes speaks up, sometimes just accepts it — depends on the day or the kid",
+          "points": 1
+        },
+        {
+          "id": "q4c",
+          "text": "Either shuts down and lets it go or escalates to hitting/screaming immediately",
+          "points": 0
+        }
       ]
     },
     {
@@ -140,9 +188,21 @@
       "text": "How does your child handle disagreements with peers during play (different game rules, who goes first, etc.)?",
       "subtext": "The daily negotiations that come with playing with other humans.",
       "options": [
-        { "id": "q5a", "text": "Can negotiate, compromise, or walk away from a conflict without total breakdown", "points": 3 },
-        { "id": "q5b", "text": "Sometimes works it out, sometimes needs adult intervention to avoid a meltdown", "points": 1 },
-        { "id": "q5c", "text": "Disagreements consistently end in tears, aggression, or giving up entirely", "points": 0 }
+        {
+          "id": "q5a",
+          "text": "Can negotiate, compromise, or walk away from a conflict without total breakdown",
+          "points": 3
+        },
+        {
+          "id": "q5b",
+          "text": "Sometimes works it out, sometimes needs adult intervention to avoid a meltdown",
+          "points": 1
+        },
+        {
+          "id": "q5c",
+          "text": "Disagreements consistently end in tears, aggression, or giving up entirely",
+          "points": 0
+        }
       ]
     },
     {
@@ -151,9 +211,21 @@
       "text": "If you drop your child off at a birthday party or playdate with familiar kids, how do they handle the separation?",
       "subtext": "Not a stranger's house. A setting where they know at least one kid reasonably well.",
       "options": [
-        { "id": "q6a", "text": "Separates easily and engages with the group without needing me there", "points": 3 },
-        { "id": "q6b", "text": "Hesitant at drop-off but settles in once I leave", "points": 1 },
-        { "id": "q6c", "text": "Struggles significantly with separation or refuses to stay without me", "points": 0 }
+        {
+          "id": "q6a",
+          "text": "Separates easily and engages with the group without needing me there",
+          "points": 3
+        },
+        {
+          "id": "q6b",
+          "text": "Hesitant at drop-off but settles in once I leave",
+          "points": 1
+        },
+        {
+          "id": "q6c",
+          "text": "Struggles significantly with separation or refuses to stay without me",
+          "points": 0
+        }
       ]
     },
     {
@@ -162,9 +234,21 @@
       "text": "In a new social setting (new class, camp, activity), how long does it take your child to participate without clinging?",
       "subtext": "Not talking to everyone. Just functioning without being glued to your leg.",
       "options": [
-        { "id": "q7a", "text": "Within the first session, they're engaging and participating independently", "points": 3 },
-        { "id": "q7b", "text": "Takes a few sessions to warm up but eventually gets there", "points": 1 },
-        { "id": "q7c", "text": "Requires weeks of slow acclimation or just doesn't adjust without significant support", "points": 0 }
+        {
+          "id": "q7a",
+          "text": "Within the first session, they're engaging and participating independently",
+          "points": 3
+        },
+        {
+          "id": "q7b",
+          "text": "Takes a few sessions to warm up but eventually gets there",
+          "points": 1
+        },
+        {
+          "id": "q7c",
+          "text": "Requires weeks of slow acclimation or just doesn't adjust without significant support",
+          "points": 0
+        }
       ]
     },
     {
@@ -173,9 +257,21 @@
       "text": "Can your child make eye contact and respond when an adult asks them a direct question (teacher, friend's parent, etc.)?",
       "subtext": "\"What's your name?\" or \"Do you want a snack?\" — not a dissertation, just basic responsiveness.",
       "options": [
-        { "id": "q8a", "text": "Usually answers clearly enough and makes some eye contact", "points": 3 },
-        { "id": "q8b", "text": "Answers sometimes but often mumbles, hides, or looks at me to answer for them", "points": 1 },
-        { "id": "q8c", "text": "Rarely responds directly — either freezes, ignores, or I have to translate", "points": 0 }
+        {
+          "id": "q8a",
+          "text": "Usually answers clearly enough and makes some eye contact",
+          "points": 3
+        },
+        {
+          "id": "q8b",
+          "text": "Answers sometimes but often mumbles, hides, or looks at me to answer for them",
+          "points": 1
+        },
+        {
+          "id": "q8c",
+          "text": "Rarely responds directly — either freezes, ignores, or I have to translate",
+          "points": 0
+        }
       ]
     },
     {
@@ -184,9 +280,21 @@
       "text": "When your child needs something from another kid (a turn, a specific toy, help with something), can they ask for it?",
       "subtext": "Not elaborate negotiation. Just \"can I have a turn?\" level communication.",
       "options": [
-        { "id": "q9a", "text": "Usually asks directly without prompting from me", "points": 3 },
-        { "id": "q9b", "text": "Asks if I remind them or coach them through it", "points": 1 },
-        { "id": "q9c", "text": "Doesn't ask — either grabs, gives up, or comes to me to do it for them", "points": 0 }
+        {
+          "id": "q9a",
+          "text": "Usually asks directly without prompting from me",
+          "points": 3
+        },
+        {
+          "id": "q9b",
+          "text": "Asks if I remind them or coach them through it",
+          "points": 1
+        },
+        {
+          "id": "q9c",
+          "text": "Doesn't ask — either grabs, gives up, or comes to me to do it for them",
+          "points": 0
+        }
       ]
     },
     {
@@ -195,9 +303,21 @@
       "text": "Can your child hold a basic back-and-forth conversation with a peer (not just parallel talking)?",
       "subtext": "Talking about the game, asking questions, responding to what the other kid says — actual dialogue.",
       "options": [
-        { "id": "q10a", "text": "Yes — they can go back and forth at least a few exchanges", "points": 3 },
-        { "id": "q10b", "text": "Sometimes, but often just talks at the other kid or goes silent", "points": 1 },
-        { "id": "q10c", "text": "Rarely sustains conversation — mostly monologues or doesn't engage verbally much", "points": 0 }
+        {
+          "id": "q10a",
+          "text": "Yes — they can go back and forth at least a few exchanges",
+          "points": 3
+        },
+        {
+          "id": "q10b",
+          "text": "Sometimes, but often just talks at the other kid or goes silent",
+          "points": 1
+        },
+        {
+          "id": "q10c",
+          "text": "Rarely sustains conversation — mostly monologues or doesn't engage verbally much",
+          "points": 0
+        }
       ]
     }
   ],
@@ -287,7 +407,10 @@
     "strong-confidence": {
       "id": "strong-confidence",
       "themeColor": "#16a34a",
-      "scoreRange": { "min": 22, "max": 30 },
+      "scoreRange": {
+        "min": 22,
+        "max": 30
+      },
       "headline": "Strong Foundation",
       "subheadline": "Your child has the core social tools — joining in, speaking up, operating independently, communicating needs. These skills make social life navigable, not just survivable.",
       "explanation": "A high score doesn't mean they're the life of the party or that every playdate is smooth. It means they have functional competence across the major domains of social life. They can approach peers, handle disagreements without total collapse, separate from you when needed, and use their words. That's real confidence — not performance confidence, but capacity confidence. They have tools, and they're using them.",
@@ -303,7 +426,10 @@
     "building-skills": {
       "id": "building-skills",
       "themeColor": "#e8c840",
-      "scoreRange": { "min": 11, "max": 21 },
+      "scoreRange": {
+        "min": 11,
+        "max": 21
+      },
       "headline": "Skills in Progress",
       "subheadline": "Your child is developing social confidence, but it's uneven — some areas are solid while others need more practice, coaching, or time. This is the apprentice stage, not a deficit.",
       "explanation": "Most kids in this range have pockets of competence and pockets of struggle. They might be great at joining in but fall apart when conflict hits. Or they communicate beautifully at home but freeze around unfamiliar adults. The skills are emerging but not yet automatic. The good news: targeted practice in the lowest-scoring domain makes a measurable difference quickly.",
@@ -320,7 +446,10 @@
     "early-stages": {
       "id": "early-stages",
       "themeColor": "#d05597",
-      "scoreRange": { "min": 0, "max": 10 },
+      "scoreRange": {
+        "min": 0,
+        "max": 10
+      },
       "headline": "Just Starting Out",
       "subheadline": "Your child is building foundational social skills. They're watching more than participating, struggling with conflicts, or relying heavily on you in social settings.",
       "explanation": "A low score means your child doesn't yet have the tools to operate independently in social contexts. This could be developmental (they're young or late-blooming socially), temperamental (slow-to-warm-up is real), or a skills gap (they've had limited peer experience). Whatever the cause, the path forward is the same: start small, build one skill at a time, and don't force situations they're not ready for. Social confidence isn't built by throwing kids into the deep end — it's built through hundreds of small successful interactions.",

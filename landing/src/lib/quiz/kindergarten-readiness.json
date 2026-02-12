@@ -43,9 +43,9 @@
       "A prioritized action plan you can start today"
     ],
     "communityCta": {
-      "eyebrow": "Kindergarten questions?",
-      "title": "Get routines and scripts from parents navigating this transition",
-      "body": "Real routines, bite-sized scripts, and founders who answer the stuff that keeps you up at night. We are there with you daily too.",
+      "eyebrow": "Now you see the gaps",
+      "title": "Talk it through with parents prepping for September",
+      "body": "Next time September looms, you'll have parents who closed the same readiness gaps and know what mattered. We are there with you daily too.",
       "buttonText": "Join the community"
     }
   },
@@ -94,9 +94,21 @@
       "text": "Can your child recognize and name most letters of the alphabet?",
       "subtext": "Not writing them, just identifying. Most of the uppercase letters at minimum.",
       "options": [
-        { "id": "q1a", "text": "Yes, knows most or all uppercase letters", "points": 3 },
-        { "id": "q1b", "text": "Recognizes about half", "points": 1 },
-        { "id": "q1c", "text": "Knows just a few letters", "points": 0 }
+        {
+          "id": "q1a",
+          "text": "Yes, knows most or all uppercase letters",
+          "points": 3
+        },
+        {
+          "id": "q1b",
+          "text": "Recognizes about half",
+          "points": 1
+        },
+        {
+          "id": "q1c",
+          "text": "Knows just a few letters",
+          "points": 0
+        }
       ]
     },
     {
@@ -105,9 +117,21 @@
       "text": "Can your child count to ten and recognize basic numbers?",
       "subtext": "Counts objects accurately and can point to written numbers 1-10.",
       "options": [
-        { "id": "q2a", "text": "Yes, counts to ten and identifies written numbers", "points": 3 },
-        { "id": "q2b", "text": "Can count but doesn't recognize written numbers yet", "points": 1 },
-        { "id": "q2c", "text": "Counting is still inconsistent", "points": 0 }
+        {
+          "id": "q2a",
+          "text": "Yes, counts to ten and identifies written numbers",
+          "points": 3
+        },
+        {
+          "id": "q2b",
+          "text": "Can count but doesn't recognize written numbers yet",
+          "points": 1
+        },
+        {
+          "id": "q2c",
+          "text": "Counting is still inconsistent",
+          "points": 0
+        }
       ]
     },
     {
@@ -116,9 +140,21 @@
       "text": "Can your child play cooperatively with other children for 10-15 minutes?",
       "subtext": "Building something together, playing house, taking turns. Not parallel play.",
       "options": [
-        { "id": "q3a", "text": "Yes, engages in cooperative play regularly", "points": 3 },
-        { "id": "q3b", "text": "Sometimes, but often reverts to solo or parallel play", "points": 1 },
-        { "id": "q3c", "text": "Prefers to play alone or alongside others, not with them", "points": 0 }
+        {
+          "id": "q3a",
+          "text": "Yes, engages in cooperative play regularly",
+          "points": 3
+        },
+        {
+          "id": "q3b",
+          "text": "Sometimes, but often reverts to solo or parallel play",
+          "points": 1
+        },
+        {
+          "id": "q3c",
+          "text": "Prefers to play alone or alongside others, not with them",
+          "points": 0
+        }
       ]
     },
     {
@@ -127,9 +163,21 @@
       "text": "Does your child share toys and take turns without constant adult prompting?",
       "subtext": "Not perfectly, but can manage basic sharing with occasional reminders.",
       "options": [
-        { "id": "q4a", "text": "Yes, shares and takes turns with minimal reminders", "points": 3 },
-        { "id": "q4b", "text": "Needs frequent prompting but will comply", "points": 1 },
-        { "id": "q4c", "text": "Sharing is still a major struggle", "points": 0 }
+        {
+          "id": "q4a",
+          "text": "Yes, shares and takes turns with minimal reminders",
+          "points": 3
+        },
+        {
+          "id": "q4b",
+          "text": "Needs frequent prompting but will comply",
+          "points": 1
+        },
+        {
+          "id": "q4c",
+          "text": "Sharing is still a major struggle",
+          "points": 0
+        }
       ]
     },
     {
@@ -138,9 +186,21 @@
       "text": "Can your child handle frustration without a complete meltdown?",
       "subtext": "When a block tower falls or a game doesn't go their way, can they recover without major escalation.",
       "options": [
-        { "id": "q5a", "text": "Yes, gets upset but recovers without melting down", "points": 3 },
-        { "id": "q5b", "text": "About half the time manages frustration, half the time falls apart", "points": 1 },
-        { "id": "q5c", "text": "Minor frustrations regularly trigger big meltdowns", "points": 0 }
+        {
+          "id": "q5a",
+          "text": "Yes, gets upset but recovers without melting down",
+          "points": 3
+        },
+        {
+          "id": "q5b",
+          "text": "About half the time manages frustration, half the time falls apart",
+          "points": 1
+        },
+        {
+          "id": "q5c",
+          "text": "Minor frustrations regularly trigger big meltdowns",
+          "points": 0
+        }
       ]
     },
     {
@@ -149,9 +209,21 @@
       "text": "Can your child separate from you at preschool, playdates, or activities without prolonged distress?",
       "subtext": "Brief upset at drop-off is fine. Looking for: can they transition and engage after you leave.",
       "options": [
-        { "id": "q6a", "text": "Yes, separates easily or with minimal fuss", "points": 2 },
-        { "id": "q6b", "text": "Protests at first but settles within 5-10 minutes", "points": 1 },
-        { "id": "q6c", "text": "Prolonged distress or refuses to separate", "points": 0 }
+        {
+          "id": "q6a",
+          "text": "Yes, separates easily or with minimal fuss",
+          "points": 2
+        },
+        {
+          "id": "q6b",
+          "text": "Protests at first but settles within 5-10 minutes",
+          "points": 1
+        },
+        {
+          "id": "q6c",
+          "text": "Prolonged distress or refuses to separate",
+          "points": 0
+        }
       ]
     },
     {
@@ -160,9 +232,21 @@
       "text": "Can your child transition between activities without major resistance?",
       "subtext": "Moving from playtime to lunch, from outside to inside, from one activity to the next. Not seamlessly, but without a battle.",
       "options": [
-        { "id": "q7a", "text": "Yes, transitions with minimal resistance", "points": 2 },
-        { "id": "q7b", "text": "Needs warnings and coaxing but eventually cooperates", "points": 1 },
-        { "id": "q7c", "text": "Transitions are almost always a fight", "points": 0 }
+        {
+          "id": "q7a",
+          "text": "Yes, transitions with minimal resistance",
+          "points": 2
+        },
+        {
+          "id": "q7b",
+          "text": "Needs warnings and coaxing but eventually cooperates",
+          "points": 1
+        },
+        {
+          "id": "q7c",
+          "text": "Transitions are almost always a fight",
+          "points": 0
+        }
       ]
     },
     {
@@ -171,9 +255,21 @@
       "text": "Can your child use the bathroom independently?",
       "subtext": "Goes when they need to, wipes (mostly), washes hands. Does not need adult supervision for the whole process.",
       "options": [
-        { "id": "q8a", "text": "Yes, handles the whole routine independently", "points": 3 },
-        { "id": "q8b", "text": "Mostly independent but needs help with wiping or remembering to wash hands", "points": 1 },
-        { "id": "q8c", "text": "Still needs adult assistance for most of it", "points": 0 }
+        {
+          "id": "q8a",
+          "text": "Yes, handles the whole routine independently",
+          "points": 3
+        },
+        {
+          "id": "q8b",
+          "text": "Mostly independent but needs help with wiping or remembering to wash hands",
+          "points": 1
+        },
+        {
+          "id": "q8c",
+          "text": "Still needs adult assistance for most of it",
+          "points": 0
+        }
       ]
     },
     {
@@ -182,9 +278,21 @@
       "text": "Can your child dress themselves, including shoes?",
       "subtext": "Shirts, pants, socks, shoes. Velcro and slip-ons count. Laces do not.",
       "options": [
-        { "id": "q9a", "text": "Yes, dresses independently including shoes", "points": 2 },
-        { "id": "q9b", "text": "Can do most of it but needs help with shirts or shoes", "points": 1 },
-        { "id": "q9c", "text": "Still needs significant help getting dressed", "points": 0 }
+        {
+          "id": "q9a",
+          "text": "Yes, dresses independently including shoes",
+          "points": 2
+        },
+        {
+          "id": "q9b",
+          "text": "Can do most of it but needs help with shirts or shoes",
+          "points": 1
+        },
+        {
+          "id": "q9c",
+          "text": "Still needs significant help getting dressed",
+          "points": 0
+        }
       ]
     },
     {
@@ -193,9 +301,21 @@
       "text": "Can your child eat lunch independently without constant help?",
       "subtext": "Opens containers, uses utensils, drinks from a regular cup without spilling most of it.",
       "options": [
-        { "id": "q10a", "text": "Yes, manages lunch independently", "points": 1 },
-        { "id": "q10b", "text": "Eats independently but struggles with containers or utensils", "points": 0 },
-        { "id": "q10c", "text": "Still needs adult help with most meals", "points": 0 }
+        {
+          "id": "q10a",
+          "text": "Yes, manages lunch independently",
+          "points": 1
+        },
+        {
+          "id": "q10b",
+          "text": "Eats independently but struggles with containers or utensils",
+          "points": 0
+        },
+        {
+          "id": "q10c",
+          "text": "Still needs adult help with most meals",
+          "points": 0
+        }
       ]
     }
   ],
