@@ -337,21 +337,7 @@ function CheckTable({
   deploymentKey?: "community" | "course";
 }) {
   const hasDeployment = !!deployment && !!deploymentKey;
-  const [expandedSlugs, setExpandedSlugs] = useState<Set<string>>(() => {
-    // Auto-expand categories with any deployment issues (including missing articles)
-    if (!hasDeployment) return new Set<string>();
-    const expanded = new Set<string>();
-    for (const slug of slugs) {
-      const dep = deployment![slug];
-      if (!dep) continue;
-      const ctaIssues = deploymentKey === "community"
-        ? dep.communityIssues
-        : dep.courseIssues;
-      const missingCount = dep.totalCount - dep.publishedCount;
-      if (ctaIssues > 0 || missingCount > 0) expanded.add(slug);
-    }
-    return expanded;
-  });
+  const [expandedSlugs, setExpandedSlugs] = useState<Set<string>>(new Set());
 
   const toggleExpand = (slug: string) => {
     setExpandedSlugs((prev) => {
@@ -456,7 +442,7 @@ function CategoryRow({
   return (
     <>
       <tr
-        className={`border-b ${rowBg} ${hasDeployment ? "cursor-pointer hover:bg-muted/30" : ""}`}
+        className={`border-b ${isExpanded ? "border-b-transparent" : ""} ${rowBg} ${hasDeployment ? "cursor-pointer hover:bg-muted/30" : ""}`}
         onClick={hasDeployment ? onToggle : undefined}
       >
         <td className="px-2 py-1.5 text-center">
@@ -493,10 +479,12 @@ function CategoryRow({
       {isExpanded && dep && deploymentKey && (
         <tr>
           <td colSpan={totalCols} className="p-0">
-            <ArticleSubTable
-              articles={dep.articles}
-              deploymentKey={deploymentKey}
-            />
+            <div className="ml-6 mr-2 my-2 border-l-2 border-muted-foreground/25 rounded-r-md overflow-hidden shadow-sm">
+              <ArticleSubTable
+                articles={dep.articles}
+                deploymentKey={deploymentKey}
+              />
+            </div>
           </td>
         </tr>
       )}

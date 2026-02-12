@@ -55,6 +55,7 @@ interface ArticleInfo {
   slug: string;
   title: string;
   published: boolean;
+  checks: Record<string, EntryCheck>;
 }
 
 interface MailingResponse {
@@ -400,7 +401,11 @@ function CheckTable({
             const publishedCount = articles?.filter((a) => a.published).length ?? 0;
             const totalCount = articles?.length ?? 0;
             const missingArticles = hasArticles ? totalCount - publishedCount : 0;
-            const hasErrors = (ev && ev.errors.length > 0) || kitFormMissing || missingArticles > 0;
+            const checkFailures = articles
+              ? articles.filter((a) => a.published && Object.values(a.checks).some((c) => !c.ok)).length
+              : 0;
+            const deploymentIssues = missingArticles + checkFailures;
+            const hasErrors = (ev && ev.errors.length > 0) || kitFormMissing || deploymentIssues > 0;
             const hasWarnings = ev && ev.warnings.length > 0;
             const rowBg = hasErrors
               ? "bg-red-50/50 dark:bg-red-950/10"
@@ -421,6 +426,7 @@ function CheckTable({
                 articles={articles}
                 publishedCount={publishedCount}
                 totalCount={totalCount}
+                deploymentIssues={deploymentIssues}
                 isExpanded={isExpanded}
                 onToggle={() => toggleExpand(slug)}
                 totalCols={totalCols}
@@ -443,6 +449,7 @@ function FreebieRow({
   articles,
   publishedCount,
   totalCount,
+  deploymentIssues,
   isExpanded,
   onToggle,
   totalCols,
@@ -456,17 +463,18 @@ function FreebieRow({
   articles: ArticleInfo[] | null;
   publishedCount: number;
   totalCount: number;
+  deploymentIssues: number;
   isExpanded: boolean;
   onToggle: () => void;
   totalCols: number;
 }) {
-  const hasErrors = ev && ev.errors.length > 0;
+  const hasErrors = (ev && ev.errors.length > 0) || deploymentIssues > 0;
   const hasWarnings = ev && ev.warnings.length > 0;
 
   return (
     <>
       <tr
-        className={`border-b ${rowBg} ${hasArticles ? "cursor-pointer hover:bg-muted/30" : ""}`}
+        className={`border-b ${isExpanded ? "border-b-transparent" : ""} ${rowBg} ${hasArticles ? "cursor-pointer hover:bg-muted/30" : ""}`}
         onClick={hasArticles ? onToggle : undefined}
       >
         <td className="px-2 py-1.5 text-center">
@@ -521,13 +529,23 @@ function FreebieRow({
       {isExpanded && articles && (
         <tr>
           <td colSpan={totalCols} className="p-0">
-            <ArticleListSubTable articles={articles} />
+            <div className="ml-6 mr-2 my-2 border-l-2 border-muted-foreground/25 rounded-r-md overflow-hidden shadow-sm">
+              <ArticleListSubTable articles={articles} />
+            </div>
           </td>
         </tr>
       )}
     </>
   );
 }
+
+const FREEBIE_CHECK_COLUMNS = [
+  { key: "entry", label: "Entry" },
+  { key: "name", label: "Name" },
+  { key: "description", label: "Desc" },
+  { key: "cta_copy", label: "Copy" },
+  { key: "kit_form", label: "Kit" },
+];
 
 function ArticleListSubTable({ articles }: { articles: ArticleInfo[] }) {
   const sorted = [...articles].sort((a, b) => {
@@ -543,36 +561,80 @@ function ArticleListSubTable({ articles }: { articles: ArticleInfo[] }) {
             <th className="w-8 px-2 py-1" />
             <th className="px-3 py-1 text-left font-medium text-xs">Article</th>
             <th className="px-3 py-1 text-center font-medium text-xs">Live</th>
+            {FREEBIE_CHECK_COLUMNS.map((col) => (
+              <th key={col.key} className="px-3 py-1 text-center font-medium text-xs whitespace-nowrap">
+                {col.label}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {sorted.map((article) => (
-            <tr
-              key={article.slug}
-              className={`border-b ${!article.published ? "bg-red-50/30 dark:bg-red-950/5" : ""}`}
-            >
-              <td className="px-2 py-1 text-center">
-                {article.published ? (
-                  <Check className="h-3.5 w-3.5 text-emerald-600" />
-                ) : (
-                  <XCircle className="h-3.5 w-3.5 text-red-400" />
-                )}
-              </td>
-              <td
-                className={`px-3 py-1 font-mono text-xs truncate max-w-[220px] ${!article.published ? "text-red-600/70" : ""}`}
-                title={article.title}
+          {sorted.map((article) => {
+            if (!article.published) {
+              return (
+                <tr key={article.slug} className="border-b bg-red-50/30 dark:bg-red-950/5">
+                  <td className="px-2 py-1 text-center">
+                    <XCircle className="h-3.5 w-3.5 text-red-400" />
+                  </td>
+                  <td
+                    className="px-3 py-1 font-mono text-xs truncate max-w-[220px] text-red-600/70"
+                    title={article.title}
+                  >
+                    {article.slug}
+                  </td>
+                  <td className="px-3 py-1 text-center">
+                    <X className="mx-auto h-3.5 w-3.5 text-red-400" />
+                  </td>
+                  {FREEBIE_CHECK_COLUMNS.map((col) => (
+                    <td key={col.key} className="px-3 py-1 text-center">
+                      <span className="text-red-300">&mdash;</span>
+                    </td>
+                  ))}
+                </tr>
+              );
+            }
+
+            const hasIssue = Object.values(article.checks).some((c) => !c.ok);
+            return (
+              <tr
+                key={article.slug}
+                className={`border-b ${hasIssue ? "bg-red-50/50 dark:bg-red-950/10" : ""}`}
               >
-                {article.slug}
-              </td>
-              <td className="px-3 py-1 text-center">
-                {article.published ? (
+                <td className="px-2 py-1 text-center">
+                  {hasIssue ? (
+                    <XCircle className="h-3.5 w-3.5 text-red-600" />
+                  ) : (
+                    <Check className="h-3.5 w-3.5 text-emerald-600" />
+                  )}
+                </td>
+                <td
+                  className="px-3 py-1 font-mono text-xs truncate max-w-[220px]"
+                  title={article.title}
+                >
+                  {article.slug}
+                </td>
+                <td className="px-3 py-1 text-center">
                   <Check className="mx-auto h-3.5 w-3.5 text-emerald-600" />
-                ) : (
-                  <X className="mx-auto h-3.5 w-3.5 text-red-400" />
-                )}
-              </td>
-            </tr>
-          ))}
+                </td>
+                {FREEBIE_CHECK_COLUMNS.map((col) => {
+                  const check = article.checks[col.key];
+                  if (!check) return <td key={col.key} className="px-3 py-1 text-center">&mdash;</td>;
+                  return (
+                    <td key={col.key} className="px-3 py-1 text-center">
+                      {check.ok ? (
+                        <Check className="mx-auto h-3.5 w-3.5 text-emerald-600" />
+                      ) : (
+                        <span className="inline-flex items-center gap-1 text-red-600">
+                          <X className="h-3.5 w-3.5" />
+                          {check.detail && <span className="text-xs">{check.detail}</span>}
+                        </span>
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

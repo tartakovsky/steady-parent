@@ -110,7 +110,12 @@ export async function GET() {
   let mailingByEntry: Record<string, EntryValidation> | null = null;
   let articlesByCategory: Record<
     string,
-    Array<{ slug: string; title: string; published: boolean }>
+    Array<{
+      slug: string;
+      title: string;
+      published: boolean;
+      checks: Record<string, { ok: boolean; detail?: string | undefined }>;
+    }>
   > | null = null;
   let coverage: {
     categorySlugs: string[];
@@ -175,11 +180,29 @@ export async function GET() {
       const catArticles = taxonomy.entries.filter(
         (e) => e.categorySlug === catSlug,
       );
-      articlesByCategory[catSlug] = catArticles.map((a) => ({
-        slug: a.slug,
-        title: a.title,
-        published: publishedSet.has(a.slug),
-      }));
+
+      // Freebie checks (category-level, applied to all published articles)
+      const freebieEntry = mailingFormCatalog.find(
+        (e) => e.type === "freebie" && e.id === `freebie-${catSlug}`,
+      );
+      const hasEntry = !!freebieEntry;
+      const hasName = !!freebieEntry?.name;
+      const hasDesc = !!freebieEntry?.what_it_is;
+      const hasCopy = !!freebieEntry?.cta_copy;
+      const hasKitForm = blogMappings.has(catSlug);
+
+      articlesByCategory[catSlug] = catArticles.map((a) => {
+        const published = publishedSet.has(a.slug);
+        const checks: Record<string, { ok: boolean; detail?: string | undefined }> = {};
+        if (published) {
+          checks["entry"] = hasEntry ? { ok: true } : { ok: false, detail: "missing" };
+          checks["name"] = hasName ? { ok: true } : { ok: false, detail: "missing" };
+          checks["description"] = hasDesc ? { ok: true } : { ok: false, detail: "missing" };
+          checks["cta_copy"] = hasCopy ? { ok: true } : { ok: false, detail: "missing" };
+          checks["kit_form"] = hasKitForm ? { ok: true } : { ok: false, detail: "missing" };
+        }
+        return { slug: a.slug, title: a.title, published, checks };
+      });
     }
 
     // Run mailing form validation for per-entry inline results
