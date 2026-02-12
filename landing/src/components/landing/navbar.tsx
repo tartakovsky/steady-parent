@@ -1,11 +1,7 @@
-"use client";
-
 import type React from "react";
-import { useMemo } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 
@@ -55,26 +51,11 @@ function NavMenuItems({
 }
 
 export function Navbar(): React.JSX.Element {
-  const pathname = usePathname();
-
-  const menuItems: readonly MenuItem[] = useMemo(() => {
-    const isHome = pathname === "/";
-    const isAbout = pathname === "/about";
-    const isBlog = pathname === "/blog" || pathname.startsWith("/blog/");
-    const isQuiz = pathname === "/quiz" || pathname.startsWith("/quiz/");
-
-    if (isHome) return [{ label: "About us", href: "/about" }, { label: "Blog", href: "/blog" }, { label: "Quizzes", href: "/quiz" }];
-    if (isAbout) return [{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Quizzes", href: "/quiz" }];
-    if (isBlog) return [{ label: "Home", href: "/" }, { label: "About us", href: "/about" }, { label: "Quizzes", href: "/quiz" }];
-    if (isQuiz) return [{ label: "Home", href: "/" }, { label: "About us", href: "/about" }, { label: "Blog", href: "/blog" }];
-
-    return [
-      { label: "Home", href: "/" },
-      { label: "About us", href: "/about" },
-      { label: "Blog", href: "/blog" },
-      { label: "Quizzes", href: "/quiz" },
-    ];
-  }, [pathname]);
+  const menuItems: readonly MenuItem[] = [
+    { label: "About us", href: "/about" },
+    { label: "Blog", href: "/blog" },
+    { label: "Quizzes", href: "/quiz" },
+  ];
 
   return (
     <nav className="bg-background sticky top-0 isolate z-50 h-16 md:h-18">

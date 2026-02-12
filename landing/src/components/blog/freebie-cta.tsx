@@ -51,14 +51,13 @@ export function FreebieCTA({
     setErrorMsg("");
     try {
       await onSubmit(email);
+      if (inputRef.current) inputRef.current.value = "";
       setStatus("success");
     } catch {
       setStatus("error");
       setErrorMsg("Something went wrong. Please try again.");
     }
   }
-
-  const isDisabled = status === "loading" || status === "success";
 
   const formContent = (size: "lg" | "sm") => (
     <>
@@ -71,24 +70,26 @@ export function FreebieCTA({
           placeholder={inputPlaceholder}
           type="email"
           required
-          disabled={isDisabled}
+          disabled={status === "loading"}
           className={size === "lg" ? "min-h-14 flex-1 text-lg" : "min-h-12 flex-1 text-base"}
         />
         <Button
           type="submit"
           variant={isPrimary ? "outline" : "default"}
           size="lg"
-          disabled={isDisabled}
+          disabled={status === "loading"}
           className={size === "lg" ? "h-14 px-10 text-lg" : "h-12 px-6 text-base"}
         >
           {status === "loading" && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          {status === "success" ? (
-            <><CheckCircle2 className="mr-2 h-4 w-4" /> Sent!</>
-          ) : (
-            buttonText
-          )}
+          {buttonText}
         </Button>
       </form>
+      {status === "success" && (
+        <p className="text-sm text-green-600 mt-2 flex items-center gap-1.5">
+          <CheckCircle2 className="h-3.5 w-3.5" />
+          Check your inbox — your results are on the way!
+        </p>
+      )}
       {status === "error" && (
         <p className="text-sm text-red-600 mt-2">{errorMsg}</p>
       )}

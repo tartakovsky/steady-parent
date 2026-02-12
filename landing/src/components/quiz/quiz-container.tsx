@@ -111,14 +111,6 @@ export function QuizContainer({
     [quiz]
   );
 
-  // Check localStorage on mount — if subscriber email exists, skip preview gate
-  useEffect(() => {
-    const savedEmail = localStorage.getItem(STORAGE_KEY);
-    if (savedEmail) {
-      setPreview(false);
-    }
-  }, []);
-
   // Gate submission handler — passed to QuizPreview → FreebieCTA
   const subscribeForQuizResults = useCallback(async (email: string) => {
     const res = await fetch("/api/quiz-subscribe", {
@@ -160,7 +152,9 @@ export function QuizContainer({
     const state = readStateFromUrl(params, quiz.questions);
 
     setShared(params.get("s") === "1");
-    setPreview(params.get("p") === "1");
+    // Only show preview gate if URL says p=1 AND no saved email (returning users skip gate)
+    const hasSavedEmail = !!localStorage.getItem(STORAGE_KEY);
+    setPreview(params.get("p") === "1" && !hasSavedEmail);
 
     if (!state) {
       setAnswers({});
