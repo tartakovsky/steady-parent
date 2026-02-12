@@ -97,22 +97,40 @@ export default function MailingFormsValidationPage() {
 
   // Count deployment issues from articlesByCategory
   let deploymentIssues = 0;
-  let totalArticleChecks = 0;
+  let totalArticles = 0;
+  let publishedArticles = 0;
+  let articlesWithValidFreebies = 0;
   if (articlesByCategory) {
     for (const articles of Object.values(articlesByCategory)) {
-      totalArticleChecks += articles.length;
+      totalArticles += articles.length;
       for (const a of articles) {
         if (!a.published) {
           deploymentIssues++;
-        } else if (Object.values(a.checks).some((c) => !c.ok)) {
-          deploymentIssues++;
+        } else {
+          publishedArticles++;
+          if (Object.keys(a.checks).length > 0 && Object.values(a.checks).every((c) => c.ok)) {
+            articlesWithValidFreebies++;
+          } else {
+            deploymentIssues++;
+          }
         }
       }
     }
   }
   const totalErrors = catalogErrors + deploymentIssues;
   const totalWarnings = catalogWarnings;
-  const totalScope = Object.keys(byEntry).length + totalArticleChecks;
+  const totalScope = Object.keys(byEntry).length + totalArticles;
+
+  // Per-type passing counts from byEntry
+  const freebiesPassing = coverage
+    ? coverage.categorySlugs.filter((s) => { const ev = byEntry[`freebie-${s}`]; return ev && ev.errors.length === 0; }).length
+    : 0;
+  const waitlistsPassing = coverage
+    ? coverage.categorySlugs.filter((s) => { const ev = byEntry[`waitlist-${s}`]; return ev && ev.errors.length === 0; }).length
+    : 0;
+  const quizGatesPassing = coverage
+    ? coverage.quizSlugs.filter((s) => { const ev = byEntry[`quiz-gate-${s}`]; return ev && ev.errors.length === 0; }).length
+    : 0;
 
   // Coverage sets for Kit form mapping column
   const blogMappingSet = new Set(coverage?.blogMappings ?? []);
@@ -176,10 +194,20 @@ export default function MailingFormsValidationPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">Mailing Forms Validation</h1>
-        <p className="text-sm text-muted-foreground">
-          {coverage ? `${coverage.categorySlugs.length} freebie forms · ${coverage.categorySlugs.length} waitlist forms · ${coverage.quizSlugs.length} quiz gates` : `${Object.keys(byEntry).length} forms`}
-          {" · "}{totalArticleChecks} articles &middot; {tags.length} Kit tags ({mapped.length} mapped, {orphaned.length} orphaned)
-        </p>
+        <div className="mt-1 text-sm text-muted-foreground space-y-0.5">
+          {coverage ? (
+            <>
+              <div>Articles: <Fraction n={publishedArticles} total={totalArticles} /></div>
+              <div>Blog freebie forms: <Fraction n={freebiesPassing} total={coverage.categorySlugs.length} /></div>
+              <div>In-article freebies: <Fraction n={articlesWithValidFreebies} total={totalArticles} /></div>
+              <div>Course waitlist forms: <Fraction n={waitlistsPassing} total={coverage.categorySlugs.length} /></div>
+              <div>Quiz gate forms: <Fraction n={quizGatesPassing} total={coverage.quizSlugs.length} /></div>
+            </>
+          ) : (
+            <div>{Object.keys(byEntry).length} forms</div>
+          )}
+          <div>Kit tags: {mapped.length}/{tags.length} mapped{orphaned.length > 0 ? `, ${orphaned.length} orphaned` : ""}</div>
+        </div>
       </div>
 
       <SummaryBanner errors={totalErrors} warnings={totalWarnings} total={totalScope} />
@@ -325,6 +353,15 @@ function SummaryBanner({ errors, warnings, total }: { errors: number; warnings: 
         </span>
       )}
     </div>
+  );
+}
+
+function Fraction({ n, total }: { n: number; total: number }) {
+  const ok = n === total;
+  return (
+    <span className={ok ? "text-emerald-600" : "text-red-600"}>
+      {n}/{total}
+    </span>
   );
 }
 

@@ -108,19 +108,33 @@ export default function CtaValidationPage() {
   const courses = catalog.filter((c) => c.type === "course");
 
   // Compute deployment-aware totals for the summary banner
-  let deploymentIssueCount = 0;
   let totalArticles = 0;
   let publishedArticles = 0;
+  let communityCtasPassing = 0;
+  let courseCtasPassing = 0;
+  let deploymentIssueCount = 0;
   if (deployment) {
     for (const dep of Object.values(deployment)) {
       totalArticles += dep.totalCount;
       publishedArticles += dep.publishedCount;
       const missing = dep.totalCount - dep.publishedCount;
       deploymentIssueCount += missing * 2 + dep.communityIssues + dep.courseIssues;
+      for (const art of dep.articles) {
+        if (art.published) {
+          if (Object.keys(art.community).length > 0 && Object.values(art.community).every((c) => c.ok)) communityCtasPassing++;
+          if (Object.keys(art.course).length > 0 && Object.values(art.course).every((c) => c.ok)) courseCtasPassing++;
+        }
+      }
     }
   }
   const allErrors = errors.length + deploymentIssueCount;
   const totalChecks = catalog.length + totalArticles * 2;
+
+  // Quiz community CTA stats
+  const quizCommunityPassing = quizCommunities.filter((c) => {
+    const ev = byEntry[c.id];
+    return ev && ev.errors.length === 0;
+  }).length;
 
   const communityColumns = [
     { key: "pageUrl", label: "Page" },
@@ -150,9 +164,14 @@ export default function CtaValidationPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">CTA Validation</h1>
-        <p className="text-sm text-muted-foreground">
-          {categorySlugs.length} categories &middot; {totalArticles} articles ({publishedArticles} published) &middot; {quizCommunities.length} quiz community CTAs
-        </p>
+        <div className="mt-1 text-sm text-muted-foreground space-y-0.5">
+          <div>Article categories: {categorySlugs.length}</div>
+          <div>Articles: <Fraction n={publishedArticles} total={totalArticles} /></div>
+          <div>In-article community CTAs: <Fraction n={communityCtasPassing} total={totalArticles} /></div>
+          <div>In-article course CTAs: <Fraction n={courseCtasPassing} total={totalArticles} /></div>
+          <div>Quizzes: {quizCommunities.length}</div>
+          <div>In-quiz community CTAs: <Fraction n={quizCommunityPassing} total={quizCommunities.length} /></div>
+        </div>
       </div>
 
       <SummaryBanner errors={allErrors} warnings={warnings.length} total={totalChecks} />
@@ -237,6 +256,15 @@ function SummaryBanner({ errors, warnings, total }: { errors: number; warnings: 
         </span>
       )}
     </div>
+  );
+}
+
+function Fraction({ n, total }: { n: number; total: number }) {
+  const ok = n === total;
+  return (
+    <span className={ok ? "text-emerald-600" : "text-red-600"}>
+      {n}/{total}
+    </span>
   );
 }
 
