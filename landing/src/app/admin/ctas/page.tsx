@@ -99,6 +99,20 @@ export default function CtaValidationPage() {
   const { catalog, categorySlugs, validation, deployment } = data;
   const { errors, warnings, byEntry } = validation;
 
+  // Compute deployment-aware totals for the summary banner
+  let deploymentIssueCount = 0;
+  let totalArticleChecks = 0;
+  if (deployment) {
+    for (const dep of Object.values(deployment)) {
+      const missing = dep.totalCount - dep.publishedCount;
+      // Each article has community + course = 2 check sets
+      totalArticleChecks += dep.totalCount * 2;
+      deploymentIssueCount += missing * 2 + dep.communityIssues + dep.courseIssues;
+    }
+  }
+  const allErrors = errors.length + deploymentIssueCount;
+  const totalScope = catalog.length + totalArticleChecks;
+
   const perCatCommunities = catalog.filter(
     (c) => c.type === "community" && c.id !== "community" && !c.id.startsWith("community-quiz-"),
   );
@@ -136,11 +150,11 @@ export default function CtaValidationPage() {
       <div>
         <h1 className="text-2xl font-bold">CTA Validation</h1>
         <p className="text-sm text-muted-foreground">
-          {catalog.length} entries across {categorySlugs.length} categories
+          {catalog.length} catalog entries + {totalArticleChecks} article checks across {categorySlugs.length} categories
         </p>
       </div>
 
-      <SummaryBanner errors={errors.length} warnings={warnings.length} total={catalog.length} />
+      <SummaryBanner errors={allErrors} warnings={warnings.length} total={totalScope} />
 
       {/* Global Community */}
       <section>

@@ -87,13 +87,32 @@ export default function MailingFormsValidationPage() {
   const { tags, integration, mailingByEntry, articlesByCategory, coverage } = data;
   const byEntry = mailingByEntry ?? {};
 
-  // Count all errors/warnings from byEntry
-  let totalErrors = 0;
-  let totalWarnings = 0;
+  // Count all errors/warnings from byEntry (catalog-level)
+  let catalogErrors = 0;
+  let catalogWarnings = 0;
   for (const ev of Object.values(byEntry)) {
-    totalErrors += ev.errors.length;
-    totalWarnings += ev.warnings.length;
+    catalogErrors += ev.errors.length;
+    catalogWarnings += ev.warnings.length;
   }
+
+  // Count deployment issues from articlesByCategory
+  let deploymentIssues = 0;
+  let totalArticleChecks = 0;
+  if (articlesByCategory) {
+    for (const articles of Object.values(articlesByCategory)) {
+      totalArticleChecks += articles.length;
+      for (const a of articles) {
+        if (!a.published) {
+          deploymentIssues++;
+        } else if (Object.values(a.checks).some((c) => !c.ok)) {
+          deploymentIssues++;
+        }
+      }
+    }
+  }
+  const totalErrors = catalogErrors + deploymentIssues;
+  const totalWarnings = catalogWarnings;
+  const totalScope = Object.keys(byEntry).length + totalArticleChecks;
 
   // Coverage sets for Kit form mapping column
   const blogMappingSet = new Set(coverage?.blogMappings ?? []);
@@ -158,11 +177,11 @@ export default function MailingFormsValidationPage() {
       <div>
         <h1 className="text-2xl font-bold">Mailing Forms Validation</h1>
         <p className="text-sm text-muted-foreground">
-          {Object.keys(byEntry).length} entries validated &middot; {tags.length} Kit tags synced ({mapped.length} mapped, {orphaned.length} orphaned)
+          {Object.keys(byEntry).length} catalog entries + {totalArticleChecks} article checks &middot; {tags.length} Kit tags synced ({mapped.length} mapped, {orphaned.length} orphaned)
         </p>
       </div>
 
-      <SummaryBanner errors={totalErrors} warnings={totalWarnings} total={Object.keys(byEntry).length} />
+      <SummaryBanner errors={totalErrors} warnings={totalWarnings} total={totalScope} />
 
       {/* Freebie Forms */}
       {coverage && (
