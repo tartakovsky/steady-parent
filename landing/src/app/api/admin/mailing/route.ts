@@ -161,6 +161,8 @@ export async function GET() {
     freebieTagCount: number;
     quizTagCount: number;
     quizResultsSequenceReady: boolean;
+    freebieSequenceReady: boolean;
+    waitlistSequenceReady: boolean;
   } | null = null;
 
   try {
@@ -384,6 +386,14 @@ export async function GET() {
         intSpec.requiredSequences?.["quizResults"]
           ? sequenceNames.includes(intSpec.requiredSequences["quizResults"])
           : false,
+      freebieSequenceReady:
+        intSpec.requiredSequences?.["freebieDelivery"]
+          ? sequenceNames.includes(intSpec.requiredSequences["freebieDelivery"])
+          : false,
+      waitlistSequenceReady:
+        intSpec.requiredSequences?.["waitlistConfirmation"]
+          ? sequenceNames.includes(intSpec.requiredSequences["waitlistConfirmation"])
+          : false,
     };
 
     // Patch per-article freebie checks with infrastructure columns
@@ -397,6 +407,9 @@ export async function GET() {
             a.checks["frontend"] = infrastructure.freebieFrontendReady
               ? { ok: true }
               : { ok: false, detail: "missing submit handler" };
+            a.checks["kit_seq"] = infrastructure.freebieSequenceReady
+              ? { ok: true }
+              : { ok: false, detail: "no freebie email sequence" };
           }
         }
       }
@@ -413,8 +426,12 @@ export async function GET() {
         ev.checks["frontend"] = infrastructure.waitlistFrontendReady
           ? { ok: true }
           : { ok: false, detail: "missing submit handler" };
+        ev.checks["kit_seq"] = infrastructure.waitlistSequenceReady
+          ? { ok: true }
+          : { ok: false, detail: "no waitlist email sequence" };
         if (!infrastructure.waitlistApiRoute) ev.errors.push("API route /api/waitlist-subscribe missing");
         if (!infrastructure.waitlistFrontendReady) ev.errors.push("Frontend missing submit handler");
+        if (!infrastructure.waitlistSequenceReady) ev.errors.push("Kit sequence for waitlist confirmation email missing");
       }
 
       // Patch quiz-gate byEntry with infrastructure checks

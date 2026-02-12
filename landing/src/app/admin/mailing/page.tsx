@@ -72,6 +72,8 @@ interface Infrastructure {
   freebieTagCount: number;
   quizTagCount: number;
   quizResultsSequenceReady: boolean;
+  freebieSequenceReady: boolean;
+  waitlistSequenceReady: boolean;
 }
 
 interface MailingResponse {
@@ -145,11 +147,13 @@ export default function MailingFormsValidationPage() {
         infrastructure.kitFreebieTagsReady,
         infrastructure.kitQuizTagsReady,
         infrastructure.quizResultsSequenceReady,
+        infrastructure.freebieSequenceReady,
+        infrastructure.waitlistSequenceReady,
       ].filter((v) => !v).length
     : 0;
   const totalErrors = catalogErrors + deploymentIssues + infraFailures;
   const totalWarnings = catalogWarnings;
-  const totalScope = Object.keys(byEntry).length + totalArticles + (infrastructure ? 10 : 0);
+  const totalScope = Object.keys(byEntry).length + totalArticles + (infrastructure ? 12 : 0);
 
   // Coverage sets for Kit form mapping column
   const blogMappingSet = new Set(coverage?.blogMappings ?? []);
@@ -214,6 +218,7 @@ export default function MailingFormsValidationPage() {
     { key: "clean", label: "No !/bans" },
     { key: "api_route", label: "API" },
     { key: "frontend", label: "Frontend" },
+    { key: "kit_seq", label: "Kit Seq" },
   ];
 
   const quizGateColumns = [
@@ -261,6 +266,8 @@ export default function MailingFormsValidationPage() {
               <div>Kit freebie tags: <BoolStat ok={infrastructure.kitFreebieTagsReady} label={`${infrastructure.freebieTagCount} tags in Kit`} /></div>
               <div>Kit quiz tags: <BoolStat ok={infrastructure.kitQuizTagsReady} label={`${infrastructure.quizTagCount} tags in Kit`} /></div>
               <div>Quiz results sequence: <BoolStat ok={infrastructure.quizResultsSequenceReady} label="Kit email sequence" /></div>
+              <div>Freebie delivery sequence: <BoolStat ok={infrastructure.freebieSequenceReady} label="Kit email sequence" /></div>
+              <div>Waitlist confirmation sequence: <BoolStat ok={infrastructure.waitlistSequenceReady} label="Kit email sequence" /></div>
             </>
           )}
         </div>
@@ -669,6 +676,7 @@ const FREEBIE_CHECK_COLUMNS = [
   { key: "kit_form", label: "Kit" },
   { key: "api_route", label: "API" },
   { key: "frontend", label: "Frontend" },
+  { key: "kit_seq", label: "Kit Seq" },
 ];
 
 function ArticleListSubTable({ articles }: { articles: ArticleInfo[] }) {

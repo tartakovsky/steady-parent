@@ -33,7 +33,9 @@
     "tagPrefix": "waitlist-"
   },
   "requiredSequences": {
-    "quizResults": "Quiz Results Email"
+    "quizResults": "Quiz Results Email",
+    "freebieDelivery": "Freebie Delivery Email",
+    "waitlistConfirmation": "Waitlist Confirmation Email"
   },
   "frontendChecks": {
     "freebieCta": {
