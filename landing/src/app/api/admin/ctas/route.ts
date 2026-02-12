@@ -72,17 +72,6 @@ function buildArticleCTAChecks(
           : `got ${actualHref}`,
   };
 
-  // Copy match — does deployed copy match catalog?
-  if (catalogEntry?.cta_copy) {
-    const { eyebrow, title, body, buttonText } = catalogEntry.cta_copy;
-    const allMatch =
-      cta.props["eyebrow"] === eyebrow &&
-      cta.props["title"] === title &&
-      cta.props["body"] === body &&
-      cta.props["buttonText"] === buttonText;
-    checks["match"] = { ok: allMatch, detail: allMatch ? undefined : "differs from catalog" };
-  }
-
   // Full copy validation on deployed props — word counts, forbidden terms, etc.
   const eyebrow = cta.props["eyebrow"] ?? "";
   const title = cta.props["title"] ?? "";

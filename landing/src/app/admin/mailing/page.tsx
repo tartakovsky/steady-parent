@@ -8,6 +8,7 @@ import {
   XCircle,
   ChevronDown,
   ChevronRight,
+  Minus,
 } from "lucide-react";
 
 interface EntryCheck {
@@ -315,11 +316,11 @@ function CountBadge({ n }: { n: number }) {
   );
 }
 
-function CellIcon({ check }: { check?: EntryCheck | undefined }) {
+function CellIcon({ check, dimmed }: { check?: EntryCheck | undefined; dimmed?: boolean }) {
   if (!check) return <span className="text-muted-foreground/40">&mdash;</span>;
   if (check.ok) {
     return (
-      <span className="flex items-center justify-center gap-1.5 whitespace-nowrap" title={check.detail}>
+      <span className={`flex items-center justify-center gap-1.5 whitespace-nowrap ${dimmed ? "opacity-30" : ""}`} title={check.detail}>
         <Check className="h-4 w-4 text-emerald-600" />
         {check.detail && <span className="text-muted-foreground">{check.detail}</span>}
       </span>
@@ -491,7 +492,7 @@ function FreebieRow({
         </td>
         {columns.map((col) => (
           <td key={col.key} className="px-3 py-1.5 text-center">
-            <CellIcon check={ev?.checks[col.key]} />
+            <CellIcon check={ev?.checks[col.key]} dimmed={deploymentIssues > 0} />
           </td>
         ))}
         {kitMappingSet && (
@@ -540,10 +541,10 @@ function FreebieRow({
 }
 
 const FREEBIE_CHECK_COLUMNS = [
-  { key: "entry", label: "Entry" },
-  { key: "name", label: "Name" },
-  { key: "description", label: "Desc" },
-  { key: "cta_copy", label: "Copy" },
+  { key: "eyebrow", label: "Eyebrow" },
+  { key: "title", label: "Title" },
+  { key: "body", label: "Body" },
+  { key: "clean", label: "Clean" },
   { key: "kit_form", label: "Kit" },
 ];
 
@@ -587,7 +588,7 @@ function ArticleListSubTable({ articles }: { articles: ArticleInfo[] }) {
                   </td>
                   {FREEBIE_CHECK_COLUMNS.map((col) => (
                     <td key={col.key} className="px-3 py-1 text-center">
-                      <span className="text-red-300">&mdash;</span>
+                      <Minus className="mx-auto h-3 w-3 text-red-300" />
                     </td>
                   ))}
                 </tr>
@@ -616,22 +617,11 @@ function ArticleListSubTable({ articles }: { articles: ArticleInfo[] }) {
                 <td className="px-3 py-1 text-center">
                   <Check className="mx-auto h-3.5 w-3.5 text-emerald-600" />
                 </td>
-                {FREEBIE_CHECK_COLUMNS.map((col) => {
-                  const check = article.checks[col.key];
-                  if (!check) return <td key={col.key} className="px-3 py-1 text-center">&mdash;</td>;
-                  return (
-                    <td key={col.key} className="px-3 py-1 text-center">
-                      {check.ok ? (
-                        <Check className="mx-auto h-3.5 w-3.5 text-emerald-600" />
-                      ) : (
-                        <span className="inline-flex items-center gap-1 text-red-600">
-                          <X className="h-3.5 w-3.5" />
-                          {check.detail && <span className="text-xs">{check.detail}</span>}
-                        </span>
-                      )}
-                    </td>
-                  );
-                })}
+                {FREEBIE_CHECK_COLUMNS.map((col) => (
+                  <td key={col.key} className="px-3 py-1 text-center">
+                    <CellIcon check={article.checks[col.key]} />
+                  </td>
+                ))}
               </tr>
             );
           })}

@@ -233,11 +233,11 @@ function CountBadge({ n }: { n: number }) {
   );
 }
 
-function CellIcon({ check }: { check?: EntryCheck | undefined }) {
+function CellIcon({ check, dimmed }: { check?: EntryCheck | undefined; dimmed?: boolean }) {
   if (!check) return <span className="text-muted-foreground/40">&mdash;</span>;
   if (check.ok) {
     return (
-      <span className="flex items-center justify-center gap-1.5 whitespace-nowrap" title={check.detail}>
+      <span className={`flex items-center justify-center gap-1.5 whitespace-nowrap ${dimmed ? "opacity-30" : ""}`} title={check.detail}>
         <Check className="h-4 w-4 text-emerald-600" />
         {check.detail && <span className="text-muted-foreground">{check.detail}</span>}
       </span>
@@ -315,7 +315,6 @@ function GlobalCommunityRow({ entry }: { entry?: EntryValidation | undefined }) 
 const ARTICLE_CHECK_COLUMNS = [
   { key: "cta", label: "CTA" },
   { key: "href", label: "Href" },
-  { key: "match", label: "Match" },
   { key: "eyebrow", label: "Eyebrow" },
   { key: "title", label: "Title" },
   { key: "body", label: "Body" },
@@ -456,7 +455,7 @@ function CategoryRow({
         </td>
         {columns.map((col) => (
           <td key={col.key} className="px-3 py-1.5 text-center">
-            <CellIcon check={ev?.checks[col.key]} />
+            <CellIcon check={ev?.checks[col.key]} dimmed={issues > 0} />
           </td>
         ))}
         {hasDeployment && dep && (

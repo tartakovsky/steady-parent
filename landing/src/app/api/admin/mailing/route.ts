@@ -181,27 +181,46 @@ export async function GET() {
         (e) => e.categorySlug === catSlug,
       );
 
-      // Freebie checks (category-level, applied to all published articles)
+      // Freebie checks: compute actual rendered values and run validateCtaCopy
       const freebieEntry = mailingFormCatalog.find(
         (e) => e.type === "freebie" && e.id === `freebie-${catSlug}`,
       );
-      const hasEntry = !!freebieEntry;
-      const hasName = !!freebieEntry?.name;
-      const hasDesc = !!freebieEntry?.what_it_is;
-      const hasCopy = !!freebieEntry?.cta_copy;
       const hasKitForm = blogMappings.has(catSlug);
+
+      // Compute the values that FreebieCTA actually renders on the page
+      // Page passes: title = "Get [the] {name}", body = what_it_is
+      // Defaults: eyebrow = "Not ready for a course yet?", buttonText = "Send me the sheet"
+      let freebieChecks: Record<string, { ok: boolean; detail?: string | undefined }> = {};
+      if (freebieEntry?.name && freebieEntry?.what_it_is) {
+        const freebieEyebrow = "Not ready for a course yet?";
+        const freeName = freebieEntry.name;
+        const freebieTitle = `Get ${freeName.startsWith("The ") ? "" : "the "}${freeName}`;
+        const freebieBody = freebieEntry.what_it_is;
+        const freebieButton = "Send me the sheet";
+
+        const copyResult = validateCtaCopy(
+          `freebie-${catSlug}`, freebieEyebrow, freebieTitle, freebieBody, freebieButton,
+        );
+        freebieChecks = copyResult.checks;
+      } else {
+        const reason = !freebieEntry ? "no entry" : !freebieEntry.name ? "no name" : "no desc";
+        freebieChecks = {
+          eyebrow: { ok: false, detail: reason },
+          title: { ok: false, detail: reason },
+          body: { ok: false, detail: reason },
+          clean: { ok: false, detail: reason },
+        };
+      }
+      freebieChecks["kit_form"] = hasKitForm ? { ok: true } : { ok: false, detail: "missing" };
 
       articlesByCategory[catSlug] = catArticles.map((a) => {
         const published = publishedSet.has(a.slug);
-        const checks: Record<string, { ok: boolean; detail?: string | undefined }> = {};
-        if (published) {
-          checks["entry"] = hasEntry ? { ok: true } : { ok: false, detail: "missing" };
-          checks["name"] = hasName ? { ok: true } : { ok: false, detail: "missing" };
-          checks["description"] = hasDesc ? { ok: true } : { ok: false, detail: "missing" };
-          checks["cta_copy"] = hasCopy ? { ok: true } : { ok: false, detail: "missing" };
-          checks["kit_form"] = hasKitForm ? { ok: true } : { ok: false, detail: "missing" };
-        }
-        return { slug: a.slug, title: a.title, published, checks };
+        return {
+          slug: a.slug,
+          title: a.title,
+          published,
+          checks: published ? { ...freebieChecks } : {},
+        };
       });
     }
 
