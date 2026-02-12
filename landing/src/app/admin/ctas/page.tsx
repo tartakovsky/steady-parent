@@ -99,20 +99,6 @@ export default function CtaValidationPage() {
   const { catalog, categorySlugs, validation, deployment } = data;
   const { errors, warnings, byEntry } = validation;
 
-  // Compute deployment-aware totals for the summary banner
-  let deploymentIssueCount = 0;
-  let totalArticleChecks = 0;
-  if (deployment) {
-    for (const dep of Object.values(deployment)) {
-      const missing = dep.totalCount - dep.publishedCount;
-      // Each article has community + course = 2 check sets
-      totalArticleChecks += dep.totalCount * 2;
-      deploymentIssueCount += missing * 2 + dep.communityIssues + dep.courseIssues;
-    }
-  }
-  const allErrors = errors.length + deploymentIssueCount;
-  const totalScope = catalog.length + totalArticleChecks;
-
   const perCatCommunities = catalog.filter(
     (c) => c.type === "community" && c.id !== "community" && !c.id.startsWith("community-quiz-"),
   );
@@ -120,6 +106,21 @@ export default function CtaValidationPage() {
     (c) => c.type === "community" && c.id.startsWith("community-quiz-"),
   );
   const courses = catalog.filter((c) => c.type === "course");
+
+  // Compute deployment-aware totals for the summary banner
+  let deploymentIssueCount = 0;
+  let totalArticles = 0;
+  let publishedArticles = 0;
+  if (deployment) {
+    for (const dep of Object.values(deployment)) {
+      totalArticles += dep.totalCount;
+      publishedArticles += dep.publishedCount;
+      const missing = dep.totalCount - dep.publishedCount;
+      deploymentIssueCount += missing * 2 + dep.communityIssues + dep.courseIssues;
+    }
+  }
+  const allErrors = errors.length + deploymentIssueCount;
+  const totalChecks = catalog.length + totalArticles * 2;
 
   const communityColumns = [
     { key: "pageUrl", label: "Page" },
@@ -150,11 +151,11 @@ export default function CtaValidationPage() {
       <div>
         <h1 className="text-2xl font-bold">CTA Validation</h1>
         <p className="text-sm text-muted-foreground">
-          {catalog.length} catalog entries + {totalArticleChecks} article checks across {categorySlugs.length} categories
+          {categorySlugs.length} categories &middot; {totalArticles} articles ({publishedArticles} published) &middot; {quizCommunities.length} quiz community CTAs
         </p>
       </div>
 
-      <SummaryBanner errors={allErrors} warnings={warnings.length} total={totalScope} />
+      <SummaryBanner errors={allErrors} warnings={warnings.length} total={totalChecks} />
 
       {/* Global Community */}
       <section>

@@ -177,7 +177,8 @@ export default function MailingFormsValidationPage() {
       <div>
         <h1 className="text-2xl font-bold">Mailing Forms Validation</h1>
         <p className="text-sm text-muted-foreground">
-          {Object.keys(byEntry).length} catalog entries + {totalArticleChecks} article checks &middot; {tags.length} Kit tags synced ({mapped.length} mapped, {orphaned.length} orphaned)
+          {coverage ? `${coverage.categorySlugs.length} freebie forms · ${coverage.categorySlugs.length} waitlist forms · ${coverage.quizSlugs.length} quiz gates` : `${Object.keys(byEntry).length} forms`}
+          {" · "}{totalArticleChecks} articles &middot; {tags.length} Kit tags ({mapped.length} mapped, {orphaned.length} orphaned)
         </p>
       </div>
 
