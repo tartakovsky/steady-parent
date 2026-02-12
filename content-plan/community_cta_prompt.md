@@ -2,7 +2,7 @@
 
 You are writing category-specific community CTA blocks for the Steady Parent Community (a Skool group).
 
-The community is the SAME for every category — one private parent group at `https://www.skool.com/steady-parent`. But the CTA messaging changes per category to speak directly to what parents reading about that topic care about.
+The community is the SAME for every category — one private parent group at `https://www.skool.com/steady-parent-1727`. But the CTA messaging changes per category to speak directly to what parents reading about that topic care about.
 
 ## Community facts
 
@@ -120,7 +120,7 @@ interface CtaDefinition {
   id: string;          // pattern: "community-{category_slug}" (lowercase, hyphens only)
   type: "community";
   name: "Steady Parent Community";
-  url: "https://www.skool.com/steady-parent";
+  url: "https://www.skool.com/steady-parent-1727";
   cta_copy: CtaCopy;
   can_promise: [];     // always empty for per-category community entries
   cant_promise: [];    // always empty for per-category community entries

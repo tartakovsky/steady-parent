@@ -36,7 +36,7 @@ Parse the JSON response. Validate each entry:
 - `id` matches `community-{slug}` for one of the 20 category slugs
 - `type` is `"community"`
 - `name` is `"Steady Parent Community"`
-- `url` is `"https://www.skool.com/steady-parent"`
+- `url` is `"https://www.skool.com/steady-parent-1727"`
 - `what_it_is` is a non-empty string, 15-30 words
 - `cta_copy` exists with all 4 fields: `eyebrow`, `title`, `body`, `buttonText`
 - `cta_copy.body` mentions founders being active/present

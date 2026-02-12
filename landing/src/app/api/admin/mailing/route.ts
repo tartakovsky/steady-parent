@@ -16,6 +16,7 @@ import {
 } from "@steady-parent/content-spec";
 import type { IntegrationValidationResult, EntryValidation } from "@steady-parent/content-spec";
 import { quizzes } from "@/lib/quiz";
+import { blogPosts } from "@/content/blog/posts";
 
 import { db } from "@/lib/db";
 import { kitTags as kitTagsTable } from "@/lib/db/schema";
@@ -107,6 +108,10 @@ export async function GET() {
   // Run integration validation + build coverage data
   let integration: IntegrationValidationResult | null = null;
   let mailingByEntry: Record<string, EntryValidation> | null = null;
+  let articlesByCategory: Record<
+    string,
+    Array<{ slug: string; title: string; published: boolean }>
+  > | null = null;
   let coverage: {
     categorySlugs: string[];
     quizSlugs: string[];
@@ -157,6 +162,25 @@ export async function GET() {
     }
 
     coverage = { categorySlugs, quizSlugs, freebySlugs, waitlistSlugs, blogMappings, waitlistMappings, quizMappings };
+
+    // Build article deployment counts per category (for freebie drill-down)
+    const taxonomyCategorySet = new Set(categorySlugs);
+    const publishedSet = new Set(
+      blogPosts
+        .filter((p) => taxonomyCategorySet.has(p.meta.categorySlug))
+        .map((p) => p.meta.slug),
+    );
+    articlesByCategory = {};
+    for (const catSlug of categorySlugs) {
+      const catArticles = taxonomy.entries.filter(
+        (e) => e.categorySlug === catSlug,
+      );
+      articlesByCategory[catSlug] = catArticles.map((a) => ({
+        slug: a.slug,
+        title: a.title,
+        published: publishedSet.has(a.slug),
+      }));
+    }
 
     // Run mailing form validation for per-entry inline results
     const mfValidation = validateMailingFormCatalog(mailingFormCatalog, categorySlugs, quizSlugs);
@@ -249,6 +273,7 @@ export async function GET() {
     tags: rows,
     integration,
     mailingByEntry,
+    articlesByCategory,
     coverage: coverage ? {
       categorySlugs: coverage.categorySlugs,
       quizSlugs: coverage.quizSlugs,

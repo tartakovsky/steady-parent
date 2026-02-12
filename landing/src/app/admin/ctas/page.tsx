@@ -1,7 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Check, X, AlertTriangle, XCircle } from "lucide-react";
+import {
+  Check,
+  X,
+  AlertTriangle,
+  XCircle,
+  ChevronDown,
+  ChevronRight,
+  Minus,
+} from "lucide-react";
+
+// ---------------------------------------------------------------------------
+// Types
+// ---------------------------------------------------------------------------
 
 interface EntryCheck {
   ok: boolean;
@@ -34,6 +46,22 @@ interface CheckGroup {
   warnings: string[];
 }
 
+interface ArticleDeployment {
+  slug: string;
+  title: string;
+  published: boolean;
+  community: Record<string, EntryCheck>;
+  course: Record<string, EntryCheck>;
+}
+
+interface CategoryDeployment {
+  articles: ArticleDeployment[];
+  publishedCount: number;
+  totalCount: number;
+  communityIssues: number;
+  courseIssues: number;
+}
+
 interface CtaResponse {
   catalog: CtaDefinition[] | null;
   categorySlugs: string[];
@@ -43,7 +71,12 @@ interface CtaResponse {
     groups: CheckGroup[];
     byEntry: Record<string, EntryValidation>;
   } | null;
+  deployment: Record<string, CategoryDeployment> | null;
 }
+
+// ---------------------------------------------------------------------------
+// Page
+// ---------------------------------------------------------------------------
 
 export default function CtaValidationPage() {
   const [data, setData] = useState<CtaResponse | null>(null);
@@ -63,7 +96,7 @@ export default function CtaValidationPage() {
   if (!data?.catalog || !data.validation)
     return <p className="text-muted-foreground">Could not load CTA data.</p>;
 
-  const { catalog, categorySlugs, validation } = data;
+  const { catalog, categorySlugs, validation, deployment } = data;
   const { errors, warnings, byEntry } = validation;
 
   const perCatCommunities = catalog.filter(
@@ -74,7 +107,6 @@ export default function CtaValidationPage() {
   );
   const courses = catalog.filter((c) => c.type === "course");
 
-  // Community check columns
   const communityColumns = [
     { key: "pageUrl", label: "Page" },
     { key: "url", label: "Link" },
@@ -87,7 +119,6 @@ export default function CtaValidationPage() {
     { key: "clean", label: "No !/bans" },
   ];
 
-  // Course check columns
   const courseColumns = [
     { key: "pageUrl", label: "Page" },
     { key: "url", label: "Link" },
@@ -109,7 +140,6 @@ export default function CtaValidationPage() {
         </p>
       </div>
 
-      {/* Summary */}
       <SummaryBanner errors={errors.length} warnings={warnings.length} total={catalog.length} />
 
       {/* Global Community */}
@@ -128,6 +158,8 @@ export default function CtaValidationPage() {
           columns={communityColumns}
           byEntry={byEntry}
           idPrefix="community-"
+          deployment={deployment}
+          deploymentKey="community"
         />
       </section>
 
@@ -154,6 +186,8 @@ export default function CtaValidationPage() {
           columns={courseColumns}
           byEntry={byEntry}
           idPrefix="course-"
+          deployment={deployment}
+          deploymentKey="course"
         />
       </section>
     </div>
@@ -200,7 +234,7 @@ function CountBadge({ n }: { n: number }) {
 }
 
 function CellIcon({ check }: { check?: EntryCheck | undefined }) {
-  if (!check) return <span className="text-muted-foreground/40">—</span>;
+  if (!check) return <span className="text-muted-foreground/40">&mdash;</span>;
   if (check.ok) {
     return (
       <span className="flex items-center justify-center gap-1.5 whitespace-nowrap" title={check.detail}>
@@ -217,16 +251,19 @@ function CellIcon({ check }: { check?: EntryCheck | undefined }) {
   );
 }
 
-function RowStatus({ ev }: { ev?: EntryValidation | undefined }) {
-  if (!ev || (ev.errors.length === 0 && ev.warnings.length === 0)) {
-    return <Check className="h-4 w-4 text-emerald-600" />;
+function RowStatus({ ev, deploymentIssues }: { ev?: EntryValidation | undefined; deploymentIssues?: number }) {
+  const hasDeployIssues = (deploymentIssues ?? 0) > 0;
+  if (hasDeployIssues || (ev && ev.errors.length > 0)) {
+    return <XCircle className="h-4 w-4 text-red-600" />;
   }
-  if (ev.errors.length > 0) return <XCircle className="h-4 w-4 text-red-600" />;
-  return <AlertTriangle className="h-4 w-4 text-amber-500" />;
+  if (ev && ev.warnings.length > 0) {
+    return <AlertTriangle className="h-4 w-4 text-amber-500" />;
+  }
+  return <Check className="h-4 w-4 text-emerald-600" />;
 }
 
 // ---------------------------------------------------------------------------
-// Global community (single row, different checks)
+// Global community (single row)
 // ---------------------------------------------------------------------------
 
 function GlobalCommunityRow({ entry }: { entry?: EntryValidation | undefined }) {
@@ -272,20 +309,61 @@ function GlobalCommunityRow({ entry }: { entry?: EntryValidation | undefined }) 
 }
 
 // ---------------------------------------------------------------------------
-// Check table — generic table with per-check columns
+// Expandable check table with per-article deployment drill-down
 // ---------------------------------------------------------------------------
+
+const ARTICLE_CHECK_COLUMNS = [
+  { key: "cta", label: "CTA" },
+  { key: "href", label: "Href" },
+  { key: "eyebrow", label: "Eyebrow" },
+  { key: "title", label: "Title" },
+  { key: "body", label: "Body" },
+  { key: "buttonText", label: "Button" },
+];
 
 function CheckTable({
   slugs,
   columns,
   byEntry,
   idPrefix,
+  deployment,
+  deploymentKey,
 }: {
   slugs: string[];
   columns: { key: string; label: string }[];
   byEntry: Record<string, EntryValidation>;
   idPrefix: string;
+  deployment?: Record<string, CategoryDeployment> | null;
+  deploymentKey?: "community" | "course";
 }) {
+  const hasDeployment = !!deployment && !!deploymentKey;
+  const [expandedSlugs, setExpandedSlugs] = useState<Set<string>>(() => {
+    // Auto-expand categories with any deployment issues (including missing articles)
+    if (!hasDeployment) return new Set<string>();
+    const expanded = new Set<string>();
+    for (const slug of slugs) {
+      const dep = deployment![slug];
+      if (!dep) continue;
+      const ctaIssues = deploymentKey === "community"
+        ? dep.communityIssues
+        : dep.courseIssues;
+      const missingCount = dep.totalCount - dep.publishedCount;
+      if (ctaIssues > 0 || missingCount > 0) expanded.add(slug);
+    }
+    return expanded;
+  });
+
+  const toggleExpand = (slug: string) => {
+    setExpandedSlugs((prev) => {
+      const next = new Set(prev);
+      if (next.has(slug)) next.delete(slug);
+      else next.add(slug);
+      return next;
+    });
+  };
+
+  const totalCols = 2 + columns.length + (hasDeployment ? 2 : 0); // status + slug + columns + live + chevron
+
   return (
     <div className="rounded-md border overflow-x-auto">
       <table className="w-full text-sm">
@@ -298,31 +376,235 @@ function CheckTable({
                 {col.label}
               </th>
             ))}
+            {hasDeployment && (
+              <th className="px-3 py-1.5 text-center font-medium whitespace-nowrap">
+                Live
+              </th>
+            )}
+            {hasDeployment && <th className="w-8 px-2 py-1.5" />}
           </tr>
         </thead>
         <tbody>
           {slugs.map((slug) => {
             const id = `${idPrefix}${slug}`;
             const ev = byEntry[id];
-            const hasErrors = ev && ev.errors.length > 0;
+            const dep = hasDeployment ? (deployment![slug] ?? null) : null;
+            const missingCount = dep ? dep.totalCount - dep.publishedCount : 0;
+            const ctaIssues = dep
+              ? deploymentKey === "community"
+                ? dep.communityIssues
+                : dep.courseIssues
+              : 0;
+            const issues = ctaIssues + missingCount;
+            const hasErrors = (ev && ev.errors.length > 0) || issues > 0;
             const hasWarnings = ev && ev.warnings.length > 0;
             const rowBg = hasErrors
               ? "bg-red-50/50 dark:bg-red-950/10"
               : hasWarnings
                 ? "bg-amber-50/30 dark:bg-amber-950/10"
                 : "";
+            const isExpanded = expandedSlugs.has(slug);
 
             return (
-              <tr key={slug} className={`border-b ${rowBg}`}>
-                <td className="px-2 py-1.5 text-center">
-                  <RowStatus ev={ev} />
+              <CategoryRow
+                key={slug}
+                slug={slug}
+                ev={ev}
+                columns={columns}
+                rowBg={rowBg}
+                hasDeployment={hasDeployment}
+                dep={dep}
+                deploymentKey={deploymentKey}
+                issues={issues}
+                isExpanded={isExpanded}
+                onToggle={() => toggleExpand(slug)}
+                totalCols={totalCols}
+              />
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function CategoryRow({
+  slug,
+  ev,
+  columns,
+  rowBg,
+  hasDeployment,
+  dep,
+  deploymentKey,
+  issues,
+  isExpanded,
+  onToggle,
+  totalCols,
+}: {
+  slug: string;
+  ev?: EntryValidation | undefined;
+  columns: { key: string; label: string }[];
+  rowBg: string;
+  hasDeployment: boolean;
+  dep: CategoryDeployment | null;
+  deploymentKey?: "community" | "course" | undefined;
+  issues: number;
+  isExpanded: boolean;
+  onToggle: () => void;
+  totalCols: number;
+}) {
+  return (
+    <>
+      <tr
+        className={`border-b ${rowBg} ${hasDeployment ? "cursor-pointer hover:bg-muted/30" : ""}`}
+        onClick={hasDeployment ? onToggle : undefined}
+      >
+        <td className="px-2 py-1.5 text-center">
+          <RowStatus ev={ev} deploymentIssues={issues} />
+        </td>
+        <td className="px-3 py-1.5">
+          <span className="rounded bg-muted px-1.5 py-0.5 font-mono whitespace-nowrap">{slug}</span>
+        </td>
+        {columns.map((col) => (
+          <td key={col.key} className="px-3 py-1.5 text-center">
+            <CellIcon check={ev?.checks[col.key]} />
+          </td>
+        ))}
+        {hasDeployment && dep && (
+          <td className="px-3 py-1.5 text-center">
+            <LiveBadge dep={dep} issues={issues} />
+          </td>
+        )}
+        {hasDeployment && !dep && (
+          <td className="px-3 py-1.5 text-center">
+            <span className="text-muted-foreground/40">&mdash;</span>
+          </td>
+        )}
+        {hasDeployment && (
+          <td className="px-2 py-1.5 text-center">
+            {isExpanded ? (
+              <ChevronDown className="h-4 w-4 text-muted-foreground" />
+            ) : (
+              <ChevronRight className="h-4 w-4 text-muted-foreground" />
+            )}
+          </td>
+        )}
+      </tr>
+      {isExpanded && dep && deploymentKey && (
+        <tr>
+          <td colSpan={totalCols} className="p-0">
+            <ArticleSubTable
+              articles={dep.articles}
+              deploymentKey={deploymentKey}
+            />
+          </td>
+        </tr>
+      )}
+    </>
+  );
+}
+
+function LiveBadge({ dep, issues }: { dep: CategoryDeployment; issues: number }) {
+  const ok = issues === 0 && dep.publishedCount === dep.totalCount;
+  return (
+    <span
+      className={`inline-flex items-center gap-1 ${ok ? "text-emerald-600" : "text-red-600"}`}
+    >
+      {ok ? (
+        <Check className="h-3.5 w-3.5" />
+      ) : (
+        <XCircle className="h-3.5 w-3.5" />
+      )}
+      <span className="text-xs font-medium">
+        {dep.publishedCount}/{dep.totalCount}
+      </span>
+    </span>
+  );
+}
+
+function ArticleSubTable({
+  articles,
+  deploymentKey,
+}: {
+  articles: ArticleDeployment[];
+  deploymentKey: "community" | "course";
+}) {
+  // Published articles first
+  const sorted = [...articles].sort((a, b) => {
+    if (a.published !== b.published) return a.published ? -1 : 1;
+    return a.slug.localeCompare(b.slug);
+  });
+
+  return (
+    <div className="border-t bg-muted/10">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="border-b bg-muted/30">
+            <th className="w-8 px-2 py-1" />
+            <th className="px-3 py-1 text-left font-medium text-xs">Article</th>
+            <th className="px-3 py-1 text-center font-medium text-xs">Live</th>
+            {ARTICLE_CHECK_COLUMNS.map((col) => (
+              <th
+                key={col.key}
+                className="px-3 py-1 text-center font-medium text-xs whitespace-nowrap"
+              >
+                {col.label}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {sorted.map((article) => {
+            const checks = article[deploymentKey];
+            if (!article.published) {
+              return (
+                <tr key={article.slug} className="border-b bg-red-50/30 dark:bg-red-950/5">
+                  <td className="px-2 py-1 text-center">
+                    <XCircle className="h-3.5 w-3.5 text-red-400" />
+                  </td>
+                  <td
+                    className="px-3 py-1 font-mono text-xs truncate max-w-[220px] text-red-600/70"
+                    title={article.title}
+                  >
+                    {article.slug}
+                  </td>
+                  <td className="px-3 py-1 text-center">
+                    <X className="mx-auto h-3.5 w-3.5 text-red-400" />
+                  </td>
+                  {ARTICLE_CHECK_COLUMNS.map((col) => (
+                    <td key={col.key} className="px-3 py-1 text-center">
+                      <Minus className="mx-auto h-3 w-3 text-red-300" />
+                    </td>
+                  ))}
+                </tr>
+              );
+            }
+
+            const hasIssue = Object.values(checks).some((c) => !c.ok);
+            return (
+              <tr
+                key={article.slug}
+                className={`border-b ${hasIssue ? "bg-red-50/50 dark:bg-red-950/10" : ""}`}
+              >
+                <td className="px-2 py-1 text-center">
+                  {hasIssue ? (
+                    <XCircle className="h-3.5 w-3.5 text-red-600" />
+                  ) : (
+                    <Check className="h-3.5 w-3.5 text-emerald-600" />
+                  )}
                 </td>
-                <td className="px-3 py-1.5">
-                  <span className="rounded bg-muted px-1.5 py-0.5 font-mono whitespace-nowrap">{slug}</span>
+                <td
+                  className="px-3 py-1 font-mono text-xs truncate max-w-[220px]"
+                  title={article.title}
+                >
+                  {article.slug}
                 </td>
-                {columns.map((col) => (
-                  <td key={col.key} className="px-3 py-1.5 text-center">
-                    <CellIcon check={ev?.checks[col.key]} />
+                <td className="px-3 py-1 text-center">
+                  <Check className="mx-auto h-3.5 w-3.5 text-emerald-600" />
+                </td>
+                {ARTICLE_CHECK_COLUMNS.map((col) => (
+                  <td key={col.key} className="px-3 py-1 text-center">
+                    <CellIcon check={checks[col.key]} />
                   </td>
                 ))}
               </tr>

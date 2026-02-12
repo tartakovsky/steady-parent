@@ -4,7 +4,7 @@ You are writing quiz-specific community CTA blocks for the Steady Parent Communi
 
 These CTAs appear on quiz results pages. The reader just completed a quiz and learned something about themselves or their child. The CTA invites them into a community where parents with similar results talk about what they discovered.
 
-The community is the SAME for every quiz — one private parent group at `https://www.skool.com/steady-parent`. But the CTA messaging changes per quiz to speak directly to the insight the reader just gained.
+The community is the SAME for every quiz — one private parent group at `https://www.skool.com/steady-parent-1727`. But the CTA messaging changes per quiz to speak directly to the insight the reader just gained.
 
 ## Community facts
 
@@ -107,7 +107,7 @@ interface CtaDefinition {
   id: string;          // pattern: "community-quiz-{quiz_slug}" (lowercase, hyphens only)
   type: "community";
   name: "Steady Parent Community";
-  url: "https://www.skool.com/steady-parent";
+  url: "https://www.skool.com/steady-parent-1727";
   cta_copy: CtaCopy;
   can_promise: [];     // always empty
   cant_promise: [];    // always empty

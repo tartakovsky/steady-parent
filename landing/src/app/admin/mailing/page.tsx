@@ -51,10 +51,17 @@ interface CoverageData {
   quizMappings: string[];
 }
 
+interface ArticleInfo {
+  slug: string;
+  title: string;
+  published: boolean;
+}
+
 interface MailingResponse {
   tags: KitTagRow[];
   integration: IntegrationResult | null;
   mailingByEntry: Record<string, EntryValidation> | null;
+  articlesByCategory: Record<string, ArticleInfo[]> | null;
   coverage: CoverageData | null;
 }
 
@@ -75,7 +82,7 @@ export default function MailingFormsValidationPage() {
   if (loading) return <p className="text-muted-foreground">Loading...</p>;
   if (!data) return <p className="text-muted-foreground">Failed to load mailing data.</p>;
 
-  const { tags, integration, mailingByEntry, coverage } = data;
+  const { tags, integration, mailingByEntry, articlesByCategory, coverage } = data;
   const byEntry = mailingByEntry ?? {};
 
   // Count all errors/warnings from byEntry
@@ -153,7 +160,6 @@ export default function MailingFormsValidationPage() {
         </p>
       </div>
 
-      {/* Summary banner */}
       <SummaryBanner errors={totalErrors} warnings={totalWarnings} total={Object.keys(byEntry).length} />
 
       {/* Freebie Forms */}
@@ -168,6 +174,7 @@ export default function MailingFormsValidationPage() {
             byEntry={byEntry}
             idPrefix="freebie-"
             kitMappingSet={blogMappingSet}
+            articlesByCategory={articlesByCategory}
           />
         </section>
       )}
@@ -308,7 +315,7 @@ function CountBadge({ n }: { n: number }) {
 }
 
 function CellIcon({ check }: { check?: EntryCheck | undefined }) {
-  if (!check) return <span className="text-muted-foreground/40">—</span>;
+  if (!check) return <span className="text-muted-foreground/40">&mdash;</span>;
   if (check.ok) {
     return (
       <span className="flex items-center justify-center gap-1.5 whitespace-nowrap" title={check.detail}>
@@ -326,7 +333,7 @@ function CellIcon({ check }: { check?: EntryCheck | undefined }) {
 }
 
 // ---------------------------------------------------------------------------
-// Check table — generic table with per-check columns + Kit form mapping
+// Check table — expandable with per-article drill-down for freebie forms
 // ---------------------------------------------------------------------------
 
 function CheckTable({
@@ -335,13 +342,30 @@ function CheckTable({
   byEntry,
   idPrefix,
   kitMappingSet,
+  articlesByCategory,
 }: {
   slugs: string[];
   columns: { key: string; label: string }[];
   byEntry: Record<string, EntryValidation>;
   idPrefix: string;
   kitMappingSet?: Set<string> | undefined;
+  articlesByCategory?: Record<string, ArticleInfo[]> | null;
 }) {
+  const hasArticles = !!articlesByCategory;
+  const [expandedSlugs, setExpandedSlugs] = useState<Set<string>>(new Set());
+
+  const toggleExpand = (slug: string) => {
+    setExpandedSlugs((prev) => {
+      const next = new Set(prev);
+      if (next.has(slug)) next.delete(slug);
+      else next.add(slug);
+      return next;
+    });
+  };
+
+  const totalCols =
+    2 + columns.length + (kitMappingSet ? 1 : 0) + (hasArticles ? 2 : 0);
+
   return (
     <div className="rounded-md border overflow-x-auto">
       <table className="w-full text-sm">
@@ -359,6 +383,12 @@ function CheckTable({
                 Kit Form
               </th>
             )}
+            {hasArticles && (
+              <th className="px-3 py-1.5 text-center font-medium whitespace-nowrap">
+                Live
+              </th>
+            )}
+            {hasArticles && <th className="w-8 px-2 py-1.5" />}
           </tr>
         </thead>
         <tbody>
@@ -366,45 +396,183 @@ function CheckTable({
             const id = `${idPrefix}${slug}`;
             const ev = byEntry[id];
             const kitFormMissing = kitMappingSet ? !kitMappingSet.has(slug) : false;
-            const hasErrors = (ev && ev.errors.length > 0) || kitFormMissing;
+            const articles = hasArticles ? (articlesByCategory![slug] ?? null) : null;
+            const publishedCount = articles?.filter((a) => a.published).length ?? 0;
+            const totalCount = articles?.length ?? 0;
+            const missingArticles = hasArticles ? totalCount - publishedCount : 0;
+            const hasErrors = (ev && ev.errors.length > 0) || kitFormMissing || missingArticles > 0;
             const hasWarnings = ev && ev.warnings.length > 0;
             const rowBg = hasErrors
               ? "bg-red-50/50 dark:bg-red-950/10"
               : hasWarnings
                 ? "bg-amber-50/30 dark:bg-amber-950/10"
                 : "";
+            const isExpanded = expandedSlugs.has(slug);
 
             return (
-              <tr key={slug} className={`border-b ${rowBg}`}>
-                <td className="px-2 py-1.5 text-center">
-                  {hasErrors ? (
-                    <XCircle className="h-4 w-4 text-red-600" />
-                  ) : hasWarnings ? (
-                    <AlertTriangle className="h-4 w-4 text-amber-500" />
-                  ) : (
-                    <Check className="h-4 w-4 text-emerald-600" />
-                  )}
-                </td>
-                <td className="px-3 py-1.5">
-                  <span className="rounded bg-muted px-1.5 py-0.5 font-mono whitespace-nowrap">{slug}</span>
-                </td>
-                {columns.map((col) => (
-                  <td key={col.key} className="px-3 py-1.5 text-center">
-                    <CellIcon check={ev?.checks[col.key]} />
-                  </td>
-                ))}
-                {kitMappingSet && (
-                  <td className="px-3 py-1.5 text-center">
-                    {kitMappingSet.has(slug) ? (
-                      <Check className="mx-auto h-4 w-4 text-emerald-600" />
-                    ) : (
-                      <X className="mx-auto h-4 w-4 text-red-500" />
-                    )}
-                  </td>
-                )}
-              </tr>
+              <FreebieRow
+                key={slug}
+                slug={slug}
+                ev={ev}
+                columns={columns}
+                rowBg={rowBg}
+                kitMappingSet={kitMappingSet}
+                hasArticles={hasArticles}
+                articles={articles}
+                publishedCount={publishedCount}
+                totalCount={totalCount}
+                isExpanded={isExpanded}
+                onToggle={() => toggleExpand(slug)}
+                totalCols={totalCols}
+              />
             );
           })}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function FreebieRow({
+  slug,
+  ev,
+  columns,
+  rowBg,
+  kitMappingSet,
+  hasArticles,
+  articles,
+  publishedCount,
+  totalCount,
+  isExpanded,
+  onToggle,
+  totalCols,
+}: {
+  slug: string;
+  ev?: EntryValidation | undefined;
+  columns: { key: string; label: string }[];
+  rowBg: string;
+  kitMappingSet?: Set<string> | undefined;
+  hasArticles: boolean;
+  articles: ArticleInfo[] | null;
+  publishedCount: number;
+  totalCount: number;
+  isExpanded: boolean;
+  onToggle: () => void;
+  totalCols: number;
+}) {
+  const hasErrors = ev && ev.errors.length > 0;
+  const hasWarnings = ev && ev.warnings.length > 0;
+
+  return (
+    <>
+      <tr
+        className={`border-b ${rowBg} ${hasArticles ? "cursor-pointer hover:bg-muted/30" : ""}`}
+        onClick={hasArticles ? onToggle : undefined}
+      >
+        <td className="px-2 py-1.5 text-center">
+          {hasErrors ? (
+            <XCircle className="h-4 w-4 text-red-600" />
+          ) : hasWarnings ? (
+            <AlertTriangle className="h-4 w-4 text-amber-500" />
+          ) : (
+            <Check className="h-4 w-4 text-emerald-600" />
+          )}
+        </td>
+        <td className="px-3 py-1.5">
+          <span className="rounded bg-muted px-1.5 py-0.5 font-mono whitespace-nowrap">{slug}</span>
+        </td>
+        {columns.map((col) => (
+          <td key={col.key} className="px-3 py-1.5 text-center">
+            <CellIcon check={ev?.checks[col.key]} />
+          </td>
+        ))}
+        {kitMappingSet && (
+          <td className="px-3 py-1.5 text-center">
+            {kitMappingSet.has(slug) ? (
+              <Check className="mx-auto h-4 w-4 text-emerald-600" />
+            ) : (
+              <X className="mx-auto h-4 w-4 text-red-500" />
+            )}
+          </td>
+        )}
+        {hasArticles && (
+          <td className="px-3 py-1.5 text-center">
+            {(() => {
+              const ok = publishedCount === totalCount;
+              return (
+                <span className={`inline-flex items-center gap-1 ${ok ? "text-emerald-600" : "text-red-600"}`}>
+                  {ok ? <Check className="h-3.5 w-3.5" /> : <XCircle className="h-3.5 w-3.5" />}
+                  <span className="text-xs font-medium">{publishedCount}/{totalCount}</span>
+                </span>
+              );
+            })()}
+          </td>
+        )}
+        {hasArticles && (
+          <td className="px-2 py-1.5 text-center">
+            {isExpanded ? (
+              <ChevronDown className="h-4 w-4 text-muted-foreground" />
+            ) : (
+              <ChevronRight className="h-4 w-4 text-muted-foreground" />
+            )}
+          </td>
+        )}
+      </tr>
+      {isExpanded && articles && (
+        <tr>
+          <td colSpan={totalCols} className="p-0">
+            <ArticleListSubTable articles={articles} />
+          </td>
+        </tr>
+      )}
+    </>
+  );
+}
+
+function ArticleListSubTable({ articles }: { articles: ArticleInfo[] }) {
+  const sorted = [...articles].sort((a, b) => {
+    if (a.published !== b.published) return a.published ? -1 : 1;
+    return a.slug.localeCompare(b.slug);
+  });
+
+  return (
+    <div className="border-t bg-muted/10">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="border-b bg-muted/30">
+            <th className="w-8 px-2 py-1" />
+            <th className="px-3 py-1 text-left font-medium text-xs">Article</th>
+            <th className="px-3 py-1 text-center font-medium text-xs">Live</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sorted.map((article) => (
+            <tr
+              key={article.slug}
+              className={`border-b ${!article.published ? "bg-red-50/30 dark:bg-red-950/5" : ""}`}
+            >
+              <td className="px-2 py-1 text-center">
+                {article.published ? (
+                  <Check className="h-3.5 w-3.5 text-emerald-600" />
+                ) : (
+                  <XCircle className="h-3.5 w-3.5 text-red-400" />
+                )}
+              </td>
+              <td
+                className={`px-3 py-1 font-mono text-xs truncate max-w-[220px] ${!article.published ? "text-red-600/70" : ""}`}
+                title={article.title}
+              >
+                {article.slug}
+              </td>
+              <td className="px-3 py-1 text-center">
+                {article.published ? (
+                  <Check className="mx-auto h-3.5 w-3.5 text-emerald-600" />
+                ) : (
+                  <X className="mx-auto h-3.5 w-3.5 text-red-400" />
+                )}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

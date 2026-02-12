@@ -21,7 +21,7 @@ const defaults = {
   title: "Join the Steady Parent community",
   body: "Share wins, get support, and ask questions. A private space for parents who want to stay calm under pressure.",
   buttonText: "Join the community",
-  href: "https://www.skool.com/steady-parent",
+  href: "https://www.skool.com/steady-parent-1727",
 };
 
 export function CommunityCTA({

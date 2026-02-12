@@ -50,3 +50,5 @@ export type {
   LiveKitState,
   CodeChecks,
 } from "./validator/kit-integration";
+export { extractCTAsFromMdx } from "./validator/reality-check";
+export type { ExtractedCTA } from "./validator/reality-check";

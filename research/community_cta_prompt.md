@@ -2,7 +2,7 @@
 
 You are writing category-specific community CTA blocks for the Steady Parent Community (a Skool group).
 
-The community is the SAME for every category — one private parent group at `https://www.skool.com/steady-parent`. But the CTA messaging changes per category to speak directly to what parents reading about that topic care about.
+The community is the SAME for every category — one private parent group at `https://www.skool.com/steady-parent-1727`. But the CTA messaging changes per category to speak directly to what parents reading about that topic care about.
 
 ## Community facts
 
@@ -21,8 +21,8 @@ The reader sees eyebrow → title → body → button in sequence. They read it 
 For each of the 20 categories, produce a CTA block with these fields:
 
 - **`cta_copy.eyebrow`**: 2–5 words. A recognizable parenting moment the reader is IN right now — "When they...", "That moment after...", "After the third time tonight..." — situational, not abstract. Always uses "you/your", never "their/them".
-- **`cta_copy.title`**: 5–12 words. Speaks TO the reader about what they get from joining: dialogue, being heard, sharing the load, finding people in the exact same situation. Must be clear this is about COMMUNITY (talking, sharing, being understood) — not a resource page, not a testimonial. The reader must see themselves IN the title, not observe other parents FROM THE OUTSIDE. Must flow naturally from the eyebrow — together they should read like the start of one thought.
-- **`cta_copy.body`**: 8–25 words. Shows the specific RELIEF the reader gets after joining — what changes for them, what they'll have next time this happens. Not "the conversation about X" — show the tangible before/after. FOLLOWED BY ". We are there with you daily too." — that last sentence is fixed and mandatory, always appended.
+- **`cta_copy.title`**: 5–8 words. Short, punchy. Speaks TO the reader about what they get from joining. Must be clear this is about COMMUNITY. The reader must see themselves IN the title, not observe other parents. Must flow naturally from the eyebrow.
+- **`cta_copy.body`**: The full body (including the mandatory suffix) must be 17–24 words total. Your custom sentence comes first, then ". We are there with you daily too." (7 words). So your sentence is 10–17 words. Shows the specific RELIEF the reader gets — what changes for them next time. Not "the conversation about X" — show the tangible before/after.
 
 The buttonText is always "Join the community" — do not change it.
 
@@ -103,8 +103,8 @@ Each entry must conform to this TypeScript type:
 ```typescript
 interface CtaCopy {
   eyebrow: string;     // 2-5 words
-  title: string;       // 5-12 words
-  body: string;        // category sentence + ". We are there with you daily too."
+  title: string;       // 5-8 words
+  body: string;        // 17-24 words TOTAL including ". We are there with you daily too."
   buttonText: "Join the community";  // FIXED — always this exact string
 }
 
@@ -112,7 +112,7 @@ interface CtaDefinition {
   id: string;          // pattern: "community-{category_slug}" (lowercase, hyphens only)
   type: "community";
   name: "Steady Parent Community";
-  url: "https://www.skool.com/steady-parent";
+  url: "https://www.skool.com/steady-parent-1727";
   cta_copy: CtaCopy;
   can_promise: [];     // always empty for per-category community entries
   cant_promise: [];    // always empty for per-category community entries
