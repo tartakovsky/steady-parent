@@ -10,13 +10,19 @@ The community is the SAME for every category — one private parent group at `ht
 - It's a private, supportive group of parents going through the same stuff
 - Do NOT promise any of the following: weekly expert Q&As, live coaching calls, video content, 1-on-1 access, guaranteed response times
 
+## How the reader reads this
+
+The reader sees eyebrow → title → body → button in sequence. They read it as ONE continuous message, not three separate fields. Write it that way — each field picks up where the previous one left off. The whole thing should flow like a single thought that builds to the button.
+
+**Always second person.** The reader is "you" and "your". Never "their", "them", "a parent". You are talking TO this person.
+
 ## What you're writing
 
 For each of the 20 categories, produce a CTA block with these fields:
 
-- **`cta_copy.eyebrow`**: 2–5 words. A recognizable parenting moment the reader is IN right now — "When they...", "That moment after...", "After the third time tonight..." — situational, not abstract
-- **`cta_copy.title`**: 5–12 words. Speaks TO the reader about what they get from joining: dialogue, being heard, sharing the load, finding people in the exact same situation. Must be clear this is about COMMUNITY (talking, sharing, being understood) — not a resource page, not a testimonial. The reader must see themselves IN the title, not observe other parents FROM THE OUTSIDE
-- **`cta_copy.body`**: 8–25 words. Shows the specific value of this community FOR THIS CATEGORY — what conversations are happening, what the reader will find when they join. FOLLOWED BY ". We are there with you daily too." — that last sentence is fixed and mandatory, always appended
+- **`cta_copy.eyebrow`**: 2–5 words. A recognizable parenting moment the reader is IN right now — "When they...", "That moment after...", "After the third time tonight..." — situational, not abstract. Always uses "you/your", never "their/them".
+- **`cta_copy.title`**: 5–12 words. Speaks TO the reader about what they get from joining: dialogue, being heard, sharing the load, finding people in the exact same situation. Must be clear this is about COMMUNITY (talking, sharing, being understood) — not a resource page, not a testimonial. The reader must see themselves IN the title, not observe other parents FROM THE OUTSIDE. Must flow naturally from the eyebrow — together they should read like the start of one thought.
+- **`cta_copy.body`**: 8–25 words. Shows the specific RELIEF the reader gets after joining — what changes for them, what they'll have next time this happens. Not "the conversation about X" — show the tangible before/after. FOLLOWED BY ". We are there with you daily too." — that last sentence is fixed and mandatory, always appended.
 
 The buttonText is always "Join the community" — do not change it.
 
@@ -31,8 +37,10 @@ The buttonText is always "Join the community" — do not change it.
 
 1. The TITLE must speak TO the reader, not ABOUT other parents. Never start with "Parents who..." — the reader is not observing a group from outside, they're being invited IN
 2. The TITLE must make it clear this is a COMMUNITY — people talking, sharing, being heard. Not a resource, not a course, not tips
-3. The BODY shows what's happening IN the community that's relevant to THIS category — active conversations, shared experiences, the specific burden being shared
+3. The BODY shows the specific RELIEF — what changes for the reader after joining. Not "the conversation about X, Y, and Z" but what they'll have that they don't have now. Next time this happens, they won't be guessing alone.
 4. Every field must be specific to the category topic — no generic "parenting is hard" copy that could apply to any category
+5. Always second person — "you", "your", never "their", "them", "a parent"
+6. Eyebrow → title → body must flow as one continuous thought. The body should not repeat or rephrase the title — it should CONTINUE it
 
 ## NOT THIS / THIS
 
@@ -52,13 +60,19 @@ body: "The strategies that actually worked when someone else's kid got bitten. W
 ```
 Why it fails: Title talks ABOUT other parents as a third party. I'm observing them, not joining them. It reads like a testimonial, not a community invitation. Zero clarity on what I GET from joining.
 
+### Body anti-pattern — NEVER DO THIS:
+```
+body: "The daily conversation about what's too strict, what's too soft, and what actually held up by Friday."
+```
+Why it fails: "The conversation about X, Y, and Z" is a dead formula. It describes a conversation — it doesn't show what changes for ME. Every body reads exactly the same. Instead, show specific relief: what I'll HAVE after joining that I don't have now.
+
 ### Discipline — THIS:
 ```
 eyebrow: "When they push back again"
 title: "Talk it through with parents setting the same limits"
-body: "The daily back-and-forth on what's too strict, what's too soft, and what actually held up by Friday. We are there with you daily too."
+body: "Next time you'll have ten parents who already tested your exact boundary and can tell you if it held. We are there with you daily too."
 ```
-Why it works: Eyebrow puts me in the moment. Title tells me what I'll DO (talk it through) with people in MY situation (setting the same limits). Body shows what's happening in the group (daily conversations about real dilemmas). It's unmistakably a community.
+Why it works: Eyebrow puts you in the moment. Title tells you what you'll DO (talk it through) with people in YOUR situation. Body shows the specific relief — next time you won't be guessing, you'll have people who already tried it. The whole thing flows: moment → action → payoff.
 
 ### Anxiety — NOT THIS:
 ```
@@ -72,9 +86,9 @@ Why it fails: Title describes other parents' knowledge — not what I get. "Real
 ```
 eyebrow: "When worry won't let go"
 title: "Share the weight with parents in the same spiral"
-body: "The conversation about whether it's a phase, when to worry, and what actually helped at drop-off this morning. We are there with you daily too."
+body: "Next time you're up at 2 AM googling symptoms, you'll have parents who've been in your exact spiral to ask instead. We are there with you daily too."
 ```
-Why it works: Title says what I DO (share the weight) and who's there (parents in the same spiral — MY spiral). Body shows the live conversation. It's a community, not a tip sheet.
+Why it works: Title says what you DO (share the weight) with people in YOUR spiral. Body shows specific relief — instead of googling alone, you have real people to ask. Flows naturally from title to body.
 
 ## Categories
 

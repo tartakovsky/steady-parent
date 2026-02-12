@@ -23,7 +23,7 @@
     "cta_copy": {
       "eyebrow": "When they hit again",
       "title": "Talk it through with parents handling the same aggression",
-      "body": "The daily conversation about what to do mid-hit, what worked after, and when to worry about a pattern. We are there with you daily too.",
+      "body": "Next time you'll have ten parents who already tested your exact response and can tell you what happened after. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -37,7 +37,7 @@
     "cta_copy": {
       "eyebrow": "When worry won't let go",
       "title": "Share the weight with parents in the same spiral",
-      "body": "The conversation about whether it's a phase, when to worry, and what actually helped at drop-off this morning. We are there with you daily too.",
+      "body": "Next time you're up at 2 AM googling symptoms, you'll have parents who've been in your exact spiral to ask instead. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -51,7 +51,7 @@
     "cta_copy": {
       "eyebrow": "After the screaming stops",
       "title": "Process it with parents whose kids feel everything too",
-      "body": "The back-and-forth on what to do during the meltdown and what to say once it's over. We are there with you daily too.",
+      "body": "Next meltdown, you'll already know what five other parents did in that exact moment and how the rest of the evening went. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -65,7 +65,7 @@
     "cta_copy": {
       "eyebrow": "Before you have the talk",
       "title": "Figure out the words with parents having the same conversations",
-      "body": "The ongoing discussion about what to say at each age, what crossed a line, and what your kid actually understood. We are there with you daily too.",
+      "body": "Next time your kid asks a question you weren't ready for, you'll have parents who already found the right words at that age. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -77,9 +77,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "When your parents' voice appears",
+      "eyebrow": "When you hear your mother",
       "title": "Work through it with parents rewriting the same script",
-      "body": "The honest conversation about the moment you heard yourself sound exactly like them and what you did next. We are there with you daily too.",
+      "body": "Next time you catch yourself mid-sentence repeating what was done to you, you'll have people who understand exactly what that costs. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -93,7 +93,7 @@
     "cta_copy": {
       "eyebrow": "When they push back again",
       "title": "Talk it through with parents setting the same limits",
-      "body": "The daily back-and-forth on what's too strict, what's too soft, and what actually held up by Friday. We are there with you daily too.",
+      "body": "Next time you'll have ten parents who already tested your exact boundary and can tell you if it held. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -107,7 +107,7 @@
     "cta_copy": {
       "eyebrow": "When dinner becomes a standoff",
       "title": "Compare notes with parents at the same table",
-      "body": "The running conversation about what they actually ate today, which battles to drop, and what finally worked. We are there with you daily too.",
+      "body": "Next refused meal, you'll know exactly which battles to drop because ten parents already tested that standoff with the same picky eater. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -121,7 +121,7 @@
     "cta_copy": {
       "eyebrow": "Nothing like the books said",
       "title": "Figure it out alongside parents in the same fog",
-      "body": "The honest, ongoing conversation about sleep, feeding, recovery, and all the things nobody warned you about. We are there with you daily too.",
+      "body": "Next time you're holding a baby at 4 AM wondering if this is normal, you'll have someone awake who already checked. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -135,7 +135,7 @@
     "cta_copy": {
       "eyebrow": "When methods contradict each other",
       "title": "Build your approach with parents asking the same questions",
-      "body": "The real conversation about what gentle parenting actually looks like at 6pm on a Tuesday with a tired kid. We are there with you daily too.",
+      "body": "Next time two experts tell you opposite things, you'll have parents who tried both and can tell you what held up by Friday. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -149,7 +149,7 @@
     "cta_copy": {
       "eyebrow": "When studies say opposite things",
       "title": "Sort through the research with parents who actually read it",
-      "body": "The ongoing discussion about which studies hold up, which headlines lie, and what the evidence actually means for your house. We are there with you daily too.",
+      "body": "Next time a headline makes you second-guess everything, you'll have parents who already dug into that study and can tell you what it actually found. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -162,8 +162,8 @@
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
       "eyebrow": "When day three goes sideways",
-      "title": "Get through it with parents mid-potty-training right now",
-      "body": "The real-time conversation about regressions, timelines, and what to do when they ask for the diaper back. We are there with you daily too.",
+      "title": "Get through it with parents mid-training right now",
+      "body": "Next regression, you'll have parents one week ahead of you who can tell you exactly whether to push through or pause. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -177,7 +177,7 @@
     "cta_copy": {
       "eyebrow": "Handing it over again",
       "title": "Set the rules with parents fighting the same screen battle",
-      "body": "The ongoing conversation about what limits actually held, what app surprised you, and when you just gave in. We are there with you daily too.",
+      "body": "Next time you cave on the time limit, you'll have parents who already tried your exact rule and can tell you what held. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -191,7 +191,7 @@
     "cta_copy": {
       "eyebrow": "When they start again",
       "title": "Figure it out with parents refereeing the same fights",
-      "body": "The daily conversation about who started it, whether to intervene, and what actually shifted the dynamic. We are there with you daily too.",
+      "body": "Next blowup, you'll know whether to step in or wait it out because someone already tried both with the same age gap. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -205,7 +205,7 @@
     "cta_copy": {
       "eyebrow": "When bedtime takes two hours",
       "title": "Get through tonight with parents fighting the same bedtime",
-      "body": "The ongoing conversation about curtain calls, night wakes, and what finally got them to stay in bed. We are there with you daily too.",
+      "body": "Next curtain call, you'll have parents who already solved your exact stalling tactic and can tell you what finally stuck. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -219,7 +219,7 @@
     "cta_copy": {
       "eyebrow": "Standing on the sidelines",
       "title": "Talk it through with parents watching the same struggle",
-      "body": "The conversation about what helped when your kid was left out, couldn't join in, or came home with no one to sit with. We are there with you daily too.",
+      "body": "Next time your kid comes home with no one to sit with, you'll have parents who navigated the same thing and found what actually helped. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -233,7 +233,7 @@
     "cta_copy": {
       "eyebrow": "When the intensity never stops",
       "title": "Breathe with parents raising the same kind of kid",
-      "body": "The conversation about what works when everything is louder, faster, and more than anyone else seems to deal with. We are there with you daily too.",
+      "body": "Next time your kid is too loud, too much, too everything and nobody around you gets it, you'll have parents who do. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -247,7 +247,7 @@
     "cta_copy": {
       "eyebrow": "After you lost it",
       "title": "Work on it with parents managing the same triggers",
-      "body": "The honest conversation about what happens between the trigger and the yell, and what you tried after you failed. We are there with you daily too.",
+      "body": "Next time you feel the yell building, you'll have a dozen parents who already mapped your exact trigger and found what stopped it. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -261,7 +261,7 @@
     "cta_copy": {
       "eyebrow": "Meltdown in aisle three",
       "title": "Debrief with parents who had the same kind of day",
-      "body": "The conversation about what to do during the tantrum, what to say after, and how to stop dreading the next one. We are there with you daily too.",
+      "body": "Next public meltdown, you'll already have a move that worked for someone whose kid did the exact same thing last Tuesday. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -275,7 +275,7 @@
     "cta_copy": {
       "eyebrow": "When the door stays shut",
       "title": "Stay connected with parents navigating the same distance",
-      "body": "The conversation about eye rolls, silence, boundary testing, and how to keep the door open when they keep closing it. We are there with you daily too.",
+      "body": "Next eye roll, you'll have parents who tried pushing and parents who backed off and can tell you which one kept the door open. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -289,7 +289,7 @@
     "cta_copy": {
       "eyebrow": "Everything is about to change",
       "title": "Get through it with parents facing the same upheaval",
-      "body": "The conversation about new schools, moves, new siblings, and what actually helped your kid stop falling apart. We are there with you daily too.",
+      "body": "Next time your kid falls apart over the move, you'll have parents who already came out the other side and can tell you what helped. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -603,7 +603,7 @@
     "cta_copy": {
       "eyebrow": "Now you know your style",
       "title": "Compare notes with parents who got the same result",
-      "body": "The conversation about what your style looks like on a hard day and what other types handle differently. We are there with you daily too.",
+      "body": "Next time someone questions your approach, you'll have parents who parent the same way and can tell you how it played out. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -616,8 +616,8 @@
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
       "eyebrow": "So that's your move",
-      "title": "Swap strategies with parents running the same bedtime",
-      "body": "The nightly debrief about which battles to fight, which to drop, and what finally worked at lights out. We are there with you daily too.",
+      "title": "Swap bedtime tactics with parents running the same routine",
+      "body": "Tomorrow night when you're back at the bedroom door, you'll already know what worked for parents who handle it the same way. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -629,9 +629,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "After seeing the patterns",
+      "eyebrow": "Now you see the pattern",
       "title": "Talk through what you recognized with parents rewriting the same script",
-      "body": "The ongoing conversation about which patterns showed up, which ones you caught, and what to do with that knowledge. We are there with you daily too.",
+      "body": "Next time you catch yourself mid-reaction, you'll have parents who spotted the same pattern and can tell you what they did instead. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -644,8 +644,8 @@
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
       "eyebrow": "Now you see your type",
-      "title": "Compare worry types with parents mapping the same spiral",
-      "body": "The conversation about which worries are worth listening to and which ones your brain invented at 3 AM. We are there with you daily too.",
+      "title": "Compare worry patterns with parents wired the same way",
+      "body": "Next time your brain spirals at 3 AM, you'll have parents who overthink the same way and can tell you what was worth worrying about. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -658,8 +658,8 @@
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
       "eyebrow": "Now you know your language",
-      "title": "Share what your love language looks like in practice with other parents",
-      "body": "The conversation about how your connection style lands with your kid and what happens when it misses. We are there with you daily too.",
+      "title": "See how parents with your love language make it land",
+      "body": "Next time your connection attempt falls flat, you'll have parents who show love the same way and figured out what your kid actually receives. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -671,9 +671,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "That was uncomfortably accurate",
+      "eyebrow": "That was uncomfortably honest",
       "title": "Unpack your result with parents who got a different answer",
-      "body": "The conversation about what your kid actually sees versus what you think you are projecting. We are there with you daily too.",
+      "body": "Next time you wonder what your kid actually thinks of you, you'll have parents who closed the same gap between intention and impact. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -686,8 +686,8 @@
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
       "eyebrow": "So that's your strength",
-      "title": "See how other parents use the same superpower differently",
-      "body": "The conversation about leaning into your strength and borrowing from the ones you scored low on. We are there with you daily too.",
+      "title": "See how other parents lean into the same superpower",
+      "body": "Next time your strength isn't enough for the situation, you'll have parents who scored differently and can show you a different playbook. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -701,7 +701,7 @@
     "cta_copy": {
       "eyebrow": "Your 2 AM self, revealed",
       "title": "Debrief the night shift with parents who handle it the same way",
-      "body": "The conversation about what you actually do at 2 AM versus what the books say you should. We are there with you daily too.",
+      "body": "Next time you're standing in the dark wondering if you're doing this wrong, you'll have parents who made the same 2 AM call and survived. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -714,8 +714,8 @@
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
       "eyebrow": "Now you know your era",
-      "title": "Compare eras with parents navigating the same parenting phase",
-      "body": "The conversation about what your current era demands, what you have outgrown, and what is coming next. We are there with you daily too.",
+      "title": "Compare eras with parents in the same parenting phase",
+      "body": "Next time you feel stuck in this stage, you'll have parents living the same era who can tell you what shifted and what's coming. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -729,7 +729,7 @@
     "cta_copy": {
       "eyebrow": "Now you see the dynamic",
       "title": "Hash it out with parents running the same kind of team",
-      "body": "The conversation about what to do when your co-parent handles it differently and bedtime falls apart. We are there with you daily too.",
+      "body": "Next time your co-parent handles it differently and bedtime falls apart, you'll have parents who navigated the same mismatch. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -741,9 +741,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "After the readiness check",
+      "eyebrow": "Readiness result in hand",
       "title": "Get the real timeline from parents at the same stage",
-      "body": "The conversation about what readiness signs actually meant in practice and what happened on day three. We are there with you daily too.",
+      "body": "Next time you second-guess the signs, you'll have parents whose toddler scored the same and can tell you what happened next. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -755,9 +755,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "After the readiness score",
+      "eyebrow": "Now you see the gaps",
       "title": "Talk through what the gaps mean with parents prepping the same kid",
-      "body": "The conversation about which skills matter most and what actually moved the needle before September. We are there with you daily too.",
+      "body": "Next time you worry about September, you'll have parents who closed the same gaps and can tell you which skills actually mattered. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -769,9 +769,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "Readiness signs in hand",
+      "eyebrow": "Readiness signs checked",
       "title": "Get the first-foods playbook from parents who just did this",
-      "body": "The conversation about what to start with, what the gagging really means, and when to trust the mess. We are there with you daily too.",
+      "body": "Next time your baby gags and you freeze, you'll have parents who started solids the same week and can tell you what's normal. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -783,9 +783,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "After the nap assessment",
+      "eyebrow": "Now you have your answer",
       "title": "Compare notes with parents navigating the same nap transition",
-      "body": "The conversation about what happened when the nap went away and how long the afternoon chaos lasted. We are there with you daily too.",
+      "body": "Next time 4 PM hits and everything falls apart, you'll have parents who dropped the nap at the same age and survived. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -797,9 +797,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "After the readiness result",
+      "eyebrow": "Now you have a read",
       "title": "Talk through the decision with parents weighing the same call",
-      "body": "The conversation about what age worked, what rules to set, and what to do when they call at midnight. We are there with you daily too.",
+      "body": "Next time the invitation comes, you'll have parents who said yes and parents who said not yet, and both can tell you how it went. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -811,9 +811,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "After seeing your results",
+      "eyebrow": "Now you see the picture",
       "title": "Hear from parents who made the same decision both ways",
-      "body": "The conversation about spacing, sibling dynamics, and what nobody told you about going from one to two. We are there with you daily too.",
+      "body": "Next time the question keeps you up, you'll have parents who went for it and parents who waited to tell you what happened. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -827,7 +827,7 @@
     "cta_copy": {
       "eyebrow": "Now you see the number",
       "title": "Recharge with parents running on the same battery level",
-      "body": "The conversation about what drains you fastest, what actually recharges, and how to stop running on empty. We are there with you daily too.",
+      "body": "Next time you hit empty and still have three hours of parenting left, you'll have parents who found what actually recharges when nothing feels possible. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -839,9 +839,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "After the screen score",
-      "title": "Swap screen rules with parents who got a similar result",
-      "body": "The conversation about which limits actually held, which apps surprised you, and when you just gave in. We are there with you daily too.",
+      "eyebrow": "Now you have your score",
+      "title": "Swap screen rules with parents who scored the same way",
+      "body": "Next time you hand over the tablet, you'll have parents who set the same limits and can tell you which ones held. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -853,9 +853,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "After seeing their score",
-      "title": "Talk through what the score means with parents tracking the same growth",
-      "body": "The ongoing conversation about which emotional skills came naturally and which ones need daily practice. We are there with you daily too.",
+      "eyebrow": "Now you see the range",
+      "title": "Talk through your child's score with parents tracking the same growth",
+      "body": "Next time you're unsure if your child's reaction is age-appropriate, you'll have parents whose kids scored the same way to ask. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -867,9 +867,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "After the confidence score",
-      "title": "Compare notes with parents building the same social skills",
-      "body": "The conversation about what helped when your kid hung back and what made the playground easier over time. We are there with you daily too.",
+      "eyebrow": "Now you see the score",
+      "title": "Compare notes with parents building the same social confidence",
+      "body": "Next time your kid hangs back at the playground, you'll have parents whose child scored the same way and found what actually helped. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -881,9 +881,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "After seeing that score",
-      "title": "Unpack what the score means with parents working on the same thing",
-      "body": "The conversation about what shuts kids down, what opens them up, and how to rebuild when trust took a hit. We are there with you daily too.",
+      "eyebrow": "Now you know the score",
+      "title": "Unpack what it means with parents working on the same openness",
+      "body": "Next time your kid shuts down instead of telling you, you'll have parents who rebuilt that trust and can tell you what shifted. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -895,9 +895,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "Routine in hand now",
+      "eyebrow": "Routine built, now test it",
       "title": "See how other parents adapted the same kind of routine",
-      "body": "The conversation about what steps stuck, what your kid resisted, and how long it took to actually work. We are there with you daily too.",
+      "body": "Next time a step in your routine stops working, you'll have parents who built similar ones and can tell you what they swapped in. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -909,9 +909,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "Chore list in hand",
+      "eyebrow": "Chore list ready",
       "title": "Compare lists with parents assigning chores at the same age",
-      "body": "The conversation about which chores stuck, which ones caused a revolt, and what made them actually do it. We are there with you daily too.",
+      "body": "Next time your kid refuses the chore that went fine yesterday, you'll have parents with kids the same age who found what actually sticks. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],
@@ -923,9 +923,9 @@
     "name": "Steady Parent Community",
     "url": "https://www.skool.com/steady-parent",
     "cta_copy": {
-      "eyebrow": "Toolkit built, now what",
+      "eyebrow": "Toolkit built, now try it",
       "title": "See what worked when other parents tried the same tools",
-      "body": "The conversation about which calm-down strategies your kid actually used and which ones collected dust. We are there with you daily too.",
+      "body": "Next time your kid is mid-meltdown and the breathing card gets thrown across the room, you'll have parents who found what actually works. We are there with you daily too.",
       "buttonText": "Join the community"
     },
     "can_promise": [],

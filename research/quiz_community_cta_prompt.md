@@ -12,13 +12,19 @@ The community is the SAME for every quiz — one private parent group at `https:
 - It's a private, supportive group of parents going through the same stuff
 - Do NOT promise any of the following: weekly expert Q&As, live coaching calls, video content, 1-on-1 access, guaranteed response times
 
+## How the reader reads this
+
+The reader sees eyebrow → title → body → button in sequence. They read it as ONE continuous message, not three separate fields. Write it that way — each field picks up where the previous one left off. The whole thing should flow like a single thought that builds to the button.
+
+**Always second person.** The reader is "you" and "your". Never "their", "them", "a parent". You are talking TO this person.
+
 ## What you're writing
 
 For each of the 24 quizzes, produce a CTA block with these fields:
 
-- **`cta_copy.eyebrow`**: 2–5 words. A recognizable moment tied to the quiz result — what the reader is feeling or thinking RIGHT NOW after seeing their result. Not a label, not a platitude.
-- **`cta_copy.title`**: 5–12 words. Speaks TO the reader about what they get from joining: dialogue, being heard, comparing notes with parents who got similar results. Must be clear this is about COMMUNITY (talking, sharing, being understood). The reader must see themselves IN the title.
-- **`cta_copy.body`**: 8–25 words. Shows the specific value of this community FOR THIS QUIZ'S TOPIC — what conversations are happening that relate to what the reader just discovered. FOLLOWED BY ". We are there with you daily too." — that last sentence is fixed and mandatory, always appended.
+- **`cta_copy.eyebrow`**: 2–5 words. A recognizable moment tied to the quiz result — what the reader is feeling or thinking RIGHT NOW after seeing their result. Not a label, not a platitude. Always uses "you/your", never "their/them".
+- **`cta_copy.title`**: 5–12 words. Speaks TO the reader about what they get from joining: dialogue, being heard, comparing notes with parents who got similar results. Must be clear this is about COMMUNITY (talking, sharing, being understood). The reader must see themselves IN the title. Must flow naturally from the eyebrow — together they should read like the start of one thought.
+- **`cta_copy.body`**: 8–25 words. Shows the specific RELIEF the reader gets after joining — what changes for them now that they know their result. Not "the conversation about X" — show the tangible before/after. FOLLOWED BY ". We are there with you daily too." — that last sentence is fixed and mandatory, always appended.
 
 The buttonText is always "Join the community" — do not change it.
 
@@ -33,9 +39,11 @@ The buttonText is always "Join the community" — do not change it.
 
 1. The TITLE must speak TO the reader, not ABOUT other parents. Never start with "Parents who..." or "Other parents..." — the reader is not observing a group from outside, they're being invited IN
 2. The TITLE must make it clear this is a COMMUNITY — people talking, sharing, being heard. Not a resource, not a course, not tips
-3. The BODY shows what's happening IN the community that's relevant to THIS QUIZ'S INSIGHT — the conversations sparked by what the reader just learned about themselves
+3. The BODY shows the specific RELIEF — what changes for the reader now that they have this result AND this community. Not "the conversation about X, Y, and Z" but what they'll have that they don't have now.
 4. Every field must be specific to the quiz topic — no generic copy that could apply to any quiz
 5. The EYEBROW must reference the quiz result moment — the reader just saw their score/type/result. What are they thinking?
+6. Always second person — "you", "your", never "their", "them", "a parent"
+7. Eyebrow → title → body must flow as one continuous thought. The body should not repeat or rephrase the title — it should CONTINUE it
 
 ## NOT THIS / THIS
 
@@ -49,11 +57,11 @@ Why it fails: Eyebrow is a platitude, not a moment. Title is a statement — no 
 
 ### Parenting Style quiz — THIS:
 ```
-eyebrow: "Now that you know your style"
+eyebrow: "Now you know your style"
 title: "Compare notes with parents who got the same result"
-body: "The conversation about what your style looks like on a hard day, and what other types handle differently. We are there with you daily too."
+body: "Next time someone questions your approach, you'll have parents who parent the same way and can tell you how it played out. We are there with you daily too."
 ```
-Why it works: Eyebrow acknowledges the reader just learned something. Title tells them what they'll DO (compare notes) with relevant people (same result). Body shows the live conversation tied to the quiz insight.
+Why it works: Eyebrow acknowledges YOU just learned something. Title tells you what you'll DO (compare notes) with relevant people (same result). Body shows specific relief — next time you're questioned, you have backup. Flows as one thought: discovery → action → payoff.
 
 ### Emotional Intelligence quiz — NOT THIS:
 ```
@@ -61,15 +69,21 @@ eyebrow: "They get it"
 title: "When the meltdown passes and you need to talk"
 body: "A group where parents share what works when emotions run high. We are there with you daily too."
 ```
-Why it fails: Eyebrow is generic. Title doesn't reference the quiz or community clearly. Body is vague — could be for any topic.
+Why it fails: Eyebrow says "they" not "you". Title doesn't reference the quiz or community clearly. Body is vague — could be for any topic.
 
 ### Emotional Intelligence quiz — THIS:
 ```
-eyebrow: "After seeing their score"
-title: "Talk through what the score means with parents tracking the same growth"
-body: "The ongoing conversation about which emotional skills came naturally and which ones need daily practice. We are there with you daily too."
+eyebrow: "Now you see the gaps"
+title: "Talk through your child's score with parents tracking the same growth"
+body: "Next time you're unsure if your child's reaction is age-appropriate, you'll have parents whose kids scored the same way to ask. We are there with you daily too."
 ```
-Why it works: Eyebrow ties to the quiz moment. Title is an action (talk through) with community (parents tracking same growth). Body shows specific conversations about the quiz's domain.
+Why it works: Eyebrow uses "you" and ties to the quiz moment. Title is an action (talk through) with community (parents tracking same growth). Body shows specific relief — next time you wonder, you have people to ask. Flows: insight → community action → tangible payoff.
+
+### Body anti-pattern — NEVER DO THIS:
+```
+body: "The conversation about which emotional skills came naturally and which ones need daily practice."
+```
+Why it fails: "The conversation about X, Y, and Z" is a dead formula. It describes a conversation — it doesn't show what changes for YOU. Show specific relief: what you'll HAVE after joining that you don't have now.
 
 ## Quizzes
 
