@@ -110,7 +110,7 @@ export function validateMailingFormCatalog(
     }
 
     const urlOk = entry.pageUrlPattern.startsWith("/course/");
-    setCheck(ev, "urlPattern", { ok: urlOk, detail: urlOk ? `${entry.pageUrlPattern} (auto-generated)` : `"${entry.pageUrlPattern}" (need /course/)` });
+    setCheck(ev, "urlPattern", { ok: urlOk, detail: urlOk ? `${entry.pageUrlPattern}` : `"${entry.pageUrlPattern}" (need /course/)` });
     if (!urlOk) {
       errors.push(`${prefix}: pageUrlPattern must start with "/course/", got "${entry.pageUrlPattern}"`);
       ev.errors.push(`pageUrlPattern must start with "/course/"`);

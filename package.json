@@ -3,7 +3,8 @@
   "private": true,
   "workspaces": [
     "landing",
-    "content-spec"
+    "content-spec",
+    "validators"
   ],
   "dependencies": {
     "zod-to-json-schema": "^3.25.1"

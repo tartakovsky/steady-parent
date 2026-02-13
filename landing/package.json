@@ -57,6 +57,7 @@
     "next": "^16.1.6",
     "next-yandex-metrica": "^1.2.3",
     "postgres": "^3.4.8",
+    "radix-ui": "^1.4.3",
     "react": "^19.0.0",
     "react-day-picker": "^9.13.0",
     "react-dom": "^19.0.0",

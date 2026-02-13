@@ -41,6 +41,7 @@ const nav: NavEntry[] = [
       { href: "/admin/spec?tab=crossLinks", label: "Cross-Linking", icon: Link2 },
       { href: "/admin/spec?tab=ctas", label: "CTAs", icon: Megaphone },
       { href: "/admin/spec?tab=mailing", label: "Mailing Forms", icon: Mail },
+      { href: "/admin/spec/mailing", label: "Mailing (validated)", icon: ShieldCheck },
     ],
   },
   {
