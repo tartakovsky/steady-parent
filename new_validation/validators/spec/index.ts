@@ -77,3 +77,18 @@ export {
   // Taxonomy validator
   validateTaxonomy,
 } from "./taxonomy";
+
+export {
+  // Linking schemas
+  LinkingSpecSchema,
+  LinkTypeEnum,
+  CtaTypeEnum,
+  LinkSchema,
+  CtaPlacementSchema,
+  ArticleLinkPlanSchema,
+  // Linking types
+  type LinkingSpec,
+  // Linking validators
+  validateLinking,
+  validateLinkingCrossRefs,
+} from "./linking";
