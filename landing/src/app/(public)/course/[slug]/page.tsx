@@ -35,6 +35,8 @@ export default async function CoursePage({
     "Practical scripts you can use today",
   ];
 
+  const category = waitlist.id.replace("waitlist-", "");
+
   return (
     <main>
       <CourseHero
@@ -42,6 +44,7 @@ export default async function CoursePage({
         title={title}
         body={body}
         bullets={bullets}
+        category={category}
       />
     </main>
   );

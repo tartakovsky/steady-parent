@@ -46,6 +46,31 @@ export const kitTags: Record<string, number> = {
   // Quiz automation trigger
   "quiz-completed":                15875240,
 
+  // Waitlist marker (passive — no automation)
+  "waitlist-joined":                  15899794,
+
+  // Waitlist tags (20)
+  "waitlist-aggression":              15899771,
+  "waitlist-anxiety":                 15899772,
+  "waitlist-big-feelings":            15899773,
+  "waitlist-body-safety":             15899775,
+  "waitlist-breaking-the-cycle":      15899776,
+  "waitlist-discipline":              15899777,
+  "waitlist-eating":                  15899778,
+  "waitlist-new-parent":              15899780,
+  "waitlist-parenting-approach":      15899781,
+  "waitlist-parenting-science":       15899782,
+  "waitlist-potty-training":          15899783,
+  "waitlist-screens":                 15899784,
+  "waitlist-siblings":                15899785,
+  "waitlist-sleep":                   15899787,
+  "waitlist-social-skills":           15899788,
+  "waitlist-spirited-kids":           15899789,
+  "waitlist-staying-calm":            15899790,
+  "waitlist-tantrums":                15899791,
+  "waitlist-teens":                   15899792,
+  "waitlist-transitions":             15899793,
+
   // Quiz freebies (24)
   "quiz-parenting-style":          15744953,
   "quiz-bedtime-battle-style":     15744954,
@@ -125,6 +150,28 @@ export const freebieConfig: Record<string, string[]> = {
   "quiz/bedtime-routine":          ["lead", "quiz-bedtime-routine"],
   "quiz/age-appropriate-chores":   ["lead", "quiz-age-appropriate-chores"],
   "quiz/calm-down-toolkit":        ["lead", "quiz-calm-down-toolkit"],
+
+  // Course waitlists (20) — each also gets waitlist-joined marker
+  "waitlist/aggression":         ["lead", "waitlist-joined", "waitlist-aggression"],
+  "waitlist/anxiety":            ["lead", "waitlist-joined", "waitlist-anxiety"],
+  "waitlist/big-feelings":       ["lead", "waitlist-joined", "waitlist-big-feelings"],
+  "waitlist/body-safety":        ["lead", "waitlist-joined", "waitlist-body-safety"],
+  "waitlist/breaking-the-cycle": ["lead", "waitlist-joined", "waitlist-breaking-the-cycle"],
+  "waitlist/discipline":         ["lead", "waitlist-joined", "waitlist-discipline"],
+  "waitlist/eating":             ["lead", "waitlist-joined", "waitlist-eating"],
+  "waitlist/new-parent":         ["lead", "waitlist-joined", "waitlist-new-parent"],
+  "waitlist/parenting-approach": ["lead", "waitlist-joined", "waitlist-parenting-approach"],
+  "waitlist/parenting-science":  ["lead", "waitlist-joined", "waitlist-parenting-science"],
+  "waitlist/potty-training":     ["lead", "waitlist-joined", "waitlist-potty-training"],
+  "waitlist/screens":            ["lead", "waitlist-joined", "waitlist-screens"],
+  "waitlist/siblings":           ["lead", "waitlist-joined", "waitlist-siblings"],
+  "waitlist/sleep":              ["lead", "waitlist-joined", "waitlist-sleep"],
+  "waitlist/social-skills":      ["lead", "waitlist-joined", "waitlist-social-skills"],
+  "waitlist/spirited-kids":      ["lead", "waitlist-joined", "waitlist-spirited-kids"],
+  "waitlist/staying-calm":       ["lead", "waitlist-joined", "waitlist-staying-calm"],
+  "waitlist/tantrums":           ["lead", "waitlist-joined", "waitlist-tantrums"],
+  "waitlist/teens":              ["lead", "waitlist-joined", "waitlist-teens"],
+  "waitlist/transitions":        ["lead", "waitlist-joined", "waitlist-transitions"],
 };
 
 // ---------------------------------------------------------------------------
