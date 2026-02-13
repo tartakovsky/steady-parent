@@ -5,6 +5,18 @@
 import { z } from "zod/v4";
 
 // ---------------------------------------------------------------------------
+// Shared schemas
+// ---------------------------------------------------------------------------
+
+/** Valid URL path segment: lowercase alphanumeric + hyphens, no leading/trailing hyphens */
+export const SlugSchema = z
+  .string()
+  .regex(
+    /^[a-z0-9]+(-[a-z0-9]+)*$/,
+    "must be a valid URL slug (lowercase alphanumeric + hyphens)",
+  );
+
+// ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
 

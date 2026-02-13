@@ -13,6 +13,7 @@
 
 import { z } from "zod/v4";
 import {
+  SlugSchema,
   checkWordCount,
   checkCleanText,
   type CrossRefIssue,
@@ -91,22 +92,17 @@ const CourseFieldsSchema = z.object({
     .meta({ description: "non-empty button label" }),
   buttonUrl: z
     .string()
-    .min(1)
-    .meta({ description: 'must start with "/course/"' }),
+    .regex(
+      /^\/course\/[a-z0-9]+(-[a-z0-9]+)*\/$/,
+      'must match /course/{slug}/',
+    )
+    .meta({ description: "must match /course/{slug}/" }),
 });
 
 export const CourseCopySchema = CourseFieldsSchema.superRefine((val, ctx) => {
   checkWordCount(val.eyebrow, "eyebrow", 2, 5, ctx);
   checkWordCount(val.title, "title", 5, 12, ctx);
   checkWordCount(val.body, "body", 8, 24, ctx);
-
-  if (!val.buttonUrl.startsWith("/course/")) {
-    ctx.addIssue({
-      code: "custom",
-      path: ["buttonUrl"],
-      message: `must start with "/course/", got "${val.buttonUrl}"`,
-    });
-  }
 
   checkCleanText(
     {
@@ -159,8 +155,8 @@ export const QuizCtaSchema = z
 
 export const CtaSpecSchema = z
   .object({
-    blog: z.record(z.string(), z.record(z.string(), BlogArticleCtaSchema)),
-    quiz: z.record(z.string(), QuizCtaSchema),
+    blog: z.record(SlugSchema, z.record(SlugSchema, BlogArticleCtaSchema)),
+    quiz: z.record(SlugSchema, QuizCtaSchema),
   })
   .meta({
     id: "cta-spec",

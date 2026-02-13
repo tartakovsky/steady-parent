@@ -12,18 +12,11 @@
  */
 
 import { z } from "zod/v4";
+import { SlugSchema } from "./shared";
 
 // ---------------------------------------------------------------------------
 // Shared primitives
 // ---------------------------------------------------------------------------
-
-/** Valid URL path segment: lowercase alphanumeric + hyphens, no leading/trailing hyphens */
-const SlugSchema = z
-  .string()
-  .regex(
-    /^[a-z0-9]+(-[a-z0-9]+)*$/,
-    "must be a valid URL slug (lowercase alphanumeric + hyphens)",
-  );
 
 const RangeSchema = z
   .object({
@@ -265,7 +258,29 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 6. Quiz URL: /quiz/{slug}/
+  // 6. seriesPosition sequential 1..N per category (no gaps, no duplicates)
+  for (const [catSlug, articles] of Object.entries(spec.blog)) {
+    const positions: number[] = [];
+    for (const [, article] of Object.entries(articles)) {
+      if (article.pageType === "series") {
+        positions.push(article.seriesPosition);
+      }
+    }
+    if (positions.length > 0) {
+      const sorted = [...positions].sort((a, b) => a - b);
+      for (let i = 0; i < sorted.length; i++) {
+        if (sorted[i] !== i + 1) {
+          issues.push({
+            path: `blog/${catSlug}`,
+            message: `seriesPosition not sequential: expected 1..${positions.length}, got [${sorted.join(", ")}]`,
+          });
+          break;
+        }
+      }
+    }
+  }
+
+  // 7. Quiz URL: /quiz/{slug}/
   for (const [slug, quiz] of Object.entries(spec.quiz)) {
     const expected = `/quiz/${slug}/`;
     if (quiz.url !== expected) {
@@ -276,7 +291,7 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 7. Quiz connectsTo → valid categories
+  // 8. Quiz connectsTo → valid categories
   for (const [slug, quiz] of Object.entries(spec.quiz)) {
     for (const cat of quiz.connectsTo) {
       if (!catSlugs.has(cat)) {
@@ -288,7 +303,21 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 8. Quiz quizType → valid pageTypes.quiz key
+  // 9. Quiz connectsTo no duplicates
+  for (const [slug, quiz] of Object.entries(spec.quiz)) {
+    const seen = new Set<string>();
+    for (const cat of quiz.connectsTo) {
+      if (seen.has(cat)) {
+        issues.push({
+          path: `quiz/${slug}/connectsTo`,
+          message: `duplicate category "${cat}"`,
+        });
+      }
+      seen.add(cat);
+    }
+  }
+
+  // 10. Quiz quizType → valid pageTypes.quiz key
   const quizPageTypeKeys = new Set(Object.keys(spec.pageTypes.quiz));
   for (const [slug, quiz] of Object.entries(spec.quiz)) {
     if (!quizPageTypeKeys.has(quiz.quizType)) {
@@ -299,7 +328,7 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 9. Course categorySlug → valid category
+  // 11. Course categorySlug → valid category
   for (const [slug, course] of Object.entries(spec.course)) {
     if (!catSlugs.has(course.categorySlug)) {
       issues.push({
@@ -309,7 +338,7 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 10. Every category has exactly 1 course
+  // 12. Every category has exactly 1 course
   const categoriesWithCourse = new Map<string, string[]>();
   for (const [slug, course] of Object.entries(spec.course)) {
     const list = categoriesWithCourse.get(course.categorySlug) ?? [];
@@ -331,7 +360,7 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 11. Course URL: /course/{slug}/
+  // 13. Course URL: /course/{slug}/
   for (const [slug, course] of Object.entries(spec.course)) {
     const expected = `/course/${slug}/`;
     if (course.url !== expected) {
@@ -342,7 +371,7 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 12. Article slugs globally unique
+  // 14. Article slugs globally unique
   const seenSlugs = new Map<string, string>();
   for (const [catSlug, articles] of Object.entries(spec.blog)) {
     for (const articleSlug of Object.keys(articles)) {

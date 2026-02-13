@@ -13,6 +13,7 @@
 
 import { z } from "zod/v4";
 import {
+  SlugSchema,
   FORBIDDEN_TERMS,
   checkWordCount,
   checkCleanText,
@@ -51,7 +52,7 @@ const FreebieFieldsSchema = z.object({
     .meta({ description: `must be "${FREEBIE_ENDPOINT}"` }),
   tags: z.array(z.string()).min(1).meta({ description: 'must include "lead"' }),
   params: z
-    .object({ category: z.string().min(1) })
+    .object({ category: SlugSchema })
     .meta({ description: "category slug" }),
 });
 
@@ -122,7 +123,7 @@ const WaitlistFieldsSchema = z.object({
     .meta({ description: `must be "${WAITLIST_ENDPOINT}"` }),
   tags: z.array(z.string()).min(1).meta({ description: 'must include "lead" and "waitlist-joined"' }),
   params: z
-    .object({ category: z.string().min(1) })
+    .object({ category: SlugSchema })
     .meta({ description: "category slug" }),
 });
 
@@ -204,7 +205,7 @@ const QuizGateFieldsSchema = z.object({
   tags: z.array(z.string()).min(1).meta({ description: 'must include "lead", "quiz-{slug}", and "quiz-completed"' }),
   params: z
     .object({
-      quizSlug: z.string().min(1),
+      quizSlug: SlugSchema,
       resultUrl: z.string(),
       fromGate: z.literal(true),
     })
@@ -276,9 +277,9 @@ export const QuizGateFormSchema = QuizGateFieldsSchema.superRefine(
 
 export const MailingSpecSchema = z
   .object({
-    blog: z.record(z.string(), z.record(z.string(), FreebieFormSchema)),
-    course: z.record(z.string(), WaitlistFormSchema),
-    quiz: z.record(z.string(), QuizGateFormSchema),
+    blog: z.record(SlugSchema, z.record(SlugSchema, FreebieFormSchema)),
+    course: z.record(SlugSchema, WaitlistFormSchema),
+    quiz: z.record(SlugSchema, QuizGateFormSchema),
   })
   .meta({
     id: "mailing-spec",

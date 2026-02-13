@@ -1,5 +1,6 @@
 export {
   // Shared constants, types, helpers
+  SlugSchema,
   FORBIDDEN_TERMS,
   type CrossRefIssue,
   type TaxonomyForCrossRef,
