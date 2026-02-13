@@ -350,5 +350,105 @@
       "lead",
       "quiz-calm-down-toolkit"
     ]
+  },
+  {
+    "formId": "waitlist/aggression",
+    "description": "Course waitlist for aggression category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-aggression"]
+  },
+  {
+    "formId": "waitlist/anxiety",
+    "description": "Course waitlist for anxiety category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-anxiety"]
+  },
+  {
+    "formId": "waitlist/big-feelings",
+    "description": "Course waitlist for big-feelings category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-big-feelings"]
+  },
+  {
+    "formId": "waitlist/body-safety",
+    "description": "Course waitlist for body-safety category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-body-safety"]
+  },
+  {
+    "formId": "waitlist/breaking-the-cycle",
+    "description": "Course waitlist for breaking-the-cycle category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-breaking-the-cycle"]
+  },
+  {
+    "formId": "waitlist/discipline",
+    "description": "Course waitlist for discipline category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-discipline"]
+  },
+  {
+    "formId": "waitlist/eating",
+    "description": "Course waitlist for eating category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-eating"]
+  },
+  {
+    "formId": "waitlist/new-parent",
+    "description": "Course waitlist for new-parent category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-new-parent"]
+  },
+  {
+    "formId": "waitlist/parenting-approach",
+    "description": "Course waitlist for parenting-approach category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-parenting-approach"]
+  },
+  {
+    "formId": "waitlist/parenting-science",
+    "description": "Course waitlist for parenting-science category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-parenting-science"]
+  },
+  {
+    "formId": "waitlist/potty-training",
+    "description": "Course waitlist for potty-training category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-potty-training"]
+  },
+  {
+    "formId": "waitlist/screens",
+    "description": "Course waitlist for screens category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-screens"]
+  },
+  {
+    "formId": "waitlist/siblings",
+    "description": "Course waitlist for siblings category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-siblings"]
+  },
+  {
+    "formId": "waitlist/sleep",
+    "description": "Course waitlist for sleep category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-sleep"]
+  },
+  {
+    "formId": "waitlist/social-skills",
+    "description": "Course waitlist for social-skills category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-social-skills"]
+  },
+  {
+    "formId": "waitlist/spirited-kids",
+    "description": "Course waitlist for spirited-kids category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-spirited-kids"]
+  },
+  {
+    "formId": "waitlist/staying-calm",
+    "description": "Course waitlist for staying-calm category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-staying-calm"]
+  },
+  {
+    "formId": "waitlist/tantrums",
+    "description": "Course waitlist for tantrums category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-tantrums"]
+  },
+  {
+    "formId": "waitlist/teens",
+    "description": "Course waitlist for teens category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-teens"]
+  },
+  {
+    "formId": "waitlist/transitions",
+    "description": "Course waitlist for transitions category",
+    "tagIds": ["lead", "waitlist-joined", "waitlist-transitions"]
   }
 ]
