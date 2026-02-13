@@ -39,6 +39,12 @@ const CategorySchema = z.object({
 // Article — discriminated union on pageType
 // ---------------------------------------------------------------------------
 
+const CatalogArticleSchema = z.object({
+  title: z.string().min(1),
+  url: z.string().min(1),
+  pageType: z.literal("catalog"),
+});
+
 const PillarArticleSchema = z.object({
   title: z.string().min(1),
   url: z.string().min(1),
@@ -53,6 +59,7 @@ const SeriesArticleSchema = z.object({
 });
 
 const ArticleSchema = z.discriminatedUnion("pageType", [
+  CatalogArticleSchema,
   PillarArticleSchema,
   SeriesArticleSchema,
 ]);
@@ -83,6 +90,10 @@ const CourseSchema = z.object({
 // ---------------------------------------------------------------------------
 // Page type constraints — articles
 // ---------------------------------------------------------------------------
+
+const CatalogPageTypeSchema = z.object({
+  requiresDescription: z.boolean(),
+});
 
 const ArticlePageTypeSchema = z.object({
   wordCount: RangeSchema,
@@ -136,6 +147,7 @@ export const TaxonomySpecSchema = z
     course: z.record(SlugSchema, CourseSchema),
     pageTypes: z.object({
       article: z.object({
+        catalog: CatalogPageTypeSchema,
         pillar: ArticlePageTypeSchema,
         series: ArticlePageTypeSchema,
       }),
@@ -167,6 +179,7 @@ export interface ValidationIssue {
 // Re-export leaf schemas for admin UI introspection
 export {
   CategorySchema,
+  CatalogArticleSchema,
   PillarArticleSchema,
   SeriesArticleSchema,
   ArticleSchema,
@@ -174,6 +187,7 @@ export {
   QuizSchema,
   CourseSchema,
   RangeSchema,
+  CatalogPageTypeSchema,
   ArticlePageTypeSchema,
   QuizLikertPageTypeSchema,
   QuizIdentityPageTypeSchema,
@@ -209,7 +223,33 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 3+4. Exactly 1 pillar per category, pillar slug == category slug
+  // 3. Exactly 1 catalog per category, catalog slug == category slug
+  for (const [catSlug, articles] of Object.entries(spec.blog)) {
+    const catalogs = Object.entries(articles).filter(
+      ([, a]) => a.pageType === "catalog",
+    );
+    if (catalogs.length === 0) {
+      issues.push({
+        path: `blog/${catSlug}`,
+        message: `no catalog page`,
+      });
+    } else if (catalogs.length > 1) {
+      issues.push({
+        path: `blog/${catSlug}`,
+        message: `${catalogs.length} catalog pages (expected 1)`,
+      });
+    } else {
+      const [catalogSlug] = catalogs[0];
+      if (catalogSlug !== catSlug) {
+        issues.push({
+          path: `blog/${catSlug}/${catalogSlug}`,
+          message: `catalog slug "${catalogSlug}" must equal category slug "${catSlug}"`,
+        });
+      }
+    }
+  }
+
+  // 4. Exactly 1 pillar per category, pillar slug == "guide"
   for (const [catSlug, articles] of Object.entries(spec.blog)) {
     const pillars = Object.entries(articles).filter(
       ([, a]) => a.pageType === "pillar",
@@ -226,34 +266,31 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
       });
     } else {
       const [pillarSlug] = pillars[0];
-      if (pillarSlug !== catSlug) {
+      if (pillarSlug !== "guide") {
         issues.push({
           path: `blog/${catSlug}/${pillarSlug}`,
-          message: `pillar slug "${pillarSlug}" must equal category slug "${catSlug}"`,
+          message: `pillar slug must be "guide", got "${pillarSlug}"`,
         });
       }
     }
   }
 
-  // 5. URL format: pillar /blog/{cat}/, series /blog/{cat}/{slug}/
+  // 5. URL format: catalog /blog/{cat}/, pillar /blog/{cat}/guide/, series /blog/{cat}/{slug}/
   for (const [catSlug, articles] of Object.entries(spec.blog)) {
     for (const [articleSlug, article] of Object.entries(articles)) {
-      if (article.pageType === "pillar") {
-        const expected = `/blog/${catSlug}/`;
-        if (article.url !== expected) {
-          issues.push({
-            path: `blog/${catSlug}/${articleSlug}/url`,
-            message: `expected "${expected}", got "${article.url}"`,
-          });
-        }
+      let expected: string;
+      if (article.pageType === "catalog") {
+        expected = `/blog/${catSlug}/`;
+      } else if (article.pageType === "pillar") {
+        expected = `/blog/${catSlug}/guide/`;
       } else {
-        const expected = `/blog/${catSlug}/${articleSlug}/`;
-        if (article.url !== expected) {
-          issues.push({
-            path: `blog/${catSlug}/${articleSlug}/url`,
-            message: `expected "${expected}", got "${article.url}"`,
-          });
-        }
+        expected = `/blog/${catSlug}/${articleSlug}/`;
+      }
+      if (article.url !== expected) {
+        issues.push({
+          path: `blog/${catSlug}/${articleSlug}/url`,
+          message: `expected "${expected}", got "${article.url}"`,
+        });
       }
     }
   }
@@ -371,19 +408,17 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 14. Article slugs globally unique
-  const seenSlugs = new Map<string, string>();
+  // 14. Article slugs unique within each category
   for (const [catSlug, articles] of Object.entries(spec.blog)) {
+    const seen = new Set<string>();
     for (const articleSlug of Object.keys(articles)) {
-      const prev = seenSlugs.get(articleSlug);
-      if (prev) {
+      if (seen.has(articleSlug)) {
         issues.push({
           path: `blog/${catSlug}/${articleSlug}`,
-          message: `duplicate article slug (also in ${prev})`,
+          message: `duplicate slug within category`,
         });
-      } else {
-        seenSlugs.set(articleSlug, catSlug);
       }
+      seen.add(articleSlug);
     }
   }
 

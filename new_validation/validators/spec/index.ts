@@ -58,6 +58,7 @@ export {
   // Taxonomy schemas
   TaxonomySpecSchema,
   CategorySchema,
+  CatalogArticleSchema,
   PillarArticleSchema,
   SeriesArticleSchema,
   ArticleSchema,
@@ -65,6 +66,7 @@ export {
   QuizSchema,
   CourseSchema,
   RangeSchema,
+  CatalogPageTypeSchema,
   ArticlePageTypeSchema,
   QuizLikertPageTypeSchema,
   QuizIdentityPageTypeSchema,
