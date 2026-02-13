@@ -52,3 +52,24 @@ export {
   // Mailing cross-reference validator
   validateMailingCrossRefs,
 } from "./mailing";
+
+export {
+  // Taxonomy schemas
+  TaxonomySpecSchema,
+  CategorySchema,
+  PillarArticleSchema,
+  SeriesArticleSchema,
+  ArticleSchema,
+  QuizSchema,
+  CourseSchema,
+  RangeSchema,
+  ArticlePageTypeSchema,
+  QuizLikertPageTypeSchema,
+  QuizIdentityPageTypeSchema,
+  QuizAssessmentPageTypeSchema,
+  // Taxonomy types
+  type TaxonomySpec,
+  type ValidationIssue,
+  // Taxonomy validator
+  validateTaxonomy,
+} from "./taxonomy";

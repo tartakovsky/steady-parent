@@ -54,8 +54,9 @@ for entry in article_taxonomy["entries"]:
 spec["quiz"] = {}
 for entry in quiz_taxonomy["entries"]:
     url = entry["url"]
-    # Strip trailing slash if present (normalize to no trailing slash)
-    url = url.rstrip("/")
+    # Normalize to trailing slash (consistent with blog/course URLs)
+    if not url.endswith("/"):
+        url = url + "/"
     spec["quiz"][entry["slug"]] = {
         "title": entry["title"],
         "url": url,
