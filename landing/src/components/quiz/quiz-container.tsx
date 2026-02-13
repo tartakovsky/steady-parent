@@ -130,7 +130,6 @@ export function QuizContainer({
     }
 
     localStorage.setItem(STORAGE_KEY, email);
-    setPreview(false);
   }, [quiz.meta.slug]);
 
   // When results are shown and gate was skipped (returning user),
