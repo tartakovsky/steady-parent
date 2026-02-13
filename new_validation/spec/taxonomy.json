@@ -63,7 +63,7 @@
   },
   "blog": {
     "tantrums": {
-      "tantrums": {
+      "": {
         "title": "Tantrums Article Series",
         "url": "/blog/tantrums/",
         "pageType": "catalog"
@@ -159,7 +159,7 @@
       }
     },
     "aggression": {
-      "aggression": {
+      "": {
         "title": "Aggression Article Series",
         "url": "/blog/aggression/",
         "pageType": "catalog"
@@ -249,7 +249,7 @@
       }
     },
     "sleep": {
-      "sleep": {
+      "": {
         "title": "Sleep Article Series",
         "url": "/blog/sleep/",
         "pageType": "catalog"
@@ -333,7 +333,7 @@
       }
     },
     "siblings": {
-      "siblings": {
+      "": {
         "title": "Siblings Article Series",
         "url": "/blog/siblings/",
         "pageType": "catalog"
@@ -417,7 +417,7 @@
       }
     },
     "anxiety": {
-      "anxiety": {
+      "": {
         "title": "Anxiety Article Series",
         "url": "/blog/anxiety/",
         "pageType": "catalog"
@@ -501,7 +501,7 @@
       }
     },
     "discipline": {
-      "discipline": {
+      "": {
         "title": "Discipline Article Series",
         "url": "/blog/discipline/",
         "pageType": "catalog"
@@ -597,7 +597,7 @@
       }
     },
     "staying-calm": {
-      "staying-calm": {
+      "": {
         "title": "Staying Calm Article Series",
         "url": "/blog/staying-calm/",
         "pageType": "catalog"
@@ -675,7 +675,7 @@
       }
     },
     "breaking-the-cycle": {
-      "breaking-the-cycle": {
+      "": {
         "title": "Breaking The Cycle Article Series",
         "url": "/blog/breaking-the-cycle/",
         "pageType": "catalog"
@@ -747,7 +747,7 @@
       }
     },
     "big-feelings": {
-      "big-feelings": {
+      "": {
         "title": "Big Feelings Article Series",
         "url": "/blog/big-feelings/",
         "pageType": "catalog"
@@ -831,7 +831,7 @@
       }
     },
     "potty-training": {
-      "potty-training": {
+      "": {
         "title": "Potty Training Article Series",
         "url": "/blog/potty-training/",
         "pageType": "catalog"
@@ -903,7 +903,7 @@
       }
     },
     "eating": {
-      "eating": {
+      "": {
         "title": "Eating Article Series",
         "url": "/blog/eating/",
         "pageType": "catalog"
@@ -969,7 +969,7 @@
       }
     },
     "screens": {
-      "screens": {
+      "": {
         "title": "Screens Article Series",
         "url": "/blog/screens/",
         "pageType": "catalog"
@@ -1029,7 +1029,7 @@
       }
     },
     "social-skills": {
-      "social-skills": {
+      "": {
         "title": "Social Skills Article Series",
         "url": "/blog/social-skills/",
         "pageType": "catalog"
@@ -1107,7 +1107,7 @@
       }
     },
     "body-safety": {
-      "body-safety": {
+      "": {
         "title": "Body Safety Article Series",
         "url": "/blog/body-safety/",
         "pageType": "catalog"
@@ -1191,7 +1191,7 @@
       }
     },
     "new-parent": {
-      "new-parent": {
+      "": {
         "title": "New Parent Article Series",
         "url": "/blog/new-parent/",
         "pageType": "catalog"
@@ -1275,7 +1275,7 @@
       }
     },
     "teens": {
-      "teens": {
+      "": {
         "title": "Teens Article Series",
         "url": "/blog/teens/",
         "pageType": "catalog"
@@ -1359,7 +1359,7 @@
       }
     },
     "transitions": {
-      "transitions": {
+      "": {
         "title": "Transitions Article Series",
         "url": "/blog/transitions/",
         "pageType": "catalog"
@@ -1431,7 +1431,7 @@
       }
     },
     "spirited-kids": {
-      "spirited-kids": {
+      "": {
         "title": "Spirited Kids Article Series",
         "url": "/blog/spirited-kids/",
         "pageType": "catalog"
@@ -1509,7 +1509,7 @@
       }
     },
     "parenting-approach": {
-      "parenting-approach": {
+      "": {
         "title": "Parenting Approach Article Series",
         "url": "/blog/parenting-approach/",
         "pageType": "catalog"
@@ -1587,7 +1587,7 @@
       }
     },
     "parenting-science": {
-      "parenting-science": {
+      "": {
         "title": "Parenting Science Article Series",
         "url": "/blog/parenting-science/",
         "pageType": "catalog"

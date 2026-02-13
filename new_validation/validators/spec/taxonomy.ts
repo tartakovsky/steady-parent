@@ -142,7 +142,7 @@ const QuizAssessmentPageTypeSchema = z.object({
 export const TaxonomySpecSchema = z
   .object({
     categories: z.record(SlugSchema, CategorySchema),
-    blog: z.record(SlugSchema, z.record(SlugSchema, ArticleSchema)),
+    blog: z.record(SlugSchema, z.record(z.union([SlugSchema, z.literal("")]), ArticleSchema)),
     quiz: z.record(SlugSchema, QuizSchema),
     course: z.record(SlugSchema, CourseSchema),
     pageTypes: z.object({
@@ -223,7 +223,7 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 3. Exactly 1 catalog per category, catalog slug == category slug
+  // 3. Exactly 1 catalog per category, catalog key must be ""
   for (const [catSlug, articles] of Object.entries(spec.blog)) {
     const catalogs = Object.entries(articles).filter(
       ([, a]) => a.pageType === "catalog",
@@ -239,11 +239,11 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
         message: `${catalogs.length} catalog pages (expected 1)`,
       });
     } else {
-      const [catalogSlug] = catalogs[0];
-      if (catalogSlug !== catSlug) {
+      const [catalogKey] = catalogs[0];
+      if (catalogKey !== "") {
         issues.push({
-          path: `blog/${catSlug}/${catalogSlug}`,
-          message: `catalog slug "${catalogSlug}" must equal category slug "${catSlug}"`,
+          path: `blog/${catSlug}/${catalogKey}`,
+          message: `catalog key must be "", got "${catalogKey}"`,
         });
       }
     }
@@ -275,20 +275,16 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 5. URL format: catalog /blog/{cat}/, pillar /blog/{cat}/guide/, series /blog/{cat}/{slug}/
+  // 5. URL format: key "" → /blog/{cat}/, key "guide" → /blog/{cat}/guide/, others → /blog/{cat}/{slug}/
   for (const [catSlug, articles] of Object.entries(spec.blog)) {
-    for (const [articleSlug, article] of Object.entries(articles)) {
-      let expected: string;
-      if (article.pageType === "catalog") {
-        expected = `/blog/${catSlug}/`;
-      } else if (article.pageType === "pillar") {
-        expected = `/blog/${catSlug}/guide/`;
-      } else {
-        expected = `/blog/${catSlug}/${articleSlug}/`;
-      }
+    for (const [articleKey, article] of Object.entries(articles)) {
+      const expected =
+        articleKey === ""
+          ? `/blog/${catSlug}/`
+          : `/blog/${catSlug}/${articleKey}/`;
       if (article.url !== expected) {
         issues.push({
-          path: `blog/${catSlug}/${articleSlug}/url`,
+          path: `blog/${catSlug}/${articleKey}/url`,
           message: `expected "${expected}", got "${article.url}"`,
         });
       }

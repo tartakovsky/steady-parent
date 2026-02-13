@@ -56,8 +56,8 @@ for entry in article_taxonomy["entries"]:
         spec["blog"][cat] = {}
 
     if entry["type"] == "pillar":
-        # Emit catalog entry at category slug (takes over category root URL)
-        spec["blog"][cat][cat] = {
+        # Emit catalog entry at empty key (represents category root URL)
+        spec["blog"][cat][""] = {
             "title": f"{cat_names[cat]} Article Series",
             "url": f"/blog/{cat}/",
             "pageType": "catalog",
