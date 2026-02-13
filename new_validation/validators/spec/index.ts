@@ -60,6 +60,7 @@ export {
   PillarArticleSchema,
   SeriesArticleSchema,
   ArticleSchema,
+  QuizTypeEnum,
   QuizSchema,
   CourseSchema,
   RangeSchema,

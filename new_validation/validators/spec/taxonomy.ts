@@ -68,9 +68,12 @@ const ArticleSchema = z.discriminatedUnion("pageType", [
 // Quiz
 // ---------------------------------------------------------------------------
 
+const QuizTypeEnum = z.enum(["likert", "identity", "assessment"]);
+
 const QuizSchema = z.object({
   title: z.string().min(1),
   url: z.string().min(1),
+  quizType: QuizTypeEnum,
   connectsTo: z.array(SlugSchema).min(1),
 });
 
@@ -174,6 +177,7 @@ export {
   PillarArticleSchema,
   SeriesArticleSchema,
   ArticleSchema,
+  QuizTypeEnum,
   QuizSchema,
   CourseSchema,
   RangeSchema,
@@ -284,7 +288,18 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 8. Course categorySlug → valid category
+  // 8. Quiz quizType → valid pageTypes.quiz key
+  const quizPageTypeKeys = new Set(Object.keys(spec.pageTypes.quiz));
+  for (const [slug, quiz] of Object.entries(spec.quiz)) {
+    if (!quizPageTypeKeys.has(quiz.quizType)) {
+      issues.push({
+        path: `quiz/${slug}/quizType`,
+        message: `"${quiz.quizType}" is not a valid quiz page type (expected: ${[...quizPageTypeKeys].join(", ")})`,
+      });
+    }
+  }
+
+  // 9. Course categorySlug → valid category
   for (const [slug, course] of Object.entries(spec.course)) {
     if (!catSlugs.has(course.categorySlug)) {
       issues.push({
@@ -294,7 +309,7 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 9. Every category has exactly 1 course
+  // 10. Every category has exactly 1 course
   const categoriesWithCourse = new Map<string, string[]>();
   for (const [slug, course] of Object.entries(spec.course)) {
     const list = categoriesWithCourse.get(course.categorySlug) ?? [];
@@ -316,7 +331,7 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 10. Course URL: /course/{slug}/
+  // 11. Course URL: /course/{slug}/
   for (const [slug, course] of Object.entries(spec.course)) {
     const expected = `/course/${slug}/`;
     if (course.url !== expected) {
@@ -327,7 +342,7 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 11. Article slugs globally unique
+  // 12. Article slugs globally unique
   const seenSlugs = new Map<string, string>();
   for (const [catSlug, articles] of Object.entries(spec.blog)) {
     for (const articleSlug of Object.keys(articles)) {

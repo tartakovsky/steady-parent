@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-Migrate article_taxonomy.json + quiz_taxonomy.json + cta_catalog.json (courses)
-+ page_types.json + quiz_page_types.json → new_validation/spec/taxonomy.json
+Migrate article_taxonomy.json + quiz_taxonomy.json + quiz-definitions.json
++ cta_catalog.json (courses) + page_types.json + quiz_page_types.json
+→ new_validation/spec/taxonomy.json
 
-Merges 5 source files into one canonical taxonomy spec. Keys use URL path
+Merges 6 source files into one canonical taxonomy spec. Keys use URL path
 segments: blog/{cat}/{article}, quiz/{slug}, course/{slug}.
 """
 
@@ -14,9 +15,15 @@ ROOT = Path(__file__).resolve().parent.parent
 
 article_taxonomy = json.loads((ROOT / "content-plan" / "article_taxonomy.json").read_text())
 quiz_taxonomy = json.loads((ROOT / "content-plan" / "quiz_taxonomy.json").read_text())
+quiz_definitions = json.loads((ROOT / "content-plan" / "quizzes" / "quiz-definitions.json").read_text())
 cta_catalog = json.loads((ROOT / "content-plan" / "cta_catalog.json").read_text())
 page_types = json.loads((ROOT / "content-plan" / "page_types.json").read_text())
 quiz_page_types = json.loads((ROOT / "content-plan" / "quiz_page_types.json").read_text())
+
+# Build quiz slug → dataModel (likert/identity/assessment) lookup
+quiz_type_map: dict[str, str] = {}
+for qd in quiz_definitions:
+    quiz_type_map[qd["slug"]] = qd["dataModel"]
 
 spec: dict = {}
 
@@ -49,17 +56,21 @@ for entry in article_taxonomy["entries"]:
 
 # ---------------------------------------------------------------------------
 # Quizzes: array → keyed quiz/{slug}
-# No trailing slashes — keep URLs as-is from source.
+# quizType from quiz-definitions.json (dataModel field)
 # ---------------------------------------------------------------------------
 spec["quiz"] = {}
 for entry in quiz_taxonomy["entries"]:
+    slug = entry["slug"]
     url = entry["url"]
     # Normalize to trailing slash (consistent with blog/course URLs)
     if not url.endswith("/"):
         url = url + "/"
-    spec["quiz"][entry["slug"]] = {
+    if slug not in quiz_type_map:
+        raise ValueError(f"Quiz '{slug}' has no dataModel in quiz-definitions.json")
+    spec["quiz"][slug] = {
         "title": entry["title"],
         "url": url,
+        "quizType": quiz_type_map[slug],
         "connectsTo": entry["connectsTo"],
     }
 
