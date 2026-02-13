@@ -35,24 +35,55 @@ for cat in article_taxonomy["categories"]:
     spec["categories"][cat["slug"]] = {"name": cat["name"]}
 
 # ---------------------------------------------------------------------------
+# Build category name lookup for catalog titles
+# ---------------------------------------------------------------------------
+cat_names: dict[str, str] = {}
+for cat in article_taxonomy["categories"]:
+    cat_names[cat["slug"]] = cat["name"]
+
+# ---------------------------------------------------------------------------
 # Articles: flat array → nested blog/{category}/{article}
-# seriesPosition derived from array order within each category (1-based)
+# - Pillar articles get slug "guide" and URL /blog/{cat}/guide/
+# - Each category also gets a catalog entry at the category slug
+# - seriesPosition derived from array order within each category (1-based)
 # ---------------------------------------------------------------------------
 spec["blog"] = {}
 series_counters: dict[str, int] = {}
+catalogs_emitted: set[str] = set()
 for entry in article_taxonomy["entries"]:
     cat = entry["categorySlug"]
     if cat not in spec["blog"]:
         spec["blog"][cat] = {}
-    article: dict = {
-        "title": entry["title"],
-        "url": entry["url"],
-        "pageType": entry["type"],
-    }
-    if entry["type"] == "series":
+
+    if entry["type"] == "pillar":
+        # Emit catalog entry at category slug (takes over category root URL)
+        spec["blog"][cat][cat] = {
+            "title": f"{cat_names[cat]} Article Series",
+            "url": f"/blog/{cat}/",
+            "pageType": "catalog",
+        }
+        catalogs_emitted.add(cat)
+        # Emit pillar at "guide" slug with new URL
+        spec["blog"][cat]["guide"] = {
+            "title": entry["title"],
+            "url": f"/blog/{cat}/guide/",
+            "pageType": "pillar",
+        }
+    elif entry["type"] == "series":
         series_counters[cat] = series_counters.get(cat, 0) + 1
-        article["seriesPosition"] = series_counters[cat]
-    spec["blog"][cat][entry["slug"]] = article
+        spec["blog"][cat][entry["slug"]] = {
+            "title": entry["title"],
+            "url": entry["url"],
+            "pageType": "series",
+            "seriesPosition": series_counters[cat],
+        }
+    else:
+        raise ValueError(f"Unknown article type '{entry['type']}' for {entry['slug']}")
+
+# Verify every category got a catalog
+for cat_slug in spec["categories"]:
+    if cat_slug not in catalogs_emitted:
+        raise ValueError(f"Category '{cat_slug}' has no pillar entry — no catalog emitted")
 
 # ---------------------------------------------------------------------------
 # Quizzes: array → keyed quiz/{slug}
@@ -97,6 +128,7 @@ spec["pageTypes"] = {
     "article": {},
     "quiz": {},
 }
+spec["pageTypes"]["article"]["catalog"] = {"requiresDescription": True}
 for pt in page_types:
     spec["pageTypes"]["article"][pt["name"]] = pt["constraints"]
 for pt in quiz_page_types:

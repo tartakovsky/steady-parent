@@ -64,8 +64,13 @@
   "blog": {
     "tantrums": {
       "tantrums": {
-        "title": "The complete guide to tantrums and meltdowns: Why they happen and what actually helps",
+        "title": "Tantrums Article Series",
         "url": "/blog/tantrums/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "The complete guide to tantrums and meltdowns: Why they happen and what actually helps",
+        "url": "/blog/tantrums/guide/",
         "pageType": "pillar"
       },
       "why-kids-have-tantrums": {
@@ -155,8 +160,13 @@
     },
     "aggression": {
       "aggression": {
-        "title": "Why kids hit, bite, and push: A complete guide to childhood aggression",
+        "title": "Aggression Article Series",
         "url": "/blog/aggression/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "Why kids hit, bite, and push: A complete guide to childhood aggression",
+        "url": "/blog/aggression/guide/",
         "pageType": "pillar"
       },
       "why-kids-hit": {
@@ -240,8 +250,13 @@
     },
     "sleep": {
       "sleep": {
-        "title": "The complete guide to children's sleep: From bedtime battles to sleeping through the night",
+        "title": "Sleep Article Series",
         "url": "/blog/sleep/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "The complete guide to children's sleep: From bedtime battles to sleeping through the night",
+        "url": "/blog/sleep/guide/",
         "pageType": "pillar"
       },
       "why-kids-fight-bedtime": {
@@ -319,8 +334,13 @@
     },
     "siblings": {
       "siblings": {
-        "title": "The complete guide to siblings: From preparing for a new baby to stopping the fighting",
+        "title": "Siblings Article Series",
         "url": "/blog/siblings/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "The complete guide to siblings: From preparing for a new baby to stopping the fighting",
+        "url": "/blog/siblings/guide/",
         "pageType": "pillar"
       },
       "new-baby-is-coming": {
@@ -398,8 +418,13 @@
     },
     "anxiety": {
       "anxiety": {
-        "title": "The complete guide to childhood anxiety: From common fears to panic and school refusal",
+        "title": "Anxiety Article Series",
         "url": "/blog/anxiety/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "The complete guide to childhood anxiety: From common fears to panic and school refusal",
+        "url": "/blog/anxiety/guide/",
         "pageType": "pillar"
       },
       "childhood-fears-by-age": {
@@ -477,8 +502,13 @@
     },
     "discipline": {
       "discipline": {
-        "title": "Discipline that actually works: How to get cooperation without punishment, yelling, or bribery",
+        "title": "Discipline Article Series",
         "url": "/blog/discipline/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "Discipline that actually works: How to get cooperation without punishment, yelling, or bribery",
+        "url": "/blog/discipline/guide/",
         "pageType": "pillar"
       },
       "punishment-vs-discipline": {
@@ -568,8 +598,13 @@
     },
     "staying-calm": {
       "staying-calm": {
-        "title": "How to stay calm as a parent: Your complete guide to stopping the yelling and finding your cool",
+        "title": "Staying Calm Article Series",
         "url": "/blog/staying-calm/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "How to stay calm as a parent: Your complete guide to stopping the yelling and finding your cool",
+        "url": "/blog/staying-calm/guide/",
         "pageType": "pillar"
       },
       "stop-yelling": {
@@ -641,8 +676,13 @@
     },
     "breaking-the-cycle": {
       "breaking-the-cycle": {
-        "title": "Breaking the cycle: How to heal your childhood wounds so you don't pass them to your kids",
+        "title": "Breaking The Cycle Article Series",
         "url": "/blog/breaking-the-cycle/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "Breaking the cycle: How to heal your childhood wounds so you don't pass them to your kids",
+        "url": "/blog/breaking-the-cycle/guide/",
         "pageType": "pillar"
       },
       "childhood-triggers": {
@@ -708,8 +748,13 @@
     },
     "big-feelings": {
       "big-feelings": {
-        "title": "How to raise an emotionally intelligent child: Teaching kids to understand and manage big feelings",
+        "title": "Big Feelings Article Series",
         "url": "/blog/big-feelings/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "How to raise an emotionally intelligent child: Teaching kids to understand and manage big feelings",
+        "url": "/blog/big-feelings/guide/",
         "pageType": "pillar"
       },
       "naming-feelings": {
@@ -787,8 +832,13 @@
     },
     "potty-training": {
       "potty-training": {
-        "title": "The complete guide to potty training: From readiness signs to nighttime dryness",
+        "title": "Potty Training Article Series",
         "url": "/blog/potty-training/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "The complete guide to potty training: From readiness signs to nighttime dryness",
+        "url": "/blog/potty-training/guide/",
         "pageType": "pillar"
       },
       "readiness-signs": {
@@ -854,8 +904,13 @@
     },
     "eating": {
       "eating": {
-        "title": "The complete guide to picky eating and mealtime battles: How to feed kids without the fight",
+        "title": "Eating Article Series",
         "url": "/blog/eating/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "The complete guide to picky eating and mealtime battles: How to feed kids without the fight",
+        "url": "/blog/eating/guide/",
         "pageType": "pillar"
       },
       "why-picky-eaters": {
@@ -915,8 +970,13 @@
     },
     "screens": {
       "screens": {
-        "title": "Screen time for kids: How much is too much and how to manage it without meltdowns",
+        "title": "Screens Article Series",
         "url": "/blog/screens/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "Screen time for kids: How much is too much and how to manage it without meltdowns",
+        "url": "/blog/screens/guide/",
         "pageType": "pillar"
       },
       "guidelines-by-age": {
@@ -970,8 +1030,13 @@
     },
     "social-skills": {
       "social-skills": {
-        "title": "Social skills and friendships: How to help your child make friends, share, and navigate social conflicts",
+        "title": "Social Skills Article Series",
         "url": "/blog/social-skills/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "Social skills and friendships: How to help your child make friends, share, and navigate social conflicts",
+        "url": "/blog/social-skills/guide/",
         "pageType": "pillar"
       },
       "toddlers-and-sharing": {
@@ -1043,8 +1108,13 @@
     },
     "body-safety": {
       "body-safety": {
-        "title": "Body safety and hard conversations: How to protect your child and talk about the tough stuff",
+        "title": "Body Safety Article Series",
         "url": "/blog/body-safety/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "Body safety and hard conversations: How to protect your child and talk about the tough stuff",
+        "url": "/blog/body-safety/guide/",
         "pageType": "pillar"
       },
       "anatomical-names": {
@@ -1122,8 +1192,13 @@
     },
     "new-parent": {
       "new-parent": {
-        "title": "The new parent survival guide: Navigating postpartum, your baby's first year, and your relationship after baby",
+        "title": "New Parent Article Series",
         "url": "/blog/new-parent/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "The new parent survival guide: Navigating postpartum, your baby's first year, and your relationship after baby",
+        "url": "/blog/new-parent/guide/",
         "pageType": "pillar"
       },
       "postpartum-depression": {
@@ -1201,8 +1276,13 @@
     },
     "teens": {
       "teens": {
-        "title": "Parenting tweens and teens: How to stay connected, set limits, and let go",
+        "title": "Teens Article Series",
         "url": "/blog/teens/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "Parenting tweens and teens: How to stay connected, set limits, and let go",
+        "url": "/blog/teens/guide/",
         "pageType": "pillar"
       },
       "why-teens-pull-away": {
@@ -1280,8 +1360,13 @@
     },
     "transitions": {
       "transitions": {
-        "title": "Helping kids through major life transitions: Divorce, death, moving, and other big changes",
+        "title": "Transitions Article Series",
         "url": "/blog/transitions/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "Helping kids through major life transitions: Divorce, death, moving, and other big changes",
+        "url": "/blog/transitions/guide/",
         "pageType": "pillar"
       },
       "telling-kids-about-divorce": {
@@ -1347,8 +1432,13 @@
     },
     "spirited-kids": {
       "spirited-kids": {
-        "title": "Parenting a spirited or sensitive child: Why regular advice doesn't work and what to do instead",
+        "title": "Spirited Kids Article Series",
         "url": "/blog/spirited-kids/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "Parenting a spirited or sensitive child: Why regular advice doesn't work and what to do instead",
+        "url": "/blog/spirited-kids/guide/",
         "pageType": "pillar"
       },
       "strong-willed-child": {
@@ -1420,8 +1510,13 @@
     },
     "parenting-approach": {
       "parenting-approach": {
-        "title": "What is gentle parenting? A complete guide to raising kids with firmness, warmth, and respect",
+        "title": "Parenting Approach Article Series",
         "url": "/blog/parenting-approach/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "What is gentle parenting? A complete guide to raising kids with firmness, warmth, and respect",
+        "url": "/blog/parenting-approach/guide/",
         "pageType": "pillar"
       },
       "gentle-parenting-explained": {
@@ -1493,8 +1588,13 @@
     },
     "parenting-science": {
       "parenting-science": {
-        "title": "The science behind gentle parenting: Attachment theory, brain development, and why connection works",
+        "title": "Parenting Science Article Series",
         "url": "/blog/parenting-science/",
+        "pageType": "catalog"
+      },
+      "guide": {
+        "title": "The science behind gentle parenting: Attachment theory, brain development, and why connection works",
+        "url": "/blog/parenting-science/guide/",
         "pageType": "pillar"
       },
       "attachment-theory": {
@@ -1884,6 +1984,9 @@
   },
   "pageTypes": {
     "article": {
+      "catalog": {
+        "requiresDescription": true
+      },
       "pillar": {
         "wordCount": {
           "min": 2500,
