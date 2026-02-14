@@ -18,6 +18,10 @@ build
 *.pem
 
 .cursor/
+.claude/
+
+# build output
+dist/
 
 tilda_landing/
 
