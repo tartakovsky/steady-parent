@@ -1,6 +1,8 @@
 export {
   // Shared constants, types, helpers
   SlugSchema,
+  COMMUNITY_URL,
+  COURSE_URL_REGEX,
   FORBIDDEN_TERMS,
   wc,
   checkWordCount,
@@ -23,10 +25,12 @@ export {
   // CTA constants
   COMMUNITY_BUTTON_TEXT,
   COMMUNITY_FOUNDER_LINE,
-  COMMUNITY_URL,
+} from "./ctas";
+
+export {
   // CTA cross-reference validator
   validateCtaCrossRefs,
-} from "./ctas";
+} from "./ctas-cross-ref";
 
 export {
   // Mailing schemas
@@ -48,9 +52,12 @@ export {
   QUIZ_GATE_BUTTON_TEXT,
   QUIZ_COMPLETED_TAG,
   INPUT_PLACEHOLDER,
+} from "./mailing";
+
+export {
   // Mailing cross-reference validator
   validateMailingCrossRefs,
-} from "./mailing";
+} from "./mailing-cross-ref";
 
 export {
   // Taxonomy schemas
@@ -91,8 +98,6 @@ export {
   PageLinkPlanSchema,
   // Linking types
   type LinkingSpec,
-  // Linking constants
-  COMMUNITY_URL as LINKING_COMMUNITY_URL,
   // Linking structural validator
   validateLinking,
 } from "./linking";

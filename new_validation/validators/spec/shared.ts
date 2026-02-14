@@ -20,6 +20,10 @@ export const SlugSchema = z
 // Constants
 // ---------------------------------------------------------------------------
 
+export const COMMUNITY_URL = "https://www.skool.com/steady-parent-1727";
+
+export const COURSE_URL_REGEX = /^\/course\/[a-z0-9]+(-[a-z0-9]+)*\/$/;
+
 export const FORBIDDEN_TERMS = [
   "weekly expert q&as",
   "live coaching calls",

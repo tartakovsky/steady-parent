@@ -12,8 +12,13 @@
  */
 
 import { z } from "zod/v4";
-import { SlugSchema, checkWordCount, checkCleanText } from "./shared";
-import type { TaxonomySpec, ValidationIssue } from "./taxonomy";
+import {
+  SlugSchema,
+  COMMUNITY_URL,
+  COURSE_URL_REGEX,
+  checkWordCount,
+  checkCleanText,
+} from "./shared";
 
 // ---------------------------------------------------------------------------
 // Constants — these ARE the rules, referenced by schemas below
@@ -21,7 +26,6 @@ import type { TaxonomySpec, ValidationIssue } from "./taxonomy";
 
 export const COMMUNITY_BUTTON_TEXT = "Join the community";
 export const COMMUNITY_FOUNDER_LINE = "We are there with you daily too";
-export const COMMUNITY_URL = "https://www.skool.com/steady-parent-1727";
 
 // ---------------------------------------------------------------------------
 // Community CTA schema
@@ -87,10 +91,7 @@ const CourseFieldsSchema = z.object({
     .meta({ description: "non-empty button label" }),
   buttonUrl: z
     .string()
-    .regex(
-      /^\/course\/[a-z0-9]+(-[a-z0-9]+)*\/$/,
-      'must match /course/{slug}/',
-    )
+    .regex(COURSE_URL_REGEX, "must match /course/{slug}/")
     .meta({ description: "must match /course/{slug}/" }),
 });
 
@@ -169,89 +170,3 @@ export type BlogArticleCta = z.infer<typeof BlogArticleCtaSchema>;
 export type QuizCta = z.infer<typeof QuizCtaSchema>;
 export type CtaSpec = z.infer<typeof CtaSpecSchema>;
 
-// ---------------------------------------------------------------------------
-// Cross-reference checks (needs taxonomy)
-// ---------------------------------------------------------------------------
-
-export function validateCtaCrossRefs(
-  spec: CtaSpec,
-  taxonomy: TaxonomySpec,
-): ValidationIssue[] {
-  const issues: ValidationIssue[] = [];
-
-  const catSlugs = new Set(Object.keys(taxonomy.categories));
-  const courseUrls = new Set(
-    Object.values(taxonomy.course).map((c) => c.url),
-  );
-
-  // --- Spec → Taxonomy (no orphans) ---
-
-  for (const catSlug of Object.keys(spec.blog)) {
-    if (!catSlugs.has(catSlug)) {
-      issues.push({
-        path: `blog/${catSlug}`,
-        message: `category "${catSlug}" not in taxonomy`,
-      });
-      continue;
-    }
-
-    const taxArticles = taxonomy.blog[catSlug] ?? {};
-    const catEntries = spec.blog[catSlug];
-    if (!catEntries) continue;
-
-    for (const articleSlug of Object.keys(catEntries)) {
-      if (!(articleSlug in taxArticles)) {
-        issues.push({
-          path: `blog/${catSlug}/${articleSlug}`,
-          message: `article "${articleSlug}" not in taxonomy under "${catSlug}"`,
-        });
-      }
-
-      // Check course buttonUrl resolves to a real course
-      const entry = catEntries[articleSlug];
-      if (entry && !courseUrls.has(entry.course.buttonUrl)) {
-        issues.push({
-          path: `blog/${catSlug}/${articleSlug}/course/buttonUrl`,
-          message: `course URL "${entry.course.buttonUrl}" does not match any course in taxonomy`,
-        });
-      }
-    }
-  }
-
-  for (const quizSlug of Object.keys(spec.quiz)) {
-    if (!(quizSlug in taxonomy.quiz)) {
-      issues.push({
-        path: `quiz/${quizSlug}`,
-        message: `quiz "${quizSlug}" not in taxonomy`,
-      });
-    }
-  }
-
-  // --- Taxonomy → Spec (completeness) ---
-  // Catalog pages (key "") don't need CTAs — only pillar + series do
-
-  for (const [catSlug, articles] of Object.entries(taxonomy.blog)) {
-    for (const [articleKey, article] of Object.entries(articles)) {
-      if (article.pageType === "catalog") continue;
-
-      const catEntries = spec.blog[catSlug];
-      if (!catEntries || !(articleKey in catEntries)) {
-        issues.push({
-          path: `blog/${catSlug}/${articleKey}`,
-          message: `missing CTA entry for article "${article.title}"`,
-        });
-      }
-    }
-  }
-
-  for (const [quizSlug, quiz] of Object.entries(taxonomy.quiz)) {
-    if (!(quizSlug in spec.quiz)) {
-      issues.push({
-        path: `quiz/${quizSlug}`,
-        message: `missing CTA entry for quiz "${quiz.title}"`,
-      });
-    }
-  }
-
-  return issues;
-}

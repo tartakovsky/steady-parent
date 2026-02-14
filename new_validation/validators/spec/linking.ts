@@ -14,14 +14,8 @@
  */
 
 import { z } from "zod/v4";
-import { SlugSchema, wc } from "./shared";
+import { SlugSchema, COMMUNITY_URL, COURSE_URL_REGEX, wc } from "./shared";
 import type { ValidationIssue } from "./taxonomy";
-
-// ---------------------------------------------------------------------------
-// Constants
-// ---------------------------------------------------------------------------
-
-export const COMMUNITY_URL = "https://www.skool.com/steady-parent-1727";
 
 // ---------------------------------------------------------------------------
 // Link schema (url + intent only, no type)
@@ -425,10 +419,7 @@ function validateCtaUrls(
       });
     }
 
-    if (
-      cta.type === "course" &&
-      !/^\/course\/[a-z0-9]+(-[a-z0-9]+)*\/$/.test(cta.url)
-    ) {
+    if (cta.type === "course" && !COURSE_URL_REGEX.test(cta.url)) {
       issues.push({
         path: `${path}/ctas[${i}]`,
         message: `course URL must match /course/{slug}/, got "${cta.url}"`,
