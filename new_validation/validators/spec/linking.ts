@@ -2,19 +2,20 @@
  * Linking spec validator — Zod schemas + structural checks for spec/linking.json.
  *
  * Two layers:
- * 1. Zod schemas validate each entry's shape (link/CTA fields, type enums,
- *    URL formats). No external data needed.
+ * 1. Zod schemas validate each entry's shape (link/CTA/mailing fields).
+ *    No external data needed.
  * 2. validateLinking() checks structural invariants within the linking spec
- *    (duplicate URLs, CTA coverage, URL formats).
- * 3. validateLinkingCrossRefs() checks against taxonomy (URL resolution,
- *    completeness, type consistency).
+ *    (per-page-type CTA/mailing rules, URL formats, duplicate links).
  *
- * The Zod schemas are the SINGLE SOURCE OF TRUTH for all linking validation rules.
+ * Cross-reference validation lives in linking-cross-ref.ts (separate file).
+ *
+ * Links have NO type field — navigation structure is inferred from URLs
+ * during cross-ref validation against taxonomy.
  */
 
 import { z } from "zod/v4";
 import { SlugSchema } from "./shared";
-import type { TaxonomySpec, ValidationIssue } from "./taxonomy";
+import type { ValidationIssue } from "./taxonomy";
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -23,67 +24,64 @@ import type { TaxonomySpec, ValidationIssue } from "./taxonomy";
 export const COMMUNITY_URL = "https://www.skool.com/steady-parent-1727";
 
 // ---------------------------------------------------------------------------
-// Link type enums
-// ---------------------------------------------------------------------------
-
-const LinkTypeEnum = z.enum([
-  "series_preview",
-  "pillar",
-  "next",
-  "prev",
-  "cross",
-  "sibling",
-  "quiz",
-]);
-
-const CtaTypeEnum = z.enum(["course", "community", "freebie"]);
-
-// ---------------------------------------------------------------------------
-// Link schema
+// Link schema (url + intent only, no type)
 // ---------------------------------------------------------------------------
 
 const LinkSchema = z.object({
   url: z.string().min(1),
-  type: LinkTypeEnum,
   intent: z.string().min(1),
 });
 
 // ---------------------------------------------------------------------------
-// CTA placement schema (url is nullable for freebies)
+// CTA placement schema
 // ---------------------------------------------------------------------------
 
+const CtaTypeEnum = z.enum(["course", "community"]);
+
 const CtaPlacementSchema = z.object({
-  url: z.string().nullable(),
+  url: z.string().min(1),
   type: CtaTypeEnum,
   intent: z.string().min(1),
 });
 
 // ---------------------------------------------------------------------------
-// Article link plan
+// Mailing reference schema (nullable)
 // ---------------------------------------------------------------------------
 
-const ArticleLinkPlanSchema = z.object({
-  links: z.array(LinkSchema).min(1),
-  ctas: z.array(CtaPlacementSchema),
+const MailingTypeEnum = z.enum(["freebie", "quiz-gate", "waitlist"]);
+
+const MailingRefSchema = z.object({
+  type: MailingTypeEnum,
+  intent: z.string().min(1),
 });
 
 // ---------------------------------------------------------------------------
-// Top-level spec schema
+// Page link plan — every entry has links, ctas, mailing
 // ---------------------------------------------------------------------------
 
+const PageLinkPlanSchema = z.object({
+  links: z.array(LinkSchema),
+  ctas: z.array(CtaPlacementSchema),
+  mailing: MailingRefSchema.nullable(),
+});
+
+// ---------------------------------------------------------------------------
+// Top-level spec schema — three sections
+// ---------------------------------------------------------------------------
+
+const KeySchema = z.union([SlugSchema, z.literal("")]);
+
 export const LinkingSpecSchema = z
-  .record(
-    SlugSchema,
-    z.record(
-      z.union([SlugSchema, z.literal("")]),
-      ArticleLinkPlanSchema,
-    ),
-  )
+  .object({
+    blog: z.record(SlugSchema, z.record(KeySchema, PageLinkPlanSchema)),
+    quiz: z.record(KeySchema, PageLinkPlanSchema),
+    course: z.record(KeySchema, PageLinkPlanSchema),
+  })
   .meta({
     id: "linking-spec",
     title: "Linking Spec",
     description:
-      "Per-article link plans: internal links and CTA placements for every article.",
+      "Per-page link plans, CTA placements, and mailing references for every page on the site.",
   });
 
 // ---------------------------------------------------------------------------
@@ -94,112 +92,175 @@ export type LinkingSpec = z.infer<typeof LinkingSpecSchema>;
 
 // Re-export leaf schemas for admin UI introspection
 export {
-  LinkTypeEnum,
-  CtaTypeEnum,
   LinkSchema,
+  CtaTypeEnum,
   CtaPlacementSchema,
-  ArticleLinkPlanSchema,
+  MailingTypeEnum,
+  MailingRefSchema,
+  PageLinkPlanSchema,
 };
 
 // ---------------------------------------------------------------------------
 // Structural validation (no taxonomy needed)
 // ---------------------------------------------------------------------------
 
+/**
+ * Infer page type from section + key.
+ *
+ * Blog: "" = catalog, "guide" = pillar, other = series
+ * Quiz/Course: "" = catalog, other = page
+ */
+type BlogPageType = "catalog" | "pillar" | "series";
+type SectionPageType = "catalog" | "page";
+
+function blogPageType(key: string): BlogPageType {
+  if (key === "") return "catalog";
+  if (key === "guide") return "pillar";
+  return "series";
+}
+
+function sectionPageType(key: string): SectionPageType {
+  return key === "" ? "catalog" : "page";
+}
+
+/** Derive the canonical URL for a page from its keys. */
+function blogUrl(cat: string, key: string): string {
+  return key === "" ? `/blog/${cat}/` : `/blog/${cat}/${key}/`;
+}
+
+function quizUrl(key: string): string {
+  return key === "" ? "/quiz/" : `/quiz/${key}/`;
+}
+
+function courseUrl(key: string): string {
+  return key === "" ? "/course/" : `/course/${key}/`;
+}
+
 export function validateLinking(spec: LinkingSpec): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
 
-  for (const [catSlug, articles] of Object.entries(spec)) {
-    for (const [articleKey, plan] of Object.entries(articles)) {
-      const path = articleKey === "" ? `${catSlug}/` : `${catSlug}/${articleKey}`;
+  // =========================================================================
+  // Blog section
+  // =========================================================================
 
-      // 1. All link URLs must start with /blog/ or /quiz/ and have trailing slash
-      for (let i = 0; i < plan.links.length; i++) {
-        const url = plan.links[i].url;
-        if (!url.startsWith("/blog/") && !url.startsWith("/quiz/")) {
-          issues.push({
-            path: `${path}/links[${i}]`,
-            message: `URL must start with /blog/ or /quiz/, got "${url}"`,
-          });
-        }
-        if (!url.endsWith("/")) {
-          issues.push({
-            path: `${path}/links[${i}]`,
-            message: `URL must have trailing slash, got "${url}"`,
-          });
-        }
-      }
+  for (const [cat, articles] of Object.entries(spec.blog)) {
+    for (const [key, plan] of Object.entries(articles)) {
+      const path = key === "" ? `blog/${cat}/` : `blog/${cat}/${key}`;
+      const pt = blogPageType(key);
+      const selfUrl = blogUrl(cat, key);
 
-      // 2. No duplicate link URLs per article
-      const seenUrls = new Set<string>();
-      for (let i = 0; i < plan.links.length; i++) {
-        const url = plan.links[i].url;
-        if (seenUrls.has(url)) {
-          issues.push({
-            path: `${path}/links[${i}]`,
-            message: `duplicate link URL "${url}"`,
-          });
-        }
-        seenUrls.add(url);
-      }
+      // --- URL checks ---
+      validateLinkUrls(plan, path, selfUrl, issues);
 
-      // 3. Exactly 3 CTAs: one each of course, community, freebie
+      // --- CTA rules ---
       const ctaTypes = plan.ctas.map((c) => c.type);
-      for (const required of ["course", "community", "freebie"] as const) {
-        const count = ctaTypes.filter((t) => t === required).length;
-        if (count === 0) {
+
+      if (pt === "catalog") {
+        // 1 CTA: community
+        expectCtaSet(ctaTypes, ["community"], path, issues);
+      } else {
+        // pillar + series: 2 CTAs: course + community
+        expectCtaSet(ctaTypes, ["community", "course"], path, issues);
+      }
+
+      validateCtaUrls(plan, path, issues);
+
+      // --- Mailing rules ---
+      if (pt === "catalog") {
+        if (plan.mailing !== null) {
           issues.push({
-            path: `${path}/ctas`,
-            message: `missing "${required}" CTA`,
+            path: `${path}/mailing`,
+            message: "catalog page must have mailing: null",
           });
-        } else if (count > 1) {
+        }
+      } else {
+        if (!plan.mailing || plan.mailing.type !== "freebie") {
           issues.push({
-            path: `${path}/ctas`,
-            message: `${count} "${required}" CTAs (expected 1)`,
+            path: `${path}/mailing`,
+            message: 'must have mailing type "freebie"',
           });
         }
       }
-      if (plan.ctas.length !== 3) {
+
+      // --- Minimum links ---
+      if (pt === "catalog" && plan.links.length < 2) {
         issues.push({
-          path: `${path}/ctas`,
-          message: `expected 3 CTAs, got ${plan.ctas.length}`,
+          path: `${path}/links`,
+          message: `catalog must have at least 2 links (guide + series), got ${plan.links.length}`,
         });
       }
-
-      // 4. Community CTA URL must be the Skool constant
-      for (let i = 0; i < plan.ctas.length; i++) {
-        const cta = plan.ctas[i];
-        if (cta.type === "community" && cta.url !== COMMUNITY_URL) {
-          issues.push({
-            path: `${path}/ctas[${i}]`,
-            message: `community URL must be "${COMMUNITY_URL}", got "${cta.url}"`,
-          });
-        }
+      if (pt === "pillar" && plan.links.length < 1) {
+        issues.push({
+          path: `${path}/links`,
+          message: "pillar must have at least 1 link",
+        });
       }
-
-      // 5. Freebie CTA URL must be null
-      for (let i = 0; i < plan.ctas.length; i++) {
-        const cta = plan.ctas[i];
-        if (cta.type === "freebie" && cta.url !== null) {
-          issues.push({
-            path: `${path}/ctas[${i}]`,
-            message: `freebie URL must be null, got "${cta.url}"`,
-          });
-        }
+      if (pt === "series" && plan.links.length < 2) {
+        issues.push({
+          path: `${path}/links`,
+          message: `series article must have at least 2 links (pillar backlink + 1 other), got ${plan.links.length}`,
+        });
       }
+    }
+  }
 
-      // 6. Course CTA URL must match /course/{slug}/ pattern
-      for (let i = 0; i < plan.ctas.length; i++) {
-        const cta = plan.ctas[i];
-        if (
-          cta.type === "course" &&
-          (cta.url === null ||
-            !/^\/course\/[a-z0-9]+(-[a-z0-9]+)*\/$/.test(cta.url))
-        ) {
-          issues.push({
-            path: `${path}/ctas[${i}]`,
-            message: `course URL must match /course/{slug}/, got "${cta.url}"`,
-          });
-        }
+  // =========================================================================
+  // Quiz section
+  // =========================================================================
+
+  for (const [key, plan] of Object.entries(spec.quiz)) {
+    const path = key === "" ? "quiz/" : `quiz/${key}`;
+    const pt = sectionPageType(key);
+    const selfUrl = quizUrl(key);
+
+    validateLinkUrls(plan, path, selfUrl, issues);
+
+    if (pt === "catalog") {
+      expectCtaSet(plan.ctas.map((c) => c.type), [], path, issues);
+      if (plan.mailing !== null) {
+        issues.push({
+          path: `${path}/mailing`,
+          message: "catalog page must have mailing: null",
+        });
+      }
+    } else {
+      expectCtaSet(plan.ctas.map((c) => c.type), ["community"], path, issues);
+      validateCtaUrls(plan, path, issues);
+      if (!plan.mailing || plan.mailing.type !== "quiz-gate") {
+        issues.push({
+          path: `${path}/mailing`,
+          message: 'must have mailing type "quiz-gate"',
+        });
+      }
+    }
+  }
+
+  // =========================================================================
+  // Course section
+  // =========================================================================
+
+  for (const [key, plan] of Object.entries(spec.course)) {
+    const path = key === "" ? "course/" : `course/${key}`;
+    const pt = sectionPageType(key);
+    const selfUrl = courseUrl(key);
+
+    validateLinkUrls(plan, path, selfUrl, issues);
+
+    if (pt === "catalog") {
+      expectCtaSet(plan.ctas.map((c) => c.type), [], path, issues);
+      if (plan.mailing !== null) {
+        issues.push({
+          path: `${path}/mailing`,
+          message: "catalog page must have mailing: null",
+        });
+      }
+    } else {
+      expectCtaSet(plan.ctas.map((c) => c.type), [], path, issues);
+      if (!plan.mailing || plan.mailing.type !== "waitlist") {
+        issues.push({
+          path: `${path}/mailing`,
+          message: 'must have mailing type "waitlist"',
+        });
       }
     }
   }
@@ -208,154 +269,112 @@ export function validateLinking(spec: LinkingSpec): ValidationIssue[] {
 }
 
 // ---------------------------------------------------------------------------
-// Cross-reference validation (needs taxonomy)
+// Helpers
 // ---------------------------------------------------------------------------
 
-export function validateLinkingCrossRefs(
-  spec: LinkingSpec,
-  taxonomy: TaxonomySpec,
-): ValidationIssue[] {
-  const issues: ValidationIssue[] = [];
-  const catSlugs = new Set(Object.keys(taxonomy.categories));
+function validateLinkUrls(
+  plan: z.infer<typeof PageLinkPlanSchema>,
+  path: string,
+  selfUrl: string,
+  issues: ValidationIssue[],
+) {
+  const seen = new Set<string>();
 
-  // Build URL → entry lookup from taxonomy
-  const validArticleUrls = new Set<string>();
-  const validQuizUrls = new Set<string>();
-  const articlePageTypes = new Map<string, string>(); // url → pageType
+  for (let i = 0; i < plan.links.length; i++) {
+    const url = plan.links[i].url;
 
-  for (const [catSlug, articles] of Object.entries(taxonomy.blog)) {
-    for (const [articleKey, article] of Object.entries(articles)) {
-      validArticleUrls.add(article.url);
-      articlePageTypes.set(article.url, article.pageType);
-    }
-  }
-  for (const [, quiz] of Object.entries(taxonomy.quiz)) {
-    validQuizUrls.add(quiz.url);
-  }
-
-  // Course URL per category (skip catalog)
-  const courseByCat = new Map<string, string>();
-  for (const [, course] of Object.entries(taxonomy.course)) {
-    if ("pageType" in course) continue; // catalog
-    courseByCat.set(course.categorySlug, course.url);
-  }
-
-  // --- Spec → Taxonomy (no orphans) ---
-
-  for (const [catSlug, articles] of Object.entries(spec)) {
-    if (!catSlugs.has(catSlug)) {
+    // Trailing slash
+    if (!url.endsWith("/")) {
       issues.push({
-        path: catSlug,
-        message: `category "${catSlug}" not in taxonomy`,
+        path: `${path}/links[${i}]`,
+        message: `URL must have trailing slash, got "${url}"`,
       });
-      continue;
     }
 
-    const taxArticles = taxonomy.blog[catSlug];
-    if (!taxArticles) continue;
+    // Duplicate
+    if (seen.has(url)) {
+      issues.push({
+        path: `${path}/links[${i}]`,
+        message: `duplicate link URL "${url}"`,
+      });
+    }
+    seen.add(url);
 
-    for (const [articleKey, plan] of Object.entries(articles)) {
-      const path =
-        articleKey === "" ? `${catSlug}/` : `${catSlug}/${articleKey}`;
+    // Self-link
+    if (url === selfUrl) {
+      issues.push({
+        path: `${path}/links[${i}]`,
+        message: `self-link to "${url}"`,
+      });
+    }
+  }
+}
 
-      // Article must exist in taxonomy
-      if (!(articleKey in taxArticles)) {
-        issues.push({
-          path,
-          message: `article key "${articleKey}" not in taxonomy under "${catSlug}"`,
-        });
-        continue;
-      }
+function expectCtaSet(
+  actual: string[],
+  expected: string[],
+  path: string,
+  issues: ValidationIssue[],
+) {
+  const sortedActual = [...actual].sort();
+  const sortedExpected = [...expected].sort();
 
-      // Every link URL must resolve to a valid article or quiz
-      for (let i = 0; i < plan.links.length; i++) {
-        const url = plan.links[i].url;
-        if (!validArticleUrls.has(url) && !validQuizUrls.has(url)) {
-          issues.push({
-            path: `${path}/links[${i}]`,
-            message: `URL "${url}" does not resolve to any article or quiz in taxonomy`,
-          });
-        }
-      }
+  if (sortedActual.length !== sortedExpected.length) {
+    issues.push({
+      path: `${path}/ctas`,
+      message: `expected ${sortedExpected.length} CTAs [${sortedExpected.join(", ")}], got ${sortedActual.length} [${sortedActual.join(", ")}]`,
+    });
+    return;
+  }
 
-      // Course CTA URL must match the category's course
-      const expectedCourseUrl = courseByCat.get(catSlug);
-      for (let i = 0; i < plan.ctas.length; i++) {
-        const cta = plan.ctas[i];
-        if (cta.type === "course" && expectedCourseUrl && cta.url !== expectedCourseUrl) {
-          issues.push({
-            path: `${path}/ctas[${i}]`,
-            message: `course CTA URL "${cta.url}" does not match category course "${expectedCourseUrl}"`,
-          });
-        }
-      }
-
-      // Link type consistency checks
-      const thisArticleUrl =
-        articleKey === ""
-          ? `/blog/${catSlug}/`
-          : `/blog/${catSlug}/${articleKey}/`;
-      const thisPageType = articlePageTypes.get(thisArticleUrl);
-
-      for (let i = 0; i < plan.links.length; i++) {
-        const link = plan.links[i];
-        const targetPageType = articlePageTypes.get(link.url);
-
-        // "pillar" links must point to a pillar article
-        if (link.type === "pillar" && targetPageType && targetPageType !== "pillar") {
-          issues.push({
-            path: `${path}/links[${i}]`,
-            message: `"pillar" link points to ${targetPageType} page, expected pillar`,
-          });
-        }
-
-        // "series_preview" links should come from pillar/catalog pages and point to series articles
-        if (link.type === "series_preview") {
-          if (thisPageType && thisPageType !== "pillar" && thisPageType !== "catalog") {
-            issues.push({
-              path: `${path}/links[${i}]`,
-              message: `"series_preview" link on ${thisPageType} page (expected pillar or catalog)`,
-            });
-          }
-          if (targetPageType && targetPageType !== "series") {
-            issues.push({
-              path: `${path}/links[${i}]`,
-              message: `"series_preview" link points to ${targetPageType} page, expected series`,
-            });
-          }
-        }
-
-        // "prev"/"next" links must point to series articles in the same category
-        if (link.type === "prev" || link.type === "next") {
-          if (link.url.startsWith("/blog/")) {
-            const targetParts = link.url.replace(/^\/|\/$/g, "").split("/");
-            if (targetParts.length >= 2 && targetParts[1] !== catSlug) {
-              issues.push({
-                path: `${path}/links[${i}]`,
-                message: `"${link.type}" link crosses category boundary (${catSlug} → ${targetParts[1]})`,
-              });
-            }
-          }
-        }
-      }
+  for (let i = 0; i < sortedActual.length; i++) {
+    if (sortedActual[i] !== sortedExpected[i]) {
+      issues.push({
+        path: `${path}/ctas`,
+        message: `expected CTAs [${sortedExpected.join(", ")}], got [${sortedActual.join(", ")}]`,
+      });
+      return;
     }
   }
 
-  // --- Taxonomy → Spec (completeness) ---
-
-  for (const [catSlug, articles] of Object.entries(taxonomy.blog)) {
-    const specCat = spec[catSlug];
-    for (const articleKey of Object.keys(articles)) {
-      if (!specCat || !(articleKey in specCat)) {
-        const path =
-          articleKey === "" ? `${catSlug}/` : `${catSlug}/${articleKey}`;
-        issues.push({
-          path,
-          message: `missing link plan entry (exists in taxonomy but not in linking spec)`,
-        });
-      }
+  // Check for duplicates within actual
+  const ctaCounts = new Map<string, number>();
+  for (const t of actual) {
+    ctaCounts.set(t, (ctaCounts.get(t) ?? 0) + 1);
+  }
+  for (const [t, count] of ctaCounts) {
+    if (count > 1) {
+      issues.push({
+        path: `${path}/ctas`,
+        message: `duplicate "${t}" CTA (${count} found)`,
+      });
     }
   }
+}
 
-  return issues;
+function validateCtaUrls(
+  plan: z.infer<typeof PageLinkPlanSchema>,
+  path: string,
+  issues: ValidationIssue[],
+) {
+  for (let i = 0; i < plan.ctas.length; i++) {
+    const cta = plan.ctas[i];
+
+    if (cta.type === "community" && cta.url !== COMMUNITY_URL) {
+      issues.push({
+        path: `${path}/ctas[${i}]`,
+        message: `community URL must be "${COMMUNITY_URL}", got "${cta.url}"`,
+      });
+    }
+
+    if (
+      cta.type === "course" &&
+      !/^\/course\/[a-z0-9]+(-[a-z0-9]+)*\/$/.test(cta.url)
+    ) {
+      issues.push({
+        path: `${path}/ctas[${i}]`,
+        message: `course URL must match /course/{slug}/, got "${cta.url}"`,
+      });
+    }
+  }
 }

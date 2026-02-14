@@ -88,12 +88,11 @@ for entry in link_plan:
     if cat not in spec["blog"]:
         spec["blog"][cat] = {}
 
-    # Remap link target URLs (old pillar → guide)
+    # Remap link target URLs (old pillar → guide), drop type field
     links = []
     for link in entry["links"]:
         links.append({
             "url": remap_link_url(link["url"]),
-            "type": link["type"],
             "intent": link["intent"],
         })
 
@@ -131,15 +130,13 @@ for cat in taxonomy["blog"]:
     if guide_url:
         catalog_links.append({
             "url": guide_url,
-            "type": "pillar",
             "intent": "link to the comprehensive guide for this category",
         })
 
-    # series_preview links to all series articles, sorted by seriesPosition
+    # Links to all series articles, sorted by seriesPosition
     for i, (slug, entry) in enumerate(cat_to_series.get(cat, []), 1):
         catalog_links.append({
             "url": entry["url"],
-            "type": "series_preview",
             "intent": f"preview and link to article {i} in the series",
         })
 
@@ -164,7 +161,6 @@ for slug in sorted(taxonomy["quiz"]):
     quiz = taxonomy["quiz"][slug]
     quiz_catalog_links.append({
         "url": quiz["url"],
-        "type": "series_preview",
         "intent": f"preview and link to the {quiz['title']} quiz",
     })
 
@@ -189,7 +185,6 @@ for slug in sorted(taxonomy["quiz"]):
             cat_name = taxonomy["categories"][cat_slug]["name"]
             links.append({
                 "url": guide_url,
-                "type": "cross",
                 "intent": f"related guide: {cat_name}",
             })
 
@@ -217,7 +212,6 @@ for slug in sorted(taxonomy["course"]):
     course = taxonomy["course"][slug]
     course_catalog_links.append({
         "url": course["url"],
-        "type": "series_preview",
         "intent": f"preview and link to the {course['name']} course",
     })
 
@@ -243,7 +237,6 @@ for slug in sorted(taxonomy["course"]):
         cat_name = taxonomy["categories"][cat_slug]["name"]
         links.append({
             "url": guide_url,
-            "type": "cross",
             "intent": f"explore the free {cat_name} article series",
         })
 

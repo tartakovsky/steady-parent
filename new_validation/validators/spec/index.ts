@@ -83,14 +83,21 @@ export {
 export {
   // Linking schemas
   LinkingSpecSchema,
-  LinkTypeEnum,
-  CtaTypeEnum,
   LinkSchema,
+  CtaTypeEnum,
   CtaPlacementSchema,
-  ArticleLinkPlanSchema,
+  MailingTypeEnum,
+  MailingRefSchema,
+  PageLinkPlanSchema,
   // Linking types
   type LinkingSpec,
-  // Linking validators
+  // Linking constants
+  COMMUNITY_URL as LINKING_COMMUNITY_URL,
+  // Linking structural validator
   validateLinking,
-  validateLinkingCrossRefs,
 } from "./linking";
+
+export {
+  // Linking cross-reference validator
+  validateLinkingCrossRefs,
+} from "./linking-cross-ref";
