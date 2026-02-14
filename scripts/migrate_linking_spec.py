@@ -185,7 +185,7 @@ for slug in sorted(taxonomy["quiz"]):
             cat_name = taxonomy["categories"][cat_slug]["name"]
             links.append({
                 "url": guide_url,
-                "intent": f"related guide: {cat_name}",
+                "intent": f"explore the free {cat_name} article series after completing this quiz",
             })
 
     spec["quiz"][slug] = {
@@ -237,7 +237,7 @@ for slug in sorted(taxonomy["course"]):
         cat_name = taxonomy["categories"][cat_slug]["name"]
         links.append({
             "url": guide_url,
-            "intent": f"explore the free {cat_name} article series",
+            "intent": f"explore the free {cat_name} article series for practical strategies",
         })
 
     spec["course"][slug] = {

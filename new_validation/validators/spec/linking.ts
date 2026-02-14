@@ -14,7 +14,7 @@
  */
 
 import { z } from "zod/v4";
-import { SlugSchema } from "./shared";
+import { SlugSchema, wc } from "./shared";
 import type { ValidationIssue } from "./taxonomy";
 
 // ---------------------------------------------------------------------------
@@ -182,25 +182,42 @@ export function validateLinking(spec: LinkingSpec): ValidationIssue[] {
         }
       }
 
-      // --- Minimum links ---
-      if (pt === "catalog" && plan.links.length < 2) {
-        issues.push({
-          path: `${path}/links`,
-          message: `catalog must have at least 2 links (guide + series), got ${plan.links.length}`,
+      // --- Intent quality ---
+      validateIntents(plan, path, issues);
+
+      // --- Cross-category diversity (pillar + series only) ---
+      if (pt !== "catalog") {
+        const hasCrossCat = plan.links.some((link) => {
+          const parts = link.url.replace(/^\/|\/$/g, "").split("/");
+          // Link to /blog/{other-cat}/... counts as cross-category
+          if (parts[0] === "blog" && parts.length >= 2 && parts[1] !== cat)
+            return true;
+          // Link to /quiz/ or /course/ is always cross-section
+          if (parts[0] === "quiz" || parts[0] === "course") return true;
+          return false;
         });
+        if (!hasCrossCat) {
+          issues.push({
+            path: `${path}/links`,
+            message:
+              "must include at least 1 cross-category or cross-section link",
+          });
+        }
       }
-      if (pt === "pillar" && plan.links.length < 1) {
-        issues.push({
-          path: `${path}/links`,
-          message: "pillar must have at least 1 link",
-        });
+    }
+
+    // --- Course CTA consistency within category ---
+    const courseCtaUrls = new Set<string>();
+    for (const [key, plan] of Object.entries(articles)) {
+      for (const cta of plan.ctas) {
+        if (cta.type === "course") courseCtaUrls.add(cta.url);
       }
-      if (pt === "series" && plan.links.length < 2) {
-        issues.push({
-          path: `${path}/links`,
-          message: `series article must have at least 2 links (pillar backlink + 1 other), got ${plan.links.length}`,
-        });
-      }
+    }
+    if (courseCtaUrls.size > 1) {
+      issues.push({
+        path: `blog/${cat}/ctas`,
+        message: `inconsistent course CTA URLs within category: ${[...courseCtaUrls].join(", ")}`,
+      });
     }
   }
 
@@ -214,6 +231,8 @@ export function validateLinking(spec: LinkingSpec): ValidationIssue[] {
     const selfUrl = quizUrl(key);
 
     validateLinkUrls(plan, path, selfUrl, issues);
+
+    validateIntents(plan, path, issues);
 
     if (pt === "catalog") {
       expectCtaSet(plan.ctas.map((c) => c.type), [], path, issues);
@@ -232,6 +251,12 @@ export function validateLinking(spec: LinkingSpec): ValidationIssue[] {
           message: 'must have mailing type "quiz-gate"',
         });
       }
+      if (plan.links.length < 1) {
+        issues.push({
+          path: `${path}/links`,
+          message: "quiz page must have at least 1 link",
+        });
+      }
     }
   }
 
@@ -245,6 +270,7 @@ export function validateLinking(spec: LinkingSpec): ValidationIssue[] {
     const selfUrl = courseUrl(key);
 
     validateLinkUrls(plan, path, selfUrl, issues);
+    validateIntents(plan, path, issues);
 
     if (pt === "catalog") {
       expectCtaSet(plan.ctas.map((c) => c.type), [], path, issues);
@@ -349,6 +375,38 @@ function expectCtaSet(
         message: `duplicate "${t}" CTA (${count} found)`,
       });
     }
+  }
+}
+
+const MIN_INTENT_WORDS = 5;
+
+function validateIntents(
+  plan: z.infer<typeof PageLinkPlanSchema>,
+  path: string,
+  issues: ValidationIssue[],
+) {
+  // Min word count
+  for (let i = 0; i < plan.links.length; i++) {
+    const words = wc(plan.links[i].intent);
+    if (words < MIN_INTENT_WORDS) {
+      issues.push({
+        path: `${path}/links[${i}]`,
+        message: `intent must be at least ${MIN_INTENT_WORDS} words, got ${words}: "${plan.links[i].intent}"`,
+      });
+    }
+  }
+
+  // No duplicate intents within a page
+  const seenIntents = new Set<string>();
+  for (let i = 0; i < plan.links.length; i++) {
+    const intent = plan.links[i].intent;
+    if (seenIntents.has(intent)) {
+      issues.push({
+        path: `${path}/links[${i}]`,
+        message: `duplicate intent: "${intent}"`,
+      });
+    }
+    seenIntents.add(intent);
   }
 }
 
