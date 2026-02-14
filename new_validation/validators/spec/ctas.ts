@@ -12,13 +12,8 @@
  */
 
 import { z } from "zod/v4";
-import {
-  SlugSchema,
-  checkWordCount,
-  checkCleanText,
-  type CrossRefIssue,
-  type TaxonomyForCrossRef,
-} from "./shared";
+import { SlugSchema, checkWordCount, checkCleanText } from "./shared";
+import type { TaxonomySpec, ValidationIssue } from "./taxonomy";
 
 // ---------------------------------------------------------------------------
 // Constants — these ARE the rules, referenced by schemas below
@@ -180,28 +175,14 @@ export type CtaSpec = z.infer<typeof CtaSpecSchema>;
 
 export function validateCtaCrossRefs(
   spec: CtaSpec,
-  taxonomy: TaxonomyForCrossRef,
-): CrossRefIssue[] {
-  const issues: CrossRefIssue[] = [];
+  taxonomy: TaxonomySpec,
+): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
 
-  // Build taxonomy lookups
-  const catSlugs = new Set(taxonomy.categories.map((c) => c.slug));
-  const articlesByCat = new Map<string, Set<string>>();
-  for (const a of taxonomy.entries) {
-    let set = articlesByCat.get(a.categorySlug);
-    if (!set) {
-      set = new Set();
-      articlesByCat.set(a.categorySlug, set);
-    }
-    set.add(a.slug);
-  }
-  const quizSlugs = new Set(taxonomy.quizzes.map((q) => q.slug));
-  const courseUrls = new Set<string>();
-  if (taxonomy.courses) {
-    for (const [, c] of taxonomy.courses) {
-      courseUrls.add(c.url);
-    }
-  }
+  const catSlugs = new Set(Object.keys(taxonomy.categories));
+  const courseUrls = new Set(
+    Object.values(taxonomy.course).map((c) => c.url),
+  );
 
   // --- Spec → Taxonomy (no orphans) ---
 
@@ -210,65 +191,64 @@ export function validateCtaCrossRefs(
       issues.push({
         path: `blog/${catSlug}`,
         message: `category "${catSlug}" not in taxonomy`,
-        severity: "error",
       });
       continue;
     }
 
-    const catArticles = articlesByCat.get(catSlug) ?? new Set();
+    const taxArticles = taxonomy.blog[catSlug] ?? {};
     const catEntries = spec.blog[catSlug];
     if (!catEntries) continue;
 
     for (const articleSlug of Object.keys(catEntries)) {
-      if (!catArticles.has(articleSlug)) {
+      if (!(articleSlug in taxArticles)) {
         issues.push({
           path: `blog/${catSlug}/${articleSlug}`,
-          message: `article "${articleSlug}" not in taxonomy under category "${catSlug}"`,
-          severity: "error",
+          message: `article "${articleSlug}" not in taxonomy under "${catSlug}"`,
         });
       }
 
       // Check course buttonUrl resolves to a real course
       const entry = catEntries[articleSlug];
-      if (entry && courseUrls.size > 0 && !courseUrls.has(entry.course.buttonUrl)) {
+      if (entry && !courseUrls.has(entry.course.buttonUrl)) {
         issues.push({
           path: `blog/${catSlug}/${articleSlug}/course/buttonUrl`,
           message: `course URL "${entry.course.buttonUrl}" does not match any course in taxonomy`,
-          severity: "warning",
         });
       }
     }
   }
 
   for (const quizSlug of Object.keys(spec.quiz)) {
-    if (!quizSlugs.has(quizSlug)) {
+    if (!(quizSlug in taxonomy.quiz)) {
       issues.push({
         path: `quiz/${quizSlug}`,
         message: `quiz "${quizSlug}" not in taxonomy`,
-        severity: "error",
       });
     }
   }
 
   // --- Taxonomy → Spec (completeness) ---
+  // Catalog pages (key "") don't need CTAs — only pillar + series do
 
-  for (const article of taxonomy.entries) {
-    const catEntries = spec.blog[article.categorySlug];
-    if (!catEntries || !(article.slug in catEntries)) {
-      issues.push({
-        path: `blog/${article.categorySlug}/${article.slug}`,
-        message: `missing CTA entry for article "${article.title}"`,
-        severity: "error",
-      });
+  for (const [catSlug, articles] of Object.entries(taxonomy.blog)) {
+    for (const [articleKey, article] of Object.entries(articles)) {
+      if (article.pageType === "catalog") continue;
+
+      const catEntries = spec.blog[catSlug];
+      if (!catEntries || !(articleKey in catEntries)) {
+        issues.push({
+          path: `blog/${catSlug}/${articleKey}`,
+          message: `missing CTA entry for article "${article.title}"`,
+        });
+      }
     }
   }
 
-  for (const quiz of taxonomy.quizzes) {
-    if (!(quiz.slug in spec.quiz)) {
+  for (const [quizSlug, quiz] of Object.entries(taxonomy.quiz)) {
+    if (!(quizSlug in spec.quiz)) {
       issues.push({
-        path: `quiz/${quiz.slug}`,
+        path: `quiz/${quizSlug}`,
         message: `missing CTA entry for quiz "${quiz.title}"`,
-        severity: "error",
       });
     }
   }

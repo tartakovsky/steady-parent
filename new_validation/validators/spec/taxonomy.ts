@@ -70,6 +70,12 @@ const ArticleSchema = z.discriminatedUnion("pageType", [
 
 const QuizTypeEnum = z.enum(["likert", "identity", "assessment"]);
 
+const QuizCatalogSchema = z.object({
+  title: z.string().min(1),
+  url: z.string().min(1),
+  pageType: z.literal("catalog"),
+});
+
 const QuizSchema = z.object({
   title: z.string().min(1),
   url: z.string().min(1),
@@ -77,15 +83,25 @@ const QuizSchema = z.object({
   connectsTo: z.array(SlugSchema).min(1),
 });
 
+const QuizEntrySchema = z.union([QuizCatalogSchema, QuizSchema]);
+
 // ---------------------------------------------------------------------------
 // Course
 // ---------------------------------------------------------------------------
+
+const CourseCatalogSchema = z.object({
+  title: z.string().min(1),
+  url: z.string().min(1),
+  pageType: z.literal("catalog"),
+});
 
 const CourseSchema = z.object({
   name: z.string().min(1),
   url: z.string().min(1),
   categorySlug: SlugSchema,
 });
+
+const CourseEntrySchema = z.union([CourseCatalogSchema, CourseSchema]);
 
 // ---------------------------------------------------------------------------
 // Page type constraints — articles
@@ -143,8 +159,8 @@ export const TaxonomySpecSchema = z
   .object({
     categories: z.record(SlugSchema, CategorySchema),
     blog: z.record(SlugSchema, z.record(z.union([SlugSchema, z.literal("")]), ArticleSchema)),
-    quiz: z.record(SlugSchema, QuizSchema),
-    course: z.record(SlugSchema, CourseSchema),
+    quiz: z.record(z.union([SlugSchema, z.literal("")]), QuizEntrySchema),
+    course: z.record(z.union([SlugSchema, z.literal("")]), CourseEntrySchema),
     pageTypes: z.object({
       article: z.object({
         catalog: CatalogPageTypeSchema,
@@ -184,8 +200,12 @@ export {
   SeriesArticleSchema,
   ArticleSchema,
   QuizTypeEnum,
+  QuizCatalogSchema,
   QuizSchema,
+  QuizEntrySchema,
+  CourseCatalogSchema,
   CourseSchema,
+  CourseEntrySchema,
   RangeSchema,
   CatalogPageTypeSchema,
   ArticlePageTypeSchema,
@@ -313,9 +333,32 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 7. Quiz URL: /quiz/{slug}/
+  // 7. Quiz catalog: exactly 1 at key ""
+  {
+    const quizCatalogs = Object.entries(spec.quiz).filter(
+      ([, q]) => "pageType" in q && q.pageType === "catalog",
+    );
+    if (quizCatalogs.length === 0) {
+      issues.push({ path: "quiz", message: "no catalog page" });
+    } else if (quizCatalogs.length > 1) {
+      issues.push({
+        path: "quiz",
+        message: `${quizCatalogs.length} catalog pages (expected 1)`,
+      });
+    } else {
+      const [catalogKey] = quizCatalogs[0];
+      if (catalogKey !== "") {
+        issues.push({
+          path: `quiz/${catalogKey}`,
+          message: `catalog key must be "", got "${catalogKey}"`,
+        });
+      }
+    }
+  }
+
+  // 8. Quiz URL: catalog → /quiz/, others → /quiz/{slug}/
   for (const [slug, quiz] of Object.entries(spec.quiz)) {
-    const expected = `/quiz/${slug}/`;
+    const expected = slug === "" ? "/quiz/" : `/quiz/${slug}/`;
     if (quiz.url !== expected) {
       issues.push({
         path: `quiz/${slug}/url`,
@@ -324,8 +367,9 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 8. Quiz connectsTo → valid categories
+  // 9. Quiz connectsTo → valid categories (skip catalog)
   for (const [slug, quiz] of Object.entries(spec.quiz)) {
+    if ("pageType" in quiz) continue; // catalog
     for (const cat of quiz.connectsTo) {
       if (!catSlugs.has(cat)) {
         issues.push({
@@ -336,8 +380,9 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 9. Quiz connectsTo no duplicates
+  // 10. Quiz connectsTo no duplicates (skip catalog)
   for (const [slug, quiz] of Object.entries(spec.quiz)) {
+    if ("pageType" in quiz) continue; // catalog
     const seen = new Set<string>();
     for (const cat of quiz.connectsTo) {
       if (seen.has(cat)) {
@@ -350,9 +395,10 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 10. Quiz quizType → valid pageTypes.quiz key
+  // 11. Quiz quizType → valid pageTypes.quiz key (skip catalog)
   const quizPageTypeKeys = new Set(Object.keys(spec.pageTypes.quiz));
   for (const [slug, quiz] of Object.entries(spec.quiz)) {
+    if ("pageType" in quiz) continue; // catalog
     if (!quizPageTypeKeys.has(quiz.quizType)) {
       issues.push({
         path: `quiz/${slug}/quizType`,
@@ -361,8 +407,32 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 11. Course categorySlug → valid category
+  // 12. Course catalog: exactly 1 at key ""
+  {
+    const courseCatalogs = Object.entries(spec.course).filter(
+      ([, c]) => "pageType" in c && c.pageType === "catalog",
+    );
+    if (courseCatalogs.length === 0) {
+      issues.push({ path: "course", message: "no catalog page" });
+    } else if (courseCatalogs.length > 1) {
+      issues.push({
+        path: "course",
+        message: `${courseCatalogs.length} catalog pages (expected 1)`,
+      });
+    } else {
+      const [catalogKey] = courseCatalogs[0];
+      if (catalogKey !== "") {
+        issues.push({
+          path: `course/${catalogKey}`,
+          message: `catalog key must be "", got "${catalogKey}"`,
+        });
+      }
+    }
+  }
+
+  // 13. Course categorySlug → valid category (skip catalog)
   for (const [slug, course] of Object.entries(spec.course)) {
+    if ("pageType" in course) continue; // catalog
     if (!catSlugs.has(course.categorySlug)) {
       issues.push({
         path: `course/${slug}/categorySlug`,
@@ -371,9 +441,10 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 12. Every category has exactly 1 course
+  // 14. Every category has exactly 1 course (skip catalog)
   const categoriesWithCourse = new Map<string, string[]>();
   for (const [slug, course] of Object.entries(spec.course)) {
+    if ("pageType" in course) continue; // catalog
     const list = categoriesWithCourse.get(course.categorySlug) ?? [];
     list.push(slug);
     categoriesWithCourse.set(course.categorySlug, list);
@@ -393,9 +464,9 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 13. Course URL: /course/{slug}/
+  // 15. Course URL: catalog → /course/, others → /course/{slug}/
   for (const [slug, course] of Object.entries(spec.course)) {
-    const expected = `/course/${slug}/`;
+    const expected = slug === "" ? "/course/" : `/course/${slug}/`;
     if (course.url !== expected) {
       issues.push({
         path: `course/${slug}/url`,
@@ -404,7 +475,7 @@ export function validateTaxonomy(spec: TaxonomySpec): ValidationIssue[] {
     }
   }
 
-  // 14. Article slugs unique within each category
+  // 16. Article slugs unique within each category
   for (const [catSlug, articles] of Object.entries(spec.blog)) {
     const seen = new Set<string>();
     for (const articleSlug of Object.keys(articles)) {

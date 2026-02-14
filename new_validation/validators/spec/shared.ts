@@ -29,28 +29,6 @@ export const FORBIDDEN_TERMS = [
 ] as const;
 
 // ---------------------------------------------------------------------------
-// Cross-reference types
-// ---------------------------------------------------------------------------
-
-export interface CrossRefIssue {
-  path: string;
-  message: string;
-  severity: "error" | "warning";
-}
-
-/**
- * Taxonomy shape — minimal interface for what cross-ref validators need.
- * Will be replaced by the real taxonomy schema once spec/taxonomy.json is built.
- */
-export interface TaxonomyForCrossRef {
-  categories: { slug: string; name: string }[];
-  entries: { slug: string; categorySlug: string; title: string }[];
-  /** Course name per category slug */
-  courses?: Map<string, { name: string; url: string }>;
-  quizzes: { slug: string; title: string }[];
-}
-
-// ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 

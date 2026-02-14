@@ -17,9 +17,8 @@ import {
   FORBIDDEN_TERMS,
   checkWordCount,
   checkCleanText,
-  type CrossRefIssue,
-  type TaxonomyForCrossRef,
 } from "./shared";
+import type { TaxonomySpec, ValidationIssue } from "./taxonomy";
 
 // ---------------------------------------------------------------------------
 // Constants — these ARE the rules, referenced by schemas below
@@ -318,32 +317,12 @@ export type MailingSpec = z.infer<typeof MailingSpecSchema>;
  */
 export function validateMailingCrossRefs(
   spec: MailingSpec,
-  taxonomy: TaxonomyForCrossRef,
-): CrossRefIssue[] {
-  const issues: CrossRefIssue[] = [];
+  taxonomy: TaxonomySpec,
+): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
 
-  // Build taxonomy lookups
-  const catSlugs = new Set(taxonomy.categories.map((c) => c.slug));
-  const articlesByCat = new Map<string, Set<string>>();
-  for (const a of taxonomy.entries) {
-    let set = articlesByCat.get(a.categorySlug);
-    if (!set) {
-      set = new Set();
-      articlesByCat.set(a.categorySlug, set);
-    }
-    set.add(a.slug);
-  }
-  const quizSlugs = new Set(taxonomy.quizzes.map((q) => q.slug));
-
-  // Course slugs from taxonomy — extract from courses map or category slugs
-  const courseSlugs = new Set<string>();
-  if (taxonomy.courses) {
-    for (const [, c] of taxonomy.courses) {
-      // Extract slug from URL: "/course/{slug}/" → "{slug}"
-      const match = c.url.match(/^\/course\/([^/]+)/);
-      if (match) courseSlugs.add(match[1]);
-    }
-  }
+  const catSlugs = new Set(Object.keys(taxonomy.categories));
+  const courseSlugs = new Set(Object.keys(taxonomy.course));
 
   // --- Spec → Taxonomy (no orphans) ---
 
@@ -353,21 +332,19 @@ export function validateMailingCrossRefs(
       issues.push({
         path: `blog/${catSlug}`,
         message: `category "${catSlug}" not in taxonomy`,
-        severity: "error",
       });
       continue;
     }
 
-    const catArticles = articlesByCat.get(catSlug) ?? new Set();
+    const taxArticles = taxonomy.blog[catSlug] ?? {};
     const catEntries = spec.blog[catSlug];
     if (!catEntries) continue;
 
     for (const articleSlug of Object.keys(catEntries)) {
-      if (!catArticles.has(articleSlug)) {
+      if (!(articleSlug in taxArticles)) {
         issues.push({
           path: `blog/${catSlug}/${articleSlug}`,
-          message: `article "${articleSlug}" not in taxonomy under category "${catSlug}"`,
-          severity: "error",
+          message: `article "${articleSlug}" not in taxonomy under "${catSlug}"`,
         });
       }
 
@@ -377,7 +354,6 @@ export function validateMailingCrossRefs(
         issues.push({
           path: `blog/${catSlug}/${articleSlug}/params/category`,
           message: `params.category "${entry.params.category}" does not match parent key "${catSlug}"`,
-          severity: "error",
         });
       }
     }
@@ -385,11 +361,10 @@ export function validateMailingCrossRefs(
 
   // Course entries
   for (const courseSlug of Object.keys(spec.course)) {
-    if (courseSlugs.size > 0 && !courseSlugs.has(courseSlug)) {
+    if (!(courseSlug in taxonomy.course)) {
       issues.push({
         path: `course/${courseSlug}`,
         message: `course "${courseSlug}" not in taxonomy`,
-        severity: "error",
       });
     }
 
@@ -399,18 +374,16 @@ export function validateMailingCrossRefs(
       issues.push({
         path: `course/${courseSlug}/params/category`,
         message: `params.category "${entry.params.category}" not a valid category`,
-        severity: "error",
       });
     }
   }
 
   // Quiz entries
   for (const quizSlug of Object.keys(spec.quiz)) {
-    if (!quizSlugs.has(quizSlug)) {
+    if (!(quizSlug in taxonomy.quiz)) {
       issues.push({
         path: `quiz/${quizSlug}`,
         message: `quiz "${quizSlug}" not in taxonomy`,
-        severity: "error",
       });
     }
 
@@ -420,43 +393,42 @@ export function validateMailingCrossRefs(
       issues.push({
         path: `quiz/${quizSlug}/params/quizSlug`,
         message: `params.quizSlug "${entry.params.quizSlug}" does not match key "${quizSlug}"`,
-        severity: "error",
       });
     }
   }
 
   // --- Taxonomy → Spec (completeness) ---
+  // Catalog pages (key "") don't need mailing forms — only pillar + series do
 
-  for (const article of taxonomy.entries) {
-    const catEntries = spec.blog[article.categorySlug];
-    if (!catEntries || !(article.slug in catEntries)) {
-      issues.push({
-        path: `blog/${article.categorySlug}/${article.slug}`,
-        message: `missing mailing form entry for article "${article.title}"`,
-        severity: "error",
-      });
-    }
-  }
+  for (const [catSlug, articles] of Object.entries(taxonomy.blog)) {
+    for (const [articleKey, article] of Object.entries(articles)) {
+      if (article.pageType === "catalog") continue;
 
-  if (courseSlugs.size > 0) {
-    for (const [, c] of taxonomy.courses!) {
-      const match = c.url.match(/^\/course\/([^/]+)/);
-      if (match && !(match[1] in spec.course)) {
+      const catEntries = spec.blog[catSlug];
+      if (!catEntries || !(articleKey in catEntries)) {
         issues.push({
-          path: `course/${match[1]}`,
-          message: `missing mailing form entry for course "${c.name}"`,
-          severity: "error",
+          path: `blog/${catSlug}/${articleKey}`,
+          message: `missing mailing form entry for article "${article.title}"`,
         });
       }
     }
   }
 
-  for (const quiz of taxonomy.quizzes) {
-    if (!(quiz.slug in spec.quiz)) {
+  for (const [courseSlug, course] of Object.entries(taxonomy.course)) {
+    if ("pageType" in course) continue; // catalog
+    if (!(courseSlug in spec.course)) {
       issues.push({
-        path: `quiz/${quiz.slug}`,
+        path: `course/${courseSlug}`,
+        message: `missing mailing form entry for course "${course.name}"`,
+      });
+    }
+  }
+
+  for (const [quizSlug, quiz] of Object.entries(taxonomy.quiz)) {
+    if (!(quizSlug in spec.quiz)) {
+      issues.push({
+        path: `quiz/${quizSlug}`,
         message: `missing mailing form entry for quiz "${quiz.title}"`,
-        severity: "error",
       });
     }
   }

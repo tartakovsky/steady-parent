@@ -233,9 +233,10 @@ export function validateLinkingCrossRefs(
     validQuizUrls.add(quiz.url);
   }
 
-  // Course URL per category
+  // Course URL per category (skip catalog)
   const courseByCat = new Map<string, string>();
   for (const [, course] of Object.entries(taxonomy.course)) {
+    if ("pageType" in course) continue; // catalog
     courseByCat.set(course.categorySlug, course.url);
   }
 

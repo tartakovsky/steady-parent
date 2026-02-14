@@ -1654,6 +1654,11 @@
     }
   },
   "quiz": {
+    "": {
+      "title": "All Quizzes",
+      "url": "/quiz/",
+      "pageType": "catalog"
+    },
     "parenting-style": {
       "title": "What's Your Parenting Style?",
       "url": "/quiz/parenting-style/",
@@ -1881,6 +1886,11 @@
     }
   },
   "course": {
+    "": {
+      "title": "All Courses",
+      "url": "/course/",
+      "pageType": "catalog"
+    },
     "beyond-hitting": {
       "name": "Beyond Hitting",
       "url": "/course/beyond-hitting/",

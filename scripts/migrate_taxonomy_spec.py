@@ -90,6 +90,12 @@ for cat_slug in spec["categories"]:
 # quizType from quiz-definitions.json (dataModel field)
 # ---------------------------------------------------------------------------
 spec["quiz"] = {}
+# Root catalog entry
+spec["quiz"][""] = {
+    "title": "All Quizzes",
+    "url": "/quiz/",
+    "pageType": "catalog",
+}
 for entry in quiz_taxonomy["entries"]:
     slug = entry["slug"]
     url = entry["url"]
@@ -110,6 +116,12 @@ for entry in quiz_taxonomy["entries"]:
 # Keyed by course slug (NOT category slug — 12 of 20 differ)
 # ---------------------------------------------------------------------------
 spec["course"] = {}
+# Root catalog entry
+spec["course"][""] = {
+    "title": "All Courses",
+    "url": "/course/",
+    "pageType": "catalog",
+}
 for entry in cta_catalog:
     if entry["type"] != "course":
         continue
