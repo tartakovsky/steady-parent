@@ -1,27 +1,41 @@
 /**
- * CTA spec cross-reference validator — checks ctas.json against taxonomy.json.
+ * CTA vs taxonomy validator — checks ctas.json against taxonomy.json.
  *
- * Validates:
- * - No orphans: every key in CTA spec exists in taxonomy
- * - Course URL resolution: every course buttonUrl points to a real taxonomy course
- * - Completeness: every non-catalog taxonomy entry has a CTA entry
+ * Validates bidirectionally:
+ *
+ * Spec → Taxonomy (no orphans):
+ * - Every blog category key exists in taxonomy.categories
+ * - Every blog article key exists in taxonomy.blog[cat]
+ * - Every quiz key exists in taxonomy.quiz
+ * - Every course buttonUrl resolves to a real course in taxonomy
+ * - Every course buttonUrl matches the specific course for its category
+ *
+ * Taxonomy → Spec (completeness):
+ * - Every non-catalog blog article has a CTA entry
+ * - Every non-catalog quiz has a CTA entry
  */
 
 import type { TaxonomySpec, ValidationIssue } from "./taxonomy";
 import type { CtaSpec } from "./ctas";
 
-export function validateCtaCrossRefs(
+/** Map category slug → course URL from taxonomy. */
+function courseByCat(taxonomy: TaxonomySpec): Map<string, string> {
+  const map = new Map<string, string>();
+  for (const [, course] of Object.entries(taxonomy.course)) {
+    if ("pageType" in course) continue; // catalog
+    map.set(course.categorySlug, course.url);
+  }
+  return map;
+}
+
+export function validateCtaVsTaxonomy(
   spec: CtaSpec,
   taxonomy: TaxonomySpec,
 ): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
 
   const catSlugs = new Set(Object.keys(taxonomy.categories));
-  const courseUrls = new Set(
-    Object.values(taxonomy.course)
-      .filter((c) => !("pageType" in c))
-      .map((c) => c.url),
-  );
+  const courseUrlByCat = courseByCat(taxonomy);
 
   // =========================================================================
   // Spec → Taxonomy (no orphans)
@@ -40,6 +54,8 @@ export function validateCtaCrossRefs(
     const catEntries = spec.blog[catSlug];
     if (!catEntries) continue;
 
+    const expectedCourseUrl = courseUrlByCat.get(catSlug);
+
     for (const articleSlug of Object.keys(catEntries)) {
       if (!(articleSlug in taxArticles)) {
         issues.push({
@@ -48,12 +64,23 @@ export function validateCtaCrossRefs(
         });
       }
 
-      // Check course buttonUrl resolves to a real course
       const entry = catEntries[articleSlug];
-      if (entry && !courseUrls.has(entry.course.buttonUrl)) {
+      if (!entry) continue;
+
+      const buttonUrl = entry.course.buttonUrl;
+
+      // Course buttonUrl must match the category's course in taxonomy
+      if (expectedCourseUrl) {
+        if (buttonUrl !== expectedCourseUrl) {
+          issues.push({
+            path: `blog/${catSlug}/${articleSlug}/course/buttonUrl`,
+            message: `course URL "${buttonUrl}" does not match category course "${expectedCourseUrl}"`,
+          });
+        }
+      } else {
         issues.push({
           path: `blog/${catSlug}/${articleSlug}/course/buttonUrl`,
-          message: `course URL "${entry.course.buttonUrl}" does not match any course in taxonomy`,
+          message: `no course found in taxonomy for category "${catSlug}"`,
         });
       }
     }

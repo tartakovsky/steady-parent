@@ -1,14 +1,19 @@
 /**
- * Linking spec cross-reference validator — checks linking.json against taxonomy.json.
+ * Linking vs taxonomy validator — checks linking.json against taxonomy.json.
  *
- * Validates:
- * - No orphans: every key in linking exists in taxonomy
- * - URL resolution: every link URL points to a real taxonomy entry
- * - CTA resolution: course CTA URLs match taxonomy courses
- * - Completeness: every taxonomy entry has a linking entry
- * - Blog catalog/pillar completeness: must link to all series articles
- * - Series navigation: prev/next chain must be correct and complete
- * - Quiz/course catalog completeness: must link to all pages
+ * Validates bidirectionally:
+ *
+ * Spec → Taxonomy (no orphans):
+ * - Every blog category/article key exists in taxonomy
+ * - Every quiz/course key exists in taxonomy
+ * - Every link URL resolves to a real taxonomy entry
+ * - Every course CTA URL matches the category's course in taxonomy
+ *
+ * Taxonomy → Spec (completeness):
+ * - Every taxonomy entry has a linking entry
+ * - Blog catalog/pillar links to all series articles in order
+ * - Series articles have correct guide backlink + prev/next chain
+ * - Quiz/course catalogs link to all pages
  */
 
 import type { TaxonomySpec, ValidationIssue } from "./taxonomy";
@@ -68,7 +73,7 @@ function seriesForCategory(
 // Cross-reference validation
 // ---------------------------------------------------------------------------
 
-export function validateLinkingCrossRefs(
+export function validateLinkingVsTaxonomy(
   spec: LinkingSpec,
   taxonomy: TaxonomySpec,
 ): ValidationIssue[] {

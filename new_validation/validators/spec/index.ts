@@ -28,9 +28,9 @@ export {
 } from "./ctas";
 
 export {
-  // CTA cross-reference validator
-  validateCtaCrossRefs,
-} from "./ctas-cross-ref";
+  // CTA vs taxonomy validator
+  validateCtaVsTaxonomy,
+} from "./cta-vs-taxonomy";
 
 export {
   // Mailing schemas
@@ -55,9 +55,9 @@ export {
 } from "./mailing";
 
 export {
-  // Mailing cross-reference validator
-  validateMailingCrossRefs,
-} from "./mailing-cross-ref";
+  // Mailing vs taxonomy validator
+  validateMailingVsTaxonomy,
+} from "./mailing-vs-taxonomy";
 
 export {
   // Taxonomy schemas
@@ -103,6 +103,6 @@ export {
 } from "./linking";
 
 export {
-  // Linking cross-reference validator
-  validateLinkingCrossRefs,
-} from "./linking-cross-ref";
+  // Linking vs taxonomy validator
+  validateLinkingVsTaxonomy,
+} from "./linking-vs-taxonomy";

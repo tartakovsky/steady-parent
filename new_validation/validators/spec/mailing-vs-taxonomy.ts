@@ -1,17 +1,27 @@
 /**
- * Mailing spec cross-reference validator — checks mailing.json against taxonomy.json.
+ * Mailing vs taxonomy validator — checks mailing.json against taxonomy.json.
  *
- * Validates:
- * - No orphans: every key in mailing spec exists in taxonomy
- * - Params consistency: params.category / params.quizSlug match parent keys and taxonomy
- * - Waitlist category matches taxonomy course's categorySlug
- * - Completeness: every non-catalog taxonomy entry has a mailing entry
+ * Validates bidirectionally:
+ *
+ * Spec → Taxonomy (no orphans):
+ * - Every blog category key exists in taxonomy.categories
+ * - Every blog article key exists in taxonomy.blog[cat]
+ * - Every blog freebie params.category matches its parent category key
+ * - Every course key exists in taxonomy.course
+ * - Every waitlist params.category is a valid category and matches taxonomy course's categorySlug
+ * - Every quiz key exists in taxonomy.quiz
+ * - Every quiz-gate params.quizSlug matches its key
+ *
+ * Taxonomy → Spec (completeness):
+ * - Every non-catalog blog article has a mailing entry
+ * - Every non-catalog course has a mailing entry
+ * - Every non-catalog quiz has a mailing entry
  */
 
 import type { TaxonomySpec, ValidationIssue } from "./taxonomy";
 import type { MailingSpec } from "./mailing";
 
-export function validateMailingCrossRefs(
+export function validateMailingVsTaxonomy(
   spec: MailingSpec,
   taxonomy: TaxonomySpec,
 ): ValidationIssue[] {
